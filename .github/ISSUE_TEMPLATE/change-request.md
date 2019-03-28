@@ -43,7 +43,7 @@ Parent element 4:
 Parent element 5:
 
 ## Name(s) of (all) sub-elements the new / changed element should have
-_List all sub-elements that should be allowed within the new element in the schema or conversion. Add more lines for "Sube-element(s)", if needed._
+_List all sub-elements that should be allowed within the new element in the schema or conversion. Add more lines for "Sub-element(s)", if needed._
 Sub-element 1:
 Sub-element 2:
 Sub-element 3:
