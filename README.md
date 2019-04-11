@@ -34,5 +34,5 @@ http://wiki.archivesportaleurope.net/index.php/EAG2012
 
 Note 2:
 Technical information (schema and conversion scripts) can be found in our other repositories here on GitHub - 
-Schema: https://github.com/ArchivesPortalEuropeFoundation/ape-dpt/tree/master/DPTutils/src/main/resources
-Conversion script: https://github.com/ArchivesPortalEuropeFoundation/ape-dpt/tree/master/xsl
+* Schema: https://github.com/ArchivesPortalEuropeFoundation/ape-dpt/tree/master/DPTutils/src/main/resources
+* Conversion script: https://github.com/ArchivesPortalEuropeFoundation/ape-dpt/tree/master/xsl
