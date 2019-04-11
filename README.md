@@ -29,10 +29,10 @@ When reporting an issue, the following should be provided:
 
 
 Note 1:
-More comprehensive information and documentation on EAG2012 can be found in the Archives Portal Europe Wiki - 
+More comprehensive information and documentation on EAG2012 can be found in the Archives Portal Europe Wiki  
 http://wiki.archivesportaleurope.net/index.php/EAG2012
 
 Note 2:
-Technical information (schema and conversion scripts) can be found in our other repositories here on GitHub - 
+Technical information (schema and conversion scripts) can be found in our other repositories here on GitHub  
 * Schema: https://github.com/ArchivesPortalEuropeFoundation/ape-dpt/tree/master/DPTutils/src/main/resources
 * Conversion script: https://github.com/ArchivesPortalEuropeFoundation/ape-dpt/tree/master/xsl
