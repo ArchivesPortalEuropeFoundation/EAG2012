@@ -16,7 +16,9 @@ Change requests to the schema or the conversion to EAG2012 from EAG 0.2 can be a
 
 The Working Group on Standards (WGoS) will then include these change requests in their monthly meetings, usually held on the third
 Tuesday each month. WGoS will then decide on the best way to address the issue (either by a change of schema or a change of conversion
-or a combination of both) and will also take aspects of indexation and display, where required. See the WGoS Best Practices Code (https://github.com/ArchivesPortalEuropeFoundation/apeEAD/blob/master/2019_WGoS_BestPracticesCode.pdf) for more information on the working group processes.
+or a combination of both) and will also take aspects of indexation and display, where required. 
+
+See the WGoS Best Practices Code (https://github.com/ArchivesPortalEuropeFoundation/apeEAD/blob/master/2019_WGoS_BestPracticesCode.pdf) for more information on the working group processes. See the EAG maintenance and revision  document (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/blob/master/2019_Maintenance_EAG.pdf) for more information specifically for the process with regards to EAG.
 
 When reporting an issue, the following should be provided:
 * Name and place of the specific element / attribute, that needs to be changed
