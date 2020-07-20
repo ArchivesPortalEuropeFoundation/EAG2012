@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.ministryculture.es/" targetNamespace="http://www.ministryculture.es/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:attributeGroup name="a.common">
+    <xs:attribute name="audience">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="external"/>
+          <xs:enumeration value="internal"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="id" type="xs:ID"/>
+  </xs:attributeGroup>
+  <xs:element name="eag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="eagheader"/>
+        <xs:element ref="archguide"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eagheader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="eagid"/>
+        <xs:element ref="mainhist"/>
+        <xs:element minOccurs="0" ref="languagedecl"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="status" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="draft"/>
+            <xs:enumeration value="edited"/>
+            <xs:enumeration value="deleted"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="langencoding" default="iso639-2b" type="xs:NMTOKEN"/>
+      <xs:attribute name="scriptencoding" default="iso15924" type="xs:NMTOKEN"/>
+      <xs:attribute name="dateencoding" default="iso8601" type="xs:NMTOKEN"/>
+      <xs:attribute name="countryencoding" default="iso3166-1" type="xs:NMTOKEN"/>
+      <xs:attribute name="repositoryencoding" default="iso15511" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eagid" type="xs:string"/>
+  <xs:element name="mainhist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="mainevent"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mainevent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="date"/>
+        <xs:element minOccurs="0" ref="respevent"/>
+        <xs:element minOccurs="0" ref="source"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="maintype">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="create"/>
+            <xs:enumeration value="update"/>
+            <xs:enumeration value="delete"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="respevent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="surnames"/>
+        <xs:element ref="firstname"/>
+        <xs:element minOccurs="0" ref="charge"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- SURNAMES -->
+  <xs:element name="surnames">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- FIRST NAME -->
+  <xs:element name="firstname">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- CHARGE OR FUNCTION -->
+  <xs:element name="charge">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- EMPLOYED SOURCE -->
+  <xs:element name="source">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- LANGUAGE DECLARATION -->
+  <!-- ************************************************************ -->
+  <xs:element name="languagedecl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="language"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- LANGUAGE AND SCRIPT OF THE DESCRIPTION -->
+  <xs:element name="language">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="langcode" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="scriptcode" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- ************************************************************ -->
+  <!-- ARCHIVAL GUIDE -->
+  <!-- ************************************************************ -->
+  <!-- ************************************************************ -->
+  <xs:element name="archguide">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="identity"/>
+        <xs:element ref="desc"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- IDENTITY AREA -->
+  <!-- ************************************************************ -->
+  <xs:element name="identity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="repositorid"/>
+        <xs:element ref="autform"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="parform"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="nonpreform"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPOSITORY IDENTIFIER -->
+  <xs:element name="repositorid">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="countrycode" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="repositorycode" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- AUTHORIZED FORM OF REPOSITORY NAME -->
+  <xs:element name="autform">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- PARALLEL FORM OF REPOSITORY NAME -->
+  <xs:element name="parform">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- NON-PREFERRED FORM OF REPOSITORY NAME -->
+  <xs:element name="nonpreform">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- DESCRIPTION AREA -->
+  <!-- ************************************************************ -->
+  <xs:element name="desc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="geogarea"/>
+        <xs:element ref="country"/>
+        <xs:element minOccurs="0" ref="firstdem"/>
+        <xs:element minOccurs="0" ref="secondem"/>
+        <xs:element ref="municipality"/>
+        <xs:element minOccurs="0" ref="localentity"/>
+        <xs:element minOccurs="0" ref="street"/>
+        <xs:element minOccurs="0" ref="postalcode"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="telephone"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="fax"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="email"/>
+        <xs:element minOccurs="0" ref="webpage"/>
+        <xs:element minOccurs="0" ref="timetable"/>
+        <xs:element ref="access"/>
+        <xs:element minOccurs="0" ref="resprepositor"/>
+        <xs:element minOccurs="0" ref="repositorhist"/>
+        <xs:element minOccurs="0" ref="repositorfound"/>
+        <xs:element minOccurs="0" ref="repositorsup"/>
+        <xs:element minOccurs="0" ref="repositorguides"/>
+        <xs:element minOccurs="0" ref="adminhierarchy"/>
+        <xs:element ref="buildinginfo"/>
+        <xs:element ref="extent"/>
+        <xs:element ref="organization"/>
+        <xs:element ref="techservices"/>
+        <xs:element ref="automation"/>
+        <xs:element minOccurs="0" ref="controlaccess"/>
+        <xs:element minOccurs="0" ref="notes"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="extptr"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- GEOGRAPHICAL AREA -->
+  <xs:element name="geogarea">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- COUNTRY -->
+  <xs:element name="country">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- AUTONOMOUS COMMUNITY / FIRST DEMARCATION -->
+  <xs:element name="firstdem">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- PROVINCE / SECOND DEMARCATION -->
+  <xs:element name="secondem">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- MUNICIPALITY -->
+  <xs:element name="municipality">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- LOWER LOCAL ENTITY -->
+  <xs:element name="localentity">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- STREET -->
+  <xs:element name="street">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- POSTAL CODE -->
+  <xs:element name="postalcode">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- TELEPHONE -->
+  <xs:element name="telephone">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- FAX -->
+  <xs:element name="fax">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- EMAIL -->
+  <xs:element name="email">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="href" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- WEB PAGE -->
+  <xs:element name="webpage">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="href" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- TIMETABLE -->
+  <xs:element name="timetable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="opening"/>
+        <xs:element minOccurs="0" ref="weekopen"/>
+        <xs:element minOccurs="0" ref="closing"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- OPENING TO THE PUBLIC -->
+  <xs:element name="opening">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- WEEKLY OPENING HOURS -->
+  <xs:element name="weekopen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="num"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- CLOSING TO THE PUBLIC -->
+  <xs:element name="closing">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- ACCESS -->
+  <xs:element name="access">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="restaccess"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- RESTRICTED ACCESS SPECIFICATION -->
+  <xs:element name="restaccess">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- PERSON RESPONSIBLE FOR THE REPOSITORY -->
+  <xs:element name="resprepositor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="surnames"/>
+        <xs:element ref="firstname"/>
+        <xs:element minOccurs="0" ref="charge"/>
+        <xs:element minOccurs="0" ref="date"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPOSITORY HISTORY -->
+  <xs:element name="repositorhist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="p"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPOSITORY FOUNDATION -->
+  <xs:element name="repositorfound">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="date"/>
+        <xs:element minOccurs="0" ref="rule"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- RULE -->
+  <xs:element name="rule">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPOSITORY SUPPRESSION -->
+  <xs:element name="repositorsup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="date"/>
+        <xs:element minOccurs="0" ref="rule"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPOSITORY GUIDES -->
+  <xs:element name="repositorguides">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="repositorguide"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPOSITORY GUIDE -->
+  <xs:element name="repositorguide">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="href"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- ADMINISTRATIVE HIERARCHY -->
+  <xs:element name="adminhierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="adminunit"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- ADMINISTRATIVE UNIT -->
+  <xs:element name="adminunit">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- BUILDING INFORMATION -->
+  <xs:element name="buildinginfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="building"/>
+        <xs:element minOccurs="0" ref="repositorarea"/>
+        <xs:element minOccurs="0" ref="lengthshelf"/>
+        <xs:element ref="searchroom"/>
+        <xs:element ref="handicapped"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- BUILDING -->
+  <xs:element name="building">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="p"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPOSITORY AREA -->
+  <xs:element name="repositorarea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="num"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- LENGTH OF SHELF -->
+  <xs:element name="lengthshelf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="num"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- SEARCH ROOM -->
+  <xs:element name="searchroom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="num"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- FACILITIES FOR HANDICAPPED PERSONS -->
+  <xs:element name="handicapped">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- EXTENT OF ARCHIVAL MATERIAL -->
+  <xs:element name="extent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="num"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- ORGANIZATION -->
+  <xs:element name="organization">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="class"/>
+        <xs:element maxOccurs="unbounded" ref="descunit"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- CLASS -->
+  <xs:element name="class">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="classcode" use="required"/>
+      <xs:attribute name="fathercode" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- DESCRIPTION UNIT -->
+  <xs:element name="descunit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="unitid"/>
+        <xs:element ref="unittitle"/>
+        <xs:element ref="date"/>
+        <xs:element ref="extent"/>
+        <xs:element minOccurs="0" ref="sections"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="level" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="recordgrp"/>
+            <xs:enumeration value="fonds"/>
+            <xs:enumeration value="collection"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="classcode" use="required"/>
+      <xs:attribute name="fathercode" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- UNIT IDENTIFIER -->
+  <xs:element name="unitid">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="href" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- UNIT TITLE -->
+  <xs:element name="unittitle">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- SECTIONS -->
+  <xs:element name="sections">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="section"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- SECTION -->
+  <xs:element name="section">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- TECHNICAL SERVICES -->
+  <xs:element name="techservices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="restorationlab"/>
+        <xs:element ref="reproductionser"/>
+        <xs:element ref="library"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- RESTORATION LABORATORY -->
+  <xs:element name="restorationlab">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- REPRODUCTION SERVICES -->
+  <xs:element name="reproductionser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="photocopyser"/>
+        <xs:element minOccurs="0" ref="microformser"/>
+        <xs:element minOccurs="0" ref="photographser"/>
+        <xs:element minOccurs="0" ref="digitalser"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- PHOTOCOPIES SERVICE -->
+  <xs:element name="photocopyser">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- MICROFORMS SERVICE -->
+  <xs:element name="microformser">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- PHOTOGRAPHS SERVICE -->
+  <xs:element name="photographser">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- DIGITAL REPRODUCTIONS SERVICE -->
+  <xs:element name="digitalser">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- ASSISTANT LIBRARY -->
+  <xs:element name="library">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="monographicpub"/>
+        <xs:element minOccurs="0" ref="serialpub"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- MONOGRAPHIC PUBLICATIONS -->
+  <xs:element name="monographicpub">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="num"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- SERIAL PUBLICATIONS -->
+  <xs:element name="serialpub">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="num"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- AUTOMATION -->
+  <xs:element name="automation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="autusermanag"/>
+        <xs:element minOccurs="0" ref="autdescription"/>
+        <xs:element minOccurs="0" ref="indexvoc"/>
+        <xs:element minOccurs="0" ref="odautomation"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- AUTOMATED USERS MANAGEMENT -->
+  <xs:element name="autusermanag">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- AUTOMATED DESCRIPTION -->
+  <xs:element name="autdescription">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- INDEX VOCABULARY -->
+  <xs:element name="indexvoc">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="question" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- OTHER DATA ABOUT AUTOMATION -->
+  <xs:element name="odautomation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="p"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- CONTROLLED ACCESS HEADINGS -->
+  <xs:element name="controlaccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="head"/>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="controlaccess"/>
+          <xs:element ref="corpname"/>
+          <xs:element ref="famname"/>
+          <xs:element ref="function"/>
+          <xs:element ref="genreform"/>
+          <xs:element ref="geogname"/>
+          <xs:element ref="name"/>
+          <xs:element ref="occupation"/>
+          <xs:element ref="persname"/>
+          <xs:element ref="subject"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- HEAD -->
+  <xs:element name="head">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- CORPORATE NAME -->
+  <xs:element name="corpname">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="role"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- FAMILY NAME -->
+  <xs:element name="famname">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="role"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- FUNCTION -->
+  <xs:element name="function">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- GENRE / PHYSICAL CHARACTERISTIC -->
+  <xs:element name="genreform">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+      <xs:attribute name="type"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- GEOGRAPHICAL NAME -->
+  <xs:element name="geogname">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="role"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- NAME -->
+  <xs:element name="name">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="role"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- OCCUPATION -->
+  <xs:element name="occupation">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- PERSONAL NAME -->
+  <xs:element name="persname">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="role"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- SUBJECT -->
+  <xs:element name="subject">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="authfilenumber"/>
+      <xs:attribute name="normal"/>
+      <xs:attribute name="rules" type="xs:NMTOKEN"/>
+      <xs:attribute name="source" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- NOTES -->
+  <xs:element name="notes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="p"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- EXTENDED POINTER -->
+  <xs:element name="extptr">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="actuate">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="auto"/>
+            <xs:enumeration value="user"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="behavior"/>
+      <xs:attribute name="entityref" type="xs:ENTITY"/>
+      <xs:attribute name="href"/>
+      <xs:attribute name="role"/>
+      <xs:attribute name="show">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="embed"/>
+            <xs:enumeration value="replace"/>
+            <xs:enumeration value="new"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="title"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- ************************************************************ -->
+  <!-- SHARED ELEMENTS -->
+  <!-- ************************************************************ -->
+  <!-- ************************************************************ -->
+  <!-- ************************************************************ -->
+  <!-- DATE -->
+  <xs:element name="date">
+    <xs:complexType>
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="certainty">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="circa"/>
+            <xs:enumeration value="approximately"/>
+            <xs:enumeration value="before"/>
+            <xs:enumeration value="after"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="datechar"/>
+      <xs:attribute name="normal" use="required"/>
+      <xs:attribute name="calendar" default="gregorian" type="xs:NMTOKEN"/>
+      <xs:attribute name="era" default="ce" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- PARAGRAPH -->
+  <xs:element name="p">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- ************************************************************ -->
+  <!-- NUMBER -->
+  <xs:element name="num">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="a.common"/>
+      <xs:attribute name="unit" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="book"/>
+            <xs:enumeration value="box"/>
+            <xs:enumeration value="bundle"/>
+            <xs:enumeration value="cubicmetre"/>
+            <xs:enumeration value="hour"/>
+            <xs:enumeration value="linearmetre"/>
+            <xs:enumeration value="site"/>
+            <xs:enumeration value="squaremetre"/>
+            <xs:enumeration value="map"/>
+            <xs:enumeration value="monographicpub"/>
+            <xs:enumeration value="serialpub"/>
+            <xs:enumeration value="volume"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+<!-- ************************************************************ -->
+<!-- ************************************************************ -->
+<!-- ************************************************************ -->
+<!-- CONDITIONAL SECTIONS (Source: EAD 2002) -->
+<!-- ************************************************************ -->
+<!-- ************************************************************ -->
+<!-- ************************************************************ -->
+<!-- ======================================================================= -->
+<!--
+  CONDITIONAL SECTION: XML Character Entities
+
+  Entity name: xmlchar
+  Default: INCLUDE
+
+  NOTE: if %sgmlchar; (above) is INCLUDE, then XML character entities
+  conditional section controlled by %xmlchar; will be changed to IGNORE
+  without further modifications.
+-->
+<!-- ======================================================================= -->
+<!-- Character Entity References -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!--
+  CONDITIONAL SECTION: Notation Declarations
+
+  Entity name: notation
+  Default: INCLUDE
+-->
+<!-- ======================================================================= -->
+<!-- The following declarations are for ISO standard notations. -->
+<!--
+  The following notation declarations are for proprietary notations. These
+  declarations are taken from _Making Hypermedia Work: A User's Guide to
+  Hytime / Steven J. DeRose and David G. Durand (Boston: Kluwer Academic
+  Publishers), pp. 322ff. (ISBN 0-7923-9432-1). If owners of these notations
+  register FPI's, it is recommended that these be used instead of those
+  listed below.
+-->
+<!--
+  The following are EAD declared notations, that is, notations considered
+  to be important to the archival community, though not formally declared
+  by an authoritative body.
+-->
+<!-- Email Address -->
+<!-- Metadata Encoding & Transmission Standard -->
+<!-- Encoded Archival Description -->
+<!-- Metadata Object Description Schema -->
+<!-- Scalable Vector Graphics -->
+<!-- Portable Network Graphics -->
+<!-- ======================================================================= -->
