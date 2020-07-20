@@ -1,0 +1,1742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://www.archivesportaleurope.net/Portal/profiles/eag_2012/"><!--
+Schema generated from ODD source 2015-03-06T09:33:02Z. 
+Edition: Version 2.7.0. Last updated on
+	16th September 2014, revision 13036
+Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
+  
+--><!--Dissemination level: public CC-BY-->
+   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+   <define name="eag_macro.standardDateTime">
+      <choice>
+         <data type="date">
+            <param name="maxInclusive">2099-12-31</param>
+         </data>
+         <data type="gYear">
+            <param name="maxInclusive">2099</param>
+         </data>
+         <data type="gYearMonth">
+            <param name="maxInclusive">2099-12</param>
+         </data>
+         <data type="dateTime">
+            <param name="maxInclusive">2099-12-31T23:59:59</param>
+         </data>
+      </choice>
+   </define>
+   <define name="eag_macro.standardDate">
+      <choice>
+         <data type="date">
+            <param name="maxInclusive">2099-12-31</param>
+         </data>
+         <data type="gYear">
+            <param name="maxInclusive">2099</param>
+         </data>
+         <data type="gYearMonth">
+            <param name="maxInclusive">2099-12</param>
+         </data>
+      </choice>
+   </define>
+   <define name="eag_macro.language">
+      <data type="token">
+         <param name="pattern">(abk|ace|ach|ada|ady|egy|afh|afr|ain|aka|akk|alb|ale|alg|alt|tut|ang|fro|goh|sga|nwc|non|pro|peo|amh|anp|apa|ara|arg|arc|arp|arn|arw|arm|rup|aze|asm|ast|ath|aus|map|ave|awa|ava|aym|ind|ban|bat|bam|bai|bad|bnt|bnt|bas|bak|baq|btk|bis|bej|bal|bem|ben|ber|bho|bih|bik|byn|bur|bla|zbl|nob|bos|bra|bre|bug|bul|bua|cad|ceb|cha|cmc|chr|chy|chb|chi|chn|chp|cho|cre|dan|day|dak|aar|dar|del|ger|din|doi|dgr|dra|dua|dyu|bin|efi|mis|eka|elx|tvl|eng|myv|epo|est|ewe|ewo|fao|fat|fij|fin|fiu|fon|fre|fry|fur|ful|gla|glg|lug|gaa|gay|gba|gez|geo|gem|gil|gon|gor|got|grb|grc|kal|grn|guj|hai|hat|afa|hau|haw|heb|her|hit|hil|him|hin|hmo|hup|iba|ibo|ido|ijo|ilo|smn|nai|sai|cai|inc|ine|inh|ina|ile|iku|ipk|ira|gle|iro|ice|ita|sah|jpn|jav|yid|lad|jrb|jpr|kbd|kab|kac|xal|kam|khm|kan|kau|kaa|krc|krl|kar|car|kaz|kas|csb|cat|cau|kaw|zxx|cel|kha|khi|kik|kmb|chu|kir|tlh|kom|kon|kok|cop|kor|cor|cos|kos|kpe|crp|cpe|cpf|cpp|crh|hrv|kro|kum|art|kur|cus|gwi|kut|kua|wel|lah|iii|lam|lao|lat|lez|lav|lim|lin|lit|jbo|lub|lua|lui|smj|lun|luo|lus|ltz|mad|mag|mai|mak|mac|mlg|may|mal|div|man|mlt|mdr|mnc|mno|glv|mao|mar|mah|mwr|mas|myn|umb|mul|mni|men|hmn|mic|min|mwl|enm|frm|gmh|mga|dum|pal|moh|mdf|mon|lol|mkh|mos|mun|mus|nah|nau|nav|nde|nbl|ndo|nap|nep|gre|tpi|syr|new|nia|und|nds|dut|dsb|nic|ssa|niu|nqo|nyn|nog|frr|sme|nor|nub|nym|nya|nno|nyo|nzi|hsb|oji|oci|kru|ori|orm|osa|ota|oss|rap|frs|oto|pau|pli|pam|pan|pag|fan|pap|paa|pus|nso|per|phi|phn|fil|pol|pon|por|pra|que|roh|raj|rar|qaa-qtz|rom|roa|loz|rum|run|rus|kin|smi|kho|sal|sam|smo|sad|sag|san|sat|srd|sas|shn|sna|sco|swe|gsw|sel|sem|srp|srr|sid|snd|sin|sit|sio|scn|sms|den|sla|slo|slv|sog|som|son|snk|wen|spa|srn|sma|sot|suk|sux|sun|sus|swa|ssw|syc|tgk|tgl|tah|tmh|tam|tat|tel|tem|ter|tet|tha|tai|tib|tig|tir|tiv|tli|tkl|tog|ton|chk|chg|cze|chm|che|chv|tsi|tso|tsn|tur|tum|tup|tuk|tyv|twi|udm|uga|uig|ukr|hun|urd|uzb|vai|ven|vie|vol|wak|wal|wln|war|was|bel|wol|vot|xho|yao|yap|yor|ypk|znd|zap|zza|sgn|zen|zha|zul|zun)</param>
+      </data>
+   </define>
+   <define name="eag_eag">
+      <element name="eag">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Encoded Archival Guide) Mandatory root element – indicates a description of an institution with archival holdings formatted in XML and encoded according to the EAG standard.</a:documentation>
+         <group>
+            <ref name="eag_control"/>
+            <ref name="eag_archguide"/>
+            <optional>
+               <ref name="eag_relations"/>
+            </optional>
+         </group>
+         <ref name="eag_att.lang.attributes"/>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="audience" a:defaultValue="external">
+            <a:documentation/>
+            <choice>
+               <value>internal</value>
+               <a:documentation>"internal" to limit acces to that information</a:documentation>
+               <value>external</value>
+               <a:documentation>"external" to allow access to all the information</a:documentation>
+            </choice>
+         </attribute>
+         <optional>
+            <attribute name="xml:base">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Used to specify a base URI other than the base URI) xml:base is used to specify the base URI other than the base URI of the EAC-CPF instance, for the purpose of resolving any relative URIs used with elements that contain one or more descendants that use an attribute of type anyURI. xml:base makes it possible to declare an absolute base URI to facilitate the use of relative URIs on the descendants.</a:documentation>
+               <data type="anyURI"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="schemaLocation" ns="http://www.w3.org/2001/XMLSchema-instance">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">In order for the xsi:schemaLocation attribute to be valid when a document is validated against either a DTD or a RELAX NG schema, ODD processors may wish to add declarations for this attribute and its namespace to the root element.</a:documentation>
+               <text/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_control">
+      <element name="control">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Control) Contains all the information concerning the file itself and its maintenance.</a:documentation>
+         <ref name="eag_recordId"/>
+         <zeroOrMore>
+            <ref name="eag_otherRecordId"/>
+         </zeroOrMore>
+         <ref name="eag_maintenanceAgency"/>
+         <ref name="eag_maintenanceStatus"/>
+         <ref name="eag_maintenanceHistory"/>
+         <optional>
+            <ref name="eag_languageDeclarations"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_conventionDeclaration"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_localControl"/>
+         </optional>
+         <optional>
+            <ref name="eag_localTypeDeclaration"/>
+         </optional>
+         <optional>
+            <ref name="eag_publicationStatus"/>
+         </optional>
+         <optional>
+            <ref name="eag_sources"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_recordId">
+      <element name="recordId">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Description identifier) The unique identifier for the EAG file.</a:documentation>
+         <data type="NMTOKEN">
+            <param name="pattern">((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW|RS|ME|EU)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
+         </data>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_otherRecordId">
+      <element name="otherRecordId">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Other description Identifier) Alternative identifiers for the EAG file, eg the identifier of a locally used version.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <ref name="eag_att.localType.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_maintenanceAgency">
+      <element name="maintenanceAgency">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Maintenance Agency) The agency responsible for the creation, maintenance, and/or dissemination of the EAG file.</a:documentation>
+         <group>
+            <ref name="eag_agencyCode"/>
+            <ref name="eag_agencyName"/>
+            <zeroOrMore>
+               <ref name="eag_otherAgencyCode"/>
+               <ref name="eag_descriptiveNote"/>
+            </zeroOrMore>
+         </group>
+      </element>
+   </define>
+   <define name="eag_agencyCode">
+      <element name="agencyCode">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Agency Code) Identifier of the agency responsible for the creation, maintenance and/or dissemination of the EAG file.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_agencyName">
+      <element name="agencyName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Agency Name) Name of the agency responsible for the creation, maintenance, and/or dissemination of the EAG file.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_otherAgencyCode">
+      <element name="otherAgencyCode">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Other Agency Code) Alternative identifier of the agency responsible for the creation, maintenance, and/or dissemination of the EAG file.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <ref name="eag_att.localType.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_descriptiveNote">
+      <element name="descriptiveNote">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Descriptive note) A wrapper element that provides additional information and specifications, in textual form, concerning the element in which it is contained.</a:documentation>
+         <oneOrMore>
+            <ref name="eag_p"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_p">
+      <element name="p">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Paragraph) Important textual feature which marks one or more sentences that form a logical prose paragraph.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_maintenanceStatus">
+      <element name="maintenanceStatus">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Maintenance status) The current state of the maintenance.</a:documentation>
+         <choice>
+            <value>new</value>
+            <value>cancelled</value>
+            <value>deleted</value>
+            <value>deletedReplaced</value>
+            <value>deletedMerged</value>
+            <value>deletedSplit</value>
+            <value>derived</value>
+            <value>revised</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_maintenanceHistory">
+      <element name="maintenanceHistory">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Maintenance history) Wrapper element for the history of the creation and maintenance of the EAG file.</a:documentation>
+         <oneOrMore>
+            <ref name="eag_maintenanceEvent"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_maintenanceEvent">
+      <element name="maintenanceEvent">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Maintenance event) Event of one maintenance step.</a:documentation>
+         <group>
+            <ref name="eag_agent"/>
+            <ref name="eag_agentType"/>
+            <ref name="eag_eventDateTime"/>
+            <ref name="eag_eventType"/>
+         </group>
+      </element>
+   </define>
+   <define name="eag_agent">
+      <element name="agent">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Agent) The agent (human or machine) responsible for the maintenance event.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_agentType">
+      <element name="agentType">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Agent type) The type of agent responsible for the maintenance event.</a:documentation>
+         <choice>
+            <value>human</value>
+            <value>machine</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_eventDateTime">
+      <element name="eventDateTime">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Maintenance event date and time) Date and time of the occurrence of a maintenance event.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <ref name="eag_att.standardDateTime.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_eventType">
+      <element name="eventType">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Event type) Type of the maintenance event.</a:documentation>
+         <choice>
+            <value>created</value>
+            <value>revised</value>
+            <value>deleted</value>
+            <value>cancelled</value>
+            <value>derived</value>
+            <value>updated</value>
+            <value>published</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_languageDeclarations">
+      <element name="languageDeclarations">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Languages declaration) Wrapper for the languages and scripts used in the description.</a:documentation>
+         <oneOrMore>
+            <ref name="eag_languageDeclaration"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_languageDeclaration">
+      <element name="languageDeclaration">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Language declaration) Wrapper for one of the languages and scripts used in the description.</a:documentation>
+         <group>
+            <ref name="eag_language"/>
+            <ref name="eag_script"/>
+            <zeroOrMore>
+               <ref name="eag_descriptiveNote"/>
+            </zeroOrMore>
+         </group>
+      </element>
+   </define>
+   <define name="eag_language">
+      <element name="language">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Language) Language(s) used in the description of the archival institution.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <ref name="eag_att.languageCode.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_script">
+      <element name="script">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Script) Script(s) used in the description of the archival institution.</a:documentation>
+         <text/>
+         <ref name="eag_att.scriptCode.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_conventionDeclaration">
+      <element name="conventionDeclaration">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Convention declaration) Declaration(s) of the convention(s) used to describe the institution, including authorised controlled vocabularies and thesauri.</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="eag_abbreviation"/>
+            </zeroOrMore>
+            <ref name="eag_citation"/>
+            <zeroOrMore>
+               <ref name="eag_descriptiveNote"/>
+            </zeroOrMore>
+         </group>
+      </element>
+   </define>
+   <define name="eag_abbreviation">
+      <element name="abbreviation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Abbreviation) Abbreviation of rules, standards and vocabularies used when describing the institution.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_citation">
+      <element name="citation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Citation) Link to rules, standards and vocabularies used when describing the institution or link to directions.</a:documentation>
+         <text/>
+         <ref name="eag_att.lastDateTimeVerified.attributes"/>
+         <ref name="eag_att.href.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_localControl">
+      <element name="localControl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Local control) Wrapper for the additional control information used in local environments for describing the institution.</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="eag_term"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <choice>
+                  <ref name="eag_date"/>
+                  <ref name="eag_dateRange"/>
+               </choice>
+            </zeroOrMore>
+         </group>
+         <ref name="eag_att.localType.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_term">
+      <element name="term">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Term) Current level of detail of the description - either simple or extended.</a:documentation>
+         <choice>
+            <value>simple</value>
+            <value>extended</value>
+         </choice>
+         <ref name="eag_att.lastDateTimeVerified.attributes"/>
+         <ref name="eag_att.scriptCode.attributes"/>
+         <ref name="eag_att.transliteration.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <ref name="eag_att.vocabularySource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_date">
+      <element name="date">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Single date) A single date of an event.</a:documentation>
+         <text/>
+         <ref name="eag_att.date.attributes"/>
+         <ref name="eag_att.localType.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_dateRange">
+      <element name="dateRange">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Date range) A time span, usually with a given start and a given end date.</a:documentation>
+         <group>
+            <ref name="eag_fromDate"/>
+            <ref name="eag_toDate"/>
+         </group>
+         <ref name="eag_att.localType.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_fromDate">
+      <element name="fromDate">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(From date) Start date of a time span.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.date.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_toDate">
+      <element name="toDate">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(To date) End date of a timespan.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.date.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_localTypeDeclaration">
+      <element name="localTypeDeclaration">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Local type declaration) Used to declare the local conventions and controlled vocabularies used in the attribute localType.</a:documentation>
+         <group>
+            <ref name="eag_citation"/>
+            <optional>
+               <ref name="eag_abbreviation"/>
+               <ref name="eag_descriptiveNote"/>
+            </optional>
+         </group>
+      </element>
+   </define>
+   <define name="eag_publicationStatus">
+      <element name="publicationStatus">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Local type declaration) Current publication status of the EAG file.</a:documentation>
+         <choice>
+            <value>inProcess</value>
+            <value>approved</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_sources">
+      <element name="sources">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sources) sources consulted in creating the description.</a:documentation>
+         <ref name="eag_source"/>
+      </element>
+   </define>
+   <define name="eag_source">
+      <element name="source">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Source) A source of evidence used in describing the (archival) institution.</a:documentation>
+         <group>
+            <optional>
+               <ref name="eag_sourceEntry"/>
+               <choice>
+                  <ref name="eag_objectBinWrap"/>
+                  <ref name="eag_objectXMLWrap"/>
+               </choice>
+               <ref name="eag_descriptiveNote"/>
+            </optional>
+         </group>
+         <ref name="eag_att.lastDateTimeVerified.attributes"/>
+         <ref name="eag_att.href.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_sourceEntry">
+      <element name="sourceEntry">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Source entry) A textual identification of a particular source of evidence used in describing the (archival) institution.</a:documentation>
+         <text/>
+         <ref name="eag_att.scriptCode.attributes"/>
+         <ref name="eag_att.transliteration.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_objectBinWrap">
+      <element name="objectBinWrap">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Object bin wrap) Provides a place for a base64-encoded binary representation of a resource.</a:documentation>
+         <data type="base64Binary"/>
+      </element>
+   </define>
+   <define name="eag_objectXMLWrap">
+      <element name="objectXMLWrap">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Object XML wrap) Incorporating XML elements from any XML namespace.</a:documentation>
+         <text/>
+      </element>
+   </define>
+   <define name="eag_archguide">
+      <element name="archguide">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Archival guide) Wrapper for the description of the archival institution itself. Can be used to describe one single archival repository or one institution comprised of several repositories.</a:documentation>
+         <group>
+            <ref name="eag_identity"/>
+            <ref name="eag_desc"/>
+         </group>
+      </element>
+   </define>
+   <define name="eag_identity">
+      <element name="identity">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identity) Identification of the archival institution.</a:documentation>
+         <group>
+            <optional>
+               <ref name="eag_repositorid"/>
+            </optional>
+            <optional>
+               <ref name="eag_otherRepositorId"/>
+            </optional>
+            <oneOrMore>
+               <ref name="eag_autform"/>
+            </oneOrMore>
+            <zeroOrMore>
+               <ref name="eag_parform"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="eag_nonpreform"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="eag_repositoryType"/>
+            </zeroOrMore>
+         </group>
+      </element>
+   </define>
+   <define name="eag_repositorid">
+      <element name="repositorid">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository identifier) Element meant to gather the country code and repository code of the archival institution.</a:documentation>
+         <empty/>
+         <ref name="eag_att.countrycode.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <optional>
+            <attribute name="repositorycode">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A unique code in repositorid indicating the repository responsible for intellectual control of the insitution being described. The code should be taken from ISO/DIS 15511 Information and documentation - International Standard Indentifier for Libraries and Related Oranizations (ISIL).</a:documentation>
+               <data type="token">
+                  <param name="pattern">((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW|RS|ME|EU)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_otherRepositorId">
+      <element name="otherRepositorId">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Other repository identifier) Any other agency code used by the institution, not necessarily compliant with ISO 15511.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_autform">
+      <element name="autform">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Name of institution) Name of the institution in its authorised form.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_parform">
+      <element name="parform">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Parallel form of name of institution) Name of the institution as a parallel form of name (translation or abbreviation).</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_nonpreform">
+      <element name="nonpreform">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Other name of institution) Other names of the institution, eg previously used names.</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <optional>
+                  <ref name="eag_useDates"/>
+               </optional>
+            </choice>
+         </zeroOrMore>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_useDates">
+      <element name="useDates">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dates of use) Time when a certain name has been used for an institution – can be a time span, a single date or a combination of both.</a:documentation>
+         <choice>
+            <ref name="eag_dateSet"/>
+            <ref name="eag_dateRange"/>
+            <ref name="eag_date"/>
+         </choice>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_dateSet">
+      <element name="dateSet">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Date set) A set of dates to be used with repeated time spans, several single dates or a combination of both.</a:documentation>
+         <choice>
+            <ref name="eag_date"/>
+            <ref name="eag_dateRange"/>
+         </choice>
+         <oneOrMore>
+            <choice>
+               <ref name="eag_date"/>
+               <ref name="eag_dateRange"/>
+            </choice>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_repositoryType">
+      <element name="repositoryType">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Type of institution) Describes the type of institution with a predefined list.</a:documentation>
+         <choice>
+            <value>National archives</value>
+            <value>Regional archives</value>
+            <value>County/local authority archives</value>
+            <value>Municipal archives</value>
+            <value>Specialised government archives</value>
+            <value>Private persons and family archives</value>
+            <value>Church and religious archives</value>
+            <value>Business archives</value>
+            <value>University and research archives</value>
+            <value>Media archives</value>
+            <value>Archives of political parties, of popular/labour movement and other non-governmental organisations, associations, agencies and foundations</value>
+            <value>Specialised non-governmental archives and archives of other cultural (heritage) institutions</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_desc">
+      <element name="desc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Description of the institution) Contains the description of the institution and of its different locations, where applicable.</a:documentation>
+         <ref name="eag_repositories"/>
+      </element>
+   </define>
+   <define name="eag_repositories">
+      <element name="repositories">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repositories) Wrapper for the different repositories of the institution.</a:documentation>
+         <oneOrMore>
+            <ref name="eag_repository"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_repository">
+      <element name="repository">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository) Information on one archival repository.</a:documentation>
+         <zeroOrMore>
+            <ref name="eag_repositoryName"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_repositoryRole"/>
+         </optional>
+         <ref name="eag_geogarea"/>
+         <oneOrMore>
+            <ref name="eag_location"/>
+         </oneOrMore>
+         <zeroOrMore>
+            <ref name="eag_telephone"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_fax"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_email"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_webpage"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_directions"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_repositorhist"/>
+         </optional>
+         <optional>
+            <ref name="eag_repositorfound"/>
+         </optional>
+         <optional>
+            <ref name="eag_repositorsup"/>
+         </optional>
+         <optional>
+            <ref name="eag_buildinginfo"/>
+         </optional>
+         <optional>
+            <ref name="eag_adminhierarchy"/>
+         </optional>
+         <optional>
+            <ref name="eag_holdings"/>
+         </optional>
+         <ref name="eag_timetable"/>
+         <ref name="eag_access"/>
+         <oneOrMore>
+            <ref name="eag_accessibility"/>
+         </oneOrMore>
+         <optional>
+            <ref name="eag_services"/>
+         </optional>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_repositoryName">
+      <element name="repositoryName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository name) Name of the archival repository.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_repositoryRole">
+      <element name="repositoryRole">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository role) The role of the repository.</a:documentation>
+         <choice>
+            <value>Branch</value>
+            <value>Head quarter</value>
+            <value>Interim archive</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_geogarea">
+      <element name="geogarea">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Geographical area) Geographical area of the repository.</a:documentation>
+         <choice>
+            <value>Africa</value>
+            <value>Antarctica</value>
+            <value>Asia</value>
+            <value>Australia</value>
+            <value>Europe</value>
+            <value>North America</value>
+            <value>South America</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_location">
+      <element name="location">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Location) Address information for the repository.</a:documentation>
+         <ref name="eag_country"/>
+         <optional>
+            <ref name="eag_firstdem"/>
+         </optional>
+         <optional>
+            <ref name="eag_secondem"/>
+         </optional>
+         <ref name="eag_municipalityPostalcode"/>
+         <optional>
+            <ref name="eag_localentity"/>
+         </optional>
+         <optional>
+            <ref name="eag_street"/>
+         </optional>
+         <ref name="eag_att.geocoordinates.attributes"/>
+         <attribute name="localType">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>visitors address</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Visitors address of a repository</a:documentation>
+               <value>postal address</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Postal address of a repository</a:documentation>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_country">
+      <element name="country">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Country) Country where the repository is located.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_firstdem">
+      <element name="firstdem">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Autonomous community or region) Autonomous community or region in which the repository is located.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_secondem">
+      <element name="secondem">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(County or local authority) County or local authority in whose jurisdiction the repository is located.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_municipalityPostalcode">
+      <element name="municipalityPostalcode">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(City or town with postal code) City or town in which the repository is located including the postal code of the visitors address respectively the PO Box of the postal address.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_localentity">
+      <element name="localentity">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(District or quarter in town) District or quarter in town in which the repository is located.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_street">
+      <element name="street">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Steet) Street name and number.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_telephone">
+      <element name="telephone">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Telephone) Telephone number(s) of the repository or its services.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_fax">
+      <element name="fax">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Fax) Fax number(s) of the repository or its services.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_email">
+      <element name="email">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(E-mail) E-mail address(es) of the repository or its services.</a:documentation>
+         <text/>
+         <ref name="eag_att.href.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_webpage">
+      <element name="webpage">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Webpage) Website (URL) of the repository or its services.</a:documentation>
+         <text/>
+         <ref name="eag_att.href.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_directions">
+      <element name="directions">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Directions) Directions to the repository.</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="eag_citation"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_repositorhist">
+      <element name="repositorhist">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository history) History of the institution with archival holdings.</a:documentation>
+         <ref name="eag_descriptiveNote"/>
+      </element>
+   </define>
+   <define name="eag_repositorfound">
+      <element name="repositorfound">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository foundation) Information about the foundation of the repository (date and rules applied).</a:documentation>
+         <ref name="eag_date"/>
+         <oneOrMore>
+            <ref name="eag_rule"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_rule">
+      <element name="rule">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Rule) Legal or other rule applied on the foundation (or suppression) of a repository.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_repositorsup">
+      <element name="repositorsup">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository suppression) Information about the suppression of the repository (date and rules applied).</a:documentation>
+         <ref name="eag_date"/>
+         <oneOrMore>
+            <ref name="eag_rule"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_buildinginfo">
+      <element name="buildinginfo">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Building information) Information about the repository building.</a:documentation>
+         <optional>
+            <ref name="eag_building"/>
+         </optional>
+         <optional>
+            <ref name="eag_repositorarea"/>
+         </optional>
+         <optional>
+            <ref name="eag_lengthshelf"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_building">
+      <element name="building">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Building) General characteristics and/or history of the repository building.</a:documentation>
+         <ref name="eag_descriptiveNote"/>
+      </element>
+   </define>
+   <define name="eag_repositorarea">
+      <element name="repositorarea">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Repository area) Information about the dimensions of the repository area within the building.</a:documentation>
+         <ref name="eag_num"/>
+      </element>
+   </define>
+   <define name="eag_num">
+      <element name="num">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Number or amounta) Allows to provide a concrete number or amount including the respective unit of measurement in the accompanying attribute unit.</a:documentation>
+         <text/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <attribute name="unit">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>squaremetre</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>linearmetre</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>site</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>book</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>title</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_lengthshelf">
+      <element name="lengthshelf">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Length of shelf) Information about the length of shelves at the repository building.</a:documentation>
+         <ref name="eag_num"/>
+      </element>
+   </define>
+   <define name="eag_adminhierarchy">
+      <element name="adminhierarchy">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Administrative structure) Administrative structure of the institution.</a:documentation>
+         <oneOrMore>
+            <ref name="eag_adminunit"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="eag_adminunit">
+      <element name="adminunit">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Part of the administrative structure) A part/unit of the administrative structure.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_holdings">
+      <element name="holdings">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Archival and other holdings) Archival and other holdings of the institution.</a:documentation>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+         <optional>
+            <ref name="eag_m.dates_alternation"/>
+         </optional>
+         <optional>
+            <ref name="eag_extent"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_actingMaintenanceForGroup"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="eag_extent">
+      <element name="extent">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Extent) Extent of the archival holdings.</a:documentation>
+         <ref name="eag_num"/>
+      </element>
+   </define>
+   <define name="eag_actingMaintenanceForGroup">
+      <element name="actingMaintenanceForGroup">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Custodian for other repositories) Wrapper element for names and locations of other repositories, where the institution described acts as custodian for their documents, ie is responsible for the documents' care and control.</a:documentation>
+         <ref name="eag_actingMaintenanceFor"/>
+      </element>
+   </define>
+   <define name="eag_actingMaintenanceFor">
+      <element name="actingMaintenanceFor">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Custodian for single repository) Name and location of other repository, where the institution described acts as custodian.</a:documentation>
+         <zeroOrMore>
+            <ref name="eag_nameEntry"/>
+            <ref name="eag_placeEntry"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="eag_nameEntry">
+      <element name="nameEntry">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Name of an entity) Name of either person or another repository.</a:documentation>
+         <ref name="eag_part"/>
+         <zeroOrMore>
+            <ref name="eag_useDates"/>
+            <ref name="eag_authorizedForm"/>
+            <ref name="eag_alternativeForm"/>
+         </zeroOrMore>
+         <optional>
+            <attribute name="localType">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>authorized</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>alternative</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>preferred</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>abbreviation</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>other</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_part">
+      <element name="part">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Part of a name) part is used to distinguish components of the name of an entity.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <optional>
+            <attribute name="localType">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>corpname</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>famname</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>persname</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_authorizedForm">
+      <element name="authorizedForm">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Rule or agency qualifying a name as authorised form) Specifies rules by which the name contained in nameEntry can be qualified as authorised form.</a:documentation>
+         <data type="NMTOKEN"/>
+      </element>
+   </define>
+   <define name="eag_alternativeForm">
+      <element name="alternativeForm">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Rule or agency qualifying a name as alternative form) Specifies rules by which the name contained in nameEntry can be qualified as alternative or variant form.</a:documentation>
+         <data type="NMTOKEN"/>
+      </element>
+   </define>
+   <define name="eag_placeEntry">
+      <element name="placeEntry">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Name of a place) Name of a place or territorial jurisdiction.</a:documentation>
+         <text/>
+         <ref name="eag_att.countryCode.attributes"/>
+         <ref name="eag_att.geocoordinates.attributes"/>
+         <ref name="eag_att.localType.attributes"/>
+         <ref name="eag_att.scriptCode.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <ref name="eag_att.transliteration.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.vocabularySource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_timetable">
+      <element name="timetable">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Timetable for opening times and dates of closure) Opening times and dates of closure of the repository.</a:documentation>
+         <oneOrMore>
+            <ref name="eag_opening"/>
+         </oneOrMore>
+         <zeroOrMore>
+            <ref name="eag_closing"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="eag_opening">
+      <element name="opening">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Opening times) Opening times of the repository.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_closing">
+      <element name="closing">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dates of closure) Dates of closure of the repository.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_access">
+      <element name="access">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Conditions for access and use) Conditions, requirements and procedures for access and use of the archival holdings.</a:documentation>
+         <zeroOrMore>
+            <ref name="eag_restaccess"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_termsOfUse"/>
+         </zeroOrMore>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_restaccess">
+      <element name="restaccess">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Access restrictions) Information on access restrictions relating to the archival holdings.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_termsOfUse">
+      <element name="termsOfUse">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Terms of use) Can incorporate information (and links) to terms of use, archival law or fee structure etc.</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.href.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_accessibility">
+      <element name="accessibility">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Accessibility) Accessibility (details for users with disabilities).</a:documentation>
+         <text/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.question.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_services">
+      <element name="services">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Services) Services that are available to users at the repository.</a:documentation>
+         <optional>
+            <ref name="eag_searchroom"/>
+         </optional>
+         <optional>
+            <ref name="eag_library"/>
+         </optional>
+         <optional>
+            <ref name="eag_internetAccess"/>
+         </optional>
+         <optional>
+            <ref name="eag_techservices"/>
+         </optional>
+         <optional>
+            <ref name="eag_recreationalServices"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_searchroom">
+      <element name="searchroom">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Searchroom) Description of the searchroom and facilities available.</a:documentation>
+         <optional>
+            <ref name="eag_contact"/>
+         </optional>
+         <optional>
+            <ref name="eag_workPlaces"/>
+         </optional>
+         <optional>
+            <ref name="eag_computerPlaces"/>
+         </optional>
+         <optional>
+            <ref name="eag_microfilmPlaces"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_webpage"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_photographAllowance"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_readersTicket"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_advancedOrders"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_researchServices"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="eag_contact">
+      <element name="contact">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Contact) Contact details for a specific service department of the repository.</a:documentation>
+         <zeroOrMore>
+            <ref name="eag_telephone"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_email"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_nameEntry"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="eag_workPlaces">
+      <element name="workPlaces">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Work places) Number of work places (seats) in the searchroom.</a:documentation>
+         <ref name="eag_num"/>
+      </element>
+   </define>
+   <define name="eag_computerPlaces">
+      <element name="computerPlaces">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Computer places) Number of computer devices available in the searchroom.</a:documentation>
+         <ref name="eag_num"/>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_microfilmPlaces">
+      <element name="microfilmPlaces">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Microfilm places) Number of microfilm readers available in the searchroom.</a:documentation>
+         <ref name="eag_num"/>
+      </element>
+   </define>
+   <define name="eag_photographAllowance">
+      <element name="photographAllowance">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Photograph allowance) Statement whether it is allowed to take photographs of records in the searchroom.</a:documentation>
+         <choice>
+            <value>depending on the material</value>
+            <value>no</value>
+            <value>yes</value>
+            <value>yes (without flash)</value>
+         </choice>
+      </element>
+   </define>
+   <define name="eag_readersTicket">
+      <element name="readersTicket">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Reader's ticket) Statement whether and what type of a reader's ticket would be required, including an option to link to a download or similar.</a:documentation>
+         <text/>
+         <ref name="eag_att.href.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_advancedOrders">
+      <element name="advancedOrders">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Advanced orders) Statement whether it is possible to order records in advance, including an option to link to an online form or similar.</a:documentation>
+         <text/>
+         <ref name="eag_att.href.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_researchServices">
+      <element name="researchServices">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Research services) Includes information on any additional services provided in/by the reading room.</a:documentation>
+         <ref name="eag_descriptiveNote"/>
+      </element>
+   </define>
+   <define name="eag_library">
+      <element name="library">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Library) Information about the availability of a library for consultation at the repository.</a:documentation>
+         <optional>
+            <ref name="eag_contact"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_webpage"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_monographicpub"/>
+            <ref name="eag_serialpub"/>
+         </optional>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_monographicpub">
+      <element name="monographicpub">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Monographic publication) Information about the number of monographic publications available in the library.</a:documentation>
+         <ref name="eag_num"/>
+      </element>
+   </define>
+   <define name="eag_serialpub">
+      <element name="serialpub">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serial publication) Information about the number of serial publications available in the library.</a:documentation>
+         <ref name="eag_num"/>
+      </element>
+   </define>
+   <define name="eag_internetAccess">
+      <element name="internetAccess">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Internet access) Information about the availability of Internet access at the repository, including the option to provide details about the terms for Internet access or possibly existing fees.</a:documentation>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_techservices">
+      <element name="techservices">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Technical services) Information about the availability of technical services at the repository.</a:documentation>
+         <optional>
+            <ref name="eag_restorationlab"/>
+            <ref name="eag_reproductionser"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_restorationlab">
+      <element name="restorationlab">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Restoration lab) Information about the availability of a restoration lab at the repository.</a:documentation>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+         <optional>
+            <ref name="eag_contact"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_webpage"/>
+         </zeroOrMore>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_reproductionser">
+      <element name="reproductionser">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Reproduction services) Information about the possibility to get reproductions of records at the repository and in what format.</a:documentation>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+            <ref name="eag_contact"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_webpage"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_microformser"/>
+            <ref name="eag_photographser"/>
+            <ref name="eag_digitalser"/>
+            <ref name="eag_photocopyser"/>
+         </optional>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_microformser">
+      <element name="microformser">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Microform services) Information about the availability of microform reproductions at the repository.</a:documentation>
+         <empty/>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_photographser">
+      <element name="photographser">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Photograph services) Information about the possibility to get photographic reproductions of the material at the repository.</a:documentation>
+         <empty/>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_digitalser">
+      <element name="digitalser">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Digital services) Information about the possibility to get digital reproductions of the material at the repository.</a:documentation>
+         <empty/>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_photocopyser">
+      <element name="photocopyser">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Photocopy services) Information about the possibility to get photocopies of the material at the repository.</a:documentation>
+         <empty/>
+         <ref name="eag_att.question.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_recreationalServices">
+      <element name="recreationalServices">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Recreational services) Information on additional services available for the public such as a cafeteria or restaurant, exhibitions, tours, etc.</a:documentation>
+         <optional>
+            <ref name="eag_refreshment"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_exhibition"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_toursSessions"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_otherServices"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="eag_refreshment">
+      <element name="refreshment">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Refreshment) Statement on existence of a restaurant, cafeteria or similar refreshment options with possibility to provide addtional information.</a:documentation>
+         <ref name="eag_descriptiveNote"/>
+      </element>
+   </define>
+   <define name="eag_exhibition">
+      <element name="exhibition">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Exhibition) Statement on current, previous or upcoming exhibitions (onsite or online) with possibility to provide additional information.</a:documentation>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+         <optional>
+            <ref name="eag_webpage"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_toursSessions">
+      <element name="toursSessions">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Tours and sessions) Statement on availability of tours (through the archive, through the library, etc) and/or sessions offered explaining how to use an archive (or the archives' research facilities) and possibility to provide additional information.</a:documentation>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+         <optional>
+            <ref name="eag_webpage"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_otherServices">
+      <element name="otherServices">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Other services) Any additional services provided at the repository; educational services, family activities, day of public archives, heritage day, etc.</a:documentation>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+         <optional>
+            <ref name="eag_webpage"/>
+         </optional>
+      </element>
+   </define>
+   <define name="eag_relations">
+      <element name="relations">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Relations) A wrapper element for grouping one or more specific relations.</a:documentation>
+         <zeroOrMore>
+            <ref name="eag_resourceRelation"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="eag_eagRelation"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="eag_resourceRelation">
+      <element name="resourceRelation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Resource relation) A digital or analogue resource related to the described institution. Can be descriptions of archival material or records creators, online exhibitions, thematic or other portals, etc.</a:documentation>
+         <zeroOrMore>
+            <ref name="eag_relationEntry"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+            <ref name="eag_eagRelation"/>
+            <ref name="eag_objectBinWrap"/>
+            <ref name="eag_objectXMLWrap"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="eag_m.dates_alternation"/>
+            <ref name="eag_placeEntry"/>
+         </zeroOrMore>
+         <ref name="eag_att.lastDateTimeVerified.attributes"/>
+         <ref name="eag_att.href.attributes"/>
+         <attribute name="resourceRelationType">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>creatorOf</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>subjectOf</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>other</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_relationEntry">
+      <element name="relationEntry">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Relation entry) A descriptive element of the relation.</a:documentation>
+         <text/>
+         <ref name="eag_att.localType.attributes"/>
+         <ref name="eag_att.lang.attributes"/>
+         <ref name="eag_att.scriptCode.attributes"/>
+         <ref name="eag_att.transliteration.attributes"/>
+         <ref name="eag_att.EAGsource.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_eagRelation">
+      <element name="eagRelation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Encoding archival guide relation) An EAG description of an institution related to the described institution.</a:documentation>
+         <zeroOrMore>
+            <ref name="eag_relationEntry"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="eag_descriptiveNote"/>
+         </optional>
+         <optional>
+            <ref name="eag_m.dates_alternation"/>
+         </optional>
+         <ref name="eag_att.lastDateTimeVerified.attributes"/>
+         <ref name="eag_att.href.attributes"/>
+         <optional>
+            <attribute name="eagRelationType">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>hierarchical-child</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>hierarchical-parent</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>temporal-earlier</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>temporal-later</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>associative</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="eag_m.dates_alternation">
+      <choice>
+         <ref name="eag_date"/>
+         <ref name="eag_dateRange"/>
+         <ref name="eag_dateSet"/>
+      </choice>
+   </define>
+   <define name="eag_att.EAGsource.attributes">
+      <ref name="eag_att.EAGsource.attribute.source"/>
+   </define>
+   <define name="eag_att.EAGsource.attribute.source">
+      <optional>
+         <attribute name="source">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.localType.attributes">
+      <ref name="eag_att.localType.attribute.localType"/>
+   </define>
+   <define name="eag_att.localType.attribute.localType">
+      <optional>
+         <attribute name="localType">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.href.attributes">
+      <ref name="eag_att.href.attribute.href"/>
+   </define>
+   <define name="eag_att.href.attribute.href">
+      <optional>
+         <attribute name="href">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.geocoordinates.attributes">
+      <ref name="eag_att.geocoordinates.attribute.latitude"/>
+      <ref name="eag_att.geocoordinates.attribute.longitude"/>
+   </define>
+   <define name="eag_att.geocoordinates.attribute.latitude">
+      <optional>
+         <attribute name="latitude">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="NMTOKEN"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.geocoordinates.attribute.longitude">
+      <optional>
+         <attribute name="longitude">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="NMTOKEN"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.vocabularySource.attributes">
+      <ref name="eag_att.vocabularySource.attribute.vocabularySource"/>
+   </define>
+   <define name="eag_att.vocabularySource.attribute.vocabularySource">
+      <optional>
+         <attribute name="vocabularySource">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.question.attributes">
+      <ref name="eag_att.question.attribute.question"/>
+   </define>
+   <define name="eag_att.question.attribute.question">
+      <attribute name="question">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <choice>
+            <value>yes</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>no</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         </choice>
+      </attribute>
+   </define>
+   <define name="eag_att.lang.attributes">
+      <ref name="eag_att.lang.attribute.xmllang"/>
+   </define>
+   <define name="eag_att.lang.attribute.xmllang">
+      <optional>
+         <attribute name="xml:lang">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The xml:lang may occur on any element intended to contain natural language content, though not with elements using a list of limited terms. xml:lang should be used when the language of an element differs from the language declared in the languageCode attribute of the element language in the control section. The values for xml:lang are taken from ISO 639-2b Codes for the Representation of Names of Languages.</a:documentation>
+            <ref name="eag_macro.language"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.languageCode.attributes">
+      <ref name="eag_att.languageCode.attribute.languageCode"/>
+   </define>
+   <define name="eag_att.languageCode.attribute.languageCode">
+      <attribute name="languageCode">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <ref name="eag_macro.language"/>
+      </attribute>
+   </define>
+   <define name="eag_att.scriptCode.attributes">
+      <ref name="eag_att.scriptCode.attribute.scriptCode"/>
+   </define>
+   <define name="eag_att.scriptCode.attribute.scriptCode">
+      <optional>
+         <attribute name="scriptCode">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="token">
+               <param name="pattern">(Afak|Aghb|Ahom|Arab|Armi|Armn|Avst|Bali|Bamu|Bass|Batk|Beng|Blis|Bopo|Brah|Brai|Bugi|Buhd|Cakm|Cans|Cari|Cham|Cher|Cirt|Copt|Cprt|Cyrl|Cyrs|Deva|Dsrt|Dupl|Egyd|Egyh|Egyp|Elba|Ethi|Geok|Geor|Glag|Goth|Gran|Grek|Gujr|Guru|Hang|Hani|Hano|Hans|Hant|Hatr|Hebr|Hira|Hluw|Hmng|Hrkt|Hung|Inds|Ital|Java|Jpan|Jurc|Kali|Kana|Khar|Khmr|Khoj|Knda|Kore|Kpel|Kthi|Lana|Laoo|Latf|Latg|Latn|Lepc|Limb|Lina|Linb|Lisu|Loma|Lyci|Lydi|Mahj|Mand|Mani|Maya|Mend|Merc|Mero|Mlym|Modi|Mong|Moon|Mroo|Mtei|Mult|Mymr|Narb|Nbat|Nkgb|Nkoo|Nshu|Ogam|Olck|Orkh|Orya|Osma|Palm|Pauc|Perm|Phag|Phli|Phlp|Phlv|Phnx|Plrd|Prti|Qaaa|Qabx|Rjng|Roro|Runr|Samr|Sara|Sarb|Saur|Sgnw|Shaw|Shrd|Sidd|Sind|Sinh|Sora|Sund|Sylo|Syrc|Syre|Syrj|Syrn|Tagb|Takr|Tale|Talu|Taml|Tang|Tavt|Telu|Teng|Tfng|Tglg|Thaa|Thai|Tibt|Tirh|Ugar|Vaii|Visp|Wara|Wole|Xpeo|Xsux|Yiii|Zinh|Zmth|Zsym|Zxxx|Zyyy|Zzzz)</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.transliteration.attributes">
+      <ref name="eag_att.transliteration.attribute.transliteration"/>
+   </define>
+   <define name="eag_att.transliteration.attribute.transliteration">
+      <optional>
+         <attribute name="transliteration">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="NMTOKEN"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.countrycode.attributes">
+      <ref name="eag_att.countrycode.attribute.countrycode"/>
+   </define>
+   <define name="eag_att.countrycode.attribute.countrycode">
+      <attribute name="countrycode">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <data type="token">
+            <param name="pattern">(AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW|RS|ME|EU)</param>
+         </data>
+      </attribute>
+   </define>
+   <define name="eag_att.countryCode.attributes">
+      <ref name="eag_att.countryCode.attribute.countryCode"/>
+   </define>
+   <define name="eag_att.countryCode.attribute.countryCode">
+      <optional>
+         <attribute name="countryCode">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="token">
+               <param name="pattern">(AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW|RS|ME|EU)</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.standardDateTime.attributes">
+      <ref name="eag_att.standardDateTime.attribute.standardDateTime"/>
+   </define>
+   <define name="eag_att.standardDateTime.attribute.standardDateTime">
+      <optional>
+         <attribute name="standardDateTime">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="eag_macro.standardDateTime"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.lastDateTimeVerified.attributes">
+      <ref name="eag_att.lastDateTimeVerified.attribute.lastDateTimeVerified"/>
+   </define>
+   <define name="eag_att.lastDateTimeVerified.attribute.lastDateTimeVerified">
+      <optional>
+         <attribute name="lastDateTimeVerified">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="eag_macro.standardDateTime"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.date.attributes">
+      <ref name="eag_att.date.attribute.standardDate"/>
+      <ref name="eag_att.date.attribute.notBefore"/>
+      <ref name="eag_att.date.attribute.notAfter"/>
+   </define>
+   <define name="eag_att.date.attribute.standardDate">
+      <optional>
+         <attribute name="standardDate">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Standard form of the date that can be used in computer processing, such as searching.</a:documentation>
+            <ref name="eag_macro.standardDate"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.date.attribute.notBefore">
+      <optional>
+         <attribute name="notBefore">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The earliest date possible for uncertain dates.</a:documentation>
+            <ref name="eag_macro.standardDate"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="eag_att.date.attribute.notAfter">
+      <optional>
+         <attribute name="notAfter">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The latest date possible for uncertain dates.</a:documentation>
+            <ref name="eag_macro.standardDate"/>
+         </attribute>
+      </optional>
+   </define>
+   <start>
+      <choice>
+         <ref name="eag_eag"/>
+      </choice>
+   </start>
+</grammar>
