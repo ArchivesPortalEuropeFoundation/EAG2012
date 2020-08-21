@@ -34,27 +34,49 @@
                 as a sibling element to "did" for "archdesc" and "c". It would make sense, if EAG followed that approach and made "relations" a sub-element
                 of "archivalGuide". -->
             </xs:sequence>
-            <xs:attribute name="audience" use="required">
-            <!-- EAC-CPF intends to follow EAD3 with regard to the use of "audience", i.e. having it available as optional with all elements. 
-                 If EAG were to fall in line with that, would we consider making "audience" optional here as well for EAG 3.0 in general?
-                 We could still make it required for apeEAG if necessary. -->    
+            <!-- <xs:attribute name="audience" use="required"> 
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
                         <xs:enumeration value="external"/>
                         <xs:enumeration value="internal"/>
                     </xs:restriction>
                 </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute ref="xml:base"/>
-            <xs:attribute ref="xml:lang"/>
-            <!-- The conversation around keeping or removing the XML namespace is still not finalised yet in the context of the EAC-CPF revision, so
-                 leaving "xml:lang" here for now. Otherwise, this would (likely) become "languageOfElement". -->
-            <xs:attribute ref="xml:id"/>
+            </xs:attribute> -->
+            <!-- EAC-CPF intends to follow EAD3 with regard to the use of "audience", i.e. having it available as optional with all elements. 
+                 If EAG were to fall in line with that, would we consider making "audience" optional here as well for EAG 3.0 in general?
+                 We could still make it required for apeEAG if necessary. -->    
             <!-- EAC-CPF and EAD3 both include an option to identify each element within an EAS instance via the attribute "xml:id" respectively "id". 
-                 Hence added this to all EAG elements as well. -->
+                 Hence added this to all EAG elements as well. The intent for EAC-CPF is to have "audience" and "(xml:)id" as basic attributes with all 
+                 elements. -->
+            <xs:attribute ref="xml:base"/>
+            <!-- <xs:attribute ref="xml:lang"/> -->
+            <!-- EAC-CPF will follow EAD3 and add language attribution to all non-empty elements. -->
+            <!-- The conversation around keeping or removing the XML namespace is still not finalised yet in the context of the EAC-CPF revision, so
+                 leaving this with "xml:lang" (and "script"). Otherwise, this would (likely) become "languageOfElement" (and "scriptOfElement"). -->
+           <xs:attributeGroup ref="common"/>
         </xs:complexType>
     </xs:element>
 
+    <!-- Added -->
+    <xs:attributeGroup name="common.empty">
+       <xs:attribute ref="xml:id"/>
+       <xs:attribute name="audience">
+          <xs:simpleType>
+             <xs:restriction base="xs:token">
+                <xs:enumeration value="external"/>
+                <xs:enumeration value="internal"/>
+             </xs:restriction>
+          </xs:simpleType>
+       </xs:attribute>
+    </xs:attributeGroup>
+
+    <!-- Added -->
+    <xs:attributeGroup name="common">
+       <xs:attributeGroup ref="common.empty"/>
+       <xs:attribute ref="xml:lang"/>
+       <xs:attribute name="script" type="xs:NMTOKEN"/>
+    </xs:attributeGroup>
+    
     <!-- <xs:attributeGroup name="href">
         <xs:attribute name="href" type="xs:anyURI"/>
     </xs:attributeGroup>
@@ -63,14 +85,34 @@
         <xs:attribute name="linkTitle" type="xs:token"/>
     </xs:attributeGroup> -->
     
+    <!-- The following group replaces the above two attributes. --> 
+    <!-- EAC-CPF and EAD3 both use a group of linking attributes together with "href". As of today (21 August 2020), it is likely that this group will
+         consist of the three attributes given here, but will not include "actuate", "arcRole", and "show" anymore. -->
     <xs:attributeGroup name="link">
         <xs:attribute name="href" type="xs:anyURI"/>
         <xs:attribute name="linkRole" type="xs:anyURI"/>
         <xs:attribute name="linkTitle" type="xs:token"/>
     </xs:attributeGroup>
     
-    <!-- EAC-CPF and EAD3 both use a group of linking attributes together with "href". As of today (21 August 2020), it is likely that this group will
-         consist of the three attributes given here, but will not include "actuate", "arcRole", and "show" anymore. -->
+    <!-- EAC-CPF revision suggests the addition of three optional attributes to those elements the content of which can be represented as a URI,
+         respectively is likely taken from a vocabulary, ontology, thesaurus etc. (schema definition for new EAC-CPF not yet available) --> 
+    <xs:attributeGroup name="vocabulary">
+        <xs:attribute name="vocabularySource" type="xs:token"/>
+        <xs:attribute name="vocabularySourceURI" type="xs:anyURI"/>
+        <xs:attribute name="valueURI" type="xs:anyURI"/>
+    </xs:attributeGroup>
+    
+    <!-- EAC-CPF revision suggests the addition of three optional attributes to elements in the description part that will allow to point to 
+         conventions and rules (in "conventionDeclaration"), to sources (in "source"), and to agents and dates of maintenance (in "maintenanceEvent"). 
+         These will take the form of IDREF-s and will be linked via the "(xml:)id" of the appropriate elements. (schema definition for new EAC-CPF 
+         not yet available)--> 
+    <xs:attributeGroup name="reference">
+        <xs:attribute name="conventionDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="sourceReference" type="xs:IDREF"/>
+        <xs:attribute name="maintenanceEventReference" type="xs:IDREF"/>
+        <!-- potential addition <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> -->
+    </xs:attributeGroup>
+    
 
     <!-- ###############
        CONTROL
@@ -100,7 +142,8 @@
             <xs:element name="maintenanceHistory" type="maintenanceHistory"/>
             <xs:element name="sources" type="sources" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute ref="xml:id"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
         <!-- EAC-CPF intends to add the "encoding" attributes to control that provide references to the usual ISO standards. EAG could hence do this 
              as well, which would remove the automatically created "conventionDeclaration"-s in the context of APE. -->
         <xs:attribute name="languageEncoding">
@@ -150,18 +193,31 @@
        </xs:attribute>
     </xs:complexType>
 
-    <xs:simpleType name="recordIdType">
+    <!-- <xs:simpleType name="recordIdType">
         <xs:restriction base="xs:token">
             <xs:pattern
-                value="((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW|RS|ME|EU|EUR|IM|XX)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})"
-            />
+                value="((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|
+                CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|
+                HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|
+                MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|
+                CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|
+                YE|ZM|ZW|RS|ME|EU|EUR|IM|XX)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})"/>
         </xs:restriction>
-    </xs:simpleType>
-
+    </xs:simpleType> -->
+    
+    <!-- EAC-CPF will change the element's content definition from NMTOKEN to the more open [text]. Maybe this could be considered, too, for EAG 3.0, though 
+         we might still want to keep the stricter approach for a future apeEAG? -->
     <xs:complexType name="recordId">
         <xs:simpleContent>
-            <xs:extension base="recordIdType">
-                <xs:attributeGroup ref="sourceAttribute"/>
+            <!-- <xs:extension base="recordIdType"> -->
+            <xs:extension base="xs:string">    
+                <!-- Added -->
+                <xs:attributeGroup ref="common"/>
+                <xs:attributeGroup ref="vocabulary"/>
+                <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+                     decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+                     while only marginally pointing to vocabularies etc. -->
+                <xs:attributeGroup ref="reference"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -169,24 +225,49 @@
     <xs:complexType name="otherRecordId">
         <xs:simpleContent>
             <xs:extension base="xs:string">
+                <!-- Added -->
+                <xs:attributeGroup ref="common"/>
                 <xs:attribute name="localType" type="xs:anyURI"/>
-                <xs:attributeGroup ref="sourceAttribute"/>
+                <xs:attributeGroup ref="vocabulary"/>
+                <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+                     decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+                     while only marginally pointing to vocabularies etc. -->
+                <xs:attributeGroup ref="reference"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:attributeGroup name="localType">
+    <!-- It seems superfluous to define an attribute group with only on attribute, especially if that attribute is referenced independently as well. -->
+    <!-- <xs:attributeGroup name="localType">
         <xs:attribute name="localType" type="xs:anyURI"/>
-    </xs:attributeGroup>
+    </xs:attributeGroup> -->
     
+    <!-- Added -->
     <xs:complexType name="representation" mixed="true">
-       <xs:attribute ref="xml:id"/>
+       <xs:attributeGroup ref="common"/>
        <xs:attributeGroup ref="link"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
+    <!-- EAC-CPF intends to follow EAD3 in using the attribute "value" for the variations of "maintenanceStatus", simultaneously removing the option to 
+         have content in the element or to have them repeatable. The same would apply to "publicationStatus", "agentType" and "eventType". --> 
     <xs:complexType name="maintenanceStatus">
-        <xs:simpleContent>
+        <xs:attribute name="value" use="required">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="revised"/>
+                 <xs:enumeration value="deleted"/>
+                 <xs:enumeration value="new"/>
+                 <xs:enumeration value="deletedSplit"/>
+                 <xs:enumeration value="deletedMerged"/>
+                 <xs:enumeration value="deletedReplaced"/>
+                 <xs:enumeration value="cancelled"/>
+                 <xs:enumeration value="derived"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>
+        <xs:attributeGroup ref="common.empty"/>
+        <!-- <xs:simpleContent>
             <xs:restriction base="xs:anyType">
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
@@ -201,11 +282,20 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:restriction>
-        </xs:simpleContent>
+        </xs:simpleContent> -->
     </xs:complexType>
 
     <xs:complexType name="publicationStatus">
-        <xs:simpleContent>
+        <xs:attribute name="value" use="required">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="inProcess"/>
+                 <xs:enumeration value="approved"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>
+        <xs:attributeGroup ref="common.empty"/>
+        <!-- <xs:simpleContent>
             <xs:restriction base="xs:anyType">
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
@@ -214,17 +304,25 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:restriction>
-        </xs:simpleContent>
+        </xs:simpleContent> -->
     </xs:complexType>
 
     <xs:complexType name="maintenanceAgency">
         <xs:sequence>
-            <xs:element name="agencyCode" type="agencyCode"/>
-            <xs:element name="agencyName" type="agencyName"/>
+            <!-- EAC-CPF and EAD3 both have "agencyCode" as optional. Could be changed in EAG 3.0, too, but kept as mandatory in a future apeEAG if necessary? --> 
+            <xs:element name="agencyCode" type="agencyCode" minOccurs="0"/>
+            <!-- EAC-CPF and EAD3 both have "agencyName" as repeatable. Could be changed in EAG 3.0, too, but kept as non-repeatable in a future apeEAG if necessary? --> 
+            <xs:element name="agencyName" type="agencyName" maxOccurs="unbounded"/>
             <xs:element name="otherAgencyCode" type="otherAgencyCode" minOccurs="0"
                 maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+        <!-- Added -->
+        <xs:attribute name="countryCode" type="xs:NMTOKEN"/>
+        <!-- Note: with "placeEntry" there is a more detailed - i.e. restrictive - definition of "countryCode", which probably is due to EAC-CPF not using Schematron
+             in the current version. This will be changed in the new version, so maybe we could keep "countryCode" with the more general schema definition for EAG as well? -->
     </xs:complexType>
 
     <!-- <xs:complexType name="languageDeclarations">
@@ -234,15 +332,37 @@
         </xs:sequence>
     </xs:complexType> -->
 
+    <!-- EAC-CPF will move the attributes for the language and the script codes directly into "languageDeclaration", thereby removing the sub-elements
+         "language" and "script". In EAG, this would lead to completely removing these two elements as they are not used anywhere else. -->
     <xs:complexType name="languageDeclaration">
         <xs:sequence>
-            <xs:element name="language" type="language"/>
-            <xs:element name="script" type="script"/>
+            <!-- <xs:element name="language" type="language"/>
+            <xs:element name="script" type="script"/> -->
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+        <!-- Added -->
+        <xs:attribute name="languageCode" type="xs:NMTOKEN" use="required"/>
+            <!-- Changed data type in order to be more open according to the possible values of "languageEncoding".
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[a-z]{3}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute> -->
+        <!-- Added -->
+        <xs:attribute name="scriptCode" type="xs:NMTOKEN"/>
+            <!-- Changed data type in order to be more open according to the possible values of "languageEncoding".
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[A-Z][a-z]{3}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute> -->
     </xs:complexType>
 
-    <xs:complexType name="language" mixed="true">
+    <!-- <xs:complexType name="language" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attribute name="languageCode" use="required">
             <xs:simpleType>
@@ -252,15 +372,15 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attributeGroup ref="sourceAttribute"/>
-    </xs:complexType>
+    </xs:complexType> -->
 
-    <xs:complexType name="script" mixed="true">
+    <!-- <xs:complexType name="script" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="a.scriptCode"/>
         <xs:attributeGroup ref="sourceAttribute"/>
-    </xs:complexType>
+    </xs:complexType> -->
 
-    <xs:attributeGroup name="a.scriptCode">
+    <!-- <xs:attributeGroup name="a.scriptCode">
         <xs:attribute name="scriptCode">
             <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -268,7 +388,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-    </xs:attributeGroup>
+    </xs:attributeGroup> -->
 
     <xs:complexType name="conventionDeclaration">
         <xs:sequence>
@@ -279,7 +399,11 @@
     </xs:complexType>
 
     <xs:complexType name="abbreviation" mixed="true">
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only marginally pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="citation" mixed="true">
@@ -287,7 +411,11 @@
         <xs:attributeGroup ref="link"/>
         <!-- Changed from using "href" separately to using the combined group for links. -->
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="rightsDeclaration">
@@ -297,7 +425,8 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="localType"/>
+        <!-- <xs:attributeGroup ref="localType"/> -->
+        <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
     <xs:complexType name="localTypeDeclaration">
@@ -316,7 +445,8 @@
                 <xs:element name="dateRange" type="dateRange"/>
             </xs:choice>
         </xs:sequence>
-        <xs:attributeGroup ref="localType"/>
+        <!-- <xs:attributeGroup ref="localType"/> -->
+        <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
     <xs:complexType name="term">
@@ -328,24 +458,31 @@
                         <xs:enumeration value="extended"/>
                     </xs:restriction>
                 </xs:simpleType>
-                <xs:attributeGroup ref="m.entryLanguageAttributes"/>
+                <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
+                <xs:attributeGroup ref="common"/>
                 <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
-                <xs:attribute name="vocabularySource" type="xs:anyURI"/>
+                <!-- <xs:attribute name="vocabularySource" type="xs:anyURI"/> -->
+                <xs:attributeGroup ref="vocabulary"/>
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:attributeGroup name="m.entryLanguageAttributes">
+    <!-- "(xml:)lang" and "script" are part of the attribute group "common" already. "transliteration" will be removed from EAC-CPF (and EAD) and it will  be
+         recommended to provide the rules of transliteration that have been applied in the EAS instance via "conventionDeclaration" if necessary. Then one could
+         point to that declaration via "conventionDeclarationReference". -->
+    <!-- <xs:attributeGroup name="m.entryLanguageAttributes">
         <xs:attributeGroup ref="a.scriptCode"/>
         <xs:attribute ref="xml:lang"/>
         <xs:attribute name="transliteration" type="xs:NMTOKEN"/>
-    </xs:attributeGroup>
+    </xs:attributeGroup> -->
 
     <xs:complexType name="date" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attributeGroup ref="m.dateSingle"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:attributeGroup name="m.dateSingle">
@@ -364,12 +501,16 @@
 
     <xs:complexType name="fromDate" mixed="true">
         <xs:attributeGroup ref="m.dateSingle"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="toDate" mixed="true">
         <xs:attributeGroup ref="m.dateSingle"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:simpleType name="m.data.standardDate">
@@ -428,7 +569,11 @@
 
     <xs:complexType name="eventDateTime" mixed="true">
         <xs:attribute name="standardDateTime" type="m.data.standardDateTime"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:simpleType name="m.data.standardDateTime">
@@ -471,7 +616,11 @@
 
     <xs:complexType name="agent" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="sources">
@@ -495,8 +644,14 @@
     </xs:complexType>
 
     <xs:complexType name="sourceEntry" mixed="true">
-        <xs:attributeGroup ref="m.entryLanguageAttributes"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. 
+             Should be reviewed as it doesn't seem to make sense to point from a "sourceEntry" to a "source". -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="objectXMLWrap">
@@ -516,17 +671,30 @@
     </xs:group>
 
     <xs:complexType name="agencyCode" mixed="true">
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="agencyName" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="otherAgencyCode" mixed="true">
-        <xs:attributeGroup ref="localType"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <!-- <xs:attributeGroup ref="localType"/> -->
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="descriptiveNote">
@@ -537,7 +705,9 @@
 
     <xs:complexType name="p" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
 
@@ -570,21 +740,29 @@
     <xs:complexType name="repositorid">
         <xs:attribute name="countrycode" use="required" type="xs:NMTOKEN"/>
         <xs:attribute name="repositorycode" type="xs:NMTOKEN"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="otherRepositorId" mixed="true">
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="autform" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="parform" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="nonpreform" mixed="true">
@@ -592,7 +770,9 @@
             <xs:element name="useDates" type="useDates" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="useDates">
@@ -693,12 +873,15 @@
         <!-- Changed from using "href" and "linkTitle" separately to using the combined group for links. This means that "href" would not be mandatory anymore. 
              However, seeing that one can't use any content with "image", one would assume that inlcuding a link within "href" is the next logical thing to do. 
              -->
-        <xs:attributeGroup ref="localType"/>
+        <!-- <xs:attributeGroup ref="localType"/> -->
+        <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
     
     <xs:complexType name="repositoryName" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="repositoryRole">
@@ -756,54 +939,74 @@
 
     <xs:complexType name="country" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="firstdem" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="secondem" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="municipalityPostalcode" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="localentity" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="street" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="telephone" mixed="true">
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="fax" mixed="true">
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="email" mixed="true">
         <xs:attributeGroup ref="link"/>
         <!-- Changed from using "href" separately to using the combined group for links. -->
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="webpage" mixed="true">
         <xs:attributeGroup ref="link"/>
         <!-- Changed from using "href" separately to using the combined group for links. -->
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="directions" mixed="true">
@@ -811,7 +1014,9 @@
             <xs:element name="citation" type="citation" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="repositorhist">
@@ -836,7 +1041,9 @@
 
     <xs:complexType name="rule" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="buildinginfo">
@@ -877,7 +1084,9 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="adminhierarchy">
@@ -888,7 +1097,9 @@
 
     <xs:complexType name="adminunit" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="holdings">
@@ -950,12 +1161,16 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="placeEntry" mixed="true">
-        <xs:attributeGroup ref="m.entryLanguageAttributes"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
+        <xs:attributeGroup ref="common"/>
+        <!-- <xs:attributeGroup ref="sourceAttribute"/> -->
+        <xs:attributeGroup ref="reference"/>
         <xs:attribute name="accuracy" type="xs:NMTOKEN"/>
         <xs:attribute name="altitude" type="xs:NMTOKEN"/>
         <xs:attribute name="countryCode">
@@ -977,7 +1192,8 @@
         <xs:attribute name="latitude" type="xs:NMTOKEN"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="longitude" type="xs:NMTOKEN"/>
-        <xs:attribute name="vocabularySource" type="xs:anyURI"/>
+        <!-- <xs:attribute name="vocabularySource" type="xs:anyURI"/> -->
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
 
     <xs:complexType name="timetable">
@@ -990,13 +1206,17 @@
     <xs:complexType name="opening" mixed="true">
         <xs:attributeGroup ref="link"/>
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="closing" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attribute name="standardDate" type="m.data.standardDate"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="access">
@@ -1021,19 +1241,25 @@
     <xs:complexType name="restaccess" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="link"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="termsOfUse" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="link"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="accessibility" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="services">
@@ -1108,13 +1334,17 @@
     <xs:complexType name="readersTicket" mixed="true">
         <xs:attributeGroup ref="link"/>
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="advancedOrders" mixed="true">
         <xs:attributeGroup ref="link"/>
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="researchServices">
@@ -1273,8 +1503,11 @@
 
     <xs:complexType name="relationEntry" mixed="true">
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attributeGroup ref="m.entryLanguageAttributes"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+        <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "reference" (to link to a "source"). -->
+        <xs:attributeGroup ref="reference"/>
     </xs:complexType>
 
     <xs:complexType name="eagRelation">
@@ -1299,8 +1532,8 @@
         <xs:attributeGroup ref="link"/>
     </xs:complexType>
 
-    <xs:attributeGroup name="sourceAttribute">
+    <!-- <xs:attributeGroup name="sourceAttribute">
         <xs:attribute name="source" type="xs:anyURI"/>
-    </xs:attributeGroup>
+    </xs:attributeGroup> -->
 
 </xs:schema>
