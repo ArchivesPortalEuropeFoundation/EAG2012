@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    EAG 2012 Schema
-    Version: 0.5
-    Date: 20200818
+    Draft EAG 3.0 Schema
+    Version: 0.1
+    Date: 20200821
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 <!--
     Change log:
 
-    20200818
-    05.     - added new element <rightsDeclaration> as optional and repeatable sub-element of <control>; uses the same sub-elements as <conventionDeclaration>, but does not allow <citation> to be repeated
-            - added @href to <restaccess>
-            - added new element <image> as optional and repeatable sub-element of <repositories> and of <repository>; uses attributes @href (required), @linkTitle and @localType
-
-    20190619
-    0.4     - made <street> optional as sub-element of <location>
-
-    20140625
-    0.3     - added new elements <actingMaintenanceForGroup>, <actingMaintenance>, <placeEntry>
-            - restricted @localType for <nameEntry> to values "authorized", "alternative", "preferred", "abbreviation", "other"
-            - added elements <useDates>, <authorizedForm>, <aternativeForm> to element <nameEntry>
-            - restricted @localType for <part> to values "corpname", "famname", "persname", "surname", "firstname", "birthname", "title", "prefix", "suffix", "alias", "patronymic", "legalform"/>
-            - added elements <objectBinWrap>, <objectXMLWrap>, <placeEntry> to element <resourceRelation>
-            - restricted @localType for <location> to "visitors address" and "postal address"
+    - Reviewed schema with regard to TS-EAS' decision on using camelCase spelling for element and attribute names; changed names where required 
+      (comments included, marked "Review notes")
+    - Reviewed schema with regard to question whether an archival institution is mainly a corporate body that provides specific public services,
+      i.e. with regard to the question whether EAG could be an extension of EAC-CPF
+      (comments included, marked "Review notes")
 -->
-<xs:schema xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag_2012/"
-    targetNamespace="http://www.archivesportaleurope.net/Portal/profiles/eag_2012/"
+<xs:schema xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
+    targetNamespace="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2007/08/xml.xsd"/>
+    <!-- Updated namespace information to reflect the new version -->
 
     <xs:element name="eag">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="control" type="control"/>
-                <xs:element name="archguide" type="archguide"/>
-                <xs:element name="relations" type="relations" minOccurs="0"/>
+                <xs:element name="archivalGuide" type="archivalGuide"/>
+                <!-- Following the camelCase approach, which would enable EAG to be consistent in a new version, the element "archguide" would 
+                be renamed "archGuide". If we do that, we might want to consider renaming it "archivalGuide" in order to also resolve the abbreviated 
+                name. -->
+                <!-- <xs:element name="relations" type="relations" minOccurs="0"/> -->
+                <!-- EAC-CPF and EAD3 both have the "relations" element within their descriptive sections, EAC-CPF as part of "cpfDescription" and EAD3
+                as a sibling element to "did" for "archdesc" and "c". It would make sense, if EAG followed that approach and made "relations" a sub-element
+                of "archivalGuide". -->
             </xs:sequence>
             <xs:attribute name="audience" use="required">
+            <!-- EAC-CPF intends to follow EAD3 with regard to the use of "audience", i.e. having it available as optional with all elements. 
+                 If EAG were to fall in line with that, would we consider making "audience" optional here as well for EAG 3.0 in general?
+                 We could still make it required for apeEAG if necessary. -->    
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
                         <xs:enumeration value="external"/>
@@ -47,16 +47,30 @@
             </xs:attribute>
             <xs:attribute ref="xml:base"/>
             <xs:attribute ref="xml:lang"/>
+            <!-- The conversation around keeping or removing the XML namespace is still not finalised yet in the context of the EAC-CPF revision, so
+                 leaving "xml:lang" here for now. Otherwise, this would (likely) become "languageOfElement". -->
+            <xs:attribute ref="xml:id"/>
+            <!-- EAC-CPF and EAD3 both include an option to identify each element within an EAS instance via the attribute "xml:id" respectively "id". 
+                 Hence added this to all EAG elements as well. -->
         </xs:complexType>
     </xs:element>
 
-    <xs:attributeGroup name="href">
+    <!-- <xs:attributeGroup name="href">
         <xs:attribute name="href" type="xs:anyURI"/>
     </xs:attributeGroup>
     
     <xs:attributeGroup name="linkTitle">
         <xs:attribute name="linkTitle" type="xs:token"/>
+    </xs:attributeGroup> -->
+    
+    <xs:attributeGroup name="link">
+        <xs:attribute name="href" type="xs:anyURI"/>
+        <xs:attribute name="linkRole" type="xs:anyURI"/>
+        <xs:attribute name="linkTitle" type="xs:token"/>
     </xs:attributeGroup>
+    
+    <!-- EAC-CPF and EAD3 both use a group of linking attributes together with "href". As of today (21 August 2020), it is likely that this group will
+         consist of the three attributes given here, but will not include "actuate", "arcRole", and "show" anymore. -->
 
     <!-- ###############
        CONTROL
@@ -67,20 +81,73 @@
             <xs:element name="recordId" type="recordId"/>
             <xs:element name="otherRecordId" type="otherRecordId" minOccurs="0"
                 maxOccurs="unbounded"/>
-            <xs:element name="maintenanceAgency" type="maintenanceAgency"/>
+            <xs:element name="representation" type="representation"/>
+            <!-- EAC-CPF intends to adopt this element from EAD3, hence it would make sense to have it added to EAG, too. -->
             <xs:element name="maintenanceStatus" type="maintenanceStatus"/>
-            <xs:element name="maintenanceHistory" type="maintenanceHistory"/>
-            <xs:element name="languageDeclarations" type="languageDeclarations" minOccurs="0"/>
+            <xs:element name="publicationStatus" type="publicationStatus" minOccurs="0"/>
+            <xs:element name="maintenanceAgency" type="maintenanceAgency"/>
+            <!-- <xs:element name="languageDeclarations" type="languageDeclarations" minOccurs="0"/> -->
+            <xs:element name="languageDeclaration" type="languageDeclaration" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- EAC-CPF and EAD3 both use "languageDeclaration" in the same way as "conventionDeclaration", i.e. without a plural wrapper element
+                 and as repeatable directly within "control" -->
             <xs:element name="conventionDeclaration" type="conventionDeclaration" minOccurs="0"
                 maxOccurs="unbounded"/>
             <xs:element name="rightsDeclaration" type="rightsDeclaration" minOccurs="0"
                 maxOccurs="unbounded"/>
-            <xs:element name="localControl" type="localControl" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="localTypeDeclaration" type="localTypeDeclaration" minOccurs="0"
                 maxOccurs="unbounded"/>
-            <xs:element name="publicationStatus" type="publicationStatus" minOccurs="0"/>
+            <xs:element name="localControl" type="localControl" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="maintenanceHistory" type="maintenanceHistory"/>
             <xs:element name="sources" type="sources" minOccurs="0"/>
         </xs:sequence>
+        <xs:attribute ref="xml:id"/>
+        <!-- EAC-CPF intends to add the "encoding" attributes to control that provide references to the usual ISO standards. EAG could hence do this 
+             as well, which would remove the automatically created "conventionDeclaration"-s in the context of APE. -->
+        <xs:attribute name="languageEncoding">
+        <!-- The attribute in EAD3 is currently called "langencoding", but will be renamed "languageEncoding" in future. -->    
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="iso639-1"/>
+                 <xs:enumeration value="iso639-2b"/>
+                 <xs:enumeration value="iso639-3"/>
+                 <xs:enumeration value="iana"/>
+                 <!-- TS-EAS has decided that the IANA registry would be added as a fourth option. -->
+                 <xs:enumeration value="otherLanguageEncoding"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="scriptEncoding">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="iso15924"/>
+                 <xs:enumeration value="otherScriptEncoding"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="dateEncoding">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="iso8601"/>
+                 <xs:enumeration value="otherDateEncoding"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="countryEncoding">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="iso3166-1"/>
+                 <xs:enumeration value="otherCountryEncoding"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="repositoryEncoding">
+           <xs:simpleType>
+             <xs:restriction base="xs:token">
+                <xs:enumeration value="iso15511"/>
+                <xs:enumeration value="otherRepositoryEncoding"/>
+             </xs:restriction>
+           </xs:simpleType>
+       </xs:attribute>
     </xs:complexType>
 
     <xs:simpleType name="recordIdType">
@@ -111,15 +178,11 @@
     <xs:attributeGroup name="localType">
         <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:attributeGroup>
-
-    <xs:complexType name="maintenanceAgency">
-        <xs:sequence>
-            <xs:element name="agencyCode" type="agencyCode"/>
-            <xs:element name="agencyName" type="agencyName"/>
-            <xs:element name="otherAgencyCode" type="otherAgencyCode" minOccurs="0"
-                maxOccurs="unbounded"/>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-        </xs:sequence>
+    
+    <xs:complexType name="representation" mixed="true">
+       <xs:attribute ref="xml:id"/>
+       <xs:attributeGroup ref="link"/>
+       <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
     <xs:complexType name="maintenanceStatus">
@@ -141,94 +204,35 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="maintenanceHistory">
-        <xs:sequence>
-            <xs:element name="maintenanceEvent" type="maintenanceEvent" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="maintenanceEvent">
-        <xs:sequence>
-            <xs:element name="agent" type="agent"/>
-            <xs:element name="agentType" type="agentType"/>
-            <xs:element name="eventDateTime" type="eventDateTime"/>
-            <xs:element name="eventType" type="eventType"/>
-        </xs:sequence>
-        <xs:attribute ref="xml:lang"/>
-    </xs:complexType>
-
-    <xs:complexType name="eventType">
+    <xs:complexType name="publicationStatus">
         <xs:simpleContent>
             <xs:restriction base="xs:anyType">
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="created"/>
-                        <xs:enumeration value="revised"/>
-                        <xs:enumeration value="deleted"/>
-                        <xs:enumeration value="cancelled"/>
-                        <xs:enumeration value="derived"/>
-                        <xs:enumeration value="updated"/>
-                        <xs:enumeration value="published"/>
+                        <xs:enumeration value="inProcess"/>
+                        <xs:enumeration value="approved"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="eventDateTime" mixed="true">
-        <xs:attribute name="standardDateTime" type="m.data.standardDateTime"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
+    <xs:complexType name="maintenanceAgency">
+        <xs:sequence>
+            <xs:element name="agencyCode" type="agencyCode"/>
+            <xs:element name="agencyName" type="agencyName"/>
+            <xs:element name="otherAgencyCode" type="otherAgencyCode" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="m.data.standardDateTime">
-        <xs:union>
-            <xs:simpleType>
-                <xs:restriction base="xs:date">
-                    <xs:maxInclusive value="2099-12-31"/>
-                </xs:restriction>
-            </xs:simpleType>
-            <xs:simpleType>
-                <xs:restriction base="xs:gYear">
-                    <xs:maxInclusive value="2099"/>
-                </xs:restriction>
-            </xs:simpleType>
-            <xs:simpleType>
-                <xs:restriction base="xs:gYearMonth">
-                    <xs:maxInclusive value="2099-12"/>
-                </xs:restriction>
-            </xs:simpleType>
-            <xs:simpleType>
-                <xs:restriction base="xs:dateTime">
-                    <xs:maxInclusive value="2099-12-31T23:59:59"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:union>
-    </xs:simpleType>
-
-    <xs:complexType name="agentType">
-        <xs:simpleContent>
-            <xs:restriction base="xs:anyType">
-                <xs:simpleType>
-                    <xs:restriction base="xs:token">
-                        <xs:enumeration value="human"/>
-                        <xs:enumeration value="machine"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:restriction>
-        </xs:simpleContent>
-    </xs:complexType>
-
-    <xs:complexType name="agent" mixed="true">
-        <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="sourceAttribute"/>
-    </xs:complexType>
-
-    <xs:complexType name="languageDeclarations">
+    <!-- <xs:complexType name="languageDeclarations">
         <xs:sequence>
             <xs:element name="languageDeclaration" type="languageDeclaration" maxOccurs="unbounded"
             />
         </xs:sequence>
-    </xs:complexType>
+    </xs:complexType> -->
 
     <xs:complexType name="languageDeclaration">
         <xs:sequence>
@@ -280,7 +284,8 @@
 
     <xs:complexType name="citation" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
+        <!-- Changed from using "href" separately to using the combined group for links. -->
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
@@ -293,6 +298,14 @@
         </xs:sequence>
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="localType"/>
+    </xs:complexType>
+
+    <xs:complexType name="localTypeDeclaration">
+        <xs:sequence>
+            <xs:element name="citation" type="citation"/>
+            <xs:element name="abbreviation" type="abbreviation" minOccurs="0"/>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="localControl">
@@ -379,25 +392,86 @@
         </xs:union>
     </xs:simpleType>
 
-    <xs:complexType name="localTypeDeclaration">
+    <xs:complexType name="maintenanceHistory">
         <xs:sequence>
-            <xs:element name="citation" type="citation"/>
-            <xs:element name="abbreviation" type="abbreviation" minOccurs="0"/>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+            <xs:element name="maintenanceEvent" type="maintenanceEvent" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="publicationStatus">
+    <xs:complexType name="maintenanceEvent">
+        <xs:sequence>
+            <xs:element name="agent" type="agent"/>
+            <xs:element name="agentType" type="agentType"/>
+            <xs:element name="eventDateTime" type="eventDateTime"/>
+            <xs:element name="eventType" type="eventType"/>
+        </xs:sequence>
+        <xs:attribute ref="xml:lang"/>
+    </xs:complexType>
+
+    <xs:complexType name="eventType">
         <xs:simpleContent>
             <xs:restriction base="xs:anyType">
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="inProcess"/>
-                        <xs:enumeration value="approved"/>
+                        <xs:enumeration value="created"/>
+                        <xs:enumeration value="revised"/>
+                        <xs:enumeration value="deleted"/>
+                        <xs:enumeration value="cancelled"/>
+                        <xs:enumeration value="derived"/>
+                        <xs:enumeration value="updated"/>
+                        <xs:enumeration value="published"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:restriction>
         </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="eventDateTime" mixed="true">
+        <xs:attribute name="standardDateTime" type="m.data.standardDateTime"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
+    </xs:complexType>
+
+    <xs:simpleType name="m.data.standardDateTime">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:date">
+                    <xs:maxInclusive value="2099-12-31"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:gYear">
+                    <xs:maxInclusive value="2099"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:gYearMonth">
+                    <xs:maxInclusive value="2099-12"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime">
+                    <xs:maxInclusive value="2099-12-31T23:59:59"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+
+    <xs:complexType name="agentType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:anyType">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="human"/>
+                        <xs:enumeration value="machine"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="agent" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="sources">
@@ -416,7 +490,8 @@
             <xs:element minOccurs="0" name="descriptiveNote" type="descriptiveNote"/>
         </xs:sequence>
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
+        <!-- Changed from using "href" separately to using the combined group for links. -->
     </xs:complexType>
 
     <xs:complexType name="sourceEntry" mixed="true">
@@ -467,14 +542,16 @@
 
 
     <!-- ##################
-        ARCHGUIDE
+        ARCHIVAL GUIDE
     ################### -->
 
 
-    <xs:complexType name="archguide">
+    <xs:complexType name="archivalGuide">
         <xs:sequence>
             <xs:element name="identity" type="identity"/>
             <xs:element name="desc" type="desc"/>
+            <xs:element name="relations" type="relations" minOccurs="0"/>
+            <!-- Move "relations" here from "control" in order to be aligned with EAC-CPF and EAD3 in this regard. -->
         </xs:sequence>
     </xs:complexType>
 
@@ -612,8 +689,10 @@
     </xs:complexType>
 
     <xs:complexType name="image">
-        <xs:attribute name="href" type="xs:anyURI" use="required"/>
-        <xs:attributeGroup ref="linkTitle"/>
+        <xs:attributeGroup ref="link"/>
+        <!-- Changed from using "href" and "linkTitle" separately to using the combined group for links. This means that "href" would not be mandatory anymore. 
+             However, seeing that one can't use any content with "image", one would assume that inlcuding a link within "href" is the next logical thing to do. 
+             -->
         <xs:attributeGroup ref="localType"/>
     </xs:complexType>
     
@@ -714,13 +793,15 @@
     </xs:complexType>
 
     <xs:complexType name="email" mixed="true">
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
+        <!-- Changed from using "href" separately to using the combined group for links. -->
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="webpage" mixed="true">
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
+        <!-- Changed from using "href" separately to using the combined group for links. -->
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
@@ -907,7 +988,7 @@
 
     </xs:complexType>
     <xs:complexType name="opening" mixed="true">
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
@@ -939,13 +1020,13 @@
 
     <xs:complexType name="restaccess" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="termsOfUse" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
@@ -1025,13 +1106,13 @@
     </xs:complexType>
 
     <xs:complexType name="readersTicket" mixed="true">
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="advancedOrders" mixed="true">
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
@@ -1187,7 +1268,7 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
     </xs:complexType>
 
     <xs:complexType name="relationEntry" mixed="true">
@@ -1215,7 +1296,7 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
-        <xs:attributeGroup ref="href"/>
+        <xs:attributeGroup ref="link"/>
     </xs:complexType>
 
     <xs:attributeGroup name="sourceAttribute">
