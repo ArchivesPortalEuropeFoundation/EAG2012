@@ -9,7 +9,7 @@
     Change log:
 
     - Reviewed schema with regard to TS-EAS' decision on using camelCase spelling for element and attribute names; changed names where required 
-      (comments included, marked "Review notes")
+      (comments included)
     - Reviewed schema with regard to alignment that TS-EAS aims for concerning EAC-CPF and EAD, where it could make sense to have EAG follow this approach
     - Reviewed schema with regard to changes and elements used in EAC-CPF where it could make sense to adopt these for EAG (e.g. "nameEntry" instead of
       "autform", "parform" and "nonpreform" or looking at the remodelling of "relations") 
