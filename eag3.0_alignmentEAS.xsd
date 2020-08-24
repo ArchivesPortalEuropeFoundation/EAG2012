@@ -15,6 +15,12 @@
       "autform", "parform" and "nonpreform" or looking at the remodelling of "relations") 
     - Added change for "repositoryType" according to EAG2012 issue #33 on GitHub (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/33) as 
       well as alternative approach when following EAC-CPF and its handling of "entityType" and "otherEntityType"-s
+    - Added "list" as an option to "repositoryHistory" (renamed "repositorhist") and to "holdings" as per EAG2012 issues #25 and #26 on GitHub 
+      (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/25 and https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/26)
+      - This is following the suggestion to change from "adminhierarchy" to using "structureOrGenealogy" as in EAC-CPF, which also includes "list" as
+        an option
+    - Added controlled access terms option to "holdings" according to EAG2012 issue #1 on GitHub 
+      (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/1)
 -->
 <xs:schema xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
     targetNamespace="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
@@ -520,7 +526,8 @@
 
     <xs:complexType name="localControl">
         <xs:sequence>
-            <xs:element name="term" type="term" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to have "term" as mandatory sub-element of "localControl" seeing that this is about providing locally used control terms -->
+            <xs:element name="term" type="term" maxOccurs="unbounded"/>
             <xs:choice minOccurs="0">
                 <xs:element name="date" type="date"/>
                 <xs:element name="dateRange" type="dateRange"/>
@@ -1110,18 +1117,24 @@
             <!-- Suggestion to move "directions" to being an optional sub-element of "location". -->
             <!-- <xs:element name="directions" type="directions" minOccurs="0" maxOccurs="unbounded"/> -->
             <!-- Suggestion to rename "repositorhist" to "repositoryHistory" and to move "repositorfound" (along with a renaming to "foundation")
-                 and "repositorsup" (along with a renaming to "suppression") to being sub-elements of "repositoryHistory". -->
+                 and "repositorsup" (along with a renaming to "suppression") to being sub-elements of "repositoryHistory". Theoretically, the name 
+                 "repositoryHistory" could also work in case the repository isn't a corporate body, but rather a person or a family. -->
             <xs:element name="repositoryHistory" type="repositoryHistory" minOccurs="0"/>
             <!-- <xs:element name="repositorfound" type="repositorfound" minOccurs="0"/>
             <xs:element name="repositorsup" type="repositorsup" minOccurs="0"/> -->
-            <xs:element name="buildinginfo" type="buildinginfo" minOccurs="0"/>
-            <xs:element name="adminhierarchy" type="adminhierarchy" minOccurs="0"/>
+            <!-- Suggestion to rename "buildinginfo" to "buildingInformation" -->
+            <xs:element name="buildingInformation" type="buildingInformation" minOccurs="0"/>
+            <!-- Suggestion to rename "adminhierarchy" to "administrativeStructure" or rather to reuse "structureOrGenealogy" from EAC-CPF. The latter
+                 currently allows for "citation", "list", "outline", and "p". In the new version, this is likely going to be "reference", "list" and "p". -->
+            <xs:element name="structureOrGenealogy" type="structureOrGenealogy" minOccurs="0"/>
             <xs:element name="holdings" type="holdings" minOccurs="0"/>
             <xs:element name="timetable" type="timetable"/>
             <xs:element name="access" type="access"/>
             <xs:element name="accessibility" type="accessibility" maxOccurs="unbounded"/>
             <xs:element name="services" type="services" minOccurs="0"/>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+            <!-- Suggestion to remove this general "catch all" descriptiveNote. Usage in the APE dataset is minimal to non-existent and the content 
+                 found in the very few cases available does not seem to have much relevance to the context of the file as a whole. 
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/> -->
             <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <!-- Added -->
@@ -1312,16 +1325,26 @@
     </xs:complexType>
 
     <xs:complexType name="contact">
+        <!-- Suggestion to require one of "telephone", "fax", "email", or "webpage" to be there when "contact" is used. All four sub-elements can 
+             then be used repeatedly. -->
         <xs:sequence>
-            <xs:element name="telephone" type="telephone" minOccurs="0" maxOccurs="unbounded"/>
-            <!-- Suggestion to add "fax" to "contact" instead of having it as direct sub-element of "repository" -->
-            <xs:element name="fax" type="fax" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="email" type="email" minOccurs="0" maxOccurs="unbounded"/>
-            <!-- Suggestion to add "fax" to "contact" instead of having it as direct sub-element of "repository". Or do we see "webpage" as being
-                 "location" information (as ISDIAH states in 5.2.1) rather than "contact" information? -->
-            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/>
-            <!-- Suggestion to remove "nameEntry" due to not being used for "contact" information -->
-            <!-- <xs:element name="nameEntry" type="nameEntry" minOccurs="0" maxOccurs="unbounded"/> -->
+            <xs:choice>
+               <xs:element name="telephone" type="telephone"/>
+               <!-- Suggestion to add "fax" to "contact" instead of having it as direct sub-element of "repository" -->
+               <xs:element name="fax" type="fax"/>
+               <xs:element name="email" type="email"/>
+               <!-- Suggestion to add "fax" to "contact" instead of having it as direct sub-element of "repository". Or do we see "webpage" as being
+                    "location" information (as ISDIAH states in 5.2.1) rather than "contact" information? -->
+               <xs:element name="webpage" type="webpage"/>
+               <!-- Suggestion to remove "nameEntry" due to not being used for "contact" information -->
+               <!-- <xs:element name="nameEntry" type="nameEntry" minOccurs="0" maxOccurs="unbounded"/> -->
+            </xs:choice>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element name="telephone" type="telephone"/>
+               <xs:element name="fax" type="fax"/>
+               <xs:element name="email" type="email"/>
+               <xs:element name="webpage" type="webpage"/>
+            </xs:choice>
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
@@ -1366,14 +1389,37 @@
     </xs:complexType>
 
     <xs:complexType name="repositoryHistory">
-        <!-- Suggestion to have all sub-elements as repeatable -->
+        <!-- Suggestion to have all sub-elements as repeatable. Suggestion to require one of "descriptiveNote", "list", "foundation", or "suppression" 
+             to be used when "repositoryHistory" is used. All four sub-elements can then be used repeatedly. -->
         <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" maxOccurs="unbounded"/>
-            <xs:element name="foundation" type="foundation" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="suppression" type="suppression" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:choice>
+               <xs:element name="descriptiveNote" type="descriptiveNote"/>
+               <xs:element name="list" type="list"/>
+               <xs:element name="foundation" type="foundation"/>
+               <xs:element name="suppression" type="suppression"/>
+            </xs:choice>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element name="descriptiveNote" type="descriptiveNote"/>
+               <xs:element name="list" type="list"/>
+               <xs:element name="foundation" type="foundation"/>
+               <xs:element name="suppression" type="suppression"/>
+            </xs:choice>
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
+    </xs:complexType>
+
+    <xs:complexType name="list">
+       <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="item" type="item"/>
+       </xs:sequence>
+       <xs:attributeGroup ref="common"/>
+       <xs:attribute name="localType" type="xs:anyURI"/>
+    </xs:complexType>
+
+    <xs:complexType name="item" mixed="true">
+       <xs:attributeGroup ref="common"/>
+       <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
     <xs:complexType name="foundation">
@@ -1403,30 +1449,40 @@
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="buildinginfo">
+    <xs:complexType name="buildingInformation">
+        <!-- Suggestion to have all sub-elements as repeatable. Suggestion to have "building" as a general description element mandatory when using 
+             "buildingInformation". Seems to be the most often used option in this context. -->
         <xs:sequence>
-            <xs:element name="building" type="building" minOccurs="0"/>
-            <xs:element name="repositorarea" type="repositorarea" minOccurs="0"/>
-            <xs:element name="lengthshelf" type="lengthshelf" minOccurs="0"/>
+            <xs:element name="building" type="building" maxOccurs="unbounded"/>
+            <xs:element name="repositorarea" type="repositorarea" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="lengthshelf" type="lengthshelf" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="building">
         <xs:sequence>
             <xs:element name="descriptiveNote" type="descriptiveNote"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="repositorarea">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="lengthshelf">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="num" mixed="true">
@@ -1441,40 +1497,163 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <xs:complexType name="adminhierarchy">
+    <xs:complexType name="structureOrGenealogy">
+        <!-- Suggestion to require one of "p", "list", or "reference" to be there when "structureOrGenealogy" is used. All three sub-elements can 
+             then be used repeatedly. -->
         <xs:sequence>
-            <xs:element name="adminunit" type="adminunit" maxOccurs="unbounded"/>
+           <xs:choice>
+              <xs:element name="p" type="p"/>
+              <xs:element name="list" type="list"/>
+              <xs:element name="reference" type="reference"/>
+           </xs:choice>
+           <xs:choice maxOccurs="unbounded">
+              <xs:element name="p" type="p"/>
+              <xs:element name="list" type="list"/>
+              <xs:element name="reference" type="reference"/>
+            </xs:choice>
         </xs:sequence>
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
+    <!-- Suggestion to replace "adminunit" with either repeated "p" or "list/item" in "structureOrGenealogy". Note: it is yet to be decided how
+         the use of "list" and "item" will be aligned between EAC-CPF and EAD, so the definition of both elements as in this draft only shows the 
+         most simple approach.
     <xs:complexType name="adminunit" mixed="true">
         <xs:attribute ref="xml:lang"/>
         <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
+        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
         <xs:attributeGroup ref="references"/>
-    </xs:complexType>
+    </xs:complexType> -->
 
     <xs:complexType name="holdings">
+        <!-- Suggestion to require one of "descriptiveNote", "list", "extent", set of date elements, or set of controlled access terms to be there 
+             when "holdings" is used. All five sub-elements (or sub-element groups) can then be used repeatedly. -->
         <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-            <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="extent" type="extent" minOccurs="0"/>
-            <xs:element name="actingMaintenanceForGroup" type="actingMaintenanceForGroup" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:choice>
+               <xs:element name="descriptiveNote" type="descriptiveNote"/>
+               <xs:element name="list" type="list"/>
+               <xs:group ref="m.dates"/>
+               <xs:element name="extent" type="extent"/>
+               <!-- Suggestion to remove "actingMaintenanceForGroup" seeing that it is not used at all in Archives Portal Europe (and the assumption
+                    would be that it's neither used in other contexts given that those rarely have expanded on the usage in APE). Furthermore, the 
+                    intent of "actingMaintenanceForGroup", i.e. to provide the "names and locations of other repositories, where the institution 
+                    described acts as custodian for their documents, ie is responsible for the documents' care and control", could also be reached
+                    via the newly added controlled access terms option, using "corporateName" and "placeName".
+               <xs:element name="actingMaintenanceForGroup" type="actingMaintenanceForGroup" minOccurs="0" maxOccurs="unbounded"/> -->
+               <xs:group ref="m.controlledAccess"/>
+            </xs:choice>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element name="descriptiveNote" type="descriptiveNote"/>
+               <xs:element name="list" type="list"/>
+               <xs:group ref="m.dates"/>
+               <xs:element name="extent" type="extent"/>
+               <xs:group ref="m.controlledAccess"/> 
+            </xs:choice>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="extent">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+    </xs:complexType>
+    
+    <xs:group name="m.controlledAccess">
+        <xs:choice>
+            <xs:element name="corporateName" type="corporateName"/>
+            <xs:element name="familyName" type="familyName"/>
+            <xs:element name="personalName" type="personalName"/>
+            <xs:element name="placeName" type="placeName"/>
+            <xs:element name="genericName" type="genericName"/>
+            <xs:element name="subject" type="subject"/>
+            <xs:element name="genreOrForm" type="genreOrForm"/>
+        </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="corporateName">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
     </xs:complexType>
 
-    <xs:complexType name="actingMaintenanceForGroup">
+    <xs:complexType name="familyName">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+    </xs:complexType>
+
+    <xs:complexType name="personalName">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+    </xs:complexType>
+
+    <xs:complexType name="placeName">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+        <xs:attribute name="longitude" type="xs:NMTOKEN"/>
+        <xs:attribute name="latitude" type="xs:NMTOKEN"/>
+    </xs:complexType>
+
+    <xs:complexType name="genericName">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+    </xs:complexType>
+
+    <xs:complexType name="subject">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+    </xs:complexType>
+
+    <xs:complexType name="genreOrForm">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+    </xs:complexType>
+
+    <!-- <xs:complexType name="actingMaintenanceForGroup">
         <xs:sequence>
             <xs:element name="actingMaintenanceFor" type="actingMaintenanceFor" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1485,13 +1664,11 @@
             <xs:element name="nameEntry" type="nameEntry" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="placeEntry" type="placeEntry" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-    </xs:complexType>
+    </xs:complexType> 
 
     <xs:complexType name="placeEntry" mixed="true">
-        <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
-        <xs:attributeGroup ref="common"/>
-        <!-- <xs:attributeGroup ref="sourceAttribute"/> -->
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="m.entryLanguageAttributes"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
         <xs:attribute name="accuracy" type="xs:NMTOKEN"/>
         <xs:attribute name="altitude" type="xs:NMTOKEN"/>
         <xs:attribute name="countryCode">
@@ -1513,28 +1690,37 @@
         <xs:attribute name="latitude" type="xs:NMTOKEN"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="longitude" type="xs:NMTOKEN"/>
-        <!-- <xs:attribute name="vocabularySource" type="xs:anyURI"/> -->
-        <xs:attributeGroup ref="vocabulary"/>
-    </xs:complexType>
+        <xs:attribute name="vocabularySource" type="xs:anyURI"/>
+    </xs:complexType> -->
 
     <xs:complexType name="timetable">
         <xs:sequence>
             <xs:element name="opening" type="opening" maxOccurs="unbounded"/>
             <xs:element name="closing" type="closing" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
+    
     <xs:complexType name="opening" mixed="true">
         <xs:attributeGroup ref="link"/>
-        <xs:attribute ref="xml:lang"/>
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:complexType name="closing" mixed="true">
-        <xs:attribute ref="xml:lang"/>
-        <xs:attribute name="standardDate" type="m.data.standardDate"/>
+        <!-- Suggestion to have both sub-elements of "timetable" follow the same model, here: adding attribute group "link" -->
+        <xs:attributeGroup ref="link"/>
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
+        <!-- Suggestion to remove "standardDate" as it is (1) not used at all in the APE dataset and (2) very unlikely that an institution
+             would provide one detailed date in "closing"
+        <xs:attribute name="standardDate" type="m.data.standardDate"/> -->
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
@@ -1542,10 +1728,15 @@
 
     <xs:complexType name="access">
         <xs:sequence>
-            <xs:element name="restaccess" type="restaccess" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="termsOfUse" type="termsOfUse" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to rename "restaccess" to "accessRestrictions" or maybe rather "accessConditions" to be clearer about the 
+                 purpose of this element -->
+            <xs:element name="accessConditions" type="accessConditions" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to rename "termsOfUse" to "useConditions" to be clearer about the broader scope of this element -->
+            <xs:element name="useConditions" type="useConditions" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:attributeGroup name="question">
@@ -1559,16 +1750,20 @@
         </xs:attribute>
     </xs:attributeGroup>
 
-    <xs:complexType name="restaccess" mixed="true">
-        <xs:attribute ref="xml:lang"/>
+    <xs:complexType name="accessConditions" mixed="true">
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <xs:complexType name="termsOfUse" mixed="true">
-        <xs:attribute ref="xml:lang"/>
+    <xs:complexType name="useConditions" mixed="true">
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
@@ -1576,7 +1771,9 @@
     </xs:complexType>
 
     <xs:complexType name="accessibility" mixed="true">
-        <xs:attribute ref="xml:lang"/>
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="question"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
@@ -1584,36 +1781,66 @@
     </xs:complexType>
 
     <xs:complexType name="services">
+        <!-- Suggestion to require one of "searchroom", "library", "internetAccess", "technicalServices", or "recreationalServices" to be there when 
+             "services" is used. All five sub-elements can then be used repeatedly. -->
         <xs:sequence>
-            <xs:element name="searchroom" type="searchroom" minOccurs="0"/>
-            <xs:element name="library" type="library" minOccurs="0"/>
-            <xs:element name="internetAccess" type="internetAccess" minOccurs="0"/>
-            <xs:element name="techservices" type="techservices" minOccurs="0"/>
-            <xs:element name="recreationalServices" type="recreationalServices" minOccurs="0"/>
+            <xs:choice>
+               <xs:element name="searchroom" type="searchroom"/>
+               <xs:element name="library" type="library"/>
+               <xs:element name="internetAccess" type="internetAccess"/>
+               <!-- Suggestion to rename "techservices" to "technicalServices" --> 
+               <xs:element name="technicalServices" type="technicalServices"/>
+               <xs:element name="recreationalServices" type="recreationalServices"/>
+            </xs:choice>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element name="searchroom" type="searchroom"/>
+               <xs:element name="library" type="library"/>
+               <xs:element name="internetAccess" type="internetAccess"/>
+               <xs:element name="technicalServices" type="technicalServices"/>
+               <xs:element name="recreationalServices" type="recreationalServices"/>
+            </xs:choice>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="searchroom">
         <xs:sequence>
-            <xs:element name="contact" type="contact" minOccurs="0"/>
-            <xs:element name="workPlaces" type="workPlaces" minOccurs="0"/>
-            <xs:element name="computerPlaces" type="computerPlaces" minOccurs="0"/>
-            <xs:element name="microfilmPlaces" type="microfilmPlaces" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="photographAllowance" type="photographAllowance" minOccurs="0"/>
-            <xs:element name="readersTicket" type="readersTicket" minOccurs="0"
-                maxOccurs="unbounded"/>
-            <xs:element name="advancedOrders" type="advancedOrders" minOccurs="0"
-                maxOccurs="unbounded"/>
-            <xs:element name="researchServices" type="researchServices" minOccurs="0"
-                maxOccurs="unbounded"/>
+           <!-- Suggestion to require one of potential sub-elements of "searchroom" to be there when 
+                "searchroom" is used. All eight sub-elements can then be used repeatedly. -->
+           <xs:choice>
+              <xs:element name="contact" type="contact"/>
+              <xs:element name="workPlaces" type="workPlaces"/>
+              <xs:element name="computerPlaces" type="computerPlaces"/>
+              <xs:element name="microfilmPlaces" type="microfilmPlaces"/>
+              <!-- Suggestion to have "webpage" be part of "contact"
+              <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
+              <xs:element name="photographAllowance" type="photographAllowance"/>
+              <xs:element name="readersTicket" type="readersTicket"/>
+              <xs:element name="advancedOrders" type="advancedOrders"/>
+              <xs:element name="researchServices" type="researchServices"/>
+            </xs:choice>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="contact" type="contact"/>
+              <xs:element name="workPlaces" type="workPlaces"/>
+              <xs:element name="computerPlaces" type="computerPlaces"/>
+              <xs:element name="microfilmPlaces" type="microfilmPlaces"/>
+              <xs:element name="photographAllowance" type="photographAllowance"/>
+              <xs:element name="readersTicket" type="readersTicket"/>
+              <xs:element name="advancedOrders" type="advancedOrders"/>
+              <xs:element name="researchServices" type="researchServices"/>
+            </xs:choice>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="workPlaces">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="computerPlaces">
@@ -1621,16 +1848,32 @@
             <xs:element name="num" type="num"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="microfilmPlaces">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="photographAllowance">
-        <xs:simpleContent>
+    <xs:complexType name="photographAllowance" mixed="true">
+        <!-- Suggestion to use the attribute "value" for the predefined options rather than having them as content of the element. We could consider 
+             keeping the element as [text] so that users could e.g. include their own language versions of the geographical area in the element. -->
+        <xs:attribute name="value" use="required">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="depending on the material"/>
+                 <xs:enumeration value="no"/>
+                 <xs:enumeration value="yes"/>
+                 <xs:enumeration value="yes (without flash)"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>
+        <!-- <xs:simpleContent>
             <xs:restriction base="xs:anyType">
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
@@ -1641,12 +1884,16 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:restriction>
-        </xs:simpleContent>
+        </xs:simpleContent> -->
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="readersTicket" mixed="true">
         <xs:attributeGroup ref="link"/>
-        <xs:attribute ref="xml:lang"/>
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
@@ -1654,7 +1901,9 @@
 
     <xs:complexType name="advancedOrders" mixed="true">
         <xs:attributeGroup ref="link"/>
-        <xs:attribute ref="xml:lang"/>
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
@@ -1664,25 +1913,33 @@
         <xs:sequence>
             <xs:element name="descriptiveNote" type="descriptiveNote"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="library">
         <xs:sequence>
-            <xs:element name="contact" type="contact" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="monographicpub" type="monographicpub" minOccurs="0"/>
-            <xs:element name="serialpub" type="serialpub" minOccurs="0"/>
+            <!-- Suggestion to have "contact" repeatable -->
+            <xs:element name="contact" type="contact" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to have "webpage" be part of "contact"
+            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
+            <!-- Suggestion to rename "monographicpub" to "monographicPublications" -->
+            <xs:element name="monographicPublications" type="monographicPublications" minOccurs="0"/>
+            <!-- Suggestion to rename "serialpub" to "serialPublications" -->
+            <xs:element name="serialPublications" type="serialPublications" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="monographicpub">
+    <xs:complexType name="monographicPublications">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="serialpub">
+    <xs:complexType name="serialPublications">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
@@ -1693,61 +1950,98 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="techservices">
+    <xs:complexType name="technicalServices">
         <xs:sequence>
-            <xs:element name="restorationlab" type="restorationlab" minOccurs="0"/>
-            <xs:element name="reproductionser" type="reproductionser" minOccurs="0"/>
+           <!-- Suggestion to require one of "restorationLaboratory" or "reproductionServices" to be there when 
+                 "technicalServices" is used. Both sub-elements can then be used repeatedly. -->
+           <xs:choice>
+              <!-- Suggestion to rename "restorationlab" to "restorationLaboratory" -->
+              <xs:element name="restorationLaboratory" type="restorationLaboratory"/>
+              <!-- Suggestion to rename "reproductionser" to "reproductionServices" -->
+              <xs:element name="reproductionServices" type="reproductionServices"/>
+           </xs:choice>
+           <xs:choice maxOccurs="unbounded">
+              <xs:element name="restorationLaboratory" type="restorationLaboratory"/>
+              <xs:element name="reproductionServices" type="reproductionServices"/>
+           </xs:choice> 
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="restorationlab">
+    <xs:complexType name="restorationLaboratory">
         <xs:sequence>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
             <xs:element name="contact" type="contact" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to have "webpage" be part of "contact"
+            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="reproductionser">
+    <xs:complexType name="reproductionServices">
         <xs:sequence>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
             <xs:element name="contact" type="contact" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="microformser" type="microformser" minOccurs="0"/>
-            <xs:element name="photographser" type="photographser" minOccurs="0"/>
-            <xs:element name="digitalser" type="digitalser" minOccurs="0"/>
-            <xs:element name="photocopyser" type="photocopyser" minOccurs="0"/>
+            <!-- Suggestion to have "webpage" be part of "contact"
+            <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
+            <!-- Suggestion to rename the four following elements using "Services" instead of "ser" -->
+            <xs:element name="microformser" type="microformServices" minOccurs="0"/>
+            <xs:element name="photographser" type="photographServices" minOccurs="0"/>
+            <xs:element name="digitalser" type="digitalServices" minOccurs="0"/>
+            <xs:element name="photocopyser" type="photocopyServices" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="microformser">
+    <xs:complexType name="microformServices">
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common.empty"/>
     </xs:complexType>
 
-    <xs:complexType name="photographser">
+    <xs:complexType name="photographServices">
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common.empty"/>
     </xs:complexType>
 
-    <xs:complexType name="digitalser">
+    <xs:complexType name="digitalServices">
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common.empty"/>
     </xs:complexType>
 
-    <xs:complexType name="photocopyser">
+    <xs:complexType name="photocopyServices">
         <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common.empty"/>
     </xs:complexType>
 
     <xs:complexType name="recreationalServices">
         <xs:sequence>
-            <xs:element name="refreshment" type="refreshment" minOccurs="0"/>
-            <xs:element name="exhibition" type="exhibition" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="toursSessions" type="toursSessions" minOccurs="0"
-                maxOccurs="unbounded"/>
-            <xs:element name="otherServices" type="otherServices" minOccurs="0"
-                maxOccurs="unbounded"/>
+           <!-- Suggestion to require one of "refreshment", "exhibition", "toursSessions", or "otherServices" to be there when 
+                 "recreationalServices" is used. All four sub-elements can then be used repeatedly. -->
+           <xs:choice>
+              <xs:element name="refreshment" type="refreshment"/>
+              <xs:element name="exhibition" type="exhibition"/>
+              <xs:element name="toursSessions" type="toursSessions"/>
+              <xs:element name="otherServices" type="otherServices"/>
+           </xs:choice>
+           <xs:choice maxOccurs="unbounded">
+              <xs:element name="refreshment" type="refreshment"/>
+              <xs:element name="exhibition" type="exhibition"/>
+              <xs:element name="toursSessions" type="toursSessions"/>
+              <xs:element name="otherServices" type="otherServices"/>
+           </xs:choice>
         </xs:sequence>
     </xs:complexType>
 
@@ -1755,31 +2049,69 @@
         <xs:sequence>
             <xs:element name="descriptiveNote" type="descriptiveNote"/>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="exhibition">
         <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0"/>
+           <!-- Suggestion to require one of "descriptiveNote" or "webpage" to be there when 
+                 "exhibition" is used. Both sub-elements can then be used repeatedly. 
+                 "exhibition" along with "toursSessions" and "otherServices" are the only element where "webpage" is currently used as standalone. 
+                 Could be kept like this or changed to "contact". -->
+           <xs:choice>
+              <xs:element name="descriptiveNote" type="descriptiveNote"/>
+              <xs:element name="webpage" type="webpage"/>
+           </xs:choice>
+           <xs:choice maxOccurs="unbounded">
+              <xs:element name="descriptiveNote" type="descriptiveNote"/>
+              <xs:element name="webpage" type="webpage"/>
+           </xs:choice> 
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="toursSessions">
         <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0"/>
+            <!-- Suggestion to require one of "descriptiveNote" or "webpage" to be there when 
+                 "toursSessions" is used. Both sub-elements can then be used repeatedly. 
+                 "toursSessions" along with "exhibition" and "otherServices" are the only element where "webpage" is currently used as standalone. 
+                 Could be kept like this or changed to "contact". -->
+           <xs:choice>
+              <xs:element name="descriptiveNote" type="descriptiveNote"/>
+              <xs:element name="webpage" type="webpage"/>
+           </xs:choice>
+           <xs:choice maxOccurs="unbounded">
+              <xs:element name="descriptiveNote" type="descriptiveNote"/>
+              <xs:element name="webpage" type="webpage"/>
+           </xs:choice> 
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <xs:complexType name="otherServices">
         <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0"/>
+            <!-- Suggestion to require one of "descriptiveNote" or "webpage" to be there when 
+                 "otherServices" is used. Both sub-elements can then be used repeatedly. 
+                 "otherServices" along with "exhibition" and "toursServices" are the only element where "webpage" is currently used as standalone. 
+                 Could be kept like this or changed to "contact". -->
+           <xs:choice>
+              <xs:element name="descriptiveNote" type="descriptiveNote"/>
+              <xs:element name="webpage" type="webpage"/>
+           </xs:choice>
+           <xs:choice maxOccurs="unbounded">
+              <xs:element name="descriptiveNote" type="descriptiveNote"/>
+              <xs:element name="webpage" type="webpage"/>
+           </xs:choice>
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
 
-    <!-- ##################
+   <!-- ##################
        RELATIONS
    ################### -->
 
@@ -1799,7 +2131,7 @@
             <xs:group ref="m.dates" minOccurs="0"/>
             <!-- <xs:element name="objectBinWrap" type="objectBinWrap" minOccurs="0"/> -->
             <xs:element name="objectXMLWrap" type="objectXMLWrap" minOccurs="0"/>
-            <xs:element name="placeEntry" type="placeEntry" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="resourceRelationType" use="required">
             <xs:simpleType>
