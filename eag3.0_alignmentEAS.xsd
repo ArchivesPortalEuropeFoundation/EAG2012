@@ -2,7 +2,7 @@
 <!--
     Draft EAG 3.0 Schema
     Version: 0.1
-    Date: 20200821
+    Date: 20200824
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 <!--
@@ -2115,38 +2115,62 @@
        RELATIONS
    ################### -->
 
-
+   <!-- EAC-CPF is planning to reform the "relations" part, to some extent following EAD3's approach with only having one "relation" element
+        instead of specific ones, but also adding some new options. Reformation is exemplified below with the example of "resourceRelation", 
+        while "eagRelation" is removed asnot relevant anymore if we wanted to follow this approach with EAG 3.0. -->
+    
     <xs:complexType name="relations">
         <xs:sequence>
-            <xs:element name="resourceRelation" type="resourceRelation" minOccurs="0"
-                maxOccurs="unbounded"/>
-            <xs:element name="eagRelation" type="eagRelation" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Only one "relation" element. I.e. rename "resourceRelation" to "relation" and remove "eagRelation" -->
+            <xs:element name="relation" type="relation" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- <xs:element name="eagRelation" type="eagRelation" minOccurs="0" maxOccurs="unbounded"/> -->
         </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="resourceRelation">
+    <!-- "resourceRelation" renamed "relation" -->
+    <xs:complexType name="relation">
         <xs:sequence>
-            <xs:element name="relationEntry" type="relationEntry" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+            <!-- "relationEntry" renamed to "targetEntity" which will be mandatory and not repeatable -->
+            <xs:element name="targetEntity" type="targetEntity"/>
+            <!-- New -->
+            <xs:element name="relationType" type="relationType" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- New -->
+            <xs:element name="targetRole" type="targetRole" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
+            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
             <!-- <xs:element name="objectBinWrap" type="objectBinWrap" minOccurs="0"/> -->
             <xs:element name="objectXMLWrap" type="objectXMLWrap" minOccurs="0"/>
-            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="resourceRelationType" use="required">
+        <!-- "resourceRelationType renamed to "targetType", values have yet to be defined, but would go along with existing entities, hence
+             these are used as suggestions below-->
+        <xs:attribute name="targetType" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="creatorOf"/>
-                    <xs:enumeration value="subjectOf"/>
-                    <xs:enumeration value="other"/>
+                    <xs:enumeration value="corporateBody"/>
+                    <xs:enumeration value="family"/>
+                    <xs:enumeration value="person"/>
+                    <xs:enumeration value="resource"/>
+                    <xs:enumeration value="function"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
         <xs:attributeGroup ref="link"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="relationEntry" mixed="true">
+    <!-- "relationEntry" renamed to "targetEntity" -->
+    <xs:complexType name="targetEntity" mixed="true">
+        <xs:sequence>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
+        </xs:sequence>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
         <xs:attributeGroup ref="common"/>
@@ -2154,8 +2178,22 @@
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
+    
+    <xs:complexType name="relationType" mixed="true">
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="targetRole" mixed="true">
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
 
-    <xs:complexType name="eagRelation">
+    <!-- <xs:complexType name="eagRelation">
         <xs:sequence>
             <xs:element name="relationEntry" type="relationEntry" minOccurs="0"
                 maxOccurs="unbounded"/>
@@ -2175,7 +2213,7 @@
         </xs:attribute>
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
         <xs:attributeGroup ref="link"/>
-    </xs:complexType>
+    </xs:complexType> -->
 
     <!-- <xs:attributeGroup name="sourceAttribute">
         <xs:attribute name="source" type="xs:anyURI"/>
