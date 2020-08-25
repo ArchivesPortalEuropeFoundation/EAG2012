@@ -1023,17 +1023,17 @@
            <xs:simpleType>
               <xs:restriction base="xs:token">
                  <xs:enumeration value="National archives"/>
-                        <xs:enumeration value="Regional archives"/>
-                        <xs:enumeration value="County/local authority archives"/>
-                        <xs:enumeration value="Municipal archives"/>
-                        <xs:enumeration value="Specialised government archives"/>
-                        <xs:enumeration value="Private persons and family archives"/>
-                        <xs:enumeration value="Church and religious archives"/>
-                        <xs:enumeration value="Business archives"/>
-                        <xs:enumeration value="University and research archives"/>
-                        <xs:enumeration value="Media archives"/>
-                        <xs:enumeration value="Archives of political parties, of popular/labour movement and other non-governmental organisations, associations, agencies and foundations"/>
-                        <xs:enumeration value="Specialised non-governmental archives and archives of other cultural (heritage) institutions"/>
+                 <xs:enumeration value="Regional archives"/>
+                 <xs:enumeration value="County/local authority archives"/>
+                 <xs:enumeration value="Municipal archives"/>
+                 <xs:enumeration value="Specialised government archives"/>
+                 <xs:enumeration value="Private persons and family archives"/>
+                 <xs:enumeration value="Church and religious archives"/>
+                 <xs:enumeration value="Business archives"/>
+                 <xs:enumeration value="University and research archives"/>
+                 <xs:enumeration value="Media archives"/>
+                 <xs:enumeration value="Archives of political parties, of popular/labour movement and other non-governmental organisations, associations, agencies and foundations"/>
+                 <xs:enumeration value="Specialised non-governmental archives and archives of other cultural (heritage) institutions"/>
               </xs:restriction>
            </xs:simpleType>
         </xs:attribute>
