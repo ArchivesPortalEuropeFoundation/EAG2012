@@ -1283,7 +1283,8 @@
             <!-- Suggestion to require one of "placeRole", "placeName", "geographicalArea", "location", "geographicCoordinates", or "contact" to be there 
                  when "place" is used - if not making "placeName" the mandatory sub-element in general. All six of these sub-elements can then be used 
                  repeatedly. -->
-            <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="placeName" type="placeName"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element name="placeRole" type="placeRole"/>
                 <xs:element name="placeName" type="placeName"/>
                 <xs:element name="geographicalArea" type="geographicalArea"/>
