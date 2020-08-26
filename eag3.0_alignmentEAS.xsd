@@ -1092,11 +1092,12 @@
 
     <xs:complexType name="repository">
         <xs:sequence>
+            <!-- Suggestion to have all sub-elements repeatable as a block with the exception of "geographicalArea" as this might lead to contradictions. -->
             <xs:element name="repositoryName" type="repositoryName" minOccurs="0" maxOccurs="unbounded"/>
             <!-- With the suggestion to use the attribute "value" instead of having the predefined terms as content of the element, one could 
                  include other language information in the element "repositoryRole" itself. Would we hence want to consider having it as 
                  repeatable? -->
-            <xs:element name="repositoryRole" type="repositoryRole" minOccurs="0"/>
+            <xs:element name="repositoryRole" type="repositoryRole" minOccurs="0" maxOccurs="unbounded"/>
             <!-- Suggestion to rename "geogarea" not only to "geogArea" but to "geographicalArea" or maybe actually to "continent" as that is
                  the information we are currently capturing in this element. With the additional suggestion to use the attribute "value" instead 
                  of having the predefined terms as content of the element, one could include other language information in the element "continent" itself.
@@ -1119,19 +1120,19 @@
             <!-- Suggestion to rename "repositorhist" to "repositoryHistory" and to move "repositorfound" (along with a renaming to "foundation")
                  and "repositorsup" (along with a renaming to "suppression") to being sub-elements of "repositoryHistory". Theoretically, the name 
                  "repositoryHistory" could also work in case the repository isn't a corporate body, but rather a person or a family. -->
-            <xs:element name="repositoryHistory" type="repositoryHistory" minOccurs="0"/>
+            <xs:element name="repositoryHistory" type="repositoryHistory" minOccurs="0" maxOccurs="unbounded"/>
             <!-- <xs:element name="repositorfound" type="repositorfound" minOccurs="0"/>
             <xs:element name="repositorsup" type="repositorsup" minOccurs="0"/> -->
             <!-- Suggestion to rename "buildinginfo" to "buildingInformation" -->
-            <xs:element name="buildingInformation" type="buildingInformation" minOccurs="0"/>
+            <xs:element name="buildingInformation" type="buildingInformation" minOccurs="0" maxOccurs="unbounded"/>
             <!-- Suggestion to rename "adminhierarchy" to "administrativeStructure" or rather to reuse "structureOrGenealogy" from EAC-CPF. The latter
                  currently allows for "citation", "list", "outline", and "p". In the new version, this is likely going to be "reference", "list" and "p". -->
-            <xs:element name="structureOrGenealogy" type="structureOrGenealogy" minOccurs="0"/>
-            <xs:element name="holdings" type="holdings" minOccurs="0"/>
-            <xs:element name="timetable" type="timetable"/>
-            <xs:element name="access" type="access"/>
+            <xs:element name="structureOrGenealogy" type="structureOrGenealogy" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="holdings" type="holdings" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="timetable" type="timetable" maxOccurs="unbounded"/>
+            <xs:element name="access" type="access" maxOccurs="unbounded"/>
             <xs:element name="accessibility" type="accessibility" maxOccurs="unbounded"/>
-            <xs:element name="services" type="services" minOccurs="0"/>
+            <xs:element name="services" type="services" minOccurs="0" maxOccurs="unbounded"/>
             <!-- Suggestion to remove this general "catch all" descriptiveNote. Usage in the APE dataset is minimal to non-existent and the content 
                  found in the very few cases available does not seem to have much relevance to the context of the file as a whole. 
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/> -->
@@ -1328,7 +1329,7 @@
         <!-- Suggestion to require one of "telephone", "fax", "email", or "webpage" to be there when "contact" is used. All four sub-elements can 
              then be used repeatedly. -->
         <xs:sequence>
-            <xs:choice>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
                <xs:element name="telephone" type="telephone"/>
                <!-- Suggestion to add "fax" to "contact" instead of having it as direct sub-element of "repository" -->
                <xs:element name="fax" type="fax"/>
@@ -1338,12 +1339,6 @@
                <xs:element name="webpage" type="webpage"/>
                <!-- Suggestion to remove "nameEntry" due to not being used for "contact" information -->
                <!-- <xs:element name="nameEntry" type="nameEntry" minOccurs="0" maxOccurs="unbounded"/> -->
-            </xs:choice>
-            <xs:choice maxOccurs="unbounded">
-               <xs:element name="telephone" type="telephone"/>
-               <xs:element name="fax" type="fax"/>
-               <xs:element name="email" type="email"/>
-               <xs:element name="webpage" type="webpage"/>
             </xs:choice>
         </xs:sequence>
         <!-- Added -->
@@ -1390,15 +1385,9 @@
 
     <xs:complexType name="repositoryHistory">
         <!-- Suggestion to have all sub-elements as repeatable. Suggestion to require one of "descriptiveNote", "list", "foundation", or "suppression" 
-             to be used when "repositoryHistory" is used. All four sub-elements can then be used repeatedly. -->
+             to be there when "repositoryHistory" is used.  -->
         <xs:sequence>
-            <xs:choice>
-               <xs:element name="descriptiveNote" type="descriptiveNote"/>
-               <xs:element name="list" type="list"/>
-               <xs:element name="foundation" type="foundation"/>
-               <xs:element name="suppression" type="suppression"/>
-            </xs:choice>
-            <xs:choice maxOccurs="unbounded">
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
                <xs:element name="descriptiveNote" type="descriptiveNote"/>
                <xs:element name="list" type="list"/>
                <xs:element name="foundation" type="foundation"/>
@@ -1508,16 +1497,11 @@
         <!-- Suggestion to require one of "p", "list", or "reference" to be there when "structureOrGenealogy" is used. All three sub-elements can 
              then be used repeatedly. -->
         <xs:sequence>
-           <xs:choice>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="p" type="p"/>
               <xs:element name="list" type="list"/>
               <xs:element name="reference" type="reference"/>
            </xs:choice>
-           <xs:choice maxOccurs="unbounded">
-              <xs:element name="p" type="p"/>
-              <xs:element name="list" type="list"/>
-              <xs:element name="reference" type="reference"/>
-            </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
@@ -1536,7 +1520,7 @@
         <!-- Suggestion to require one of "descriptiveNote", "list", "extent", set of date elements, or set of controlled access terms to be there 
              when "holdings" is used. All five sub-elements (or sub-element groups) can then be used repeatedly. -->
         <xs:sequence>
-            <xs:choice>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
                <xs:element name="descriptiveNote" type="descriptiveNote"/>
                <xs:element name="list" type="list"/>
                <xs:group ref="m.dates"/>
@@ -1548,13 +1532,6 @@
                     via the newly added controlled access terms option, using "corporateName" and "placeName".
                <xs:element name="actingMaintenanceForGroup" type="actingMaintenanceForGroup" minOccurs="0" maxOccurs="unbounded"/> -->
                <xs:group ref="m.controlledAccess"/>
-            </xs:choice>
-            <xs:choice maxOccurs="unbounded">
-               <xs:element name="descriptiveNote" type="descriptiveNote"/>
-               <xs:element name="list" type="list"/>
-               <xs:group ref="m.dates"/>
-               <xs:element name="extent" type="extent"/>
-               <xs:group ref="m.controlledAccess"/> 
             </xs:choice>
         </xs:sequence>
         <!-- Added -->
@@ -1784,18 +1761,11 @@
         <!-- Suggestion to require one of "searchroom", "library", "internetAccess", "technicalServices", or "recreationalServices" to be there when 
              "services" is used. All five sub-elements can then be used repeatedly. -->
         <xs:sequence>
-            <xs:choice>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
                <xs:element name="searchroom" type="searchroom"/>
                <xs:element name="library" type="library"/>
                <xs:element name="internetAccess" type="internetAccess"/>
                <!-- Suggestion to rename "techservices" to "technicalServices" --> 
-               <xs:element name="technicalServices" type="technicalServices"/>
-               <xs:element name="recreationalServices" type="recreationalServices"/>
-            </xs:choice>
-            <xs:choice maxOccurs="unbounded">
-               <xs:element name="searchroom" type="searchroom"/>
-               <xs:element name="library" type="library"/>
-               <xs:element name="internetAccess" type="internetAccess"/>
                <xs:element name="technicalServices" type="technicalServices"/>
                <xs:element name="recreationalServices" type="recreationalServices"/>
             </xs:choice>
@@ -1808,23 +1778,13 @@
         <xs:sequence>
            <!-- Suggestion to require one of potential sub-elements of "searchroom" to be there when 
                 "searchroom" is used. All eight sub-elements can then be used repeatedly. -->
-           <xs:choice>
+           <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="contact" type="contact"/>
               <xs:element name="workPlaces" type="workPlaces"/>
               <xs:element name="computerPlaces" type="computerPlaces"/>
               <xs:element name="microfilmPlaces" type="microfilmPlaces"/>
               <!-- Suggestion to have "webpage" be part of "contact"
               <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
-              <xs:element name="photographAllowance" type="photographAllowance"/>
-              <xs:element name="readersTicket" type="readersTicket"/>
-              <xs:element name="advancedOrders" type="advancedOrders"/>
-              <xs:element name="researchServices" type="researchServices"/>
-            </xs:choice>
-            <xs:choice maxOccurs="unbounded">
-              <xs:element name="contact" type="contact"/>
-              <xs:element name="workPlaces" type="workPlaces"/>
-              <xs:element name="computerPlaces" type="computerPlaces"/>
-              <xs:element name="microfilmPlaces" type="microfilmPlaces"/>
               <xs:element name="photographAllowance" type="photographAllowance"/>
               <xs:element name="readersTicket" type="readersTicket"/>
               <xs:element name="advancedOrders" type="advancedOrders"/>
@@ -1958,16 +1918,12 @@
         <xs:sequence>
            <!-- Suggestion to require one of "restorationLaboratory" or "reproductionServices" to be there when 
                  "technicalServices" is used. Both sub-elements can then be used repeatedly. -->
-           <xs:choice>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
               <!-- Suggestion to rename "restorationlab" to "restorationLaboratory" -->
               <xs:element name="restorationLaboratory" type="restorationLaboratory"/>
               <!-- Suggestion to rename "reproductionser" to "reproductionServices" -->
               <xs:element name="reproductionServices" type="reproductionServices"/>
            </xs:choice>
-           <xs:choice maxOccurs="unbounded">
-              <xs:element name="restorationLaboratory" type="restorationLaboratory"/>
-              <xs:element name="reproductionServices" type="reproductionServices"/>
-           </xs:choice> 
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
@@ -2030,13 +1986,7 @@
         <xs:sequence>
            <!-- Suggestion to require one of "refreshment", "exhibition", "toursSessions", or "otherServices" to be there when 
                  "recreationalServices" is used. All four sub-elements can then be used repeatedly. -->
-           <xs:choice>
-              <xs:element name="refreshment" type="refreshment"/>
-              <xs:element name="exhibition" type="exhibition"/>
-              <xs:element name="toursSessions" type="toursSessions"/>
-              <xs:element name="otherServices" type="otherServices"/>
-           </xs:choice>
-           <xs:choice maxOccurs="unbounded">
+           <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="refreshment" type="refreshment"/>
               <xs:element name="exhibition" type="exhibition"/>
               <xs:element name="toursSessions" type="toursSessions"/>
@@ -2059,14 +2009,10 @@
                  "exhibition" is used. Both sub-elements can then be used repeatedly. 
                  "exhibition" along with "toursSessions" and "otherServices" are the only element where "webpage" is currently used as standalone. 
                  Could be kept like this or changed to "contact". -->
-           <xs:choice>
+           <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="descriptiveNote" type="descriptiveNote"/>
               <xs:element name="webpage" type="webpage"/>
            </xs:choice>
-           <xs:choice maxOccurs="unbounded">
-              <xs:element name="descriptiveNote" type="descriptiveNote"/>
-              <xs:element name="webpage" type="webpage"/>
-           </xs:choice> 
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
@@ -2078,14 +2024,10 @@
                  "toursSessions" is used. Both sub-elements can then be used repeatedly. 
                  "toursSessions" along with "exhibition" and "otherServices" are the only element where "webpage" is currently used as standalone. 
                  Could be kept like this or changed to "contact". -->
-           <xs:choice>
+           <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="descriptiveNote" type="descriptiveNote"/>
               <xs:element name="webpage" type="webpage"/>
            </xs:choice>
-           <xs:choice maxOccurs="unbounded">
-              <xs:element name="descriptiveNote" type="descriptiveNote"/>
-              <xs:element name="webpage" type="webpage"/>
-           </xs:choice> 
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
@@ -2097,11 +2039,7 @@
                  "otherServices" is used. Both sub-elements can then be used repeatedly. 
                  "otherServices" along with "exhibition" and "toursServices" are the only element where "webpage" is currently used as standalone. 
                  Could be kept like this or changed to "contact". -->
-           <xs:choice>
-              <xs:element name="descriptiveNote" type="descriptiveNote"/>
-              <xs:element name="webpage" type="webpage"/>
-           </xs:choice>
-           <xs:choice maxOccurs="unbounded">
+           <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="descriptiveNote" type="descriptiveNote"/>
               <xs:element name="webpage" type="webpage"/>
            </xs:choice>
