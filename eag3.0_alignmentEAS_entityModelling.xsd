@@ -1296,6 +1296,8 @@
             <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
          </xs:sequence>
+         <xs:attributeGroup ref="common"/>
+         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="placeRole" mixed="true">
