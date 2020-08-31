@@ -1522,7 +1522,7 @@
     </xs:complexType>
 
     <xs:complexType name="biographyOrHistory">
-        <!-- Suggestion to have all sub-elements apart from "abstract" as repeatable. Suggestion to require one of "descriptiveNote", "list", or "chronologicalList" 
+        <!-- Suggestion to have all sub-elements apart from "abstract" as repeatable. Suggestion to require one of "descriptiveNote", "list", or "chronologyList" 
              to be there when "biographyOrHistory" is used. -->
         <xs:sequence>
             <xs:element name="abstract" type="abstract" minOccurs="0"/>
@@ -1530,7 +1530,7 @@
                <!-- Note: EAC-CPF and EAD3 use "p" directly rather than having it within "descriptiveNote" -->
                <xs:element name="descriptiveNote" type="descriptiveNote"/>
                <xs:element name="list" type="list"/>
-               <xs:element name="chronologicalList" type="chronologicalList"/> 
+               <xs:element name="chronologyList" type="chronologyList"/> 
             </xs:choice>
         </xs:sequence>
         <!-- Added -->
@@ -1555,15 +1555,15 @@
        <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
-    <xs:complexType name="chronologicalList">
+    <xs:complexType name="chronologyList">
        <xs:sequence>
-          <xs:element name="chronologicalItem" type="chronologicalItem" maxOccurs="unbounded"/>
+          <xs:element name="chronologyItem" type="chronologyItem" maxOccurs="unbounded"/>
        </xs:sequence>
        <xs:attributeGroup ref="common"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
-    <xs:complexType name="chronologicalItem">
+    <xs:complexType name="chronologyItem">
        <xs:sequence>
           <xs:group ref="m.dates"/>
           <xs:choice>
@@ -1571,7 +1571,7 @@
                  <xs:element name="placeName" type="placeName" minOccurs="0"/>
                  <xs:element name="event" type="event"/>
               </xs:sequence>
-              <xs:element name="chronologicalItemSet" type="chronologicalItemSet" maxOccurs="unbounded"/>
+              <xs:element name="chronologyItemSet" type="chronologyItemSet" maxOccurs="unbounded"/>
            </xs:choice>
        </xs:sequence>
        <xs:attributeGroup ref="common"/>
@@ -1583,7 +1583,7 @@
        <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
 
-    <xs:complexType name="chronologicalItemSet">
+    <xs:complexType name="chronologyItemSet">
        <xs:sequence>
           <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="event" type="event" maxOccurs="unbounded"/>
