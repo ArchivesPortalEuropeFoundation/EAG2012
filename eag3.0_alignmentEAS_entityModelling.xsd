@@ -1704,13 +1704,15 @@
              "buildingInformation". Seems to be the most often used option in this context. -->
         <xs:sequence>
             <xs:element name="building" type="building" maxOccurs="unbounded"/>
-            <xs:element name="repositorarea" type="repositorarea" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="lengthshelf" type="lengthshelf" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to rename "repositorarea" to "repositoryArea" -->
+            <xs:element name="repositoryArea" type="repositoryArea" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to rename "lengthshelf" to "lengthOfShelves" -->
+            <xs:element name="lengthOfShelves" type="lengthOfShelves" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
-
+    
     <xs:complexType name="building">
         <xs:sequence>
             <xs:element name="descriptiveNote" type="descriptiveNote"/>
@@ -1718,16 +1720,16 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
-
-    <xs:complexType name="repositorarea">
+    
+    <xs:complexType name="repositoryArea">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
-
-    <xs:complexType name="lengthshelf">
+    
+    <xs:complexType name="lengthOfShelves">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
@@ -2197,10 +2199,10 @@
             <!-- Suggestion to have "webpage" be part of "contact"
             <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
             <!-- Suggestion to rename the four following elements using "Services" instead of "ser" -->
-            <xs:element name="microformser" type="microformServices" minOccurs="0"/>
-            <xs:element name="photographser" type="photographServices" minOccurs="0"/>
-            <xs:element name="digitalser" type="digitalServices" minOccurs="0"/>
-            <xs:element name="photocopyser" type="photocopyServices" minOccurs="0"/>
+            <xs:element name="microformServices" type="microformServices" minOccurs="0"/>
+            <xs:element name="photographServices" type="photographServices" minOccurs="0"/>
+            <xs:element name="digitalServices" type="digitalServices" minOccurs="0"/>
+            <xs:element name="photocopyServices" type="photocopyServices" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
         <!-- Added -->
