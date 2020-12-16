@@ -2,7 +2,7 @@
 <!--
     Draft EAG 3.0 Schema
     Version: 0.1.1
-    Date: 20200826
+    Date: 20201216
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 <!--
@@ -11,17 +11,16 @@
     - Reviewed schema with regard to TS-EAS' decision on using camelCase spelling for element and attribute names; changed names where required 
       (comments included, marked "Review notes")
     - Reviewed schema with regard to alignment that TS-EAS aims for concerning EAC-CPF and EAD, where it could make sense to have EAG follow this approach
-    - Reviewed schema with regard to changes and elements used in EAC-CPF where it could make sense to adopt these for EAG (e.g. "nameEntry" instead of
-      "autform", "parform" and "nonpreform" or looking at the remodelling of "relations") 
-    - Added change for "repositoryType" according to EAG2012 issue #33 on GitHub (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/33) as 
-      well as alternative approach when following EAC-CPF and its handling of "entityType" and "otherEntityType"-s
-    - Added "list" as an option to "repositoryHistory" (renamed "repositorhist") and to "holdings" as per EAG2012 issues #25 and #26 on GitHub 
-      (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/25 and https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/26)
-      - This is following the suggestion to change from "adminhierarchy" to using "structureOrGenealogy" as in EAC-CPF, which also includes "list" as
-        an option
+    - Reviewed schema with regard to changes and elements used in EAC-CPF where it could make sense to adopt these for EAG
+      - "nameEntry" and "nameEntrySet" instead of "autform", "parform" and "nonpreform"
+      - "biogHist" instead of "repositorhist"
+      - "structureOrGenealogy" instead of "adminhierarchy"
+      - Remodelling "relations" 
+    - Added change for "repositoryType" following EAC-CPF and its handling of "entityType" and "otherEntityType"-s
     - Added controlled access terms option to "holdings" according to EAG2012 issue #1 on GitHub 
       (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/1)
     - Additionally reviewed schema with regard to the potential of modelling an archival institution as a corporate body offering public services
+      - Restructured high-level elements "repository" and "repositories" as well as sub-elements "identity", "description", and "relations"
 -->
 
 <xs:schema xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
@@ -35,17 +34,16 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="control" type="control"/>
-                <!-- Rather than using "archguide" (or "archivalGuide") as the wrapper element for the description of an archival institution, it might
-                make sense to move teh choice between "repository" and "repositories" up here. This would be similar to EAC-CPF's approach concerning 
-                "cpfDescription" and "multipleIdentities". -->
+                <!-- Rather than using "archguide" as the wrapper element for the description of an archival institution, EAG3.0 has moved the choice between    
+                "repository" and "repositories" up here. This is similar to EAC-CPF's approach concerning "cpfDescription" and "multipleIdentities". -->
                 <xs:choice>
                     <xs:element ref="repository"/>
                     <xs:element ref="repositories"/>
                 </xs:choice>
                 <!-- <xs:element name="relations" type="relations" minOccurs="0"/> -->
                 <!-- EAC-CPF and EAD3 both have the "relations" element within their descriptive sections, EAC-CPF as part of "cpfDescription" and EAD3
-                as a sibling element to "did" for "archdesc" and "c". It would make sense, if EAG followed that approach and made "relations" a sub-element
-                of "repository". -->
+                as a sibling element to "did" for "archdesc" and "c". EAG3.0 follows this approach and makes "relations" a sub-element of "repository"
+                and of "repositories". -->
             </xs:sequence>
             <!-- <xs:attribute name="audience" use="required"> 
                 <xs:simpleType>
@@ -61,11 +59,13 @@
             <!-- EAC-CPF and EAD3 both include an option to identify each element within an EAS instance via the attribute "xml:id" respectively "id". 
                  Hence added this to all EAG elements as well. The intent for EAC-CPF is to have "audience" and "(xml:)id" as basic attributes with all 
                  elements. -->
-            <xs:attribute ref="xml:base"/>
+            <!-- <xs:attribute ref="xml:base"/> -->
+            <xs:attribute name="base" type="xs:anyURI"/>
+            <!-- For now, EAC-CPF has decided to remove the XML namespace and to follow EAD3 in this. -->
             <!-- <xs:attribute ref="xml:lang"/> -->
-            <!-- EAC-CPF will follow EAD3 and add language attribution to all non-empty elements. -->
-            <!-- The conversation around keeping or removing the XML namespace is still not finalised yet in the context of the EAC-CPF revision, so
-                 leaving this with "xml:lang" (and "script"). Otherwise, this would (likely) become "languageOfElement" (and "scriptOfElement"). -->
+            <!-- EAC-CPF will follow EAD3 and add language attribution to all non-empty elements, i.e. elements that either can contain text themselves
+                 or have sub-elements that can. -->
+            <!-- For now, EAC-CPF has decided to remove the XML namespace and will use the attributes become "languageOfElement" and "scriptOfElement". -->
             <xs:attributeGroup ref="common"/>
         </xs:complexType>
     </xs:element>
@@ -84,6 +84,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="repository" maxOccurs="unbounded"/>
+                <xs:element name="relations" type="relations" minOccurs="0"/>
                 <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         </xs:complexType>
@@ -92,30 +93,35 @@
     <xs:complexType name="image">
         <xs:attributeGroup ref="link"/>
         <!-- Changed from using "href" and "linkTitle" separately to using the combined group for links. This means that "href" would not be mandatory anymore. 
-             However, seeing that one can't use any content with "image", one would assume that inlcuding a link within "href" is the next logical thing to do. 
+             However, seeing that one can't use any text with "image", one would assume that inlcuding a link within "href" is the next logical thing to do. 
              -->
         <!-- <xs:attributeGroup ref="localType"/> -->
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
     
     <!-- Added -->
     <xs:attributeGroup name="common.empty">
-       <xs:attribute ref="xml:id"/>
+       <!-- <xs:attribute ref="xml:id"/> -->
+       <xs:attribute name="id" type="xs:ID"/>
+       <!-- For now, EAC-CPF has decided to remove the XML namespace and to follow EAD3 in this. -->
        <xs:attribute name="audience">
-          <xs:simpleType>
-             <xs:restriction base="xs:token">
-                <xs:enumeration value="external"/>
-                <xs:enumeration value="internal"/>
-             </xs:restriction>
-          </xs:simpleType>
+         <xs:simpleType>
+           <xs:restriction base="xs:token">
+             <xs:enumeration value="external"/>
+             <xs:enumeration value="internal"/>
+           </xs:restriction>
+         </xs:simpleType>
        </xs:attribute>
     </xs:attributeGroup>
 
     <!-- Added -->
     <xs:attributeGroup name="common">
        <xs:attributeGroup ref="common.empty"/>
-       <xs:attribute ref="xml:lang"/>
-       <xs:attribute name="script" type="xs:NMTOKEN"/>
+       <!-- <xs:attribute ref="xml:lang"/> -->
+       <xs:attribute name="languageOfElement" type="xs:NMTOKEN"/>
+       <!-- For now, EAC-CPF has decided to remove the XML namespace and to follow EAD3 in this. -->
+       <xs:attribute name="scriptOfElement" type="xs:NMTOKEN"/>
     </xs:attributeGroup>
     
     <!-- <xs:attributeGroup name="href">
@@ -127,7 +133,7 @@
     </xs:attributeGroup> -->
     
     <!-- The following group replaces the above two attributes. --> 
-    <!-- EAC-CPF and EAD3 both use a group of linking attributes together with "href". As of today (21 August 2020), it is likely that this group will
+    <!-- EAC-CPF and EAD3 both use a group of linking attributes together with "href". For now, it is likely that this group will
          consist of the three attributes given here, but will not include "actuate", "arcRole", and "show" anymore. -->
     <xs:attributeGroup name="link">
         <xs:attribute name="href" type="xs:anyURI"/>
@@ -268,6 +274,7 @@
                 <!-- Added -->
                 <xs:attributeGroup ref="common"/>
                 <xs:attribute name="localType" type="xs:anyURI"/>
+                <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
                 <xs:attributeGroup ref="vocabulary"/>
                 <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"), though EAC-CPF has taken the 
                      decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
@@ -287,6 +294,7 @@
        <xs:attributeGroup ref="common"/>
        <xs:attributeGroup ref="link"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
 
     <!-- EAC-CPF intends to follow EAD3 in using the attribute "value" for the variations of "maintenanceStatus", simultaneously removing the option to 
@@ -403,6 +411,7 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"), though EAC-CPF has taken the 
              decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
@@ -543,6 +552,7 @@
         <xs:attributeGroup ref="common"/>
         <!-- <xs:attributeGroup ref="localType"/> -->
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
 
     <xs:complexType name="localTypeDeclaration">
@@ -569,6 +579,7 @@
         <xs:attributeGroup ref="common"/>
         <!-- <xs:attributeGroup ref="localType"/> -->
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
 
     <!-- Seeing that everyone who uses "term" in APE uses it with the value "extended", there doesn't seem to be enough distinction in this to merit 
@@ -608,6 +619,7 @@
         <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
@@ -643,6 +655,7 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
 
     <xs:complexType name="fromDate" mixed="true">
@@ -663,22 +676,21 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <!-- There might be the question if we keep this restriction on any dates further in the future than the end of 2099. -->
     <xs:simpleType name="m.data.standardDate">
         <xs:union>
             <xs:simpleType>
                 <xs:restriction base="xs:date">
-                    <xs:maxInclusive value="2099-12-31"/>
+                    <xs:maxInclusive value="9999-12-31"/>
                 </xs:restriction>
             </xs:simpleType>
             <xs:simpleType>
                 <xs:restriction base="xs:gYear">
-                    <xs:maxInclusive value="2099"/>
+                    <xs:maxInclusive value="9999"/>
                 </xs:restriction>
             </xs:simpleType>
             <xs:simpleType>
                 <xs:restriction base="xs:gYearMonth">
-                    <xs:maxInclusive value="2099-12"/>
+                    <xs:maxInclusive value="9999-12"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:union>
@@ -780,27 +792,26 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <!-- There might be the question if we keep this restriction on any dates further in the future than the end of 2099. -->
     <xs:simpleType name="m.data.standardDateTime">
         <xs:union>
             <xs:simpleType>
                 <xs:restriction base="xs:date">
-                    <xs:maxInclusive value="2099-12-31"/>
+                    <xs:maxInclusive value="9999-12-31"/>
                 </xs:restriction>
             </xs:simpleType>
             <xs:simpleType>
                 <xs:restriction base="xs:gYear">
-                    <xs:maxInclusive value="2099"/>
+                    <xs:maxInclusive value="9999"/>
                 </xs:restriction>
             </xs:simpleType>
             <xs:simpleType>
                 <xs:restriction base="xs:gYearMonth">
-                    <xs:maxInclusive value="2099-12"/>
+                    <xs:maxInclusive value="9999-12"/>
                 </xs:restriction>
             </xs:simpleType>
             <xs:simpleType>
                 <xs:restriction base="xs:dateTime">
-                    <xs:maxInclusive value="2099-12-31T23:59:59"/>
+                    <xs:maxInclusive value="9999-12-31T23:59:59"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:union>
@@ -816,7 +827,9 @@
 
     <xs:complexType name="source">
         <xs:sequence>
-            <xs:element name="sourceEntry" type="sourceEntry" minOccurs="0"/>
+            <!-- EAC-CPF has decided to replace "sourceEntry" with the more general "reference". -->
+            <!-- <xs:element name="sourceEntry" type="sourceEntry" minOccurs="0"/> -->
+            <xs:element name="reference" type="reference" minOccurs="0"/>
             <!-- EAC-CPF has decided to remove the element "objectBinWrap" and it would make sense for EAG to follow. -->
             <!-- <xs:choice minOccurs="0">
                 <xs:element name="objectXMLWrap" type="objectXMLWrap"/>
@@ -832,16 +845,11 @@
         <!-- Changed from using "href" separately to using the combined group for links. -->
     </xs:complexType>
 
-    <xs:complexType name="sourceEntry" mixed="true">
-        <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
+    <!-- <xs:complexType name="sourceEntry" mixed="true">
+        <xs:attributeGroup ref="m.entryLanguageAttributes"/>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"), though EAC-CPF has taken the 
-             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
-             while only seldomnly pointing to vocabularies etc. 
-             Should be reviewed as it doesn't seem to make sense to point from a "sourceEntry" to a "source". -->
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
+        <xs:attributeGroup ref="sourceAttribute"/>
+    </xs:complexType> -->
 
     <xs:complexType name="objectXMLWrap">
         <xs:group ref="e.anyName"/>
@@ -903,10 +911,10 @@
             "family", and "person" and to introduce a new element "otherEntityTypes" to capture and alternative types or translations or specifications 
             of the predefined ones. Suggestion to follow this approach for EAG instead of the proposal made in 
             https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/33 -->
-            <xs:element name="entityType" type="entityType"/>
-            <!-- <xs:element name="repositoryType" type="repositoryType" minOccurs="0" maxOccurs="unbounded"/> -->
-            <xs:element name="otherEntityTypes" type="otherEntityTypes" minOccurs="0" maxOccurs="unbounded"/> 
-            <!-- Suggestion to replace the three name elements with "nameEntry" and and to add "nameEntrySet". -->
+            <xs:element name="repositoryType" type="repositoryType" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- New element "otherRepositoryType" added -->
+            <xs:element name="otherRepositoryType" type="otherRepositoryType" minOccurs="0" maxOccurs="unbounded"/> 
+            <!-- The three name elements are replaced with "nameEntry" and and to add "nameEntrySet". -->
             <!-- <xs:element name="autform" type="autform" maxOccurs="unbounded"/>
             <xs:element name="parform" type="parform" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="nonpreform" type="nonpreform" minOccurs="0" maxOccurs="unbounded"/> -->
@@ -937,51 +945,47 @@
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-    
-    <!-- Adoption of https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/33 for "repositoryType", but following EAC-CPF's approach
-         for "entityType" and "otherEntityType" respectively in this case: "repositoryType" and "otherRepositoryType". --> 
-    
-    <xs:complexType name="entityType">
+   
+    <!-- Review and definition of values for the attribute "value" pending. -->
+    <xs:complexType name="repositoryType">
        <xs:attribute name="value" use="required">
            <xs:simpleType>
               <xs:restriction base="xs:token">
-                 <xs:enumeration value="corporateBody"/>
-                 <xs:enumeration value="family"/>
-                 <xs:enumeration value="person"/>
+                 <xs:enumeration value="nationalArchives"/>
+                 <xs:enumeration value="regionalArchives"/>
+                 <xs:enumeration value="countyLocalArchives"/>
+                 <xs:enumeration value="municipalArchives"/>
+                 <xs:enumeration value="specialisedGovernmentArchives"/>
+                 <xs:enumeration value="privatePersonsFamilyArchives"/> 
+                 <xs:enumeration value="businessArchives"/>
+                 <xs:enumeration value="churchReligiousArchives"/>
+                 <xs:enumeration value="universityResearchArchives"/>
+                 <xs:enumeration value="politicalPartiesMovementsOtherNongovernmentalArchives"/>
+                 <xs:enumeration value="specialisedNongovernmentalOtherCulturalHeritageArchives"/>
+                 <xs:enumeration value="mediaArchives"/> 
               </xs:restriction>
            </xs:simpleType>
         </xs:attribute>
         <xs:attributeGroup ref="common.empty"/>
     </xs:complexType>
 
-    <xs:complexType name="otherEntityTypes">
-        <xs:sequence>
-            <xs:element name="otherEntityType" type="otherEntityType" maxOccurs="unbounded"/>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-    
-    <xs:complexType name="otherEntityType">
+    <xs:complexType name="otherRepositoryType">
         <xs:sequence>
             <xs:element name="term" type="term" minOccurs="0"/>
             <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/> 
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
     <xs:complexType name="placeName">
         <xs:sequence>
-            <xs:element name="part" type="part"/>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
@@ -999,6 +1003,7 @@
         <!-- With the change to "nameEntry" being used more generally in EAG, it might make sense to leave the "localType" for "part" 
         free for any value. It could still be considered to define specific values for the use in a future apeEAG, similar to apeEAC-CPF. -->
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <!-- <xs:attribute name="localType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1092,6 +1097,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1135,6 +1141,7 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <!-- <xs:attribute name="localType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1154,12 +1161,10 @@
              using EAC-CPF. If we were to do so, the element "description" - next to "identity" - is probably the main one to look at. The new version 
              of EAC-CPF will see the following sub-elements to "description": "existDates", "places", "localDescriptions", "legalStatuses", "functions", 
              "languagesUsed, "occupations", "mandates", "structureOrGenealogy", "generalContext", "biogHist".
-             Out of these, we could consider to re-use "existDates" and "mandates" to encode the information currently captured in the sub-elements
-             "date" and "rule" of "repositorfound" and "repositorsup". We could furthermore consider using "biog(raphyOr)Hist(ory)" instead of 
-             "repositorhist". Similary, as already suggested, we could use "structureOrGenealogy" instead of "adminhierarchy". Last, we could consider
-             introducing "places"/"place" as a parent element to either only "location" or to "location" and "contact" and maybe even "geographicalArea". 
-             EAC-CPF and EAD3 are currently using the general "address" and "addressline" to capture similar information as EAG has in "location" and 
-             "contact", but maybe this could be an influence from EAG on the other two EAS. 
+             Further to the decision of using "biogHist" instead of "repositorhist" and "structureOrGenealogy" instead of "adminhierarchy", we could consider 
+             to re-use "existDates" and "mandates" to encode the information currently captured in the sub-elements "date" and "rule" of "repositorfound" and    
+             "repositorsup". Last, we could consider using the more general "address" and "addressLine" to capture similar information as EAG has in "location"
+             and EAC-CPF just has decided to introduce the elements "contact" and "contactLine" to capture similar information as EAG has in "contact". 
              Of the remaining sub-elements of EAC-CPF's "description", "functions" and "legalStatuses" might be useful in the context of EAG as well and
              could be introduced as new additions, but we might want to leave "localDescriptions", "languagesUsed, "occupations", and "generalContext"
              aside. 
@@ -1173,49 +1178,44 @@
             <!-- With the suggestion to use the attribute "value" instead of having the predefined terms as content of the element, one could 
                  include other language information in the element "repositoryRole" itself. Would we hence want to consider having it as 
                  repeatable? -->
-            <xs:element name="repositoryRole" type="repositoryRole" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="repositoryRole" type="repositoryRole" minOccurs="0"/>
+            <!-- Suggestion for "repositoryRole" to follow a similar approach as "repositoryType", i.e. to add a new element "otherRepositoryRole". 
+                 In that context, "repositoryRole" should be made not repeatable as its values seem to be more distinct than the ones for "repositoryType". -->
+            <!-- <xs:element name="repositoryRole" type="repositoryRole" minOccurs="0" maxOccurs="unbounded"/> -->
+            <xs:element name="otherRepositoryRole" type="otherRepositoryRole" minOccurs="0" maxOccurs="unbounded"/>
             <!-- Suggestion to rename "geogarea" not only to "geogArea" but to "geographicalArea" or maybe actually to "continent" as that is
                  the information we are currently capturing in this element. With the additional suggestion to use the attribute "value" instead 
                  of having the predefined terms as content of the element, one could include other language information in the element "continent" itself.
                  Would we hence want to consider having it as repeatable - or would we not want to risk that someone specifies the "geographicalArea"
                  to be "Europe" and "Antarctica" at the same time? -->
             <!-- If we were to adapt EAG slightly more towards EAC-CPF following the idea that an institution with archival holdings is simply a corporate
-                 body that provides certain public services, it might be an option to include "geographicalArea", "location", and "contact" as sub-elements
-                 of "places"/"place". Note 1: it would make sense if EAC-CPF and EAD adopted the same approach and used the more specific "location" and "contact"
-                 instead of the currently applied general "address" and "addressline". Note 2: if we wanted to keep the "location" information mandatory, this 
-                 would mean that "places" with at least one "place" would need to be mandatory in a new version of EAG as well while it might remain optional 
-                 in a new version of EAC-CPF. -->
+                 body that provides certain public services, we could introduce "places"/"place" with the sub-elements "address" and "contact". -->
+            <xs:element name="geographicalArea" type="geographicalArea" maxOccurs="unbounded"/>
             <xs:element name="places" type="places" maxOccurs="unbounded"/>
-            <!-- <xs:element name="geographicalArea" type="geographicalArea"/>
-            <xs:element name="location" type="location" maxOccurs="unbounded"/> -->
-            <!-- Might it be make sense to use the already existing element "contact" at this stage as well in order to bundle "telephone" and "email"
-                 which are already part of "contact" along with "fax" and "webpage"? And maybe remove "nameEntry" from "contact" seeing that it is not
-                 used at all anyway and could hence become more of the main element for the name(s) of the enity being described rather than the name
-                 connected to contact information? Would of course work best if we kept all the potential sub-elements as optional, but could also work
-                 if e.g. "email" were made mandatory. This would then simply mean that "contact" would need to be mandatory as well. -->
-            <!-- <xs:element name="contact" type="contact" minOccurs="0" maxOccurs="unbounded"/> -->
+            <!-- If we were to adapt EAG slightly more towards EAC-CPF following the idea that an institution with archival holdings is simply a corporate
+                 body that provides certain public services, "location" and its sub-elements could become "address" and "addressLine" as sub-elements of "place".             -->
+            <!-- <xs:element name="location" type="location" maxOccurs="unbounded"/> -->
+            <!-- If we were to adapt EAG slightly more towards EAC-CPF following the idea that an institution with archival holdings is simply a corporate
+                 body that provides certain public services, "telephone", "fax", "email", and "webpage" could become "contactLine"-s within "contact" as sub-
+                 element of "place".             -->
             <!-- <xs:element name="telephone" type="telephone" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="fax" type="fax" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="email" type="email" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
-            <!-- Suggestion to move "directions" to being an optional sub-element of "location". -->
-            <!-- <xs:element name="directions" type="directions" minOccurs="0" maxOccurs="unbounded"/> -->
-            <!-- If we were to adapt EAG slightly more towards EAC-CPF following the idea that an institution with archival holdings is simply a corporate
-                 body that provides certain public services, it might be an option to use "biog(raphyOr)Hist(ory)" instead of "repositoryHistory". -->
-            <xs:element name="biographyOrHistory" type="biographyOrHistory" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="directions" type="directions" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="biogHist" type="biogHist" minOccurs="0" maxOccurs="unbounded"/>
             <!-- If we were to adapt EAG slightly more towards EAC-CPF following the idea that an institution with archival holdings is simply a corporate
                  body that provides certain public services, it might be an option to use "existDates" along with "mandates" instead of "repositorfound"
-                 and "repositorsup" with their sub-elements of "date" and "rule". -->
+                 and "repositorsup" with their sub-elements of "date" and "rule". This would allow for an alternative encoding to using "biogHist/chronList". -->
             <xs:element name="existDates" type="existDates" minOccurs="0"/>
             <xs:element name="mandates" type="mandates" minOccurs="0" maxOccurs="unbounded"/>
             <!-- <xs:element name="repositorfound" type="repositorfound" minOccurs="0"/>
             <xs:element name="repositorsup" type="repositorsup" minOccurs="0"/> -->
-            <!-- Suggestion to rename "buildinginfo" to "buildingInformation" -->
+            <!-- Suggestion to add "functions" and "legalStatuses". -->
             <xs:element name="functions" type="functions" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="legalStatuses" type="legalStatuses" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Suggestion to rename "buildinginfo" to "buildingInformation" -->
             <xs:element name="buildingInformation" type="buildingInformation" minOccurs="0" maxOccurs="unbounded"/>
-            <!-- Suggestion to rename "adminhierarchy" to "administrativeStructure" or rather to reuse "structureOrGenealogy" from EAC-CPF. The latter
-                 currently allows for "citation", "list", "outline", and "p". In the new version, this is likely going to be "reference", "list" and "p". -->
             <xs:element name="structureOrGenealogy" type="structureOrGenealogy" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="holdings" type="holdings" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="timetable" type="timetable" maxOccurs="unbounded"/>
@@ -1240,9 +1240,10 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType> -->
 
-    <xs:complexType name="repositoryRole" mixed="true">
+    <xs:complexType name="repositoryRole">
         <!-- Suggestion to use the attribute "value" for the predefined options rather than having them as content of the element. We could consider 
-             keeping the element as [text] so that users could e.g. include their own language/context versions of the roles in the element. -->
+             keeping the element as [text] so that users could e.g. include their own language/context versions of the roles in the element, or follow
+             a similar approach as above with "repositoryType" and "otherRepositoryType". The latter approach is laid out below. -->
         <xs:attribute name="value" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1264,59 +1265,23 @@
             </xs:restriction>
         </xs:simpleContent> -->
         <!-- Added -->
-        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="common.empty"/>
     </xs:complexType>
 
-    <xs:complexType name="places">
+    <xs:complexType name="otherRepositoryRole">
         <xs:sequence>
-            <xs:element name="place" type="place"/>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="place" type="place"/>
-                <xs:element name="descriptiveNote" type="descriptiveNote"/>
-            </xs:choice>
+            <xs:element name="term" type="term" minOccurs="0"/>
+            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:group ref="m.dates" minOccurs="0"/>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/> 
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-    </xs:complexType>
-                
-    <xs:complexType name="place">
-        <xs:sequence>
-            <!-- Suggestion to require one of "placeRole", "placeName", "geographicalArea", "location", "geographicCoordinates", or "contact" to be there 
-                 when "place" is used - if not making "placeName" the mandatory sub-element in general. All six of these sub-elements can then be used 
-                 repeatedly. -->
-            <!-- Option 1: -->
-            <xs:element name="placeName" type="placeName"/>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="placeRole" type="placeRole"/>
-                <xs:element name="placeName" type="placeName"/>
-                <xs:element name="geographicalArea" type="geographicalArea"/>
-                <xs:element name="location" type="location"/>
-                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
-                <xs:element name="contact" type="contact"/>
-            </xs:choice>
-            <!-- Option 2:
-            <xs:choice minOccurs="1" maxOccurs="unbounded">
-                <xs:element name="placeRole" type="placeRole"/>
-                <xs:element name="placeName" type="placeName"/>
-                <xs:element name="geographicalArea" type="geographicalArea"/>
-                <xs:element name="location" type="location"/>
-                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
-                <xs:element name="contact" type="contact"/>
-            </xs:choice> -->
-            <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-         </xs:sequence>
-         <xs:attributeGroup ref="common"/>
-         <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-    
-    <xs:complexType name="placeRole" mixed="true">
-        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
-        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
     </xs:complexType>
-    
+        
     <xs:complexType name="geographicalArea" mixed="true">
         <!-- Suggestion to use the attribute "value" for the predefined options rather than having them as content of the element. We could consider 
              keeping the element as [text] so that users could e.g. include their own language versions of the geographical area in the element. -->
@@ -1351,98 +1316,150 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
-
-    <xs:complexType name="location">
+    
+    <xs:complexType name="places">
         <xs:sequence>
-            <xs:element name="country" type="country"/>
-            <!-- Would we consider renaming "firstdem" to either "region" or "autonomousCommunity" to make it clearer what this element is about? -->
-            <xs:element name="region" type="region" minOccurs="0"/>
-            <!-- Would we consider renaming "firstdem" to either "county" or "localAuthority" to make it clearer what this element is about? -->
-            <xs:element name="county" type="county" minOccurs="0"/>
-            <!-- "placeName" should be recommended as the element to encode the name of a town, city, municipality which would then leave the postal code 
-                 as additional location or address information. Suggestion to rename the element accordingly from "municipalityPostalcode" to "postalcode". 
-                 For display of such information, e.g. in APE, this would mean that there'd either be a fixed sequence of "placeName" and "postalcode", even 
-                 if that might not fit all contexts, or both elements would be displayed separately. -->
-            <xs:element name="postalcode" type="postalcode"/>
-            <!-- Would we consider renaming "localentity" to either "districtOfTown" or "quarterOfTown" to make it clearer what this element is about? -->
-            <xs:element name="districtOfTown" type="districtOfTown" minOccurs="0"/>
-            <xs:element name="street" type="street" minOccurs="0"/>
-            <!-- Suggestion to incorpoate "directions" here instead of having it directly with "repository" -->
-            <xs:element name="directions" type="directions" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="place" type="place"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="place" type="place"/>
+                <xs:element name="descriptiveNote" type="descriptiveNote"/>
+            </xs:choice>
         </xs:sequence>
-        <!-- Suggestion to use the new attribute "status" for the predefined terms instead of "localType", which would allow "localType" to be 
-             used for actual local information. -->
-        <xs:attribute name="status" use="required">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="visitors address"/>
-                    <xs:enumeration value="postal address"/>
-                </xs:restriction>
-            </xs:simpleType>
+        <xs:attributeGroup ref="common"/>
+    </xs:complexType>
+                
+    <xs:complexType name="place">
+        <xs:sequence>
+            <!-- Suggestion to require one of "placeRole", "placeName", "geographicalArea", "address", "geographicCoordinates", or "contact" to be there 
+                 when "place" is used - if not making "placeName" the mandatory sub-element in general. All six of these sub-elements can then be used 
+                 repeatedly. -->
+            <!-- Option 1: -->
+            <xs:element name="placeName" type="placeName"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="placeRole" type="placeRole"/>
+                <xs:element name="placeName" type="placeName"/>
+                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
+                <xs:element name="address" type="address"/>
+                <xs:element name="contact" type="contact"/>
+            </xs:choice>
+            <!-- Option 2:
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="placeRole" type="placeRole"/>
+                <xs:element name="placeName" type="placeName"/>
+                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
+                <xs:element name="address" type="location"/>
+                <xs:element name="contact" type="contact"/>
+            </xs:choice> -->
+            <xs:group ref="m.dates" minOccurs="0"/>
+            <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="common"/>
+         <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="placeRole" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+    </xs:complexType>
+
+    <xs:complexType name="geographicCoordinates" mixed="true">
+       <xs:attribute name="coordinateSystem" use="required" type="xs:token"/>
+       <xs:attributeGroup ref="common"/>
+       <xs:attributeGroup ref="references"/> 
+    </xs:complexType>
+    
+    <xs:complexType name="address">
+       <xs:sequence>
+         <xs:element name="addressLine" type="addressLine" maxOccurs="unbounded"/>
+       </xs:sequence>
+       <xs:attributeGroup ref="common"/>
+       <xs:attributeGroup ref="references"/>
+       <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+    </xs:complexType>
+    
+    <xs:complexType name="addressLine" mixed="true">
+       <xs:attributeGroup ref="common"/>
+       <xs:attributeGroup ref="references"/>
+       <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> 
+       <xs:attribute name="addressLineType" use="required">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="country"/>
+                 <xs:enumeration value="region"/>
+                 <xs:enumeration value="county"/>
+                 <xs:enumeration value="municipality"/>
+                 <xs:enumeration value="postalCode"/>
+                 <xs:enumeration value="district"/>
+                 <xs:enumeration value="postBox"/>
+                 <xs:enumeration value="street"/>
+              </xs:restriction>
+           </xs:simpleType>
         </xs:attribute>
-        <!-- Note: EAC-CPF will adopt the element "geographicCoordinates from EAD3 instead of using attributes for geographic referencing. 
-             Might be worth considering this for EAG, too. However, the change in EAC-CPF will be place/geographicCoordinates, i.e. for EAG
-             a possible solution could be a new element "place" with sub-elements "location", "geographicCoordinates" and "directions". -->
-        <!-- <xs:attribute name="longitude" type="xs:NMTOKEN"/>
-        <xs:attribute name="latitude" type="xs:NMTOKEN"/> -->
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+    </xs:complexType>
+    
+    <xs:complexType name="contact">
+      <xs:sequence>
+         <xs:element type="contactLine" name="contactLine" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="common"/>
+      <xs:attributeGroup ref="references"/>
+      <xs:attribute name="localType" type="xs:anyURI"/>
+      <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+    </xs:complexType>
+        
+    <xs:complexType name="contactLine" mixed="true">
+      <xs:attributeGroup ref="common"/>
+      <xs:attributeGroup ref="references"/>
+      <xs:attributeGroup ref="link"/>
+      <xs:attribute name="localType" type="xs:anyURI"/>
+      <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>  
+      <xs:attribute name="contactLineType" use="required">
+           <xs:simpleType>
+              <xs:restriction base="xs:token">
+                 <xs:enumeration value="phoneNumber"/>
+                 <xs:enumeration value="mobileNumber"/>
+                 <xs:enumeration value="fax"/>
+                 <xs:enumeration value="homepage"/>
+                 <xs:enumeration value="email"/>
+              </xs:restriction>
+           </xs:simpleType>
+        </xs:attribute>  
+    </xs:complexType>
+    
+    <!-- <xs:complexType name="country" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
-    <xs:complexType name="country" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
+    <xs:complexType name="firstdem" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
-    <xs:complexType name="region" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
+    <xs:complexType name="secondem" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
-    <xs:complexType name="county" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
+    <xs:complexType name="municipalityPostalcode" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
-    <xs:complexType name="postalcode" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="districtOfTown" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
+    <xs:complexType name="localentity" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="street" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
+    </xs:complexType> -->
 
     <xs:complexType name="directions" mixed="true">
         <xs:sequence>
@@ -1457,139 +1474,127 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <xs:complexType name="geographicCoordinates" mixed="true">
-       <xs:attribute name="coordinateSystem" use="required" type="xs:token"/>
-       <xs:attributeGroup ref="common"/>
-       <xs:attributeGroup ref="references"/> 
-    </xs:complexType>
-    
-    <xs:complexType name="contact">
-        <!-- Suggestion to require one of "telephone", "fax", "email", or "webpage" to be there when "contact" is used. All four sub-elements can 
-             then be used repeatedly. -->
-        <xs:sequence>
-            <xs:choice minOccurs="1" maxOccurs="unbounded">
-               <xs:element name="telephone" type="telephone"/>
-               <!-- Suggestion to add "fax" to "contact" instead of having it as direct sub-element of "repository" -->
-               <xs:element name="fax" type="fax"/>
-               <xs:element name="email" type="email"/>
-               <!-- Suggestion to add "fax" to "contact" instead of having it as direct sub-element of "repository". Or do we see "webpage" as being
-                    "location" information (as ISDIAH states in 5.2.1) rather than "contact" information? -->
-               <xs:element name="webpage" type="webpage"/>
-               <!-- Suggestion to remove "nameEntry" due to not being used for "contact" information -->
-               <!-- <xs:element name="nameEntry" type="nameEntry" minOccurs="0" maxOccurs="unbounded"/> -->
-            </xs:choice>
-        </xs:sequence>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
-    </xs:complexType>
-
-    <xs:complexType name="telephone" mixed="true">
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
+    <!-- <xs:complexType name="telephone" mixed="true">
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="fax" mixed="true">
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="email" mixed="true">
-        <xs:attributeGroup ref="link"/>
-        <!-- Changed from using "href" separately to using the combined group for links. -->
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="href"/>
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="webpage" mixed="true">
-        <xs:attributeGroup ref="link"/>
-        <!-- Changed from using "href" separately to using the combined group for links. -->
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
+        <xs:attributeGroup ref="href"/>
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
+    </xs:complexType> -->
 
-    <xs:complexType name="biographyOrHistory">
-        <!-- Suggestion to have all sub-elements apart from "abstract" as repeatable. Suggestion to require one of "descriptiveNote", "list", or "chronologyList" 
-             to be there when "biographyOrHistory" is used. -->
+    <xs:complexType name="biogHist">
+        <!-- Suggestion to have all sub-elements apart from "head" and "abstract" as repeatable. Suggestion to require one of "p", "list", or "chronList" 
+             to be there when "biogHistory" is used. -->
         <xs:sequence>
+            <xs:element name="head" type="head" minOccurs="0"/>
             <xs:element name="abstract" type="abstract" minOccurs="0"/>
             <xs:choice minOccurs="1" maxOccurs="unbounded">
-               <!-- Note: EAC-CPF and EAD3 use "p" directly rather than having it within "descriptiveNote" -->
-               <xs:element name="descriptiveNote" type="descriptiveNote"/>
+               <xs:element name="p" type="p"/>
                <xs:element name="list" type="list"/>
-               <xs:element name="chronologyList" type="chronologyList"/> 
+               <xs:element name="chronList" type="chronList"/> 
             </xs:choice>
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
 
+    <xs:complexType name="head" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
     <xs:complexType name="abstract" mixed="true">
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
 
     <xs:complexType name="list">
        <xs:sequence>
-          <xs:element maxOccurs="unbounded" name="item" type="item"/>
+          <xs:element minOccurs="0" name="head" type="head"/> 
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+               <xs:element name="item" type="item"/>
+               <xs:element name="list" type="list"/>
+          </xs:choice>
        </xs:sequence>
        <xs:attributeGroup ref="common"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> 
     </xs:complexType>
 
     <xs:complexType name="item" mixed="true">
        <xs:attributeGroup ref="common"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> 
     </xs:complexType>
 
-    <xs:complexType name="chronologyList">
+    <xs:complexType name="chronList">
        <xs:sequence>
-          <xs:element name="chronologyItem" type="chronologyItem" maxOccurs="unbounded"/>
+          <xs:element name="chronItem" type="chronItem" maxOccurs="unbounded"/>
        </xs:sequence>
        <xs:attributeGroup ref="common"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> 
     </xs:complexType>
 
-    <xs:complexType name="chronologyItem">
+    <xs:complexType name="chronItem">
        <xs:sequence>
           <xs:group ref="m.dates"/>
           <xs:choice>
               <xs:sequence>
                  <xs:element name="placeName" type="placeName" minOccurs="0"/>
+                 <xs:element name="rule" type="rule" minOccurs="0" maxOccurs="unbounded"/>
                  <xs:element name="event" type="event"/>
               </xs:sequence>
-              <xs:element name="chronologyItemSet" type="chronologyItemSet" maxOccurs="unbounded"/>
+              <xs:element name="chronItemSet" type="chronItemSet" maxOccurs="unbounded"/>
            </xs:choice>
        </xs:sequence>
        <xs:attributeGroup ref="common"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> 
     </xs:complexType>
     
-    <xs:complexType name="event" mixed="true">
-       <xs:attributeGroup ref="common"/>
-       <xs:attribute name="localType" type="xs:anyURI"/>
+    <xs:complexType name="rule" mixed="true">
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". --> 
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <xs:complexType name="chronologyItemSet">
+    <xs:complexType name="event" mixed="true">
+       <xs:attributeGroup ref="common"/>
+       <xs:attributeGroup ref="vocabulary"/>
+       <xs:attributeGroup ref="references"/> 
+       <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> 
+    </xs:complexType>
+    
+    <xs:complexType name="chronItemSet">
        <xs:sequence>
           <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="rule" type="rule" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="event" type="event" maxOccurs="unbounded"/>
        </xs:sequence>
        <xs:attributeGroup ref="common"/>
        <xs:attribute name="localType" type="xs:anyURI"/>
+       <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> 
     </xs:complexType>
     
     <xs:complexType name="existDates">
@@ -1598,6 +1603,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
     
     <xs:complexType name="mandates">
@@ -1617,38 +1623,24 @@
             <xs:element name="term" type="term"/>
             <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
          </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
     </xs:complexType>
     
-    <!-- <xs:complexType name="foundation">
+    <!-- <xs:complexType name="repositorfound">
         <xs:sequence>
             <xs:element name="date" type="date"/>
             <xs:element name="rule" type="rule" maxOccurs="unbounded"/>
         </xs:sequence>
-        Added
-        <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
-    <xs:complexType name="rule" mixed="true">
-        <xs:attribute ref="xml:lang"/>
-        Replaced attribute "(xml:)lang" with the attribute "common". 
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). 
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType> 
-
-    <xs:complexType name="suppression">
+    <xs:complexType name="repositorsup">
         <xs:sequence>
             <xs:element name="date" type="date"/>
             <xs:element name="rule" type="rule" maxOccurs="unbounded"/>
         </xs:sequence>
-        Added
-        <xs:attributeGroup ref="common"/>
     </xs:complexType> -->
 
     <xs:complexType name="functions">
@@ -1668,11 +1660,11 @@
             <xs:element name="term" type="term"/>
             <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
          </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
     
     <xs:complexType name="legalStatuses">
@@ -1692,11 +1684,11 @@
             <xs:element name="term" type="term"/>
             <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
          </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
     </xs:complexType>
     
     <xs:complexType name="buildingInformation">
@@ -1743,6 +1735,7 @@
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="squaremetre"/>
                     <xs:enumeration value="linearmetre"/>
+                    <xs:enumeration value="cubicmetre"/>
                     <xs:enumeration value="site"/>
                     <xs:enumeration value="book"/>
                     <xs:enumeration value="title"/>
@@ -1757,14 +1750,14 @@
     </xs:complexType>
 
     <xs:complexType name="structureOrGenealogy">
-        <!-- Suggestion to require one of "p", "list", or "reference" to be there when "structureOrGenealogy" is used. All three sub-elements can 
+        <!-- Suggestion to require one of "p" or "list" to be there when "structureOrGenealogy" is used. Both sub-elements can 
              then be used repeatedly. -->
         <xs:sequence>
-           <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="head" type="head" minOccurs="0"/>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="p" type="p"/>
               <xs:element name="list" type="list"/>
-              <xs:element name="reference" type="reference"/>
-           </xs:choice>
+            </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
@@ -2256,13 +2249,14 @@
 
     <xs:complexType name="exhibition">
         <xs:sequence>
-           <!-- Suggestion to require one of "descriptiveNote" or "webpage" to be there when 
+           <!-- Suggestion to require one of "descriptiveNote" or "contact" to be there when 
                  "exhibition" is used. Both sub-elements can then be used repeatedly. 
-                 "exhibition" along with "toursSessions" and "otherServices" are the only element where "webpage" is currently used as standalone. 
-                 Could be kept like this or changed to "contact". -->
+                 "exhibition" along with "toursSessions" and "otherServices" are the only element where "webpage" was used as standalone.  
+                 Now changed to "contact". -->
            <xs:choice minOccurs="1" maxOccurs="unbounded">
               <xs:element name="descriptiveNote" type="descriptiveNote"/>
-              <xs:element name="webpage" type="webpage"/>
+              <!-- <xs:element name="webpage" type="webpage"/> -->
+              <xs:element name="contact" type="contact"/>
            </xs:choice>
         </xs:sequence>
         <!-- Added -->
@@ -2271,13 +2265,14 @@
 
     <xs:complexType name="toursSessions">
         <xs:sequence>
-            <!-- Suggestion to require one of "descriptiveNote" or "webpage" to be there when 
+            <!-- Suggestion to require one of "descriptiveNote" or "contact" to be there when 
                  "toursSessions" is used. Both sub-elements can then be used repeatedly. 
-                 "toursSessions" along with "exhibition" and "otherServices" are the only element where "webpage" is currently used as standalone. 
-                 Could be kept like this or changed to "contact". -->
+                 "toursSessions" along with "exhibition" and "otherServices" are the only element where "webpage" was used as standalone. 
+                 Now changed to "contact". -->
             <xs:choice minOccurs="1" maxOccurs="unbounded">
                 <xs:element name="descriptiveNote" type="descriptiveNote"/>
-                <xs:element name="webpage" type="webpage"/>
+                <!-- <xs:element name="webpage" type="webpage"/> -->
+                <xs:element name="contact" type="contact"/>
             </xs:choice>
         </xs:sequence>
         <!-- Added -->
@@ -2286,13 +2281,14 @@
 
     <xs:complexType name="otherServices">
         <xs:sequence>
-            <!-- Suggestion to require one of "descriptiveNote" or "webpage" to be there when 
+            <!-- Suggestion to require one of "descriptiveNote" or "contact" to be there when 
                  "otherServices" is used. Both sub-elements can then be used repeatedly. 
-                 "otherServices" along with "exhibition" and "toursServices" are the only element where "webpage" is currently used as standalone. 
-                 Could be kept like this or changed to "contact". -->
+                 "otherServices" along with "exhibition" and "toursServices" are the only element where "webpage" was used as standalone. 
+                 Now changed to "contact". -->
             <xs:choice minOccurs="1" maxOccurs="unbounded">
                 <xs:element name="descriptiveNote" type="descriptiveNote"/>
-                <xs:element name="webpage" type="webpage"/>
+                <!-- <xs:element name="webpage" type="webpage"/> -->
+                <xs:element name="contact" type="contact"/>
             </xs:choice>
         </xs:sequence>
         <!-- Added -->
@@ -2361,6 +2357,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -2370,6 +2367,7 @@
     
     <xs:complexType name="relationType" mixed="true">
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
@@ -2377,6 +2375,7 @@
     
     <xs:complexType name="targetRole" mixed="true">
         <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
