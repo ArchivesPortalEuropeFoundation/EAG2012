@@ -453,6 +453,10 @@
     </xs:complexType>
 
     <xs:complexType name="p" mixed="true">
+        <!-- Add <reference> as sub-element of <p>. -->
+        <xs:sequence>
+            <xs:element name="reference" type="reference" maxOccurs="unbounded"/>
+        </xs:sequence>
         <!-- <xs:attribute ref="xml:lang"/> -->
         <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
         <xs:attributeGroup ref="common"/>
@@ -461,6 +465,20 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
+    <xs:complexType name="reference" mixed="true">
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
+        <!-- Changed from using "href" separately to using the combined group for links. -->
+        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"), though EAC-CPF has taken the 
+             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
+             while only seldomnly pointing to vocabularies etc. -->
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
     <!-- <xs:complexType name="languageDeclarations">
         <xs:sequence>
             <xs:element name="languageDeclaration" type="languageDeclaration" maxOccurs="unbounded"
@@ -548,20 +566,6 @@
         <xs:attributeGroup ref="references"/>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
-    </xs:complexType>
-
-    <xs:complexType name="reference" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="link"/>
-        <!-- Changed from using "href" separately to using the combined group for links. -->
-        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"), though EAC-CPF has taken the 
-             decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
-             while only seldomnly pointing to vocabularies etc. -->
-        <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:complexType name="rightsDeclaration">
