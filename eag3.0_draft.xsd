@@ -955,6 +955,14 @@
              "repositoryType" (with @localType for other or application-specific types). 
         -->
         <xs:sequence>
+            <!-- The three name elements are replaced with "nameEntry" and and to add "nameEntrySet". -->
+            <!-- <xs:element name="autform" type="autform" maxOccurs="unbounded"/>
+            <xs:element name="parform" type="parform" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="nonpreform" type="nonpreform" minOccurs="0" maxOccurs="unbounded"/> -->
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="nameEntrySet" type="nameEntrySet"/>
+                <xs:element name="nameEntry" type="nameEntry"/>
+            </xs:choice>
             <!-- There might be the question if "repositorId" could be "entityId" more generally, but it might also make sense to keep this 
             more specific element with its additional definition of attributes. Add "y" to have the name "repositoryId" instead of "repositorId". 
             Same for "otherRepositoryId". -->
@@ -969,20 +977,123 @@
             <!-- New element "otherRepositoryType" added -->
             <xs:element name="otherRepositoryType" type="otherRepositoryType" minOccurs="0"
                 maxOccurs="unbounded"/>
-            <!-- The three name elements are replaced with "nameEntry" and and to add "nameEntrySet". -->
-            <!-- <xs:element name="autform" type="autform" maxOccurs="unbounded"/>
-            <xs:element name="parform" type="parform" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="nonpreform" type="nonpreform" minOccurs="0" maxOccurs="unbounded"/> -->
-            <xs:choice maxOccurs="unbounded">
-                <xs:element name="nameEntrySet" type="nameEntrySet"/>
-                <xs:element name="nameEntry" type="nameEntry"/>
-            </xs:choice>
             <!-- If wanted, the element "descriptiveNote" could be added to "identity" as well; then it would only be the identifier elements that 
                  differ from EAG to EAC-CPF -->
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
+    <!-- <xs:complexType name="autform" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+
+    <xs:complexType name="parform" mixed="true">
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+
+    <xs:complexType name="nonpreform" mixed="true">
+        <xs:sequence>
+            <xs:element name="useDates" type="useDates" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute ref="xml:lang"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType> -->
+    
+    <xs:complexType name="nameEntrySet">
+        <xs:sequence>
+            <xs:element name="nameEntry" type="nameEntry" maxOccurs="unbounded"/>
+            <xs:element name="useDates" type="useDates" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attributeGroup ref="vocabulary"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="useDates">
+        <xs:sequence>
+            <xs:group ref="m.dates"/>
+        </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+    </xs:complexType>
+    
+    <xs:complexType name="nameEntry">
+        <xs:sequence>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
+            <xs:element name="useDates" type="useDates" minOccurs="0"/>
+        </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="references"/>
+        <!-- EAC-CPF has decided to replace the element "authorizedForm" and "alternativeForm" by the new attribute "status" with values "authorized" 
+        and "alternative" and to also change from the element "preferredForm" to an atrribute "preferredForm" with values "true" and "false". The use
+        of "localType" for "nameEntry" in EAG at the moment would hence become obsolete and "localType" could be kept as free for any value. -->
+        <xs:attribute name="status">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="authorized"/>
+                    <xs:enumeration value="alternative"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="preferredForm">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="true"/>
+                    <xs:enumeration value="false"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <!-- <xs:attribute name="localType">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="authorized"/>
+                    <xs:enumeration value="alternative"/>
+                    <xs:enumeration value="preferred"/>
+                    <xs:enumeration value="abbreviation"/>
+                    <xs:enumeration value="other"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute> -->
+    </xs:complexType>
+    
+    <xs:complexType name="part" mixed="true">
+        <!-- <xs:attribute ref="xml:lang"/> -->
+        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
+        <xs:attributeGroup ref="common"/>
+        <!-- With the change to "nameEntry" being used more generally in EAG, it might make sense to leave the "localType" for "part" 
+        free for any value. It could still be considered to define specific values for the use in a future apeEAG, similar to apeEAC-CPF. -->
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <!-- <xs:attribute name="localType">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="corpname"/>
+                    <xs:enumeration value="famname"/>
+                    <xs:enumeration value="persname"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute> -->
+        <xs:attributeGroup ref="vocabulary"/>
+        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
     <xs:complexType name="repositoryId">
         <xs:attribute name="countryCode" use="required" type="xs:NMTOKEN"/>
         <xs:attribute name="repositoryCode" type="xs:NMTOKEN"/>
@@ -1051,28 +1162,6 @@
         <xs:attribute name="latitude" type="xs:NMTOKEN"/> -->
     </xs:complexType>
 
-    <xs:complexType name="part" mixed="true">
-        <!-- <xs:attribute ref="xml:lang"/> -->
-        <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
-        <xs:attributeGroup ref="common"/>
-        <!-- With the change to "nameEntry" being used more generally in EAG, it might make sense to leave the "localType" for "part" 
-        free for any value. It could still be considered to define specific values for the use in a future apeEAG, similar to apeEAC-CPF. -->
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
-        <!-- <xs:attribute name="localType">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="corpname"/>
-                    <xs:enumeration value="famname"/>
-                    <xs:enumeration value="persname"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute> -->
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
     <xs:group name="m.dates">
         <xs:choice>
             <xs:element name="date" type="date"/>
@@ -1120,95 +1209,6 @@
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType> -->
-
-    <!-- <xs:complexType name="autform" mixed="true">
-        <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="parform" mixed="true">
-        <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="nonpreform" mixed="true">
-        <xs:sequence>
-            <xs:element name="useDates" type="useDates" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType> -->
-
-    <xs:complexType name="nameEntrySet">
-        <xs:sequence>
-            <xs:element name="nameEntry" type="nameEntry" maxOccurs="unbounded"/>
-            <xs:element name="useDates" type="useDates" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="useDates">
-        <xs:sequence>
-            <xs:group ref="m.dates"/>
-        </xs:sequence>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
-    </xs:complexType>
-
-    <xs:complexType name="nameEntry">
-        <xs:sequence>
-            <xs:element name="part" type="part" maxOccurs="unbounded"/>
-            <xs:element name="useDates" type="useDates" minOccurs="0"/>
-        </xs:sequence>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
-        <!-- Added -->
-        <xs:attributeGroup ref="vocabulary"/>
-        <!-- Added -->
-        <xs:attributeGroup ref="references"/>
-        <!-- EAC-CPF has decided to replace the element "authorizedForm" and "alternativeForm" by the new attribute "status" with values "authorized" 
-        and "alternative" and to also change from the element "preferredForm" to an atrribute "preferredForm" with values "true" and "false". The use
-        of "localType" for "nameEntry" in EAG at the moment would hence become obsolete and "localType" could be kept as free for any value. -->
-        <xs:attribute name="status">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="authorized"/>
-                    <xs:enumeration value="alternative"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="preferredForm">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="true"/>
-                    <xs:enumeration value="false"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
-        <!-- <xs:attribute name="localType">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="authorized"/>
-                    <xs:enumeration value="alternative"/>
-                    <xs:enumeration value="preferred"/>
-                    <xs:enumeration value="abbreviation"/>
-                    <xs:enumeration value="other"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute> -->
-    </xs:complexType>
 
     <xs:complexType name="description">
         <!-- It might be the question if we wanted to use the major revision of EAG as a chance to revisit the discussion around an institution with
