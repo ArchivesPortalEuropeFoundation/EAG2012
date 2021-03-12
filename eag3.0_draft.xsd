@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.1
-    Date: 20201216
+    Version: 0.1.2
+    Date: 20210312
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 <!--
-    Change log:
+    Change log from WGoS decisions 2020:
 
     - Reviewed schema with regard to TS-EAS' decision on using camelCase spelling for element and attribute names; changed names where required 
       (comments included, marked "Review notes")
@@ -21,6 +21,10 @@
       (https://github.com/ArchivesPortalEuropeFoundation/EAG2012/issues/1)
     - Additionally reviewed schema with regard to the potential of modelling an archival institution as a corporate body offering public services
       - Restructured high-level elements "repository" and "repositories" as well as sub-elements "identity", "description", and "relations"
+
+    Change from WGoS decisions 2021:
+    - Adapted the values for "repositoryType"
+
 -->
 
 <xs:schema xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
@@ -1112,23 +1116,22 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <!-- Review and definition of values for the attribute "value" pending. -->
     <xs:complexType name="repositoryType">
         <xs:attribute name="value" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="nationalArchives"/>
                     <xs:enumeration value="regionalArchives"/>
-                    <xs:enumeration value="countyLocalArchives"/>
-                    <xs:enumeration value="municipalArchives"/>
+                    <xs:enumeration value="localArchives"/>
                     <xs:enumeration value="specialisedGovernmentArchives"/>
-                    <xs:enumeration value="privatePersonsFamilyArchives"/>
+                    <xs:enumeration value="specialisedNongovernmentalArchives"/>
+                    <xs:enumeration value="personalAndFamilyArchives"/>
                     <xs:enumeration value="businessArchives"/>
-                    <xs:enumeration value="churchReligiousArchives"/>
-                    <xs:enumeration value="universityResearchArchives"/>
-                    <xs:enumeration value="politicalPartiesMovementsOtherNongovernmentalArchives"/>
-                    <xs:enumeration value="specialisedNongovernmentalOtherCulturalHeritageArchives"/>
-                    <xs:enumeration value="mediaArchives"/>
+                    <xs:enumeration value="religiousInstitutionsArchives"/>
+                    <xs:enumeration value="universityArchives"/>
+                    <xs:enumeration value="nonUniversityEducationArchives"/>
+                    <xs:enumeration value="internationalArchives"/>
+                    <xs:enumeration value="communityArchives"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
