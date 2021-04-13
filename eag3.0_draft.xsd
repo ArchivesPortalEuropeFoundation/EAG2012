@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.2
-    Date: 20210312
+    Version: 0.1.3
+    Date: 20210413
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 <!--
@@ -22,8 +22,13 @@
     - Additionally reviewed schema with regard to the potential of modelling an archival institution as a corporate body offering public services
       - Restructured high-level elements "repository" and "repositories" as well as sub-elements "identity", "description", and "relations"
 
-    Change from WGoS decisions 2021:
+    Change log from WGoS decisions 2021:
     - Adapted the values for "repositoryType"
+    - Confirmed change from "citation" to "reference"
+    - Added "reference" as sub-element of "p"
+    - Removed "actingMaintenanceForGroup" from "holdings"
+    - Made "extent" repeatable and extened values for "unit" to include units of measurements for digital archives
+    - Added "coverage" as an optional attribute to "extent" with the two possible values of "part" and "whole"
 
 -->
 
@@ -1802,6 +1807,13 @@
                     <xs:enumeration value="squaremetre"/>
                     <xs:enumeration value="linearmetre"/>
                     <xs:enumeration value="cubicmetre"/>
+                    <xs:enumeration value="megabyte"/>
+                    <xs:enumeration value="gigabyte"/>
+                    <xs:enumeration value="terabyte"/>
+                    <xs:enumeration value="petabyte"/>
+                    <xs:enumeration value="exabyte"/>
+                    <xs:enumeration value="digital files"/>
+                    <xs:enumeration values="image files"/>
                     <xs:enumeration value="site"/>
                     <xs:enumeration value="book"/>
                     <xs:enumeration value="title"/>
@@ -1866,6 +1878,14 @@
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="coverage">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="part"/>
+                    <xs:enumeration value="whole"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
     </xs:complexType>
 
     <xs:group name="m.controlledAccess">
