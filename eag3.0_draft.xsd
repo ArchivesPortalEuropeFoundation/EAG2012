@@ -30,6 +30,7 @@
     - Made "extent" repeatable and extened values for "unit" to include units of measurements for digital archives
     - Added "coverage" as an optional attribute to "extent" with the two possible values of "part" and "whole"
     - Extended value list for "extent" with values for born-digital records
+    - Added @target to general attributes
 
 -->
 
@@ -108,7 +109,7 @@
              -->
         <!-- <xs:attributeGroup ref="localType"/> -->
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <!-- Added -->
@@ -124,6 +125,8 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <!-- Potential addition following EAC-CPF and EAD. -->
+        <xs:attribute name="target" type="xs:IDREFS"/>
     </xs:attributeGroup>
 
     <!-- Added -->
@@ -165,9 +168,9 @@
          These will take the form of IDREF-s and will be linked via the "(xml:)id" of the appropriate elements. (schema definition for new EAC-CPF 
          not yet available)-->
     <xs:attributeGroup name="references">
-        <xs:attribute name="conventionDeclarationReference" type="xs:IDREF"/>
-        <xs:attribute name="sourceReference" type="xs:IDREF"/>
-        <xs:attribute name="maintenanceEventReference" type="xs:IDREF"/>
+        <xs:attribute name="conventionDeclarationReference" type="xs:IDREFS"/>
+        <xs:attribute name="sourceReference" type="xs:IDREFS"/>
+        <xs:attribute name="maintenanceEventReference" type="xs:IDREFS"/>
         <!-- potential addition <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/> -->
     </xs:attributeGroup>
 
@@ -311,7 +314,7 @@
                 <!-- Added -->
                 <xs:attributeGroup ref="common"/>
                 <xs:attribute name="localType" type="xs:anyURI"/>
-                <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+                <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
                 <xs:attributeGroup ref="vocabulary"/>
                 <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"), though EAC-CPF has taken the 
                      decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
@@ -331,7 +334,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <!-- <maintenanceStatus> transformed into an attribute -->
@@ -446,7 +449,7 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"), though EAC-CPF has taken the 
              decision to not have these within "control". For EAG, however, the existing "source" attributes rather are meant to link to "sources"
@@ -591,7 +594,7 @@
         <xs:attributeGroup ref="common"/>
         <!-- <xs:attributeGroup ref="localType"/> -->
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="localTypeDeclaration">
@@ -618,7 +621,7 @@
         <xs:attributeGroup ref="common"/>
         <!-- <xs:attributeGroup ref="localType"/> -->
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <!-- Seeing that everyone who uses "term" in APE uses it with the value "extended", there doesn't seem to be enough distinction in this to merit 
@@ -658,7 +661,7 @@
         <!-- Replaced attribute "(xml:)lang" with the attribute "common". -->
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="vocabulary"/>
         <!-- Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). -->
@@ -694,7 +697,7 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="fromDate" mixed="true">
@@ -1024,7 +1027,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1068,7 +1071,7 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <!-- <xs:attribute name="localType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1089,7 +1092,7 @@
         <!-- With the change to "nameEntry" being used more generally in EAG, it might make sense to leave the "localType" for "part" 
         free for any value. It could still be considered to define specific values for the use in a future apeEAG, similar to apeEAC-CPF. -->
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <!-- <xs:attribute name="localType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1153,7 +1156,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
@@ -1347,7 +1350,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
@@ -1448,14 +1451,14 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="addressLine" mixed="true">
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attribute name="addressLineType" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1479,7 +1482,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="contactLine" mixed="true">
@@ -1487,7 +1490,7 @@
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="link"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attribute name="contactLineType" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1580,7 +1583,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="head" mixed="true">
@@ -1591,7 +1594,7 @@
     <xs:complexType name="abstract" mixed="true">
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="list">
@@ -1604,13 +1607,13 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="item" mixed="true">
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="chronList">
@@ -1619,7 +1622,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="chronItem">
@@ -1636,7 +1639,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="rule" mixed="true">
@@ -1653,7 +1656,7 @@
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="chronItemSet">
@@ -1664,7 +1667,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="existDates">
@@ -1673,7 +1676,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="mandates">
@@ -1734,7 +1737,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="legalStatuses">
@@ -1758,7 +1761,7 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="buildingInformation">
@@ -2447,7 +2450,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -2457,7 +2460,7 @@
 
     <xs:complexType name="relationType" mixed="true">
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
@@ -2465,7 +2468,7 @@
 
     <xs:complexType name="targetRole" mixed="true">
         <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREF"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
