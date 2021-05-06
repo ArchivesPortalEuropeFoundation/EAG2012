@@ -1812,8 +1812,9 @@
                     <xs:enumeration value="terabyte"/>
                     <xs:enumeration value="petabyte"/>
                     <xs:enumeration value="exabyte"/>
-                    <xs:enumeration value="digital files"/>
-                    <xs:enumeration value="image files"/>
+                    <xs:enumeration value="digital_files"/>
+                    <xs:enumeration value="image_files"/>
+                    <xs:enumeration value="datasets"/>
                     <xs:enumeration value="site"/>
                     <xs:enumeration value="book"/>
                     <xs:enumeration value="title"/>
