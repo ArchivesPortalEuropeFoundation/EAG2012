@@ -29,6 +29,7 @@
     - Removed "actingMaintenanceForGroup" from "holdings"
     - Made "extent" repeatable and extened values for "unit" to include units of measurements for digital archives
     - Added "coverage" as an optional attribute to "extent" with the two possible values of "part" and "whole"
+    - Extended value list for "extent" with values for born-digital records
 
 -->
 
