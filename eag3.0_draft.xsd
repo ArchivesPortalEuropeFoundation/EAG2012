@@ -24,6 +24,7 @@
 
     Change log from WGoS decisions 2021:
     - Adapted the values for "repositoryType"
+    - Made "otherRepositoryId" repeatable
     - Confirmed change from "citation" to "reference"
     - Added "reference" as sub-element of "p"
     - Removed "actingMaintenanceForGroup" from "holdings"
@@ -984,9 +985,9 @@
             </xs:choice>
             <!-- There might be the question if "repositorId" could be "entityId" more generally, but it might also make sense to keep this 
             more specific element with its additional definition of attributes. Add "y" to have the name "repositoryId" instead of "repositorId". 
-            Same for "otherRepositoryId". -->
+            Same for "otherRepositoryId". Make "otherRepositoryId" repeatable. -->
             <xs:element name="repositoryId" type="repositoryId" minOccurs="0"/>
-            <xs:element name="otherRepositoryId" type="otherRepositoryId" minOccurs="0"/>
+            <xs:element name="otherRepositoryId" type="otherRepositoryId" minOccurs="0" maxOccurs="unbounded"/>
             <!-- EAC-CPF has decided to continue using "entityType" as mandatory and not repeatable with the three predefined values "corporateBody", 
             "family", and "person" and to introduce a new element "otherEntityTypes" to capture and alternative types or translations or specifications 
             of the predefined ones. Suggestion to follow this approach for EAG instead of the proposal made in 
