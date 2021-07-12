@@ -82,7 +82,17 @@
             <!-- EAC-CPF will follow EAD3 and add language attribution to all non-empty elements, i.e. elements that either can contain text themselves
                  or have sub-elements that can. -->
             <!-- For now, EAC-CPF has decided to remove the XML namespace and will use the attributes become "languageOfElement" and "scriptOfElement". -->
-            <xs:attributeGroup ref="common"/>
+            <xs:attribute name="id" type="xs:ID"/>
+            <xs:attribute name="audience">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="external"/>
+                        <xs:enumeration value="internal"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="languageOfElement" type="xs:NMTOKEN"/>
+            <xs:attribute name="scriptOfElement" type="xs:NMTOKEN"/>
         </xs:complexType>
     </xs:element>
 
@@ -94,6 +104,7 @@
                 <xs:element name="relations" type="relations" minOccurs="0"/>
                 <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attributeGroup ref="common"/>
         </xs:complexType>
     </xs:element>
 
@@ -104,6 +115,7 @@
                 <xs:element name="relations" type="relations" minOccurs="0"/>
                 <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attributeGroup ref="common"/>
         </xs:complexType>
     </xs:element>
 
@@ -113,6 +125,7 @@
              However, seeing that one can't use any text with "image", one would assume that inlcuding a link within "href" is the next logical thing to do. 
              -->
         <!-- <xs:attributeGroup ref="localType"/> -->
+        <xs:attributeGroup ref="common.empty"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
