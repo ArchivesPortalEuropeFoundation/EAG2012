@@ -1885,7 +1885,7 @@
                     would be that it's neither used in other contexts given that those rarely have expanded on the usage in APE). Furthermore, the 
                     intent of "actingMaintenanceForGroup", i.e. to provide the "names and locations of other repositories, where the institution 
                     described acts as custodian for their documents, ie is responsible for the documents' care and control", could also be reached
-                    via the newly added controlled access terms option, using "corporateName" and "placeName".
+                    via the newly added controlled access terms option, using "corpName" and "placeName".
                <xs:element name="actingMaintenanceForGroup" type="actingMaintenanceForGroup" minOccurs="0" maxOccurs="unbounded"/> -->
                 <xs:group ref="m.controlledAccess"/>
             </xs:choice>
@@ -1912,17 +1912,17 @@
 
     <xs:group name="m.controlledAccess">
         <xs:choice>
-            <xs:element name="corporateName" type="corporateName"/>
-            <xs:element name="familyName" type="familyName"/>
-            <xs:element name="personalName" type="personalName"/>
+            <xs:element name="corpName" type="corpName"/>
+            <xs:element name="famName" type="famName"/>
+            <xs:element name="persName" type="persName"/>
             <xs:element name="placeName" type="placeName"/>
-            <xs:element name="genericName" type="genericName"/>
+            <xs:element name="name" type="name"/>
             <xs:element name="subject" type="subject"/>
-            <xs:element name="genreOrForm" type="genreOrForm"/>
+            <xs:element name="genreForm" type="genreForm"/>
         </xs:choice>
     </xs:group>
 
-    <xs:complexType name="corporateName">
+    <xs:complexType name="corpName">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -1932,7 +1932,7 @@
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
     </xs:complexType>
 
-    <xs:complexType name="familyName">
+    <xs:complexType name="famName">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -1942,7 +1942,7 @@
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
     </xs:complexType>
 
-    <xs:complexType name="personalName">
+    <xs:complexType name="persName">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -1952,7 +1952,7 @@
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
     </xs:complexType>
 
-    <xs:complexType name="genericName">
+    <xs:complexType name="name">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -1972,7 +1972,7 @@
         <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
     </xs:complexType>
 
-    <xs:complexType name="genreOrForm">
+    <xs:complexType name="genreForm">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
