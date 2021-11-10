@@ -1255,7 +1255,7 @@
              Of the remaining sub-elements of EAC-CPF's "description", "functions" and "legalStatuses" might be useful in the context of EAG as well and
              could be introduced as new additions, but we might want to leave "localDescriptions", "languagesUsed, "occupations", and "generalContext"
              aside. 
-             On the other hand, there are the existing EAG elements "repositoryRole", (potentially) "geographicalArea", "buildingInformation", "timetable",
+             On the other hand, there are the existing EAG elements "repositoryRole", (potentially) "geographicalArea", "buildingInfo", "timetable",
              "access", "accessibility", "holdings", "services", and "image" which would be kept as EAG-specific.
         -->
         <xs:sequence>
@@ -1303,8 +1303,8 @@
             <xs:element name="functions" type="functions" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="legalStatuses" type="legalStatuses" minOccurs="0"
                 maxOccurs="unbounded"/>
-            <!-- Suggestion to rename "buildinginfo" to "buildingInformation" -->
-            <xs:element name="buildingInformation" type="buildingInformation" minOccurs="0"
+            <!-- Suggestion to rename "buildinginfo" to "buildingInfo" -->
+            <xs:element name="buildingInfo" type="buildingInfo" minOccurs="0"
                 maxOccurs="unbounded"/>
             <xs:element name="structureOrGenealogy" type="structureOrGenealogy" minOccurs="0"
                 maxOccurs="unbounded"/>
@@ -1784,9 +1784,9 @@
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
-    <xs:complexType name="buildingInformation">
+    <xs:complexType name="buildingInfo">
         <!-- Suggestion to have all sub-elements as repeatable. Suggestion to have "building" as a general description element mandatory when using 
-             "buildingInformation". Seems to be the most often used option in this context. -->
+             "buildingInfo". Seems to be the most often used option in this context. -->
         <xs:sequence>
             <xs:element name="building" type="building" maxOccurs="unbounded"/>
             <!-- Suggestion to rename "repositorarea" to "repositoryArea" -->
@@ -2304,7 +2304,7 @@
             <!-- Suggestion to rename the four following elements using "Services" instead of "ser" -->
             <xs:element name="microformServices" type="microformServices" minOccurs="0"/>
             <xs:element name="photographServices" type="photographServices" minOccurs="0"/>
-            <xs:element name="digitalServices" type="digitalServices" minOccurs="0"/>
+            <xs:element name="digitalisationServices" type="digitalisationServices" minOccurs="0"/>
             <xs:element name="photocopyServices" type="photocopyServices" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
@@ -2324,7 +2324,7 @@
         <xs:attributeGroup ref="common.empty"/>
     </xs:complexType>
 
-    <xs:complexType name="digitalServices">
+    <xs:complexType name="digitalisationServices">
         <xs:attributeGroup ref="question"/>
         <!-- Added -->
         <xs:attributeGroup ref="common.empty"/>
