@@ -2,7 +2,7 @@
 <!--
     Draft EAG 3.0 Schema
     Version: 0.1.6
-    Date: 20220106
+    Date: 20220107
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 
@@ -22,8 +22,6 @@
                     <xs:element ref="repositories"/>
                 </xs:choice>
             </xs:sequence>
-            <xs:attribute name="base" type="xs:anyURI"/>
-            <xs:attribute name="id" type="xs:ID"/>
             <xs:attribute name="audience">
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
@@ -32,6 +30,8 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
+            <xs:attribute name="base" type="xs:anyURI"/>
+            <xs:attribute name="id" type="xs:ID"/>
             <xs:attribute name="languageOfElement" type="xs:NMTOKEN"/>
             <xs:attribute name="scriptOfElement" type="xs:NMTOKEN"/>
             <xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -63,15 +63,14 @@
     </xs:element>
 
     <xs:complexType name="image">
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common.empty"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:attributeGroup name="common.empty">
-        <xs:attribute name="id" type="xs:ID"/>
         <xs:attribute name="audience">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -80,6 +79,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attribute name="id" type="xs:ID"/>
         <xs:attribute name="target" type="xs:IDREFS"/>
         <xs:anyAttribute namespace="##other" processContents="lax"/>
     </xs:attributeGroup>
@@ -97,15 +97,15 @@
     </xs:attributeGroup>
 
     <xs:attributeGroup name="vocabulary">
+        <xs:attribute name="valueURI" type="xs:anyURI"/>
         <xs:attribute name="vocabularySource" type="xs:token"/>
         <xs:attribute name="vocabularySourceURI" type="xs:anyURI"/>
-        <xs:attribute name="valueURI" type="xs:anyURI"/>
     </xs:attributeGroup>
 
     <xs:attributeGroup name="references">
         <xs:attribute name="conventionDeclarationReference" type="xs:IDREFS"/>
-        <xs:attribute name="sourceReference" type="xs:IDREFS"/>
         <xs:attribute name="maintenanceEventReference" type="xs:IDREFS"/>
+        <xs:attribute name="sourceReference" type="xs:IDREFS"/>
     </xs:attributeGroup>
 
     <!-- ###############
@@ -129,22 +129,11 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="languageEncoding">
+        <xs:attribute name="countryEncoding">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="iso639-1"/>
-                    <xs:enumeration value="iso639-2b"/>
-                    <xs:enumeration value="iso639-3"/>
-                    <xs:enumeration value="ietf-bcp-47"/>
-                    <xs:enumeration value="otherLanguageEncoding"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="scriptEncoding">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="iso15924"/>
-                    <xs:enumeration value="otherScriptEncoding"/>
+                    <xs:enumeration value="iso3166-1"/>
+                    <xs:enumeration value="otherCountryEncoding"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -156,11 +145,14 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="countryEncoding">
+        <xs:attribute name="languageEncoding">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="iso3166-1"/>
-                    <xs:enumeration value="otherCountryEncoding"/>
+                    <xs:enumeration value="iso639-1"/>
+                    <xs:enumeration value="iso639-2b"/>
+                    <xs:enumeration value="iso639-3"/>
+                    <xs:enumeration value="ietf-bcp-47"/>
+                    <xs:enumeration value="otherLanguageEncoding"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -169,6 +161,23 @@
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="iso15511"/>
                     <xs:enumeration value="otherRepositoryEncoding"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="scriptEncoding">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="iso15924"/>
+                    <xs:enumeration value="otherScriptEncoding"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="detailLevel">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="minimal"/>
+                    <xs:enumeration value="basic"/>
+                    <xs:enumeration value="extended"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -192,15 +201,6 @@
                     <xs:enumeration value="approved"/>
                     <xs:enumeration value="published"/>
                     <xs:enumeration value="inProcess"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="detailLevel">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="minimal"/>
-                    <xs:enumeration value="basic"/>
-                    <xs:enumeration value="extended"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -427,8 +427,8 @@
     
     <xs:complexType name="localTypeDeclaration">
         <xs:sequence>
+            <xs:element name="reference" type="reference"/>
             <xs:element name="shortCode" type="shortCode" minOccurs="0"/>
-            <xs:element name="reference" type="reference" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
@@ -470,12 +470,12 @@
     </xs:complexType>
     
     <xs:attributeGroup name="m.dateSingle">
-        <xs:attribute name="standardDate" type="xs:token"/>
-        <xs:attribute name="notBefore" type="xs:token"/>
-        <xs:attribute name="notAfter" type="xs:token"/>
-        <xs:attribute name="certainty" type="xs:NMTOKEN"/>
         <xs:attribute name="calendar" type="xs:NMTOKEN"/>
+        <xs:attribute name="certainty" type="xs:NMTOKEN"/>
         <xs:attribute name="era" type="xs:NMTOKEN"/>
+        <xs:attribute name="notAfter" type="xs:token"/>
+        <xs:attribute name="notBefore" type="xs:token"/>
+        <xs:attribute name="standardDate" type="xs:token"/>
     </xs:attributeGroup>
     
     <xs:complexType name="dateRange">
@@ -493,8 +493,8 @@
     </xs:complexType>
     
     <xs:complexType name="fromDate" mixed="true">
-        <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="status">
             <xs:simpleType>
@@ -506,8 +506,8 @@
     </xs:complexType>
     
     <xs:complexType name="toDate" mixed="true">
-        <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="status">
             <xs:simpleType>
@@ -556,8 +556,8 @@
      <xs:complexType name="identity">
         <xs:sequence>
             <xs:choice maxOccurs="unbounded">
-                <xs:element name="nameEntrySet" type="nameEntrySet"/>
                 <xs:element name="nameEntry" type="nameEntry"/>
+                <xs:element name="nameEntrySet" type="nameEntrySet"/>
             </xs:choice>
             <xs:element name="repositoryId" type="repositoryId" minOccurs="0"/>
             <xs:element name="otherRepositoryId" type="otherRepositoryId" minOccurs="0" maxOccurs="unbounded"/>
@@ -565,11 +565,8 @@
             <xs:element name="otherRepositoryTypes" type="otherRepositoryTypes" minOccurs="0"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="base" type="xs:anyURI"/>
+        <xs:attributeGroup ref="common"/>
         <xs:attribute name="identityType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -578,30 +575,21 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="nameEntrySet">
-        <xs:sequence>
-            <xs:element name="nameEntry" type="nameEntry"/>
-            <xs:element name="nameEntry" type="nameEntry" maxOccurs="unbounded"/>
-            <xs:element name="useDates" type="useDates" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-    
+
     <xs:complexType name="nameEntry">
         <xs:sequence>
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
             <xs:element name="useDates" type="useDates" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attribute name="preferredForm" type="xs:boolean"/>
+        <xs:attributeGroup ref="references"/>
         <xs:attribute name="status">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -610,7 +598,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="preferredForm" type="xs:boolean"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
     <xs:complexType name="part" mixed="true">
@@ -637,6 +625,18 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
        
+    <xs:complexType name="nameEntrySet">
+        <xs:sequence>
+            <xs:element name="nameEntry" type="nameEntry"/>
+            <xs:element name="nameEntry" type="nameEntry" maxOccurs="unbounded"/>
+            <xs:element name="useDates" type="useDates" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
     <xs:complexType name="repositoryId">
         <xs:attribute name="countryCode" use="required" type="xs:NMTOKEN"/>
         <xs:attribute name="repositoryCode" use="required" type="xs:NMTOKEN"/>
@@ -649,14 +649,14 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
 
     <xs:complexType name="otherRepositoryId" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
 
     <xs:complexType name="repositoryType">
@@ -706,11 +706,11 @@
 
     <xs:complexType name="placeName" mixed="true">
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="countryCode" type="xs:NMTOKEN"/>
         <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
-        <xs:attribute name="countryCode" type="xs:NMTOKEN"/>
     </xs:complexType>
 
     <xs:group name="m.dates">
@@ -733,9 +733,9 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:complexType name="description">
@@ -748,9 +748,9 @@
             <xs:element name="legalStatuses" type="legalStatuses" minOccurs="0"/>
             <xs:element name="mandates" type="mandates" minOccurs="0"/>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="existDates" type="existDates"/>
                 <xs:element name="biogHist" type="biogHist"/>
                 <xs:element name="buildingInfo" type="buildingInfo"/>
+                <xs:element name="existDates" type="existDates"/>
                 <xs:element name="holdings" type="holdings"/>
                 <xs:element name="repositoryRole" type="repositoryRole"/>
                 <xs:element name="services" type="services"/>
@@ -779,11 +779,11 @@
     <xs:complexType name="place">
         <xs:sequence>
             <xs:choice maxOccurs="unbounded">
-                <xs:element name="placeName" type="placeName"/>
-                <xs:element name="placeRole" type="placeRole"/>
-                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
                 <xs:element name="address" type="address"/>
                 <xs:element name="contact" type="contact"/>
+                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
+                <xs:element name="placeName" type="placeName"/>
+                <xs:element name="placeRole" type="placeRole"/>
             </xs:choice>
             <xs:group ref="m.dates" minOccurs="0"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
@@ -791,20 +791,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="placeRole" mixed="true">
-        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
-    </xs:complexType>
-
-    <xs:complexType name="geographicCoordinates" mixed="true">
-        <xs:attribute name="coordinateSystem" use="required" type="xs:token"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:complexType name="address">
@@ -812,16 +800,12 @@
             <xs:element name="addressLine" type="addressLine" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="addressLine" mixed="true">
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attribute name="addressLineType" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -836,24 +820,24 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="contact">
         <xs:sequence>
             <xs:element type="contactLine" name="contactLine" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="contactLine" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attribute name="contactLineType" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -866,6 +850,22 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attributeGroup ref="link"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="geographicCoordinates" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="coordinateSystem" use="required" type="xs:token"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="placeRole" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
 
     <xs:complexType name="access">
@@ -875,8 +875,8 @@
         </xs:sequence>
         <xs:attributeGroup ref="question"/>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:attributeGroup name="question">
@@ -904,10 +904,10 @@
     </xs:complexType>
     
     <xs:complexType name="accessibility" mixed="true">
-        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="timetable">
@@ -920,14 +920,14 @@
     </xs:complexType>
     
     <xs:complexType name="opening" mixed="true">
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="closing" mixed="true">
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
@@ -948,8 +948,8 @@
     <xs:complexType name="function">
         <xs:sequence>
             <xs:element name="term" type="term" maxOccurs="unbounded"/>
-            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
+            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
@@ -976,8 +976,8 @@
     <xs:complexType name="legalStatus">
         <xs:sequence>
             <xs:element name="term" type="term" maxOccurs="unbounded"/>
-            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
+            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
@@ -1004,8 +1004,8 @@
     <xs:complexType name="mandate">
         <xs:sequence>
             <xs:element name="term" type="term" maxOccurs="unbounded"/>
-            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
+            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
@@ -1013,17 +1013,6 @@
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
-    </xs:complexType>
-    
-    <xs:complexType name="existDates">
-        <xs:sequence>
-            <xs:group ref="m.dates"/>
-            <xs:element type="descriptiveNote" name="descriptiveNote" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="biogHist">
@@ -1037,9 +1026,9 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:complexType name="head" mixed="true">
@@ -1095,10 +1084,10 @@
             <xs:element type="span" name="span"/>
         </xs:choice>
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
 
     <xs:complexType name="chronItemSet">
@@ -1117,14 +1106,11 @@
         <xs:sequence>
             <xs:element name="head" type="head" minOccurs="0"/>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="list" type="list"/>
                 <xs:element name="item" type="item"/>
+                <xs:element name="list" type="list"/>
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attribute name="listType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -1133,6 +1119,9 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="item" mixed="true">
@@ -1149,9 +1138,8 @@
     <xs:complexType name="buildingInfo">
         <xs:sequence>
             <xs:element name="building" type="building" maxOccurs="unbounded"/>
+            <xs:element name="lengthOfShelves" type="lengthOfShelves" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="repositoryArea" type="repositoryArea" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="lengthOfShelves" type="lengthOfShelves" minOccurs="0"
-                maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
@@ -1163,14 +1151,14 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <xs:complexType name="repositoryArea">
+    <xs:complexType name="lengthOfShelves">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="num" mixed="true">
         <xs:attribute name="unit" use="required">
             <xs:simpleType>
@@ -1193,14 +1181,25 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
-    <xs:complexType name="lengthOfShelves">
+    <xs:complexType name="repositoryArea">
         <xs:sequence>
             <xs:element name="num" type="num"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
+    <xs:complexType name="existDates">
+        <xs:sequence>
+            <xs:group ref="m.dates"/>
+            <xs:element type="descriptiveNote" name="descriptiveNote" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
     <xs:complexType name="holdings">
         <xs:sequence>
             <xs:group ref="m.dates" minOccurs="0"/>
@@ -1232,11 +1231,11 @@
         <xs:choice>
             <xs:element name="corpName" type="corpName"/>
             <xs:element name="famName" type="famName"/>
+            <xs:element name="genreForm" type="genreForm"/>
+            <xs:element name="name" type="name"/>
             <xs:element name="persName" type="persName"/>
             <xs:element name="placeName" type="placeName"/>
-            <xs:element name="name" type="name"/>
             <xs:element name="subject" type="subject"/>
-            <xs:element name="genreForm" type="genreForm"/>
         </xs:choice>
     </xs:group>
     
@@ -1262,7 +1261,7 @@
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
-    <xs:complexType name="persName">
+    <xs:complexType name="genreForm">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -1278,6 +1277,19 @@
             <xs:element name="part" type="part"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
+    </xs:complexType>
+    
+    <xs:complexType name="persName">
+        <xs:sequence>
+            <xs:element name="part" type="part"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
@@ -1293,37 +1305,92 @@
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
-    <xs:complexType name="genreForm">
-        <xs:sequence>
-            <xs:element name="part" type="part"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="vocabulary"/>
-    </xs:complexType>
-    
     <xs:complexType name="repositoryRole" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
     <xs:complexType name="services">
         <xs:sequence>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="searchroom" type="searchroom"/>
-                <xs:element name="library" type="library"/>
                 <xs:element name="internetAccess" type="internetAccess"/>
-                <xs:element name="technicalServices" type="technicalServices"/>
+                <xs:element name="library" type="library"/>
+                <xs:element name="multilingualServices" type="multilingualServices"/>
                 <xs:element name="recreationalServices" type="recreationalServices"/>
+                <xs:element name="searchroom" type="searchroom"/>
+                <xs:element name="technicalServices" type="technicalServices"/>
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
+    <xs:complexType name="internetAccess" mixed="true">
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="library">
+        <xs:sequence>
+            <xs:element name="contact" type="contact" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+
+    <xs:complexType name="multilingualServices" mixed="true">
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="recreationalServices">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="exhibition" type="exhibition"/>
+                <xs:element name="otherServices" type="otherServices"/>
+                <xs:element name="refreshment" type="refreshment"/>
+                <xs:element name="toursSessions" type="toursSessions"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="exhibition" mixed="true">
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="otherServices" mixed="true">
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="refreshment" mixed="true">
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="toursSessions" mixed="true">
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
     <xs:complexType name="searchroom">
         <xs:sequence>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -1340,32 +1407,32 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="advancedOrders" mixed="true">
         <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="photographAllowance" mixed="true">
         <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="readersTicket" mixed="true">
         <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="researchServices" mixed="true">
         <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
@@ -1382,7 +1449,7 @@
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="computerPlaces">
         <xs:sequence>
             <xs:element name="num" type="num"/>
@@ -1390,7 +1457,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="microfilmPlaces">
         <xs:sequence>
             <xs:element name="num" type="num"/>
@@ -1398,24 +1465,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
-    <xs:complexType name="library">
-        <xs:sequence>
-            <xs:element name="contact" type="contact" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="internetAccess" mixed="true">
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-
+    
     <xs:complexType name="technicalServices">
         <xs:sequence>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -1447,50 +1497,9 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <xs:complexType name="recreationalServices">
-        <xs:sequence>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="refreshment" type="refreshment"/>
-                <xs:element name="exhibition" type="exhibition"/>
-                <xs:element name="toursSessions" type="toursSessions"/>
-                <xs:element name="otherServices" type="otherServices"/>
-            </xs:choice>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="exhibition" mixed="true">
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-    
-    <xs:complexType name="otherServices" mixed="true">
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-    
-    <xs:complexType name="refreshment" mixed="true">
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-
-    <xs:complexType name="toursSessions" mixed="true">
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-
     <xs:complexType name="socialMedia" mixed="true">
-        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
@@ -1514,64 +1523,64 @@
 
     <xs:complexType name="relations">
         <xs:sequence>
-            <xs:element name="relation" type="relation" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="relation" type="relation" maxOccurs="unbounded"/>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
-
+    
     <xs:complexType name="relation">
         <xs:sequence>
             <xs:element name="targetEntity" type="targetEntity"/>
-            <xs:element name="relationType" type="relationType" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="targetRole" type="targetRole" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="place" type="place"/>
+                <xs:element name="relationType" type="relationType"/>
+                <xs:element name="targetRole" type="targetRole"/>
+            </xs:choice>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
             <xs:element name="objectXMLWrap" type="objectXMLWrap" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="common"/>
+    </xs:complexType>
+    
+    <xs:complexType name="targetEntity">
+        <xs:sequence>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="targetType" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
+                    <xs:enumeration value="agent"/>
                     <xs:enumeration value="corporateBody"/>
                     <xs:enumeration value="family"/>
+                    <xs:enumeration value="function"/>
                     <xs:enumeration value="person"/>
                     <xs:enumeration value="resource"/>
-                    <xs:enumeration value="function"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attributeGroup ref="link"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="common"/>
-    </xs:complexType>
-
-    <xs:complexType name="targetEntity" mixed="true">
-        <xs:sequence>
-            <xs:element name="part" type="part" maxOccurs="unbounded"/>
-        </xs:sequence>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
-
+    
     <xs:complexType name="relationType" mixed="true">
+        <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
-
+    
     <xs:complexType name="targetRole" mixed="true">
+        <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
-
+    
 </xs:schema>
