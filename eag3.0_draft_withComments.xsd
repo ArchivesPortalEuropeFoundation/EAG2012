@@ -2,7 +2,7 @@
 <!--
     Draft EAG 3.0 Schema
     Version: 0.1.6
-    Date: 20220106
+    Date: 20220107
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 <!--
@@ -15,6 +15,8 @@
       - Adoption of internal referencing with "id" and "target" as well as "conventionDeclarationReference", "maintenanceEventReference", and 
         "sourceReference"
       - Adoption of external referencing of vocabularies with "vocabularySource", "vocabularySourceURI", and "valueURI"
+        - Added to all elements inherited from EAC-CPF, plus "repositoryId", "otherRepositoryId", "repositoryRole", "corpName", "famName", "genreForm", 
+          "name", "persName", "subject"
       - Adoption of approach to allow for attributes from any other namespace to be included in all elements of the EAS
       - Adoption of new language attributes and changes to "languageDeclaration" (incl. the removal of "transliteration", which will be pointed to
         "conventionDeclarationReference" instead)
@@ -46,6 +48,7 @@
       - elements with a mix of data-centric sub-elements and the additional use for further, more descriptive information to be captured in "descriptiveNote"
     - Removed "lastDateTimeVerified" completely
     - Added "detailLevel" to "control"
+    - Added "...Encoding" attributes to "control"
     - Adopted new sequence principle for sub-elements (required before optional and not repeatable before repeatable in both cases)
     - Removed the requirement for "recordId" to follow ISO 15511, but added the requirement for it not being left empty
     - Removed "source" from "recordId"
@@ -99,13 +102,14 @@
     - Added singular elements "function", "legalStatus", and "mandate" following EAC-CPF's approach
     - Made "timetable" and "access" repeatable for internationalisation; kept both mandatory for the time being (check during call for comments)
     - Added "link" attribute group to "access"
+    - Renamed "restaccess" and "termsOfUse" to "accessConditions" and "useConditions" to better fit the Tag Library descriptions and to be clearer
+      in the element names
     - Kept "accessibility" mandatory for the time being (check during call for comments); added "link" attribute group
     - Added attribute group "link" to "closing" and removed "standardDate"
     - Removed "rule" completely; to be replaced by "mandate"
     - Renamed "repositorarea" and "lenghtshelf" to "repositoryArea" and "lengthOfShelves" and made all sub-elements of "buildingInfo" repeatable
     - Changed data model for "building" to be data-centric, i.e. removing "descriptiveNote" and adding the "link" attribute group
     - Made sub-elements of "services" repeatable
-    - Renamed "techservices" to "technicalServices"
     - Added "question" to all sub-elements of "services" as well as their sub-elements where applicable
     - Added "descriptiveNote" and the attribute "question" to "searchroom"
     - Made all sub-elements of "searchroom" repeatable
@@ -127,6 +131,20 @@
     - Applied the same data model to "exhibition", "otherServices", "refreshment", and "toursSessions": all data-centric now, 
       i.e. with free text in the element and using "question" attribute and "link" attribute group 
     - Made all sub-elements of "recreationalServices" repeatable 
+    - Added new element "multilingualServices" to "servives" following the data model for services elementds, i.e. including the required @question attribute, 
+      including the optional attribute @href (along with other link related attributes) for the inclusion of a URL if wanted, and allowing text
+    - Adopted the new model for "relations" as suggested by EAC-CPF 2.0, though emphasis will be on using this for relations between institutions, while there 
+      might be other elements such as "holdings", "exhibition", "otherServices" that can be used as a more straightforward way when simply pointing to a related 
+      resource
+      - Changed from "resourceRelation" and "eagRelation" to "relation" only
+      - Made "relation" mandatory
+      - Added "descriptiveNote" as optional in "relations"
+      - Changed from "relationEntry" to "targetEntity"
+      - Moved relation type information ("resourceRelationType" and "eagRelationType") from "relation" to "targetEntity" with "targetType" attribute
+      - Added two new sub-elements to "relation": "relationType" and "targetRole"
+      - Changed from "placeName" to "place" as sub-element of "relation"
+      - Removed linking attribute "href" from "relation" (instead vocabulary attributes are available with "targetEntity", "relationType", and "targetRole")
+      - Removed attribute "localType" from "relationEntry" (now "targetEntity")
 
 -->
 
@@ -228,7 +246,6 @@
     <!-- Added -->
     <xs:attributeGroup name="common.empty">
         <!-- <xs:attribute ref="xml:id"/> -->
-        <xs:attribute name="id" type="xs:ID"/>
         <xs:attribute name="audience">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -237,6 +254,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attribute name="id" type="xs:ID"/>
         <!-- Addition following EAC-CPF and EAD in order to be able to point from one EAG element to another. -->
         <xs:attribute name="target" type="xs:IDREFS"/>
         <xs:anyAttribute namespace="##other" processContents="lax"/>
@@ -272,9 +290,9 @@
          respectively is likely taken from a vocabulary, ontology, thesaurus etc. (schema definition for new EAC-CPF not yet available).
          Pending decision on which EAG elements to use these if taken on board -->
     <xs:attributeGroup name="vocabulary">
+        <xs:attribute name="valueURI" type="xs:anyURI"/>
         <xs:attribute name="vocabularySource" type="xs:token"/>
         <xs:attribute name="vocabularySourceURI" type="xs:anyURI"/>
-        <xs:attribute name="valueURI" type="xs:anyURI"/>
     </xs:attributeGroup>
 
     <!-- EAC-CPF revision suggests the addition of three optional attributes to elements in the description part that will allow to point to 
@@ -282,8 +300,8 @@
          These will take the form of IDREF-s and will be linked via the "id" of the appropriate elements. -->
     <xs:attributeGroup name="references">
         <xs:attribute name="conventionDeclarationReference" type="xs:IDREFS"/>
-        <xs:attribute name="sourceReference" type="xs:IDREFS"/>
         <xs:attribute name="maintenanceEventReference" type="xs:IDREFS"/>
+        <xs:attribute name="sourceReference" type="xs:IDREFS"/>
     </xs:attributeGroup>
 
     <!-- ###############
@@ -329,6 +347,22 @@
         <xs:attributeGroup ref="common"/>
         <!-- EAC-CPF adds the "encoding" attributes to control that provide references to the usual ISO standards. EAG would hence do this 
              as well, which would remove the automatically created "conventionDeclaration"-s in the context of APE. -->
+        <xs:attribute name="countryEncoding">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="iso3166-1"/>
+                    <xs:enumeration value="otherCountryEncoding"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="dateEncoding">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="iso8601"/>
+                    <xs:enumeration value="otherDateEncoding"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
         <xs:attribute name="languageEncoding">
             <!-- The attribute in EAD3 is currently called "langencoding", but will be renamed "languageEncoding" in future. -->
             <xs:simpleType>
@@ -342,6 +376,14 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attribute name="repositoryEncoding">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="iso15511"/>
+                    <xs:enumeration value="otherRepositoryEncoding"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
         <xs:attribute name="scriptEncoding">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
@@ -350,27 +392,12 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="dateEncoding">
+        <xs:attribute name="detailLevel">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="iso8601"/>
-                    <xs:enumeration value="otherDateEncoding"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="countryEncoding">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="iso3166-1"/>
-                    <xs:enumeration value="otherCountryEncoding"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="repositoryEncoding">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="iso15511"/>
-                    <xs:enumeration value="otherRepositoryEncoding"/>
+                    <xs:enumeration value="minimal"/>
+                    <xs:enumeration value="basic"/>
+                    <xs:enumeration value="extended"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -394,15 +421,6 @@
                     <xs:enumeration value="approved"/>
                     <xs:enumeration value="published"/>
                     <xs:enumeration value="inProcess"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="detailLevel">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="minimal"/>
-                    <xs:enumeration value="basic"/>
-                    <xs:enumeration value="extended"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -875,10 +893,10 @@
     
     <xs:complexType name="localTypeDeclaration">
         <xs:sequence>
-            <!-- <xs:element name="citation" type="citation"/>
-            <xs:element name="abbreviation" type="abbreviation" minOccurs="0"/> -->
+            <!-- <xs:element name="citation" type="citation"/> -->
+            <xs:element name="reference" type="reference"/>
+            <!-- <xs:element name="abbreviation" type="abbreviation" minOccurs="0"/> -->
             <xs:element name="shortCode" type="shortCode" minOccurs="0"/>
-            <xs:element name="reference" type="reference" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <!-- Added -->
@@ -957,14 +975,14 @@
     <xs:attributeGroup name="m.dateSingle">
         <!-- EAC-CPF suggests to relax the constraints on date and time information and to allow any date and time information
         that complies with the standardised time format chosen for a specific EAS file. EAG 3.0 will follow this approach. -->
-        <xs:attribute name="standardDate" type="xs:token"/>
-        <xs:attribute name="notBefore" type="xs:token"/>
-        <xs:attribute name="notAfter" type="xs:token"/>
         <!-- EAC-CPF will introduce the attribute "certainty" from EAD3 along with the recommendation to use values following EDTF, 
              i.e."uncertain", "approximate", or "uncertain and approximate" -->
-        <xs:attribute name="certainty" type="xs:NMTOKEN"/>
         <xs:attribute name="calendar" type="xs:NMTOKEN"/>
+        <xs:attribute name="certainty" type="xs:NMTOKEN"/>
         <xs:attribute name="era" type="xs:NMTOKEN"/>
+        <xs:attribute name="notAfter" type="xs:token"/>
+        <xs:attribute name="notBefore" type="xs:token"/>
+        <xs:attribute name="standardDate" type="xs:token"/>
     </xs:attributeGroup>
     
     <xs:complexType name="dateRange">
@@ -1180,8 +1198,8 @@
             <xs:element name="parform" type="parform" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="nonpreform" type="nonpreform" minOccurs="0" maxOccurs="unbounded"/> -->
             <xs:choice maxOccurs="unbounded">
-                <xs:element name="nameEntrySet" type="nameEntrySet"/>
                 <xs:element name="nameEntry" type="nameEntry"/>
+                <xs:element name="nameEntrySet" type="nameEntrySet"/>
             </xs:choice>
             <!-- Renamed "repositorid" and made "repositoryId" optional -->
             <xs:element name="repositoryId" type="repositoryId" minOccurs="0"/>
@@ -1216,16 +1234,12 @@
 
     <!-- <xs:complexType name="autform" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="parform" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType>
 
     <xs:complexType name="nonpreform" mixed="true">
@@ -1233,9 +1247,7 @@
             <xs:element name="useDates" type="useDates" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType> -->
     
     <xs:complexType name="nameEntrySet">
@@ -1515,15 +1527,15 @@
                  "repositoryName" as all name varitations will already be captured via "identity/nameEntry" -->
             <!-- <xs:element name="repositoryName" type="repositoryName" minOccurs="0" maxOccurs="unbounded"/> -->
             <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="biogHist" type="biogHist"/>
+                <xs:element name="buildingInfo" type="buildingInfo"/>
                 <!-- EAG 3.0 will use "existDates" along with "mandates" instead of "repositorfound" and "repositorsup" with their sub-elements of "date" 
                      and "rule". This would allow for an alternative encoding to using "biogHist/chronList". -->
                 <xs:element name="existDates" type="existDates"/>
                 <!-- <xs:element name="repositorfound" type="repositorfound" minOccurs="0"/>
                 <xs:element name="repositorsup" type="repositorsup" minOccurs="0"/> -->
-                <xs:element name="biogHist" type="biogHist"/>
-                <!-- "repositoryRole" will move away from predefined values and have text directly in the element. It will hence be repeatable. -->
-                <xs:element name="buildingInfo" type="buildingInfo"/>
                 <xs:element name="holdings" type="holdings"/>
+                <!-- "repositoryRole" will move away from predefined values and have text directly in the element. It will hence be repeatable. -->
                 <xs:element name="repositoryRole" type="repositoryRole"/>
                 <xs:element name="services" type="services"/>
                 <xs:element name="socialMedia" type="socialMedia"/>
@@ -1543,11 +1555,7 @@
 
     <!-- <xs:complexType name="repositoryName" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        Replaced attribute "(xml:)lang" with the attribute "common".
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source"). 
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType> -->
 
     <!-- <xs:complexType name="geogarea" mixed="true">
@@ -1657,11 +1665,11 @@
     <xs:complexType name="place">
         <xs:sequence>
             <xs:choice maxOccurs="unbounded">
-                <xs:element name="placeName" type="placeName"/>
-                <xs:element name="placeRole" type="placeRole"/>
-                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
                 <xs:element name="address" type="address"/>
                 <xs:element name="contact" type="contact"/>
+                <xs:element name="geographicCoordinates" type="geographicCoordinates"/>
+                <xs:element name="placeName" type="placeName"/>
+                <xs:element name="placeRole" type="placeRole"/>
             </xs:choice>
             <xs:group ref="m.dates" minOccurs="0"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
@@ -1669,8 +1677,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
 
     <xs:complexType name="placeRole" mixed="true">
@@ -2172,11 +2180,11 @@
         <xs:choice>
             <xs:element name="corpName" type="corpName"/>
             <xs:element name="famName" type="famName"/>
+            <xs:element name="genreForm" type="genreForm"/>
+            <xs:element name="name" type="name"/>
             <xs:element name="persName" type="persName"/>
             <xs:element name="placeName" type="placeName"/>
-            <xs:element name="name" type="name"/>
             <xs:element name="subject" type="subject"/>
-            <xs:element name="genreForm" type="genreForm"/>
         </xs:choice>
     </xs:group>
     
@@ -2202,7 +2210,7 @@
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
-    <xs:complexType name="persName">
+    <xs:complexType name="genreForm">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -2218,11 +2226,13 @@
             <xs:element name="part" type="part"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
-    <xs:complexType name="subject">
+    <xs:complexType name="persName">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -2233,7 +2243,7 @@
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
     
-    <xs:complexType name="genreForm">
+    <xs:complexType name="subject">
         <xs:sequence>
             <xs:element name="part" type="part"/>
         </xs:sequence>
@@ -2309,12 +2319,13 @@
         <xs:sequence>
             <!-- Made all sub-elements repeatable. -->
             <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="searchroom" type="searchroom"/>
-                <xs:element name="library" type="library"/>
                 <xs:element name="internetAccess" type="internetAccess"/>
+                <xs:element name="library" type="library"/>
+                <xs:element name="multilingualServices" type="multilingualServices"/>
+                <xs:element name="recreationalServices" type="recreationalServices"/>
+                <xs:element name="searchroom" type="searchroom"/>
                 <!-- Rename "techservices" to "technicalServices" -->
                 <xs:element name="technicalServices" type="technicalServices"/>
-                <xs:element name="recreationalServices" type="recreationalServices"/>
             </xs:choice>
         </xs:sequence>
         <!-- Added -->
@@ -2322,6 +2333,122 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
+    <xs:complexType name="internetAccess" mixed="true">
+        <!-- Made "internetAccess" a data-centric element and removed "descriptiveNote". -->
+        <!-- <xs:sequence>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+        </xs:sequence> -->
+        <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="link"/>
+    </xs:complexType>
+    
+    <xs:complexType name="library">
+        <xs:sequence>
+            <!-- Made sub-elements repeatable. -->
+            <xs:element name="contact" type="contact" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Removed "monographicpub" and "serialpub". Point to the newly added "descriptiveNote" for such information. -->
+            <!-- <xs:element name="monographicpub" type="monographicpub" minOccurs="0"/>
+            <xs:element name="serialpub" type="serialpub" minOccurs="0"/> -->
+            <!-- Removed "webpage" as this will now be covered by "contact" -->
+            <!-- <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
+            <!-- Added --> 
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="question"/>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <!-- <xs:complexType name="monographicpub">
+        <xs:sequence>
+            <xs:element name="num" type="num"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="serialpub">
+        <xs:sequence>
+            <xs:element name="num" type="num"/>
+        </xs:sequence>
+    </xs:complexType> -->
+    
+    <!-- Added -->
+    <xs:complexType name="multilingualServices" mixed="true">
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="link"/>
+    </xs:complexType>
+    
+    <xs:complexType name="recreationalServices">
+        <xs:sequence>
+            <!-- Made all sub-elements of "recreationalServices" repeatable -->
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="refreshment" type="refreshment"/>
+                <xs:element name="exhibition" type="exhibition"/>
+                <xs:element name="toursSessions" type="toursSessions"/>
+                <xs:element name="otherServices" type="otherServices"/>
+            </xs:choice>
+        </xs:sequence>
+        <!-- Added -->
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="exhibition" mixed="true">
+        <!-- Made "exhibition" a data-centric element and removed "descriptiveNote" and "webpage". -->
+        <!-- <xs:sequence>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+            <xs:element name="webpage" type="webpage" minOccurs="0"/>
+        </xs:sequence> -->
+        <!-- Added -->
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="link"/>
+    </xs:complexType>
+    
+    <xs:complexType name="otherServices" mixed="true">
+        <!-- Made "tourSessions" a data-centric element and removed "descriptiveNote" and "webpage". -->
+        <!-- <xs:sequence>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+            <xs:element name="webpage" type="webpage" minOccurs="0"/>
+        </xs:sequence> -->
+        <!-- Added -->
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="link"/>
+    </xs:complexType>
+    
+    <xs:complexType name="refreshment" mixed="true">
+        <!-- Made "refreshment" a data-centric element and removed "descriptiveNote". -->
+        <!-- <xs:sequence>
+            <xs:element name="descriptiveNote" type="descriptiveNote"/>
+        </xs:sequence> -->
+        <!-- Added -->
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="link"/>
+    </xs:complexType>
+    
+    <xs:complexType name="toursSessions" mixed="true">
+        <!-- Made "tourSessions" a data-centric element and removed "descriptiveNote" and "webpage". -->
+        <!-- <xs:sequence>
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
+            <xs:element name="webpage" type="webpage" minOccurs="0"/>
+        </xs:sequence> -->
+        <!-- Added -->
+        <xs:attributeGroup ref="question"/>
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="link"/>
+    </xs:complexType>
+    
     <xs:complexType name="searchroom">
         <xs:sequence>
             <!-- Made all sub-elements repeatable. -->
@@ -2442,48 +2569,6 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <xs:complexType name="library">
-        <xs:sequence>
-            <!-- Made sub-elements repeatable. -->
-            <xs:element name="contact" type="contact" minOccurs="0" maxOccurs="unbounded"/>
-            <!-- Removed "monographicpub" and "serialpub". Point to the newly added "descriptiveNote" for such information. -->
-            <!-- <xs:element name="monographicpub" type="monographicpub" minOccurs="0"/>
-            <xs:element name="serialpub" type="serialpub" minOccurs="0"/> -->
-            <!-- Removed "webpage" as this will now be covered by "contact" -->
-            <!-- <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> -->
-            <!-- Added --> 
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="question"/>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <!-- <xs:complexType name="monographicpub">
-        <xs:sequence>
-            <xs:element name="num" type="num"/>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <xs:complexType name="serialpub">
-        <xs:sequence>
-            <xs:element name="num" type="num"/>
-        </xs:sequence>
-    </xs:complexType> -->
-
-    <xs:complexType name="internetAccess" mixed="true">
-        <!-- Made "internetAccess" a data-centric element and removed "descriptiveNote". -->
-        <!-- <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-        </xs:sequence> -->
-        <xs:attributeGroup ref="question"/>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-
     <xs:complexType name="technicalServices">
         <xs:sequence>
             <!-- Made sub-elements repeatable. -->
@@ -2546,72 +2631,6 @@
         <xs:attributeGroup ref="question"/>
     </xs:complexType> -->
     
-    <xs:complexType name="recreationalServices">
-        <xs:sequence>
-            <!-- Made all sub-elements of "recreationalServices" repeatable -->
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="refreshment" type="refreshment"/>
-                <xs:element name="exhibition" type="exhibition"/>
-                <xs:element name="toursSessions" type="toursSessions"/>
-                <xs:element name="otherServices" type="otherServices"/>
-            </xs:choice>
-        </xs:sequence>
-        <!-- Added -->
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-
-    <xs:complexType name="exhibition" mixed="true">
-        <!-- Made "exhibition" a data-centric element and removed "descriptiveNote" and "webpage". -->
-        <!-- <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0"/>
-        </xs:sequence> -->
-        <!-- Added -->
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-    
-    <xs:complexType name="otherServices" mixed="true">
-        <!-- Made "tourSessions" a data-centric element and removed "descriptiveNote" and "webpage". -->
-        <!-- <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0"/>
-        </xs:sequence> -->
-        <!-- Added -->
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-    
-    <xs:complexType name="refreshment" mixed="true">
-        <!-- Made "refreshment" a data-centric element and removed "descriptiveNote". -->
-        <!-- <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote"/>
-        </xs:sequence> -->
-        <!-- Added -->
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-
-    <xs:complexType name="toursSessions" mixed="true">
-        <!-- Made "tourSessions" a data-centric element and removed "descriptiveNote" and "webpage". -->
-        <!-- <xs:sequence>
-            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
-            <xs:element name="webpage" type="webpage" minOccurs="0"/>
-        </xs:sequence> -->
-        <!-- Added -->
-        <xs:attributeGroup ref="question"/>
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attributeGroup ref="link"/>
-    </xs:complexType>
-
     <xs:complexType name="socialMedia" mixed="true">
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="common"/>
@@ -2644,9 +2663,7 @@
          most simple approach.
     <xs:complexType name="adminunit" mixed="true">
         <xs:attribute ref="xml:lang"/>
-        <xs:attributeGroup ref="vocabulary"/>
-        Changed ref from "sourceAttribute" to "vocabulary". Also added "references" (to link to a "source").
-        <xs:attributeGroup ref="references"/>
+        <xs:attributeGroup ref="sourceAttribute"/>
     </xs:complexType> -->
     
     
@@ -2656,13 +2673,15 @@
 
     <!-- EAC-CPF is planning to reform the "relations" part, to some extent following EAD3's approach with only having one "relation" element
         instead of specific ones, but also adding some new options. Reformation is exemplified below with the example of "resourceRelation", 
-        while "eagRelation" is removed asnot relevant anymore if we wanted to follow this approach with EAG 3.0. -->
+        while "eagRelation" is removed as not relevant anymore. -->
 
     <xs:complexType name="relations">
         <xs:sequence>
-            <!-- Only one "relation" element. I.e. rename "resourceRelation" to "relation" and remove "eagRelation" -->
-            <xs:element name="relation" type="relation" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- Only one "relation" element. I.e. rename "resourceRelation" to "relation" and remove "eagRelation"; make "relation" mandatory -->
+            <xs:element name="relation" type="relation" maxOccurs="unbounded"/>
             <!-- <xs:element name="eagRelation" type="eagRelation" minOccurs="0" maxOccurs="unbounded"/> -->
+            <!-- Added -->
+            <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
@@ -2674,46 +2693,46 @@
         <xs:sequence>
             <!-- "relationEntry" renamed to "targetEntity" which will be mandatory and not repeatable -->
             <xs:element name="targetEntity" type="targetEntity"/>
-            <!-- New -->
-            <xs:element name="relationType" type="relationType" minOccurs="0" maxOccurs="unbounded"/>
-            <!-- New -->
-            <xs:element name="targetRole" type="targetRole" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="m.dates" minOccurs="0"/>
-            <xs:element name="placeName" type="placeName" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <!-- Changed from "placeName" to "place" to enable more detailed encoding -->
+                <xs:element name="place" type="place"/>
+                <!-- New -->
+                <xs:element name="relationType" type="relationType"/>
+                <!-- New -->
+                <xs:element name="targetRole" type="targetRole"/>
+            </xs:choice>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
             <!-- <xs:element name="objectBinWrap" type="objectBinWrap" minOccurs="0"/> -->
             <xs:element name="objectXMLWrap" type="objectXMLWrap" minOccurs="0"/>
         </xs:sequence>
-        <!-- "resourceRelationType renamed to "targetType", values have yet to be defined, but would go along with existing entities, hence
-             these are used as suggestions below-->
-        <xs:attribute name="targetType" use="required">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="corporateBody"/>
-                    <xs:enumeration value="family"/>
-                    <xs:enumeration value="person"/>
-                    <xs:enumeration value="resource"/>
-                    <xs:enumeration value="function"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attributeGroup ref="link"/>
+        <!-- <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/>
+        <xs:attributeGroup ref="href"/> -->
         <!-- Added -->
-        <xs:attributeGroup ref="vocabulary"/>
         <xs:attributeGroup ref="references"/>
-        <!-- "lastDateTimeVerified" already included in the group of linking attributes. 
-        <xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/> -->
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
 
     <!-- "relationEntry" renamed to "targetEntity" -->
-    <xs:complexType name="targetEntity" mixed="true">
+    <xs:complexType name="targetEntity">
         <xs:sequence>
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <!-- "resourceRelationType renamed to "targetType" and moved to being a required attribute of "targetEntity" -->
+        <xs:attribute name="targetType" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="agent"/>
+                    <xs:enumeration value="corporateBody"/>
+                    <xs:enumeration value="family"/>
+                    <xs:enumeration value="function"/>
+                    <xs:enumeration value="person"/>
+                    <xs:enumeration value="resource"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <!-- <xs:attribute name="localType" type="xs:anyURI"/> -->
         <!-- <xs:attributeGroup ref="m.entryLanguageAttributes"/> -->
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
