@@ -1,0 +1,2142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eag xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/ 
+    https://raw.githubusercontent.com/ArchivesPortalEuropeFoundation/EAG2012/MajorRevision_EAG3.0/eag3.0_draft.xsd">
+    <control>
+        <recordId>DE-1958</recordId>
+        <otherRecordId localType="yes">DE-1958</otherRecordId>
+        <maintenanceAgency>
+            <agencyCode>DE-1958</agencyCode>
+            <agencyName xml:lang="ger">Bundesarchiv</agencyName>
+        </maintenanceAgency>
+        <maintenanceStatus>revised</maintenanceStatus>
+        <maintenanceHistory>
+            <maintenanceEvent>
+                <agent>mandatory added agent</agent>
+                <agentType>machine</agentType>
+                <eventDateTime standardDateTime="2012-06-20T11:12:44"> 20.06.2012</eventDateTime>
+                <eventType>created</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Kerstin Arnold, Projekt APEx</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2013-04-17T23:01:00"> 17.04.2013</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Kerstin Arnold, Projekt APEx</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2013-06-20T00:11:00"> 20.06.2013</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Kerstin Arnold, Projekt APEx</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2013-08-20T09:50:40">20.08.2013</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Kerstin Arnold, Projekt APEx</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2013-08-20T09:51:25">20.08.2013</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Kerstin Arnold, Projekt APEx</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2013-09-24T10:52:15">24.09.2013</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Kerstin Arnold, Projekt APEx</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2013-09-24T11:07:01">24.09.2013</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Kerstin Arnold, Projekt APEx</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T13:39:39">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T13:40:13">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T13:54:51">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T13:58:36">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T14:39:49">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T14:42:04">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T14:42:40">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T14:47:02">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-08-15T14:53:05">15.08.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2014-10-02T17:32:38">02.10.2014</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2015-03-05T18:34:05">05.03.2015</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2015-03-06T16:53:15">06.03.2015</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2015-03-06T16:54:49">06.03.2015</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2018-01-09T17:45:23">09.01.2018</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2018-01-10T07:51:59">10.01.2018</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2019-01-04T11:17:17">04.01.2019</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2019-01-04T11:18:26">04.01.2019</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>APEx Projekt Team, Bundesarchiv</agent>
+                <agentType>human</agentType>
+                <eventDateTime standardDateTime="2019-01-04T11:24:13">04.01.2019</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+            <maintenanceEvent>
+                <agent>Archives Portal Europe</agent>
+                <agentType>machine</agentType>
+                <eventDateTime standardDateTime="2019-11-12T13:00:00">12.11.2019</eventDateTime>
+                <eventType>revised</eventType>
+            </maintenanceEvent>
+        </maintenanceHistory>
+        <languageDeclarations>
+            <languageDeclaration>
+                <language languageCode="ger"/>
+                <script scriptCode="Latn"/>
+            </languageDeclaration>
+            <languageDeclaration>
+                <language languageCode="eng"/>
+                <script scriptCode="Latn"/>
+            </languageDeclaration>
+        </languageDeclarations>
+        <conventionDeclaration>
+            <abbreviation>EAG</abbreviation>
+            <citation>EAG (Encoded Archival Guide) 2012</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISDIAH</abbreviation>
+            <citation>International Standard for Describing Institutions with Archival
+                Holdings</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 8601</abbreviation>
+            <citation>Data elements and interchange formats – Information interchange –
+                Representation of dates and times</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 3166-1</abbreviation>
+            <citation>Codes for the representation of names of countries and their subdivisions –
+                Part 1: Country codes</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 639-2b</abbreviation>
+            <citation>Codes for the representation of names of languages — Part 2: Alpha-3
+                code</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 15924</abbreviation>
+            <citation>Codes for the representation of names of scripts</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 15511</abbreviation>
+            <citation>International Standard Identifier for Libraries and Related
+                Organisations</citation>
+        </conventionDeclaration>
+        <localControl localType="detailLevel">
+            <term lastDateTimeVerified="2019-01-04T11:24:13"
+                vocabularySource="http://www.archivesportaleurope.eu/vocabularies/EAG/"
+                scriptCode="Latn">extended</term>
+        </localControl>
+    </control>
+    <archguide>
+        <identity>
+            <repositorid countrycode="DE" repositorycode="DE-1958"/>
+            <autform xml:lang="ger">Bundesarchiv</autform>
+            <parform xml:lang="eng">The Federal Archives</parform>
+            <parform xml:lang="fre">Les Archives fédérales</parform>
+            <parform xml:lang="spa">Archivo federal</parform>
+            <parform xml:lang="pol">Archiwum Federalne</parform>
+            <nonpreform xml:lang="ger">Reichsarchiv<useDates>
+                    <dateRange>
+                        <fromDate standardDate="1919">1919</fromDate>
+                        <toDate standardDate="1945">1945</toDate>
+                    </dateRange>
+                </useDates>
+            </nonpreform>
+            <nonpreform xml:lang="ger">Reichsfilmarchiv<useDates>
+                    <dateRange>
+                        <fromDate standardDate="1935">1935</fromDate>
+                        <toDate standardDate="1945">1945</toDate>
+                    </dateRange>
+                </useDates>
+            </nonpreform>
+            <nonpreform xml:lang="ger">Deutsches Zentralarchiv<useDates>
+                    <dateRange>
+                        <fromDate standardDate="1946">1946</fromDate>
+                        <toDate standardDate="1973">1973</toDate>
+                    </dateRange>
+                </useDates>
+            </nonpreform>
+            <nonpreform xml:lang="ger">Zentrales Staatsarchiv<useDates>
+                    <dateRange>
+                        <fromDate standardDate="1973">1973</fromDate>
+                        <toDate standardDate="1990">1990</toDate>
+                    </dateRange>
+                </useDates>
+            </nonpreform>
+            <repositoryType>National archives</repositoryType>
+        </identity>
+        <desc>
+            <repositories>
+                <repository>
+                    <repositoryRole>Head quarter</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="50.342780" longitude="7.572900">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Rheinland-Pfalz</firstdem>
+                        <municipalityPostalcode xml:lang="ger">56075
+                            Koblenz</municipalityPostalcode>
+                        <street xml:lang="ger">Potsdamer Straße 1</street>
+                    </location>
+                    <location localType="visitors address" latitude="50.342780" longitude="7.572900">
+                        <country xml:lang="eng">Germany</country>
+                        <firstdem xml:lang="eng">Rhineland-Palatinate</firstdem>
+                        <municipalityPostalcode xml:lang="eng">56075
+                            Koblenz</municipalityPostalcode>
+                        <street xml:lang="eng">Potsdamer Straße 1</street>
+                    </location>
+                    <location localType="postal address">
+                        <country xml:lang="ger">Deutschland</country>
+                        <municipalityPostalcode xml:lang="ger">56064
+                            Koblenz</municipalityPostalcode>
+                        <street xml:lang="ger">Postfach</street>
+                    </location>
+                    <location localType="postal address">
+                        <country xml:lang="eng">Germany</country>
+                        <municipalityPostalcode xml:lang="eng">56064
+                            Koblenz</municipalityPostalcode>
+                        <street xml:lang="eng">P.O. Box</street>
+                    </location>
+                    <telephone>+49 261 505 0</telephone>
+                    <fax>+49 261 505 226</fax>
+                    <email href="koblenz@bundesarchiv.de">koblenz@bundesarchiv.de</email>
+                    <webpage href="http://www.bundesarchiv.de/service/kontakt/index.html.de"
+                        xml:lang="eng">Contact form of the Federal Archives</webpage>
+                    <webpage href="http://www.bundesarchiv.de">http://www.bundesarchiv.de</webpage>
+                    <webpage href="http://www.bundesarchiv.de/service/kontakt/index.html.de"
+                        xml:lang="ger">Zum Kontaktformular des Bundesarchivs</webpage>
+                    <directions xml:lang="ger">Buslinien 2 und 12 (Richtung Karthause) bis
+                        Bundesarchiv (von Haltestelle Hauptbahnhof West am Hauptbahnhof-Nebenausgang
+                        an der Simmerner Straße).<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_koblenz_2011-03.pdf"
+                        />
+                    </directions>
+                    <directions xml:lang="eng">Take the bus no. 2 or 12 (direction "Karthause")
+                        until the stop "Bundesarchiv", leaving at "Central station (West)".<citation
+                            href="http://www.kevag.de/verkehrs-service/liniennetz/"/>
+                    </directions>
+                    <repositorhist>
+                        <descriptiveNote>
+                            <p xml:lang="ger">1919 : Das Reichsarchiv wird als zentrales Archiv nach
+                                der im Versailler Vertrag geforderten Auflösung zahlreicher
+                                militärischer Behörden eingerichtet. Das Reichsarchiv übernimmt
+                                Unterlagen aller obersten Reichsbehörden seit 1867/71 und in einer
+                                Außenstelle in Frankfurt a.M. seit dem Jahr 1924 auch Archivgut des
+                                Deutschen Bundes und des Reichskammergerichts. Im Laufe der Zeit
+                                wird es um Schriftgut nichtstaatlicher Herkunft, fotografische und
+                                filmische Dokumente ergänzt. Das Reichsarchivgebäude befand sich auf
+                                dem Brauhausberg in Potsdam.</p>
+                            <p xml:lang="ger">1935: Das Reichspropagandaministerium errichtet beim
+                                Reichsarchiv in Potsdam ein Reichsfilmarchiv.</p>
+                            <p xml:lang="ger">1936: Das Heeresarchiv Potsdam wird als selbständige
+                                Einrichtung aus dem Reichsarchiv ausgegliedert.</p>
+                            <p xml:lang="ger">1944/1945: Der wertvollere Teil der zivilen Bestände
+                                des Reichsarchivs wird kriegsbedingt ausgelagert. Bei einem
+                                Luftangriff im April 1945 werden die noch nicht ausgelagerten
+                                Bestände des Heeresarchivs weitestgehend vernichtet.</p>
+                            <p xml:lang="ger">1946: In der DDR wird mit Sitz in der Orangerie des
+                                Schlosses Sanssouci in Potsdam das Deutsche Zentralarchiv, seit 1973
+                                "Zentrales Staatsarchiv" der DDR, eingerichtet.</p>
+                            <p xml:lang="ger">1952: Die Bundesregierung errichtet auf Beschluss von
+                                1950 das Bundesarchiv in Koblenz als Obere Bundesbehörde im
+                                Geschäftsbereich des Bundesministeriums des Innern. Es wird zunächst
+                                im Gebäude des ehemaligen preußischen Regierungspräsidenten
+                                unmittelbar am Rheinufer untergebracht.</p>
+                            <p xml:lang="ger">1954: Die ehemalige Außenstelle des Reichsarchivs in
+                                Frankfurt a.M., in der die Überlieferungen des Deutschen Bundes und
+                                der Nationalversammlung von 1848/49 und der "Untrennbare Bestand"
+                                des Reichskammergerichts verwahrt werden, wird in das Bundesarchiv
+                                eingegliedert.</p>
+                            <p xml:lang="ger">1955: Das nordrhein-westfälische Personenstandsarchiv
+                                für Personalunterlagen militärischer Provenienz wird als
+                                Zentralnachweisstelle in Aachen-Kornelimünster in das Bundesarchiv
+                                übernommen.</p>
+                            <p xml:lang="ger">Die Abteilung Militärarchiv wird im Bundesarchiv
+                                eingerichtet.</p>
+                            <p xml:lang="ger">In Berlin wird das Staatliche Filmarchiv der DDR
+                                gegründet.</p>
+                            <p xml:lang="ger">1955/1956: Das Zentrale Staatsarchiv der DDR bezieht
+                                1955/1956 in Potsdam das Gebäude in der Berliner Straße/
+                                Tizianstraße. Hier wird auch die Staatliche Archivverwaltung, eine
+                                Abteilung des Ministeriums des Innern, untergebracht. Dort haben von
+                                1990 bis 1996 die Abteilungen Potsdam des Bundesarchivs ihren
+                                Sitz.</p>
+                            <p xml:lang="ger">1961: Das Bundesarchiv bezieht ein Hochhaus in der
+                                Innenstadt von Koblenz (Am Wöllershof 12).</p>
+                            <p xml:lang="ger">1964: In Potsdam wird das Militärarchiv der NVA der
+                                DDR (zunächst als Deutsches Militärarchiv) gegründet.</p>
+                            <p xml:lang="ger">1965: Das Zwischenarchiv für die Akten der
+                                Bundesbehörden, das seit 1972 seinen Sitz in St.Augustin bei Bonn
+                                hat, wird in Bad Godesberg eingerichtet.</p>
+                            <p xml:lang="ger">1968: Die Abteilung Militärarchiv des Bundesarchivs
+                                wird nach Freiburg verlegt und übernimmt dort die Bestände der
+                                Dokumentenzentrale des Militärgeschichtlichen Forschungsamtes.</p>
+                            <p xml:lang="ger">1974: Die "Erinnerungsstätte für die
+                                Freiheitsbewegungen in der deutschen Geschichte" wird als
+                                Außenstelle des Bundesarchivs in Rastatt eröffnet.</p>
+                            <p xml:lang="ger">1978: Durch ein Verwaltungsabkommen werden dem
+                                Bundesarchiv im Verbund kinemathekarischer Einrichtungen die
+                                Aufgaben eines zentralen Filmarchivs für die gesamte deutsche
+                                Filmproduktion übertragen.</p>
+                            <p xml:lang="ger">1979: Die Bundesregierung überträgt durch
+                                Kabinettsbeschluss dem Bundesarchiv die Edition der
+                                Kabinettsprotokolle der Bundesregierung.</p>
+                            <p xml:lang="ger">1986: Das Bundesarchiv bezieht einen Neubau in
+                                Koblenz-Karthause.</p>
+                            <p xml:lang="ger">1988: Mit dem Gesetz über die Sicherung und Nutzung
+                                von Archivgut des Bundes vom 6. Januar 1988 werden der allgemeine
+                                Zugang zum Archivgut des Bundes und die Aufgaben des Bundesarchivs
+                                erstmals gesetzlich verankert.</p>
+                            <p xml:lang="ger">1989: Mit dem Gesetz über die zentrale Archivierung
+                                von Unterlagen aus dem Bereich des Kriegsfolgenrechts wird im
+                                Bundesarchiv ein Zentralarchiv für den Lastenausgleich in Bayreuth
+                                errichtet.</p>
+                            <p xml:lang="ger">1990: Im Zuge der Wiedervereinigung Deutschlands
+                                erfolgt die Eingliederung der zentralen Archive der DDR (Zentrales
+                                Staatsarchiv und Militärarchiv in Potsdam, Staatliches Filmarchiv in
+                                Berlin) in das Bundesarchiv.</p>
+                            <p xml:lang="ger">1992: Das Parteiarchiv der SED wird ebenso wie die
+                                Archive des FDGB und weiterer Organisationen der DDR zusammen mit
+                                ihren Bibliotheken in die Stiftung Archiv der Parteien und
+                                Massenorganisationen der DDR im Bundesarchiv eingebracht. Sitz der
+                                Stiftung ist Berlin.</p>
+                            <p xml:lang="ger">1994: Das Bundesarchiv übernimmt beim Abzug der
+                                Amerikanischen Truppen aus Berlin das Berlin Document Center mitsamt
+                                der Mitgliederkartei der NSDAP und Personalakten von 62.000
+                                SS-Führern, nachdem es zuvor vollständig verfilmt wurde.</p>
+                            <p xml:lang="ger">1996: Das Bundesarchiv bezieht mit den Abteilungen
+                                Potsdam, dem ehem. Document Center und der Stiftung Archiv der
+                                Parteien und Massenorganisationen der DDR im Bundesarchiv die
+                                Liegenschaft an der Finckensteinallee in Berlin-Lichterfelde.</p>
+                            <p xml:lang="ger">1997: Im brandenburgischen Hoppegarten bei Berlin wird
+                                ein Zwischenarchiv für die obersten Bundesbehörden im Berliner Raum
+                                eingerichtet.</p>
+                            <p xml:lang="ger">1997: Das Bundesarchiv schaltet seine erste
+                                Internetpräsenz frei.</p>
+                            <p xml:lang="ger">1998: Das Bundesarchiv wechselt in den
+                                Geschäftsbereich des neu eingerichteten Kulturstaatsministers im
+                                Bundeskanzleramt, Beauftragter der Bundesregierung für Kultur und
+                                Medien.</p>
+                            <p xml:lang="ger">1999: Das Lastenausgleichsarchiv in Bayreuth bezieht
+                                das um einen Magazinbau erweiterte und umgebaute ehemalige
+                                Krankenhaus der Stadt.</p>
+                            <p xml:lang="ger">2000: Die Unterlagen der Zentralen Stelle der
+                                Landesjustizverwaltungen zur Aufklärung nationalsozialistischer
+                                Verbrechen werden in die neu errichtete Außenstelle Ludwigsburg des
+                                Bundesarchivs übernommen.</p>
+                            <p xml:lang="ger">2000: Die Außenstelle Frankfurt wird aufgelöst, die
+                                bisher dort verwahrte Überlieferung der Zentralorgane des Deutschen
+                                Bundes einschließlich der Unterlagen der Deutschen
+                                Nationalversammlung von 1848/49 werden nach Koblenz verlagert.</p>
+                            <p xml:lang="ger">2001: In Hoppegarten wird eine der modernsten
+                                maschinellen Entsäuerungsanlagen für vom Zerfall bedrohte
+                                Archivalien von einem gewerblichen Unternehmen im Rahmen eines
+                                Privatisierungskonzeptes in Betrieb genommen.</p>
+                            <p xml:lang="ger">2002: In Hoppegarten wird mit dem Bau eines
+                                Bestandserhaltungszentrums mit Spezialmagazinen für die Lagerung von
+                                Cellulosenitratfilmen sowie mit Werkstätten für Filmbearbeitung,
+                                Restaurierung und Konservierung von Archivgut aller Art sowie für
+                                Verfilmung und Digitalisierung begonnen.</p>
+                            <p xml:lang="ger">2002: Mit einem Festakt in Berlin in Anwesenheit des
+                                Bundespräsidenten und mit einer Festveranstaltung in Koblenz feiert
+                                das Bundesarchiv sein 50-jähriges Bestehen.</p>
+                            <p xml:lang="ger">2002: Im Internet wird die Zentrale Datenbank
+                                Nachlässe (ZDN) verfügbar gemacht.</p>
+                            <p xml:lang="ger">2003: Die ersten Online-Findbücher des Bundesarchivs
+                                sind im Internet verfügbar.</p>
+                            <p xml:lang="ger">2003: Im Bundeskanzleramt wird die Online-Edition der
+                                Kabinettsprotokolle der Bundesregierung der Presse und den Medien
+                                vorgestellt.</p>
+                            <p xml:lang="ger">2005: In Hoppegarten werden die Neubauten für
+                                Filmlagerung und -restaurierung in Betrieb genommen. Die
+                                Zentralnachweisstelle in Aachen-Kornelimünster wird aufgelöst.</p>
+                            <p xml:lang="ger">2005: Im Internet wird das Notfallregister Archive
+                                NORA als Instrument für die Katastrophenvorsorge für die deutschen
+                                Archive eingerichtet.</p>
+                            <p xml:lang="ger">2007: Im Rahmen des Retrokonversionsprogramms zur
+                                Digitalisierung von Findbüchern und Findkarteien wird die
+                                1.000.000ste Titelaufnahme digitalisiert.</p>
+                            <p xml:lang="ger">In Berlin-Lichterfelde beginnen die Baumaßnahmen für
+                                die Errichtung des Ernst-Posner-Baus mit Magazinen und
+                                Eingangsbereich für das Berliner Bundesarchiv sowie die Sanierung
+                                der früheren Kasernengebäude für ein Nutzungszentrum und die
+                                Dienstzimmer.</p>
+                            <p xml:lang="ger">Das Digitale Bildarchiv des Bundesarchivs wird im
+                                Bundeskanzleramt freigeschaltet.</p>
+                            <p xml:lang="ger">2008: Das 2006 in wesentlich erweiterter 2. Auflage
+                                erschienene Gedenkbuch der Opfer der Verfolgung der Juden wird im
+                                Internet zur Online-Recherche verfügbar gemacht.</p>
+                            <p xml:lang="ger">2009: In Berlin erfolgt die Schlüsselübergabe für den
+                                Ernst-Posner-Bau. Bis September 2010 wird der Umzug von mehr als 110
+                                km Archiv- und Bibliotheksgut abgeschlossen.</p>
+                            <p xml:lang="ger">2011: In den Lesesälen des Bundesarchivs wird BASYS
+                                2-Invenio zur Verfügung gestellt, das eine Suche über alle im
+                                Bundesarchiv-IT-System vorhandenen Angaben zu Beständen und
+                                Erschließungsinfomationen ermöglicht.</p>
+                            <p xml:lang="eng">1919: The Reich Archives are set up as a central
+                                archive after the stipulations of the Treaty of Versailles required
+                                the dissolution of many military authorities. The Reich Archives
+                                take over responsibility for the documents of all supreme state
+                                authorities from 1867/71 onwards, and from 1924 onwards also the
+                                archives of the German Confederation and the Imperial Chamber Court
+                                (Reichskammergericht), held in branch archives in Frankfurt am Main.
+                                In the course of time, the archives are supplemented by non-state
+                                records as well as photographic and film documents. The Reich
+                                Archives building was located on the Brauhausberg in Potsdam.</p>
+                            <p xml:lang="eng">1935: The Reich Ministry of Propaganda sets up a Reich
+                                Film Archive at the Reich Archives in Potsdam.</p>
+                            <p xml:lang="eng">1936: The Potsdam Army Archive is hived off from the
+                                Reich Archives as an independent institution.</p>
+                            <p xml:lang="eng">1944/1945: The more valuable civil holdings of the
+                                Reich Archives are moved to external locations due to the war. The
+                                holdings which had not been removed were largely destroyed in an air
+                                attack in April 1945.</p>
+                            <p xml:lang="eng">1946: In the GDR, the German Central Archives (Central
+                                State archives of the GDR since 1973) are set up, headquartered in
+                                the Orangery of the Palace of Sanssouci in Potsdam.</p>
+                            <p xml:lang="eng">1952: On the basis of a Cabinet decision of 1950, the
+                                Federal Archives are set up in Koblenz as higher state authority,
+                                attached to the Federal Ministry of the Interior. The archives are
+                                initially housed in buildings formerly used by the Prussian
+                                Regierungspraesident (Dirstrict Officer), located directly on the
+                                banks of the Rhine.</p>
+                            <p xml:lang="eng">1954: The previous Reich Archives branch in Frankfurt
+                                am Main, which contains the records of the German Confederation and
+                                the National Assembly of 1848/49, and the "Inseparable Assets" of
+                                the Imperial Chamber Court (Reichskammergericht), is integrated into
+                                the Federal Archives.</p>
+                            <p xml:lang="eng">1955: The North Rhine-Westphalia Civil Register
+                                Archive for personnel documents of a military provenance is
+                                integrated into the Federal Archives as the Zentralnachweisstelle
+                                (Central Verification Office) based in Aachen-Kornelimuenster.</p>
+                            <p xml:lang="eng">The Military Archive Department is set up in the
+                                Federal Archives.</p>
+                            <p xml:lang="eng">The GDR State Film Archive is founded in Berlin.</p>
+                            <p xml:lang="eng">1955/1956: The Central State Archive of the GDR moves
+                                into a building in the Berliner Strasse/ Tizianstrasse in 1955/1956.
+                                The State Archive Administration, a Department of the Ministry of
+                                the Interior, is also located here. The Potsdam Departments of the
+                                Federal Archives are headquartered here from 1990 until 1996.</p>
+                            <p xml:lang="eng">1961: The Federal Archives move into a multi-storey
+                                building in the Koblenz inner city (Am Woellershof 12).</p>
+                            <p xml:lang="eng">1964: The Military Archive of the GDR National
+                                People's Army (NVA) is founded in Potsdam (initially as the German
+                                Military Archive).</p>
+                            <p xml:lang="eng">1965: The intermediate archives for Federal
+                                authorities files, headquartered in Sankt Augustin near Bonn since
+                                1972, are set up in Bad Godesberg.</p>
+                            <p xml:lang="eng">1968: The Military Archives Department of the Federal
+                                Archives is moved to Freiburg and incorporates the holdings of the
+                                Central Documents Office of the Agency for Research into Military
+                                History (Militaergeschichtliches Forschungsamt).</p>
+                            <p xml:lang="eng">1974: A branch of the Federal Archives known as the
+                                "Memorial to Freedom Movements in German History" is opened in
+                                Rastatt.</p>
+                            <p xml:lang="eng">1978: The Federal Archives are given the task of
+                                acting as a central film archive for all German film productions as
+                                a result of an administration agreement covering the Association of
+                                Cinema Library Facilities.</p>
+                            <p xml:lang="eng">1979: A Cabinet decision of the Federal Government
+                                assigns the task of editing the Federal Government Cabinet minutes
+                                to the Federal Archives.</p>
+                            <p xml:lang="eng">1986: The Federal Archives move into a newly built
+                                facility in Koblenz-Karthause.</p>
+                            <p xml:lang="eng">1988: With the passing of the Law on the Preservation
+                                and Use of Federal Archival Documents (Bundesarchivgesetz) on the
+                                6th of January 1988, general access to the Federal Archives and the
+                                responsibilities of the Federal Archives are for the first time
+                                placed on a sound legal footing.</p>
+                            <p xml:lang="eng">1989: With the passing of the law on the central
+                                archiving of documents concerning legislation governing the
+                                after-effects of war, the Federal Archives set up a central
+                                Lastenausgleichsarchiv (archives on equalization of burdens) in
+                                Bayreuth.</p>
+                            <p xml:lang="eng">1990: In the course of the reunification of Germany,
+                                the central archives of the GDR (Central State Archive and Military
+                                Archive in Potsdam, State Film Archive in Berlin) are integrated
+                                into the Federal Archives.</p>
+                            <p xml:lang="eng">1992: The SED Party Archive and the FDGB Archive and
+                                other GDR organisations, together with their libraries, are
+                                integrated into the Foundation Archives of Parties and Mass
+                                Organisations of the GDR in the Federal Archives. The Foundation is
+                                headquartered in Berlin.</p>
+                            <p xml:lang="eng">1994: Upon withdrawal of American troops from Berlin,
+                                the Federal Archives take over the Berlin Document Center including
+                                the NSDAP membership card index and personnel records of 62,000 SS
+                                officers after these have been recorded in their entirety on
+                                film.</p>
+                            <p xml:lang="eng">1996: The Federal Archives occupy a property in the
+                                Finckensteinallee in Berlin-Lichterfelde to house the Potsdam
+                                departments, the former Document Center and the Foundation Archives
+                                of Parties and Mass Organisations of the GDR in the Federal
+                                Archives.</p>
+                            <p xml:lang="eng">1997: Intermediate Archives for supreme state
+                                authorities in the Berlin area are opened in Hoppegarten, near
+                                Berlin.</p>
+                            <p xml:lang="eng">The Federal Archives go online with their first
+                                Internet presence.</p>
+                            <p xml:lang="eng">1998: The Federal Archives are moved into the area of
+                                responsibility of the newly setup Minister of State for Culture in
+                                the Federal Chancellery, the Federal Government Commissioner for
+                                Culture and the Media.</p>
+                            <p xml:lang="eng">1999: The Lastenausgleichsarchiv (archives on
+                                equalization of burdens) in Bayreuth moves into the renovated former
+                                city hospital, which has been extended by building a stacking
+                                centre.</p>
+                            <p xml:lang="eng">2000: The records of the Central Office of the State
+                                Justice Administration for the Investigation of National Socialist
+                                Crimes are integrated into the newly founded Ludwigsburg branch
+                                archive of the Federal Archives.</p>
+                            <p xml:lang="eng">The Frankfurt branch archive is closed, and the
+                                records of the central organs of the German Confederation, including
+                                the documents concerning the National Assembly of 1848/49, are
+                                removed to Koblenz.</p>
+                            <p xml:lang="eng">2001: In Hoppegarten, one of the most modern
+                                mechanical deacidification plants for the protection of archive
+                                documents threatened by deterioration is opened by a commercial
+                                company in the course of a privatisation concept.</p>
+                            <p xml:lang="eng">2002: Work is started in Hoppegarten on a holdings
+                                preservation centre with special stacking centres for the storing of
+                                cellulose nitrate films and workshops for film processing and the
+                                restoration and conservation of archives of all kinds, as well as
+                                for their filming and digitalisation.</p>
+                            <p xml:lang="eng">The Federal Archives celebrate their first 50 years of
+                                existence at a ceremony in Berlin attended by the Federal President
+                                and at a commemorative event in Koblenz.</p>
+                            <p xml:lang="eng">The Central database for personal papers (ZDN) is made
+                                available in the Internet.</p>
+                            <p xml:lang="eng">2003: The first Federal Archives online inventories
+                                are made available in the Internet.</p>
+                            <p xml:lang="eng">The online edition of the Federal Government Cabinet
+                                minutes is presented to the press and the media in the Federal
+                                Chancellery.</p>
+                            <p xml:lang="eng">2005: In Hoppegarten, the new facilities for film
+                                storage and restoration are taken into service. The
+                                Zentralnachweisstelle (Central Verification Office) in
+                                Aachen-Kornelimünster is closed.</p>
+                            <p xml:lang="eng">In the Internet, the Notfallregister Archive NORA
+                                (Central Emergency Register Archives) is set up as a tool for
+                                prevention of catastrophes to German archives.</p>
+                            <p xml:lang="eng">2007: In the course of the retro-conversion programme
+                                for the digitalisation of inventories and card indexes, the
+                                millionth title is digitalised.</p>
+                            <p xml:lang="eng">In Berlin-Lichterfelde work is started on the Ernst
+                                Posner Building, with stacking centres and a receiving area for the
+                                Berlin Federal Archives, as well as the restoration of the former
+                                barracks, which will house a reading room and offices.</p>
+                            <p xml:lang="eng">The Federal Archives digital picture archive goes
+                                online in the Federal Chancellery.</p>
+                            <p xml:lang="eng">2008: The 2006 second, considerably extended, edition
+                                of the remembrance book "Victims of the persecution of the Jews" is
+                                made available in the Internet for online research.</p>
+                            <p xml:lang="eng">2009: In Berlin-Lichterfelde, the keys of the Ernst
+                                Posner Building are handed over. Until September 2010 over 110 km of
+                                archives and libraries are relocated.</p>
+                        </descriptiveNote>
+                    </repositorhist>
+                    <repositorfound>
+                        <date standardDate="1952">1952</date>
+                        <rule xml:lang="ger">Die Bundesregierung errichtet auf Beschluss von 1950
+                            das Bundesarchiv Obere Bundesbehörde im Geschäftsbereich des
+                            Bundesministeriums des Innern.</rule>
+                    </repositorfound>
+                    <buildinginfo>
+                        <building>
+                            <descriptiveNote>
+                                <p xml:lang="ger">In Koblenz wurde das Bundesarchiv 1952 begründet.
+                                    Der Standort in relativer Nähe zur damaligen Bundeshauptstadt
+                                    Bonn galt zunächst nur als Provisorium. Mit der Grundsteinlegung
+                                    für einen Archivzweckbau in Koblenz 1982 wurde dieser als
+                                    Dienstort für das Bundesarchiv bestätigt.</p>
+                                <p xml:lang="ger">Der von Bundeskanzler Helmut Kohl im November 1986
+                                    eingeweihte Neubau in Koblenz erfüllt alle wesentlichen
+                                    Kriterien für ein modernes Archivgebäude: Er ist funktional und
+                                    bietet optimale Arbeitsbedingungen für Mitarbeiter und Benutzer.
+                                    Die Bauweise gewährleistet Wirtschaftlichkeit des Betriebes
+                                    durch niedrige Energiekosten. So wird das konstante Klima in den
+                                    Aktenmagazinen durch baukonstruktive Maßnahmen sichergestellt.
+                                    Der Zweckbau sichert das Archivgut in den verschiedenen
+                                    Magazinbereichen mit insgesamt mehr als 15.000 m²
+                                    Magazinfläche.</p>
+                                <p xml:lang="eng">The Federal Archives in Koblenz were founded in
+                                    1952. The building in vicinity of the then capital Bonn first
+                                    was only meant as an interim solution. When the construction
+                                    works for the current building started in 1982, it became a
+                                    permanent one: it is functional and with optimised conditions
+                                    for storing the archival material and for working.</p>
+                            </descriptiveNote>
+                        </building>
+                        <lengthshelf>
+                            <num unit="linearmetre">339.000</num>
+                        </lengthshelf>
+                    </buildinginfo>
+                    <adminhierarchy>
+                        <adminunit xml:lang="ger">Abteilung Zentrale Verwaltungsangelegenheiten
+                            (Abt. Z): Die Abteilung Z ist zuständig für die zentralen
+                            Verwaltungsangelegenheiten des Bundesarchivs.</adminunit>
+                        <adminunit xml:lang="ger">Abteilung Grundsatz und Wissenschaft (Abt. GW):
+                            Die Abteilung GW ist für archivfachliche Grundsatzangelegenheiten und
+                            wissenschaftliche Angelegenheiten verantwortlich.</adminunit>
+                        <adminunit xml:lang="ger">Abteilung Bundesrepublik Deutschland (Abt. B): Die
+                            Abteilung Bundesrepublik Deutschland (B) ist verantwortlich für die
+                            Überlieferung zentraler ziviler Stellen der Bundesrepublik Deutschland
+                            einschließlich der westlichen Besatzungszonen.</adminunit>
+                        <adminunit xml:lang="ger">Abteilung Deutsches Reich (Abt. R): In der
+                            Abteilung R sind die Überlieferungen der zivilen Zentralbehörden des
+                            Deutschen Reiches (1867/71-1945), die durch den Zweiten Weltkrieg und
+                            die Teilung Deutschlands zerrissen waren, zusammengeführt.</adminunit>
+                        <adminunit xml:lang="ger">Abteilung Militärarchiv (Abt. MA): Die Abteilung
+                            MA ist zuständig für die zentrale Überlieferung militärischer Stellen
+                            der Bundesrepublik und ihrer Rechtsvorgänger.</adminunit>
+                        <adminunit xml:lang="ger">Abteilung Filmarchiv (Abt. FA): In der Abteilung
+                            FA sind die Überlieferung der Filmreferate des Bundesarchivs (vor 1990)
+                            und des Staatlichen Filmarchivs der DDR zusammengefasst.</adminunit>
+                        <adminunit xml:lang="ger">Abteilung Deutsche Demokratische Republik (Abt.
+                            DDR): Die Abteilung DDR ist zuständig für die zivile Überlieferung des
+                            zentralen Staatsapparates der DDR und seiner Vorläufer in der
+                            Sowjetischen Besatzungszone (SBZ).</adminunit>
+                        <adminunit xml:lang="ger">Stiftung Archiv der Parteien und
+                            Massenorganisationen der DDR im Bundesarchiv (SAPMO): Die SAPMO stellt
+                            Archivgut zur Benutzung bereit, das außerhalb der staatlichen Behörden
+                            der DDR bei den politischen Entscheidungen zur Kontrolle und Steuerung
+                            von Staat und Gesellschaft entstanden ist. Es war bis 1990 geheim
+                            gehalten und ist nun bis auf personenbezogene Unterlagen frei
+                            benutzbar.</adminunit>
+                        <adminunit xml:lang="eng">Central Administration Department (Department
+                            Z)</adminunit>
+                        <adminunit xml:lang="eng">Department General archival matters and sience
+                            (Department GW)</adminunit>
+                        <adminunit xml:lang="eng">Department Federal Republic of Germany (Department
+                            B)</adminunit>
+                        <adminunit xml:lang="eng">Department German Reich (Department R)</adminunit>
+                        <adminunit xml:lang="eng">Department Military Archives (Department
+                            MA)</adminunit>
+                        <adminunit xml:lang="eng">Department Film Archives (Department
+                            FA)</adminunit>
+                        <adminunit xml:lang="eng">Department German Democratic Republic (Department
+                            DDR)</adminunit>
+                        <adminunit xml:lang="eng">Foundation Archives of Parties and Mass
+                            Organisations of the GDR in the Federal Archives (SAPMO)</adminunit>
+                        <adminunit xml:lang="ger">Abteilung Archivtechnik und zentrale fachliche
+                            Dienstleistungen (AT): Aus der früheren Abteilung G heraus wurde im März
+                            2015 die Abteilung AT mit Zuständigkeit für die archivtechnischen
+                            Querschnittsaufgaben eingerichtet.</adminunit>
+                        <adminunit xml:lang="eng">Department Technics, Digital Archives and Central
+                            Archival Services</adminunit>
+                    </adminhierarchy>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">Das Bundesarchiv hat den gesetzlichen Auftrag, das
+                                Archivgut des Bundes auf Dauer zu sichern und nutzbar zu machen.
+                                Dabei handelt es sich um Unterlagen (Akten, Schriftstücke, Karten,
+                                Bilder, Plakate, Filme, Tonaufzeichnungen und "maschinenlesbare
+                                Daten), die bei zentralen Stellen des Heiligen Römischen Reiches
+                                (1495-1806), des Deutschen Bundes (1815-1866), des Deutschen Reiches
+                                (1867/71-1945), der Besatzungszonen (1945-1949), der Deutschen
+                                Demokratischen Republik (1949-1990) und der Bundesrepublik
+                                Deutschland (seit 1949) entstanden sind. Das Bundesarchiv
+                                entscheidet, ob diesen Unterlagen bleibender Wert für die
+                                Erforschung oder das Verständnis der deutschen Geschichte, die
+                                Sicherung berechtigter Belange der Bürger oder die Bereitstellung
+                                von Informationen für Gesetzgebung, Verwaltung und Rechtsprechung
+                                zukommt.</p>
+                            <p xml:lang="ger">Die Stiftung Archiv der Parteien und
+                                Massenorganisationen der DDR im Bundesarchiv (SAPMO) sichert das
+                                Archivgut der zentralen Leitungsebenen der Parteien, Gewerkschaften
+                                und Massenorganisationen der DDR. Sie betreut außerdem die
+                                Bibliothek des Bundesarchivs, deren Kern die Bibliothek des
+                                ehemaligen Instituts für Marxismus-Leninismus und anderer Dienst-
+                                und Organisationsbibliotheken der DDR bildet.</p>
+                            <p xml:lang="ger">Das Bundesarchiv sammelt auch schriftliche Nachlässe
+                                von bedeutenden Personen, Unterlagen von Parteien, Verbänden und
+                                Vereinen mit überregionaler Bedeutung sowie publizistische Quellen.
+                                Nichtstaatliche Überlieferung gelangt durch eine aktive Erwerbs- und
+                                Übernahmepolitik ins Bundesarchiv. Über definierte Sammlungsprofile
+                                wird festgelegt, welche Nachlässe und welches Sammlungsgut oder
+                                Verbands- und Parteienschriftgut das staatliche Archivgut sinnvoll
+                                ergänzen.</p>
+                            <p xml:lang="ger">Koblenz ist Standort der Fachabteilung B
+                                (Bundesrepublik Deutschland). Sie ist vor allem verantwortlich für
+                                das zentrale zivile staatliche Archivgut der Bundesrepublik
+                                Deutschland (seit 1949) einschließlich der westlichen
+                                Besatzungszonen (1945-1949), aber auch für Schriftgut privater
+                                Herkunft, von Einzelpersönlichkeiten und Verbänden sowie Bilder,
+                                Plakate, Karten, Tondokumente sowie für die Edition der
+                                Kabinettsprotokolle der Bundesregierung.</p>
+                            <p xml:lang="eng">The Federal Archives have the legal responsibility of
+                                permanently preserving the federal archival documents and making
+                                them available for use. This includes documents (files, papers,
+                                cartographic records, pictures, posters, films, sound recordings and
+                                machine-readable data) arising from the central institutions of the
+                                Holy Roman Empire (1495-1806), the German Confederation (1815-1866),
+                                the German Reich (1867/71-1945), the occupation zones (1945-1949),
+                                the German Democratic Republic (1949-1990) and the Federal Republic
+                                of Germany (since 1949). The Federal Archives decide whether these
+                                documents are assigned a lasting value for research into, or
+                                understanding of, German history, the ensuring of the legitimate
+                                interests of citizens or the provision of information for
+                                legislation, administration and jurisdiction.</p>
+                            <p xml:lang="eng">The Foundation Archives of Parties and Mass
+                                Organisations of the GDR in the Federal Archives keeps the archives
+                                of the central leadership organs of the parties, unions and mass
+                                organisations of the GDR. It also looks after the Federal Archives
+                                Library, the core of which is formed by the library of the former
+                                Institute for Marxism-Leninism and other GDR service and
+                                organisation libraries.</p>
+                            <p xml:lang="eng">The Federal Archives also collect personal papers of
+                                important personages, documents of parties, associations and
+                                societies of cross-regional importance, as well as published
+                                sources. Non-state records are acquired for the Federal Archives
+                                through an active acquisition and transfer policy. Defined
+                                collection profiles determine which personal papers and collections
+                                or papers of associations and parties, can meaningfully supplement
+                                the state archives.</p>
+                        </descriptiveNote>
+                        <dateSet>
+                            <date standardDate="1848">1848</date>
+                            <date standardDate="1849">1849</date>
+                            <dateRange>
+                                <fromDate standardDate="1945">1945</fromDate>
+                                <toDate standardDate="1949">1949</toDate>
+                            </dateRange>
+                            <dateRange>
+                                <fromDate standardDate="1949">1949</fromDate>
+                                <toDate>bis heute</toDate>
+                            </dateRange>
+                        </dateSet>
+                        <extent>
+                            <num unit="linearmetre">339.000</num>
+                        </extent>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">Benutzersaal: Mo. - Do.: 08:00 Uhr - 19:00 Uhr, Fr.:
+                            08:00 Uhr - 16:00 Uhr</opening>
+                        <opening xml:lang="eng">Reading room: Monday - Thursday: 8am - 7pm, Friday:
+                            8am to 4pm</opening>
+                        <opening xml:lang="ger">Bilder, Plakate, Karten: Mo. - Do.: 08:00 Uhr -
+                            15:00 Uhr, Fr.: 08:00 Uhr - 13:30 Uhr</opening>
+                        <opening xml:lang="eng">Images, Posters, Maps: Monday - Thursday: 8am - 5pm,
+                            Friday: 8am - 3:30pm</opening>
+                        <closing xml:lang="ger">An Wochenenden und nationalen Feiertagen; weitere
+                            Informationen finden Sie hierzu auf www.bundesarchiv.de</closing>
+                        <closing xml:lang="eng">At weekends and national holidays; more information
+                            at www.bundesarchiv.de</closing>
+                    </timetable>
+                    <access question="yes">
+                        <restaccess xml:lang="ger">Zur Vorbereitung Ihrer persönlichen Benutzung
+                            oder falls Sie eine schriftliche Auskunft bekommen möchten, können Sie
+                            eine formlose schriftliche Anfrage an das Bundesarchiv richten. Diese
+                            muss die Angabe von Thema und Zweck Ihrer Nachforschung enthalten. Sie
+                            können dazu den Post- oder Faxweg, aber auch das Kontaktformular nutzen.
+                            Gegebenenfalls werden Sie im weiteren Verfahren aus rechtlichen Gründen
+                            gebeten, einen förmlichen "Benutzungsantrag" auszufüllen, zu
+                            unterschreiben und zurückzusenden. Bitte fügen Sie ein Begleitschreiben
+                            bei, in dem Sie nähere Angaben zu Ihrem Anliegen machen, die für die
+                            Bearbeitung nützlich sein können. Die Einsendung des Benutzungsantrags
+                            allein bietet keine hinreichende Grundlage für die Bearbeitung Ihres
+                            Anliegens. Mit der Unterzeichnung des Benutzungsantrages verpflichten
+                            Sie sich zur Einhaltung der Bestimmungen des Bundesarchivgesetzes sowie
+                            der Benutzungsverordnung und der Kostenverordnung. Die Benutzung von
+                            Nachlässen unterliegt den besonderen Bedingungen, die zwischen den
+                            verfügungsberechtigten Nachlassverwaltern und dem Bundesarchiv
+                            vereinbart worden sind. Besondere Benutzungsbedingungen gelten häufig
+                            auch für die Unterlagen von juristischen Personen des privaten Rechts
+                            wie Firmen oder Verbände. Auskünfte über die Zugänglichkeit und
+                            Benutzungsbedingungen im Einzelfall erteilen Ihnen die Mitarbeiterinnen
+                            und Mitarbeiter des Bundesarchivs.</restaccess>
+                        <restaccess xml:lang="eng">To prepare for your personal use of the reference
+                            service, or should you require written information, you may send an
+                            informal written reference letter to the Federal Archives. This must
+                            include details of the subject matter and purpose of your enquiry. You
+                            may do this by post or fax, or use the online contact form. For legal
+                            reasons you will if necessary be asked to subsequently complete, sign
+                            and return a formal "Benutzungsantrag" [application form for readers].
+                            The application form for readers can be downloaded and sent by post, fax
+                            or scan. Please attach an accompanying letter giving any further details
+                            that may be useful in dealing with your request. In signing the
+                            application form for readers you undertake to comply with the
+                            regulations of the Federal Archives Act, the access regulations and the
+                            cost regulations. Any investigations conducted into your enquiry by the
+                            Federal Archives itself are, as a rule, subject to a charge (cf. no. 3
+                            of schedule of fees of the Federal Archives cost regulations). The use
+                            of archives is only allowed in the reading room and governed by the
+                            reading room regulations.</restaccess>
+                        <termsOfUse xml:lang="ger"
+                            href="https://www.bundesarchiv.de/DE/Navigation/Benutzen/Hinweise-zur-Benutzung/hinweise-zur-benutzung.html"
+                            >Allgemeines zur Benutzung</termsOfUse>
+                        <termsOfUse xml:lang="eng"
+                            href="https://www.bundesarchiv.de/DE/Navigation/Benutzen/Hinweise-zur-Benutzung/hinweise-zur-benutzung.html"
+                            >General information on access and use</termsOfUse>
+                        <termsOfUse xml:lang="ger"
+                            href="https://www.bundesarchiv.de/DE/Content/Artikel/Ueber-uns/Rechtsgrundlagen/rechtsgrundlagen_benutzungsverordnung.html"
+                            >Benutzungsverordnung</termsOfUse>
+                        <termsOfUse xml:lang="ger"
+                            href="https://www.bundesarchiv.de/DE/Navigation/Meta/Ueber-uns/Rechtsgrundlagen/Weitere-Rechtsgrundlagen/Benutzersaalordnung/benutzersaalordnung.html"
+                            >Benutzersaalordnung für das Bundesarchiv</termsOfUse>
+                        <termsOfUse xml:lang="ger"
+                            href="https://www.bundesarchiv.de/DE/Navigation/Meta/Ueber-uns/Rechtsgrundlagen/Kostenverordnung/kostenverordnung.html"
+                            >Kostenverordnung</termsOfUse>
+                    </access>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <contact>
+                                <telephone>+49 261 505 0</telephone>
+                                <email href="koblenz@bundesarchiv.de">Kontaktieren Sie uns per
+                                    Mail</email>
+                            </contact>
+                            <workPlaces>
+                                <num unit="site">70</num>
+                            </workPlaces>
+                            <computerPlaces>
+                                <num unit="site">70</num>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Alle Arbeitsplätze sind mit einem Computer
+                                        ausgestattet, der Zugang zur Datenbank des Bundesarchivs
+                                        gewährt. 10 Arbeitsplätze bieten zusätzlich Zugang zum
+                                        Internet für ergänzende Recherchen.</p>
+                                    <p xml:lang="eng">All work places are provided with a computer
+                                        with access to the internal data base of the Federal
+                                        Archives. 10 work places additionally provide Internet
+                                        access.</p>
+                                </descriptiveNote>
+                            </computerPlaces>
+                            <microfilmPlaces>
+                                <num unit="site">20</num>
+                            </microfilmPlaces>
+                            <webpage
+                                href="http://www.bundesarchiv.de/DE/Navigation/Finden/Recherchesysteme/recherchesysteme.html"
+                                >Recherche im Archivgut</webpage>
+                            <photographAllowance>yes (without flash)</photographAllowance>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag.html"
+                                >Benutzungsantrag (PDF)</readersTicket>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag-bild.pdf"
+                                >Antrag auf Bildbenutzung beim Bundesarchiv (PDF)</readersTicket>
+                            <advancedOrders xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Bitte nutzen Sie unsere Rechercheangebote zur Vorbereitung auf
+                                Ihren Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei
+                                einer Vorabbestellung der für Ihren Forschungszweck interessanten
+                                Unterlagen.</advancedOrders>
+                            <advancedOrders xml:lang="eng"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Please use our online research tools in order to prepare your
+                                visit. Our staff members will be pleased to be of help in ordering
+                                records, that would be of interest for you, in
+                                advance.</advancedOrders>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Kleinere Nachforschungen werden in der Regel
+                                        von den Mitarbeitern des Bundesarchivs übernommen, können
+                                        aber unter Umständen gebührenpflichtig sein. Eine
+                                        umfangreiche und zeitaufwändige Suche durch das
+                                        Archivpersonal ist in aller Regel nicht möglich.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Sollten Sie Ihre Nachforschungen nicht selbst
+                                        vor Ort durchführen können, besteht die Möglichkeit, dass
+                                        Sie eine Privatfirma mit den erforderlichen Arbeiten
+                                        beauftragen. Falls Sie einen Recherchedienst beauftragen,
+                                        sind Sie zur Abgabe eines eigenen Benutzungsantrages dennoch
+                                        verpflichtet. Es wird empfohlen, den ausgefüllten und
+                                        unterschriebenen Vordruck "Benutzungsantrag" dem
+                                        Recherchedienst zu übersenden, der diesen bei Beginn der
+                                        Benutzung dem Bundesarchiv aushändigt - zusammen mit dem
+                                        Benutzungsantrag des Recherchedienstes. Mit der
+                                        Antragstellung auf dem Vordruck "Benutzungsantrag"
+                                        verpflichten Sie sich zur Einhaltung der Bestimmungen des
+                                        Bundesarchivgesetzes sowie der Benutzungsverordnung und der
+                                        Kostenverordnung. Listen und Übersichten von privaten
+                                        überregionalen Recherchediensten, aber auch von Firmen, die
+                                        bevorzugt an den Dienstorten Berlin und Freiburg
+                                        Nachforschungen übernehmen, finden Sie auf der Webseite des
+                                        Bundesarchivs unter Benutzung – Recherchedienste. Etwaige
+                                        anfallende Kosten sind abhängig vom Anbieter des jeweiligen
+                                        Recherchedienstes</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="eng">Basically, research and usage are conducted in
+                                        Federal Archives offices by the user on the premises. Minor
+                                        investigations are generally carried out by Federal Archives
+                                        employees, but may be subject to a fee under certain
+                                        conditions. A comprehensive and time-consuming search by the
+                                        Archives personnel is in general not possible.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="eng">If you are unable to conduct your own
+                                        investigations on the premises, it is possible to engage a
+                                        private company to carry out the necessary work. If you
+                                        engage a research agency, you are still required to submit a
+                                        "Benutzungsantrag" [application form for readers]. It is
+                                        recommended that the research agency be sent the filled out
+                                        and signed pre-printed application form, who must hand this
+                                        over, together with the agency’s own application form, to
+                                        the Federal Archives at the commencement of research. By
+                                        submitting the pre-printed application form, you undertake
+                                        to comply with the regulations of the Federal Archives Act,
+                                        the usage regulations and the Costs Directive.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                        </searchroom>
+                        <library question="yes">
+                            <contact>
+                                <telephone>+49 3018 7770 791</telephone>
+                                <email href="bibliothek@bundesarchiv.de">Kontaktieren Sie uns per
+                                    Mail</email>
+                            </contact>
+                            <webpage href="http://www.bibliothek.bundesarchiv.de/">Katalog der
+                                Bibliothek des Bundesarchivs</webpage>
+                            <monographicpub>
+                                <num unit="book">2.165.000</num>
+                            </monographicpub>
+                            <serialpub>
+                                <num unit="title">2.500</num>
+                            </serialpub>
+                        </library>
+                        <internetAccess question="yes">
+                            <descriptiveNote>
+                                <p xml:lang="ger">Telekom Hot-Spot: Zugang mit eigenem
+                                    Telekom-Account</p>
+                                <p xml:lang="eng">Telekom Hot-Spot: access with your own Telekom
+                                    account only</p>
+                            </descriptiveNote>
+                        </internetAccess>
+                        <techservices>
+                            <restorationlab question="yes">
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Die Restaurierungswerkstatt des Bundesarchivs
+                                        befindet sich am Standort Berlin.</p>
+                                    <p xml:lang="eng">The restoration laboratory of the Federal
+                                        Archives is located in Berlin.</p>
+                                </descriptiveNote>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Navigation/Benutzen/Kopien-bestellen/kopien-bestellen.html"
+                                    >Hinweise zur Anfertigung von Reproduktionen</webpage>
+                            </restorationlab>
+                            <reproductionser question="yes">
+                                <descriptiveNote>
+                                    <p xml:lang="ger">In den Lesesälen des Bundesarchivs in Koblenz,
+                                        Berlin-Lichterfelde und Freiburg können Sie mit
+                                        Digitalkameras Aufnahmen von Archivgut als einfache
+                                        Arbeitskopien unter bestimmten Bedingungen selbst erstellen.
+                                        Details hierzu finden Sie in der Benutzersaalordnung für das
+                                        Bundesarchiv. &#xD; &#xD; Die Herstellung von qualitativ
+                                        hochwertigen Reproduktionen ist in diesen Dienststellen an
+                                        die Firma Selke übertragen worden. Einzelheiten entnehmen
+                                        Sie bitte unserer Homepage. Hier finden Sie auch Hinweise zu
+                                        Unternehmen, die Reproduktionen besonderer Art für Sie
+                                        anfertigen können.</p>
+                                </descriptiveNote>
+                                <contact>
+                                    <telephone>+49 261 505 0</telephone>
+                                    <email href="koblenz@bundesarchiv.de">Kontaktieren Sie uns per
+                                        Mail</email>
+                                </contact>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Content/Downloads/Benutzen/selke-merkblatt-koblenz-berlin-freiburg.pdf"
+                                    >Merkblatt für die Dienstorte Koblenz, Berlin-Lichterfelde und
+                                    Freiburg</webpage>
+                                <microformser question="yes"/>
+                                <photographser question="yes"/>
+                                <digitalser question="yes"/>
+                                <photocopyser question="yes"/>
+                            </reproductionser>
+                        </techservices>
+                        <recreationalServices>
+                            <refreshment>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Besuchern und Benutzern des Bundesarchivs
+                                        stehen neben der Kantine im Haus auch verschiedene lokale
+                                        Restaurants im rund 100 Meter entfernten Einkaufszentrum zur
+                                        Verfügung.</p>
+                                    <p xml:lang="eng">Visitors of the Federal Archives can either
+                                        use the restaurant on-site or choose one of the restaurants
+                                        in the nearby shopping centre.</p>
+                                </descriptiveNote>
+                            </refreshment>
+                            <exhibition>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Wechselausstellungen</p>
+                                </descriptiveNote>
+                            </exhibition>
+                            <toursSessions>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Archivführung mit einer Einführung über die
+                                        Aufgaben und Arbeitsweisen für Gruppen (mit vorheriger
+                                        Anmeldung)</p>
+                                </descriptiveNote>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Navigation/Entdecken/Archivfuehrungen/archivfuehrungen.html"
+                                    >Führungen und sonstige Angebote für Gruppen</webpage>
+                            </toursSessions>
+                            <otherServices>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Navigation/Meta/Aktuelles/Veranstaltungen/veranstaltungen.html"
+                                    >Veranstaltungen des Bundesarchivs: Vorträge, Ausstellungen,
+                                    Tagungen</webpage>
+                            </otherServices>
+                        </recreationalServices>
+                    </services>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Bayreuth (Lastenausgleichsarchiv)</repositoryName>
+                    <repositoryRole>Branch</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="49.946242"
+                        longitude="11.563902">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Bayreuth</firstdem>
+                        <municipalityPostalcode xml:lang="ger">95445
+                            Bayreuth</municipalityPostalcode>
+                        <street xml:lang="ger">Dr.-Franz-Straße 1</street>
+                    </location>
+                    <location localType="postal address">
+                        <country xml:lang="ger">Deutschland</country>
+                        <municipalityPostalcode xml:lang="ger">95424
+                            Bayreuth</municipalityPostalcode>
+                        <street xml:lang="ger">Postfach 50 25</street>
+                    </location>
+                    <telephone>+49 921 4601 0</telephone>
+                    <fax>+49 921 4601 111</fax>
+                    <email href="laa@bundesarchiv.de">Kontaktieren Sie unsere Bayreuther
+                        Dienststelle per Mail</email>
+                    <directions xml:lang="ger">Linie 302, 303 oder 305 vom Hauptbahnhof bis ZOH, mit
+                        306 bis&#xD; Haltestelle „Kulmbacher Straße“.<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_bayreuth_2011-03.pdf"
+                        />
+                    </directions>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">Als umfangreichsten Bestand verwahrt das
+                                Lastenausgleichsarchiv die Akten der Ausgleichsverwaltung (mehr als
+                                30.000 lfm): Sie dokumentieren die Schäden der Vertriebenen und
+                                Flüchtlinge aus den ehemaligen Ostgebieten des Deutschen Reiches
+                                sowie den deutschen Siedlungsgebieten in Ost- und Südosteuropa nach
+                                dem Zweiten Weltkrieg. Vollständig überliefert sind die
+                                Feststellungsakten der Ausgleichsämter zu Schäden an
+                                landwirtschaftlichem, Grund- und Betriebsvermögen.</p>
+                            <p xml:lang="ger">Einzigartig ist darüber hinaus die in den 1950er
+                                Jahren entstandene Ost-Dokumentation (ca. 145 lfm). In rund 30.000
+                                Berichten werden die Erlebnisse der Menschen in den letzten Monaten
+                                des Zweiten Weltkrieges sowie die Wirtschafts- und
+                                Lebensverhältnisse in den ehemaligen Ostgebieten lebendig. Erhalten
+                                sind: Fragebogen- und Erlebnisberichte zur Dokumentation der
+                                Vertreibung der Deutschen aus Ostmittel- und Südosteuropa,
+                                Unterlagen zur Flucht über die Ostsee, Berichte über Verwaltung,
+                                Wirtschaft und zum Zeitgeschehen 1919-1945 in den Gebieten östlich
+                                von Oder und Neiße, Berichte über das Leben der deutschen
+                                Volksgruppen in der Tschechoslowakei (1918-1945). Hinzu kommen mehr
+                                als 15.000 sog. Gemeindeseelenlisten, mit denen die Bevölkerung der
+                                ehemaligen Gemeinden östlich von Oder und Neiße rekonstruiert
+                                wurde.</p>
+                            <p xml:lang="ger">Weitere Bestände umfassen die Heimatauskunftstellen,
+                                das Hauptamt für Soforthilfe/Bundesausgleichsamt mit seinen
+                                Maßnahmen zur Linderung der unmittelbaren Not nach dem Zweiten
+                                Weltkrieg und zur Entschädigung und Integration der Flüchtlinge und
+                                Vertriebenen, sowie die Unterlagen des Kirchlichen Suchdiensts, der
+                                von 1945 bis 2015 für die Ermittlung und Betreuung deutscher ziviler
+                                Vermisster und Spätaussiedler im Rahmen der Vertreibungen infolge
+                                des Zweiten Weltkriegs zuständig war.</p>
+                        </descriptiveNote>
+                        <dateSet>
+                            <dateRange>
+                                <fromDate>1867/71</fromDate>
+                                <toDate standardDate="1945">1945</toDate>
+                            </dateRange>
+                            <dateRange>
+                                <fromDate standardDate="1949">1949</fromDate>
+                                <toDate standardDate="1990">1990</toDate>
+                            </dateRange>
+                        </dateSet>
+                        <extent>
+                            <num unit="linearmetre">46.000</num>
+                        </extent>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">Mo. - Do.: 08:00 Uhr - 17:00 Uhr, Fr.: 08:00 Uhr -
+                            15:00 Uhr</opening>
+                        <opening xml:lang="eng">Monday - Thursday: 8am - 5pm, Friday 8am -
+                            3pm</opening>
+                        <closing xml:lang="ger">an Wochenenden und nationalen Feiertagen</closing>
+                        <closing xml:lang="eng">at weekends and national holidays</closing>
+                    </timetable>
+                    <access question="yes"/>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <workPlaces>
+                                <num unit="site">28</num>
+                            </workPlaces>
+                            <webpage
+                                href="http://www.bundesarchiv.de/DE/Navigation/Finden/Recherchesysteme/recherchesysteme.html"
+                                >Recherche im Archivgut</webpage>
+                            <photographAllowance>yes (without flash)</photographAllowance>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag.html"
+                                >Benutzungsantrag (PDF)</readersTicket>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag-bild.pdf"
+                                >Antrag auf Bildbenutzung beim Bundesarchiv (PDF)</readersTicket>
+                            <advancedOrders xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Bitte nutzen Sie unsere Rechercheangebote zur Vorbereitung auf
+                                Ihren Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei
+                                einer Vorabbestellung der für Ihren Forschungszweck interessanten
+                                Unterlagen.</advancedOrders>
+                            <advancedOrders xml:lang="eng"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Please use our online research tools in order to prepare your
+                                visit. Our staff members will be pleased to be of help in ordering
+                                records, that would be of interest for you, in
+                                advance.</advancedOrders>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Kleinere Nachforschungen werden in der Regel
+                                        von den Mitarbeitern des Bundesarchivs übernommen, können
+                                        aber unter Umständen gebührenpflichtig sein. Eine
+                                        umfangreiche und zeitaufwändige Suche durch das
+                                        Archivpersonal ist in aller Regel nicht möglich.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Sollten Sie Ihre Nachforschungen nicht selbst
+                                        vor Ort durchführen können, besteht die Möglichkeit, dass
+                                        Sie eine Privatfirma mit den erforderlichen Arbeiten
+                                        beauftragen. Falls Sie einen Recherchedienst beauftragen,
+                                        sind Sie zur Abgabe eines eigenen Benutzungsantrages dennoch
+                                        verpflichtet. Es wird empfohlen, den ausgefüllten und
+                                        unterschriebenen Vordruck "Benutzungsantrag" dem
+                                        Recherchedienst zu übersenden, der diesen bei Beginn der
+                                        Benutzung dem Bundesarchiv aushändigt - zusammen mit dem
+                                        Benutzungsantrag des Recherchedienstes. Mit der
+                                        Antragstellung auf dem Vordruck "Benutzungsantrag"
+                                        verpflichten Sie sich zur Einhaltung der Bestimmungen des
+                                        Bundesarchivgesetzes sowie der Benutzungsverordnung und der
+                                        Kostenverordnung. Listen und Übersichten von privaten
+                                        überregionalen Recherchediensten, aber auch von Firmen, die
+                                        bevorzugt an den Dienstorten Berlin und Freiburg
+                                        Nachforschungen übernehmen, finden Sie auf der Webseite des
+                                        Bundesarchivs unter Benutzung – Recherchedienste. Etwaige
+                                        anfallende Kosten sind abhängig vom Anbieter des jeweiligen
+                                        Recherchedienstes</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="eng">Basically, research and usage are conducted in
+                                        Federal Archives offices by the user on the premises. Minor
+                                        investigations are generally carried out by Federal Archives
+                                        employees, but may be subject to a fee under certain
+                                        conditions. A comprehensive and time-consuming search by the
+                                        Archives personnel is in general not possible.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="eng">If you are unable to conduct your own
+                                        investigations on the premises, it is possible to engage a
+                                        private company to carry out the necessary work. If you
+                                        engage a research agency, you are still required to submit a
+                                        "Benutzungsantrag" [application form for readers]. It is
+                                        recommended that the research agency be sent the filled out
+                                        and signed pre-printed application form, who must hand this
+                                        over, together with the agency’s own application form, to
+                                        the Federal Archives at the commencement of research. By
+                                        submitting the pre-printed application form, you undertake
+                                        to comply with the regulations of the Federal Archives Act,
+                                        the usage regulations and the Costs Directive.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                        </searchroom>
+                        <library question="yes">
+                            <webpage href="http://www.bibliothek.bundesarchiv.de/">Katalog der
+                                Bibliothek des Bundesarchivs</webpage>
+                        </library>
+                        <internetAccess question="yes">
+                            <descriptiveNote>
+                                <p xml:lang="ger">Zugang mit eigenem Telekom-Account</p>
+                                <p xml:lang="eng">Telekom Hot-Spot: access with your own Telekom
+                                    account only</p>
+                            </descriptiveNote>
+                        </internetAccess>
+                        <techservices>
+                            <restorationlab question="no"/>
+                            <reproductionser question="no"/>
+                        </techservices>
+                    </services>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Berlin-Lichterfelde</repositoryName>
+                    <repositoryRole>Branch</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="52.432423"
+                        longitude="13.298641">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Berlin</firstdem>
+                        <municipalityPostalcode xml:lang="ger">12205 Berlin</municipalityPostalcode>
+                        <street xml:lang="ger">Finckensteinallee 63</street>
+                    </location>
+                    <location localType="postal address">
+                        <country xml:lang="ger">Deutschland</country>
+                        <municipalityPostalcode xml:lang="ger">12175 Berlin</municipalityPostalcode>
+                        <street xml:lang="ger">Postfach 45 05 69</street>
+                    </location>
+                    <telephone>+49 3018 7770 0</telephone>
+                    <fax>+49 3018 7770 111</fax>
+                    <email href="berlin@bundesarchiv.de">Kontaktieren Sie unsere Berliner
+                        Dienststelle per Mail</email>
+                    <directions xml:lang="ger">S 25, RE 3, RE 4 oder RE 5 bis "S Lichterfelde-Ost",
+                        dann Bus 184 Richtung "U Krumme Lanke" bis Haltestelle "Bundesarchiv" oder S
+                        1 bis "S Sundgauer Str.", dann Bus 184 Richtung "Flughafen Tempelhof" bis
+                        Haltestelle "Bundesarchiv"<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_b-licht_2011-03.pdf"
+                        />
+                    </directions>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">In den früheren Andrews Barracks in
+                                Berlin-Lichterfelde ist in unmittelbarer Nähe zur Freien Universität
+                                seit dem Abzug der amerikanischen Truppen aus Berlin 1995 mit den
+                                Abteilungen R (Deutsches Reich), DDR (Deutsche Demokratische
+                                Republik) und SAPMO (Stiftung Archiv der Parteien und
+                                Massenorganisationen der DDR) und seit 2018 mit dem Filmarchiv ein
+                                Campus für die Erforschung von Spuren der jüngeren deutschen
+                                Geschichte entstanden.</p>
+                        </descriptiveNote>
+                        <dateSet>
+                            <dateRange>
+                                <fromDate>1867/71</fromDate>
+                                <toDate standardDate="1945">1945</toDate>
+                            </dateRange>
+                            <dateRange>
+                                <fromDate standardDate="1949">1949</fromDate>
+                                <toDate standardDate="1990">1990</toDate>
+                            </dateRange>
+                        </dateSet>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">Archiv: Mo. - Do.: 08:00 Uhr - 19:00 Uhr, Fr.: 08:00
+                            Uhr - 16:00 Uhr</opening>
+                        <opening xml:lang="eng">Archive: Monday - Thursday: 8am - 7pm, Friday: 8am
+                            to 4pm</opening>
+                        <opening xml:lang="ger">Bibliothek: Mo. - Do.: 09:00 Uhr - 19:00 Uhr, Fr.:
+                            09:00 Uhr - 16:00 Uhr</opening>
+                        <opening xml:lang="eng">Library: Monday - Thursday: 9am - 7pm, Friday: 9am
+                            to 4pm</opening>
+                        <closing xml:lang="ger">an Wochenenden und nationalen Feiertagen</closing>
+                        <closing xml:lang="eng">at weekends and national holidays</closing>
+                    </timetable>
+                    <access question="yes"/>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <contact>
+                                <telephone>+49 3018 7770 0</telephone>
+                                <email href="berlin@bundesarchiv.de">Kontaktieren Sie uns per
+                                    Mail</email>
+                            </contact>
+                            <workPlaces>
+                                <num unit="site">150</num>
+                            </workPlaces>
+                            <computerPlaces>
+                                <num unit="site">150</num>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Alle Arbeitsplätze sind mit einem Computer
+                                        ausgestattet, der Zugang zur Datenbank des Bundesarchivs
+                                        gewährt. 20 Arbeitsplätze bieten zusätzlich Zugang zum
+                                        Internet für ergänzende Recherchen.</p>
+                                    <p xml:lang="eng">All work places are provided with a computer
+                                        with access to the internal data base of the Federal
+                                        Archives. 20 work places additionally provide Internet
+                                        access.</p>
+                                </descriptiveNote>
+                            </computerPlaces>
+                            <microfilmPlaces>
+                                <num unit="site">30</num>
+                            </microfilmPlaces>
+                            <webpage
+                                href="http://www.bundesarchiv.de/DE/Navigation/Finden/Recherchesysteme/recherchesysteme.html"
+                                >Recherche im Archivgut</webpage>
+                            <photographAllowance>yes (without flash)</photographAllowance>
+                            <readersTicket xml:lang="ger">Benutzungsrantrag (PDF)</readersTicket>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag.html"
+                                >Benutzungsantrag (PDF)</readersTicket>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag-bild.pdf"
+                                >Antrag auf Bildbenutzung beim Bundesarchiv (PDF)</readersTicket>
+                            <advancedOrders xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Bitte nutzen Sie unsere Rechercheangebote zur Vorbereitung auf
+                                Ihren Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei
+                                einer Vorabbestellung der für Ihren Forschungszweck interessanten
+                                Unterlagen.</advancedOrders>
+                            <advancedOrders xml:lang="eng"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Please use our online research tools in order to prepare your
+                                visit. Our staff members will be pleased to be of help in ordering
+                                records, that would be of interest for you, in
+                                advance.</advancedOrders>
+                        </searchroom>
+                        <library question="yes">
+                            <contact>
+                                <telephone>+49 3018 7770 791</telephone>
+                                <email href="bibliothek@bundesarchiv.de">Kontaktieren Sie uns per
+                                    Mail</email>
+                            </contact>
+                            <webpage href="http://www.bibliothek.bundesarchiv.de/">Katalog der
+                                Bibliothek des Bundesarchivs</webpage>
+                        </library>
+                        <internetAccess question="yes">
+                            <descriptiveNote>
+                                <p xml:lang="ger">Zugang mit eigenem Telekom-Account</p>
+                                <p xml:lang="eng">Telekom Hot-Spot: access with your own Telekom
+                                    account only</p>
+                            </descriptiveNote>
+                        </internetAccess>
+                        <techservices>
+                            <restorationlab question="yes">
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Das Bundesarchiv verfügt über
+                                        hochspezialisierte eigene Werkstätten für die
+                                        Bestandserhaltung historischer Filme. In den
+                                        Arbeitsbereichen Befundung und Restaurierung,
+                                        Lichtbestimmung, Tonstudio, Kopierung, Entwicklung und Labor
+                                        arbeiten rund vierzig Mitarbeiterinnen und Mitarbeiter,
+                                        darunter regelmäßig Auszubildende für Film- und
+                                        Videotechnik.</p>
+                                </descriptiveNote>
+                                <contact>
+                                    <telephone>+49 3018 7770 0</telephone>
+                                    <email href="zwarchh@bundesarchiv.de">Kontaktieren Sie das
+                                        Zwischenarchiv in Hoppegarten per Mail</email>
+                                </contact>
+                                <webpage
+                                    href="http://www.bundesarchiv.de/fachinformationen/01005/index.html.de"
+                                    >Servicezentrum Filmbearbeitung</webpage>
+                            </restorationlab>
+                            <reproductionser question="yes">
+                                <descriptiveNote>
+                                    <p xml:lang="ger">In den Lesesälen des Bundesarchivs in Koblenz,
+                                        Berlin-Lichterfelde und Freiburg können Sie mit
+                                        Digitalkameras Aufnahmen von Archivgut als einfache
+                                        Arbeitskopien unter bestimmten Bedingungen selbst erstellen.
+                                        Details hierzu finden Sie in der Benutzersaalordnung für das
+                                        Bundesarchiv. Die Herstellung von qualitativ hochwertigen
+                                        Reproduktionen ist in diesen Dienststellen an die Firma
+                                        Selke übertragen worden. Einzelheiten entnehmen Sie bitte
+                                        unserer Homepage. Hier finden Sie auch Hinweise zu
+                                        Unternehmen, die Reproduktionen besonderer Art für Sie
+                                        anfertigen können.</p>
+                                </descriptiveNote>
+                                <contact>
+                                    <telephone>+49 3018 7770 0</telephone>
+                                    <email href="berlin@bundesarchiv.de">Kontaktieren Sie uns per
+                                        Mail</email>
+                                </contact>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Content/Downloads/Benutzen/selke-merkblatt-koblenz-berlin-freiburg.pdf"
+                                    >Merkblatt für die Dienstorte Koblenz, Berlin-Lichterfelde und
+                                    Freiburg</webpage>
+                                <microformser question="yes"/>
+                                <photographser question="yes"/>
+                                <digitalser question="yes"/>
+                                <photocopyser question="yes"/>
+                            </reproductionser>
+                        </techservices>
+                        <recreationalServices>
+                            <refreshment>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Besuchern und Benutzern des Bundesarchivs
+                                        steht ein Kantine auf dem Gelände sowie ein Aufenthaltsraum
+                                        mit Kaffe- und Snackautomat zur Verfügung</p>
+                                    <p xml:lang="eng">Visitors of the Federal Archives can use the
+                                        restaurant on-site and a break room with vending machines
+                                        for coffee and snacks</p>
+                                </descriptiveNote>
+                            </refreshment>
+                            <exhibition>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Wechselausstellungen</p>
+                                </descriptiveNote>
+                            </exhibition>
+                            <toursSessions>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Archivführung mit einer Einführung über die
+                                        Aufgaben und Arbeitsweisen für Gruppen (mit vorheriger
+                                        Anmeldung)</p>
+                                </descriptiveNote>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Navigation/Entdecken/Archivfuehrungen/archivfuehrungen.html"
+                                    >Führungen und sonstige Angebote für Gruppen</webpage>
+                            </toursSessions>
+                            <otherServices>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Navigation/Meta/Aktuelles/Veranstaltungen/veranstaltungen.html"
+                                    >Veranstaltungen des Bundesarchivs: Vorträge, Ausstellungen,
+                                    Tagungen</webpage>
+                            </otherServices>
+                        </recreationalServices>
+                    </services>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Berlin-Reinickendorf</repositoryName>
+                    <repositoryRole>Branch</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="52.5852"
+                        longitude="13.321390000000065">
+                        <country xml:lang="ger">Deutschland</country>
+                        <municipalityPostalcode xml:lang="ger">13403 Berlin</municipalityPostalcode>
+                        <street xml:lang="ger">Eichborndamm 179</street>
+                    </location>
+                    <telephone>+49 30 41904 0</telephone>
+                    <email href="poststelle-pa@bundesarchiv.de"
+                        >poststelle-pa@bundesarchiv.de</email>
+                    <webpage
+                        href="https://www.bundesarchiv.de/DE/Navigation/Meta/Ueber-uns/Dienstorte/Berlin-Reinickendorf/berlin-reinickendorf.html"
+                        xml:lang="ger">Bundesarchiv Berlin-Reinickendorf</webpage>
+                    <timetable>
+                        <opening xml:lang="ger">Benutzersaal: Mo. - Fr.: 09:00 Uhr - 16:00 Uhr,&#xD;
+                            Fr.: 08:00 Uhr - 13:30 Uhr (ab 1.3.2019)</opening>
+                    </timetable>
+                    <access question="yes">
+                        <restaccess xml:lang="ger">Zur Vorbereitung Ihrer persönlichen Benutzung
+                            oder falls Sie eine schriftliche Auskunft bekommen möchten, können Sie
+                            eine formlose schriftliche Anfrage an das Bundesarchiv richten. Diese
+                            muss die Angabe von Thema und Zweck Ihrer Nachforschung enthalten. Sie
+                            können dazu den Post- oder Faxweg, aber auch das Kontaktformular nutzen.
+                            Gegebenenfalls werden Sie im weiteren Verfahren aus rechtlichen Gründen
+                            gebeten, einen förmlichen "Benutzungsantrag" auszufüllen, zu
+                            unterschreiben und zurückzusenden. Bitte fügen Sie ein Begleitschreiben
+                            bei, in dem Sie nähere Angaben zu Ihrem Anliegen machen, die für die
+                            Bearbeitung nützlich sein können. Die Einsendung des Benutzungsantrags
+                            allein bietet keine hinreichende Grundlage für die Bearbeitung Ihres
+                            Anliegens. Mit der Unterzeichnung des Benutzungsantrages verpflichten
+                            Sie sich zur Einhaltung der Bestimmungen des Bundesarchivgesetzes sowie
+                            der Benutzungsverordnung und der Kostenverordnung. Die Benutzung von
+                            Nachlässen unterliegt den besonderen Bedingungen, die zwischen den
+                            verfügungsberechtigten Nachlassverwaltern und dem Bundesarchiv
+                            vereinbart worden sind. Besondere Benutzungsbedingungen gelten häufig
+                            auch für die Unterlagen von juristischen Personen des privaten Rechts
+                            wie Firmen oder Verbände. Auskünfte über die Zugänglichkeit und
+                            Benutzungsbedingungen im Einzelfall erteilen Ihnen die Mitarbeiterinnen
+                            und Mitarbeiter des Bundesarchivs.</restaccess>
+                    </access>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Freiburg (Militärarchiv)</repositoryName>
+                    <repositoryRole>Branch</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="47.979150" longitude="7.822284">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Freiburg</firstdem>
+                        <municipalityPostalcode xml:lang="ger">79115
+                            Freiburg</municipalityPostalcode>
+                        <street xml:lang="ger">Wiesentalstraße 10</street>
+                    </location>
+                    <telephone>+49 761 47817 0</telephone>
+                    <fax>+49 761 47817 900</fax>
+                    <email href="militaerarchiv@bundesarchiv.de">Kontaktieren Sie das Militärarchiv
+                        per Mail</email>
+                    <directions xml:lang="ger">A 5, Ausfahrt Freiburg Süd (nach Ortseingangsschild
+                        Freiburg rechts); vom Hauptbahnhof mit Buslinie 11 Richtung „St. Georgen“
+                        bis „Schopfheimer Straße“ oder Straßenbahnlinie 3 Richtung „Vauban“ bis
+                            „Peter-Thumb-Straße“<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_freiburg_2011-03.pdf"
+                        />
+                    </directions>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">Die Bestände der Abteilung Militärarchiv umfassen die
+                                Überlieferung (insbes. Sachakten, Karten, Konstruktionspläne, Fotos)
+                                staatlicher militärischer Stellen seit dem Jahre 1867 bis in die
+                                Gegenwart: die erhalten gebliebenen Unterlagen der
+                                preußisch-deutschen Armee, der Kai­serlichen Marine, der
+                                Schutztruppen und der Freikorps, der Reichswehr sowie die
+                                Wehr­macht. Desweiteren werden in Freiburg die Unterlagen der
+                                Nationalen Volksarmee und der Grenztruppen der DDR archiviert. Der
+                                umfangreichste Teil der von der Abteilung Militär­archiv verwahrten
+                                Unterlagen stammt vom Bundesministerium der Verteidigung und seines
+                                nachgeordneten militärischen und zivilen Bereichs. Zahlreiche
+                                Nachlässe deutscher Militärangehöriger und sachthematische
+                                Sammlungen zur deutschen Militärgeschichte seit der Mitte des 19.
+                                Jahrhunderts runden das Überlieferungsprofil ab.</p>
+                            <p xml:lang="eng">The holdings of the Military Archive Department
+                                comprise the documents (particularly files, cartographic materials,
+                                construction plans, photographs) of state military facilities from
+                                the year 1867 up to the present: The remaining documents of the
+                                Prussian-German Army, the Kaiserliche Marine (Imperial Navy), the
+                                Schutztruppen (Colonial Force), and Freikorps, the Reichswehr and
+                                the Wehrmacht. Moreover, documents pertaining to the Nationale
+                                Volksarmee (National People's Army, NVA) and the Grenztruppen
+                                (Border Troops) of the GDR are archived in Freiburg. The greatest
+                                part of the documentation preserved in the Military Archive
+                                Department comes from the Federal Ministry of Defence and its
+                                subordinate military and civil areas. Many personal papers of German
+                                military personnel and related collections pertaining to German
+                                military history since the middle of the 19th Century round off the
+                                records profile.</p>
+                        </descriptiveNote>
+                        <dateSet>
+                            <dateRange>
+                                <fromDate>1867/71</fromDate>
+                                <toDate standardDate="1945">1945</toDate>
+                            </dateRange>
+                            <dateRange>
+                                <fromDate standardDate="1949">1949</fromDate>
+                                <toDate>bis heute</toDate>
+                            </dateRange>
+                        </dateSet>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">Mo. - Do.: 08:00 Uhr - 18:00 Uhr, Fr.: 08:00 Uhr -
+                            16:00 Uhr</opening>
+                        <opening xml:lang="eng">Monday - Thursday: 8am - 6pm, Friday: 8am -
+                            4pm</opening>
+                        <closing xml:lang="ger">An Wochenenden und nationalen Feiertagen</closing>
+                        <closing xml:lang="eng">At weekends and national holidays</closing>
+                    </timetable>
+                    <access question="yes"/>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <workPlaces>
+                                <num unit="site">25</num>
+                            </workPlaces>
+                            <webpage
+                                href="http://www.bundesarchiv.de/DE/Navigation/Finden/Recherchesysteme/recherchesysteme.html"
+                                >Recherche im Archivgut</webpage>
+                            <photographAllowance>yes (without flash)</photographAllowance>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag.html"
+                                >Benutzungsantrag (PDF)</readersTicket>
+                            <advancedOrders xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Bitte nutzen Sie unsere Rechercheangebote zur Vorbereitung auf
+                                Ihren Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei
+                                einer Vorabbestellung der für Ihren Forschungszweck interessanten
+                                Unterlagen.</advancedOrders>
+                            <advancedOrders xml:lang="eng"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Please use our online research tools in order to prepare your
+                                visit. Our staff members will be pleased to be of help in ordering
+                                records, that would be of interest for you, in
+                                advance.</advancedOrders>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Kleinere Nachforschungen werden in der Regel
+                                        von den Mitarbeitern des Bundesarchivs übernommen, können
+                                        aber unter Umständen gebührenpflichtig sein. Eine
+                                        umfangreiche und zeitaufwändige Suche durch das
+                                        Archivpersonal ist in aller Regel nicht möglich.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Sollten Sie Ihre Nachforschungen nicht selbst
+                                        vor Ort durchführen können, besteht die Möglichkeit, dass
+                                        Sie eine Privatfirma mit den erforderlichen Arbeiten
+                                        beauftragen. Falls Sie einen Recherchedienst beauftragen,
+                                        sind Sie zur Abgabe eines eigenen Benutzungsantrages dennoch
+                                        verpflichtet. Es wird empfohlen, den ausgefüllten und
+                                        unterschriebenen Vordruck "Benutzungsantrag" dem
+                                        Recherchedienst zu übersenden, der diesen bei Beginn der
+                                        Benutzung dem Bundesarchiv aushändigt - zusammen mit dem
+                                        Benutzungsantrag des Recherchedienstes. Mit der
+                                        Antragstellung auf dem Vordruck "Benutzungsantrag"
+                                        verpflichten Sie sich zur Einhaltung der Bestimmungen des
+                                        Bundesarchivgesetzes sowie der Benutzungsverordnung und der
+                                        Kostenverordnung. Listen und Übersichten von privaten
+                                        überregionalen Recherchediensten, aber auch von Firmen, die
+                                        bevorzugt an den Dienstorten Berlin und Freiburg
+                                        Nachforschungen übernehmen, finden Sie auf der Webseite des
+                                        Bundesarchivs unter Benutzung – Recherchedienste. Etwaige
+                                        anfallende Kosten sind abhängig vom Anbieter des jeweiligen
+                                        Recherchedienstes</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="eng">Basically, research and usage are conducted in
+                                        Federal Archives offices by the user on the premises. Minor
+                                        investigations are generally carried out by Federal Archives
+                                        employees, but may be subject to a fee under certain
+                                        conditions. A comprehensive and time-consuming search by the
+                                        Archives personnel is in general not possible.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                            <researchServices>
+                                <descriptiveNote>
+                                    <p xml:lang="eng">If you are unable to conduct your own
+                                        investigations on the premises, it is possible to engage a
+                                        private company to carry out the necessary work. If you
+                                        engage a research agency, you are still required to submit a
+                                        "Benutzungsantrag" [application form for readers]. It is
+                                        recommended that the research agency be sent the filled out
+                                        and signed pre-printed application form, who must hand this
+                                        over, together with the agency’s own application form, to
+                                        the Federal Archives at the commencement of research. By
+                                        submitting the pre-printed application form, you undertake
+                                        to comply with the regulations of the Federal Archives Act,
+                                        the usage regulations and the Costs Directive.</p>
+                                </descriptiveNote>
+                            </researchServices>
+                        </searchroom>
+                        <library question="yes">
+                            <webpage href="http://www.bibliothek.bundesarchiv.de/">Katalog der
+                                Bibliothek des Bundesarchivs</webpage>
+                        </library>
+                        <internetAccess question="yes">
+                            <descriptiveNote>
+                                <p xml:lang="ger">Zugang mit eigenem Telekom-Account</p>
+                                <p xml:lang="eng">Telekom Hot-Spot: access with your own Telekom
+                                    account only</p>
+                            </descriptiveNote>
+                        </internetAccess>
+                        <techservices>
+                            <restorationlab question="no"/>
+                            <reproductionser question="no"/>
+                        </techservices>
+                    </services>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Hoppegarten</repositoryName>
+                    <repositoryRole>Interim archive</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="52.508255"
+                        longitude="13.656989">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Hoppegarten</firstdem>
+                        <municipalityPostalcode xml:lang="ger">15366
+                            Hoppegarten</municipalityPostalcode>
+                        <street xml:lang="ger">Lindenallee 55-57</street>
+                    </location>
+                    <telephone>+49 3018 7770 0</telephone>
+                    <fax>+49 761 3018 7770 582</fax>
+                    <email href="zwarchh@bundesarchiv.de">Kontaktieren Sie unsere Dienststelle in
+                        Hoppegarten per Mail</email>
+                    <directions xml:lang="ger">S 5 Richtung Strausberg bis Haltestelle
+                        „Birkenstein“, von da aus Fußweg ca. 15 Minuten.<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_hoppeg.pdf"
+                        />
+                    </directions>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">Zwischenarchiv für die Überlieferung der obersten
+                                Bundesbehörden und Magazin für Cellulosenitratfilme</p>
+                        </descriptiveNote>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">Besuch nur nach vorheriger Absprache</opening>
+                        <opening xml:lang="eng">Visit only upon prior arrangement</opening>
+                    </timetable>
+                    <access question="yes"/>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <webpage
+                                href="http://www.bundesarchiv.de/DE/Navigation/Finden/Recherchesysteme/recherchesysteme.html"
+                                >Recherche im Archivgut</webpage>
+                            <photographAllowance>yes (without flash)</photographAllowance>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag.html"
+                                >Benutzungsantrag (PDF)</readersTicket>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag-bild.pdf"
+                                >Antrag auf Bildbenutzung beim Bundesarchiv (PDF)</readersTicket>
+                            <advancedOrders xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Bitte nutzen Sie unsere Rechercheangebote zur Vorbereitung auf
+                                Ihren Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei
+                                einer Vorabbestellung der für Ihren Forschungszweck interessanten
+                                Unterlagen.</advancedOrders>
+                            <advancedOrders xml:lang="eng"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Please use our online research tools in order to prepare your
+                                visit. Our staff members will be pleased to be of help in ordering
+                                records, that would be of interest for you, in
+                                advance.</advancedOrders>
+                        </searchroom>
+                        <library question="no"/>
+                        <internetAccess question="no"/>
+                        <techservices>
+                            <restorationlab question="no"/>
+                            <reproductionser question="no"/>
+                        </techservices>
+                    </services>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Ludwigsburg</repositoryName>
+                    <repositoryRole>Branch</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="48.895774" longitude="9.203235">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Ludwigsburg</firstdem>
+                        <municipalityPostalcode xml:lang="ger">71638
+                            Ludwigsburg</municipalityPostalcode>
+                        <street xml:lang="ger">Schorndorfer Straße 58</street>
+                    </location>
+                    <telephone>+49 7141 8992 83</telephone>
+                    <fax>+49 7141 8992 12</fax>
+                    <email href="ludwigsburg@bundesarchiv.de">Kontaktieren Sie unsere Ludwigsburger
+                        Dienststelle per Mail</email>
+                    <directions xml:lang="ger">Buslinie 425, 431 oder 433 ab Bahnhof/Busbahnhof bis
+                        „Schorndorfer Tor“<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_ludwig_2011-09.pdf"
+                        />
+                    </directions>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">Das am Dienstort Ludwigsburg verwahrte Archivgut
+                                bietet einen nahezu vollständigen Überblick über die an
+                                bundesdeutschen Staatsanwaltschaften und Gerichten seit 1958
+                                anhängig gewesenen NS-Verfahren. Neben ihrer justizgeschichtlichen
+                                Bedeutung sind die Unterlagen auch ein aussagekräftiger
+                                Quellenbestand für die historische Erforschung der
+                                nationalsozialistischen Vernichtungspolitik sowie einzelner, auf
+                                bestimmte Personen, Orte und Institutionen oder Einheiten bezogener
+                                Verbrechen. Sammlungen von amtlichem Schriftgut aus der NS-Zeit
+                                sowie Anklage- und Urteilsschriften und darüber hinaus
+                                Hunderttausende Aussageprotokolle von Beschuldigten, Zeugen und
+                                Opfern bieten der Forschung vielfältige Nutzungsmöglichkeiten.</p>
+                            <p xml:lang="ger">Detaillierte Karteisysteme ermöglichen die Recherche
+                                nach Personen (700.000), nach Ortsangaben (26.000) und nach der
+                                Zugehörigkeit zu zivilen, parteiamtlichen, polizeilichen,
+                                militärischen und anderen Einrichtungen und Einheiten (4.200) bis
+                                auf die Ebene einzelner Dokumente. Eine Übersicht über
+                                Ermittlungsverfahren enthält mehr als 100.000 Beschuldigte in
+                                NS-Verfahren sowie Angaben zu Tatvorwürfen, Tatorten und der
+                                Beteiligung verdächtigter Institutionen oder Einheiten.</p>
+                        </descriptiveNote>
+                        <dateSet>
+                            <dateRange>
+                                <fromDate>1867/71</fromDate>
+                                <toDate standardDate="1945">1945</toDate>
+                            </dateRange>
+                            <dateRange>
+                                <fromDate standardDate="1949">1949</fromDate>
+                                <toDate>bis heute</toDate>
+                            </dateRange>
+                        </dateSet>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">Mo. - Do.: 08:00 Uhr - 16:00 Uhr, Fr.: 08:00 Uhr -
+                            14:00 Uhr</opening>
+                        <opening xml:lang="eng">Monday - Thursday: 8am - 4pm, Friday: 8am -
+                            2pm</opening>
+                        <closing xml:lang="ger">an Wochenenden und nationalen Feiertagen</closing>
+                        <closing xml:lang="eng">at weekends and national holidays</closing>
+                    </timetable>
+                    <access question="yes"/>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <workPlaces>
+                                <num unit="site">8</num>
+                            </workPlaces>
+                            <webpage
+                                href="http://www.bundesarchiv.de/DE/Navigation/Finden/Recherchesysteme/recherchesysteme.html"
+                                >Recherche im Archivgut</webpage>
+                            <photographAllowance>yes (without flash)</photographAllowance>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag.html"
+                                >Benutzungsantrag (PDF)</readersTicket>
+                            <readersTicket xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag-bild.pdf"
+                                >Antrag auf Bildbenutzung beim Bundesarchiv (PDF)</readersTicket>
+                            <advancedOrders xml:lang="ger"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Bitte nutzen Sie unsere Rechercheangebote zur Vorbereitung auf
+                                Ihren Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei
+                                einer Vorabbestellung der für Ihren Forschungszweck interessanten
+                                Unterlagen.</advancedOrders>
+                            <advancedOrders xml:lang="eng"
+                                href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html"
+                                >Please use our online research tools in order to prepare your
+                                visit. Our staff members will be pleased to be of help in ordering
+                                records, that would be of interest for you, in
+                                advance.</advancedOrders>
+                        </searchroom>
+                        <library question="yes">
+                            <webpage href="http://www.bibliothek.bundesarchiv.de/">Katalog der
+                                Bibliothek des Bundesarchivs</webpage>
+                        </library>
+                        <internetAccess question="yes">
+                            <descriptiveNote>
+                                <p xml:lang="ger">Zugang mit eigenem Telekom-Account</p>
+                                <p xml:lang="eng">Telekom Hot-Spot: access with your own Telekom
+                                    account only</p>
+                            </descriptiveNote>
+                        </internetAccess>
+                        <techservices>
+                            <restorationlab question="no"/>
+                            <reproductionser question="no"/>
+                        </techservices>
+                        <recreationalServices>
+                            <exhibition>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">In unmittelbarer Nachbarschaft zum Dienst-
+                                        bzw. Archivgebäude befindet sich das 1760 als Wacht- und
+                                        Zollhaus erbaute Schorndorfer Torhaus. Hier präsentiert das
+                                        Bundesarchiv seit September 2004 eine ständige Ausstellung
+                                        über die juristische Aufarbeitung von NS-Verbrechen.</p>
+                                </descriptiveNote>
+                                <webpage
+                                    href="http://www.bundesarchiv.de/DE/Content/Artikel/Entdecken/ludwigsburg-ausstellung-torhaus.html"
+                                    >Ausstellung im Torhaus in Ludwigsburg</webpage>
+                            </exhibition>
+                            <otherServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Für Schüler und Lehrer bietet die Außenstelle
+                                        des Bundesarchivs ein spezielles pädagogisch-didaktisches
+                                        Angebot als außerschulischer Lernort an.</p>
+                                </descriptiveNote>
+                                <webpage
+                                    href="http://www.bundesarchiv.de/DE/Content/Artikel/Ueber-uns/Dienstorte/ludwigsburg-angebote-fuer-schulen.html"
+                                    >Angebote für Lehrer und Schüler</webpage>
+                            </otherServices>
+                        </recreationalServices>
+                    </services>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Rastatt (Erinnerungsstätte für die
+                        Freiheitsbewegungen in der deutschen Geschichte)</repositoryName>
+                    <repositoryRole>Branch</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="48.858602" longitude="8.205239">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Rastatt</firstdem>
+                        <municipalityPostalcode xml:lang="ger">76437
+                            Rastatt</municipalityPostalcode>
+                        <street xml:lang="ger">Herrenstraße 18 (Schloss)</street>
+                    </location>
+                    <telephone>+49 7222 77139 0</telephone>
+                    <fax>+49 7222 77139 7</fax>
+                    <email href="erinnerung@bundesarchiv.de">Kontaktieren Sie Erinnerungsstätte für
+                        die Freiheitsbewegungen in der deutschen Geschichte in Rastatt per
+                        Mail</email>
+                    <webpage href="http://www.bundesarchiv.de/erinnerungsstaette/">Internetseite der
+                        Erinnerungsstätte für die Freiheitsbewegungen in der deutschen
+                        Geschichte</webpage>
+                    <directions xml:lang="ger">A 5 Ausfahrt Rastatt, B 3/B 36 stadteinwärts bis
+                        Herrenstraße/Schloss. Fußweg vom Bahnhof (15 Minuten): Bahnhofstraße bis
+                        BadnerHalle, Herrenstraße/Schloss<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_rastatt_2011-03.pdf"
+                        />
+                    </directions>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">Im Barockschloss von Rastatt wurde 1974, einer
+                                Anregung des damaligen Bundespräsidenten Gustav W. Heinemann
+                                folgend, die "Erinnerungsstätte für die Freiheitsbewegungen in der
+                                deutschen Geschichte" eingerichtet.</p>
+                            <p xml:lang="eng">A branch archive of the Federal Archives known as the
+                                "Memorial to Freedom Movements in German History" was opened in the
+                                baroque Palace of Rastatt in 1974 following encouragement by the
+                                then Federal President Gustav W. Heinemann.</p>
+                        </descriptiveNote>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">So. - Do.: 09:30 Uhr - 17:00 Uhr (letzter Einlass
+                            16:30 Uhr), Fr.: 09:30 Uhr - 14:00 Uhr (letzter Einlass 13:30
+                            Uhr)</opening>
+                        <opening xml:lang="eng">Sunday - Thursday: 9:30am - 5pm (last admission
+                            4:30pm), Friday: 9:30am - 2pm (last admission 1:30pm)</opening>
+                        <closing xml:lang="ger">Samstags geschlossen</closing>
+                        <closing xml:lang="eng">closed on Saturdays</closing>
+                    </timetable>
+                    <access question="yes"/>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <photographAllowance>yes</photographAllowance>
+                        </searchroom>
+                        <library question="no"/>
+                        <internetAccess question="yes"/>
+                        <techservices>
+                            <restorationlab question="no"/>
+                            <reproductionser question="no"/>
+                        </techservices>
+                        <recreationalServices>
+                            <exhibition>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Die Dauerausstellung zeigt das
+                                        jahrhundertelange Ringen der Deutschen um Freiheit,
+                                        Demokratie und Einheit. Den Besucher erwartet eine lebendige
+                                        Ausstellung mit den Schwerpunkten "Die Revolution von
+                                        1848/49" und "Wir sind das Volk! Freiheitsbewegungen in der
+                                        DDR 1949-1989".</p>
+                                </descriptiveNote>
+                                <webpage
+                                    href="http://www.bundesarchiv.de/erinnerungsstaette/dauerausstellung/"
+                                    >Per Mausklick durch unsere Ausstellung</webpage>
+                            </exhibition>
+                            <toursSessions>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Content/Artikel/Entdecken/rastatt-dauerausstellung-themenfuehrungen.html"
+                                    >Themenführungen durch die Ausstellung</webpage>
+                            </toursSessions>
+                            <otherServices>
+                                <descriptiveNote>
+                                    <p xml:lang="ger">Für Gruppen und Schulklassen werden Führungen
+                                        mit unterschiedlichen Schwerpunkten angeboten, für den
+                                        Unterricht in der Ausstellung stehen verschiedene
+                                        Arbeitsmaterialien zur Verfügung.</p>
+                                </descriptiveNote>
+                                <webpage
+                                    href="https://www.bundesarchiv.de/DE/Content/Artikel/Entdecken/rastatt-bildungsarbeit.html"
+                                    >Pädagogische Angebote</webpage>
+                            </otherServices>
+                        </recreationalServices>
+                    </services>
+                </repository>
+                <repository>
+                    <repositoryName>Bundesarchiv Sankt Augustin</repositoryName>
+                    <repositoryRole>Interim archive</repositoryRole>
+                    <geogarea>Europe</geogarea>
+                    <location localType="visitors address" latitude="50.762162" longitude="7.159148">
+                        <country xml:lang="ger">Deutschland</country>
+                        <firstdem xml:lang="ger">Sankt Augustin</firstdem>
+                        <municipalityPostalcode xml:lang="ger">53757 Sankt
+                            Augustin</municipalityPostalcode>
+                        <street xml:lang="ger">Bundesgrenzschutzstraße 100</street>
+                    </location>
+                    <telephone>+49 22899 74000 0</telephone>
+                    <fax>+49 22899 74000 33</fax>
+                    <email href="zwarchst.aug@bundesarchiv.de">Kontaktieren Sie unsere Dienststelle
+                        in Sankt Augustin per Mail</email>
+                    <directions xml:lang="ger">S-Bahn-Linie 66 ab Bonn bis „Hangelar-Mitte“ (10 Min.
+                            Fußweg)<citation
+                            href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_staug_2011-03.pdf"
+                        />
+                    </directions>
+                    <holdings>
+                        <descriptiveNote>
+                            <p xml:lang="ger">Das Zwischenarchiv in Sankt Augustin-Hangelar wurde
+                                1971 für die Aufnahme ministeriellen Schriftguts der obersten
+                                Bundesbehörden in Bonn errichtet.</p>
+                            <p xml:lang="eng">The records office in Sankt Augustin-Hangelar was set
+                                up in 1971 to archive the ministerial papers of the supreme state
+                                authorities in Bonn.</p>
+                        </descriptiveNote>
+                        <extent>
+                            <num unit="linearmetre">43.000</num>
+                        </extent>
+                    </holdings>
+                    <timetable>
+                        <opening xml:lang="ger">Besuch nur nach vorheriger Absprache</opening>
+                        <opening xml:lang="eng">Visit only upon prior arrangement</opening>
+                    </timetable>
+                    <access question="yes"/>
+                    <accessibility xml:lang="ger" question="yes">ebenerdiger Zugang</accessibility>
+                    <accessibility xml:lang="eng" question="yes">groundfloor level
+                        access</accessibility>
+                    <services>
+                        <searchroom>
+                            <webpage href="http://www.bundesarchiv.de/recherche/index.html.de"
+                                >Recherche im Archivgut</webpage>
+                            <photographAllowance>no</photographAllowance>
+                            <readersTicket xml:lang="ger"
+                                href="http://www.bundesarchiv.de/imperia/md/content/bundesarchiv_de/benutzung/benutzungsantrag_2011_befuellbar.pdf"
+                                >Benutzerantrag zum Download</readersTicket>
+                            <advancedOrders xml:lang="ger"
+                                href="http://www.bundesarchiv.de/recherche/index.html.de">Bitte
+                                nutzen Sie die Recherche im Archivgut zur Vorbereitung auf Ihren
+                                Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei einer
+                                Vorabbestellung der für Ihren Forschungszweck interessanten
+                                Unterlagen.</advancedOrders>
+                        </searchroom>
+                        <library question="no"/>
+                        <internetAccess question="no"/>
+                        <techservices>
+                            <restorationlab question="no"/>
+                            <reproductionser question="no"/>
+                        </techservices>
+                    </services>
+                </repository>
+            </repositories>
+        </desc>
+    </archguide>
+    <relations>
+        <resourceRelation resourceRelationType="creatorOf" href="https://invenio.bundesarchiv.de">
+            <relationEntry xml:lang="eng">invenio - Research application of the Federal
+                Archives</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf" href="http://www.bild.bundesarchiv.de/">
+            <relationEntry xml:lang="eng">Digital Picture Archives of the Federal
+                Archives</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="https://www.filmothek.bundesarchiv.de/">
+            <relationEntry xml:lang="eng">Filmothek - Digital Film Portal</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf" href="https://apps.bundesarchiv.de/F">
+            <relationEntry xml:lang="eng">Library catalogue</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="http://www.argus.bstu.bundesarchiv.de/">
+            <relationEntry xml:lang="eng">ARGUS - Research application for collections of SAPMO and
+                Department DDR</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="http://www.bundesarchiv.de/benutzungsmedien/">
+            <relationEntry xml:lang="eng">Benutzungsmedien Film online - Research application for
+                the film archive</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="http://www.bundesarchiv.de/aktenreichskanzlei/1919-1933/0000/index.html">
+            <relationEntry xml:lang="eng">Edition "Records of the Chancellory. Weimar
+                Republic"</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="http://www.bundesarchiv.de/cocoon/barch/0000/index.html">
+            <relationEntry xml:lang="eng">Edition "Minutes of the Cabinet meetings of the Federal
+                Republic of Germany"</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="https://www.bundesarchiv.de/gedenkbuch/">
+            <relationEntry xml:lang="eng">Memorial Book of the Federal Archives for the Victims of
+                the Persecution of Jews in Germany (1933-1945)</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="http://www.bundesarchiv.de/geschichte_euthanasie/">
+            <relationEntry xml:lang="eng">Source guide history of 'euthanasia'
+                1939-1945</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf" href="http://www.nachlassdatenbank.de">
+            <relationEntry xml:lang="eng">Research application for personal papers in German
+                archvies</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="http://www.bundesarchiv.de/zwangsarbeit/">
+            <relationEntry xml:lang="eng">Portal "Forced Labour in the National Socialist
+                State"</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="http://www.ersterweltkrieg.bundesarchiv.de/">
+            <relationEntry xml:lang="ger">100 Jahre Erster Weltkrieg - Portal</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="creatorOf"
+            href="https://www.bundesarchiv.de/DE/Navigation/Entdecken/Virtuelle-Ausstellungen/virtuelle-ausstellungen.html">
+            <relationEntry xml:lang="ger">Virtuelle Ausstellungen</relationEntry>
+        </resourceRelation>
+        <resourceRelation resourceRelationType="other"
+            href="http://www.archivesportaleurope.net/Directory">
+            <relationEntry xml:lang="eng">See more at Archives Portal Europe</relationEntry>
+        </resourceRelation>
+    </relations>
+</eag>
