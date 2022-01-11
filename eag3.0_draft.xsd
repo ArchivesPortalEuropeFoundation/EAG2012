@@ -51,6 +51,7 @@
     
     <xs:complexType name="repositories">
         <xs:sequence>
+            <xs:element name="repository"/>
             <xs:element name="repository" maxOccurs="unbounded"/>
             <xs:element name="relations" type="relations" minOccurs="0"/>
             <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
