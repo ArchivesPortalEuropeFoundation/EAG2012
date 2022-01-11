@@ -1,3 +1,9 @@
+<!-- This file is an adaptation of an existing EAG 2012 XML file as used in Archives Portal Europe to the new version of EAG, EAG 3.0 (draft, January 2022). 
+     At the time of upload (11 January 2022), the only change that has been made is the adaptation of the <eag> root element to point to the draft schema 
+     for EAG 3.0. The file will subsequently be updated step by step to be valid to EAG 3.0. -->
+
+
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <eag xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
