@@ -521,6 +521,17 @@
         REPOSITORY DESCRIPTION
     ################### -->
 
+    <xs:element name="repositories">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="repository" maxOccurs="unbounded"/>
+                <xs:element name="relations" type="relations" minOccurs="0"/>
+                <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="common"/>
+        </xs:complexType>
+    </xs:element>
+    
     <xs:element name="repository">
         <xs:complexType>
             <xs:sequence>
@@ -533,25 +544,6 @@
             <xs:attributeGroup ref="references"/>
         </xs:complexType>
     </xs:element>
-    
-    <xs:element name="repositories">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="repository" maxOccurs="unbounded"/>
-                <xs:element name="relations" type="relations" minOccurs="0"/>
-                <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-            <xs:attributeGroup ref="common"/>
-        </xs:complexType>
-    </xs:element>
-    
-    <xs:complexType name="image">
-        <xs:attributeGroup ref="common.empty"/>
-        <xs:attributeGroup ref="link"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
     
     <xs:complexType name="identity">
         <xs:sequence>
@@ -1512,6 +1504,14 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="image">
+        <xs:attributeGroup ref="common.empty"/>
+        <xs:attributeGroup ref="link"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
