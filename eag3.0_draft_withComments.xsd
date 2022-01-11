@@ -162,8 +162,8 @@
                 <!-- Rather than using "archguide" as the wrapper element for the description of an archival institution, EAG3.0 has moved the choice between    
                 "repository" and "repositories" up here. This is similar to EAC-CPF's approach concerning "cpfDescription" and "multipleIdentities". -->
                 <xs:choice>
-                    <xs:element ref="repository"/>
-                    <xs:element ref="repositories"/>
+                    <xs:element name="repository" type="repository"/>
+                    <xs:element name="repositories" type="repositories"/>
                 </xs:choice>
                 <!-- <xs:element name="relations" type="relations" minOccurs="0"/> -->
                 <!-- EAC-CPF and EAD3 both have the "relations" element within their descriptive sections, EAC-CPF as part of "cpfDescription" and EAD3
@@ -207,8 +207,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="repository">
-        <xs:complexType>
+    <xs:complexType name="repository">
             <xs:sequence>
                 <xs:element name="identity" type="identity"/>
                 <xs:element name="description" type="description"/>
@@ -217,20 +216,17 @@
             </xs:sequence>
             <xs:attributeGroup ref="common"/>
             <xs:attributeGroup ref="references"/>
-        </xs:complexType>
-    </xs:element>
+    </xs:complexType>
 
-    <xs:element name="repositories">
-        <xs:complexType>
-            <xs:sequence>
+    <xs:complexType name="repositories">
+        <xs:sequence>
                 <xs:element name="repository" maxOccurs="unbounded"/>
                 <xs:element name="relations" type="relations" minOccurs="0"/>
                 <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:attributeGroup ref="common"/>
-        </xs:complexType>
-    </xs:element>
-
+    </xs:complexType>
+    
     <xs:complexType name="image">
         <xs:attributeGroup ref="link"/>
         <!-- Changed from using "href" and "linkTitle" separately to using the combined group for links. This means that "href" would not be mandatory anymore. 
@@ -1160,7 +1156,7 @@
     </xs:complexType>
 
     <!-- ##################
-        ARCHIVAL GUIDE
+        REPOSITORY DESCRIPTION
     ################### -->
 
     <!-- <xs:complexType name="archivalGuide">
@@ -2106,7 +2102,7 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <!-- Added values to encode digital archives and to encode the cited range of sources (inherited from EAC-CPF) -->
+    <!-- Added values to encode digital archives -->
     <xs:complexType name="num" mixed="true">
         <xs:attribute name="unit" use="required">
             <xs:simpleType>
@@ -2122,10 +2118,6 @@
                     <xs:enumeration value="site"/>
                     <xs:enumeration value="book"/>
                     <xs:enumeration value="title"/>
-                    <xs:enumeration value="page number"/>
-                    <xs:enumeration value="chapter number"/>
-                    <xs:enumeration value="volume number"/>
-                    <xs:enumeration value="issue number"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
