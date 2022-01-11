@@ -2106,7 +2106,7 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
-    <!-- Added values to encode digital archives -->
+    <!-- Added values to encode digital archives and to encode the cited range of sources (inherited from EAC-CPF) -->
     <xs:complexType name="num" mixed="true">
         <xs:attribute name="unit" use="required">
             <xs:simpleType>
@@ -2122,6 +2122,10 @@
                     <xs:enumeration value="site"/>
                     <xs:enumeration value="book"/>
                     <xs:enumeration value="title"/>
+                    <xs:enumeration value="page number"/>
+                    <xs:enumeration value="chapter number"/>
+                    <xs:enumeration value="volume number"/>
+                    <xs:enumeration value="issue number"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
