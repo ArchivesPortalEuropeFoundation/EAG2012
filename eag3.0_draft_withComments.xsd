@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.6
-    Date: 20220107
+    Version: 0.1.7
+    Date: 20220112
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 <!--
@@ -220,12 +220,12 @@
 
     <xs:complexType name="repositories">
         <xs:sequence>
-                <xs:element name="repository"/>
-                <xs:element name="repository" maxOccurs="unbounded"/>
-                <xs:element name="relations" type="relations" minOccurs="0"/>
-                <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-            <xs:attributeGroup ref="common"/>
+            <xs:element name="repository" type="repository"/>
+            <xs:element name="repository" type="repository" maxOccurs="unbounded"/>
+            <xs:element name="relations" type="relations" minOccurs="0"/>
+            <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
     </xs:complexType>
     
     <xs:complexType name="image">
