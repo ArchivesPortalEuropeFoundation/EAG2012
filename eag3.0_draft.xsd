@@ -1320,6 +1320,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="library">
@@ -1337,6 +1339,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="recreationalServices">
@@ -1357,6 +1361,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="otherServices" mixed="true">
@@ -1364,6 +1370,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="refreshment" mixed="true">
@@ -1371,6 +1379,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="toursSessions" mixed="true">
@@ -1378,6 +1388,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="searchroom">
@@ -1402,6 +1414,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="photographAllowance" mixed="true">
@@ -1409,6 +1423,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="readersTicket" mixed="true">
@@ -1416,6 +1432,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="researchServices" mixed="true">
@@ -1423,6 +1441,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="workPlaces">
@@ -1490,6 +1510,8 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
     <xs:complexType name="structureOrGenealogy">
