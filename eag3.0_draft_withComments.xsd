@@ -147,6 +147,7 @@
       - Removed attribute "localType" from "relationEntry" (now "targetEntity")
       - Added "localType" and "localTypeDeclarationReference" to "services" sub-elements "internetAccess", "multilingualServices", "exhibition", "otherServices", 
         "refreshment", "toursSessions", "advancedOrders", "photographAllowance", "readersTicket", and "researchServices"
+      - Made "accessibility" optional
 
 -->
 
@@ -1515,7 +1516,8 @@
             <xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/> 
             <xs:element name="directions" type="directions" minOccurs="0" maxOccurs="unbounded"/> -->
             <xs:element name="access" type="access" maxOccurs="unbounded"/>
-            <xs:element name="accessibility" type="accessibility" maxOccurs="unbounded"/>
+            <!-- Made "accessibility" optional -->
+            <xs:element name="accessibility" type="accessibility" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="timetable" type="timetable" maxOccurs="unbounded"/>
             <!-- "functions" and "legalStatuses" will be added following EAC-CPF. -->
             <xs:element name="functions" type="functions" minOccurs="0"/>
