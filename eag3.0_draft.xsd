@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.8
-    Date: 20220118
+    Version: 0.1.9
+    Date: 20220119
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 
@@ -1230,7 +1230,7 @@
     
     <xs:complexType name="corpName">
         <xs:sequence>
-            <xs:element name="part" type="part"/>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
@@ -1241,7 +1241,7 @@
     
     <xs:complexType name="famName">
         <xs:sequence>
-            <xs:element name="part" type="part"/>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
@@ -1252,7 +1252,7 @@
     
     <xs:complexType name="genreForm">
         <xs:sequence>
-            <xs:element name="part" type="part"/>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
@@ -1263,7 +1263,7 @@
     
     <xs:complexType name="name">
         <xs:sequence>
-            <xs:element name="part" type="part"/>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
@@ -1274,7 +1274,7 @@
     
     <xs:complexType name="persName">
         <xs:sequence>
-            <xs:element name="part" type="part"/>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
@@ -1285,7 +1285,7 @@
     
     <xs:complexType name="subject">
         <xs:sequence>
-            <xs:element name="part" type="part"/>
+            <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="localType" type="xs:anyURI"/>
