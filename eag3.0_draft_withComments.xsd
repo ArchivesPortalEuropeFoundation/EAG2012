@@ -146,7 +146,7 @@
       - Removed linking attribute "href" from "relation" (instead vocabulary attributes are available with "targetEntity", "relationType", and "targetRole")
       - Removed attribute "localType" from "relationEntry" (now "targetEntity")
       - Added "localType" and "localTypeDeclarationReference" to "services" sub-elements "internetAccess", "multilingualServices", "exhibition", "otherServices", 
-        "refreshment", "toursSessions", "advancedOrders", "photographAllowance", "readersTicket", and "researchServices"
+        "refreshment", "toursSessions", "advancedOrders", "photographAllowance", "readersTicket", "researchServices", "restorationLaboratory", and "reprodutionServices"
       - Made "accessibility" optional
 
 -->
@@ -2618,6 +2618,8 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="reproductionServices">
@@ -2636,6 +2638,8 @@
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <!-- <xs:complexType name="microformser">
