@@ -1,8 +1,8 @@
 ---
-name: Change request
-about: Change request EAG schema
-title: ''
-labels: ''
+name: Major revision schema change
+about: Change request to the EAG schema as part of a major revision
+title: "[Major revision]"
+labels: Major revision, Schema change
 assignees: ''
 
 ---

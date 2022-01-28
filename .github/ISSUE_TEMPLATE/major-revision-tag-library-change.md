@@ -1,8 +1,8 @@
 ---
-name: Change request
-about: Change request EAG schema
-title: ''
-labels: ''
+name: Major revision tag library change
+about: Change request to the EAG tag library as part of a major revision
+title: "[Major revision]"
+labels: Documentation change, Major revision
 assignees: ''
 
 ---
