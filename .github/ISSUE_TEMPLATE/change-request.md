@@ -46,8 +46,8 @@ Sub-element(s):
 _List all attributes that should be available with the new element. Provide suggestions for specific default values (if applicable)._
 Attribute(s) (with default values):
 
-## Example for usage of the new / changed element (including potential attributes) in the portal (use case)
-_Describe how the new / changed element should be used in the Archives Portal Europe, e.g. in terms of display._
+## Example for usage of the new / changed element (including potential attributes)
+_Describe how the new / changed element should be used._
 _Write your text after the "Text:" below._
 Text:
 
