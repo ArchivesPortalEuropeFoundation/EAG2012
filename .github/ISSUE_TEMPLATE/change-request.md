@@ -35,28 +35,16 @@ Element:
 Attribute:
 
 ## Name(s) of (all) parent elements where a new element should be added to the schema or conversion
-_List all parent elements to which a new element should be added in the schema or conversion. Add more lines for "Parent element(s)", if needed._
-Parent element 1:
-Parent element 2:
-Parent element 3:
-Parent element 4:
-Parent element 5:
+_List all parent elements to which a new element should be added in the schema or conversion._
+Parent element(s):
 
 ## Name(s) of (all) sub-elements the new / changed element should have
-_List all sub-elements that should be allowed within the new element in the schema or conversion. Add more lines for "Sub-element(s)", if needed._
-Sub-element 1:
-Sub-element 2:
-Sub-element 3:
-Sub-element 4:
-Sub-element 5:
+_List all sub-elements that should be allowed within the new element in the schema or conversion._
+Sub-element(s):
 
 ## Attributes that should be used with the new / changed element
 _List all attributes that should be available with the new element. Provide suggestions for specific default values (if applicable)._
-Attribute 1 (with default values):
-Attribute 2 (with default values):
-Attribute 3 (with default values):
-Attribute 4 (with default values):
-Attribute 5 (with default values):
+Attribute(s) (with default values):
 
 ## Example for usage of the new / changed element (including potential attributes) in the portal (use case)
 _Describe how the new / changed element should be used in the Archives Portal Europe, e.g. in terms of display._
