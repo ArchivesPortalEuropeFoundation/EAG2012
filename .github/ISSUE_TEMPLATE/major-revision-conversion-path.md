@@ -1,8 +1,8 @@
 ---
 name: Major revision conversion path
 about: Requests for converting old EAG to new EAG as part of a major revision
-title: ''
-labels: ''
+title: "[Major revision]"
+labels: Conversion change, Major revision
 assignees: ''
 
 ---
