@@ -37,7 +37,7 @@ Summary of changes:
 _Give the name of the new element / attribute. Include the tag name and the full name._
 Name:
 
-### Link to related schema change isse
+### Link to related schema change issue
 _Provide the link to the schema change issue for the element / attribute._
 Issue:
 
