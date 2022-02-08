@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<eag xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/ 
+    https://raw.githubusercontent.com/ArchivesPortalEuropeFoundation/EAG2012/MajorRevision_EAG3.0/eag3.0_draft.xsd">
+    
+    <control maintenanceStatus="revised">
+        <recordId>GB-532</recordId>
+        <maintenanceAgency>
+            <agencyCode>GB-532</agencyCode>
+            <agencyName languageOfElement="eng">University of Bradford Special Collections</agencyName>
+        </maintenanceAgency>
+        <maintenanceHistory>
+            <maintenanceEvent maintenanceEventType="revised">
+                <agent agentType="human">Jane Stevenson</agent>
+                <eventDateTime standardDateTime="2022-01-13">2022-01-13</eventDateTime>
+            </maintenanceEvent>
+        </maintenanceHistory>
+    </control>
+    
+
+    <repository>
+        <identity>
+            <nameEntry status="authorized" languageOfElement="eng">
+                <part>University of Bradford Special Collections</part>
+            </nameEntry>
+            <repositoryId countryCode="GB" repositoryCode="ah532"/>
+            <otherRepositoryId vocabularySource="archon">532</otherRepositoryId>
+            <otherRepositoryId vocabularySource="mainangencycode">532</otherRepositoryId>
+            <otherRepositoryId vocabularySource="hubdata">bradford</otherRepositoryId>
+            <repositoryType value="universityArchives"/>
+        </identity>
+        
+        <description>
+            <places>
+                <place localType="visitors">
+                    <address>
+                        <addressLine addressLineType="street">J.B. Priestly Library</addressLine>
+                        <addressLine addressLineType="municipality">Bradford</addressLine>
+                        <addressLine addressLineType="county">Yorkshire</addressLine>
+                        <addressLine addressLineType="postalCode">BD7 1DP</addressLine>
+                        <addressLine addressLineType="country">England, UK</addressLine>
+                    </address>
+                    
+                    <contact>
+                        <contactLine contactLineType="email">mailto:special-collections@bradford.ac.uk</contactLine>
+                        <contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</contactLine>
+                            <contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</contactLine>
+                        <contactLine contactLineType="directions"
+                            href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</contactLine>
+                    </contact>
+                    
+                    <geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</geographicCoordinates>
+                    
+                </place>
+            </places>
+            
+           
+            
+            <access languageOfElement="eng" question="yes (conditions apply)">
+                <accessConditions>Special Collections are open to, and intended for, anyone who might benefit from using them. However, space and staffing constraints mean that appointments are required. Access is subject to preservation requirements and must also conform to the restrictions of the Data Protection Act and any other appropriate legislation.</accessConditions>
+                <useConditions href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website for information.</useConditions>
+            </access>
+           
+            
+     
+            
+            <timetable>
+                <opening languageOfElement="eng" href="http://www.bradford.ac.uk/library/special-collections/opening-hours-and-contact-details/">Please see website</opening>
+                <closing languageOfElement="eng">Closed on public holidays.</closing>
+            </timetable> 
+            
+            <accessibility languageOfElement="eng" question="yes">The Reading Room is accessible by lifts and level floors. However the layout of Floor 02 pre-dates modern standards and can be difficult for very large or long wheelchairs. We can book a back-up room with level access if necessary.</accessibility>
+            
+            <repositoryRole>Main Office</repositoryRole>
+            
+           <!-- <mandates></mandates>
+            <existDates></existDates> -->
+           
+            <biogHist>
+                <p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</p>
+                <p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</p>
+                <p>Since establishing the service, we have acquired other exciting resources, such
+                    as the Commonweal Archives and the Jacquetta Hawkes Archive, and enriched those
+                    already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</p>
+            </biogHist>
+            
+           <!-- <buildingInfo></buildingInfo>
+            <structureOrGenealogy></structureOrGenealogy> -->
+            <holdings>
+      
+                <descriptiveNote>
+                    <p languageOfElement="eng">Special Collections at the University of Bradford holds over 100 collections of rare books and archives on the history of the University, Bradford, Yorkshire, history, politics, literature, archaeology and much more, our best-known being the Archive of J.B. Priestley. Our collections are open to everyone and include manuscripts, letters, photographs, artworks, newspapers, maps, pamphlets, objects, pipes (Priestley's) and digital files.</p>
+                                </descriptiveNote>
+                      
+            </holdings>
+            
+            <services>
+                <searchroom question="yes">
+                    <photographAllowance question="yes (conditions apply)">We encourage visitors to use their own devices to take images for personal research use.  This is at the discretion of the staff member on duty and subject to copyright and care.</photographAllowance>
+                    <advancedOrders languageOfElement="eng" question="yes"
+                        href="https://www.bradford.ac.uk/library/special-collections/visiting/">Available. Send us details of the
+                        materials you’d like to consult. We can have them out ready for you, so you
+                        can begin your research at once.</advancedOrders>
+                    
+                                    </searchroom>
+                
+                <internetAccess question="yes"
+                    href="http://www.bradford.ac.uk/library/special-collections/services/visiting/">If you wish to use wi-fi, register with one of our networks for quick access on the day.  
+                    </internetAccess>
+                <technicalServices>
+                    <reproductionServices question="yes"><descriptiveNote><p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography.  We need a declaration form and payment before we can go ahead with copying.  Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</p></descriptiveNote></reproductionServices>
+                </technicalServices>
+                
+                
+                <!-- proposal for exhibitions   -->
+               <recreationalServices>
+                   <exhibition question="yes"
+                       href="https://www.bradford.ac.uk/library/special-collections/exhibition"
+                       localType="onlineexhibition">
+                       Special Collections Online Exhibitions
+                   </exhibition>
+        
+                <exhibition question="yes"
+                    href="https://archiveshub.jisc.ac.uk/features/paxcat/"
+                    localType="archiveshubfeature">The PaxCat Project: bringing peace archives to life
+                </exhibition>
+                      
+               </recreationalServices>
+                
+            </services>
+         
+            
+        </description>
+        
+        <image localType="logo" href="https://archiveshub.jisc.ac.uk/images/contrlogos/bradford.gif"/>
+    
+    </repository>
+    
+
+    
+</eag>
+
+
