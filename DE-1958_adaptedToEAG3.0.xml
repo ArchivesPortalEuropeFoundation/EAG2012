@@ -495,7 +495,7 @@
                     the stop "Bundesarchiv", leaving at "Central station (West)".<citation
                         href="http://www.kevag.de/verkehrs-service/liniennetz/"/>
                 </directions> -->
-                <!-- Moved "access", "accessibility" and "timetable" up to follow new sequence. -->
+                <!-- Moved "access" and "timetable" up to follow new sequence. -->
                 <access question="yes">
                     <!-- Renamed "restaccess" to "accessConditions" -->
                     <accessConditions languageOfElement="ger">Zur Vorbereitung Ihrer persönlichen
