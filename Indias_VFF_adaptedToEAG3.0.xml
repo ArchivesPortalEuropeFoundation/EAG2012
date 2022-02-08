@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is an adaptation of an existing EAG 2012 XML file as used in Archives Portal Europe to the new version of EAG, EAG 3.0 (draft, January 2022). -->
+<eag xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/ 
+    https://raw.githubusercontent.com/ArchivesPortalEuropeFoundation/EAG2012/MajorRevision_EAG3.0/eag3.0_draft.xsd">
+    <!-- 
+        Added required attribute "maintenanceStatus" and removed element "maintenanceStatus"
+        Reordered subelements of "control" to follow new default sequence
+        Added "detailLevel" - and removed "localControl" which was used to encode this information so far
+        Removed all "conventionDeclaration" referring to ISO standards and added the "...Encoding" attributes
+    -->
+    <control maintenanceStatus="revised" detailLevel="extended" countryEncoding="iso3166-1"
+        dateEncoding="iso8601" languageEncoding="iso639-2b" repositoryEncoding="iso15511"
+        scriptEncoding="iso15924">
+        <recordId>ES-00000000010</recordId>
+        <maintenanceAgency>
+            <agencyCode>ES-00000000010</agencyCode>
+            <agencyName xml:lang="spa">Archivo General de Indias (Sevilla, España)</agencyName>
+        </maintenanceAgency>
+        <maintenanceHistory>
+            <!-- 
+                Added the attribute "maintenanceEventType" to "maintenanceEvent" and removed the element "eventType"
+                Also removed the element "agentType" and added the attribute "agentType" to "agent"
+            -->
+            <maintenanceEvent maintenanceEventType="revised">
+                <agent agentType="human">Ana López, APEF WGoS</agent>
+                <!-- <agentType>human</agentType> -->
+                <eventDateTime standardDateTime="2022-02-04T16:20:00">04.02.2022</eventDateTime>
+            </maintenanceEvent>
+                <!-- <eventType>revised</eventType> -->
+        </maintenanceHistory>
+             <!-- 
+                 Removed "languageDeclarations"
+                 Added "languageCode" and "scriptCode" directly to "languageDeclaration"
+                 Removed "language" and "script"
+             -->
+        <languageDeclaration languageCode="spa" scriptCode="Latn">
+        </languageDeclaration>
+        <conventionDeclaration>
+            <!-- Changed "abbreviation" to "shortcode" and "citation" to "reference" 
+                Changed order of these two elements -->
+            <reference>EAG (Encoded Archival Guide) 2012</reference>
+            <shortCode>EAG</shortCode>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <reference>International Standard for Describing Institutions with Archival
+                Holdings</reference>
+            <shortCode>ISDIAH</shortCode>
+        </conventionDeclaration>
+    </control>
+    <!-- Removed "archguide" and elevated "repositories" and the first "repository" instead -->
+    <!-- <archguide> -->
+    <repositories>
+        <repository>
+            <identity>
+                <!-- 
+                    Changed "autform" to "nameEntry" with "status" being "authorized" 
+                     Updated "xml:lang" to "languageOfElement"; note: with EAG allowing for attributes from any other namespace, following the 
+                     according change in EAC-CPF and EAD, the XML namespace attribute could theoretically be kept without running into validation 
+                     errors; it seems, however, more suitable to apply the dedicated attribute "languageOfElement" 
+                -->               
+                <nameEntry languageOfElement="spa" status="authorized">
+                    <part>Archivo General de Indias</part>
+                </nameEntry>
+                    <!-- 
+                         <autform>Archivo General de Indias (Sevilla, España)</autform>
+                     -->                
+                <!-- 
+                    Changed "nonpreform"-s to "nameEntrySet" with "nameEntry"-s having the "preferredForm" being "false"
+                    Moved the "useDates" to the "nameEntry"-s
+                -->
+                <nameEntrySet>
+                    <nameEntry languageOfElement="spa" preferredForm="false">
+                        <part>Archivo General de las Indias</part>
+                        <useDates>
+                            <!--                          
+                                Decided to use <date> insted of <dataRange>
+                            -->
+                            <date>No data</date>                                                   
+                        </useDates>
+                    </nameEntry>
+                    <nameEntry languageOfElement="spa" preferredForm="false">
+                        <part>Archivo de las Indias</part>
+                        <useDates>
+                            <date>No data</date>   
+                        </useDates>
+                    </nameEntry>
+                    <nameEntry languageOfElement="spa" preferredForm="false">
+                        <part>Archivo de Indias</part>
+                        <useDates>
+                            <date>No data</date>                           
+                        </useDates>
+                    </nameEntry>
+                </nameEntrySet>
+                            <!--   <nonpreform>Archivo General de las Indias
+                                    <useDates><date>No data.</date>
+                                    </useDates>
+                                </nonpreform>
+                                <nonpreform>Archivo de las Indias
+                                    <useDates><date>No data.</date>
+                                    </useDates>
+                                </nonpreform>
+                                <nonpreform>Archivo de Indias
+                                    <useDates><date>No data.</date>
+                                    </useDates>
+                                 </nonpreform>  -->
+                    <!-- 
+                        Renamed "repositorid" to "repositoryId" and moved it to be shown after "nameEntry(Set)" 
+                     Adapted spelling for "countrycode" and "repositorycode" to camelCase 
+                     -->
+                    <repositoryId countryCode="ES" repositoryCode="41091.AGI"/>                
+            </identity>
+             <!-- Renamed "desc" to "description" -->
+             <description>
+                <!-- repositories" and "repository" elevated and used instead of "archguide"
+                <repositories>
+                <repository> -->
+                <!-- Moved all location and contact information up as the new "places" / "place" element is expected first. -->
+                <!-- Removed
+                <geogarea>Europe</geogarea> -->
+                <!-- Added "places" as a wrapper -->
+                <places>
+                    <!-- 
+                        Changed "location" to "place"
+                        Removed "latitude" and "longitude" attributes and added information into the new element "geographicCoordinates"
+                        Added the "coordinateSystem" information to "geographicCoordinates"
+                        Changed the sub-elements of "location" to "address / addressLine" along with the appropriate "addressLineType"-s
+                        Created two "addressLine" elements out of "municipalityPostalcode"
+                        Used the more specific "postalBox", which is now available for "addressLineType" in the case of the postal address
+                        given here (instead of using "street")
+                        Included telephone, fax, email, webpage, and directions information into "place" via the new "contact / contactLine"
+                    -->
+                    <place>
+                        <address localType="postal address">
+                            <addressLine addressLineType="country" languageOfElement="spa"
+                                >España</addressLine>
+                            <addressLine addressLineType="region" languageOfElement="spa"
+                                >Comunidad Autónoma de Andalucía</addressLine>
+                            <addressLine addressLineType="county" languageOfElement="spa"
+                                >Sevilla</addressLine>
+                            <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                >41071</addressLine>
+                            <addressLine addressLineType="municipality" languageOfElement="spa"
+                                >Sevilla</addressLine>
+                            <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
+                        </address>
+                        <address localType="visitors address">
+                            <addressLine addressLineType="country" languageOfElement="spa"
+                                >España</addressLine>
+                            <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                >41071</addressLine>
+                            <addressLine addressLineType="municipality" languageOfElement="spa"
+                                >Sevilla</addressLine>
+                            <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
+                        </address>
+                        <contact>
+                            <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
+                            <contactLine contactLineType="fax">+34 954219485</contactLine>
+                            <contactLine contactLineType="email" href="agi1@cultura.gob.es">
+                                >agi1@cultura.gob.es</contactLine>
+                            <contactLine contactLineType="email" href="agi2@cultura.gob.es">
+                                >Contacte con el Archivo General de Indias</contactLine>                            
+                            <contactLine contactLineType="homepage" languageOfElement="spa"
+                                href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
+                                > Página web del Archivo General de Indias
+                            </contactLine>            
+                       </contact>                     
+                    </place>                  
+                </places>
+                <!--<geogarea>Europe</geogarea>
+                    <location localType="postal address">
+                        <country>España</country>
+                        <firstdem>Comunidad Autónoma de Andalucía</firstdem>
+                        <secondem>Sevilla</secondem>
+                        <municipalityPostalcode>41071</municipalityPostalcode>
+                        <localentity>
+                        </localentity>
+                        <street>Avenida de la Constitución s/n //Calle Santo Tomás, nº 5 </street>
+                    </location>
+                    <location localType="visitors address">
+                        <country>España
+                        </country>
+                        <municipalityPostalcode>41071
+                        </municipalityPostalcode>
+                        <street>Avenida de la Constitución s/n //Calle Santo Tomás, nº 5 
+                        </street>
+                    </location>
+                    <telephone>954500528
+                    </telephone>
+                    <fax>954219485
+                    </fax>
+                    <email href="agi1@cultura.gob.es "/>
+                    <email href="agi2@cultura.gob.es"/>
+                    <webpage href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"/>-->
+               
+                <!-- Moved "access" and "timetable" up to follow new sequence. -->
+                <access question="yes"/>
+                <timetable>
+                    <opening languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Investigadores: Sede de La Cilla del Cabildo: Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas // Visitas: Sede de La Lonja: El horario de apertura es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas.</opening>
+                    <closing languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Investigadores: Sede de La Cilla: Sábados y Domingos. Festivos: 1 y 6 de enero, 28 de febrero, Jueves y Viernes Santo, 1 mayo, 30 de mayo (Fiesta Local. Movible si conicide con Festivo), Corpus Christi, 15 de agosto, 1 de noviembre, 6, 8, 24, 25 y 31 de diciembre. Visitas: Sede de La Lonja: 24, 25 y 31 de diciembre. 1 y 6 de enero. Jueves y Viernes Santo. </closing>
+                </timetable>
+                <!-- Removed "repositorfound" and encoded the relevant information with "mandates / mandate" and "existDates" instead. -->
+                <mandates>
+                    <mandate>
+                        <term languageOfElement="spa">Ordenanzas para el Archivo General de Indias.</term>
+                        <date>1785-10-14 00:00:00.0</date>
+                        <descriptiveNote>
+                            <p languageOfElement="spa">Madrid, 10 de enero de 1790.</p>
+                        </descriptiveNote>
+                    </mandate>
+                </mandates>
+                 <accessibility question="yes"></accessibility>
+                 <existDates>
+                    <dateRange>
+                        <fromDate standardDate="1785-10-14">1785-10-14</fromDate>
+                    </dateRange>
+                </existDates>
+                <!-- 
+                  <repositorfound>
+                        <date>1785-10-14 00:00:00.0
+                        </date>
+                        <rule>"Ordenanzas para el Archivo General de Indias". (Madrid, 10 de enero de 1790)
+                        </rule>
+                    </repositorfound>
+                    <repositorsup>
+                        <date/>
+                        <rule>No data.
+                        </rule>
+                    </repositorsup>
+                -->               
+                <repositoryRole>Head quarter</repositoryRole>
+                <!-- Changed "repositorhist" to "biogHist" and removed "descriptiveNote" as wrapper around "p" elements-->
+                <biogHist>
+                    <p languageOfElement="spa">El Archivo General de Indias fundamentalmente custodia los fondos producidos por las instituciones creadas por la Administración española para el gobierno y administración de los territorios ultramarinos españoles. Estas instituciones son: Consejo de Indias y Secretarías de Despacho, Casa de la Contratación y Consulados de Sevilla y Cádiz. Asimismo, se conservan otros fondos de instituciones de menor entidad e incluso de particulares relacionados con las colonias españolas en América y Asia</p>
+                    <p languageOfElement="spa">La finalidad de este Archivo es la conservación de estos fondos y, mediante su organización y descripción, favorecer su difusión para todos los ciudadanos.</p>
+                    <p languageOfElement="spa">Nace en 1785 por deseo del rey Carlos III, con el objeto de reunir en un solo lugar los documentos referentes a Indias hasta entonces dispersos en Simancas, Cádiz y Sevilla. El impulsor del proyecto fue don José de Gálvez, secretario de Indias, y el ejecutor del mismo fue el académico e historiador don Juan Bautista Muñoz, cosmógrafo mayor de Indias. El espléndido edificio, la Casa Lonja de Sevilla, que se construyó en época de Felipe II sobre planos de Juan de Herrera sirve hasta hoy como sede del Archivo.</p>
+                    <p languageOfElement="spa">Desde 1785, y en distintas remesas, se van incorporando los fondos. En la actualidad conserva más de cuarenta y tres mil legajos, instalados en ocho kilómetros lineales de estanterías, con unos ochenta millones de páginas de documentos originales que permiten a diario profundizar en más de tres siglos de historia de todo un continente, desde Tierra de Fuego hasta el sur de Estados Unidos, además del Extremo Oriente español, las Filipinas: la historia política y la historia social, la historia económica y la de las mentalidades, la historia de la Iglesia y la historia del arte... Los más variados temas ocupan el interés de los miles de investigadores que pasan por el Archivo: desde el descubrimiento, exploración y conquista del Nuevo Mundo hasta la independencia; desde las instituciones políticas indianas hasta la historia de los pueblos precolombinos; desde el intercambio comercial a los problemas de tráfico marítimo; desde la expansión misionera hasta los aspectos inquisitoriales. Tantos y tantos temas en los que el Archivo General de Indias va contribuyendo a lo largo del tiempo para obtener la más completa y documentada visión histórica de la Administración española del Nuevo Mundo.</p>
+                </biogHist>    
+                <!-- Changed "adminhierarchy" to "structureOrGenealogy" and "adminunit" to simple "p" elements -->
+                <structureOrGenealogy>
+                    <p languageOfElement="spa">Dirección</p> 
+                    <p languageOfElement="spa">Subdirección</p>
+                    <p languageOfElement="spa">Departamento de Referencias</p>
+                    <p languageOfElement="spa">Departamento de Coordinación y Normalización</p>
+                    <p languageOfElement="spa">Departamento de Conservación</p>
+                    <p languageOfElement="spa">Servicio de Sistemas Informáticos</p>
+                </structureOrGenealogy>
+                <holdings>
+                    <!-- Moved extent information to be before "descriptiveNote" -->
+                    <dateRange>
+                        <fromDate>Fecha del documento más antiguo : 1439-01-01</fromDate>
+                        <toDate>Fecha del documento más reciente : 1966-01-01</toDate>
+                    </dateRange>
+                    <extent>
+                        <num unit="linearmetre">8906</num>
+                    </extent>
+                    <descriptiveNote>
+                        <p languageOfElement="spa">Los documentos que hoy conserva el Archivo proceden fundamentalmente de los siguientes organismos metropolitanos:</p>
+                        <p languageOfElement="spa"> Consejo de Indias, siglos XVI-XIX</p>
+                        <p languageOfElement="spa"> Casa de la Contratación, siglos XVI-XVIII</p>
+                        <p languageOfElement="spa">Consulados de Sevilla y Cádiz, siglos XVI-XIX</p>
+                        <p languageOfElement="spa"> Secretarías de Estado y del Despacho Universal de Indias, de Estado, de Gracia y Justicia, Hacienda y Guerra, siglos XVIII-XIX</p>
+                        <p languageOfElement="spa">Secretaría del Juzgado de Arribadas, siglos XVIII-XIX</p>
+                        <p languageOfElement="spa"> Comisaría Interventora de la Hacienda Pública de Cádiz, siglos XVIII-XIX</p>
+                        <p languageOfElement="spa"> Dirección General de la Renta de Correos, siglos XVIII-XIX</p>
+                        <p languageOfElement="spa"> Tribunal de Cuentas, Sala de Ultramar, siglo XIX</p>
+                        <p languageOfElement="spa"> Real Compañía de la Habana, siglos XVIII-XIX</p>
+                         <!-- Moved into <dateRange 
+                        <p> Fecha del documento más reciente : 1966-01-01</p>
+                        <p> Fecha del documento más antiguo : 1439-01-01</p> -->
+                    </descriptiveNote>
+                </holdings>  
+                <services>
+                    <!-- Added attribute "question" to "searchroom" -->
+                    <searchroom question="yes">
+                        <!-- Added attribute "question" to "workPlaces" and moved "computerPlaces" and 
+                             "microfilmPlaces" to be sub-elements of "workPlaces" -->
+                        <workPlaces question="yes">
+                            <num unit="site">40</num>
+                            <computerPlaces>
+                                <num unit="site">40</num>
+                            </computerPlaces>
+                            <microfilmPlaces>
+                                <num unit="site">1</num>
+                            </microfilmPlaces>
+                        </workPlaces>
+                        <photographAllowance question="no"/>
+                            <!-- <photographAllowance>no</photographAllowance> -->
+                        <!-- Added attribute "question" to "advancedOrders" -->
+                        <advancedOrders question="yes" languageOfElement="spa"
+                            >El usuario pueden realizar tanto petición anticipada de la documentación como reserva de la misma cuando asisten a la Sala.</advancedOrders>
+                    </searchroom>
+                    <library question="yes">
+                        <!-- Changed subelements "telephone" and "email" to "contactLine" elements with 
+                             the appropriate values for "contactLineType"; also integrated "webpage" as "contactLine"
+                             element -->
+                        <contact>
+                            <contactLine contactLineType="homepage"
+                                href="http://www.mcu.es/ccbae/es/consulta/busqueda.cmd">Catálogo de las bobliotecas de los archivos Estatales</contactLine>
+                        </contact>
+                             <!--<webpage href="http://www.mcu.es/ccbae/es/consulta/busqueda.cmd"/>-->
+                             <!-- Moved content of "monographicpub" and "serialpub" into "descriptiveNote" 
+                             It might be possible to use the predefined values of "unit" in this context when doing an automated transformation -->
+                        <descriptiveNote>
+                            <p languageOfElement="spa">40.788 libros, 2.319 título seriados</p>
+                        </descriptiveNote>
+                    </library>
+                         <!-- <monographicpub>
+                                 <num unit="book">40788</num>
+                             </monographicpub><serialpub>
+                                 <num unit="title">2319
+                             </num>
+                             </serialpub> -->
+                    <!-- Changed name from to "techservices" to "technicalServices" -->
+                    <technicalServices>
+                        <!-- Changed name from to "restorationlab" to "restorationLaboratory" -->
+                        <restorationLaboratory question="yes"/>
+                            <!-- Changed name from to "reproductionser" to "reproductionServices" -->
+                        <reproductionServices question="yes">
+                            <descriptiveNote>
+                                <p languageOfElement="spa"> Se realizan fotocopias y copias digitales</p>
+                            </descriptiveNote>
+                        </reproductionServices>
+                    </technicalServices>
+                            <!-- <techservices>
+                                    <restorationlab question="yes"/>
+                                    <reproductionser question="yes">
+                                        <microformser question="no"/>
+                                        <photographser question="no"/>
+                                        <digitalser question="yes"/>
+                                        <photocopyser question="yes"/>
+                                    </reproductionser>
+                                </techservices> -->
+                    <recreationalServices>
+                        <!-- Added attribute "question" to "exhibition" and moved content to be directly within "refreshment" 
+                             rather than being within "descriptiveNote" -->
+                        <exhibition question="yes" languageOfElement="spa"> Posee sala de exposiciones</exhibition>
+                             <!-- <exhibition>
+                                 <descriptiveNote>
+                                     <p>Posee sala de exposiciones.</p>
+                                 </descriptiveNote>
+                             </exhibition>> -->
+                        <!-- Added attribute "question" to "toursSessions" and moved content to be directly within "refreshment" 
+                             rather than being within "descriptiveNote"; moved "href" from "webpage" into "toursSessions", but skipped 
+                             the content of "webpage"; the latter part might not work in all cases by default, and it might be more 
+                             suitable to create a second "toursSessions" element in this case -->
+                        <toursSessions question="yes" languageOfElement="spa">Se realizan visitas guiadas.</toursSessions>      
+                             <!--  <toursSessions>
+                                     <descriptiveNote>
+                                         <p>Se realizan visitas guiadas.</p>
+                                     </descriptiveNote>
+                                 </toursSessions>-->
+                        <!-- Added attribute "question" to "otherServices" -->
+                        <otherServices question="yes" languageOfElement="spa"> El centro también cuenta con Aula didáctica y salón de actos </otherServices>
+                                <!-- <otherServices>
+                                        <descriptiveNote>
+                                            <p>Posee aula didáctica.
+                                            </p><p>Posee salón de actos.
+                                            </p></descriptiveNote>
+                                    </otherServices>-->
+                    </recreationalServices>
+                </services>
+            </description>
+        </repository>
+        <repository>
+            <identity>
+                <nameEntry>
+                    <part>Sede La Cilla del Cabildo</part>
+                    <part>Sede para los visitantes</part>
+                </nameEntry>
+                <!--- <repositoryName>Sede La Cilla del Cabildo</repositoryName>-->
+            </identity>
+            <description>
+                <!-- <geogarea>Europe</geogarea> -->
+                <places>
+                    <place>
+                        <address localType="visitors address">
+                            <addressLine addressLineType="country" languageOfElement="spa"
+                                >España</addressLine>
+                            <addressLine addressLineType="region" languageOfElement="spa"
+                                >Comunidad Autónoma de Andalucía</addressLine>
+                            <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                >41071</addressLine>
+                            <addressLine addressLineType="municipality" languageOfElement="spa"
+                                >Sevilla</addressLine>
+                            <addressLine addressLineType="street" languageOfElement="spa"
+                                >Santo Tomás, 5</addressLine>
+                        </address>
+                         <address localType="postal address">
+                                <addressLine addressLineType="country" languageOfElement="spa"
+                                    >España</addressLine>
+                                <addressLine addressLineType="region" languageOfElement="spa"
+                                    >Comunidad Autónoma de Andalucía</addressLine>
+                                <addressLine addressLineType="postBox" languageOfElement="spa"
+                                    >41071</addressLine>
+                                <addressLine addressLineType="municipality" languageOfElement="spa"
+                                    >Sevilla</addressLine>
+                                <addressLine addressLineType="street" languageOfElement="spa"
+                                    >Santo Tomás, 5</addressLine>
+                        </address>
+                        <geographicCoordinates coordinateSystem="WGS84">37.384353, 5.992893</geographicCoordinates>
+                            <!--<location latitude="37.384353" localType="postal address" longitude="-5.992893">-->
+                        <contact>
+                            <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
+                            <contactLine contactLineType="fax">+34 954219485</contactLine>
+                            <contactLine contactLineType="email" href="agi2@cultura.gob.es">agi2@cultura.gob.es</contactLine>
+                            <contactLine contactLineType="homepage" languageOfElement="spa"
+                                href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
+                             > Página web del Archivo General de Indias</contactLine>
+                        </contact>
+                    </place>
+                </places>
+                         <!-- <location latitude="37.384353" localType="postal address" longitude="-5.992893">
+                                 <country>España
+                                 </country>
+                                 <firstdem>Comunidad Autónoma de Andalucía
+                                 </firstdem>
+                                 <secondem>Sevilla
+                                 </secondem>
+                                 <municipalityPostalcode>41071
+                                 </municipalityPostalcode>
+                                 <localentity/>
+                                 <street>Santo Tomás, 5
+                                 </street>
+                             </location>
+                             <location localType="visitors address">
+                                 <country>España
+                                 </country>
+                                 <municipalityPostalcode>41071
+                                 </municipalityPostalcode>
+                                 <street>Santo Tomás, 5</street>
+                             </location>
+                             <telephone>+34 954500528
+                             </telephone>
+                             <fax>+34 954219485
+                             </fax>
+                             <email href="agi2@cultura.gob.es"/>
+                             <webpage href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"/> -->
+                <access question="yes"/>
+                <timetable>
+                    <opening languageOfElement="spa">Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas</opening>
+                    <closing languageOfElement="spa">Sábados y Domingos. Festivos: 1 y 6 de enero, 28 de febrero, Jueves y Viernes Santo, 1 mayo, 30 de mayo (Fiesta Local. Movible si conicide con Festivo), Corpus Christi, 15 de agosto, 1 de noviembre, 6, 8, 24, 25 y 31 de diciembre.</closing>
+                </timetable>
+                <repositoryRole>branch</repositoryRole>
+                <accessibility question="yes"/>
+                <!-- Changed "repositorhist" to "biogHist" and removed "descriptiveNote" as wrapper around "p" elements-->
+                <biogHist>
+                    <p languageOfElement="spa">El edificio conocido como la Cilla, ubicado en un lateral del edificio principal y al otro lado de la calle, ha sido remodelado para garantizar la compatibilidad de las funciones administrativas y de investigación con el desarrollo de las visitas y las exposicines en el edificio de La Lonja.</p>
+                    <p languageOfElement="spa"> Actualmente es el edificio que alberga la sala de investigadores.</p>
+                </biogHist>    
+                        <!--<repositorhist>
+                            <descriptiveNote>
+                                <p>El edificio conocido como la Cilla, ubicado en un lateral del edificio principal y al otro lado de la calle, ha sido remodelado para garantizar la compatibilidad de las funciones administrativas y de investigación con el desarrollo de las visitas y las exposicines en el edificio de La Lonja.
+                                </p>
+                            </descriptiveNote>
+                        </repositorhist>-->                
+                <!-- Adapted spelling from "buildinginfo" to "buildingInfo"-->
+                <buildingInfo>
+                    <!-- Moved content of "descriptiveNote" into "building" directly and added repeated "building" elements. -->
+                    <building languageOfElement="spa">El edificio de la Cilla del Cabildo se apoya en el paño de muralla que del Alcázar parte hacia la Torre del Oro. De planta rectangular, la baja sobre pilares y la primera sobre columnas, con bóvedas baídas. La construcción cuenta también con dos niveles añadidos, uno bajo la cubierta, y un sótano. Diversas han sido las funcionalidades que ha tenido este emplazamiento, desde su adscripción al cabildo, su utilización desde 1972 por el Ayuntamiento de Sevilla como sede del Museo de Arte Contemporáneo de Sevilla y, en la actualidad, sede del Archivo General de Indias.
+                    </building>
+                    <!-- Renamed "lengthshelf" to "lengthOfShelves" -->
+                    <lengthOfShelves>
+                        <num unit="linearmetre">1369.0</num>
+                    </lengthOfShelves>
+                    <!-- Renamed "repositorarea" to "repositoryArea" -->
+                    <repositoryArea>
+                        <num unit="squaremetre">2193.0
+                        </num>
+                    </repositoryArea>
+                </buildingInfo>
+            </description>
+        </repository>
+        <repository>
+            <identity>
+                <nameEntry>
+                        <part>Sede La Lonja</part>
+                        <part>Sede para los visitantes</part>
+                    </nameEntry>
+                    <!--- <repositoryName>Sede La Lonja</repositoryName>-->
+            </identity>
+            <description>
+                    <!-- <geogarea>Europe</geogarea> -->
+                    <places>
+                        <place>
+                            <address localType="visitors address">
+                                <addressLine addressLineType="country" languageOfElement="spa"
+                                    >España</addressLine>
+                                <addressLine addressLineType="region" languageOfElement="spa"
+                                    >Comunidad Autónoma de Andalucía</addressLine>
+                                <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                    >41071</addressLine>
+                                <addressLine addressLineType="municipality" languageOfElement="spa"
+                                    >Sevilla</addressLine>
+                                <addressLine addressLineType="street" languageOfElement="spa"
+                                    >Avenida de la Constitución s/n</addressLine>
+                            </address>
+                            <address localType="postal address">
+                                <addressLine addressLineType="country" languageOfElement="spa"
+                                    >España</addressLine>
+                                <addressLine addressLineType="region" languageOfElement="spa"
+                                    >Comunidad Autónoma de Andalucía</addressLine>
+                                <addressLine addressLineType="postBox" languageOfElement="spa"
+                                    >41071</addressLine>
+                                <addressLine addressLineType="municipality" languageOfElement="spa"
+                                    >Sevilla</addressLine>
+                                <addressLine addressLineType="street" languageOfElement="spa"
+                                    >Avenida de la Constitución s/n</addressLine>
+                            </address>
+                            <geographicCoordinates coordinateSystem="WGS84">37.384816, 5.993456</geographicCoordinates>
+                                <!--<location latitude="37.384816" localType="postal address" longitude="-5.993456">-->
+                            <contact>
+                                <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
+                                <contactLine contactLineType="fax">+34 954219485</contactLine>
+                                <contactLine contactLineType="email" href="agi2@cultura.gob.es">agi2@cultura.gob.es</contactLine>
+                                <contactLine contactLineType="homepage" languageOfElement="spa"
+                                    href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
+                                    > Página web del Archivo General de Indias</contactLine>
+                            </contact>
+                        </place>
+                    </places>
+                          <!-- <location latitude="37.384816" localType="postal address" longitude="-5.993456">
+                                  <country>España
+                                  </country>
+                                  <firstdem>Comunidad Autónoma de Andalucía
+                                  </firstdem>
+                                  <secondem>Sevilla
+                                  </secondem>
+                                  <municipalityPostalcode>41071
+                                  </municipalityPostalcode>
+                                  <localentity/>
+                                  <street>Avenida de la Constitución s/n
+                                  </street>
+                              </location>
+                              <location localType="visitors address">
+                                  <country>España
+                                  </country>
+                                  <municipalityPostalcode>41071
+                                  </municipalityPostalcode>
+                                  <street>Avenida de la Constitución s/n
+                                  </street>
+                              </location>
+                              <telephone>+34 954500528
+                              </telephone>
+                              <email href="agi1@cultura.gob.es"/>
+                              <email href="agi2@cultura.gob.es"/>
+                              <webpage href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"/> -->
+                    <access question="yes"/>
+                    <timetable>
+                        <opening languageOfElement="spa">El horario de apertura de visitas al edificio es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas</opening>
+                        <closing languageOfElement="spa">24, 25 y 31 de diciembre. 1 y 6 de enero. Jueves y Viernes Santo</closing>
+                    </timetable>
+                    <repositoryRole>branch</repositoryRole>
+                    <accessibility question="yes"/>
+                <!-- Changed "repositorhist" to "biogHist" and removed "descriptiveNote" as wrapper around "p" elements-->
+                    <biogHist>
+                        <p languageOfElement="spa">El edificio que hoy alberga el Archivo fue construido para alojar el cada vez mayor número de comerciantes que, reunidos en torno a la Universidad de Mercaderes primero y tras 1546 constituidos como consulado, necesitaban un espacio propio para celebrar sus tratos y resolver sus pleitos. El conflicto generado entre el cabildo de la catedral y los mercaderes por la ocupación de los espacios sagrados de la catedral para menesteres tan poco piadosos como los que guiaban a los comerciantes dio el definitivo empuje para que en 1583 comenzaran las obras de construcción de la Lonja de Mercaderes.</p>
+                        <p languageOfElement="spa">  El arquitecto real, Juan de Herrera, fue el encargado del diseño de un edificio cuya construcción se prolongó hasta 1646. A cargo de las obras estuvieron varios prestigiosos arquitectos como Juan de Minjares, Alonso de Vandelvira y Miguel de Zumárraga quienes, sobre todo este último, alteraron algunas de las ideas del proyecto original al introducir elementos innovadores en su construcción, como el abovedamiento de la planta superior, para aligerar la habitual solución herreriana de techo a dos aguas, más pesada y que presentaba un mayor riesgo de incendio.</p>
+                        <p languageOfElement="spa"> La segunda mitad del siglo XVII trajo consigo la decadencia política y comercial del imperio español que, inevitablemente, debía causar contraste con la reciente finalización de las obras de la lonja. En 1717 la sede del comercio ultramarino se traslada a Cádiz, quedando en Sevilla únicamente una Diputación de Comercio. La infrautilización del edificio fue tan manifiesta que llegaron a habilitarse viviendas particulares en su interior mientras que la institución que promovió su construcción periclitaba.</p>
+                        <p languageOfElement="spa"> La elección en 1781 de la Lonja de Mercaderes de Sevilla como sede del gran proyecto ilustrado que iba a ser el Archivo General de Indias detuvo la degradación del edificio. Una vez desalojados los inquilinos y dividido el espacio entre la Diputación de Comercio y el emplazamiento del archivo y sus dependencias, Lucas Cintora, arquitecto de los Reales Alcázares, acometió una audaz obra de readaptación del edificio para servir a los fines de depósito documental. Su discutida intervención procuró por un lado recuperar en la medida de lo posible el proyecto de Juan de Herrera, devolviendo la diafanidad a las galerías y por otro lado reformar la escalera de acceso confiriéndole con un generoso revestimiento de mármol la actual suntuosidad.</p>
+                        <p languageOfElement="spa"> Actualmente es el edificio que alberga las exposiciones y donde se reciben las visitas. Además en éste se encuentra el depósito de documentos</p>
+                    </biogHist>    
+                             <!--<repositorhist>
+                                <descriptiveNote>
+                                 <p>El edificio que hoy alberga el Archivo fue construido para alojar el cada vez mayor número de comerciantes que, reunidos en torno a la Universidad de Mercaderes primero y tras 1546 constituidos como consulado, necesitaban un espacio propio para celebrar sus tratos y resolver sus pleitos. El conflicto generado entre el cabildo de la catedral y los mercaderes por la ocupación de los espacios sagrados de la catedral para menesteres tan poco piadosos como los que guiaban a los comerciantes dio el definitivo empuje para que en 1583 comenzaran las obras de construcción de la Lonja de Mercaderes.&#13;
+                                  El arquitecto real, Juan de Herrera, fue el encargado del diseño de un edificio cuya construcción se prolongó hasta 1646. A cargo de las obras estuvieron varios prestigiosos arquitectos como Juan de Minjares, Alonso de Vandelvira y Miguel de Zumárraga quienes, sobre todo este último, alteraron algunas de las ideas del proyecto original al introducir elementos innovadores en su construcción, como el abovedamiento de la planta superior, para aligerar la habitual solución herreriana de techo a dos aguas, más pesada y que presentaba un mayor riesgo de incendio.
+                                  La segunda mitad del siglo XVII trajo consigo la decadencia política y comercial del imperio español que, inevitablemente, debía causar contraste con la reciente finalización de las obras de la lonja. En 1717 la sede del comercio ultramarino se traslada a Cádiz, quedando en Sevilla únicamente una Diputación de Comercio. La infrautilización del edificio fue tan manifiesta que llegaron a habilitarse viviendas particulares en su interior mientras que la institución que promovió su construcción periclitaba.
+                                  La elección en 1781 de la Lonja de Mercaderes de Sevilla como sede del gran proyecto ilustrado que iba a ser el Archivo General de Indias detuvo la degradación del edificio. Una vez desalojados los inquilinos y dividido el espacio entre la Diputación de Comercio y el emplazamiento del archivo y sus dependencias, Lucas Cintora, arquitecto de los Reales Alcázares, acometió una audaz obra de readaptación del edificio para servir a los fines de depósito documental. Su discutida intervención procuró por un lado recuperar en la medida de lo posible el proyecto de Juan de Herrera, devolviendo la diafanidad a las galerías y por otro lado reformar la escalera de acceso confiriéndole con un generoso revestimiento de mármol la actual suntuosidad.
+                                  </p>
+                               </descriptiveNote>
+                             </repositorhist>-->             
+                    <!-- Adapted spelling from "buildinginfo" to "buildingInfo"-->
+                    <buildingInfo>
+                        <!-- Moved content of "descriptiveNote" into "building" directly and added repeated "building" elements. -->
+                        <building languageOfElement="spa">En planta cuadrada, de 56 metros de lado, con dos alturas sobre lonja rodeada de columnas con cadenas, el edificio del Archivo consiste fundamentalmente en un patio central rodeado por dos naves cuadrangulares, una interior y otra exterior. Todo el edificio es de piedra, con dos plantas abovedadas comunicadas por la escalera monumental.</building>
+                        <building languageOfElement="spa">Recientemente el Ministerio de Cultura ha acometido obras de remodelación en el edificio con el propósito de modernizar sus instalaciones, mejorar el depósito de los documentos y adecuar las galerías exteriores de la planta superior para la instalación de exposiciones temporales, en lo que constituye un itinerario para visitas que recorre todo el edificio.
+                        </building>
+                        <!-- Renamed "lengthshelf" to "lengthOfShelves" -->
+                        <lengthOfShelves>
+                            <num unit="linearmetre">10462.0</num>
+                        </lengthOfShelves>
+                        <!-- Renamed "repositorarea" to "repositoryArea" -->
+                        <repositoryArea>
+                            <num unit="squaremetre">5872.0 </num>
+                        </repositoryArea>
+                    </buildingInfo>
+                </description>   
+               </repository>
+    </repositories>
+</eag>
