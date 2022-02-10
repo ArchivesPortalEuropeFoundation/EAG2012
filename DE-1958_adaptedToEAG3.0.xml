@@ -307,7 +307,7 @@
                             </dateRange>
                         </useDates>
                     </nameEntry>
-                    <nameEntry languageOfElement="ger" status="alternative">
+                    <nameEntry languageOfElement="ger" preferredForm="false">
                         <part>Zentrales Staatsarchiv</part>
                         <useDates>
                             <dateRange>
