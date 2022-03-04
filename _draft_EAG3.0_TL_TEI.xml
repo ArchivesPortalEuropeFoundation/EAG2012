@@ -290,18 +290,20 @@
                   </egXML>
                </div>
             </div>
-            <div type="elementDocumentation" xml:id="elem-access">
-               <!-- Jane (edit), Kerstin (review) -->
+             <div type="elementDocumentation" xml:id="elem-access">
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library;
                     needs review/confirmation and completion for various parts -->
+               <!-- tag name -->
                <head>
                   <gi>access</gi>
                </head>
-               <div type="fullName">
+                <div type="fullName">
                   <p>Conditions for access and use</p>
                </div>
                <div type="summary">
-                  <p>Conditions, requirements and procedures for access and use of the archival holdings.</p>
+                  <p>Conditions, requirements and procedures for access and use of the archival
+                     holdings.</p>
                </div>
                <div type="mayContain">
                   <p>accessConditions (0..n), useConditions (0..n)</p>
@@ -312,16 +314,48 @@
                <div type="attributes">
                   <p>
                      <list type="gloss">
+                        <label>audience</label>
+                        <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
                         <label>question</label>
                         <item>Required (values limited to: no, yes, yes (conditions apply))</item>
-                     </list>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                    </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Element to capture nformation on conditions and requirements for access and use like access policies, terms of use, fees etc. A general statement on whether or not an institution with archival holdings 
-                     is accessible is mandatory and can be added using the attribute <att>question</att> with values "yes" or "no" or "yes (conditions apply"). Additionally, <gi>access</gi> supports a link to existing websites with more details.</p>
-                  <p>Use the subelements <gi>accessConditions</gi> and <gi>useConditions</gi> to include more specific URLs e.g. to documents containing terms of use, any registration forms that need to be filled beforehand, etc.</p>
+                  <p>Includes a mandatory <att>question</att> with
+                     values "yes" or "no" or "yes (conditions apply)" to confirm access, which may
+                     be physical or virtual access. If all or a substantial part of the collection is
+                     publicly accessible use "yes". If there are significant conditions relating to
+                     access use "yes (conditions apply)". If the collections are temporarily
+                     unavailable use "no". </p>
+                     <p>You can also add a link to a page with information about access,
+                     such as information available on the institution's own website.</p>
+                    <p>Do not include text in the access tag. Use the subelements <gi>accessConditions</gi> and
+                     <gi>useConditions</gi> to include more specific information about access conditions and use.</p>
+                                   
                </div>
+               <!-- can hav "attributeusage" here -->
                <div type="availability">
                   <p>Required, repeatable</p>
                </div>
@@ -331,10 +365,13 @@
                         <identity>[...]</identity>
                         <description>
                            <access question="yes">
-                              <accessConditions languageOfElement="eng">To prepare for your personal use of the reference service, or should you require written information, 
-                                 you may send an informal written reference [...].</accessConditions>
-                              <useConditions href="http://www.bundesarchiv.de/benutzung/voraussetzungen/ allgemeinehinweise/index.html.en"
-                              languageOfElement="eng">General information on access and use</useConditions>
+                              <accessConditions languageOfElement="eng">Special Collections are open
+                                 to, and intended for, anyone who might benefit from using them.
+                                 However, space and staffing constraints mean that appointments are
+                                 required. </accessConditions>
+                             <useConditions 
+                                href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website 
+                                for information on conditions of use.</useConditions>
                            </access>
                         </description>
                      </repository>
@@ -342,16 +379,16 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessConditions">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>accessConditions</gi>
                </head>
                <div type="fullName">
-                  <p>Conditions of access</p>
+                  <p>Access Conditions</p>
                </div>
                <div type="summary">
-                  <p>Information on conditions of access relating to the archival holdings, could also include information like "by appointment with the archivist only".</p>
+                  <p>Information on access conditions or restrictions relating to the archival holdings. An optional child element of <gi>access</gi>.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -364,32 +401,80 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                     </list>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                 </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Information on conditions and requirements for access and use. May refer to
+                     access policies, fees etc. Can include information like "by appointment" or "readers ticket required". Can
+                     also include a link to a website with more detailed information about access. May be used to
+                     indicate that there are no restrictions on access.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
+                     <repository>
+                        <identity>[...]</identity>
+                        <description>
+                           <access question="yes">
+                              <accessConditions languageOfElement="eng">Special Collections are open
+                                 to, and intended for, anyone who might benefit from using them.
+                                 However, space and staffing constraints mean that appointments are
+                                 required. </accessConditions>
+                            </access>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <repository>
+                        <identity>
                            [...]
-                        </eag:identity>
-                        <eag:description>
-                           <eag:access question="yes">
-                              <eag:accessConditions>No hay restricciones de acceso</eag:accessConditions>
-                           </eag:access>
-                        </eag:description>
+                        </identity>
+                        <description>
+                           <access question="yes">
+                              <accessConditions>No hay restricciones de acceso</accessConditions>
+                           </access>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eidentity>
+                           [...]
+                        </eidentity>
+                        <description>
+                           <access question="yes (with conditions">
+                              <accessConditions>By appointment only</accessConditions>
+                           </access>
+                        </description>
                      </eag:repository>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessibility">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>accessibility</gi>
@@ -398,40 +483,78 @@
                   <p>Accessibility</p>
                </div>
                <div type="summary">
-                  <p>Details about services for users with disabilities.</p>
+                  <p>Information on physical access to the reading room and collections for users
+                     who are disabled.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>description</p>
+                  <p>access</p>
                </div>
                <div type="attributes">
                   <p>
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Use this element to provide information about any details regarding enhanced accessibility for users with disabilities such as building features, specialised equipment or tools, parking or lifts, etc.</p>
+                  <p>Use this element to provide information with physical or mental disabilities.
+                     For example parking, building features, e.g. lifts, specialised equipment or
+                     tools, e.g. screen readers, and specialist
+                     assistance.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
+                     <repository>
+                        <identity>
                            [...]
-                        </eag:identity>
-                        <eag:description>
-                           <eag:accessibility question="yes">
+                        </identity>
+                        <description>
+                           <accessibility question="yes">
                              There are dedicated parking areas available for persons with disabilities. Access to the building is at ground level and there are lifts to the upper floors of the reading room.
-                           </eag:accessibility>
-                        </eag:description>
-                     </eag:repository>
+                           </accessibility>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <repository>
+                        <identity>
+                           [...]
+                        </identity>
+                        <description>
+                           <accessibility question="yes">
+                              The reading room is wheelchair-friendly. For help with reading
+                              old documents We provide magnifying glasses and we also have staff familiar with sign
+                              language.
+                            </accessibility>
+                        </description>
+                     </repository>
                   </egXML>
                </div>
             </div>
