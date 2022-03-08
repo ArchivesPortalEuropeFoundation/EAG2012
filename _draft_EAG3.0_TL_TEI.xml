@@ -3056,7 +3056,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-famName">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>famName</gi>
@@ -3065,7 +3065,7 @@
                   <p xml:lang="eng">Family Name</p>
                </div>
                <div type="summary">
-                  <p>An element for identifying the name of a group of people with blood relations, or persons who form a household.</p>
+                  <p>An element for providing a family name.</p>
                </div>
                <div type="mayContain">
                   <p>part</p>
@@ -3078,19 +3078,91 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <item>localType</item>
+                        <label>Optional</label>
+                        <item>localTypeDeclarationReference</item>
+                        <label>Optional</label>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>The name of a group that is recognised as a family. May be related by birth,
+                     marriage or adoption. Estate papers or business papers may typically relate to a family.</p>
+                  <p>Adding family names to holdings information can highlight particular areas of strength
+                     of the institution's holdings, e.g. the institution holds a major family
+                     archive.</p>
+                  <p>The attribute <att>localType</att> can be used to structure the name.</p>
+                  <p>If the family name is taken from a source such as VIAF or Wikidata then the attribute
+                     <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <eag:repository>
+                       <eag:identity>
+                          [...]
+                       </eag:identity>
+                       <eag:description>
+                     <eag:holdings>
+                        <eag:famName vocabuarySource="VIAF" vocabularySourceURI="http://viaf.org" 
+                           valueURI="http://viaf.org/viaf/309813092">
+                           <eag:part>Rothschild family</eag:part>
+                          </eag:famName>
+                     </eag:holdings>
+                       </eag:description>
+                    </eag:repository>
+                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:famName>
+                           <eag:part localType="name">Cavendish-Bentinck</eag:part>
+                           <eag:part localType="epithet">family</eag:part>
+                           <eag:part localType="title">Dukes of Portland</eag:part>
+                        </eag:famName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:famName>
+                           <eag:part>Hanau-Lichtenberg family</eag:part>
+                         </eag:famName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -3360,13 +3432,13 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-genreForm">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>genreForm</gi>
                </head>
                <div type="fullName">
-                  <p xml:lang="eng">Genre/Physical Characteristic</p>
+                  <p xml:lang="eng">Genre or form</p>
                </div>
                <div type="summary">
                   <p>An element for encoding a genre or form of material.</p>
@@ -3382,19 +3454,88 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>The type of material being described. Genre refers to style or function rather than subject,
+                     such as correspondence or contracts. Form is a physical characteristic, such as microfilm. Correspondence as a                      genre could be in the form of letterbooks for example. 
+                     A diary could be considered a genre, but it also has a typical form, as a bound
+                     volume (though a diary could be in the form of loose pages for example). </p>
+                     <p>Typical entries in this element might be diaries, letters, photographs, or something more specific such as 
+                     letters of administration, aerial photographs or architectural dawings. </p>
+                     <p>If the entry is taken from a source such as the Thesaurus for Graphic Materials
+                     then the attribute <att>vocabularySource</att> can be used to identify this, and
+                     <att>vocabularySourceURI</att> can provide the URI.</p>
+                  <p>Adding genre or form to holdings can highlight areas of strength or specialism
+                     of the repository, for example, an academic archive might have significant
+                     holdings of theses or a regional repository might have census maps.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="eng">
+                           <eag:part>Political posters</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="eng" vocabularySource="tgm">
+                           <eag:part>Manuscripts, Typescripts, Photographs</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Lettres, Photographies aériennes, Cartes postales</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -3529,7 +3670,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-holdings">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>holdings</gi>
@@ -3538,7 +3679,7 @@
                   <p>Archival and other holdings</p>
                </div>
                <div type="summary">
-                  <p>Archival and other holdings of the institution.</p>
+                  <p>Archival and other related holdings of the institution.</p>
                </div>
                <div type="mayContain">
                   <p>corpName (0..n), date or dateRange or dateSet (0...1), descriptiveNote (0..1), extent (0..n), 
@@ -3552,11 +3693,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>The element <gi>holdings</gi> allows giving a concise overview of one's holdings, including date and extent information as well as narrative text using <gi>descriptiveNote</gi>.</p>
+                  <p>The element <gi>holdings</gi> should be used to give a concise overview of
+                     holdings. It is particularly useful to add extent information. May also include
+                     dates of the collections. </p>
+                  <p>Related holdings may describe a reference library, for example.</p>
+                  <p>Personal, corporate and family names can be added as well as subjects in order
+                     to provide structured information for significant people, organisations or subjects
+                     represented in the archive</p>
+                 <p>Narrative text can be included in <gi>descriptiveNote</gi>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -3578,28 +3740,54 @@
                                  </eag:dateRange>
                                  <eag:dateRange>
                                     <eag:fromDate standardDate="1949">1949</eag:fromDate>
-                                    <eag:toDate>till today</eag:toDate>
+                                    <eag:toDate>present</eag:toDate>
                                  </eag:dateRange>
                               </eag:dateSet>
                               <eag:extent>
                                  <eag:num unit="linearmetre">300.000</eag:num>
                               </eag:extent>
-                              <eag:descriptiveNote>
-                                 <eag:p>The Federal Archives have the legal responsibility of permanently preserving the federal archival documents and making them
-                                    available for use. This includes documents (files, papers, cartographic records, pictures, posters, films, sound recordings and 
-                                    machine-readable data) arising from the central institutions of the Holy Roman Empire (1495-1806), the German Confederation (1815-1866),
-                                    the German Reich (1867/71-1945), the occupation zones (1945-1949), the German Democratic Republic (1949-1990) and the Federal
-                                    Republic of Germany (since 1949). The Federal Archives decide whether these documents are assigned a lasting value for research into, or
-                                    understanding of, German history, the ensuring of the legitimate interests of citizens or the provision of information for legislation,
-                                    administration and jurisdiction.</eag:p>
-                                 <eag:p>The Foundation Archives of Parties and Mass Organisations of the GDR in the Federal Archives keeps the archives of the central leadership
-                                    organs of the parties, unions and mass organisations of the GDR. It also looks after the Federal Archives Library, the core of which is
-                                    formed by the library of the former Institute for Marxism-Leninism and other GDR service and organisation libraries.</eag:p>
-                                 <eag:p>The Federal Archives also collect personal papers of important personages, documents of parties, associations and societies of
-                                    cross-regional importance, as well as published sources. Non-state records are acquired for the Federal Archives through an active acquisition and
-                                    transfer policy. Defined collection profiles determine which personal papers and collections or papers of associations and parties, can
-                                    meaningfully supplement the state archives.</eag:p>
+                              <eag:descriptiveNote languageOfElement="eng">
+                                 <eag:p>The Federal Archives have the legal responsibility of permanently preserving the federal archival documents and making them available for use. This includes documents (files, papers, cartographic records, pictures, posters, films, sound recordings and  machine-readable data) arising from the central institutions of the Holy Roman Empire (1495-1806), the German Confederation (1815-1866), the German Reich (1867/71-1945), the occupation zones (1945-1949), the German Democratic Republic (1949-1990) and the Federal Republic of Germany (since 1949). The Federal Archives decide whether these documents are assigned a lasting value for research into, or understanding of, German history, the ensuring of the legitimate interests of citizens or the provision of information for legislation, administration and jurisdiction.</eag:p>
+                                 <eag:p>The Foundation Archives of Parties and Mass Organisations of the GDR in the Federal Archives keeps the archives of the central leadership organs of the parties, unions and mass organisations of the GDR. It also looks after the Federal Archives Library, the core of which is formed by the library of the former Institute for Marxism-Leninism and other GDR service and organisation libraries.</eag:p>
+                                 <eag:p>The Federal Archives also collect personal papers of important personages, documents of parties, associations and societies of cross-regional importance, as well as published sources. Non-state records are acquired for the Federal Archives through an active acquisition and transfer policy. Defined collection profiles determine which personal papers and collections or papers of associations and parties, can meaningfully supplement the state archives.</eag:p>
                               </eag:descriptiveNote>
+                           </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:holdings>
+                              <eag:extent>
+                                 <eag:num unit="cubicmetre">250</eag:num>
+                              </eag:extent>
+                              <eag:persName><eag:part localType="surname">Britten</eag:part><eag:part localType="forenames">
+                                 Edward Benjamin</eag:part><eag:part localType="title">Baron Britten</eag:part><eag:part
+                                    localType="dates"> 1913-1976</eag:part><eag:part localType="epithet">English composer,
+                                       conductor and pianist</eag:part></eag:persName>
+                              <eag:persName><eag:part localType="surname">Pears</eag:part><eag:part localType="forenames">Sir
+                                 Peter Neville Luard </eag:part><eag:part localType="dates">1910-1986</eag:part><eag:part
+                                    localType="epithet">English tenor</eag:part>
+                              </eag:persName>
+                              <eag:subject><eag:part>Music</eag:part></eag:subject>
+                              <eag:subject><eag:part>Composition</eag:part></eag:subject>
+                             <eag:descriptiveNote>
+                                 <p>The archive at the Red House is probably the richest composer’s archive in the world and is
+                                    open to anyone to visit. It is a rich source of information on a wide variety of topics.</p>
+                                 <p>Benjamin Britten’s and Peter Pears’ papers are of course at the
+                                    heart of the collection and the archive holds manuscript scores
+                                    of almost all Britten’s works, both published and unpublished and including his earliest 
+                                    juvenilia.  It contains working papers, letters, costume designs, set designs and set models, 
+                                    photographs, financial documentation and an extensive collection of programmes.</p>
+                                 <p>The correspondence makes up nearly 20,000 files and covers
+                                     professional issues, personal friendships, anti-war and
+                                     anti-colonial activism and a wide range of other topics.</p>
+                              </eag:descriptiveNote>
+                              
                            </eag:holdings>
                         </eag:description>
                      </eag:repository>
@@ -3706,7 +3894,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-image">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- EAG-specific; added after publication of the EAG 2012 Tag Library, i.e. no more detailed 
                     description yet; needs completion for various parts -->
                <head>
@@ -3716,7 +3904,7 @@
                   <p>Image</p>
                </div>
                <div type="summary">
-                  <p>Logo or other imagery representation of the institution.</p>
+                  <p>Logo or other image that represents the institution.</p>
                </div>
                <div type="mayContain">
                   <p>[empty]</p>
@@ -3729,19 +3917,44 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                         <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Element for including an image that will display as part of the EAG document.
+                     Typically a logo for the institution being described, but could be e.g. a photograph
+                  showing the repository building or a small number of images illustrating the holdings of
+                  the repository.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                     <eag:image localType="logo"
+                        href="https://archiveshub.jisc.ac.uk/mediaImages/eag/93.jpg"/>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -4091,7 +4304,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-lengthOfShelves">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>lengthOfShelves</gi>
@@ -4100,7 +4313,8 @@
                   <p>Length of Shelves</p>
                </div>
                <div type="summary">
-                  <p>Information about the length of shelves at the repository building.</p>
+                  <p>Information about the storage capacity of the repository, expressed as length of
+                     shelves.</p>
                </div>
                <div type="mayContain">
                   <p>num</p>
@@ -4113,11 +4327,27 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Information about the length of shelves at the repository building including the respective unit of measurement in the accompanying attribute <att>unit</att>.</p>
+                  <p>Information about the total length of shelves in the storage areas of the repository, in order to
+                     give a sense of the size of the collections, including the respective unit of measurement in the accompanying
+                     attribute <att>unit</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -4894,7 +5124,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-name">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit) DONE, Kerstin (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>name</gi>
@@ -4916,19 +5146,87 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <item>localType</item>
+                        <label>Optional</label>
+                        <item>localTypeDeclarationReference</item>
+                        <label>Optional</label>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>An element that can be used where a name cannot be classified as
+                     <gi>persname</gi>, <gi>corpname</gi> or <gi>famname</gi>. Aim to uniquely
+                     identify the entity, adding dates or additional information if useful.</p>
+                  <p>Adding names to holdings information can highlight particular areas of strength
+                     of the institution's holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                      <eag:repository>
+                         <eag:identity>
+                            [...]
+                         </eag:identity>
+                         <eag:description>
+                        <eag:holdings>
+                           <eag:Name>
+                              <eag:part>John Carpenter</eag:part>
+                           </eag:Name>
+                        </eag:holdings>
+                         </eag:description>
+                      </eag:repository>
+                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:Name>
+                           <eag:part>Nehru, Jawaharlal</eag:part>
+                        </eag:Name>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                          <eag:repository>
+                           <eag:identity>
+                                [...]
+                          </eag:identity>
+                     <eag:description>
+                      <eag:holdings>
+                         <eag:Name vocabularySource="wikidata"
+                            vocabularySourceURI="https://en.wikipedia.org/" 
+                            valueURI="https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_Asiatique">
+                           <eag:part>Société Asiatique</eag:part>
+                        </eag:Name>
+                     </eag:holdings>
+                     </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
