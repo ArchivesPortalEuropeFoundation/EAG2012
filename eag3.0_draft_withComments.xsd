@@ -2075,7 +2075,7 @@
 
     <xs:complexType name="buildingInfo">
         <xs:sequence>
-            <xs:element name="building" type="building" maxOccurs="unbounded"/>
+            <xs:element name="building" type="building" minOccurs="0" maxOccurs="unbounded"/>
             <!-- Suggestion to rename "repositorarea" to "repositoryArea" -->
             <xs:element name="repositoryArea" type="repositoryArea" minOccurs="0" maxOccurs="unbounded"/>
             <!-- Suggestion to rename "lengthshelf" to "lengthOfShelves" -->
