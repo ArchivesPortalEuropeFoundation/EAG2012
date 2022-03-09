@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.9
-    Date: 20220119
+    Version: 0.1.10
+    Date: 20220309
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 
@@ -1125,11 +1125,11 @@
     </xs:complexType>
     
     <xs:complexType name="buildingInfo">
-        <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
             <xs:element name="building" type="building" maxOccurs="unbounded"/>
             <xs:element name="lengthOfShelves" type="lengthOfShelves" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="repositoryArea" type="repositoryArea" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
+        </xs:choice>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
