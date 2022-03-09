@@ -1126,9 +1126,9 @@
     
     <xs:complexType name="buildingInfo">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="building" type="building" maxOccurs="unbounded"/>
-            <xs:element name="lengthOfShelves" type="lengthOfShelves" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="repositoryArea" type="repositoryArea" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="building" type="building"/>
+            <xs:element name="lengthOfShelves" type="lengthOfShelves"/>
+            <xs:element name="repositoryArea" type="repositoryArea"/>
         </xs:choice>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
