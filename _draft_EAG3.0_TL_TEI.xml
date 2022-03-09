@@ -483,8 +483,8 @@
                   <p>Accessibility</p>
                </div>
                <div type="summary">
-                  <p>Information on physical access to the reading room and collections for users
-                     who are disabled.</p>
+                  <p>Information on physical access to the reading room and other public areas and
+                     accessibility services provided for users.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -521,10 +521,9 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Use this element to provide information with physical or mental disabilities.
-                     For example parking, building features, e.g. lifts, specialised equipment or
-                     tools, e.g. screen readers, and specialist
-                     assistance.</p>
+                  <p>Use this element to provide information for people with physical or mental disabilities.
+                     For example parking, building features, e.g. lifts, specialised equipment, and
+                     useful tools or support, e.g. screen readers, and staff with sign language.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -1123,10 +1122,9 @@
                   <p>The history of the repository building and important features. Might include
                      the date of opening, environmental storage conditions, architectural features,
                      design of the reading room, etc.</p>
-                  <p>This element is mandatory within <gi>buildingInfo</gi>.</p>
-               </div>
+                </div>
                <div type="availability">
-                  <p>Required, repeatable</p>
+                  <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -8159,6 +8157,7 @@
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
+               <!-- may want to assess examples - decide on best practice for encoding this info -->
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
@@ -8176,7 +8175,7 @@
                            [...]
                         </eag:identity>
                         <eag:description>
-                           <eag:socialMedia href="https://www.facebook.com/cardiffuni">Facebook</eag:socialMedia>
+                           <eag:socialMedia href="https://www.facebook.com/cardiffuni">Find us on Facebook</eag:socialMedia>
                         </eag:description>
                      </eag:repository>
                   </egXML>
