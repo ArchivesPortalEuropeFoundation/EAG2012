@@ -15,7 +15,8 @@
         <recordId>DE-1958</recordId>
         <maintenanceAgency>
             <agencyCode>DE-1958</agencyCode>
-            <agencyName xml:lang="ger">Bundesarchiv</agencyName>
+            <!-- Updated "xml:lang" to "languageOfElement" -->
+            <agencyName languageOfElement="ger">Bundesarchiv</agencyName>
         </maintenanceAgency>
         <!-- <maintenanceStatus>revised</maintenanceStatus> -->
         <maintenanceHistory>
@@ -307,7 +308,7 @@
                             </dateRange>
                         </useDates>
                     </nameEntry>
-                    <nameEntry languageOfElement="ger" preferredForm="false">
+                    <nameEntry languageOfElement="ger" status="alternative">
                         <part>Zentrales Staatsarchiv</part>
                         <useDates>
                             <dateRange>
@@ -2776,9 +2777,10 @@
                 Changed "relationEntry" to "targetEntity" and added sub-element "part"
                 Added attribute "targetType" to "targetEntity" based on previous use of "resourceRelation"
                 Changed "href" in "resourceRelation" to "valueURI" in "relation/targetEntity"
+                Change "xml:lang" to "languageOfElement"
             -->
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="https://invenio.bundesarchiv.de">
                     <part>invenio - Research application of the Federal Archives</part>
                 </targetEntity>
@@ -2786,7 +2788,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="http://www.bild.bundesarchiv.de/">
                     <part>Digital Picture Archives of the Federal Archives</part>
                 </targetEntity>
@@ -2794,7 +2796,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="https://www.filmothek.bundesarchiv.de/">
                     <part>Filmothek - Digital Film Portal</part>
                 </targetEntity>
@@ -2802,7 +2804,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="https://apps.bundesarchiv.de/F">
                     <part>Library catalogue</part>
                 </targetEntity>
@@ -2810,7 +2812,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="http://www.argus.bstu.bundesarchiv.de/">
                     <part>ARGUS - Research application for collections of SAPMO and Department DDR</part>
                 </targetEntity>
@@ -2818,7 +2820,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="http://www.bundesarchiv.de/benutzungsmedien/">
                     <part>Benutzungsmedien Film online - Research application for the film archive</part>
                 </targetEntity>
@@ -2826,7 +2828,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="http://www.bundesarchiv.de/aktenreichskanzlei/1919-1933/0000/index.html">
                     <part>Edition "Records of the Chancellory. Weimar Republic"</part>
                 </targetEntity>
@@ -2834,14 +2836,14 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng">
+                <targetEntity targetType="resource" languageOfElement="eng">
                     <part>Edition "Minutes of the Cabinet meetings of the Federal Republic of Germany"</part>
                 </targetEntity>
                 <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="https://www.bundesarchiv.de/gedenkbuch/">
                     <part>Memorial Book of the Federal Archives for the Victims of the Persecution of Jews in Germany (1933-1945)</part>
                 </targetEntity>
@@ -2849,7 +2851,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="http://www.bundesarchiv.de/geschichte_euthanasie/">
                     <part>Source guide history of 'euthanasia' 1939-1945</part>
                 </targetEntity>
@@ -2857,7 +2859,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="http://www.nachlassdatenbank.de">
                     <part>Research application for personal papers in German archvies</part>
                 </targetEntity>
@@ -2865,7 +2867,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     valueURI="http://www.bundesarchiv.de/zwangsarbeit/">
                     <part>Portal "Forced Labour in the National Socialist State"</part>
                 </targetEntity>
@@ -2873,7 +2875,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="ger"
+                <targetEntity targetType="resource" languageOfElement="ger"
                     valueURI="http://www.ersterweltkrieg.bundesarchiv.de/">
                     <part>100 Jahre Erster Weltkrieg - Portal</part>
                 </targetEntity>
@@ -2881,7 +2883,7 @@
                     creator of (RiC-R027i)</relationType>
             </relation>
             <relation>
-                <targetEntity targetType="resource" xml:lang="ger"
+                <targetEntity targetType="resource" languageOfElement="ger"
                     valueURI="https://www.bundesarchiv.de/DE/Navigation/Entdecken/Virtuelle-Ausstellungen/virtuelle-ausstellungen.html">
                     <part>Virtuelle Ausstellungen</part>
                 </targetEntity>
@@ -2891,7 +2893,7 @@
             <relation>
                 <!-- In this case, "href" from "resourceRelation" might better be "vocabularySourceURI" instead of "valueURI", though this 
                      would need to be a manual edition rather than an automatic transformation. -->
-                <targetEntity targetType="resource" xml:lang="eng"
+                <targetEntity targetType="resource" languageOfElement="eng"
                     vocabularySourceURI="http://www.archivesportaleurope.net/Directory">
                     <part>See more at Archives Portal Europe</part>
                 </targetEntity>
