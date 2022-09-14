@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
 <eag xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/ 
    https://raw.githubusercontent.com/ArchivesPortalEuropeFoundation/EAG2012/MajorRevision_EAG3.0/eag3.0_draft.xsd">
-
    <control maintenanceStatus="revised">
       <recordId>FRIHA</recordId>
       <maintenanceAgency>
@@ -84,7 +82,6 @@
         </localControl>
         -->
    </control>
-
    <!-- repositories" and "repository" elevated and used instead of "archguide"
             <repositories>
                 <repository> -->
@@ -128,7 +125,6 @@
                   <addressLine addressLineType="postalCode" languageOfElement="fre">92110</addressLine>
                   <addressLine addressLineType="country" languageOfElement="fre">FRANCE</addressLine>
                </address>
-
                <contact>
                   <contactLine contactLineType="email">mailto:histalu@histalu.org</contactLine>
                   <contactLine contactLineType="phoneNumber">+33 (0)1 41 05 40 61</contactLine>
@@ -147,10 +143,8 @@
                      Hugo-Sanzillon  n° 173, ligne Porte de Clichy - La Courneuve-8 mai 1945 :
                      arrêt Général Leclerc-Victor Hugo</contactLine>
                </contact>
-
                <geographicCoordinates coordinateSystem="WGS84">48.901405,
                   2.317372</geographicCoordinates>
-
             </place>
          </places>
          <!--  <location localType="visitors address">
@@ -181,7 +175,6 @@
          <!-- Moved "access" and "timetable" up to follow new sequence. -->
          <access question="yes">
             <!-- Renamed "restaccess" to "accessConditions" -->
-
             <accessConditions languageOfElement="fre">Tout lecteur souhaitant consulter les
                ressources accessibles à l’Institut pour l’histoire de l’aluminium soumet en premier
                lieu une demande de recherche écrite, par courrier ou par courriel (cf. 5.2.3
@@ -207,10 +200,6 @@
                href="http://www.histalu.org/centre-de-ressources/conditions-de-consultation/">Voir
                les conditions d'accès et de réutilisation sur le site internet</useConditions>
          </access>
-
-
-
-
          <timetable>
             <!-- updated xml:lang to languageOfElement -->
             <opening languageOfElement="fre"
@@ -244,7 +233,6 @@
          </mandates>
          <!-- Moved <accessibility down to appear with other optional elements, after the change of the element not being required anymore -->
          <accessibility question="no"/>
-
          <!-- Added start date. Please check use of @localType -->
          <existDates>
             <date standardDate="1986-01-01" localType="start date">1986-</date>
@@ -397,7 +385,6 @@
                   départementales, afin d’en assurer une conservation pérenne.</p>
             </descriptiveNote>
          </holdings>
-
          <services>
             <!-- Added attribute "question" to "searchroom" -->
             <searchroom question="yes">
@@ -475,15 +462,7 @@
                   toutefois possible d'adresser une demande à l’IHA qui peut jouer un rôle
                   d’intermédiaire. </otherServices>
             </recreationalServices>
-
          </services>
-
-
       </description>
-
-
    </repository>
-
-
-
 </eag>
