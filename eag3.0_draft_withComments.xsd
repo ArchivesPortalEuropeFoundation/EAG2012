@@ -75,6 +75,7 @@
     - Removed "source" from "shortCode"
     - Added references attributes to all sub-elements of "repository" (and "repository" itself)
     - Added "descriptiveNote" to "sources"
+    - Added "base" to "sources"
     - Added "citedRange" to "source"
     - Replaced "sourceEntry" with "reference"; "reference" being mandatory now, and repeatable in this context
     - Removed "objectBinWrap"
@@ -750,6 +751,7 @@
         </xs:sequence>
         <!-- Added -->
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="base" type="xs:anyURI"/>
     </xs:complexType>
     
     <xs:complexType name="source">
