@@ -361,6 +361,7 @@
             <xs:element type="descriptiveNote" name="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="base" type="xs:anyURI"/>
     </xs:complexType>
     
     <xs:complexType name="source">
