@@ -2087,8 +2087,8 @@
                   <p>date or dateRange (2..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>chronItem, existDates, function, legalStatus, localDescription, mandate,
-                     occupation, otherEntityType, place, relation, useDates</p>
+                  <p>chronItem, existDates, function, holdings, legalStatus, localDescription, mandate,
+                     occupation, otherRepositoryType, place, relation, useDates</p>
                </div>
                <div type="attributes">
                   <p>
@@ -2124,19 +2124,32 @@
                      <gi>dateRange</gi>.</p>
                </div>
                <div type="availability">
-                  <p>Within <gi>function</gi>, <gi>legalStatus</gi>, <gi>localDescription</gi>,
-                        <gi>mandate</gi>, <gi>occupation</gi>, <gi>otherEntityType</gi>,
-                        <gi>place</gi>, <gi>relation</gi>: one of <gi>date</gi>, <gi>dateRange</gi>,
+                  <p>Within <gi>function</gi>, <gi>legalStatus</gi>, <gi>mandate</gi>, <gi>otherRepositoryType</gi>,
+                     <gi>place</gi>, <gi>relation</gi>, <gi>holdings</gi>: one of <gi>date</gi>, <gi>dateRange</gi>,
                      or <gi>dateSet</gi> optional, not repeatable</p>
                   <p>Within <gi>chronItem</gi>, <gi>existDates</gi>, <gi>useDates</gi>: one of
-                        <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> required, not
+                     <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> required, not
                      repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <holdings>
+                        <dateSet>
+                           <date standardDate="1848">1848</date>
+                           <date standardDate="1849">1849</date>
+                           <dateRange>
+                              <fromDate standardDate="1945">1945</fromDate>
+                              <toDate standardDate="1949">1949</toDate>
+                           </dateRange>
+                           <dateRange>
+                              <fromDate standardDate="1949">1949</fromDate>
+                              <toDate>bis heute</toDate>
+                           </dateRange>
+                        </dateSet>
+                     </holdings>
                   </egXML>
                </div>
+            </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-description">
                <!-- Manonmani (edit), Ana (review) -->
@@ -3294,15 +3307,14 @@
                   <p>Identity</p>
                </div>
                <div type="summary">
-                  <p>A required child element of <gi>cpfDescription</gi> used to encode the name or
-                     names related to the identity being described within the EAC-CPF instance.</p>
+                  <p>A required child element of <gi>repository</gi> used to encode the name or
+                     names related to the repository being described within the EAG instance and other information that helps to identify the institution.</p>
                </div>
                <div type="mayContain">
-                  <p>descriptiveNote (0..1), entityType (1..1), identityId (0..n), nameEntry or
-                     nameEntrySet (1..n), otherEntityTypes (0..n)</p>
+                  <p>descriptiveNote (0..1), nameEntry (1..n), nameEntrySet (1..n), otherRepositoryId (0..n), otherRepositoryTypes (0..1), repositoryId (0..1), repositoryType (0..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>cpfDescription</p>
+                  <p>repository</p>
                </div>
                <div type="attributes">
                   <p>
@@ -3336,47 +3348,75 @@
                </div>
                <div type="description">
                   <p><gi>identity</gi> is a wrapper element used to group the elements necessary to
-                     encode the name or names related to the identity of the CPF entity within the
-                        <gi>cpfDescription</gi> element.</p>
-                  <p>The required child element <gi>entityType</gi> specifies the type of entity
-                     (i.e., corporate body, family, or person). The optional
-                        <gi>otherEntityTypes</gi> element can be used to encode other entity types
-                     used in the local context. An optional <gi>identityId</gi> is available for any
-                     identifiers associated with the CPF entity.</p>
+                     encode the name or names related to the identity of the repository  within the
+                     <gi>repository</gi> element.</p>
                   <p>One or more <gi>nameEntry</gi> elements and/or one or more
-                        <gi>nameEntrySet</gi> elements must be included. All names by which the
-                     identity being described within one <gi>cpfDescription</gi> element is known
-                     are provided within <gi>identity</gi>. Each of the names, whether authorized or
-                     alternatives, should be recorded in a separate <gi>nameEntry</gi> element.</p>
+                     <gi>nameEntrySet</gi> elements must be included. 
+                     All names by which the repository is known, are provided within <gi>repository</gi>.
+                     Each of the names, whether authorized or alternatives, should be recorded in a separate <gi>nameEntry</gi> element.</p>
                   <p><gi>identity</gi> may accommodate two or more parallel names in different
                      languages or scripts. In countries where there is more than one official
-                     language, such as Canada or Switzerland, names of CPF entities are frequently
+                     language, such as Canada or Switzerland, names of repository are frequently
                      provided in more than one language. Within <gi>identity</gi>, a
-                        <gi>nameEntrySet</gi> element should be used to group two or more
-                        <gi>nameEntry</gi> elements that represent parallel forms of the name of the
-                     CPF entity being described.</p>
+                     <gi>nameEntrySet</gi> element should be used to group two or more
+                     <gi>nameEntry</gi> elements that represent parallel forms of the name of the
+                     repository being described.</p>
+                  <p> An optional <gi>repositoryId</gi> is available for any
+                     identifiers associated with the repository.</p>
+                  <p>The required child element <gi>repositoryType</gi> specifies the type of repository. The optional
+                     <gi>otherRepositoriyTypes </gi> element can be used to encode other repository types</p>
                   <p>Within <gi>identity</gi>, a <gi>descriptiveNote</gi> element may be used to
                      record other information in a textual form that assists in the identification
-                     of the CPF entity.</p>
-                  <p>In case of multiple identities of the same entity in one EAC-CPF instance, a
+                     of the repository.</p>
+                  <p>In case of multiple identities of the same entity in one EAG 3.0. instance, a
                      separate <gi>identity</gi> element is contained in each of the
-                        <gi>cpfDescription</gi> elements of the EAC-CPF instance.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
+                     <gi>repositories</gi> elements of the EAG 3.0. instance.</p>
+                  <p>The prescribed order of all child elements is:</p>
                   <list type="simple">
-                     <item><gi>entityType</gi></item>
                      <item><gi>nameEntry</gi> and/or <gi>nameEntrySet</gi></item>
-                     <item><gi>otherEntityTypes</gi></item>
-                     <item><gi>identityId</gi></item>
+                     <item><gi>repositoryId</gi></item>
+                     <item><gi>otherRepositoryId</gi></item>
+                     <item><gi>repositoryType</gi></item>
+                     <item><gi>otherRepositoryTypes</gi></item>
                      <item><gi>descriptiveNote</gi></item>
                   </list>
                </div>
                <div type="availability">
-                  <p>Required, not repeatable</p>
+                  <p> Required, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
+                     <repositories>
+                        <repository>
+                           <identity>
+                              <nameEntry languageOfElement="spa" status="authorized">
+                                 <part>Archivo General de Indias</part>
+                              </nameEntry>
+                              <nameEntrySet>
+                                 <nameEntry languageOfElement="spa" preferredForm="false">
+                                    <part>Archivo General de las Indias</part>
+                                    <useDates>
+                                       <date>No data</date>                                                   
+                                    </useDates>
+                                 </nameEntry>
+                                 <nameEntry languageOfElement="spa" preferredForm="false">
+                                    <part>Archivo de las Indias</part>
+                                    <useDates>
+                                       <date>No data</date>   
+                                    </useDates>
+                                 </nameEntry>
+                                 <nameEntry languageOfElement="spa" preferredForm="false">
+                                    <part>Archivo de Indias</part>
+                                    <useDates>
+                                       <date>No data</date>                           
+                                    </useDates>
+                                 </nameEntry>
+                              </nameEntrySet>
+                              <repositoryId countryCode="ES" repositoryCode="41091.AGI"/>                
+                           </identity>
+                        </repository>
+                     </repositories>
+                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-image">
@@ -4620,7 +4660,7 @@
                   <p>Name Entry</p>
                </div>
                <div type="summary">
-                  <p>An element containing a name entry for a corporate body, person, or family.</p>
+                  <p>An element containing a name entry for repositories</p>
                </div>
                <div type="mayContain">
                   <p>part (1..n), useDates (0..n)</p>
@@ -4628,45 +4668,46 @@
                <div type="mayOccurWithin">
                   <p>identity, nameEntrySet</p>
                </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>conventionDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>localType</label>
-                        <item>Optional</item>
-                        <label>localTypeDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>preferredForm</label>
-                        <item>Optional (values limited to: false, true)</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
-                        <item>Optional</item>
-                        <label>status</label>
-                        <item>Optional (values limited to: alternative, authorized)</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                        <label>valueURI</label>
-                        <item>Optional</item>
-                        <label>vocabularySource</label>
-                        <item>Optional</item>
-                        <label>vocabularySourceURI</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
+                  <div type="attributes">
+                     <p>
+                        <list type="gloss">
+                           <label>audience</label>
+                           <item>Optional (values limited to: external, internal)</item>
+                           <label>conventionDeclarationReference</label>
+                           <item>Optional</item>
+                           <label>id</label>
+                           <item>Optional</item>
+                           <label>languageOfElement</label>
+                           <item>Optional</item>
+                           <label>localType</label>
+                           <item>Optional</item>
+                           <label>localTypeDeclarationReference</label>
+                           <item>Optional</item>
+                           <label>maintenanceEventReference</label>
+                           <item>Optional</item>
+                           <label>preferredForm</label>
+                           <item>Optional (values limited to: false, true)</item>
+                           <label>scriptOfElement</label>
+                           <item>Optional</item>
+                           <label>sourceReference</label>
+                           <item>Optional</item>
+                           <label>status</label>
+                           <item>Optional (values limited to: alternative, authorized)</item>
+                           <label>target</label>
+                           <item>Optional</item>
+                           <label>valueURI</label>
+                           <item>Optional</item>
+                           <label>vocabularySource</label>
+                           <item>Optional</item>
+                           <label>vocabularySourceURI</label>
+                           <item>Optional</item>
+                        </list>
+                     </p>
+                  </div>
                </div>
                <div type="description">
                   <p>Within <gi>identity</gi>, the element <gi>nameEntry</gi> is used to record a
-                     name by which the corporate body, person, or family described in the EAC-CPF
+                     name by which the repositories described in the EAG
                      instance is known.</p>
                   <p>When <gi>nameEntry</gi> occurs within <gi>nameEntrySet</gi> it is used to
                      record two or more forms of a name, for example official and non-official forms of the
@@ -4686,7 +4727,7 @@
                <div type="attributeusage">
                   <list type="simple">
                      <item>The <att>status</att> attribute may be used to indicate whether the
-                           <gi>nameEntry</gi> is an authorized or alternative form of the
+                        <gi>nameEntry</gi> is an authorized or alternative form of the
                         name.</item>
                      <item>The <att>scriptOfElement</att> and <att>languageOfElement</att>
                         attributes can be used to specify the script and language of each name
@@ -4701,44 +4742,12 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eac-cpf:conventionDeclaration audience="external" id="cd1"
-                        localType="transliteration">
-                        <eac-cpf:abbreviation>DIN 32708:2014</eac-cpf:abbreviation>
-                        <eac-cpf:citation href="https://www.iso.org/standard/9029.html">Information
-                           and documentation - Romanization of Japanese</eac-cpf:citation>
-                        <eac-cpf:descriptiveNote id="dn1">
-                           <p id="p1" languageOfElement="de">Angewendet werden nur die eigentlichen
-                              Umschriftvorgaben, nicht aber die Regeln zur Wortbildungin der
-                              lateinischen Umschrift. Diese erfolgt analog der Praxis von
-                              NACSIS.</p>
-                        </eac-cpf:descriptiveNote>
-                     </eac-cpf:conventionDeclaration> [...] <eac-cpf:nameEntrySet
-                        localType="parallel">
-                        <eac-cpf:nameEntry languageOfElement="de" scriptOfElement="Latn"
-                           preferredForm="true" status="authorized" localType="native">
-                           <eac-cpf:part localType="surname">Arendt</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">Hannah</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry languageOfElement="ja" scriptOfElement="Jpan"
-                           preferredForm="false" status="authorized"
-                           conventionDeclarationReference="#cd1">
-                           <eac-cpf:part localType="surname">?????</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">??</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry languageOfElement="en" scriptOfElement="Latn"
-                           preferredForm="false" status="authorized">
-                           <eac-cpf:part localType="surname">Arendt</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">Hannah</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:useDates>
-                           <eac-cpf:dateRange>
-                              <eac-cpf:fromDate standardDate="1906">1906</eac-cpf:fromDate>
-                              <eac-cpf:toDate standardDate="1975">1975</eac-cpf:toDate>
-                           </eac-cpf:dateRange>
-                        </eac-cpf:useDates>
-                     </eac-cpf:nameEntrySet>
-                  </egXML>
-               </div>
+                     <identity>
+                        <nameEntry languageOfElement="ger" status="authorized">
+                           <part>Bundesarchiv</part>
+                        </nameEntry>
+                      </identity>
+                  </egXML>               
             </div>
             <div type="elementDocumentation" xml:id="elem-nameEntrySet">
                <!-- Ana (edit), Codruta (review) -->
@@ -4793,7 +4802,7 @@
                </div>
                <div type="description">
                   <p>A wrapper element used to group two or more <gi>nameEntry</gi> elements
-                     representing parallel or other forms of the name for the same CPF entity which are used
+                     representing parallel or other forms of the name for the same repositories entities which are used
                      at the same time (e.g., official and non-official forms of the name in different languages
                      and/or scripts).</p>
                   <p>The <gi>nameEntrySet</gi> element may contain a <gi>useDates</gi> element to
@@ -4810,7 +4819,60 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <identity>
+                       <nameEntrySet>
+                        <nameEntry languageOfElement="eng" status="alternative">
+                           <part>The Federal Archives</part>
+                        </nameEntry>
+                        <nameEntry languageOfElement="fre" status="alternative">
+                           <part>Les Archives fédérales</part>
+                        </nameEntry>
+                        <nameEntry languageOfElement="spa" status="alternative">
+                           <part>Archivo federal</part>
+                        </nameEntry>
+                        <nameEntry languageOfElement="pol" status="alternative">
+                           <part>Archiwum Federalne</part>
+                        </nameEntry>
+                     </nameEntrySet>
+                     <nameEntrySet>
+                        <nameEntry languageOfElement="ger" preferredForm="false">
+                           <part>Reichsarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1919">1919</fromDate>
+                                 <toDate standardDate="1945">1945</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                        <nameEntry languageOfElement="ger" preferredForm="false">
+                           <part>Reichsfilmarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1935">1935</fromDate>
+                                 <toDate standardDate="1945">1945</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                        <nameEntry languageOfElement="ger" preferredForm="false">
+                           <part>Deutsches Zentralarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1946">1946</fromDate>
+                                 <toDate standardDate="1973">1973</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                        <nameEntry languageOfElement="ger" status="alternative">
+                           <part>Zentrales Staatsarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1973">1973</fromDate>
+                                 <toDate standardDate="1990">1990</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                     </nameEntrySet>
+                    </identity>
                   </egXML>
                </div>
             </div>
@@ -5139,6 +5201,26 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -5151,98 +5233,162 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
-                           <eag:repositoryId countryCode="ES" repositoryCode="ES-8019-ACA6"/>
-                           <eag:otherRepositoryId>ES.08019.ACA</eag:otherRepositoryId>
-                        </eag:identity>
-                        <eag:description>
-                           [...]
-                        </eag:description>
-                     </eag:repository>
+                        <identity>
+                           <nameEntry status="authorized" languageOfElement="eng">
+                              <part>University of Bradford Special Collections</part>
+                           </nameEntry>
+                           <repositoryId countryCode="GB" repositoryCode="ah532"/>
+                           <otherRepositoryId vocabularySource="archon">532</otherRepositoryId>
+                           <otherRepositoryId vocabularySource="mainangencycode">532</otherRepositoryId>
+                           <otherRepositoryId vocabularySource="hubdata">bradford</otherRepositoryId>
+                           <repositoryType value="universityArchives"/>
+                        </identity>
                   </egXML>
                </div>
             </div>
-            <div type="elementDocumentation" xml:id="elem-otherRepositoryType">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
+         <div type="elementDocumentation" xml:id="elem-otherRepositoryType">
+            <!-- Ana (edit), Codruta (review) -->
+            <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
                     needs completion for various parts -->
-               <head>
-                  <gi>otherRepositoryType</gi>
-               </head>
-               <div type="fullName">
-                  <p>Other Repository Type</p>
-               </div>
-               <div type="summary">
-                  <p></p>
-               </div>
-               <div type="mayContain">
-                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>otherRepositoryTypes</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p></p>
-               </div>
-               <div type="availability">
-                  <p>Required, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <head>
+               <gi>otherRepositoryType</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Type</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
+            <div type="summary">
+               <p>Others Repository Type of the Archival Institucion or translations or equivalents of the Repository Type</p>
+            </div>
+            <div type="mayContain">
+               <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>otherRepositoryTypes</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                     <label>valueURI</label>
+                     <item>Optional</item>
+                     <label>vocabularySource</label>
+                     <item>Optional</item>
+                     <label>vocabularySourceURI</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>Requires at least one <gi>term </gi> element to be present and allows for this to be repeated</p>
+               <p>The prescribed order of all child elements is:</p>
+               <list type="simple">
+                  <item><gi>term</gi></item>
+                  <item><gi>date</gi> or <gi>dateSet</gi> or <gi>dateRange</gi></item>
+                  <item><gi>placeName</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Required, repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <identity>
+                     <repositoryType value="nationalArchives"/>
+                     <otherRepositoryTypes>
+                        <otherRepositoryType>languageOfElement="spa"> Archivos Nacionales</otherRepositoryType>
+                        <term>valueURI="http://censoarchivos.mcu.es/CensoGuia/archivodetail.htm?id=10> vocabularySource="GND"> Archivos Generales y Centrales</term>
+                        <descriptiveNote>In Spain, the category of National Archives is called General and Central Archives.</descriptiveNote>
+                     </otherRepositoryTypes>
+                  </identity>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
+            <!-- Ana (edit), Codruta (review) -->
+            <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
                     needs completion for various parts -->
-               <head>
-                  <gi>otherRepositoryTypes</gi>
-               </head>
-               <div type="fullName">
-                  <p>Other Repository Types</p>
-               </div>
-               <div type="summary">
-                  <p></p>
-               </div>
-               <div type="mayContain">
-                  <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>identity</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p></p>
-               </div>
-               <div type="availability">
-                  <p>Optional, not repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <head>
+               <gi>otherRepositoryTypes</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Types</p>
             </div>
+            <div type="summary">
+               <p>Wrapper element to group several alternative repository types of the Archival Institucion or translations or equivalents of the Repository Type in order to not sound too repetitive </p>
+            </div>
+            <div type="mayContain">
+               <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>identity</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>Use the element <gi>otherRepositoryTypes</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
+               <p>Requires at least one <gi>otherRepositoryType</gi> element to be present and allows for this to be repeated</p>
+               <p> Includes optional, not repeatable <gi>descriptiveNote</gi></p>
+               <p>The prescribed order of all child elements is:</p>
+               <list type="simple">
+                  <item><gi>otherRepositoryType</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Optional, not repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <identity>
+                     <repositoryType value="nationalArchives"/>
+                     <otherrepositorytypes>
+                        <otherrepositorytype> languageOfElement="spa" Archivos Nacionales</otherrepositorytype>
+                        <descriptiveNote> Translation of National Archives to the spanish</descriptiveNote>
+                     </otherrepositorytypes>
+                  </identity>
+               </egXML>
+            </div>
+         </div>
             <div type="elementDocumentation" xml:id="elem-otherServices">
                <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
@@ -6181,7 +6327,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>relations</gi> for describing a relationship
-                     between the entity described in the EAC-CPF instance and a related entity.</p>
+                     between the entity described in the EAG instance and a related entity.</p>
                </div>
                <div type="mayContain">
                   <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), objectXMLWrap
@@ -6214,16 +6360,12 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>relation</gi> records descriptive information about a relationship between
-                     the entity being described and a related entity, such as: a corporate body,
-                     person, or family; a function; or an archival, bibliographic, or other
-                     resource.</p>
                   <p>Use the required child element <gi>targetEntity</gi> to provide a textual
                      identification of the related entity, such as a name or a title. Use the
                      optional child element <gi>relationType</gi> to specify the type of relation.
                      Use the optional child element <gi>targetRole</gi> to specify the role of the
                      related entity. It is recommended that the terms used in <gi>relationType</gi>,
-                        <gi>targetEntity</gi>, and <gi>targetRole</gi> be taken from an authorized
+                     <gi>targetEntity</gi>, and <gi>targetRole</gi> be taken from an authorized
                      vocabulary.</p>
                   <p>Use <gi>objectXMLWrap</gi> to embed XML documenting the related entity from any
                      namespace. Use <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> for
@@ -6245,7 +6387,21 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <relation>
+                        <targetEntity targetType="person" valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/141923?nm">
+                          <part>Juan de Herrera</part> 
+                       </targetEntity> 
+                       <dateRange>1583-1646</dateRange>
+                       <place>
+                           <address>languageOfElement="spa">Avenida de la Constitución s/n</address>
+                           <geographicCoordinates>coordinateSystem="WGS84">37.384353, 5.992893</geographicCoordinates>
+                           <placeName>languageOfElement="spa">Casa Lonja de Sevilla</placeName>
+                       </place>
+                       <relationType>is the architect of</relationType>
+                       <targetRole> languageOfElement="spa"> Juan de Herrera fue el encargado del diseño del edificio de la Lonja</targetRole> 
+                       <descriptiveNote> languageOfElement="spa"> Juan de Herrera fue uno de los arquitectos más representativo del reinado de Felipe II en España. Su obra más conocida fue el Monasterio de el Escorial (Madrid, España).
+                           Es el arquitecto de uno de los edificios que forman el Archivo General de Indias, conocido como el edificio de "La Lonja", ya que fue sede de la antigua "Lonja de Mercaderes" de Sevilla</descriptiveNote>
+                     </relation> 
                   </egXML>
                </div>
             </div>
@@ -6263,7 +6419,7 @@
                   <p>Relations</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>cpfDescription</gi> that groups one or more
+                  <p>An optional child element of <gi>repository</gi> or <gi>repositories</gi> that groups one or more
                         <gi>relation</gi> elements, which identify external entities and
                      characterize the nature of their relationships to the entity being
                      described.</p>
@@ -6272,15 +6428,13 @@
                   <p>descriptiveNote (0..1), relation (1..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>cpfDescription</p>
+                  <p>repository,repositories</p>
                </div>
                <div type="attributes">
                   <p>
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                        <label>base</label>
-                        <item>Optional</item>
                         <label>conventionDeclarationReference</label>
                         <item>Optional</item>
                         <label>id</label>
@@ -6301,7 +6455,7 @@
                <div type="description">
                   <p>A wrapper element that groups together one or more <gi>relation</gi> elements,
                      each of which encodes a specific relationship.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
+                  <p>The prescribed order of all child elements is:</p>
                   <list type="simple">
                      <item><gi>relation</gi></item>
                      <item><gi>descriptiveNote</gi></item>
@@ -6312,7 +6466,22 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <relations>
+                        <relation>
+                           <targetEntity targetType="resource" languageOfElement="eng"
+                              valueURI="http://www.bundesarchiv.de/zwangsarbeit/">
+                              <part>Portal "Forced Labour in the National Socialist State"</part>
+                           </targetEntity>
+                           <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                              creator of (RiC-R027i)</relationType>
+                        </relation>
+                        <relation>
+                           <targetEntity targetType="resource" languageOfElement="ger"
+                              valueURI="http://www.ersterweltkrieg.bundesarchiv.de/">
+                              <part>100 Jahre Erster Weltkrieg - Portal</part>
+                        </targetEntity>
+                       </relation>
+                     </relations>
                   </egXML>
                </div>
             </div>
@@ -6331,8 +6500,8 @@
                </div>
                <div type="summary">
                   <p>A child element of <gi>relation</gi> used to specify the type of relation that
-                     the entity being described within the EAC-CPF instance has to the
-                        <gi>targetEntity</gi>.</p>
+                     the entity being described within the EAG instance has to the
+                     <gi>targetEntity</gi>.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -6378,19 +6547,21 @@
                   <p>The <gi>relationType</gi> element contains a textual description of the
                      relation. It is recommended that values used in <gi>relationType</gi> be taken
                      from an authorized vocabulary.
-                     <!--Examples of relations between the entity being described and a
-                     corporate body, person or family include "identity", "hierarchical", "temporal",
-                     "family" or "associative". Relations between the entity being described and a
-                     resource could be "creatorOf", "subjectOf" or "other". Relations between the
-                     entity being described and a function could be "controls", "owns" or
-                     "performs".--></p>
+                    </p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <relation>
+                        <targetEntity targetType="resource" languageOfElement="eng"
+                           valueURI="https://invenio.bundesarchiv.de">
+                           <part>invenio - Research application of the Federal Archives</part>
+                        </targetEntity>
+                        <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                           creator of (RiC-R027i)</relationType>
+                     </relation>
                   </egXML>
                </div>
             </div>
@@ -6417,40 +6588,336 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Require at least two <gi>repository</gi> elements. If the institution only have one repository, it must be use <gi>repository</gi> element</p>
+                  <p>The prescribed order of all child elements is:</p>
+                  <list type="simple">
+                     <item><gi>repository</gi></item>
+                     <item><gi>relations</gi></item>
+                     <item><gi>image</gi></item>
+                  </list>
                </div>
                <div type="availability">
                   <p>Optional, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:eag>
-                        <eag:control>
-                           [...]
-                        </eag:control>
-                        <eag:repositories>
-                           <eag:repository>
-                              <eag:identity>
-                                 [...]
-                              </eag:identity>
-                              <eag:description>
-                                 [...]
-                              </eag:description>
-                           </eag:repository>
-                           <eag:repository>
-                              <eag:identity>
-                                 [...]
-                              </eag:identity>
-                              <eag:description>
-                                 [...]
-                              </eag:description>
-                           </eag:repository>
-                        </eag:repositories>
-                     </eag:eag>
+                       <repositories>
+                         <repository>
+                             <identity>
+                                 <nameEntry languageOfElement="spa" status="authorized">
+                                     <part>Archivo General de Indias</part>
+                                 </nameEntry>
+                                 <nameEntrySet>
+                                     <nameEntry languageOfElement="spa" preferredForm="false">
+                                         <part>Archivo General de las Indias</part>
+                                         <useDates>
+                                             <date>No data</date>                                                   
+                                         </useDates>
+                                     </nameEntry>
+                                     <nameEntry languageOfElement="spa" preferredForm="false">
+                                         <part>Archivo de las Indias</part>
+                                         <useDates>
+                                             <date>No data</date>   
+                                         </useDates>
+                                     </nameEntry>
+                                     <nameEntry languageOfElement="spa" preferredForm="false">
+                                         <part>Archivo de Indias</part>
+                                         <useDates>
+                                             <date>No data</date>                           
+                                         </useDates>
+                                     </nameEntry>
+                                 </nameEntrySet>
+                                     <repositoryId countryCode="ES" repositoryCode="41091.AGI"/>                
+                             </identity>
+                             <description>
+                                 <places>
+                                     <place>
+                                         <address localType="postal address">
+                                             <addressLine addressLineType="country" languageOfElement="spa"
+                                                 >España</addressLine>
+                                             <addressLine addressLineType="region" languageOfElement="spa"
+                                                 >Comunidad Autónoma de Andalucía</addressLine>
+                                             <addressLine addressLineType="county" languageOfElement="spa"
+                                                 >Sevilla</addressLine>
+                                             <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                                 >41071</addressLine>
+                                             <addressLine addressLineType="municipality" languageOfElement="spa"
+                                                 >Sevilla</addressLine>
+                                             <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
+                                         </address>
+                                         <address localType="visitors address">
+                                             <addressLine addressLineType="country" languageOfElement="spa"
+                                                 >España</addressLine>
+                                             <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                                 >41071</addressLine>
+                                             <addressLine addressLineType="municipality" languageOfElement="spa"
+                                                 >Sevilla</addressLine>
+                                             <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
+                                         </address>
+                                         <contact>
+                                             <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
+                                             <contactLine contactLineType="fax">+34 954219485</contactLine>
+                                             <contactLine contactLineType="email" href="agi1@cultura.gob.es">
+                                                 >agi1@cultura.gob.es</contactLine>
+                                             <contactLine contactLineType="email" href="agi2@cultura.gob.es">
+                                                 >Contacte con el Archivo General de Indias</contactLine>                            
+                                             <contactLine contactLineType="homepage" languageOfElement="spa"
+                                                 href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
+                                                 > Página web del Archivo General de Indias
+                                             </contactLine>            
+                                        </contact>                     
+                                     </place>                  
+                                 </places>
+                                 <access question="yes"/>
+                                 <timetable>
+                                     <opening languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Investigadores: Sede de La Cilla del Cabildo: Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas // Visitas: Sede de La Lonja: El horario de apertura es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas.</opening>
+                                     <closing languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Investigadores: Sede de La Cilla: Sábados y Domingos. Festivos: 1 y 6 de enero, 28 de febrero, Jueves y Viernes Santo, 1 mayo, 30 de mayo (Fiesta Local. Movible si conicide con Festivo), Corpus Christi, 15 de agosto, 1 de noviembre, 6, 8, 24, 25 y 31 de diciembre. Visitas: Sede de La Lonja: 24, 25 y 31 de diciembre. 1 y 6 de enero. Jueves y Viernes Santo. </closing>
+                                 </timetable>
+                                 <mandates>
+                                     <mandate>
+                                         <term languageOfElement="spa">Ordenanzas para el Archivo General de Indias.</term>
+                                         <date>1785-10-14 00:00:00.0</date>
+                                         <descriptiveNote>
+                                             <p languageOfElement="spa">Madrid, 10 de enero de 1790.</p>
+                                         </descriptiveNote>
+                                     </mandate>
+                                 </mandates>
+                                  <accessibility question="yes"></accessibility>
+                                  <existDates>
+                                     <dateRange>
+                                         <fromDate standardDate="1785-10-14">1785-10-14</fromDate>
+                                     </dateRange>
+                                 </existDates>
+                                 <repositoryRole>Head quarter</repositoryRole>
+                                 <biogHist>
+                                     <p languageOfElement="spa">El Archivo General de Indias fundamentalmente custodia los fondos producidos por las instituciones creadas por la Administración española para el gobierno y administración de los territorios ultramarinos españoles. Estas instituciones son: Consejo de Indias y Secretarías de Despacho, Casa de la Contratación y Consulados de Sevilla y Cádiz. Asimismo, se conservan otros fondos de instituciones de menor entidad e incluso de particulares relacionados con las colonias españolas en América y Asia</p>
+                                     <p languageOfElement="spa">La finalidad de este Archivo es la conservación de estos fondos y, mediante su organización y descripción, favorecer su difusión para todos los ciudadanos.</p>
+                                     <p languageOfElement="spa">Nace en 1785 por deseo del rey Carlos III, con el objeto de reunir en un solo lugar los documentos referentes a Indias hasta entonces dispersos en Simancas, Cádiz y Sevilla. El impulsor del proyecto fue don José de Gálvez, secretario de Indias, y el ejecutor del mismo fue el académico e historiador don Juan Bautista Muñoz, cosmógrafo mayor de Indias. El espléndido edificio, la Casa Lonja de Sevilla, que se construyó en época de Felipe II sobre planos de Juan de Herrera sirve hasta hoy como sede del Archivo.</p>
+                                     <p languageOfElement="spa">Desde 1785, y en distintas remesas, se van incorporando los fondos. En la actualidad conserva más de cuarenta y tres mil legajos, instalados en ocho kilómetros lineales de estanterías, con unos ochenta millones de páginas de documentos originales que permiten a diario profundizar en más de tres siglos de historia de todo un continente, desde Tierra de Fuego hasta el sur de Estados Unidos, además del Extremo Oriente español, las Filipinas: la historia política y la historia social, la historia económica y la de las mentalidades, la historia de la Iglesia y la historia del arte... Los más variados temas ocupan el interés de los miles de investigadores que pasan por el Archivo: desde el descubrimiento, exploración y conquista del Nuevo Mundo hasta la independencia; desde las instituciones políticas indianas hasta la historia de los pueblos precolombinos; desde el intercambio comercial a los problemas de tráfico marítimo; desde la expansión misionera hasta los aspectos inquisitoriales. Tantos y tantos temas en los que el Archivo General de Indias va contribuyendo a lo largo del tiempo para obtener la más completa y documentada visión histórica de la Administración española del Nuevo Mundo.</p>
+                                 </biogHist>    
+                                 <structureOrGenealogy>
+                                     <p languageOfElement="spa">Dirección</p> 
+                                     <p languageOfElement="spa">Subdirección</p>
+                                     <p languageOfElement="spa">Departamento de Referencias</p>
+                                     <p languageOfElement="spa">Departamento de Coordinación y Normalización</p>
+                                     <p languageOfElement="spa">Departamento de Conservación</p>
+                                     <p languageOfElement="spa">Servicio de Sistemas Informáticos</p>
+                                 </structureOrGenealogy>
+                                 <holdings>
+                                     <dateRange>
+                                         <fromDate>Fecha del documento más antiguo : 1439-01-01</fromDate>
+                                         <toDate>Fecha del documento más reciente : 1966-01-01</toDate>
+                                     </dateRange>
+                                     <extent>
+                                         <num unit="linearmetre">8906</num>
+                                     </extent>
+                                     <descriptiveNote>
+                                         <p languageOfElement="spa">Los documentos que hoy conserva el Archivo proceden fundamentalmente de los siguientes organismos metropolitanos:</p>
+                                         <p languageOfElement="spa"> Consejo de Indias, siglos XVI-XIX</p>
+                                         <p languageOfElement="spa"> Casa de la Contratación, siglos XVI-XVIII</p>
+                                         <p languageOfElement="spa">Consulados de Sevilla y Cádiz, siglos XVI-XIX</p>
+                                         <p languageOfElement="spa"> Secretarías de Estado y del Despacho Universal de Indias, de Estado, de Gracia y Justicia, Hacienda y Guerra, siglos XVIII-XIX</p>
+                                         <p languageOfElement="spa">Secretaría del Juzgado de Arribadas, siglos XVIII-XIX</p>
+                                         <p languageOfElement="spa"> Comisaría Interventora de la Hacienda Pública de Cádiz, siglos XVIII-XIX</p>
+                                         <p languageOfElement="spa"> Dirección General de la Renta de Correos, siglos XVIII-XIX</p>
+                                         <p languageOfElement="spa"> Tribunal de Cuentas, Sala de Ultramar, siglo XIX</p>
+                                         <p languageOfElement="spa"> Real Compañía de la Habana, siglos XVIII-XIX</p>
+                                      </descriptiveNote>
+                                 </holdings>  
+                                 <services>
+                                     <searchroom question="yes">
+                                         <workPlaces question="yes">
+                                             <num unit="site">40</num>
+                                             <computerPlaces>
+                                                 <num unit="site">40</num>
+                                             </computerPlaces>
+                                             <microfilmPlaces>
+                                                 <num unit="site">1</num>
+                                             </microfilmPlaces>
+                                         </workPlaces>
+                                         <photographAllowance question="no"/>
+                                         <advancedOrders question="yes" languageOfElement="spa"
+                                             >El usuario pueden realizar tanto petición anticipada de la documentación como reserva de la misma cuando asisten a la Sala.</advancedOrders>
+                                     </searchroom>
+                                     <library question="yes">
+                                         <contact>
+                                             <contactLine contactLineType="homepage"
+                                                 href="http://www.mcu.es/ccbae/es/consulta/busqueda.cmd">Catálogo de las bobliotecas de los archivos Estatales</contactLine>
+                                         </contact>
+                                         <descriptiveNote>
+                                             <p languageOfElement="spa">40.788 libros, 2.319 título seriados</p>
+                                         </descriptiveNote>
+                                     </library>
+                                     <technicalServices>
+                                         <restorationLaboratory question="yes"/>
+                                         <reproductionServices question="yes">
+                                             <descriptiveNote>
+                                                 <p languageOfElement="spa"> Se realizan fotocopias y copias digitales</p>
+                                             </descriptiveNote>
+                                         </reproductionServices>
+                                     </technicalServices>
+                                     <recreationalServices>
+                                         <exhibition question="yes" languageOfElement="spa"> Posee sala de exposiciones</exhibition>
+                                         <toursSessions question="yes" languageOfElement="spa">Se realizan visitas guiadas.</toursSessions>  
+                                         <otherServices question="yes" languageOfElement="spa"> El centro también cuenta con Aula didáctica y salón de actos </otherServices>
+                                     </recreationalServices>
+                                 </services>
+                             </description>
+                         </repository>
+                         <repository>
+                             <identity>
+                                 <nameEntry>
+                                     <part>Sede La Cilla del Cabildo</part>
+                                     <part>Sede para los visitantes</part>
+                                 </nameEntry>
+                             </identity>
+                             <description>
+                                 <places>
+                                     <place>
+                                         <address localType="visitors address">
+                                             <addressLine addressLineType="country" languageOfElement="spa"
+                                                 >España</addressLine>
+                                             <addressLine addressLineType="region" languageOfElement="spa"
+                                                 >Comunidad Autónoma de Andalucía</addressLine>
+                                             <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                                 >41071</addressLine>
+                                             <addressLine addressLineType="municipality" languageOfElement="spa"
+                                                 >Sevilla</addressLine>
+                                             <addressLine addressLineType="street" languageOfElement="spa"
+                                                 >Santo Tomás, 5</addressLine>
+                                         </address>
+                                          <address localType="postal address">
+                                                 <addressLine addressLineType="country" languageOfElement="spa"
+                                                     >España</addressLine>
+                                                 <addressLine addressLineType="region" languageOfElement="spa"
+                                                     >Comunidad Autónoma de Andalucía</addressLine>
+                                                 <addressLine addressLineType="postBox" languageOfElement="spa"
+                                                     >41071</addressLine>
+                                                 <addressLine addressLineType="municipality" languageOfElement="spa"
+                                                     >Sevilla</addressLine>
+                                                 <addressLine addressLineType="street" languageOfElement="spa"
+                                                     >Santo Tomás, 5</addressLine>
+                                         </address>
+                                         <geographicCoordinates coordinateSystem="WGS84">37.384353, 5.992893</geographicCoordinates>
+                                         <contact>
+                                             <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
+                                             <contactLine contactLineType="fax">+34 954219485</contactLine>
+                                             <contactLine contactLineType="email" href="agi2@cultura.gob.es">agi2@cultura.gob.es</contactLine>
+                                             <contactLine contactLineType="homepage" languageOfElement="spa"
+                                                 href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
+                                              > Página web del Archivo General de Indias</contactLine>
+                                         </contact>
+                                     </place>
+                                 </places>
+                                 <access question="yes"/>
+                                 <timetable>
+                                     <opening languageOfElement="spa">Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas</opening>
+                                     <closing languageOfElement="spa">Sábados y Domingos. Festivos: 1 y 6 de enero, 28 de febrero, Jueves y Viernes Santo, 1 mayo, 30 de mayo (Fiesta Local. Movible si conicide con Festivo), Corpus Christi, 15 de agosto, 1 de noviembre, 6, 8, 24, 25 y 31 de diciembre.</closing>
+                                 </timetable>
+                                 <repositoryRole>branch</repositoryRole>
+                                 <accessibility question="yes"/>
+                                 <biogHist>
+                                     <p languageOfElement="spa">El edificio conocido como la Cilla, ubicado en un lateral del edificio principal y al otro lado de la calle, ha sido remodelado para garantizar la compatibilidad de las funciones administrativas y de investigación con el desarrollo de las visitas y las exposicines en el edificio de La Lonja.</p>
+                                     <p languageOfElement="spa"> Actualmente es el edificio que alberga la sala de investigadores.</p>
+                                 </biogHist>    
+                                 <buildingInfo>
+                                     <building languageOfElement="spa">El edificio de la Cilla del Cabildo se apoya en el paño de muralla que del Alcázar parte hacia la Torre del Oro. De planta rectangular, la baja sobre pilares y la primera sobre columnas, con bóvedas baídas. La construcción cuenta también con dos niveles añadidos, uno bajo la cubierta, y un sótano. Diversas han sido las funcionalidades que ha tenido este emplazamiento, desde su adscripción al cabildo, su utilización desde 1972 por el Ayuntamiento de Sevilla como sede del Museo de Arte Contemporáneo de Sevilla y, en la actualidad, sede del Archivo General de Indias.
+                                     </building>
+                                     <lengthOfShelves>
+                                         <num unit="linearmetre">1369.0</num>
+                                     </lengthOfShelves>
+                                     <repositoryArea>
+                                         <num unit="squaremetre">2193.0
+                                         </num>
+                                     </repositoryArea>
+                                 </buildingInfo>
+                             </description>
+                         </repository>
+                         <repository>
+                             <identity>
+                                 <nameEntry>
+                                         <part>Sede La Lonja</part>
+                                         <part>Sede para los visitantes</part>
+                                     </nameEntry>
+                             </identity>
+                             <description>
+                                     <places>
+                                         <place>
+                                             <address localType="visitors address">
+                                                 <addressLine addressLineType="country" languageOfElement="spa"
+                                                     >España</addressLine>
+                                                 <addressLine addressLineType="region" languageOfElement="spa"
+                                                     >Comunidad Autónoma de Andalucía</addressLine>
+                                                 <addressLine addressLineType="postalCode" languageOfElement="spa"
+                                                     >41071</addressLine>
+                                                 <addressLine addressLineType="municipality" languageOfElement="spa"
+                                                     >Sevilla</addressLine>
+                                                 <addressLine addressLineType="street" languageOfElement="spa"
+                                                     >Avenida de la Constitución s/n</addressLine>
+                                             </address>
+                                             <address localType="postal address">
+                                                 <addressLine addressLineType="country" languageOfElement="spa"
+                                                     >España</addressLine>
+                                                 <addressLine addressLineType="region" languageOfElement="spa"
+                                                     >Comunidad Autónoma de Andalucía</addressLine>
+                                                 <addressLine addressLineType="postBox" languageOfElement="spa"
+                                                     >41071</addressLine>
+                                                 <addressLine addressLineType="municipality" languageOfElement="spa"
+                                                     >Sevilla</addressLine>
+                                                 <addressLine addressLineType="street" languageOfElement="spa"
+                                                     >Avenida de la Constitución s/n</addressLine>
+                                             </address>
+                                             <geographicCoordinates coordinateSystem="WGS84">37.384816, 5.993456</geographicCoordinates>
+                                             <contact>
+                                                 <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
+                                                 <contactLine contactLineType="fax">+34 954219485</contactLine>
+                                                 <contactLine contactLineType="email" href="agi2@cultura.gob.es">agi2@cultura.gob.es</contactLine>
+                                                 <contactLine contactLineType="homepage" languageOfElement="spa"
+                                                     href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
+                                                     > Página web del Archivo General de Indias</contactLine>
+                                             </contact>
+                                         </place>
+                                     </places>
+                                     <access question="yes"/>
+                                     <timetable>
+                                         <opening languageOfElement="spa">El horario de apertura de visitas al edificio es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas</opening>
+                                         <closing languageOfElement="spa">24, 25 y 31 de diciembre. 1 y 6 de enero. Jueves y Viernes Santo</closing>
+                                     </timetable>
+                                     <repositoryRole>branch</repositoryRole>
+                                     <accessibility question="yes"/>
+                                     <biogHist>
+                                         <p languageOfElement="spa">El edificio que hoy alberga el Archivo fue construido para alojar el cada vez mayor número de comerciantes que, reunidos en torno a la Universidad de Mercaderes primero y tras 1546 constituidos como consulado, necesitaban un espacio propio para celebrar sus tratos y resolver sus pleitos. El conflicto generado entre el cabildo de la catedral y los mercaderes por la ocupación de los espacios sagrados de la catedral para menesteres tan poco piadosos como los que guiaban a los comerciantes dio el definitivo empuje para que en 1583 comenzaran las obras de construcción de la Lonja de Mercaderes.</p>
+                                         <p languageOfElement="spa">  El arquitecto real, Juan de Herrera, fue el encargado del diseño de un edificio cuya construcción se prolongó hasta 1646. A cargo de las obras estuvieron varios prestigiosos arquitectos como Juan de Minjares, Alonso de Vandelvira y Miguel de Zumárraga quienes, sobre todo este último, alteraron algunas de las ideas del proyecto original al introducir elementos innovadores en su construcción, como el abovedamiento de la planta superior, para aligerar la habitual solución herreriana de techo a dos aguas, más pesada y que presentaba un mayor riesgo de incendio.</p>
+                                         <p languageOfElement="spa"> La segunda mitad del siglo XVII trajo consigo la decadencia política y comercial del imperio español que, inevitablemente, debía causar contraste con la reciente finalización de las obras de la lonja. En 1717 la sede del comercio ultramarino se traslada a Cádiz, quedando en Sevilla únicamente una Diputación de Comercio. La infrautilización del edificio fue tan manifiesta que llegaron a habilitarse viviendas particulares en su interior mientras que la institución que promovió su construcción periclitaba.</p>
+                                         <p languageOfElement="spa"> La elección en 1781 de la Lonja de Mercaderes de Sevilla como sede del gran proyecto ilustrado que iba a ser el Archivo General de Indias detuvo la degradación del edificio. Una vez desalojados los inquilinos y dividido el espacio entre la Diputación de Comercio y el emplazamiento del archivo y sus dependencias, Lucas Cintora, arquitecto de los Reales Alcázares, acometió una audaz obra de readaptación del edificio para servir a los fines de depósito documental. Su discutida intervención procuró por un lado recuperar en la medida de lo posible el proyecto de Juan de Herrera, devolviendo la diafanidad a las galerías y por otro lado reformar la escalera de acceso confiriéndole con un generoso revestimiento de mármol la actual suntuosidad.</p>
+                                         <p languageOfElement="spa"> Actualmente es el edificio que alberga las exposiciones y donde se reciben las visitas. Además en éste se encuentra el depósito de documentos</p>
+                                     </biogHist>    
+                                     <buildingInfo>
+                                         <building languageOfElement="spa">En planta cuadrada, de 56 metros de lado, con dos alturas sobre lonja rodeada de columnas con cadenas, el edificio del Archivo consiste fundamentalmente en un patio central rodeado por dos naves cuadrangulares, una interior y otra exterior. Todo el edificio es de piedra, con dos plantas abovedadas comunicadas por la escalera monumental.</building>
+                                         <building languageOfElement="spa">Recientemente el Ministerio de Cultura ha acometido obras de remodelación en el edificio con el propósito de modernizar sus instalaciones, mejorar el depósito de los documentos y adecuar las galerías exteriores de la planta superior para la instalación de exposiciones temporales, en lo que constituye un itinerario para visitas que recorre todo el edificio.
+                                         </building>
+                                         <lengthOfShelves>
+                                             <num unit="linearmetre">10462.0</num>
+                                         </lengthOfShelves>
+                                         <repositoryArea>
+                                             <num unit="squaremetre">5872.0 </num>
+                                         </repositoryArea>
+                                     </buildingInfo>
+                                 </description>   
+                              </repository>
+                        </repositories>
                   </egXML>
                </div>
             </div>
@@ -6477,11 +6944,37 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Information on one archival repository. A <gi>repository</gi>> can represent an archival institution as a whole as well as only one part of an archival institution depending on its administrative structure.</p>
+                  <p>Information on one archival repository. If the institution had two or more repositories, it must be use <gi>repositories</gi> element.</p>
+                  <p>A <gi>repository</gi>> can represent an archival institution as a whole as well as only one part of an archival institution depending on its administrative structure.</p>
+                  <p>The required child element <gi>identity</gi> and <gi>description</gi> encode the name or
+                     names related to the repository and descriptive the information about it. The optional
+                     <gi>images</gi> element can be used to  include the logo or other imagery representation of the institution.</p>
+                  <p>The relation with other entities can be represented in the <gi>relations</gi> element.</p>
+                  <p>The prescribed order of all child elements is:</p>
+                     <list type="simple">
+                        <item><gi>identity</gi></item>
+                        <item><gi>description</gi></item>
+                        <item><gi>relations</gi></item>
+                        <item><gi>image</gi></item>
+                     </list>
                </div>
                <div type="availability">
                   <p>Within <gi>eag</gi>: one of <gi>repository</gi> or <gi>repositories</gi> required, not repeatable</p>
@@ -6489,23 +6982,88 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:eag>
-                        <eag:control>
-                           [...]
-                        </eag:control>
-                        <eag:repository>
-                           <eag:identity>
-                              [...]
-                           </eag:identity>
-                           <eag:description>
-                              [...]
-                           </eag:description>
-                           <eag:relations>
-                              [...]
-                           </eag:relations>
-                           <eag:image href="[link]"/>
-                        </eag:repository>
-                     </eag:eag>
+                     <repository>
+                        <identity>
+                           <nameEntry status="authorized" languageOfElement="eng">
+                              <part>University of Bradford Special Collections</part>
+                           </nameEntry>
+                           <repositoryId countryCode="GB" repositoryCode="ah532"/>
+                           <otherRepositoryId vocabularySource="archon">532</otherRepositoryId>
+                           <otherRepositoryId vocabularySource="mainangencycode">532</otherRepositoryId>
+                           <otherRepositoryId vocabularySource="hubdata">bradford</otherRepositoryId>
+                           <repositoryType value="universityArchives"/>
+                        </identity>                        
+                        <description>
+                           <places>
+                              <place localType="visitors">
+                                 <address>
+                                    <addressLine addressLineType="street">J.B. Priestly Library</addressLine>
+                                    <addressLine addressLineType="municipality">Bradford</addressLine>
+                                    <addressLine addressLineType="county">Yorkshire</addressLine>
+                                    <addressLine addressLineType="postalCode">BD7 1DP</addressLine>
+                                    <addressLine addressLineType="country">England, UK</addressLine>
+                                 </address>                                 
+                                 <contact>
+                                    <contactLine contactLineType="email">mailto:special-collections@bradford.ac.uk</contactLine>
+                                    <contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</contactLine>
+                                    <contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</contactLine>
+                                    <contactLine contactLineType="directions"
+                                       href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</contactLine>
+                                 </contact>                                 
+                                 <geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</geographicCoordinates>                                 
+                              </place>
+                           </places> 
+                           <access languageOfElement="eng" question="yes (conditions apply)">
+                              <accessConditions>Special Collections are open to, and intended for, anyone who might benefit from using them. However, space and staffing constraints mean that appointments are required. Access is subject to preservation requirements and must also conform to the restrictions of the Data Protection Act and any other appropriate legislation.</accessConditions>
+                              <useConditions href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website for information.</useConditions>
+                           </access>
+                           <timetable>
+                              <opening languageOfElement="eng" href="http://www.bradford.ac.uk/library/special-collections/opening-hours-and-contact-details/">Please see website</opening>
+                              <closing languageOfElement="eng">Closed on public holidays.</closing>
+                           </timetable> 
+                           <accessibility languageOfElement="eng" question="yes">The Reading Room is accessible by lifts and level floors. However the layout of Floor 02 pre-dates modern standards and can be difficult for very large or long wheelchairs. We can book a back-up room with level access if necessary.</accessibility>
+                          <repositoryRole>Main Office</repositoryRole>
+                           <biogHist>
+                              <p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</p>
+                              <p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</p>
+                              <p>Since establishing the service, we have acquired other exciting resources, such
+                                 as the Commonweal Archives and the Jacquetta Hawkes Archive, and enriched those
+                                 already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</p>
+                           </biogHist>
+                           <holdings>
+                              <descriptiveNote>
+                                 <p languageOfElement="eng">Special Collections at the University of Bradford holds over 100 collections of rare books and archives on the history of the University, Bradford, Yorkshire, history, politics, literature, archaeology and much more, our best-known being the Archive of J.B. Priestley. Our collections are open to everyone and include manuscripts, letters, photographs, artworks, newspapers, maps, pamphlets, objects, pipes (Priestley's) and digital files.</p>
+                              </descriptiveNote>
+                           </holdings>
+                           <services>
+                              <searchroom question="yes">
+                                 <photographAllowance question="yes (conditions apply)">We encourage visitors to use their own devices to take images for personal research use.  This is at the discretion of the staff member on duty and subject to copyright and care.</photographAllowance>
+                                 <advancedOrders languageOfElement="eng" question="yes"
+                                    href="https://www.bradford.ac.uk/library/special-collections/visiting/">Available. Send us details of the
+                                    materials you’d like to consult. We can have them out ready for you, so you
+                                    can begin your research at once.</advancedOrders>
+                              </searchroom>
+                              <internetAccess question="yes"
+                                 href="http://www.bradford.ac.uk/library/special-collections/services/visiting/">If you wish to use wi-fi, register with one of our networks for quick access on the day.  
+                              </internetAccess>
+                              <technicalServices>
+                                 <reproductionServices question="yes"><descriptiveNote><p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography.  We need a declaration form and payment before we can go ahead with copying.  Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</p></descriptiveNote></reproductionServices>
+                              </technicalServices>
+                              <recreationalServices>
+                                 <exhibition question="yes"
+                                    href="https://www.bradford.ac.uk/library/special-collections/exhibition"
+                                    localType="onlineexhibition">
+                                    Special Collections Online Exhibitions
+                                 </exhibition>
+                                 <exhibition question="yes"
+                                    href="https://archiveshub.jisc.ac.uk/features/paxcat/"
+                                    localType="archiveshubfeature">The PaxCat Project: bringing peace archives to life
+                                 </exhibition>
+                              </recreationalServices>
+                           </services>
+                        </description>
+                        <image localType="logo" href="https://archiveshub.jisc.ac.uk/images/contrlogos/bradford.gif"/>
+                     </repository>
                   </egXML>
                </div>
             </div>
@@ -6581,6 +7139,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>countryCode</label>
+                        <item>Mandatory</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>repositoryCode</label>
+                        <item>Mandatory</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>status</label>
+                        <item>Optional (values limited to: alternative, authorized)</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -6598,14 +7182,9 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
-                           <eag:repositoryId countryCode="ES" repositoryCode="ES-8019-ACA6"/>
-                        </eag:identity>
-                        <eag:description>
-                           [...]
-                        </eag:description>
-                     </eag:repository>
+                     <identity>
+                        <repositoryId countryCode="DE" repositoryCode="DE-1958"/> 
+                     </identity>
                   </egXML>
                </div>
             </div>
@@ -6682,6 +7261,10 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -6713,17 +7296,9 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
-                           <eag:nameEntry>
-                              <eag:part>[...]</eag:part>
-                           </eag:nameEntry>
-                           <eag:repositoryType value="nationalArchives"/>
-                        </eag:identity>
-                        <eag:description>
-                           [...]
-                        </eag:description>
-                     </eag:repository>
+                     <identity>
+                        <repositoryType value="nationalArchives"/>
+                     </identity>
                   </egXML>
                </div>
             </div>
@@ -7683,7 +8258,7 @@
                </div>
                <div type="description">
                   <p><gi>targetEntity</gi> is used within <gi>relation</gi> to identify an entity
-                     that is related to the subject of the EAC-CPF instance.</p>
+                     that is related to the subject of the EAG instance.</p>
                   <p><gi>targetEntity</gi> must include at least one <gi>part</gi> element, encoding
                      the name or term for the related entity.</p>
                </div>
@@ -7700,7 +8275,14 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <relation>
+                        <targetEntity targetType="resource" languageOfElement="eng"
+                           valueURI="https://www.filmothek.bundesarchiv.de/">
+                           <part>Filmothek - Digital Film Portal</part>
+                        </targetEntity>
+                        <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                           creator of (RiC-R027i)</relationType>
+                     </relation>
                   </egXML>
                </div>
             </div>
@@ -7719,7 +8301,7 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>relation</gi> used to specify the role of a
-                     related entity towards the CPF entity being described.</p>
+                     related entity towards the repository entity being described.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -7761,7 +8343,7 @@
                </div>
                <div type="description">
                   <p><gi>targetRole</gi> is used with <gi>relation</gi> to specify the role of a
-                     related entity towards the CPF entity being described.</p>
+                     related entity towards the repository entity being described.</p>
                   <p>The <gi>targetRole</gi> element contains a textual description of the relation.
                      It is recommended that the terms in <gi>targetRole</gi> be taken from
                      authorized vocabularies.</p>
@@ -7771,7 +8353,18 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                    <relations>
+                       <relation> targetType="corporateBody" languageOfElement="spa"
+                          valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/46286?nm">
+                             <part>Consejo de Indias</part>
+                          <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                             creator of (RiC-R027i)</relationType>
+                          <targetRole>languageOfElement="eng">The "Consejo de Indias" is a creators of the documentation held in the General Archive of the Indies.</targetRole>
+                          <descriptiveNote>languageOfElement="spa"> El Archivo General de Indias fundamentalmente custodia los fondos producidos por las instituciones creadas por la Administración española 
+                           para el gobierno y administración de los territorios ultramarinos españoles. Estas instituciones son: Consejo de Indias y Secretarías de Despacho, 
+                           Casa de la Contratación y Consulados de Sevilla y Cádiz</descriptiveNote>
+                       </relation>
+                    </relations>
                   </egXML>
                </div>
             </div>
@@ -8167,8 +8760,7 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>nameEntry</gi> and <gi>nameEntrySet</gi> that
-                     provides the dates when the name or names were used for or by the CPF entity
-                     being described.</p>
+                     provides the dates when the name or names were used for or by the repository or repositories being described.</p>
                </div>
                <div type="mayContain">
                   <p>date or dateRange or dateSet (1..1)</p>
@@ -8200,19 +8792,56 @@
                </div>
                <div type="description">
                   <p>Within <gi>nameEntry</gi>, <gi>useDates</gi> provides the dates during which
-                     the name was used for or by the CPF entity. For parallel names (e.g., official
+                     the name was used for or by the repository. For parallel names (e.g., official
                      forms of the name in different languages and/or scripts), <gi>useDates</gi> may
                      occur in <gi>nameEntrySet</gi> rather than in the individual <gi>nameEntry</gi>
                      elements contained in <gi>nameEntrySet</gi>.</p>
-                  <p><gi>useDates</gi> must include one of <gi>date</gi>, <gi>dateRange</gi>, or
-                        <gi>dateSet</gi>.</p>
+                  <p><gi>useDates</gi> must include one of <gi>date</gi> when it is single date, <gi>dateRange</gi> when it is a tipe span, or
+                     <gi>dateSet</gi> when it is a combination of both.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <nameEntrySet>
+                        <nameEntry languageOfElement="ger" preferredForm="false">
+                           <part>Reichsarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1919">1919</fromDate>
+                                 <toDate standardDate="1945">1945</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                        <nameEntry languageOfElement="ger" preferredForm="false">
+                           <part>Reichsfilmarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1935">1935</fromDate>
+                                 <toDate standardDate="1945">1945</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                        <nameEntry languageOfElement="ger" preferredForm="false">
+                           <part>Deutsches Zentralarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1946">1946</fromDate>
+                                 <toDate standardDate="1973">1973</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                        <nameEntry languageOfElement="ger" status="alternative">
+                           <part>Zentrales Staatsarchiv</part>
+                           <useDates>
+                              <dateRange>
+                                 <fromDate standardDate="1973">1973</fromDate>
+                                 <toDate standardDate="1990">1990</toDate>
+                              </dateRange>
+                           </useDates>
+                        </nameEntry>
+                     </nameEntrySet>
                   </egXML>
                </div>
             </div>
@@ -8274,7 +8903,6 @@
                   </egXML>
                </div>
             </div>
-         </div>
          <div type="attributes">
             <!-- Codruta (edit), Kerstin (review) -->
             <div type="attributeDocumentation" xml:id="attr-addressLineType">
