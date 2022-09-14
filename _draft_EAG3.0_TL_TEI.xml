@@ -634,12 +634,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agencyCode">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>agencyCode</gi>
                </head>
@@ -647,9 +642,9 @@
                   <p>Agency Code</p>
                </div>
                <div type="summary">
-                  <p>A child element of <gi>maintenanceAgency</gi> that provides a code for the
+                  <p>A child element of <gi>maintenanceAgency</gi> that provides an identifier or code for the
                      institution or service responsible for the creation, maintenance, and/or
-                     dissemination of the EAC-CPF instance.</p>
+                     dissemination of the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -683,7 +678,7 @@
                </div>
                <div type="description">
                   <p>Use <gi>agencyCode</gi> to record a code indicating the institution or service
-                     responsible for the creation, maintenance and/or dissemination of the EAC-CPF
+                     responsible for the creation, maintenance and/or dissemination of the EAG
                      instance. Use of <gi>agencyCode</gi> is recommended, as the combination of
                         <gi>agencyCode</gi> and the required <gi>recordId</gi> provide a globally
                      unique identifier for the instance.</p>
@@ -712,7 +707,7 @@
                      <item>Use <gi>otherAgencyCode</gi> to record any alternative codes representing
                         the agency.</item>
                      <item>Use <gi>recordId</gi> in combination with <gi>agencyCode</gi> to provide
-                        a globally unique identifier for the EAC-CPF instance.</item>
+                        a globally unique identifier for the EAG instance.</item>
                   </list>
                </div>
                <div type="availability">
@@ -720,17 +715,33 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:maintenanceAgency>
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://www.idref.fr/services/listrcrisil">FR-751035204</eag:agencyCode>
+                        <eag:agencyName>Archives nationales</eag:agencyName>
+                        <eag:otherAgencyCode status="authorized" valueURI="https://isni.org/isni/0000000121904023" vocabularySource="ISNI" vocabularySourceURI="https://isni.oclc.org/xslt/">0000 0001 2190 4023</eag:otherAgencyCode>
+                        <eag:otherAgencyCode status="alternative">FR-FRAN</eag:otherAgencyCode>
+                     </eag:maintenanceAgency>
+                  </egXML> 
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency>
+                        <eag:agencyCode status="alternative" vocabularySource="NAD" vocabularySourceURI="https://sok.riksarkivet.se/">SE/G066</eag:agencyCode>
+                        <eag:agencyName>Kommunalförbundet Sydarkivera</eag:agencyName>
+                     </eag:maintenanceAgency>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="DE">
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://sigel.staatsbibliothek-berlin.de/de/suche" valueURI="https://ld.zdb-services.de/resource/organisations/DE-1958"/>
+                     </eag:maintenanceAgency>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="GB">
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://www.bl.uk/help/britishlibrary/~/media/5b6e3668690a4795ba50a2310e93ef1c.ashx">GB-UkYoL</eag:agencyCode>
+                     </eag:maintenanceAgency>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agencyName">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>agencyName</gi>
                </head>
@@ -740,7 +751,7 @@
                <div type="summary">
                   <p>A child element of <gi>maintenanceAgency</gi> that provides the name of the
                      institution or service responsible for the creation, maintenance, and/or
-                     dissemination of the EAC-CPF instance.</p>
+                     dissemination of the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -772,7 +783,7 @@
                </div>
                <div type="description">
                   <p>Use <gi>agencyName</gi> to record the name of the institution or service
-                     responsible for the creation, maintenance, and/or dissemination of the EAC-CPF
+                     responsible for the creation, maintenance, and/or dissemination of the EAG
                      instance. Examples include the repository name or the name of an aggregation
                      service.</p>
                   <p><gi>maintenanceAgency</gi> must include one or both of <gi>agencyName</gi> and
@@ -780,7 +791,7 @@
                   <p>It is recommended to use the form of the agency name that is authorized by an
                      appropriate national or international agency or service.</p>
                   <p><gi>agencyName</gi> may be repeated in order to provide the name of the
-                     institution or service responsible for the EAC-CPF instance in multiple
+                     institution or service responsible for the EAG instance in multiple
                      languages. If <gi>agencyName</gi> is repeated it is recommended to indicate the
                      language of each name using <att>languageOfElement</att>.</p>
                </div>
@@ -791,22 +802,32 @@
                   <list type="simple">
                      <item>Use <gi>agencyCode</gi> to record a code representing the institution or
                         service responsible for the creation, maintenance, and/or dissemination of
-                        the EAC-CPF instance.</item>
+                        the EAG instance.</item>
                   </list>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <maintenanceAgency>
+                        <agencyCode status="alternative" vocabularySource="NAD" vocabularySourceURI="https://sok.riksarkivet.se/">SE/G066</agencyCode>
+                        <agencyName>Kommunalförbundet Sydarkivera</agencyName>
+                     </maintenanceAgency>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="DE">
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://sigel.staatsbibliothek-berlin.de/de/suche" valueURI="https://ld.zdb-services.de/resource/organisations/DE-1958">DE-1958</eag:agencyCode>
+                        <eag:agencyName languageOfElement="ger">Bundesarchiv</eag:agencyName>
+                        <eag:agencyName languageOfElement="eng">Federal Archives of Germany</eag:agencyName>
+                     </eag:maintenanceAgency>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="ES">
+                        <eag:agencyName>Archivo Histórico Provincial de Toledo</eag:agencyName>
+                     </eag:maintenanceAgency>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agent">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>agent</gi>
                </head>
@@ -816,7 +837,7 @@
                <div type="summary">
                   <p>A required child element of <gi>maintenanceEvent</gi> that provides the name of
                      a person, institution, or system responsible for a specific event in the
-                     EAC-CPF instance's maintenance history, such as its creation, modification, or
+                     EAG instance's maintenance history, such as its creation, modification, or
                      deletion.</p>
                </div>
                <div type="mayContain">
@@ -852,8 +873,8 @@
                <div type="description">
                   <p>Use <gi>agent</gi> to indicate the person, institution, or system responsible
                      for a maintenance event. Examples include the name of the author or encoder,
-                     the database responsible for creating the EAC-CPF instance, and the style sheet
-                     used to update an instance to a new version of EAC-CPF.</p>
+                     the database responsible for creating the EAG instance, and the style sheet
+                     used to update an instance to a new version of EAG.</p>
                   <p>Each <gi>maintenanceEvent</gi> element must have a child <gi>agent</gi>
                      element.</p>
                </div>
@@ -867,9 +888,21 @@
                   <p>Required, not repeatable</p>
                </div>
                <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
+                  <eag:maintenanceHistory>
+                        <eag:maintenanceEvent maintenanceEventType="derived">
+                           <eag:agent agentType="machine">XSLT eag2eag.xsl</eag:agent>
+                           <eag:eventDateTime standardDateTime="2012-05-02T09:37:17">2 May 2012</eag:eventDateTime>
+                           <eag:eventDescription>Derived from EAG 0.2 instance</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="revised">
+                           <eag:agent agentType="unknown"/>
+                           <eag:eventDateTime standardDateTime="2021-11-26"/>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="updated">
+                           <eag:agent agentType="human">Jill Smith</eag:agent>
+                           <eag:eventDateTime>December 2021</eag:eventDateTime>
+                        </eag:maintenanceEvent>
+                     </eag:maintenanceHistory>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-biogHist">
@@ -1281,12 +1314,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-citedRange">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>citedRange</gi>
                </head>
@@ -1339,7 +1367,16 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:sources>
+                        <eag:source>
+                           <eag:reference>History of the University of Bologna</eag:reference>
+                           <eag:citedRange unit="page">22-34</eag:citedRange>
+                        </eag:source>
+                        <eag:source>
+                           <eag:reference href="http://arquivo.igreja-lusitana.org/">Website of the Arquivo Histórico da Igreja Lusitana</eag:reference>
+                           <eag:citedRange>Subpage with contact information and opening hours</eag:citedRange>
+                        </eag:source>
+                     </eag:sources>
                   </egXML>
                </div>
             </div>
@@ -2219,12 +2256,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-descriptiveNote">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>descriptiveNote</gi>
                </head>
@@ -2240,11 +2272,11 @@
                </div>
                <div type="mayOccurWithin">
                   <p>conventionDeclaration, existDates, function, functions, identity,
-                     languageDeclaration, languageUsed, languagesUsed, legalStatus, legalStatuses,
-                     localDescription, localDescriptions, localTypeDeclaration, maintenanceAgency,
-                     mandate, mandates, occupation, occupations, otherEntityType, otherEntityTypes,
-                     place, places, relation, relations, rightsDeclaration, setComponent, source,
-                     sources</p>
+                     holdings, languageDeclaration, legalStatus, legalStatuses, library, 
+                     localTypeDeclaration, maintenanceAgency,
+                     mandate, mandates, otherRepositoryType, otherRepositoryTypes,
+                     place, places, relation, relations, reproductionServices, restorationLaboratory, 
+                     rightsDeclaration, searchroom, source, sources</p>
                </div>
                <div type="attributes">
                   <p>
@@ -2278,7 +2310,47 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:mandates>
+                        <eag:mandate>
+                           <eag:term/>
+                           <eag:descriptiveNote languageOfElement="ger">
+                              <eag:p>Die Bundesregierung errichtet auf Beschluss von 1950 das Bundesarchiv Obere Bundesbehörde im Geschäftsbereich des Bundesministeriums des Innern.</eag:p>
+                           </eag:descriptiveNote>
+                        </eag:mandate>
+                     </eag:mandates>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:holdings>
+                        <eag:dateRange>
+                           <eag:fromDate>Fecha del documento más antiguo : 1439-01-01</eag:fromDate>
+                           <eag:toDate>Fecha del documento más reciente : 1966-01-01</eag:toDate>
+                        </eag:dateRange>
+                        <eag:extent>
+                           <eag:num unit="linearmetre">8906</eag:num>
+                        </eag:extent>
+                        <eag:descriptiveNote>
+                           <eag:p languageOfElement="spa">Los documentos que hoy conserva el Archivo proceden fundamentalmente de los siguientes organismos metropolitanos:</eag:p>
+                           <eag:p languageOfElement="spa"> Consejo de Indias, siglos XVI-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Casa de la Contratación, siglos XVI-XVIII</eag:p>
+                           <eag:p languageOfElement="spa">Consulados de Sevilla y Cádiz, siglos XVI-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Secretarías de Estado y del Despacho Universal de Indias, de Estado, de Gracia y Justicia, Hacienda y Guerra, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa">Secretaría del Juzgado de Arribadas, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Comisaría Interventora de la Hacienda Pública de Cádiz, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Dirección General de la Renta de Correos, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Tribunal de Cuentas, Sala de Ultramar, siglo XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Real Compañía de la Habana, siglos XVIII-XIX</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:holdings>  
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:technicalServices>
+                        <eag:reproductionServices question="yes">
+                           <eag:descriptiveNote>
+                              <eag:p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography. 
+                                 We need a declaration form and payment before we can go ahead with copying. Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</eag:p>
+                              </eag:descriptiveNote>
+                           </eag:reproductionServices>
+                     </eag:technicalServices>
                   </egXML>
                </div>
             </div>
@@ -2434,12 +2506,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eventDateTime">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>eventDateTime</gi>
                </head>
@@ -2448,7 +2515,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>maintenanceEvent</gi> that records the date and
-                     time of a specific maintenance action for an EAC-CPF instance.</p>
+                     time of a specific maintenance action for an EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -2478,7 +2545,7 @@
                   <p>A required child element of <gi>maintenanceEvent</gi>, <gi>eventDateTime</gi>
                      is for recording the date and time that a maintenance event occurred. Examples
                      of maintenance events include the creation, update, revision, or other
-                     modification to an EAC-CPF instance.</p>
+                     modification to an EAG instance.</p>
                   <p>The date and time may be captured in natural language in the element. It is
                      highly recommended to provide at least a human-readable date in
                         <gi>eventDateTime</gi> directly or a machine-processable date in
@@ -2488,25 +2555,32 @@
                   <list type="simple">
                      <item>Use <att>standardDateTime</att> to provide a machine-processable
                         expression of the date or date and time, formulated according to the ISO
-                        8601 standard.</item>
+                        8601 standard or another date normalisation scheme.</item>
                   </list>
                </div>
                <div type="availability">
                   <p>Required, not repeatable</p>
                </div>
                <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
+                  <eag:maintenanceHistory>
+                        <eag:maintenanceEvent maintenanceEventType="derived">
+                           <eag:agent agentType="machine">XSLT eag2eag.xsl</eag:agent>
+                           <eag:eventDateTime standardDateTime="2012-05-02T09:37:17">2 May 2012</eag:eventDateTime>
+                           <eag:eventDescription>Derived from EAG 0.2 instance</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="revised">
+                           <eag:agent agentType="unknown"/>
+                           <eag:eventDateTime standardDateTime="2021-11-26"/>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="updated">
+                           <eag:agent agentType="human">Jill Smith</eag:agent>
+                           <eag:eventDateTime>December 2021</eag:eventDateTime>
+                        </eag:maintenanceEvent>
+                     </eag:maintenanceHistory>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eventDescription">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>eventDescription</gi>
                </head>
@@ -2515,7 +2589,7 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>maintenanceEvent</gi> that provides the
-                     description of a maintenance event in the life of the EAC-CPF instance.</p>
+                     description of a maintenance event in the life of the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>[text], reference (0..n), span (0..n)</p>
@@ -2549,9 +2623,23 @@
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
+                  <eag:maintenanceHistory>
+                        <eag:maintenanceEvent maintenanceEventType="derived">
+                           <eag:agent agentType="machine">XSLT eag2eag.xsl</eag:agent>
+                           <eag:eventDateTime standardDateTime="2012-05-02T09:37:17">2 May 2012</eag:eventDateTime>
+                           <eag:eventDescription>Derived from EAG 0.2 instance</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="updated">
+                           <eag:agent agentType="human">Jill Smith</eag:agent>
+                           <eag:eventDateTime>December 2021</eag:eventDateTime>
+                           <eag:eventDescription>Added more details about the institution's holdings</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="updated">
+                           <eag:agent agentType="human">Peter Adams</eag:agent>
+                           <eag:eventDateTime>January 2022</eag:eventDateTime>
+                           <eag:eventDescription>Updated opening times</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                     </eag:maintenanceHistory>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-exhibition">
@@ -4105,12 +4193,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-maintenanceAgency">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>maintenanceAgency</gi>
                </head>
@@ -4119,7 +4202,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>control</gi> that identifies the institution or
-                     service responsible for the EAC-CPF instance.</p>
+                     service responsible for the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>agencyCode (0..1), agencyName (0..n), descriptiveNote (0..1), otherAgencyCode
@@ -4154,13 +4237,13 @@
                </div>
                <div type="description">
                   <p><gi>maintenanceAgency</gi> encodes information about the institution or service
-                     responsible for the creation, maintenance, and/or dissemination of the EAC-CPF
+                     responsible for the creation, maintenance, and/or dissemination of the EAG
                      instance.</p>
                   <p><gi>maintenanceAgency</gi> must include one or both of <gi>agencyCode</gi> or
-                        <gi>agencyName</gi> to provide the name of the institution or service. It
+                        <gi>agencyName</gi> to provide the identifier and/or name of the institution or service. It
                      may also include the optional child element <gi>otherAgencyCode</gi> to provide
                      any additional identifiers. Any general information about the institution in
-                     relation to the EAC-CPF instance may be given in <gi>descriptiveNote</gi>.</p>
+                     relation to the EAG instance may be given in <gi>descriptiveNote</gi>.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
                   <list type="simple">
                      <item><gi>agencyCode</gi></item>
@@ -4180,17 +4263,40 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:maintenanceAgency>
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://www.idref.fr/services/listrcrisil">FR-751035204</eag:agencyCode>
+                        <eag:agencyName>Archives nationales</eag:agencyName>
+                        <eag:otherAgencyCode status="authorized" valueURI="https://isni.org/isni/0000000121904023" vocabularySource="ISNI" vocabularySourceURI="https://isni.oclc.org/xslt/">0000 0001 2190 4023</eag:otherAgencyCode>
+                        <eag:otherAgencyCode status="alternative">FR-FRAN</eag:otherAgencyCode>
+                     </eag:maintenanceAgency>
+                  </egXML> 
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency>
+                        <eag:agencyCode status="alternative" vocabularySource="NAD" vocabularySourceURI="https://sok.riksarkivet.se/">SE/G066</eag:agencyCode>
+                        <eag:agencyName>Kommunalförbundet Sydarkivera</eag:agencyName>
+                     </eag:maintenanceAgency>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="DE">
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://sigel.staatsbibliothek-berlin.de/de/suche" valueURI="https://ld.zdb-services.de/resource/organisations/DE-1958">DE-1958</eag:agencyCode>
+                        <eag:agencyName languageOfElement="ger">Bundesarchiv</eag:agencyName>
+                        <eag:agencyName languageOfElement="eng">Federal Archives of Germany</eag:agencyName>
+                     </eag:maintenanceAgency>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="GB">
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://www.bl.uk/help/britishlibrary/~/media/5b6e3668690a4795ba50a2310e93ef1c.ashx">GB-UkYoL</eag:agencyCode>
+                     </eag:maintenanceAgency>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="ES">
+                        <eag:agencyName>Archivo Histórico Provincial de Toledo</eag:agencyName>
+                     </eag:maintenanceAgency>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-maintenanceEvent">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>maintenanceEvent</gi>
                </head>
@@ -4199,7 +4305,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>maintenanceHistory</gi> used to record
-                     information about maintenance activities in the history of the EAC-CPF
+                     information about maintenance activities in the history of the EAG
                      instance.</p>
                </div>
                <div type="mayContain">
@@ -4255,18 +4361,25 @@
                   <p>Required, repeatable</p>
                </div>
                <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
+                  <eag:maintenanceHistory>
+                        <eag:maintenanceEvent maintenanceEventType="derived">
+                           <eag:agent agentType="machine">XSLT eag2eag.xsl</eag:agent>
+                           <eag:eventDateTime standardDateTime="2012-05-02T09:37:17">2 May 2012</eag:eventDateTime>
+                           <eag:eventDescription>Derived from EAG 0.2 instance</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="revised">
+                           <eag:agent agentType="unknown"/>
+                           <eag:eventDateTime standardDateTime="2021-11-26"/>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="updated">
+                           <eag:agent agentType="human">Jill Smith</eag:agent>
+                           <eag:eventDateTime>December 2021</eag:eventDateTime>
+                        </eag:maintenanceEvent>
+                     </eag:maintenanceHistory>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-maintenanceHistory">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>maintenanceHistory</gi>
                </head>
@@ -4275,7 +4388,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>control</gi> that captures the history of the
-                     creation and maintenance of the EAC-CPF instance.</p>
+                     creation and maintenance of the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>maintenanceEvent (1..n)</p>
@@ -4302,7 +4415,7 @@
                <div type="description">
                   <p>A required child element of <gi>control</gi>, <gi>maintenanceHistory</gi> is
                      for recording the history of the creation, revisions, updates, and other
-                     modifications to the EAC-CPF instance.</p>
+                     modifications to the EAG instance.</p>
                   <p>There must be at least one child <gi>maintenanceEvent</gi> in
                         <gi>maintenanceHistory</gi>, which usually will be a record of the creation
                      of the instance. There may be many other <gi>maintenanceEvent</gi> elements
@@ -4314,7 +4427,21 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:maintenanceHistory>
+                        <eag:maintenanceEvent maintenanceEventType="derived">
+                           <eag:agent agentType="machine">XSLT eag2eag.xsl</eag:agent>
+                           <eag:eventDateTime standardDateTime="2012-05-02T09:37:17">2 May 2012</eag:eventDateTime>
+                           <eag:eventDescription>Derived from EAG 0.2 instance</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="revised">
+                           <eag:agent agentType="unknown"/>
+                           <eag:eventDateTime standardDateTime="2021-11-26"/>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="updated">
+                           <eag:agent agentType="human">Jill Smith</eag:agent>
+                           <eag:eventDateTime>December 2021</eag:eventDateTime>
+                        </eag:maintenanceEvent>
+                     </eag:maintenanceHistory>
                   </egXML>
                </div>
             </div>
@@ -4864,12 +4991,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-objectXMLWrap">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>objectXMLWrap</gi>
                </head>
@@ -4877,15 +4999,14 @@
                   <p>Object XML Wrap</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>relation</gi>, <gi>setComponent</gi>, and
-                        <gi>source</gi> that allows for the inclusion of an XML element from any XML
-                     namespace other than EAC-CPF.</p>
+                  <p>An optional child element of <gi>relation</gi> and <gi>source</gi> that allows for the inclusion of an XML element from any XML
+                     namespace other than the current version of EAG.</p>
                </div>
                <div type="mayContain">
                   <p>[any element from any namespace]</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>relation, setComponent, source</p>
+                  <p>relation, source</p>
                </div>
                <div type="attributes">
                   <p>
@@ -4915,9 +5036,45 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:sources>
+                        <eag:source>
+                           <eag:reference>Identity section of the EAG 2012 instance from which this instance is derived</eag:reference>
+                           <eag:objectXMLWrap>
+                              <eag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.archivesportaleurope.net/schemas/eag/eag_2012.xsd">
+                                 <identity>
+                                    <repositorid countrycode="NO" repositorycode="NO-A5"/>
+                                    <otherRepositorId>A5</otherRepositorId>
+                                    <autform xml:lang="eng">The Regional State Archives in Oslo</autform>
+                                     <parform xml:lang="nor">Statsarkivet i Oslo</parform>
+                                 </identity>
+                              </eag>
+                           </eag:objectXMLWrap>
+                        </eag:source>
+                     </eag:sources>
                   </egXML>
-               </div>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:relations>
+                        <eag:relation>
+                           <eag:targetEntity targetType="person">
+                              <eag:part>Nicoletta Boschiero</eag:part>
+                           </eag:targetEntity>
+                           <eag:objectXMLWrap>
+                              <mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-3.xsd">
+                                 <titleInfo>
+                                    <title>Artisti trentini tra le due guerre</title>
+                                 </titleInfo>
+                                 <name>
+                                    <namePart type="given">Nicoletta</namePart>
+                                    <namePart type="family">Boschiero</namePart>
+                                    <role>
+                                       <roleTerm type="text">autore</roleTerm>
+                                    </role>
+                                 </name>
+                              </mods>
+                           </eag:objectXMLWrap>
+                        </eag:relation>
+                     </eag:relations>
+                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-opening">
                <!-- Jane (edit), Kerstin (review) -->
@@ -4968,12 +5125,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherAgencyCode">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>otherAgencyCode</gi>
                </head>
@@ -4982,7 +5134,7 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>maintenanceAgency</gi> that provides an
-                     alternative code for the institution or service responsible for the EAC-CPF
+                     alternative identifier or code for the institution or service responsible for the EAG
                      instance.</p>
                </div>
                <div type="mayContain">
@@ -5020,9 +5172,9 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Use <gi>otherAgencyCode</gi> to provide an alternative and/or local code that
+                  <p>Use <gi>otherAgencyCode</gi> to provide an alternative and/or local identifier or code that
                      represents the institution or service responsible for the creation,
-                     maintenance, and/or dissemination of the EAC-CPF instance. Any code other than
+                     maintenance, and/or dissemination of the EAG instance. Any code other than
                      that given in <gi>agencyCode</gi> may be provided in <gi>otherAgencyCode</gi>.
                      The addition of an ISO 3166-1 alpha-2 country code as the prefix to a local
                      code is recommended to ensure international uniqueness.</p>
@@ -5040,7 +5192,25 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:maintenanceAgency>
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://www.idref.fr/services/listrcrisil">FR-751035204</eag:agencyCode>
+                        <eag:agencyName>Archives nationales</eag:agencyName>
+                        <eag:otherAgencyCode status="authorized" valueURI="https://isni.org/isni/0000000121904023" vocabularySource="ISNI" vocabularySourceURI="https://isni.oclc.org/xslt/">0000 0001 2190 4023</eag:otherAgencyCode>
+                        <eag:otherAgencyCode status="alternative">FR-FRAN</eag:otherAgencyCode>
+                     </eag:maintenanceAgency>
+                  </egXML> 
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:maintenanceAgency countryCode="DE">
+                        <eag:agencyCode status="authorized" vocabularySource="ISIL" vocabularySourceURI="https://sigel.staatsbibliothek-berlin.de/de/suche" valueURI="https://ld.zdb-services.de/resource/organisations/DE-1958">DE-1958</eag:agencyCode>
+                        <eag:agencyName languageOfElement="ger">Bundesarchiv</eag:agencyName>
+                        <eag:agencyName languageOfElement="eng">Federal Archives of Germany</eag:agencyName>
+                        <eag:otherAgencyCode status="authorized" vocabularySource="GND" valueURI="https://d-nb.info/gnd/10187558-7">10187558-7</eag:otherAgencyCode>
+                        <eag:otherAgencyCode status="alternative" localType="abbreviation" localTypeDeclarationReference="localTypes1">BArch</eag:otherAgencyCode>
+                     </eag:maintenanceAgency>
+                     <!-- [...] -->
+                     <eag:localTypeDeclaration>
+                        <eag:reference>Vocabulary of types of codes, identifiers, and names</eag:reference>
+                     </eag:localTypeDeclaration>
                   </egXML>
                </div>
             </div>
@@ -5293,12 +5463,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-p">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>p</gi>
                </head>
@@ -5312,7 +5477,7 @@
                   <p>[text], reference (0..n), span (0..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>biogHist, descriptiveNote, generalContext, structureOrGenealogy</p>
+                  <p>biogHist, descriptiveNote, structureOrGenealogy</p>
                </div>
                <div type="attributes">
                   <p>
@@ -5348,7 +5513,54 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:biogHist>
+                        <eag:p languageOfElement="ger">1919 : Das Reichsarchiv wird als zentrales Archiv
+                        nach der im Versailler Vertrag geforderten Auflösung zahlreicher
+                        militärischer Behörden eingerichtet. Das Reichsarchiv übernimmt Unterlagen
+                        aller obersten Reichsbehörden seit 1867/71 und in einer Außenstelle in
+                        Frankfurt a.M. seit dem Jahr 1924 auch Archivgut des Deutschen Bundes und
+                        des Reichskammergerichts. Im Laufe der Zeit wird es um Schriftgut
+                        nichtstaatlicher Herkunft, fotografische und filmische Dokumente ergänzt.
+                        Das Reichsarchivgebäude befand sich auf dem Brauhausberg in Potsdam.</eag:p>
+                        <eag:p languageOfElement="ger">1935: Das Reichspropagandaministerium errichtet beim
+                        Reichsarchiv in Potsdam ein Reichsfilmarchiv.</eag:p>
+                        <eag:p languageOfElement="ger">1936: Das Heeresarchiv Potsdam wird als selbständige
+                        Einrichtung aus dem Reichsarchiv ausgegliedert.</eag:p>
+                        <!-- [...] -->
+                     </eag:biogHist>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:holdings>
+                        <eag:dateRange>
+                           <eag:fromDate>Fecha del documento más antiguo : 1439-01-01</eag:fromDate>
+                           <eag:toDate>Fecha del documento más reciente : 1966-01-01</eag:toDate>
+                        </eag:dateRange>
+                        <eag:extent>
+                           <eag:num unit="linearmetre">8906</eag:num>
+                        </eag:extent>
+                        <eag:descriptiveNote>
+                           <eag:p languageOfElement="spa">Los documentos que hoy conserva el Archivo proceden fundamentalmente de los siguientes organismos metropolitanos:</eag:p>
+                           <eag:p languageOfElement="spa"> Consejo de Indias, siglos XVI-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Casa de la Contratación, siglos XVI-XVIII</eag:p>
+                           <eag:p languageOfElement="spa">Consulados de Sevilla y Cádiz, siglos XVI-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Secretarías de Estado y del Despacho Universal de Indias, de Estado, de Gracia y Justicia, Hacienda y Guerra, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa">Secretaría del Juzgado de Arribadas, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Comisaría Interventora de la Hacienda Pública de Cádiz, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Dirección General de la Renta de Correos, siglos XVIII-XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Tribunal de Cuentas, Sala de Ultramar, siglo XIX</eag:p>
+                           <eag:p languageOfElement="spa"> Real Compañía de la Habana, siglos XVIII-XIX</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:holdings>  
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:technicalServices>
+                        <eag:reproductionServices question="yes">
+                           <eag:descriptiveNote>
+                              <eag:p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography. 
+                                 We need a declaration form and payment before we can go ahead with copying. Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</eag:p>
+                              </eag:descriptiveNote>
+                           </eag:reproductionServices>
+                     </eag:technicalServices>
                   </egXML>
                </div>
             </div>
@@ -6025,11 +6237,6 @@
             </div>
             <div type="elementDocumentation" xml:id="elem-reference">
                <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>reference</gi>
                </head>
@@ -7293,12 +7500,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-source">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>source</gi>
                </head>
@@ -7307,8 +7509,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>sources</gi> used to identify a particular
-                     source of evidence used for the establishment of the description of the CPF
-                     entity in the EAC-CPF instance.</p>
+                     source of evidence used for the establishment of the description of the institution with archival holdings in the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>citedRange (0..n), descriptiveNote (0..1), objectXMLWrap (0..1), reference
@@ -7346,8 +7547,8 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Use <gi>source</gi> to cite a published resource used in describing the CPF
-                     entity. Use the required child element <gi>reference</gi>to include a textual
+                  <p>Use <gi>source</gi> to cite a published resource used in describing the institution with archival holdings. 
+                     Use the required child element <gi>reference</gi>to include a textual
                      identification of the reference. In the case of online sources, use
                         <att>href</att> with <gi>reference</gi> to provide a URI.</p>
                   <p>Use the optional child element <gi>citedRange</gi> to point to a specific
@@ -7368,17 +7569,33 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:sources>
+                        <eag:source>
+                           <eag:reference>History of the University of Bologna</eag:reference>
+                           <eag:citedRange unit="page">22-34</eag:citedRange>
+                        </eag:source>
+                        <eag:source>
+                           <eag:reference href="http://arquivo.igreja-lusitana.org/">Website of the Arquivo Histórico da Igreja Lusitana</eag:reference>
+                        </eag:source>
+                        <eag:source>
+                        <eag:reference>Identity section of the EAG 2012 instance from which this instance is derived</eag:reference>
+                           <eag:objectXMLWrap>
+                              <eag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.archivesportaleurope.net/schemas/eag/eag_2012.xsd">
+                                 <identity>
+                                    <repositorid countrycode="NO" repositorycode="NO-A5"/>
+                                    <otherRepositorId>A5</otherRepositorId>
+                                    <autform xml:lang="eng">The Regional State Archives in Oslo</autform>
+                                    <parform xml:lang="nor">Statsarkivet i Oslo</parform>
+                                 </identity>
+                              </eag>
+                           </eag:objectXMLWrap>
+                        </eag:source>
+                     </eag:sources>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-sources">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>sources</gi>
                </head>
@@ -7387,8 +7604,8 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>control</gi> that groups one or more
-                        <gi>source</gi>s of evidence used in the description of the CPF entity in
-                     the EAC-CPF instance.</p>
+                        <gi>source</gi>s of evidence used in the description of the institution with archival holdings in
+                     the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..1), source (1..n)</p>
@@ -7426,7 +7643,7 @@
                <div type="attributeusage">
                   <list type="simple">
                      <item>Use <att>base</att> to specify a URI (other than the base URI of the
-                        EAC-CPF instance) to be used for resolving relative URIs within
+                        EAG instance) to be used for resolving relative URIs within
                            <gi>sources</gi> or descendant elements.</item>
                   </list>
                </div>
@@ -7435,17 +7652,33 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:sources>
+                        <eag:source>
+                           <eag:reference>History of the University of Bologna</eag:reference>
+                           <eag:citedRange unit="page">22-34</eag:citedRange>
+                        </eag:source>
+                        <eag:source>
+                           <eag:reference href="http://arquivo.igreja-lusitana.org/">Website of the Arquivo Histórico da Igreja Lusitana</eag:reference>
+                        </eag:source>
+                        <eag:source>
+                        <eag:reference>Identity section of the EAG 2012 instance from which this instance is derived</eag:reference>
+                           <eag:objectXMLWrap>
+                              <eag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.archivesportaleurope.net/schemas/eag/eag_2012.xsd">
+                                 <identity>
+                                    <repositorid countrycode="NO" repositorycode="NO-A5"/>
+                                    <otherRepositorId>A5</otherRepositorId>
+                                    <autform xml:lang="eng">The Regional State Archives in Oslo</autform>
+                                    <parform xml:lang="nor">Statsarkivet i Oslo</parform>
+                                 </identity>
+                              </eag>
+                           </eag:objectXMLWrap>
+                        </eag:source>
+                     </eag:sources>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-span">
                <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>span</gi>
                </head>
