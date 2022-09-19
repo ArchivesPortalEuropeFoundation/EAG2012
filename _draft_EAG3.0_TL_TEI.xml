@@ -8303,14 +8303,14 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:address>
-                        <eac-cpf:addressLine languageOfElement="se">Kungl. Hovstaterna</eac-cpf:addressLine>
-                        <eac-cpf:addressLine languageOfElement="se">Kungl. Slottet</eac-cpf:addressLine>
-                        <eac-cpf:addressLine addressLineType="postalCode">10770</eac-cpf:addressLine>
-                        <eac-cpf:addressLine languageOfElement="se" addressLineType="municipality">Stockholm</eac-cpf:addressLine>
-                        <eac-cpf:addressLine languageOfElement="se" addressLineType="country">Sverige</eac-cpf:addressLine>
-                        <eac-cpf:addressLine languageOfElement="en" addressLineType="country">Sweden</eac-cpf:addressLine>
-                     </eac-cpf:address>
+                     <eag:address>
+                        <eag:addressLine languageOfElement="se">Kungl. Hovstaterna</eag:addressLine>
+                        <eag:addressLine languageOfElement="se">Kungl. Slottet</eag:addressLine>
+                        <eag:addressLine addressLineType="postalCode">10770</eag:addressLine>
+                        <eag:addressLine languageOfElement="se" addressLineType="municipality">Stockholm</eag:addressLine>
+                        <eag:addressLine languageOfElement="se" addressLineType="country">Sverige</eag:addressLine>
+                        <eag:addressLine languageOfElement="en" addressLineType="country">Sweden</eag:addressLine>
+                     </eag:address>
                   </egXML>
                </div>
             </div>
@@ -8328,7 +8328,7 @@
                </div>
                <div type="summary">
                   <p>A required attribute of <gi>agent</gi> that indicates the type of agent
-                     responsible for the creation, modification, or deletion of an EAC-CPF
+                     responsible for the creation, modification, or deletion of an EAG
                      instance.</p>
                </div>
                <div type="description">
@@ -8345,10 +8345,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:maintenanceEvent maintenanceEventType="updated">
-                        <eac-cpf:agent agentType="human">A. Smith</eac-cpf:agent>
-                        <eac-cpf:eventDateTime standardDateTime="2021-12">December 2021</eac-cpf:eventDateTime>
-                     </eac-cpf:maintenanceEvent>
+                     <eag:maintenanceEvent maintenanceEventType="updated">
+                        <eag:agent agentType="human">A. Smith</eag:agent>
+                        <eag:eventDateTime standardDateTime="2021-12">December 2021</eag:eventDateTime>
+                     </eag:maintenanceEvent>
                   </egXML>
                </div>
             </div>
@@ -8371,9 +8371,9 @@
                </div>
                <div type="description">
                   <p>Available as global attribute for all elements. The attribute can be set to
-                     "external" in <gi>cpfDescription</gi> to allow access to all the information
+                     "external" in <gi>repository</gi> to allow access to all the information
                      about the entity being described, but specific elements within
-                     <gi>cpfDescription</gi> can be set to "internal" to reserve that information
+                     <gi>repository</gi> can be set to "internal" to reserve that information
                      for repository access only. This feature is intended to assist application
                      software in restricting access to particular information by explicitly
                      identifying data that is potentially sensitive or may otherwise have a limited
@@ -8386,7 +8386,7 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:eac audience="external"> [...] </eac-cpf:eac>
+                     <eag:eag audience="external"> [...] </eag:eag>
                   </egXML>
                </div>
             </div>
@@ -8403,21 +8403,32 @@
                   <p>Base</p>
                </div>
                <div type="summary">
-                  <p>Optional attribute used to specify a base URI that is different to the base URI of the EAC-CPF instance.</p>
+                  <p>Optional attribute used to specify a base URI that is different to the base URI of the EAG instance.</p>
                </div>
                <div type="description">
                   <p>Using the optional attribute <att>base</att> allows any relative URIs provided on attributes of a specific element, or its descendants, to be resolved using the URI provided in that element's or its parent element's <att>base</att>.</p>
-                  <p>Available on <gi>alternativeSet</gi>,
-                     <gi>control</gi>, <gi>cpfDescription</gi>, <gi>description</gi>,
-                     <gi>eac</gi>, <gi>identity</gi>, <gi>multipleIdentities</gi>,
-                     <gi>relations</gi>, and <gi>sources</gi>.</p>
+                  <p>Available on <gi>control</gi>, <gi>description</gi>,
+                     <gi>eag</gi>, <gi>identity</gi>, <gi>relations</gi>, <gi>repository</gi>, <gi>repositories</gi>,
+                      and <gi>sources</gi>.</p>
                </div>
                <div type="datatype">
                   <p>anyURI</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <!-- Contains examples of XML from the schema.  Tags in egXML must be prefixed with the proper namespace (e.g. <ead:unittitle> -->
+                     <eag:description base="https://d-nb.info/gnd/">
+                        <eag:places>
+                           <eag:place vocabularySource="GND" valueURI="4099668-2">
+                              <eag:placeName>Linden (Hannover)</eag:placeName>
+                           </eag:place>
+                           <eag:place vocabularySource="GND" valueURI="4042011-5">
+                              <eag:placeName>New York, NY</eag:placeName>
+                           </eag:place>
+                           <eag:place vocabularySource="GND" valueURI="4537442-9">
+                              <eag:placeName>Tegna</eag:placeName>
+                           </eag:place>
+                        </eag:places>
+                     </eag:description>
                   </egXML>
                </div>
             </div>
