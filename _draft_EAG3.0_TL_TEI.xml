@@ -8910,7 +8910,30 @@
                      <eag:identity identityType="acquired" localType="pseudonym" localTypeDeclarationReference="LT001"> [...] </eag:identity>
                   </egXML>
                </div>
-            </div>            
+            </div> 
+            <div type="attributeDocumentation" xml:id="attr-languageCode">
+               <!-- Adapt text from EAC-CPF to EAG where necessary; 
+                 Check and update child and parent elements;
+                 Check and update attributes;
+                 Encoding examples to be added at the end
+               -->
+               <head>
+                  <att>languageCode</att>
+               </head>
+               <div type="fullName">
+                  <p>Language Code</p>
+               </div>
+               <div type="summary">
+                  <p>The code for the language used in the EAg instance or in the creative work
+                     of the CPF entity being described.
+                  </p>
+               </div>
+               <div type="description">
+                  <p>Content of the attribute should be a code
+                     taken from ISO 639-1, ISO 639-2b, ISO 639-3, or another controlled list, as
+                     specified in the <att>languageEncoding</att> attribute in <gi>control</gi>.
+                     Required in <gi>languageDeclaration</gi> and optionally available in
+                        <gi>language</gi>.</p>
             <div type="attributeDocumentation" xml:id="attr-languageEncoding">
                <!-- Adapt text from EAC-CPF to EAG where necessary; 
                  Check and update child and parent elements;
@@ -8925,9 +8948,8 @@
                </div>
                <div type="summary">
                   <p>Specifies which standard list of codes is used to identify the language of the
-                     EAC-CPF instance and languages represented in the creative work of the CPF
-                     entity being described. 
-                  </p>
+                     EAG instance and languages represented in the creative work of the CPF
+                     entity being described.</p>
                </div>
                <div type="description">
                   <p>The codes themselves are specified in <att>languageCode</att> in <gi>language</gi> and <att>languageOfElement</att>
