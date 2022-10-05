@@ -8628,15 +8628,15 @@
                         <att>countryEncoding</att> attribute in <gi>control</gi>. Available in
                         <gi>maintenanceAgency</gi> and <gi>placeName</gi>.</p>
                </div>
-               <div type="datatype">
+               <div type="dataType">
                   <p>NMTOKEN</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:maintenanceagency countrycode="IE">
-                        <eag>IE-NAI</eag:agencycode>
-                        <eag:agencyname>National Archives of Ireland</eag:agencyname>
-                     </eag:maintenanceagency>
+                     <eag:maintenanceAgency countryCode="IE">
+                        <eag:agencyCode>IE-NAI</eag:agencycode>
+                        <eag:agencyName>National Archives of Ireland</eag:agencyName>
+                     </eag:maintenanceAgency>
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:place>
@@ -8898,7 +8898,7 @@
                <div type="description">
                   <p>The <att>identityType</att> may occur on <gi>identity</gi>. Though optional, it
                      is recommended that it be used when multiple identities are described in the
-                     same EAC-CPF instance using <gi>multipleIdentities</gi>. It will enable
+                     same EAG instance using <gi>multipleIdentities</gi>. It will enable
                      processors to distinguish between the description of a person and one or more
                      personae.</p>
                </div>
@@ -8907,55 +8907,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:identity identityType="acquired" localType="pseudonym" localTypeDeclarationReference="LT001"> [...] </eac-cpf:identity>
+                     <eag:identity identityType="acquired" localType="pseudonym" localTypeDeclarationReference="LT001"> [...] </eag:identity>
                   </egXML>
                </div>
-            </div>
-            <div type="attributeDocumentation" xml:id="attr-languageCode">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
-               <head>
-                  <att>languageCode</att>
-               </head>
-               <div type="fullName">
-                  <p>Language Code</p>
-               </div>
-               <div type="summary">
-                  <p>The code for the language used in the EAC-CPF instance or in the creative work
-                     of the CPF entity being described.
-                  </p>
-               </div>
-               <div type="description">
-                  <p>Content of the attribute should be a code
-                     taken from ISO 639-1, ISO 639-2b, ISO 639-3, or another controlled list, as
-                     specified in the <att>languageEncoding</att> attribute in <gi>control</gi>.
-                     Required in <gi>languageDeclaration</gi> and optionally available in
-                        <gi>language</gi>.</p>
-               </div>
-               <div type="datatype">
-                  <p>NMTOKEN</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:languagesUsed>
-                        <eac-cpf:languageUsed>
-                           <eac-cpf:language languageCode="eng">English</eac-cpf:language>
-                           <eac-cpf:writingSystem scriptCode="Latn">Latin</eac-cpf:writingSystem>
-                        </eac-cpf:languageUsed>
-                        <eac-cpf:languageUsed>
-                           <eac-cpf:language languageCode="spa">Spanish</eac-cpf:language>
-                           <eac-cpf:writingSystem scriptCode="Latn">Latin</eac-cpf:writingSystem>
-                        </eac-cpf:languageUsed>
-                        <eac-cpf:descriptiveNote>
-                           <eac-cpf:p>Published works in English and Spanish.</eac-cpf:p>
-                        </eac-cpf:descriptiveNote>
-                     </eac-cpf:languagesUsed>
-                  </egXML>
-               </div>
-            </div>
+            </div>            
             <div type="attributeDocumentation" xml:id="attr-languageEncoding">
                <!-- Adapt text from EAC-CPF to EAG where necessary; 
                  Check and update child and parent elements;
