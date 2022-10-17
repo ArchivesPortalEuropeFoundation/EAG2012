@@ -608,7 +608,30 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                   
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>                
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
