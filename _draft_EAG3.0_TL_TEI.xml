@@ -608,21 +608,13 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>                
                         <label>conventionDeclarationReference</label>
                         <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
+                        <label>id</label>
                         <item>Optional</item>
                         <label>href</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
                         <item>Optional</item>
                         <label>linkRole</label>
                         <item>Optional</item>
@@ -631,6 +623,16 @@
                         <label>localType</label>
                         <item>Optional</item>
                         <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>                
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
                         <item>Optional</item>
                      </list>
                   </p>
@@ -1437,19 +1439,19 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>                
                         <label>conventionDeclarationReference</label>
                         <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>               
                         <label>maintenanceEventReference</label>
                         <item>Optional</item>
                         <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item> 
+                        <label>target</label>
                         <item>Optional</item>
                      </list>
                   </p>
@@ -2613,19 +2615,16 @@
                <div type="attributes">
                   <p>
                      <list type="gloss">
+                        <label>addressLineType</label>
+                        <item>Optional (values limited to: county, country, district, municipality,
+                           postBox, postalCode, region, street)</item>
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
                         <label>id</label>
                         <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
                         <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
                         <item>Optional</item>
                         <label>href</label>
                         <item>Optional</item>
@@ -2636,6 +2635,16 @@
                         <label>localType</label>
                         <item>Optional</item>
                         <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>                        
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>target</label>
                         <item>Optional</item>
                      </list>
                   </p>
@@ -2652,6 +2661,20 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema.  
                           Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                      <repository>
+                         </eag:services>
+                          <recreationalServices>
+                        <description>
+                           <exhibition question="yes">
+                              <exhibition languageOfElement="fre">Georges Hobé a-t-il modernisé Namur ? Projets, chantiers et réalisations en photographies.</exhibition>
+                              <p> Archives de l'État à Namur – Boulevard Cauchy 41, 5000 Namur
+                              <p>Du 24/08/2022 au 19/11/2022</exhibition>
+                              <exhibition href="https://www.arch.be/index.php?l=fr&m=actualites&r=agenda&e=georges-hobe-a-t-il-modernise-namur"
+                              languageOfElement="fre">Plus d'informations</exhibition>
+                        </description>
+                           </recreationalServices>
+                         </eag:services>
+                     </repository>
                   </egXML>
                </div>
             </div>
