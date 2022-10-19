@@ -1804,7 +1804,7 @@
                         </eag:rightsDeclaration>
                      </eag:control>
                   </egXML>
-                  <egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:control maintenanceStatus="revised">
                         <eag:recordId>APE-000000000002</recordId>
                         <eag:maintenanceAgency>
@@ -1894,7 +1894,7 @@
                         <eag:shortCode>ISDIAH</eag:shortCode>
                      </eag:conventionDeclaration>
                   </egXML>
-                  <egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:conventionDeclaration id="cd3">
                         <eag:reference href="cnig.gouv.fr/wp-content/uploads/2015/03/CNT-site-collectivit%C3%A9s-fran%C3%A7aises.pdf">
                         Commission nationale de toponymie: Collectivités territoriales françaises </eag:reference>
@@ -2413,8 +2413,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eag">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Jane (review) -->
                <head>
                   <gi>eag</gi>
                </head>
@@ -2435,6 +2434,14 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>base</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -4249,7 +4256,7 @@
                         <eag:reference>Local types for the use in Archives Portal Europe (descriptions of institutions with archival holdings</eag:reference>
                      </eag:localTypeDeclaration>
                   </egXML>
-                  <egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:localTypeDeclaration>
                         <eag:reference href="https://d-nb.info/standards/elementset/gnd_20191015"/>
                         <eag:shortCode>GNDO</eag:shortCode>
@@ -6393,13 +6400,13 @@
                         <eag:reference href="https://de.wikipedia.org/wiki/Gustav_IV._Adolf_(Schweden)">Wikipedia</eag:reference>
                      </eag:source>
                   </egXML>
-                  <egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:conventionDeclaration>
                         <eag:reference href="https://www.loc.gov/aba/rda/">Resource Description and Access</eag:reference>
                         <eag:shortCode>RDA</eag:shortCode>
                      </eag:conventionDeclaration>
                   </egXML>
-                  <egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:biogHist>
                         <eag:abstract>Read more about the 
                            <eag:reference href="https://www.gob.mx/agn/articulos/historia-del-archivo-general-de-la-nacion">History of the Archivo General de la Nación (in Spanish)</eag:reference> on the institution's website.
@@ -7542,7 +7549,7 @@
                         <eag:shortCode>ISDIAH</eag:shortCode>
                      </eag:conventionDeclaration>
                   </egXML>
-                  <egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:rightsDeclaration>
                         <eag:reference href="http://creativecommons.org/publicdomain/zero/1.0/"/>
                         <eag:shortCode>CC0</eag:shortCode>
