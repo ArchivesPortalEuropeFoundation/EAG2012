@@ -1633,12 +1633,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-control">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>control</gi>
                </head>
@@ -1646,9 +1641,9 @@
                   <p>Control</p>
                </div>
                <div type="summary">
-                  <p>A required child element of <gi>eac</gi> that contains information about the
+                  <p>A required child element of <gi>eag</gi> that contains information about the
                      creation, maintenance, status and the rules and authorities used in the
-                     composition of the EAC-CPF instance.</p>
+                     composition of the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>conventionDeclaration (0..n), languageDeclaration (0..n), localControl (0..n),
@@ -1657,7 +1652,7 @@
                      representation (0..n), sources (0..1)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>eac</p>
+                  <p>eag</p>
                </div>
                <div type="attributes">
                   <p>
@@ -1696,8 +1691,8 @@
                   </p>
                </div>
                <div type="description">
-                  <p>This required wrapper element within <gi>eac</gi> contains the information
-                     necessary to manage the instance. This includes information about its creation,
+                  <p>This required wrapper element within <gi>eag</gi> contains the information
+                     necessary to manage the EAG instance. This includes information about its creation,
                      maintenance and status as well as the languages, rules and authorities used in
                      the composition of the description.</p>
                   <p>It must contain a unique identifier for the instance within the
@@ -1708,31 +1703,31 @@
                         <att>maintenanceStatus</att> and the creation, maintenance, and disposition
                      of the instance in <gi>maintenanceHistory</gi>.</p>
                   <p>There are optional elements available to declare languages, rules, conventions
-                     and sources used in the EAC-CPF instance. Other control elements considered
+                     and sources used in the EAG instance. Other control elements considered
                      necessary but not otherwise included may be given in the <gi>localControl</gi>
                      element. Similarly, local types for certain elements used throughout the
-                     EAC-CPF instance are recommended to be defined in the
+                     EAG instance are recommended to be defined in the
                         <gi>localTypeDeclaration</gi> element</p>
                   <p>The available child elements (both required and optional), in their prescribed
                      order, are:</p>
                   <list type="simple">
                      <item><gi>recordId</gi> - Required. Contains the unique identifier for the
-                        EAC-CPF instance.</item>
+                        EAG instance.</item>
                      <item><gi>maintenanceAgency</gi> - Required. Contains the name and coded
                         information about the institution or service responsible for the creation,
-                        maintenance, and/or dissemination of the EAC-CPF instance.</item>
+                        maintenance, and/or dissemination of the EAG instance.</item>
                      <item><gi>maintenanceHistory</gi> - Required. Contains information about the
-                        date, type and events within the life cycle of an EAC-CPF instance.</item>
+                        date, type and events within the life cycle of an EAG instance.</item>
                      <item><gi>sources</gi> - Optional. Contains information about the sources
-                        consulted in creating the description of the entity or entities in the
-                        EAC-CPF instance.</item>
+                        consulted in creating the description of the repository or repositories in the
+                        EAG instance.</item>
                      <item>The following elements may appear in any order after the above elements:
                            <list type="simple">
                            <item><gi>conventionDeclaration</gi> - Optional. Contains information on
-                              the rules or conventions used to construct the EAC-CPF
+                              the rules or conventions used to construct the EAG
                               instance.</item>
                            <item><gi>languageDeclaration</gi> - Optional. Contains coded and natural
-                              language information about the language or languages of the EAC-CPF
+                              language information about the language or languages of the EAG
                               instance.</item>
                            <item><gi>localControl</gi> - Optional. Contains any administrative
                               metadata necessary due to local practice that are not represented by
@@ -1742,20 +1737,20 @@
                               attribute.</item>
                            <item><gi>otherRecordId</gi> - Optional. An element that allows the
                               recording of additional identifiers that may be associated with the
-                              EAC-CPF instance.</item>
+                              EAG instance.</item>
                            <item><gi>representation</gi> - Optional. Used for recording a link to a
-                              transformed and deliverable version of the EAC-CPF instance.</item>
+                              transformed and deliverable version of the EAG instance.</item>
                            <item><gi>rightsDeclaration</gi> - Optional. Contains information about
-                              the usage rights of the EAC-CPF instance.</item>
+                              the usage rights of the EAG instance.</item>
                         </list></item>
                   </list>
                </div>
                <div type="attributeusage">
                   <list type="simple">
                      <item>Use the required <att>maintenanceStatus</att> attribute to document the
-                        current version status of the EAC-CPF instance.</item>
+                        current version status of the EAG instance.</item>
                      <item>Use the optional <att>publicationStatus</att> attribute to record the
-                        editorial status of the EAC-CPF instance.</item>
+                        editorial status of the EAG instance.</item>
                   </list>
                </div>
                <div type="availability">
@@ -1763,17 +1758,71 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:control maintenanceStatus="revised" detailLevel="extended" countryEncoding="iso3166-1"
+                     dateEncoding="iso8601" languageEncoding="iso639-2b" repositoryEncoding="iso15511"
+                     scriptEncoding="iso15924">
+                        <eag:recordId>APE-000000000001</eag:recordId>
+                        <eag:maintenanceAgency>
+                           <eag:agencyCode>DE-1958</eag:agencyCode>
+                           <eag:agencyName languageOfElement="ger">Bundesarchiv</eag:agencyName>
+                        </eag:maintenanceAgency>
+                        <eag:maintenanceHistory>
+                           <eag:maintenanceEvent maintenanceEventType="created">
+                              <eag:agent agentType="machine">mandatory added agent</eag:agent>
+                              <eag:eventDateTime standardDateTime="2012-06-20T11:12:44">20.06.2012</eag:eventDateTime>
+                           </eag:maintenanceEvent>
+                           <eag:maintenanceEvent maintenanceEventType="revised">
+                              <eag:agent agentType="human">APEx Projekt Team, Bundesarchiv</eag:agent>
+                              <eag:eventDateTime standardDateTime="2014-08-15T13:54:51">15.08.2014</eag:eventDateTime>
+                           </eag:maintenanceEvent>
+                           <eag:maintenanceEvent maintenanceEventType="revised">
+                              <eag:agent agentType="machine">Archives Portal Europe</eag:agent>
+                              <eag:eventDateTime standardDateTime="2019-11-12T13:00:00">12.11.2019</eag:eventDateTime>
+                           </eag:maintenanceEvent>
+                        </eag:maintenanceHistory>
+                        <eag:sources>
+                           <eag:source href="https://www.bundesarchiv.de/DE/Navigation/Home/home.html">
+                              <eag:reference>Webseite des Bundesarchivs</eag:reference>
+                           </eag:source>
+                        </eag:sources>
+                        <eag:otherRecordId localType="original" localTypeDeclarationReference="lTD1" vocabularySource="ISIL">DE-1958</eag:otherRecordId>
+                        <eag:languageDeclaration languageCode="ger" scriptCode="Latn"/>
+                        <eag:languageDeclaration languageCode="eng" scriptCode="Latn"/>
+                        <eag:conventionDeclaration>
+                           <eag:reference>International Standard for Describing Institutions with Archival Holdings</eag:reference>
+                           <eag:shortCode>ISDIAH</eag:shortCode>
+                        </eag:conventionDeclaration>
+                        <eag:localTypeDeclaration id="ltD1">
+                           <eag:reference>Local types for the use in Archives Portal Europe (descriptions of institutions with archival holdings</eag:reference>
+                        </eag:localTypeDeclaration>
+                        <eag:rightsDeclaration>
+                           <eag:reference href="http://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 1.0 Universal Public Domain Dedication (CC0)</eag:reference>
+                           <eag:shortCode>CC0</eag:shortCode>
+                           <eag:descriptiveNote>
+                              <eag:p>This object is made available under the Creative Commons CC0 1.0 Public Domain Dedication. All possible existing rights in the content are waived, and the object can be used by anyone without any restrictions.</eag:p>
+                           </eag:descriptiveNote>
+                        </eag:rightsDeclaration>
+                     </eag:control>
                   </egXML>
+                  <egXML>
+                     <eag:control maintenanceStatus="revised">
+                        <eag:recordId>APE-000000000002</recordId>
+                        <eag:maintenanceAgency>
+                           <eag:agencyCode>GB-532</eag:agencyCode>
+                           <eag:agencyName languageOfElement="eng">University of Bradford Special Collections</eag:agencyName>
+                        </eag:maintenanceAgency>
+                        <eag:maintenanceHistory>
+                           <eag:maintenanceEvent maintenanceEventType="revised">
+                              <eag:agent agentType="human">Jane Stevenson</agentEdited elements >
+                              <eag:eventDateTime standardDateTime="2022-01-13">2022-01-13</eventDateTime>
+                          </eag:maintenanceEvent>
+                        </eag:maintenanceHistory>
+                     </eag:control>
+                  </egXML>   
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-conventionDeclaration">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>conventionDeclaration</gi>
                </head>
@@ -1783,7 +1832,7 @@
                <div type="summary">
                   <p>An optional child element of <gi>control</gi>, used to declare the rules or
                      conventions, including authorized controlled vocabularies and thesauri, applied
-                     in creating the EAC-CPF instance.</p>
+                     in creating the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..1), reference (1..1), shortCode (0..1)</p>
@@ -1819,7 +1868,7 @@
                      applied in the construction of the description. The element binds together the
                      required <gi>reference</gi> element with optional <gi>shortCode</gi> and
                         <gi>descriptiveNote</gi> elements that identify rules or conventions applied
-                     in compiling the EAC-CPF instance.</p>
+                     in compiling the EAG instance.</p>
                   <p>Each additional rule or set of rules, controlled vocabulary, or standard should
                      be contained in a separate <gi>conventionDeclaration</gi>.</p>
                   <p><gi>shortCode</gi> may be used to identify the standard or controlled
@@ -1840,8 +1889,17 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:conventionDeclaration>
+                        <eag:reference>International Standard for Describing Institutions with Archival Holdings</eag:reference>
+                        <eag:shortCode>ISDIAH</eag:shortCode>
+                     </eag:conventionDeclaration>
                   </egXML>
+                  <egXML>
+                     <eag:conventionDeclaration id="cd3">
+                        <eag:reference href="cnig.gouv.fr/wp-content/uploads/2015/03/CNT-site-collectivit%C3%A9s-fran%C3%A7aises.pdf">
+                        Commission nationale de toponymie: Collectivités territoriales françaises </eag:reference>
+                     </eag:conventionDeclaration>
+                  </egXML
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-corpName">
@@ -3625,12 +3683,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-languageDeclaration">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>languageDeclaration</gi>
                </head>
@@ -3638,8 +3691,8 @@
                   <p>Language Declaration</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>control</gi> that indicates the language and
-                     script in which an EAC-CPF instance is written.</p>
+                  <p>An optional child element of <gi>control</gi> that indicates the language(s) and
+                     script(s) in which an EAG instance is written.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..1)</p>
@@ -3669,19 +3722,19 @@
                </div>
                <div type="description">
                   <p>An optional child element of <gi>control</gi> that declares the languages and
-                     scripts in which an EAC-CPF instance is written in the <att>languageCode</att>
+                     scripts in which an EAG instance is written in the <att>languageCode</att>
                      and <att>scriptCode</att> attributes. Any comments about the languages and
-                     scripts in which the EAC-CPF instance is written may be included in the
+                     scripts in which the EAG instance is written may be included in the
                      optional <gi>descriptiveNote</gi> element.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
                      <item>Use the required <att>languageCode</att> to provide a code for the
-                        language used in the EAC-CPF instance.</item>
+                        language used in the EAG instance.</item>
                      <item>Use <att>languageOfElement</att> to provide a code for the language in
                         which the <gi>languageDeclaration</gi> element is given.</item>
                      <item>Use <att>scriptCode</att> to provide a code for the writing system used
-                        in the EAC-CPF instance.</item>
+                        in the EAG instance.</item>
                      <item>Use <att>scriptOfElement</att> to provide a code for the writing system
                         in which the <gi>languageDeclaration</gi> element is given.</item>
                   </list>
@@ -3691,7 +3744,16 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:languageDeclaration languageCode="ger" scriptCode="Latn" languageOfElement="de-DE">
+                        <eag:descriptiveNote>
+                           <eag:p>Diese Institutionsbeschreibung enthält Informationen in deutscher sowie in englischer Sprache.</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:languageDeclaration>
+                     <eag:languageDeclaration languageCode="eng" scriptCode="Latn" languageOfElement="en-GB">
+                        <eag:descriptiveNote>
+                           <eag:p>This institution description includes information in German and in English.</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:languageDeclaration>
                   </egXML>
                </div>
             </div>
@@ -4122,12 +4184,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-localTypeDeclaration">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>localTypeDeclaration</gi>
                </head>
@@ -4137,7 +4194,7 @@
                <div type="summary">
                   <p>An optional child element of <gi>control</gi> used to declare any local
                      conventions or controlled vocabularies used in <att>localType</att> in the
-                     EAC-CPF instance.</p>
+                     EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..1), reference (1..1), shortCode (0..1)</p>
@@ -4169,7 +4226,7 @@
                </div>
                <div type="description">
                   <p><gi>localTypeDeclaration</gi> specifies the local conventions and controlled
-                     vocabularies used in <att>localType</att> attributes in the EAC-CPF
+                     vocabularies used in <att>localType</att> attributes in the EAG
                      instance.</p>
                   <p>The child <gi>reference</gi> must be used to cite the resource that lists the
                      local rules or controlled terms. Any notes relating to how these rules or
@@ -4188,7 +4245,19 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:localTypeDeclaration id="ltD1">
+                        <eag:reference>Local types for the use in Archives Portal Europe (descriptions of institutions with archival holdings</eag:reference>
+                     </eag:localTypeDeclaration>
+                  </egXML>
+                  <egXML>
+                     <eag:localTypeDeclaration>
+                        <eag:reference href="https://d-nb.info/standards/elementset/gnd_20191015"/>
+                        <eag:shortCode>GNDO</eag:shortCode>
+                        <eag:descriptiveNote>
+                           <eag:p langugeOfElement="ger">Gemeinsame Normdatei Ontologie, Version 2019-10-15</eag:p>
+                           <eag:p langugeOfElement="eng">Integrated Authority File Ontology, Version 2019-10-15</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:localTypeDeclaration>
                   </egXML>
                </div>
             </div>
@@ -6236,7 +6305,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-reference">
-               <!-- Kerstin (edit), Jane (review) -->
+               <!-- Jane (review) -->
                <head>
                   <gi>reference</gi>
                </head>
@@ -6283,7 +6352,7 @@
                </div>
                <div type="description">
                   <p>An element used for referencing external resources that have been used to
-                     compile the EAC-CPF instance, that provide additional context to the EAC-CPF
+                     compile the EAG instance, that provide additional context to the EAG
                      instance, or that identify rules or conventions that have been applied.</p>
                   <p><gi>reference</gi> is a required child element of
                         <gi>conventionDeclaration</gi>, <gi>localTypeDeclaration</gi>, and
@@ -6296,17 +6365,17 @@
                         <gi>chronItem</gi>, <gi>chronItemSet</gi>, <gi>event</gi>,
                         <gi>eventDescription</gi>, <gi>item</gi>, and <gi>p</gi> where it is used to
                      reference any external resources that provide additional context to the content
-                     of that element.</p>
+                     of that element. <gi>reference</gi> may be repeated in these contexts.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
-                     <item>Use <att>href</att> to link to the cited resource.</item>
+                     <item>Use <att>href</att> to link to the cited resource in case it is available in digital form online.</item>
                   </list>
                </div>
                <div type="seealso">
                   <list type="simple">
                      <item><gi>reference</gi> is used for external linking only. If any internal
-                        linking is required within the EAC-CPF instance, use the <att>target</att>
+                        linking is required within the EAG instance, i.e. from one element to another, use the <att>target</att>
                         attribute.</item>
                   </list>
                </div>
@@ -6320,7 +6389,22 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:source>
+                        <eag:reference href="https://de.wikipedia.org/wiki/Gustav_IV._Adolf_(Schweden)">Wikipedia</eag:reference>
+                     </eag:source>
+                  </egXML>
+                  <egXML>
+                     <eag:conventionDeclaration>
+                        <eag:reference href="https://www.loc.gov/aba/rda/">Resource Description and Access</eag:reference>
+                        <eag:shortCode>RDA</eag:shortCode>
+                     </eag:conventionDeclaration>
+                  </egXML>
+                  <egXML>
+                     <eag:biogHist>
+                        <eag:abstract>Read more about the 
+                           <eag:reference href="https://www.gob.mx/agn/articulos/historia-del-archivo-general-de-la-nacion">History of the Archivo General de la Nación (in Spanish)</eag:reference> on the institution's website.
+                        </eag:abstract>
+                     </eag:biogHist>
                   </egXML>
                </div>
             </div>
@@ -7171,12 +7255,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-rightsDeclaration">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>rightsDeclaration</gi>
                </head>
@@ -7185,7 +7264,7 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>control</gi> that indicates a standard rights
-                     statement associated with the EAC-CPF instance.</p>
+                     statement associated with the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..1), reference (1..1), shortCode (0..1)</p>
@@ -7217,7 +7296,7 @@
                </div>
                <div type="description">
                   <p>Use <gi>rightsDeclaration</gi> to provide structured information about the
-                     usage rights of the EAC-CPF instance. <gi>rightsDeclaration</gi> should only be
+                     usage rights of the EAG instance. <gi>rightsDeclaration</gi> should only be
                      used to reference shared published licenses, such as Creative Commons,
                      RightsStatements.org, and published locally-defined licenses.</p>
                   <p><gi>reference</gi> must be used to provide a machine-readable reference to a
@@ -7240,7 +7319,15 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:rightsDeclaration>
+                        <eag:reference href="http://creativecommons.org/publicdomain/zero/1.0/">
+                        Creative Commons CC0 1.0 Universal Public Domain Dedication (CC0)</eag:reference>
+                        <eag:shortCode>CC0</eag:shortCode>
+                        <eag:descriptiveNote>
+                           <eag:p>This object is made available under the Creative Commons CC0 1.0 Public Domain Dedication. All possible existing 
+                           rights in the content are waived, and the object can be used by anyone without any restrictions.</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:rightsDeclaration>
                   </egXML>
                </div>
             </div>
@@ -7401,12 +7488,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-shortCode">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>shortCode</gi>
                </head>
@@ -7443,7 +7525,7 @@
                      acronym.</p>
                   <p>Use <gi>shortCode</gi> within <gi>conventionDeclaration</gi> or
                         <gi>localTypeDeclaration</gi> to identify the code for a thesaurus,
-                     controlled vocabulary, or another standard used in creating the EAC-CPF
+                     controlled vocabulary, or another standard used in creating the EAG
                      description. Use within <gi>rightsDeclaration</gi> to provide an abbreviated
                      name for the rights statement.</p>
                   <p>To improve interoperability, it is recommended that the value be selected from
@@ -7455,7 +7537,16 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:conventionDeclaration>
+                        <eag:reference>International Standard for Describing Institutions with Archival Holdings</eag:reference>
+                        <eag:shortCode>ISDIAH</eag:shortCode>
+                     </eag:conventionDeclaration>
+                  </egXML>
+                  <egXML>
+                     <eag:rightsDeclaration>
+                        <eag:reference href="http://creativecommons.org/publicdomain/zero/1.0/"/>
+                        <eag:shortCode>CC0</eag:shortCode>
+                     </eag:rightsDeclaration>
                   </egXML>
                </div>
             </div>
@@ -7678,7 +7769,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-span">
-               <!-- Kerstin (edit), Jane (review) -->
+               <!-- Jane (review) -->
                <head>
                   <gi>span</gi>
                </head>
@@ -7740,7 +7831,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:biogHist>
+                        <eag:p languageOfElement="spa">El <eag:span style="font-weight:bold">Archivo General de Indias</eag:span> fundamentalmente custodia los fondos producidos por las instituciones creadas por la Administración española para el gobierno y administración de los territorios ultramarinos españoles. Estas instituciones son: <eag:span localType="corpName">Consejo de Indias y Secretarías de Despacho</eag:span>, <eag:span localType="corpName">Casa de la Contratación</eag:span> y <eag:span localType="corpName">Consulados de Sevilla y Cádiz</eag:span>. Asimismo, se conservan otros fondos de instituciones de menor entidad e incluso de particulares relacionados con las colonias españolas en América y Asia.</eag:p>
+                        <eag:p languageOfElement="spa">La finalidad de este Archivo es la <eag:span style="font-style:italic">conservación de estos fondos</eag:span> y, mediante su organización y descripción, favorecer su <eag:span style="font-style:italic">difusión para todos los ciudadanos</eag:span>.</eag:p>
+                     </eag:biogHist>
                   </egXML>
                </div>
             </div>
