@@ -4114,12 +4114,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-localControl">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>localControl</gi>
                </head>
@@ -4186,7 +4181,7 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <!-- Text from the EAC-CPF 2.0 Tag Library: "No example has been provided for localControl. If you have any examples or use cases, please send them to TS-EAS." The EAG 2012 Tag Library only includes an example regarding the detail level of the description, which has now been moved into @detailLevel with <control>. The EAD revision currently tends to removing <localControl> altogether, which also was discussed during the EAC-CPF revision, hence we might want to keep it without example in EAG 3.0 as well and might want to consider removing it, if it indeed gets removed from the other EAS. -->
                   </egXML>
                </div>
             </div>
@@ -5291,12 +5286,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherRecordId">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>otherRecordId</gi>
                </head>
@@ -5305,7 +5295,7 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>control</gi> that encodes any local identifier
-                     for the EAC-CPF instance.</p>
+                     for the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -5342,9 +5332,9 @@
                <div type="description">
                   <p><gi>otherRecordId</gi> can be used to record an identifier that is an
                      alternative to the mandatory identifier provided in <gi>recordId</gi>. These
-                     might include the identifiers of merged EAC-CPF instances representing the same
-                     CPF entity or those of records that are no longer current but had some part in
-                     the history and maintenance of the EAC-CPF instance.</p>
+                     might include the identifiers of merged EAG instances representing the same
+                     institution with archival holdings or those of records that are no longer current but had some part in
+                     the history and maintenance of the EAG instance.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
@@ -5358,7 +5348,25 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:control maintenanceStatus="derived">
+                        <eag:recordId>APE-000000000005</eag:recordId>
+                        <eag:maintenanceAgency>
+                           <eag:agencyName>Archives Portal Europe</eag:agencyName>
+                        </eag:maintenanceAgency>
+                        <eag:maintenanceHistory>
+                           <eag:maintenanceEvent maintenanceEventType="derived">
+                              <eag:agent agentType="machine"/>
+                              <eag:eventDateTime>October 2022</eag:eventDateTime>
+                           </eag:maintenanceEvent>
+                        </eag:maintenanceHistory>
+                        <eag:otherRecordId localType="Archives Hub" localTypeDescriptionReference="lTD3">gb532</eag:otherRecordId>               
+                        <eag:localTypeDescription id="lTD3">
+                           <eag:reference>Archives Portal Europe List of Aggregators</eag:reference>
+                        </eag:localTypeDescription>
+                     </eag:control>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:otherRecordId localType="FranceArchives" localTypeDescriptionReference="lTD3">FRIHA</eag:otherRecordId>               
                   </egXML>
                </div>
             </div>
@@ -6195,12 +6203,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-recordId">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>recordId</gi>
                </head>
@@ -6209,7 +6212,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>control</gi> that designates a unique
-                     identifier for the EAC-CPF instance.</p>
+                     identifier for the EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -6234,7 +6237,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>recordId</gi> is used for recording a unique identifier for the EAC-CPF
+                  <p><gi>recordId</gi> is used for recording a unique identifier for the EAG
                      instance. The institution assigning the identifier ensures uniqueness of the
                         <gi>recordId</gi> value within the archival descriptions under its control.
                      A globally unique identifier may be constructed within <gi>recordId</gi>
@@ -6247,7 +6250,7 @@
                <div type="seealso">
                   <list type="simple">
                      <item>Use <gi>agencyCode</gi> in combination with <gi>recordId</gi> to provide
-                        a globally unique identifier for the EAC-CPF instance.</item>
+                        a globally unique identifier for the EAG instance.</item>
                   </list>
                </div>
                <div type="availability">
@@ -6255,7 +6258,13 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:recordId>APE-000000000004</eag:recordId>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:recordId>FRIHA</eag:recordId>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:recordId>GB-532</eag:recordId>
                   </egXML>
                </div>
             </div>
@@ -7026,12 +7035,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-representation">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>representation</gi>
                </head>
@@ -7040,8 +7044,8 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>control</gi> for recording a link to a
-                     deliverable version of the EAC-CPF instance or to the XML version of the
-                     EAC-CPF instance itself.</p>
+                     deliverable version of the EAG instance or to the XML version of the
+                     EAG instance itself.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -7077,13 +7081,13 @@
                </div>
                <div type="description">
                   <p>Use <gi>representation</gi> to record a link to a deliverable version of an
-                     EAC-CPF instance, for example an HTML or PDF version, or to the XML version of
-                     the EAC-CPF instance itself.</p>
+                     EAG instance, for example an HTML or PDF version, or to the XML version of
+                     the EAG instance itself.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
                      <item>Use <att>href</att> to specify a link to a deliverable version of the
-                        EAC-CPF instance.</item>
+                        EAG instance.</item>
                      <item>Use <att>localType</att> to differentiate between multiple
                            <gi>representation</gi> elements.</item>
                   </list>
@@ -7091,7 +7095,7 @@
                <div type="seealso">
                   <list type="simple">
                      <item>Use <gi>otherRecordId</gi> to provide any local identifier for the
-                        EAC-CPF instance that does not link to a deliverable version.</item>
+                        EAG instance that does not link to a deliverable version.</item>
                   </list>
                </div>
                <div type="availability">
@@ -7099,7 +7103,23 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:control maintenanceStatus="derived">
+                        <eag:recordId>APE-000000000003</eag:recordId>
+                        <eag:maintenanceAgency>
+                           <eag:agencyName>Archives Portal Europe</eag:agencyName>
+                        </eag:maintenanceAgency>
+                        <eag:maintenanceHistory>
+                           <eag:maintenanceEvent maintenanceEventType="derived">
+                              <eag:agent agentType="machine"/>
+                              <eag:eventDateTime>October 2022</eag:eventDateTime>
+                           </eag:maintenanceEvent>
+                        </eag:maintenanceHistory>
+                        <eag:representation localType="Censo-Guía" localTypeDescriptionReference="lTD2" href="http://censoarchivos.mcu.es/CensoGuia/archivodetail.htm?id=10"/>
+                        <eag:representation localType="Archives Portal Europe" localTypeDescriptionReference="lTD2" href="https://www.archivesportaleurope.net/advanced-search/search-in-institutions/results-(institutions)/?repositoryCode=ES-41091-AGI10"/>
+                        <eag:localTypeDescription id="lTD2">
+                           <eag:reference>Archives Portal Europe List of Aggregators</eag:reference>
+                        </eag:localTypeDescription>
+                     </eag:control>
                   </egXML>
                </div>
             </div>
@@ -8171,12 +8191,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-term">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>term</gi>
                </head>
@@ -8191,8 +8206,7 @@
                   <p>[text]</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>function, legalStatus, localControl, localDescription, mandate, occupation,
-                     otherEntityType</p>
+                  <p>function, legalStatus, localControl, mandate, otherRepositoryType</p>
                </div>
                <div type="attributes">
                   <p>
@@ -8218,8 +8232,7 @@
                </div>
                <div type="description">
                   <p><gi>term</gi> is a required child element of <gi>function</gi>,
-                        <gi>legalStatus</gi>, <gi>localControl</gi>, <gi>localDescription</gi>,
-                        <gi>mandate</gi>, <gi>occupation</gi>, and <gi>otherEntityType</gi>, used to
+                        <gi>legalStatus</gi>, <gi>localControl</gi>, <gi>mandate</gi>, and <gi>otherRepositoryType</gi>, used to
                      specify a descriptive term in accordance with authorized vocabularies or local
                      rules.</p>
                   <p><gi>term</gi> can be repeated within its parent element to include translations
@@ -8232,7 +8245,19 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:legalStatus>
+                       <eag:term>Organismo de la Administracion Central del Estado</eag:term>
+                       <eag:date standardDate="1769">1769</eag:date>
+                     </eag:legalStatus>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <eag:mandate>
+                      <eag:term>Minnesota. Executive Session Laws 1919 c49</eag:term>
+                      <eag:dateRange>
+                        <eag:fromDate standardDate="1919">1919</eag:fromDate>
+                        <eag:toDate standardDate="1925">1925</eag:toDate>
+                      </eag:dateRange>
+                    </eag:mandate>
                   </egXML>
                </div>
             </div>
