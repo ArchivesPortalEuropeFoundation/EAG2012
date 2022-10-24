@@ -1942,12 +1942,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-date">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>date</gi>
                </head>
@@ -1955,17 +1950,14 @@
                   <p>Date</p>
                </div>
                <div type="summary">
-                  <p>The single date of an event in the history of the person, family, or corporate
-                     body being described, or in their relationship to, e.g., a name entry, a place,
-                     an occupation, another CPF entity, a resource, or a function.</p>
+                  <p>The single date of an event in the history of the institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to, e.g., a name entry, a place, a mandate, another archival institution, a resource, or a function.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>chronItem, dateSet, existDates, function, legalStatus, localControl,
-                     localDescription, mandate, occupation, otherEntityType, place, relation,
-                     useDates</p>
+                  <p>chronItem, dateSet, existDates, function, holdings, legalStatus, localControl,
+                     mandate, otherRepositoryType, place, relation, useDates</p>
                </div>
                <div type="attributes">
                   <p>
@@ -1998,6 +1990,8 @@
                         <item>Optional</item>
                         <label>standardDate</label>
                         <item>Optional</item>
+                        <label>status</label>
+                        <item>Optional (values limited to: unknown)</item>
                         <label>sourceReference</label>
                         <item>Optional</item>
                         <label>target</label>
@@ -2007,9 +2001,8 @@
                </div>
                <div type="description">
                   <p>An element for expressing the single date of an event in the history of the
-                     person, corporate body or family being described, or in their relationship to,
-                     e.g., a name entry, a place, an occupation, another CPF entity, a resource, or
-                     a function.</p>
+                     institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to,
+                     e.g., a name entry, a place, a mandate, another archival institution, a resource, or a function.</p>
                   <p>The content of the element is intended to be a human-readable natural language
                      date with a machine-readable date provided as the value of the
                         <att>standardDate</att> attribute, formulated according to ISO 8601. 
@@ -2017,11 +2010,10 @@
                   <p>If the event or relationship has inclusive dates use the <gi>dateRange</gi>
                      element, while more complex dates (combining singles dates and date ranges) can
                      be expressed in <gi>dateSet</gi>.</p>
-                  <p>Dates of existence for the entity being described are encoded with the
+                  <p>Dates of existence for the institution being described are encoded with the
                         <gi>existDates</gi> element, while the dates of use of a particular name of
-                     an entity are encoded in <gi>useDates</gi>. The date and time of a maintenance
-                     event in the history of the EAC-CPF instance are given in the
-                        <gi>eventDateTime</gi> element.</p>
+                     an institution are encoded in <gi>useDates</gi>. Dates for the scope of the holdings that an institution maintains are encoded with the <gi>holdings</gi> element.
+                  <p>Note that the date and time of a maintenance event in the history of the EAG instance are given in the <gi>eventDateTime</gi> element instead.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
@@ -2033,16 +2025,15 @@
                         and earliest possible dates in machine-processable form in cases when the
                         date is uncertain.</item>
                      <item>Use <att>standardDate</att> to provide a machine-processable form of the
-                        date.</item>
+                        date. Such dates, same as the ones in <att>notAfter</att> and <att>notBefore</att>, should be compliant with ISO 8601.</item>
                      <item>Use <att>status</att> with the value "unknown" to indicate where a
                         date is unknown.</item>
                   </list>
                </div>
                <div type="availability">
-                  <p>Within <gi>function</gi>, <gi>legalStatus</gi>, <gi>localDescription</gi>,
-                        <gi>mandate</gi>, <gi>occupation</gi>, <gi>otherEntityType</gi>,
-                        <gi>place</gi>, <gi>relation</gi>: one of <gi>date</gi>, <gi>dateRange</gi>,
-                     or <gi>dateSet</gi> optional, not repeatable</p>
+                  <p>Within <gi>function</gi>, <gi>holdings</gi>, <gi>legalStatus</gi>, <gi>mandate</gi>, 
+                        <gi>otherRepositoryType</gi>, <gi>place</gi>, <gi>relation</gi>: one of <gi>date</gi>, 
+                        <gi>dateRange</gi>, or <gi>dateSet</gi> optional, not repeatable</p>
                   <p>Within <gi>chronItem</gi>, <gi>existDates</gi> and <gi>useDates</gi>: one of
                         <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> required, not
                      repeatable</p>
@@ -2053,17 +2044,32 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:holdings>
+                        <eag:dateSet>
+                           <eag:date standardDate="1848">1848</eag:date>
+                           <eag:date standardDate="1849">1849</eag:date>
+                           <eag:dateRange>
+                              <fromDate standardDate="1945">1945</eag:fromDate>
+                              <toDate standardDate="1949">1949</eag:toDate>
+                           </eag:dateRange>
+                           <eag:dateRange>
+                              <eag:fromDate standardDate="1949">1949</eag:fromDate>
+                              <eag:toDate>bis heute</eag:toDate>
+                           </eag:dateRange>
+                        </eag:dateSet>
+                     </eag:holdings>   
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:mandate>
+                        <eag:term languageOfElement="spa">Ordenanzas para el Archivo General de Indias.</eag:term>
+                        <eag:date standardDate="1790-01-10">10 de enero de 1790</eag:date>
+                        <eag:placeName>Madrid</eag:placeName>
+                    </eag:mandate>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-dateRange">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>dateRange</gi>
                </head>
@@ -2080,9 +2086,8 @@
                   <p>fromDate (0..1), toDate (0..1)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>chronItem, dateSet, existDates, function, legalStatus, localControl,
-                     localDescription, mandate, occupation, otherEntityType, place, relation,
-                     useDates</p>
+                  <p>chronItem, dateSet, existDates, function, holdings, legalStatus, localControl,
+                     mandate, otherRepositoryType, place, relation, useDates</p>
                </div>
                <div type="attributes">
                   <p>
@@ -2111,9 +2116,8 @@
                   </p>
                </div>
                <div type="description">
-                  <p>An element that expresses inclusive dates of an event in the history of, or a
-                     relationship with, the person, family, or corporate body being described in the
-                     EAC-CPF instance.</p>
+                  <p>An element that expresses inclusive dates of an event in the history of, of the holdings maintained, or a
+                     relationship with, the institution with archival holdings being described in the EAG instance.</p>
                   <p><gi>dateRange</gi> contains <gi>fromDate</gi> and/or <gi>toDate</gi>, and
                      therefore may express a range of dates as a starting point with no end point, a
                      start and end point, or an end point with no starting point. Either
@@ -2125,11 +2129,10 @@
                      or other machine processing of dates is desired, <att>standardDate</att> should
                      be used on the children of <gi>dateRange</gi> to record the date in
                      machine-processable form as well.</p>
-                  <p>Dates of existence for the identity being described are encoded with the
+                  <p>Dates of existence for the institution with archival holdings being described are encoded with the
                         <gi>existDates</gi> element, while the dates of use of a particular name of
-                     an identity are encoded in <gi>useDates</gi>. The date and time of a
-                     maintenance event in the history of the EAC-CPF instance are given in the
-                        <gi>eventDateTime</gi> element.</p>
+                     an archival institution are encoded in <gi>useDates</gi>. Dates for the scope of the holdings that an institution maintains are encoded with the <gi>holdings</gi> element.
+                  <p>Note that the date and time of a maintenance event in the history of the EAG instance are given in the <gi>eventDateTime</gi> element instead.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
                   <list type="simple">
                      <item><gi>fromDate</gi></item>
@@ -2143,10 +2146,9 @@
                   </list>
                </div>
                <div type="availability">
-                  <p>Within <gi>function</gi>, <gi>legalStatus</gi>, <gi>localDescription</gi>,
-                        <gi>mandate</gi>, <gi>occupation</gi>, <gi>otherEntityType</gi>,
-                        <gi>place</gi>, <gi>relation</gi>: one of <gi>date</gi>, <gi>dateRange</gi>,
-                     or <gi>dateSet</gi> optional, not repeatable</p>
+                  <p>Within <gi>function</gi>, <gi>holdings</gi>, <gi>legalStatus</gi>, <gi>mandate</gi>, 
+                        <gi>otherRepositoryType</gi>, <gi>place</gi>, <gi>relation</gi>: one of <gi>date</gi>, 
+                        <gi>dateRange</gi>, or <gi>dateSet</gi> optional, not repeatable</p>
                   <p>Within <gi>chronItem</gi>, <gi>existDates</gi> and <gi>useDates</gi>: one of
                         <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> required, not
                      repeatable</p>
@@ -2157,7 +2159,59 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:existDates>
+                        <eag:dateRange>
+                           <eag:fromDate standardDate="1986-01-01">1986</eag:fromDate>
+                           <eag:toDate status="ongoing"/>
+                        </eag:dateRange>
+                     </eag:existDates>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:nameEntrySet>
+                        <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                           <eag:part>Archivo General de las Indias</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate status="unknown">No data</eag:fromDate>
+                                 <eag:toDate status="unknown">No data</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                           <eag:part>Archivo de las Indias</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate status="unknown">No data</eag:fromDate>
+                                 <eag:toDate status="unknown">No data</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                           <eag:part>Archivo de Indias</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate status="unknown">No data</eag:fromDate>
+                                 <eag:toDate status="unknown">No data</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                     </nameEntrySet>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:holdings>
+                        <eag:dateSet>
+                           <eag:date standardDate="1848">1848</eag:date>
+                           <eag:date standardDate="1849">1849</eag:date>
+                           <eag:dateRange>
+                              <fromDate standardDate="1945">1945</eag:fromDate>
+                              <toDate standardDate="1949">1949</eag:toDate>
+                           </eag:dateRange>
+                           <eag:dateRange>
+                              <eag:fromDate standardDate="1949">1949</eag:fromDate>
+                              <eag:toDate>bis heute</eag:toDate>
+                           </eag:dateRange>
+                        </eag:dateSet>
+                     </eag:holdings>   
                   </egXML>
                </div>
             </div>
@@ -2922,12 +2976,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-fromDate">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>fromDate</gi>
                </head>
@@ -3019,7 +3068,33 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:dateRange>
+                        <eag:fromDate standardDate="1986-01-01">1986</eag:fromDate>
+                        <eag:toDate status="ongoing"/>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:fromDate status="unknown">No data</eag:fromDate>
+                        <eag:toDate status="unknown">No data</eag:toDate>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:fromDate status="unknown"/>
+                        <eag:toDate status="unknown"/>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:fromDate certainty="approximate" notBefore="1780">ca. 1785</eag:fromDate>
+                        <eag:toDate certainty="approximate" notAfter="1815">ca. 1810</eag:toDate>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:fromDate standardDate="1949">1949</eag:fromDate>
+                     </eag:dateRange>
                   </egXML>
                </div>
             </div>
@@ -8311,12 +8386,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-toDate">
-               <!-- Kerstin (edit), Jane (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Jane (review) -->
                <head>
                   <gi>toDate</gi>
                </head>
@@ -8387,7 +8457,7 @@
                      <item>Use <att>certainty</att> to indicate the degree of precision in the
                         dating, for example, "uncertain" or "approximate".</item>
                      <item>Use <att>localType</att> to supply a more specific characterization of
-                        the start date.</item>
+                        the end date.</item>
                      <item>Use <att>notAfter</att> and <att>notBefore</att> to capture the latest
                         and earliest possible dates in machine-processable form in cases when the
                         date is uncertain.</item>
@@ -8408,7 +8478,33 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:dateRange>
+                        <eag:fromDate standardDate="1986-01-01">1986</eag:fromDate>
+                        <eag:toDate status="ongoing"/>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:fromDate status="unknown">No data</eag:fromDate>
+                        <eag:toDate status="unknown">No data</eag:toDate>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:fromDate status="unknown"/>
+                        <eag:toDate status="unknown"/>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:fromDate certainty="approximate" notBefore="1780">ca. 1785</eag:fromDate>
+                        <eag:toDate certainty="approximate" notAfter="1815">ca. 1810</eag:toDate>
+                     </eag:dateRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:dateRange>
+                        <eag:toDate standardDate="1933%" certainty="uncertain-approximate">around 1933</eag:fromDate>
+                     </eag:dateRange>
                   </egXML>
                </div>
             </div>
