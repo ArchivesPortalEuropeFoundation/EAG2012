@@ -291,10 +291,7 @@
                </div>
             </div>
              <div type="elementDocumentation" xml:id="elem-access">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library;
-                    needs review/confirmation and completion for various parts -->
-               <!-- tag name -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>access</gi>
                </head>
@@ -379,8 +376,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessConditions">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>accessConditions</gi>
                </head>
@@ -474,8 +470,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessibility">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>accessibility</gi>
                </head>
@@ -1074,8 +1069,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-building">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>building</gi>
                </head>
@@ -1164,8 +1158,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-buildingInfo">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>buildingInfo</gi>
                </head>
@@ -1522,8 +1515,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-closing">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>closing</gi>
                </head>
@@ -2025,8 +2017,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-corpName">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>corpName</gi>
                </head>
@@ -2971,8 +2962,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-extent">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>extent</gi>
                </head>
@@ -3061,8 +3051,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-famName">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>famName</gi>
                </head>
@@ -3437,8 +3426,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-genreForm">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>genreForm</gi>
                </head>
@@ -3675,8 +3663,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-holdings">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>holdings</gi>
                </head>
@@ -3899,9 +3886,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-image">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; added after publication of the EAG 2012 Tag Library, i.e. no more detailed 
-                    description yet; needs completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>image</gi>
                </head>
@@ -4309,8 +4294,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-lengthOfShelves">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>lengthOfShelves</gi>
                </head>
@@ -5129,8 +5113,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-name">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>name</gi>
                </head>
@@ -5444,8 +5427,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-num">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>num</gi>
                </head>
@@ -5587,8 +5569,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-opening">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>opening</gi>
                </head>
@@ -6130,8 +6111,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-persName">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>persName</gi>
                </head>
@@ -7289,8 +7269,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryArea">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>repositoryArea</gi>
                </head>
@@ -7418,8 +7397,7 @@
                </div>
             </div>
            <div type="elementDocumentation" xml:id="elem-repositoryRole">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>repositoryRole</gi>
                </head>
@@ -8100,9 +8078,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-socialMedia">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>socialMedia</gi>
                </head>
@@ -8478,8 +8454,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-subject">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>subject</gi>
                </head>
@@ -8864,8 +8839,7 @@
                </div>
             </div>
                <div type="elementDocumentation" xml:id="elem-timetable">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>timetable</gi>
                </head>
@@ -9095,8 +9069,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-useConditions">
-               <!-- Jane (edit) DONE, Kerstin (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
+               <!-- Kerstin (review) -->
                <head>
                   <gi>useConditions</gi>
                </head>
