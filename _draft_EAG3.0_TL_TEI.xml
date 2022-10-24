@@ -258,12 +258,7 @@
       <body>
          <div type="elements">
             <div type="elementDocumentation" xml:id="elem-abstract">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>abstract</gi>
                </head>
@@ -489,12 +484,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-address">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>address</gi>
                </head>
@@ -583,12 +573,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-addressLine">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>addressLine</gi>
                </head>
@@ -955,12 +940,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-biogHist">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>biogHist</gi>
                </head>
@@ -1160,12 +1140,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-chronItem">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>chronItem</gi>
                </head>
@@ -1243,12 +1218,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-chronItemSet">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>chronItemSet</gi>
                </head>
@@ -1312,12 +1282,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-chronList">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>chronList</gi>
                </head>
@@ -1541,12 +1506,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-contact">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>contact</gi>
                </head>
@@ -1626,12 +1586,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-contactLine">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>contactLine</gi>
                </head>
@@ -2266,12 +2221,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-description">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>description</gi>
                </head>
@@ -2467,12 +2417,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-event">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>event</gi>
                </head>
@@ -2707,12 +2652,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-existDates">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>existDates</gi>
                </head>
@@ -2983,12 +2923,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-function">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>function</gi>
                </head>
@@ -3078,12 +3013,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-functions">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>functions</gi>
                </head>
@@ -3185,12 +3115,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-geographicCoordinates">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>geographicCoordinates</gi>
                </head>
@@ -3257,12 +3182,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-head">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>head</gi>
                </head>
@@ -3598,12 +3518,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-item">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>item</gi>
                </head>
@@ -3737,12 +3652,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-legalStatus">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>legalStatus</gi>
                </head>
@@ -3826,12 +3736,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-legalStatuses">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>legalStatuses</gi>
                </head>
@@ -3999,12 +3904,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-list">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>list</gi>
                </head>
@@ -4449,12 +4349,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-mandate">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>mandate</gi>
                </head>
@@ -4545,12 +4440,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-mandates">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>mandates</gi>
                </head>
@@ -5496,12 +5386,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-part">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>part</gi>
                </head>
@@ -5657,12 +5542,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-place">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>place</gi>
                </head>
@@ -5780,12 +5660,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-placeName">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>placeName</gi>
                </head>
@@ -5869,12 +5744,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-placeRole">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>placeRole</gi>
                </head>
@@ -5941,12 +5811,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-places">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>places</gi>
                </head>
@@ -7775,12 +7640,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-structureOrGenealogy">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
+               <!-- Ana (review) -->
                <head>
                   <gi>structureOrGenealogy</gi>
                </head>
