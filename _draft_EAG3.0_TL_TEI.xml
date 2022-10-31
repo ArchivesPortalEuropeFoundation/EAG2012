@@ -634,7 +634,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agencyCode">
-               <!-- Jane (review) -->
+               <!-- Reviewed. Need decision re authorized/authorised. -->
                <head>
                   <gi>agencyCode</gi>
                </head>
@@ -741,7 +741,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agencyName">
-               <!-- Jane (review) -->
+               <!-- Review done - see Q re authorised name -->
                <head>
                   <gi>agencyName</gi>
                </head>
