@@ -2067,7 +2067,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-dateSet">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>dateSet</gi>
                </head>
@@ -2082,8 +2081,7 @@
                   <p>date or dateRange (2..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>chronItem, existDates, function, holdings, legalStatus, localDescription, mandate,
-                     occupation, otherRepositoryType, place, relation, useDates</p>
+                  <p>chronItem, existDates, function, holdings, legalStatus, mandate, otherRepositoryType, place, relation, useDates</p>
                </div>
                <div type="attributes">
                   <p>
@@ -2128,20 +2126,20 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <holdings>
-                        <dateSet>
-                           <date standardDate="1848">1848</date>
-                           <date standardDate="1849">1849</date>
-                           <dateRange>
-                              <fromDate standardDate="1945">1945</fromDate>
-                              <toDate standardDate="1949">1949</toDate>
-                           </dateRange>
-                           <dateRange>
-                              <fromDate standardDate="1949">1949</fromDate>
-                              <toDate>bis heute</toDate>
-                           </dateRange>
-                        </dateSet>
-                     </holdings>
+                     <eag:holdings>
+                        <eag:dateSet>
+                           <eag:date standardDate="1848">1848</eag:date>
+                           <eag:date standardDate="1849">1849</eag:date>
+                           <eag:dateRange>
+                              <eag:fromDate standardDate="1945">1945</eag:fromDate>
+                              <eag:toDate standardDate="1949">1949</eag:toDate>
+                           </eag:dateRange>
+                           <eag:dateRange>
+                              <eag:fromDate standardDate="1949">1949</eag:fromDate>
+                              <eag:toDate>bis heute</eag:toDate>
+                           </eag:dateRange>
+                        </eag:dateSet>
+                     </eag:holdings>
                   </egXML>
                </div>
             </div>
@@ -3289,7 +3287,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-identity">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>identity</gi>
                </head>
@@ -3297,11 +3294,10 @@
                   <p>Identity</p>
                </div>
                <div type="summary">
-                  <p>A required child element of <gi>repository</gi> used to encode the name or
-                     names related to the repository being described within the EAG instance and other information that helps to identify the institution.</p>
+                  <p>A required child element of <gi>repository</gi> used to encode the name or names related to the repository being described within the EAG instance and other information that helps to identify the institution.</p>
                </div>
                <div type="mayContain">
-                  <p>descriptiveNote (0..1), nameEntry (1..n), nameEntrySet (1..n), otherRepositoryId (0..n), otherRepositoryTypes (0..1), repositoryId (0..1), repositoryType (0..n)</p>
+                  <p>descriptiveNote (0..1), nameEntry or nameEntrySet (1..n), otherRepositoryId (0..n), otherRepositoryTypes (0..1), repositoryId (0..1), repositoryType (0..n)</p>
                </div>
                <div type="mayOccurWithin">
                   <p>repository</p>
@@ -3338,29 +3334,15 @@
                </div>
                <div type="description">
                   <p><gi>identity</gi> is a wrapper element used to group the elements necessary to
-                     encode the name or names related to the identity of the repository  within the
+                     encode the name or names related to the repository being described within the
                      <gi>repository</gi> element.</p>
-                  <p>One or more <gi>nameEntry</gi> elements and/or one or more
-                     <gi>nameEntrySet</gi> elements must be included. 
-                     All names by which the repository is known, are provided within <gi>repository</gi>.
-                     Each of the names, whether authorized or alternatives, should be recorded in a separate <gi>nameEntry</gi> element.</p>
-                  <p><gi>identity</gi> may accommodate two or more parallel names in different
-                     languages or scripts. In countries where there is more than one official
-                     language, such as Canada or Switzerland, names of repository are frequently
-                     provided in more than one language. Within <gi>identity</gi>, a
-                     <gi>nameEntrySet</gi> element should be used to group two or more
-                     <gi>nameEntry</gi> elements that represent parallel forms of the name of the
-                     repository being described.</p>
-                  <p> An optional <gi>repositoryId</gi> is available for any
-                     identifiers associated with the repository.</p>
-                  <p>The required child element <gi>repositoryType</gi> specifies the type of repository. The optional
-                     <gi>otherRepositoriyTypes </gi> element can be used to encode other repository types</p>
-                  <p>Within <gi>identity</gi>, a <gi>descriptiveNote</gi> element may be used to
-                     record other information in a textual form that assists in the identification
-                     of the repository.</p>
-                  <p>In case of multiple identities of the same entity in one EAG 3.0. instance, a
-                     separate <gi>identity</gi> element is contained in each of the
-                     <gi>repositories</gi> elements of the EAG 3.0. instance.</p>
+                  <p>One or more <gi>nameEntry</gi> elements and/or one or more <gi>nameEntrySet</gi> elements must be included. 
+                     All names by which the repository being described within one <gi>repository</gi> element is known are provided within <gi>identity</gi>. Each of the names, whether authorized or alternatives, should be recorded in a separate <gi>nameEntry</gi> element.</p>
+                  <p><gi>identity</gi> may accommodate two or more parallel names in different languages or scripts. In countries where there is more than one official language, such as Canada or Switzerland, names of repositories are frequently provided in more than one language. Within <gi>identity</gi>, a <gi>nameEntrySet</gi> element should be used to group two or more <gi>nameEntry</gi> elements that represent parallel forms of the name of the repository being described.</p>
+                  <p>An optional <gi>repositoryId</gi> is available for the main authorized identifier associated with the repository. Any number of additional and alternative identifiers may be given in the optional and repeatable element <gi>otherRepositoryId</gi>.</p>
+                  <p>An optional <gi>repositoryType</gi> provides a predefined list to select the type(s) of repository from. Additionally, the optional <gi>otherRepositoriyTypes</gi> element can be used to encode other repository types not included in this list as well as translations or specifications of those repository types.</p>
+                  <p>Within <gi>identity</gi>, a <gi>descriptiveNote</gi> element may be used to record other information in a textual form that assists in the identification of the repository.</p>
+                  <p>In case multiple repositories are described within the same EAG instance, a separate <gi>identity</gi> element is contained in each of the <gi>repository</gi> elements of the EAG instance.</p>
                   <p>The prescribed order of all child elements is:</p>
                   <list type="simple">
                      <item><gi>nameEntry</gi> and/or <gi>nameEntrySet</gi></item>
@@ -3372,41 +3354,42 @@
                   </list>
                </div>
                <div type="availability">
-                  <p> Required, not repeatable</p>
+                  <p>Required, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <repositories>
-                        <repository>
-                           <identity>
-                              <nameEntry languageOfElement="spa" status="authorized">
-                                 <part>Archivo General de Indias</part>
-                              </nameEntry>
-                              <nameEntrySet>
-                                 <nameEntry languageOfElement="spa" preferredForm="false">
-                                    <part>Archivo General de las Indias</part>
-                                    <useDates>
-                                       <date>No data</date>                                                   
-                                    </useDates>
-                                 </nameEntry>
-                                 <nameEntry languageOfElement="spa" preferredForm="false">
-                                    <part>Archivo de las Indias</part>
-                                    <useDates>
-                                       <date>No data</date>   
-                                    </useDates>
-                                 </nameEntry>
-                                 <nameEntry languageOfElement="spa" preferredForm="false">
-                                    <part>Archivo de Indias</part>
-                                    <useDates>
-                                       <date>No data</date>                           
-                                    </useDates>
-                                 </nameEntry>
-                              </nameEntrySet>
-                              <repositoryId countryCode="ES" repositoryCode="41091.AGI"/>                
-                           </identity>
-                        </repository>
-                     </repositories>
-                   </egXML>
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="spa" status="authorized">
+                           <eag:part>Archivo General de Indias</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntrySet>
+                           <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                              <eag:part>Archivo General de las Indias</eag:part>
+                              <eag:useDates>
+                                 <eag:date>No data</eag:date>                                                   
+                              </eag:useDates>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                              <eag:part>Archivo de las Indias</eag:part>
+                              <eag:useDates>
+                                 <eag:date>No data</eag:date>   
+                              </eag:useDates>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                              <eag:part>Archivo de Indias</eag:part>
+                              <eag:useDates>
+                                 <eag:date>No data</eag:date>                           
+                              </eag:useDates>
+                           </eag:nameEntry>
+                        </eag:nameEntrySet>
+                        <eag:repositoryId countryCode="ES" repositoryCode="ES-41091-AGI"/>
+                        <eag:otherRepositoryId>41091.AGI</eag:otherRepositoryId>
+                        <eag:repositoryType value="nationalArchives"/>
+                        <eag:otherRepositoryTypes>
+                           <eag:otherRepositoryType languageOfElement="spa">Archivo Nacional</eag:otherRepositoryType>
+                        </eag:otherRepositoryTypes>
+                     </eag:identity>
+                  </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-image">
@@ -4637,7 +4620,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-nameEntry">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>nameEntry</gi>
                </head>
@@ -4645,7 +4627,7 @@
                   <p>Name Entry</p>
                </div>
                <div type="summary">
-                  <p>An element containing a name entry for repositories</p>
+                  <p>An element containing a name entry for the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>part (1..n), useDates (0..n)</p>
@@ -4692,17 +4674,13 @@
                </div>
                <div type="description">
                   <p>Within <gi>identity</gi>, the element <gi>nameEntry</gi> is used to record a
-                     name by which the repositories described in the EAG
-                     instance is known.</p>
+                     name by which the repository described in the EAG instance is known.</p>
                   <p>When <gi>nameEntry</gi> occurs within <gi>nameEntrySet</gi> it is used to
                      record two or more forms of a name, for example official and non-official forms of the
                      name in different languages and/or scripts.</p>
                   <p>Each form of the name is recorded in a separate <gi>nameEntry</gi> element.</p>
-                  <p>Each <gi>nameEntry</gi> must contain at least one <gi>part</gi> element. Within
-                        <gi>nameEntry</gi> each of the component parts of a name may be recorded in
-                     a separate <gi>part</gi> element.</p>
-                  <p>The <gi>nameEntry</gi> element may also contain a <gi>useDates</gi> element to
-                     indicate the dates the name was used.</p>
+                  <p>Each <gi>nameEntry</gi> must contain at least one <gi>part</gi> element. Within <gi>nameEntry</gi> each of the component parts of a name may be recorded in a separate <gi>part</gi> element.</p>
+                  <p>The <gi>nameEntry</gi> element may also contain a <gi>useDates</gi> element to indicate the dates the name was used.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
                   <list type="simple">
                      <item><gi>part</gi></item>
@@ -4711,28 +4689,46 @@
                </div>
                <div type="attributeusage">
                   <list type="simple">
-                     <item>The <att>status</att> attribute may be used to indicate whether the
-                        <gi>nameEntry</gi> is an authorized or alternative form of the
-                        name.</item>
-                     <item>The <att>scriptOfElement</att> and <att>languageOfElement</att>
-                        attributes can be used to specify the script and language of each name
-                        recorded in <gi>nameEntry</gi>.</item>
+                     <item>The <att>status</att> attribute may be used to indicate whether the <gi>nameEntry</gi> is an authorized or alternative form of the name.</item>
+                     <item>The <att>scriptOfElement</att> and <att>languageOfElement</att> attributes can be used to specify the script and language of each name recorded in several <gi>nameEntry</gi> elements, especially when used in parallel to each other.</item>
                   </list>
                </div>
                <div type="availability">
                   <p>Within <gi>identity</gi>: one of <gi>nameEntry</gi> or <gi>nameEntrySet</gi>
                      required, repeatable</p>
-                  <p>Within <gi>nameEntrySet</gi>: two or more <gi>nameEntry</gi> required,
+                  <p>Within <gi>nameEntrySet</gi>: two or more <gi>nameEntry</gi>-s required,
                      repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <identity>
-                        <nameEntry languageOfElement="ger" status="authorized">
-                           <part>Bundesarchiv</part>
-                        </nameEntry>
-                      </identity>
-                  </egXML>               
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="fre" status="authorized">
+                           <eag:part>Institut d'histoire de l'Aluminium</eag:part>
+                        </eag:nameEntry>
+                      </eag:identity>
+                  </egXML>  
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="ger" status="authorized">
+                          <eag:part>Bundesarchiv</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntrySet>
+                           <eag:nameEntry languageOfElement="eng" status="alternative">
+                              <eag:part>The Federal Archives</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="fre" status="alternative">
+                              <eag:part>Les Archives fédérales</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="spa" status="alternative">
+                              <eag:part>Archivo federal</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="pol" status="alternative">
+                              <eag:part>Archiwum Federalne</eag:part>
+                           </eag:nameEntry>
+                        </eag:nameEntrySet>
+                     </eag:identity>
+                  </egXML>
+               </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-nameEntrySet">
                <!-- Kerstin (review) -->
