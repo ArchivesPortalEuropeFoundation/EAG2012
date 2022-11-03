@@ -1314,7 +1314,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-citedRange">
-               <!-- Jane (review) -->
+               <!-- Jane (review) DONE -->
                <head>
                   <gi>citedRange</gi>
                </head>
@@ -1350,7 +1350,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p>The <gi>citedRange</gi> element can be used to refer to a specific location
+                  <p>The <gi>citedRange</gi> element can be used to refer to a location
                      within a source where supporting evidence can be found. It may refer to a
                      specific location such as a single page, or a broader location such as a range
                      of pages.</p>
@@ -1358,7 +1358,7 @@
                <div type="attributeusage">
                   <list type="simple">
                      <item>Use the optional <att>unit</att> attribute to specify the format that the
-                           <gi>citedRange</gi> refers to, for example page number or volume
+                           <gi>citedRange</gi> refers to, for example, page number or volume
                         number.</item>
                   </list>
                </div>
@@ -1642,7 +1642,7 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>eag</gi> that contains information about the
-                     creation, maintenance, status and the rules and authorities used in the
+                     creation, maintenance, status, and the rules and authorities used in the
                      composition of the EAG instance.</p>
                </div>
                <div type="mayContain">
@@ -1693,7 +1693,7 @@
                <div type="description">
                   <p>This required wrapper element within <gi>eag</gi> contains the information
                      necessary to manage the EAG instance. This includes information about its creation,
-                     maintenance and status as well as the languages, rules and authorities used in
+                     maintenance and status, as well as the languages, rules and authorities used in
                      the composition of the description.</p>
                   <p>It must contain a unique identifier for the instance within the
                         <gi>recordId</gi> element. Other associated identifiers may be given in
