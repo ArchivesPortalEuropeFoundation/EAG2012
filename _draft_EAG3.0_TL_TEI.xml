@@ -3386,7 +3386,7 @@
                         <eag:otherRepositoryId>41091.AGI</eag:otherRepositoryId>
                         <eag:repositoryType value="nationalArchives"/>
                         <eag:otherRepositoryTypes>
-                           <eag:otherRepositoryType languageOfElement="spa">Archivo Nacional</eag:otherRepositoryType>
+                           <eag:otherRepositoryType languageOfElement="spa">Archivos Nacionales</eag:otherRepositoryType>
                         </eag:otherRepositoryTypes>
                      </eag:identity>
                   </egXML>
@@ -4731,7 +4731,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-nameEntrySet">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>nameEntrySet</gi>
                </head>
@@ -4739,7 +4738,7 @@
                   <p>Name Entry Set</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>identity</gi> used as a wrapper element for
+                  <p>A child element of <gi>identity</gi> used as a wrapper element for
                      two or more <gi>nameEntry</gi> elements representing different forms of the
                      same name (e.g., official and non-official forms of the name in different languages and/or
                      scripts).</p>
@@ -4778,7 +4777,7 @@
                </div>
                <div type="description">
                   <p>A wrapper element used to group two or more <gi>nameEntry</gi> elements
-                     representing parallel or other forms of the name for the same repositories entities which are used
+                     representing parallel or other forms of the name for the same repository which are used
                      at the same time (e.g., official and non-official forms of the name in different languages
                      and/or scripts).</p>
                   <p>The <gi>nameEntrySet</gi> element may contain a <gi>useDates</gi> element to
@@ -4795,60 +4794,60 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <identity>
-                       <nameEntrySet>
-                        <nameEntry languageOfElement="eng" status="alternative">
-                           <part>The Federal Archives</part>
-                        </nameEntry>
-                        <nameEntry languageOfElement="fre" status="alternative">
-                           <part>Les Archives fédérales</part>
-                        </nameEntry>
-                        <nameEntry languageOfElement="spa" status="alternative">
-                           <part>Archivo federal</part>
-                        </nameEntry>
-                        <nameEntry languageOfElement="pol" status="alternative">
-                           <part>Archiwum Federalne</part>
-                        </nameEntry>
-                     </nameEntrySet>
-                     <nameEntrySet>
-                        <nameEntry languageOfElement="ger" preferredForm="false">
-                           <part>Reichsarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1919">1919</fromDate>
-                                 <toDate standardDate="1945">1945</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                        <nameEntry languageOfElement="ger" preferredForm="false">
-                           <part>Reichsfilmarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1935">1935</fromDate>
-                                 <toDate standardDate="1945">1945</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                        <nameEntry languageOfElement="ger" preferredForm="false">
-                           <part>Deutsches Zentralarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1946">1946</fromDate>
-                                 <toDate standardDate="1973">1973</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                        <nameEntry languageOfElement="ger" status="alternative">
-                           <part>Zentrales Staatsarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1973">1973</fromDate>
-                                 <toDate standardDate="1990">1990</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                     </nameEntrySet>
-                    </identity>
+                     <eag:identity>
+                       <eag:nameEntrySet>
+                        <eag:nameEntry languageOfElement="eng" status="alternative">
+                           <eag:part>The Federal Archives</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="fre" status="alternative">
+                           <eag:part>Les Archives fédérales</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="spa" status="alternative">
+                           <eag:part>Archivo federal</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="pol" status="alternative">
+                           <eag:part>Archiwum Federalne</eag:part>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
+                     <eag:nameEntrySet>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1919">1919</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsfilmarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1935">1935</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Deutsches Zentralarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1946">1946</eag:fromDate>
+                                 <eag:toDate standardDate="1973">1973</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" status="alternative">
+                           <eag:part>Zentrales Staatsarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1973">1973</eag:fromDate>
+                                 <eag:toDate standardDate="1990">1990</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
+                    </eag:identity>
                   </egXML>
                </div>
             </div>
@@ -5155,12 +5154,11 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherRepositoryId">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>otherRepositoryId</gi>
                </head>
                <div type="fullName">
-                  <p>Other repository identifier</p>
+                  <p>Other Repository Identifier</p>
                </div>
                <div type="summary">
                   <p>Any other identifier used by the institution being described.</p>
@@ -5203,26 +5201,29 @@
                   <p>Any other identifier used by the institution being described, not necessarily compliant with <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511</ref> as recommended 
                      in <gi>repositoryId</gi> and its attribute <att>repositoryCode</att>.</p>
                </div>
+               <div type="attributeusage">
+                  <list type="simple">
+                     <item>Use the attributes <att>vocabularySoure</att> and/or <att>vocabularySoureURI</att> to indicate the code list or original system from where the alternative identifier is taken. Use the attribute <att>valueURI</att> to point to the specific identifier in an alternative code list.</item>
+                  </list>
+               </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <identity>
-                           <nameEntry status="authorized" languageOfElement="eng">
-                              <part>University of Bradford Special Collections</part>
-                           </nameEntry>
-                           <repositoryId countryCode="GB" repositoryCode="ah532"/>
-                           <otherRepositoryId vocabularySource="archon">532</otherRepositoryId>
-                           <otherRepositoryId vocabularySource="mainangencycode">532</otherRepositoryId>
-                           <otherRepositoryId vocabularySource="hubdata">bradford</otherRepositoryId>
-                           <repositoryType value="universityArchives"/>
-                        </identity>
+                        <eag:identity>
+                           <eag:nameEntry status="authorized" languageOfElement="eng">
+                              <eag:part>University of Bradford Special Collections</eag:part>
+                           </eag:nameEntry>
+                           <eag:repositoryId countryCode="GB" repositoryCode="GB-ah532"/>
+                           <eag:otherRepositoryId vocabularySource="archon">532</eag:otherRepositoryId>
+                           <eag:otherRepositoryId vocabularySource="hubdata">bradford</eag:otherRepositoryId>
+                           <eag:repositoryType value="universityArchives"/>
+                        </eag:identity>
                   </egXML>
                </div>
             </div>
          <div type="elementDocumentation" xml:id="elem-otherRepositoryType">
-            <!-- Kerstin (review) -->
             <head>
                <gi>otherRepositoryType</gi>
             </head>
@@ -5230,7 +5231,7 @@
                <p>Other Repository Type</p>
             </div>
             <div type="summary">
-               <p>Others Repository Type of the Archival Institucion or translations or equivalents of the Repository Type</p>
+               <p>A required child element of <gi>otherRepositoryTypes</gi> used to encode alternative repository types such as translations or specifications of respeectively additions to the predefined values used in <gi>repositoryType</gi>.</p>
             </div>
             <div type="mayContain">
                <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
@@ -5271,7 +5272,10 @@
                </p>
             </div>
             <div type="description">
-               <p>Requires at least one <gi>term </gi> element to be present and allows for this to be repeated</p>
+               <p>The types of institutions with archival holdings might be defined by a regional or national archives association. If existing, enter terms in accordance with such conventions. Terms may be drawn from controlled vocabularies or may be natural language terms.</p>
+                  <p><gi>otherRepositoryType</gi> must include at least one <gi>term</gi> element, where the type of repository is encoded. <gi>term</gi> can be repeated within <gi>otherRepositoryType</gi> to include translations of the same term. Use the <att>languageOfElement</att> attribute to identify the language used in each <gi>term</gi>.</p>
+                  <p>Associated date(s) (<gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi>) and place(s) (<gi>placeName</gi>) may be included to further constrain the term's meaning. A <gi>descriptiveNote</gi> element may be included if a fuller textual explanation is needed.</p>
+                  <p>Multiple <gi>otherRepositoryType</gi> elements may be grouped within an <gi>otherRepositoryTypes</gi> element.</p>
                <p>The prescribed order of all child elements is:</p>
                <list type="simple">
                   <item><gi>term</gi></item>
@@ -5285,19 +5289,22 @@
             </div>
             <div type="examples">
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <identity>
-                     <repositoryType value="nationalArchives"/>
-                     <otherRepositoryTypes>
-                        <otherRepositoryType>languageOfElement="spa"> Archivos Nacionales</otherRepositoryType>
-                        <term>valueURI="http://censoarchivos.mcu.es/CensoGuia/archivodetail.htm?id=10> vocabularySource="GND"> Archivos Generales y Centrales</term>
-                        <descriptiveNote>In Spain, the category of National Archives is called General and Central Archives.</descriptiveNote>
-                     </otherRepositoryTypes>
-                  </identity>
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                           <eag:term vocabularySource="Censo-Guía">Archivos Generales y Centrales</eag:term>
+                           <eag:descriptiveNote>
+                              <eag:p languageOfElement="eng">In Spain, the category of National Archives is called General and Central Archives.</eag:p>
+                           </eag:descriptiveNote>
+                        </eag:otherRepositoryType>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
                </egXML>
             </div>
          </div>
          <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
-            <!-- Kerstin (review) -->
             <head>
                <gi>otherRepositoryTypes</gi>
             </head>
@@ -5305,7 +5312,7 @@
                <p>Other Repository Types</p>
             </div>
             <div type="summary">
-               <p>Wrapper element to group several alternative repository types of the Archival Institucion or translations or equivalents of the Repository Type in order to not sound too repetitive </p>
+               <p>An optional child element of <gi>identity</gi> used to bundle together one or more <gi>otherRepositoryType</gi> elements.</p>
             </div>
             <div type="mayContain">
                <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
@@ -5337,9 +5344,8 @@
             </div>
             <div type="description">
                <p>Use the element <gi>otherRepositoryTypes</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
-               <p>Requires at least one <gi>otherRepositoryType</gi> element to be present and allows for this to be repeated</p>
-               <p> Includes optional, not repeatable <gi>descriptiveNote</gi></p>
-               <p>The prescribed order of all child elements is:</p>
+               <p><gi>otherRepositoryTypes</gi> requires at least one <gi>otherRepositoryType</gi> element to be present and includes the optional, not repeatable <gi>descriptiveNote</gi> element for further explanatory text if necessary.</p>
+               <p>The prescribed order of all child elements (both required and optional) is:</p>
                <list type="simple">
                   <item><gi>otherRepositoryType</gi></item>
                   <item><gi>descriptiveNote</gi></item>
@@ -5350,13 +5356,17 @@
             </div>
             <div type="examples">
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <identity>
-                     <repositoryType value="nationalArchives"/>
-                     <otherrepositorytypes>
-                        <otherrepositorytype> languageOfElement="spa" Archivos Nacionales</otherrepositorytype>
-                        <descriptiveNote> Translation of National Archives to the spanish</descriptiveNote>
-                     </otherrepositorytypes>
-                  </identity>
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                        </eag:otherRepositoryType>
+                        <eag:descriptiveNote>
+                           <eag:p languageOfElement="eng">Translation of the term "National Archives" into Spanish</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
                </egXML>
             </div>
          </div>
@@ -6284,7 +6294,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-relation">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>relation</gi>
                </head>
@@ -6293,12 +6302,10 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>relations</gi> for describing a relationship
-                     between the entity described in the EAG instance and a related entity.</p>
+                     between the institution with archival holdings described in the EAG instance and a related entity.</p>
                </div>
                <div type="mayContain">
-                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), objectXMLWrap
-                     (0..1), place (0..n), relationType (0..n), targetEntity (1..1), targetRole
-                     (0..n)</p>
+                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), objectXMLWrap (0..1), place (0..n), relationType (0..n), targetEntity (1..1), targetRole (0..n)</p>
                </div>
                <div type="mayOccurWithin">
                   <p>relations</p>
@@ -6333,11 +6340,7 @@
                      related entity. It is recommended that the terms used in <gi>relationType</gi>,
                      <gi>targetEntity</gi>, and <gi>targetRole</gi> be taken from an authorized
                      vocabulary.</p>
-                  <p>Use <gi>objectXMLWrap</gi> to embed XML documenting the related entity from any
-                     namespace. Use <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> for
-                     specifying the time period of the relationship and <gi>place</gi> for relevant
-                     location information. <gi>descriptiveNote</gi> may be included for more
-                     detailed specifications or explanations of the relationship.</p>
+                  <p>Use <gi>objectXMLWrap</gi> to embed XML from any namespace documenting the related entity . Use <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> for specifying the time period of the relationship and <gi>place</gi> for relevant location information. <gi>descriptiveNote</gi> may be included for more detailed specifications or explanations of the relationship.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
                   <list type="simple">
                      <item><gi>targetEntity</gi></item>
@@ -6353,26 +6356,35 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <relation>
-                        <targetEntity targetType="person" valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/141923?nm">
-                          <part>Juan de Herrera</part> 
-                       </targetEntity> 
-                       <dateRange>1583-1646</dateRange>
-                       <place>
-                           <address>languageOfElement="spa">Avenida de la Constitución s/n</address>
-                           <geographicCoordinates>coordinateSystem="WGS84">37.384353, 5.992893</geographicCoordinates>
-                           <placeName>languageOfElement="spa">Casa Lonja de Sevilla</placeName>
-                       </place>
-                       <relationType>is the architect of</relationType>
-                       <targetRole> languageOfElement="spa"> Juan de Herrera fue el encargado del diseño del edificio de la Lonja</targetRole> 
-                       <descriptiveNote> languageOfElement="spa"> Juan de Herrera fue uno de los arquitectos más representativo del reinado de Felipe II en España. Su obra más conocida fue el Monasterio de el Escorial (Madrid, España).
-                           Es el arquitecto de uno de los edificios que forman el Archivo General de Indias, conocido como el edificio de "La Lonja", ya que fue sede de la antigua "Lonja de Mercaderes" de Sevilla</descriptiveNote>
-                     </relation> 
+                     <eag:relation>
+                        <eag:targetEntity targetType="person" valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/141923?nm">
+                          <eag:part>Herrera, Juan de (1533-1597)</eag:part> 
+                          <eag:part localType="lastname">Herrera</eag:part> 
+                          <eag:part localType="firstname_title">Juan de</eag:part> 
+                          <eag:part localType="dates">(1533-1597)</eag:part> 
+                          <eag:part localType="display">Juan de Herrera</eag:part> 
+                       </eag:targetEntity> 
+                       <eag:dateRange>
+                          <eag:fromDate>1583</eag:fromDate>
+                          <eag:toDate>1646</eag:toDate>
+                       </eag:dateRange>
+                       <eag:place>
+                           <eag:address languageOfElement="spa">
+                              <eag:addressLine addressLineType="stree">Avenida de la Constitución s/n</eag:addressLine>
+                           </eag:address>
+                           <eag:geographicCoordinates coordinateSystem="WGS84">37.384353, 5.992893</eag:geographicCoordinates>
+                           <eag:placeName languageOfElement="spa">Casa Lonja de Sevilla</eag:placeName>
+                       </eag:place>
+                       <eag:relationType>wasDesignedBy</eag:relationType>
+                       <eag:targetRole languageOfElement="spa">Arquitecto</eag:targetRole> 
+                       <eag:descriptiveNote languageOfElement="spa">
+                          <eag:p>Juan de Herrera fue uno de los arquitectos más representativo del reinado de Felipe II en España. Su obra más conocida fue el Monasterio de el Escorial (Madrid, España). Es el arquitecto de uno de los edificios que forman el Archivo General de Indias, conocido como el edificio de "La Lonja", ya que fue sede de la antigua "Lonja de Mercaderes" de Sevilla.</eag:p>
+                       </eag:descriptiveNote>
+                     </eag:relation> 
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-relations">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>relations</gi>
                </head>
@@ -6380,10 +6392,7 @@
                   <p>Relations</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>repository</gi> or <gi>repositories</gi> that groups one or more
-                        <gi>relation</gi> elements, which identify external entities and
-                     characterize the nature of their relationships to the entity being
-                     described.</p>
+                  <p>An optional child element of <gi>repository</gi> or <gi>repositories</gi> that groups one or more <gi>relation</gi> elements, which identify external entities and characterize the nature of their relationships to the archival institution being described.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..1), relation (1..n)</p>
@@ -6414,8 +6423,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p>A wrapper element that groups together one or more <gi>relation</gi> elements,
-                     each of which encodes a specific relationship.</p>
+                  <p>A wrapper element that groups together one or more <gi>relation</gi> elements, each of which encodes a specific relationship.</p>
                   <p>The prescribed order of all child elements is:</p>
                   <list type="simple">
                      <item><gi>relation</gi></item>
@@ -6427,27 +6435,28 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <relations>
-                        <relation>
-                           <targetEntity targetType="resource" languageOfElement="eng"
+                     <eag:relations>
+                        <eag:relation>
+                           <eag:targetEntity targetType="resource" languageOfElement="eng"
                               valueURI="http://www.bundesarchiv.de/zwangsarbeit/">
-                              <part>Portal "Forced Labour in the National Socialist State"</part>
-                           </targetEntity>
-                           <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
-                              creator of (RiC-R027i)</relationType>
-                        </relation>
-                        <relation>
-                           <targetEntity targetType="resource" languageOfElement="ger"
+                              <eag:part>Portal "Forced Labour in the National Socialist State"</eag:part>
+                           </eag:targetEntity>
+                           <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                              creator of (RiC-R027i)</eag:relationType>
+                        </eag:relation>
+                        <eag:relation>
+                           <eag:targetEntity targetType="resource" languageOfElement="ger"
                               valueURI="http://www.ersterweltkrieg.bundesarchiv.de/">
-                              <part>100 Jahre Erster Weltkrieg - Portal</part>
-                        </targetEntity>
-                       </relation>
-                     </relations>
+                              <eag:part>100 Jahre Erster Weltkrieg - Portal</eag:part>
+                           </eag:targetEntity>
+                           <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                              creator of (RiC-R027i)</eag:relationType>
+                       </eag:relation>
+                     </eag:relations>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-relationType">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>relationType</gi>
                </head>
@@ -6456,7 +6465,7 @@
                </div>
                <div type="summary">
                   <p>A child element of <gi>relation</gi> used to specify the type of relation that
-                     the entity being described within the EAG instance has to the
+                     the archival institution being described within the EAG instance has to the
                      <gi>targetEntity</gi>.</p>
                </div>
                <div type="mayContain">
@@ -6499,25 +6508,24 @@
                </div>
                <div type="description">
                   <p>Use <gi>relationType</gi> within <gi>relation</gi> to specify the type of
-                     relation that the entity being described has to the <gi>targetEntity</gi>.</p>
+                     relation that the archival institution being described has to the <gi>targetEntity</gi>.</p>
                   <p>The <gi>relationType</gi> element contains a textual description of the
                      relation. It is recommended that values used in <gi>relationType</gi> be taken
-                     from an authorized vocabulary.
-                    </p>
+                     from an authorized vocabulary.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <relation>
-                        <targetEntity targetType="resource" languageOfElement="eng"
+                     <eag:relation>
+                        <eag:targetEntity targetType="resource" languageOfElement="eng"
                            valueURI="https://invenio.bundesarchiv.de">
-                           <part>invenio - Research application of the Federal Archives</part>
-                        </targetEntity>
-                        <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
-                           creator of (RiC-R027i)</relationType>
-                     </relation>
+                           <eag:part>invenio - Research application of the Federal Archives</eag:part>
+                        </eag:targetEntity>
+                        <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                           creator of (RiC-R027i)</eag:relationType>
+                     </eag:relation>
                   </egXML>
                </div>
             </div>
