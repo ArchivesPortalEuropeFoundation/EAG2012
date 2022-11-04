@@ -6530,7 +6530,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositories">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>repositories</gi>
                </head>
@@ -6538,7 +6537,7 @@
                   <p>Repositories</p>
                </div>
                <div type="summary">
-                  <p>Wrapper for the different repositories of the institution.</p>
+                  <p>Wrapper element used when several repositories of the same institution are described within one EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>image (0..n), relations (0..1), repository (2..n)</p>
@@ -6563,7 +6562,9 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Require at least two <gi>repository</gi> elements. If the institution only have one repository, it must be use <gi>repository</gi> element</p>
+                  <p>Within an EAG instance, either a single <gi>repository</gi> element or the <gi>repositories</gi> element - combining two or more <gi>repository</gi> elements - has to be present. Depending on the administrative structure of an institution with archival holdings, the one or the other option might be more appropriate to describe the institution. Use <gi>repositories</gi> e.g. in case an institution has several locations, which hold different types of material or result from several formerly independent institutions.</p>
+                  <p><gi>repositories</gi> requires at least two <gi>repository</gi> elements. If the institution only consists of one repository, use the single <gi>repository</gi> element instead.</p>
+                  <p>Use the optional <gi>relations</gi> element to provide information about relationships to other entities that refer to all <gi>repository</gi>-s of the institution. Use the optional <gi>image</gi> element to e.g. provide a link to a logo or to images of the archival institution etc.</p>
                   <p>The prescribed order of all child elements is:</p>
                   <list type="simple">
                      <item><gi>repository</gi></item>
@@ -6572,320 +6573,90 @@
                   </list>
                </div>
                <div type="availability">
-                  <p>Optional, not repeatable</p>
+                  <p>Within <gi>eag</gi>: one of <gi>repository</gi> or <gi>repositories</gi> required, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                       <repositories>
-                         <repository>
-                             <identity>
-                                 <nameEntry languageOfElement="spa" status="authorized">
-                                     <part>Archivo General de Indias</part>
-                                 </nameEntry>
-                                 <nameEntrySet>
-                                     <nameEntry languageOfElement="spa" preferredForm="false">
-                                         <part>Archivo General de las Indias</part>
-                                         <useDates>
-                                             <date>No data</date>                                                   
-                                         </useDates>
-                                     </nameEntry>
-                                     <nameEntry languageOfElement="spa" preferredForm="false">
-                                         <part>Archivo de las Indias</part>
-                                         <useDates>
-                                             <date>No data</date>   
-                                         </useDates>
-                                     </nameEntry>
-                                     <nameEntry languageOfElement="spa" preferredForm="false">
-                                         <part>Archivo de Indias</part>
-                                         <useDates>
-                                             <date>No data</date>                           
-                                         </useDates>
-                                     </nameEntry>
-                                 </nameEntrySet>
-                                     <repositoryId countryCode="ES" repositoryCode="41091.AGI"/>                
-                             </identity>
-                             <description>
-                                 <places>
-                                     <place>
-                                         <address localType="postal address">
-                                             <addressLine addressLineType="country" languageOfElement="spa"
-                                                 >España</addressLine>
-                                             <addressLine addressLineType="region" languageOfElement="spa"
-                                                 >Comunidad Autónoma de Andalucía</addressLine>
-                                             <addressLine addressLineType="county" languageOfElement="spa"
-                                                 >Sevilla</addressLine>
-                                             <addressLine addressLineType="postalCode" languageOfElement="spa"
-                                                 >41071</addressLine>
-                                             <addressLine addressLineType="municipality" languageOfElement="spa"
-                                                 >Sevilla</addressLine>
-                                             <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
-                                         </address>
-                                         <address localType="visitors address">
-                                             <addressLine addressLineType="country" languageOfElement="spa"
-                                                 >España</addressLine>
-                                             <addressLine addressLineType="postalCode" languageOfElement="spa"
-                                                 >41071</addressLine>
-                                             <addressLine addressLineType="municipality" languageOfElement="spa"
-                                                 >Sevilla</addressLine>
-                                             <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
-                                         </address>
-                                         <contact>
-                                             <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
-                                             <contactLine contactLineType="fax">+34 954219485</contactLine>
-                                             <contactLine contactLineType="email" href="agi1@cultura.gob.es">
-                                                 >agi1@cultura.gob.es</contactLine>
-                                             <contactLine contactLineType="email" href="agi2@cultura.gob.es">
-                                                 >Contacte con el Archivo General de Indias</contactLine>                            
-                                             <contactLine contactLineType="homepage" languageOfElement="spa"
-                                                 href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
-                                                 > Página web del Archivo General de Indias
-                                             </contactLine>            
-                                        </contact>                     
-                                     </place>                  
-                                 </places>
-                                 <access question="yes"/>
-                                 <timetable>
-                                     <opening languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Investigadores: Sede de La Cilla del Cabildo: Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas // Visitas: Sede de La Lonja: El horario de apertura es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas.</opening>
-                                     <closing languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Investigadores: Sede de La Cilla: Sábados y Domingos. Festivos: 1 y 6 de enero, 28 de febrero, Jueves y Viernes Santo, 1 mayo, 30 de mayo (Fiesta Local. Movible si conicide con Festivo), Corpus Christi, 15 de agosto, 1 de noviembre, 6, 8, 24, 25 y 31 de diciembre. Visitas: Sede de La Lonja: 24, 25 y 31 de diciembre. 1 y 6 de enero. Jueves y Viernes Santo. </closing>
-                                 </timetable>
-                                 <mandates>
-                                     <mandate>
-                                         <term languageOfElement="spa">Ordenanzas para el Archivo General de Indias.</term>
-                                         <date>1785-10-14 00:00:00.0</date>
-                                         <descriptiveNote>
-                                             <p languageOfElement="spa">Madrid, 10 de enero de 1790.</p>
-                                         </descriptiveNote>
-                                     </mandate>
-                                 </mandates>
-                                  <accessibility question="yes"></accessibility>
-                                  <existDates>
-                                     <dateRange>
-                                         <fromDate standardDate="1785-10-14">1785-10-14</fromDate>
-                                     </dateRange>
-                                 </existDates>
-                                 <repositoryRole>Head quarter</repositoryRole>
-                                 <biogHist>
-                                     <p languageOfElement="spa">El Archivo General de Indias fundamentalmente custodia los fondos producidos por las instituciones creadas por la Administración española para el gobierno y administración de los territorios ultramarinos españoles. Estas instituciones son: Consejo de Indias y Secretarías de Despacho, Casa de la Contratación y Consulados de Sevilla y Cádiz. Asimismo, se conservan otros fondos de instituciones de menor entidad e incluso de particulares relacionados con las colonias españolas en América y Asia</p>
-                                     <p languageOfElement="spa">La finalidad de este Archivo es la conservación de estos fondos y, mediante su organización y descripción, favorecer su difusión para todos los ciudadanos.</p>
-                                     <p languageOfElement="spa">Nace en 1785 por deseo del rey Carlos III, con el objeto de reunir en un solo lugar los documentos referentes a Indias hasta entonces dispersos en Simancas, Cádiz y Sevilla. El impulsor del proyecto fue don José de Gálvez, secretario de Indias, y el ejecutor del mismo fue el académico e historiador don Juan Bautista Muñoz, cosmógrafo mayor de Indias. El espléndido edificio, la Casa Lonja de Sevilla, que se construyó en época de Felipe II sobre planos de Juan de Herrera sirve hasta hoy como sede del Archivo.</p>
-                                     <p languageOfElement="spa">Desde 1785, y en distintas remesas, se van incorporando los fondos. En la actualidad conserva más de cuarenta y tres mil legajos, instalados en ocho kilómetros lineales de estanterías, con unos ochenta millones de páginas de documentos originales que permiten a diario profundizar en más de tres siglos de historia de todo un continente, desde Tierra de Fuego hasta el sur de Estados Unidos, además del Extremo Oriente español, las Filipinas: la historia política y la historia social, la historia económica y la de las mentalidades, la historia de la Iglesia y la historia del arte... Los más variados temas ocupan el interés de los miles de investigadores que pasan por el Archivo: desde el descubrimiento, exploración y conquista del Nuevo Mundo hasta la independencia; desde las instituciones políticas indianas hasta la historia de los pueblos precolombinos; desde el intercambio comercial a los problemas de tráfico marítimo; desde la expansión misionera hasta los aspectos inquisitoriales. Tantos y tantos temas en los que el Archivo General de Indias va contribuyendo a lo largo del tiempo para obtener la más completa y documentada visión histórica de la Administración española del Nuevo Mundo.</p>
-                                 </biogHist>    
-                                 <structureOrGenealogy>
-                                     <p languageOfElement="spa">Dirección</p> 
-                                     <p languageOfElement="spa">Subdirección</p>
-                                     <p languageOfElement="spa">Departamento de Referencias</p>
-                                     <p languageOfElement="spa">Departamento de Coordinación y Normalización</p>
-                                     <p languageOfElement="spa">Departamento de Conservación</p>
-                                     <p languageOfElement="spa">Servicio de Sistemas Informáticos</p>
-                                 </structureOrGenealogy>
-                                 <holdings>
-                                     <dateRange>
-                                         <fromDate>Fecha del documento más antiguo : 1439-01-01</fromDate>
-                                         <toDate>Fecha del documento más reciente : 1966-01-01</toDate>
-                                     </dateRange>
-                                     <extent>
-                                         <num unit="linearmetre">8906</num>
-                                     </extent>
-                                     <descriptiveNote>
-                                         <p languageOfElement="spa">Los documentos que hoy conserva el Archivo proceden fundamentalmente de los siguientes organismos metropolitanos:</p>
-                                         <p languageOfElement="spa"> Consejo de Indias, siglos XVI-XIX</p>
-                                         <p languageOfElement="spa"> Casa de la Contratación, siglos XVI-XVIII</p>
-                                         <p languageOfElement="spa">Consulados de Sevilla y Cádiz, siglos XVI-XIX</p>
-                                         <p languageOfElement="spa"> Secretarías de Estado y del Despacho Universal de Indias, de Estado, de Gracia y Justicia, Hacienda y Guerra, siglos XVIII-XIX</p>
-                                         <p languageOfElement="spa">Secretaría del Juzgado de Arribadas, siglos XVIII-XIX</p>
-                                         <p languageOfElement="spa"> Comisaría Interventora de la Hacienda Pública de Cádiz, siglos XVIII-XIX</p>
-                                         <p languageOfElement="spa"> Dirección General de la Renta de Correos, siglos XVIII-XIX</p>
-                                         <p languageOfElement="spa"> Tribunal de Cuentas, Sala de Ultramar, siglo XIX</p>
-                                         <p languageOfElement="spa"> Real Compañía de la Habana, siglos XVIII-XIX</p>
-                                      </descriptiveNote>
-                                 </holdings>  
-                                 <services>
-                                     <searchroom question="yes">
-                                         <workPlaces question="yes">
-                                             <num unit="site">40</num>
-                                             <computerPlaces>
-                                                 <num unit="site">40</num>
-                                             </computerPlaces>
-                                             <microfilmPlaces>
-                                                 <num unit="site">1</num>
-                                             </microfilmPlaces>
-                                         </workPlaces>
-                                         <photographAllowance question="no"/>
-                                         <advancedOrders question="yes" languageOfElement="spa"
-                                             >El usuario pueden realizar tanto petición anticipada de la documentación como reserva de la misma cuando asisten a la Sala.</advancedOrders>
-                                     </searchroom>
-                                     <library question="yes">
-                                         <contact>
-                                             <contactLine contactLineType="homepage"
-                                                 href="http://www.mcu.es/ccbae/es/consulta/busqueda.cmd">Catálogo de las bobliotecas de los archivos Estatales</contactLine>
-                                         </contact>
-                                         <descriptiveNote>
-                                             <p languageOfElement="spa">40.788 libros, 2.319 título seriados</p>
-                                         </descriptiveNote>
-                                     </library>
-                                     <technicalServices>
-                                         <restorationLaboratory question="yes"/>
-                                         <reproductionServices question="yes">
-                                             <descriptiveNote>
-                                                 <p languageOfElement="spa"> Se realizan fotocopias y copias digitales</p>
-                                             </descriptiveNote>
-                                         </reproductionServices>
-                                     </technicalServices>
-                                     <recreationalServices>
-                                         <exhibition question="yes" languageOfElement="spa"> Posee sala de exposiciones</exhibition>
-                                         <toursSessions question="yes" languageOfElement="spa">Se realizan visitas guiadas.</toursSessions>  
-                                         <otherServices question="yes" languageOfElement="spa"> El centro también cuenta con Aula didáctica y salón de actos </otherServices>
-                                     </recreationalServices>
-                                 </services>
-                             </description>
-                         </repository>
-                         <repository>
-                             <identity>
-                                 <nameEntry>
-                                     <part>Sede La Cilla del Cabildo</part>
-                                     <part>Sede para los visitantes</part>
-                                 </nameEntry>
-                             </identity>
-                             <description>
-                                 <places>
-                                     <place>
-                                         <address localType="visitors address">
-                                             <addressLine addressLineType="country" languageOfElement="spa"
-                                                 >España</addressLine>
-                                             <addressLine addressLineType="region" languageOfElement="spa"
-                                                 >Comunidad Autónoma de Andalucía</addressLine>
-                                             <addressLine addressLineType="postalCode" languageOfElement="spa"
-                                                 >41071</addressLine>
-                                             <addressLine addressLineType="municipality" languageOfElement="spa"
-                                                 >Sevilla</addressLine>
-                                             <addressLine addressLineType="street" languageOfElement="spa"
-                                                 >Santo Tomás, 5</addressLine>
-                                         </address>
-                                          <address localType="postal address">
-                                                 <addressLine addressLineType="country" languageOfElement="spa"
-                                                     >España</addressLine>
-                                                 <addressLine addressLineType="region" languageOfElement="spa"
-                                                     >Comunidad Autónoma de Andalucía</addressLine>
-                                                 <addressLine addressLineType="postBox" languageOfElement="spa"
-                                                     >41071</addressLine>
-                                                 <addressLine addressLineType="municipality" languageOfElement="spa"
-                                                     >Sevilla</addressLine>
-                                                 <addressLine addressLineType="street" languageOfElement="spa"
-                                                     >Santo Tomás, 5</addressLine>
-                                         </address>
-                                         <geographicCoordinates coordinateSystem="WGS84">37.384353, 5.992893</geographicCoordinates>
-                                         <contact>
-                                             <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
-                                             <contactLine contactLineType="fax">+34 954219485</contactLine>
-                                             <contactLine contactLineType="email" href="agi2@cultura.gob.es">agi2@cultura.gob.es</contactLine>
-                                             <contactLine contactLineType="homepage" languageOfElement="spa"
-                                                 href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
-                                              > Página web del Archivo General de Indias</contactLine>
-                                         </contact>
-                                     </place>
-                                 </places>
-                                 <access question="yes"/>
-                                 <timetable>
-                                     <opening languageOfElement="spa">Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas</opening>
-                                     <closing languageOfElement="spa">Sábados y Domingos. Festivos: 1 y 6 de enero, 28 de febrero, Jueves y Viernes Santo, 1 mayo, 30 de mayo (Fiesta Local. Movible si conicide con Festivo), Corpus Christi, 15 de agosto, 1 de noviembre, 6, 8, 24, 25 y 31 de diciembre.</closing>
-                                 </timetable>
-                                 <repositoryRole>branch</repositoryRole>
-                                 <accessibility question="yes"/>
-                                 <biogHist>
-                                     <p languageOfElement="spa">El edificio conocido como la Cilla, ubicado en un lateral del edificio principal y al otro lado de la calle, ha sido remodelado para garantizar la compatibilidad de las funciones administrativas y de investigación con el desarrollo de las visitas y las exposicines en el edificio de La Lonja.</p>
-                                     <p languageOfElement="spa"> Actualmente es el edificio que alberga la sala de investigadores.</p>
-                                 </biogHist>    
-                                 <buildingInfo>
-                                     <building languageOfElement="spa">El edificio de la Cilla del Cabildo se apoya en el paño de muralla que del Alcázar parte hacia la Torre del Oro. De planta rectangular, la baja sobre pilares y la primera sobre columnas, con bóvedas baídas. La construcción cuenta también con dos niveles añadidos, uno bajo la cubierta, y un sótano. Diversas han sido las funcionalidades que ha tenido este emplazamiento, desde su adscripción al cabildo, su utilización desde 1972 por el Ayuntamiento de Sevilla como sede del Museo de Arte Contemporáneo de Sevilla y, en la actualidad, sede del Archivo General de Indias.
-                                     </building>
-                                     <lengthOfShelves>
-                                         <num unit="linearmetre">1369.0</num>
-                                     </lengthOfShelves>
-                                     <repositoryArea>
-                                         <num unit="squaremetre">2193.0
-                                         </num>
-                                     </repositoryArea>
-                                 </buildingInfo>
-                             </description>
-                         </repository>
-                         <repository>
-                             <identity>
-                                 <nameEntry>
-                                         <part>Sede La Lonja</part>
-                                         <part>Sede para los visitantes</part>
-                                     </nameEntry>
-                             </identity>
-                             <description>
-                                     <places>
-                                         <place>
-                                             <address localType="visitors address">
-                                                 <addressLine addressLineType="country" languageOfElement="spa"
-                                                     >España</addressLine>
-                                                 <addressLine addressLineType="region" languageOfElement="spa"
-                                                     >Comunidad Autónoma de Andalucía</addressLine>
-                                                 <addressLine addressLineType="postalCode" languageOfElement="spa"
-                                                     >41071</addressLine>
-                                                 <addressLine addressLineType="municipality" languageOfElement="spa"
-                                                     >Sevilla</addressLine>
-                                                 <addressLine addressLineType="street" languageOfElement="spa"
-                                                     >Avenida de la Constitución s/n</addressLine>
-                                             </address>
-                                             <address localType="postal address">
-                                                 <addressLine addressLineType="country" languageOfElement="spa"
-                                                     >España</addressLine>
-                                                 <addressLine addressLineType="region" languageOfElement="spa"
-                                                     >Comunidad Autónoma de Andalucía</addressLine>
-                                                 <addressLine addressLineType="postBox" languageOfElement="spa"
-                                                     >41071</addressLine>
-                                                 <addressLine addressLineType="municipality" languageOfElement="spa"
-                                                     >Sevilla</addressLine>
-                                                 <addressLine addressLineType="street" languageOfElement="spa"
-                                                     >Avenida de la Constitución s/n</addressLine>
-                                             </address>
-                                             <geographicCoordinates coordinateSystem="WGS84">37.384816, 5.993456</geographicCoordinates>
-                                             <contact>
-                                                 <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
-                                                 <contactLine contactLineType="fax">+34 954219485</contactLine>
-                                                 <contactLine contactLineType="email" href="agi2@cultura.gob.es">agi2@cultura.gob.es</contactLine>
-                                                 <contactLine contactLineType="homepage" languageOfElement="spa"
-                                                     href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
-                                                     > Página web del Archivo General de Indias</contactLine>
-                                             </contact>
-                                         </place>
-                                     </places>
-                                     <access question="yes"/>
-                                     <timetable>
-                                         <opening languageOfElement="spa">El horario de apertura de visitas al edificio es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas</opening>
-                                         <closing languageOfElement="spa">24, 25 y 31 de diciembre. 1 y 6 de enero. Jueves y Viernes Santo</closing>
-                                     </timetable>
-                                     <repositoryRole>branch</repositoryRole>
-                                     <accessibility question="yes"/>
-                                     <biogHist>
-                                         <p languageOfElement="spa">El edificio que hoy alberga el Archivo fue construido para alojar el cada vez mayor número de comerciantes que, reunidos en torno a la Universidad de Mercaderes primero y tras 1546 constituidos como consulado, necesitaban un espacio propio para celebrar sus tratos y resolver sus pleitos. El conflicto generado entre el cabildo de la catedral y los mercaderes por la ocupación de los espacios sagrados de la catedral para menesteres tan poco piadosos como los que guiaban a los comerciantes dio el definitivo empuje para que en 1583 comenzaran las obras de construcción de la Lonja de Mercaderes.</p>
-                                         <p languageOfElement="spa">  El arquitecto real, Juan de Herrera, fue el encargado del diseño de un edificio cuya construcción se prolongó hasta 1646. A cargo de las obras estuvieron varios prestigiosos arquitectos como Juan de Minjares, Alonso de Vandelvira y Miguel de Zumárraga quienes, sobre todo este último, alteraron algunas de las ideas del proyecto original al introducir elementos innovadores en su construcción, como el abovedamiento de la planta superior, para aligerar la habitual solución herreriana de techo a dos aguas, más pesada y que presentaba un mayor riesgo de incendio.</p>
-                                         <p languageOfElement="spa"> La segunda mitad del siglo XVII trajo consigo la decadencia política y comercial del imperio español que, inevitablemente, debía causar contraste con la reciente finalización de las obras de la lonja. En 1717 la sede del comercio ultramarino se traslada a Cádiz, quedando en Sevilla únicamente una Diputación de Comercio. La infrautilización del edificio fue tan manifiesta que llegaron a habilitarse viviendas particulares en su interior mientras que la institución que promovió su construcción periclitaba.</p>
-                                         <p languageOfElement="spa"> La elección en 1781 de la Lonja de Mercaderes de Sevilla como sede del gran proyecto ilustrado que iba a ser el Archivo General de Indias detuvo la degradación del edificio. Una vez desalojados los inquilinos y dividido el espacio entre la Diputación de Comercio y el emplazamiento del archivo y sus dependencias, Lucas Cintora, arquitecto de los Reales Alcázares, acometió una audaz obra de readaptación del edificio para servir a los fines de depósito documental. Su discutida intervención procuró por un lado recuperar en la medida de lo posible el proyecto de Juan de Herrera, devolviendo la diafanidad a las galerías y por otro lado reformar la escalera de acceso confiriéndole con un generoso revestimiento de mármol la actual suntuosidad.</p>
-                                         <p languageOfElement="spa"> Actualmente es el edificio que alberga las exposiciones y donde se reciben las visitas. Además en éste se encuentra el depósito de documentos</p>
-                                     </biogHist>    
-                                     <buildingInfo>
-                                         <building languageOfElement="spa">En planta cuadrada, de 56 metros de lado, con dos alturas sobre lonja rodeada de columnas con cadenas, el edificio del Archivo consiste fundamentalmente en un patio central rodeado por dos naves cuadrangulares, una interior y otra exterior. Todo el edificio es de piedra, con dos plantas abovedadas comunicadas por la escalera monumental.</building>
-                                         <building languageOfElement="spa">Recientemente el Ministerio de Cultura ha acometido obras de remodelación en el edificio con el propósito de modernizar sus instalaciones, mejorar el depósito de los documentos y adecuar las galerías exteriores de la planta superior para la instalación de exposiciones temporales, en lo que constituye un itinerario para visitas que recorre todo el edificio.
-                                         </building>
-                                         <lengthOfShelves>
-                                             <num unit="linearmetre">10462.0</num>
-                                         </lengthOfShelves>
-                                         <repositoryArea>
-                                             <num unit="squaremetre">5872.0 </num>
-                                         </repositoryArea>
-                                     </buildingInfo>
-                                 </description>   
-                              </repository>
-                        </repositories>
+                       <eag:repositories>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry languageOfElement="spa" status="authorized">
+                                     <eag:part>Archivo General de Indias</eag:part>
+                                 </eag:nameEntry>
+                                 <eag:repositoryId countryCode="ES" repositoryCode="ES-41091-AGI"/>                
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <eag:addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n // Calle Santo Tomás, nº 5</eag:addressLine>
+                                         </eag:address>
+                                      </eag:place>                  
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Visite nuestro sitio web para obtener más información sobre los horarios de apertura.</eag:opening>
+                                 </eag:timetable>
+                            </eag:description>
+                         </eag:repository>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry>
+                                     <eag:part>Sede La Cilla del Cabildo</eag:part>
+                                     <eag:part>Sede para los visitantes</eag:part>
+                                 </eag:nameEntry>
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Santo Tomás, 5</eag:addressLine>
+                                         </eag:address>
+                                     </eag:place>
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa">Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas</eag:opening>
+                                 </eag:timetable>
+                                 <eag:repositoryRole>Branch</eag:repositoryRole>
+                             </eag:description>
+                         </eag:repository>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry>
+                                     <eag:part>Sede La Lonja</eag:part>
+                                     <eag:part>Sede para los visitantes</eag:part>
+                                 </eag:nameEntry>
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <eag:addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n</eag:addressLine>
+                                         </eag:address>
+                                     </eag:place>
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa">El horario de apertura de visitas al edificio es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas</eag:opening>
+                                 </eag:timetable>
+                                 <eag:repositoryRole>Branch</eag:repositoryRole>
+                             </eag:description>
+                         </eag:repository>
+                     </eag:repositories>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repository">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>repository</gi>
                </head>
@@ -6893,7 +6664,7 @@
                   <p>Repository</p>
                </div>
                <div type="summary">
-                  <p>Information on one archival repository.</p>
+                  <p>Information identifying and describing one archival repository.</p>
                </div>
                <div type="mayContain">
                   <p>description (1..1), identity (1..1), image (0..n), relations (0..1)</p>
@@ -6924,12 +6695,9 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Information on one archival repository. If the institution had two or more repositories, it must be use <gi>repositories</gi> element.</p>
-                  <p>A <gi>repository</gi>> can represent an archival institution as a whole as well as only one part of an archival institution depending on its administrative structure.</p>
-                  <p>The required child element <gi>identity</gi> and <gi>description</gi> encode the name or
-                     names related to the repository and descriptive the information about it. The optional
-                     <gi>images</gi> element can be used to  include the logo or other imagery representation of the institution.</p>
-                  <p>The relation with other entities can be represented in the <gi>relations</gi> element.</p>
+                  <p>Within an EAG instance, either a single <gi>repository</gi> element - representing an archival institution as a whole - or the <gi>repositories</gi> element - combining two or more <gi>repository</gi> elements describing parts of the archival institution - has to be present. Depending on the administrative structure of an institution with archival holdings, the one or the other option might be more appropriate to describe the institution.</p>
+                  <p>The required child elements <gi>identity</gi> and <gi>description</gi> encode the name or names related to the repository and descriptive the information about it. The optional <gi>image</gi> element can be used to  include the logo or other imagery representation of the repository. The relation with other entities can be represented in the <gi>relations</gi> element.</p>
+                  <p>Use <gi>repositories</gi> instead of a single <gi>repository</gi> element in case an institution has several locations, which hold different types of material or result from several formerly independent institutions.</p>
                   <p>The prescribed order of all child elements is:</p>
                      <list type="simple">
                         <item><gi>identity</gi></item>
@@ -6944,88 +6712,80 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <repository>
-                        <identity>
-                           <nameEntry status="authorized" languageOfElement="eng">
-                              <part>University of Bradford Special Collections</part>
-                           </nameEntry>
-                           <repositoryId countryCode="GB" repositoryCode="ah532"/>
-                           <otherRepositoryId vocabularySource="archon">532</otherRepositoryId>
-                           <otherRepositoryId vocabularySource="mainangencycode">532</otherRepositoryId>
-                           <otherRepositoryId vocabularySource="hubdata">bradford</otherRepositoryId>
-                           <repositoryType value="universityArchives"/>
-                        </identity>                        
-                        <description>
-                           <places>
-                              <place localType="visitors">
-                                 <address>
-                                    <addressLine addressLineType="street">J.B. Priestly Library</addressLine>
-                                    <addressLine addressLineType="municipality">Bradford</addressLine>
-                                    <addressLine addressLineType="county">Yorkshire</addressLine>
-                                    <addressLine addressLineType="postalCode">BD7 1DP</addressLine>
-                                    <addressLine addressLineType="country">England, UK</addressLine>
-                                 </address>                                 
-                                 <contact>
-                                    <contactLine contactLineType="email">mailto:special-collections@bradford.ac.uk</contactLine>
-                                    <contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</contactLine>
-                                    <contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</contactLine>
-                                    <contactLine contactLineType="directions"
-                                       href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</contactLine>
-                                 </contact>                                 
-                                 <geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</geographicCoordinates>                                 
-                              </place>
-                           </places> 
-                           <access languageOfElement="eng" question="yes (conditions apply)">
-                              <accessConditions>Special Collections are open to, and intended for, anyone who might benefit from using them. However, space and staffing constraints mean that appointments are required. Access is subject to preservation requirements and must also conform to the restrictions of the Data Protection Act and any other appropriate legislation.</accessConditions>
-                              <useConditions href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website for information.</useConditions>
-                           </access>
-                           <timetable>
-                              <opening languageOfElement="eng" href="http://www.bradford.ac.uk/library/special-collections/opening-hours-and-contact-details/">Please see website</opening>
-                              <closing languageOfElement="eng">Closed on public holidays.</closing>
-                           </timetable> 
-                           <accessibility languageOfElement="eng" question="yes">The Reading Room is accessible by lifts and level floors. However the layout of Floor 02 pre-dates modern standards and can be difficult for very large or long wheelchairs. We can book a back-up room with level access if necessary.</accessibility>
-                          <repositoryRole>Main Office</repositoryRole>
-                           <biogHist>
-                              <p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</p>
-                              <p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</p>
-                              <p>Since establishing the service, we have acquired other exciting resources, such
+                     <eag:repository>
+                        <eag:identity>
+                           <eag:nameEntry status="authorized" languageOfElement="eng">
+                              <eag:part>University of Bradford Special Collections</eag:part>
+                           </eag:nameEntry>
+                           <eag:repositoryId countryCode="GB" repositoryCode="GB-ah532"/>
+                           <eag:otherRepositoryId vocabularySource="archon">532</eag:otherRepositoryId>
+                           <eag:otherRepositoryId vocabularySource="hubdata">bradford</eag:otherRepositoryId>
+                           <eag:repositoryType value="universityArchives"/>
+                        </eag:identity>                        
+                        <eag:description>
+                           <eag:places>
+                              <eag:place localType="visitors">
+                                 <eag:address>
+                                    <eag:addressLine addressLineType="street">J.B. Priestly Library</eag:addressLine>
+                                    <eag:addressLine addressLineType="municipality">Bradford</eag:addressLine>
+                                    <eag:addressLine addressLineType="county">Yorkshire</eag:addressLine>
+                                    <eag:addressLine addressLineType="postalCode">BD7 1DP</eag:addressLine>
+                                    <eag:addressLine addressLineType="country">England, UK</eag:addressLine>
+                                 </eag:address>                                 
+                                 <eag:contact>
+                                    <eag:contactLine contactLineType="email" href="mailto:special-collections@bradford.ac.uk">Send us an email</eag:contactLine>
+                                    <eag:contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</eag:contactLine>
+                                    <eag:contactLine contactLineType="homepage" href="http://www.bradford.ac.uk/library/special-collections/">Visit our website</eag:contactLine>
+                                    <eag:contactLine contactLineType="directions"
+                                       href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</eag:contactLine>
+                                 </eag:contact>                                 
+                                 <eag:geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</eag:geographicCoordinates>                                                 </eag:place>
+                           </eag:places> 
+                           <eag:access languageOfElement="eng" question="yes (conditions apply)">
+                              <eag:accessConditions>Special Collections are open to, and intended for, anyone who might benefit from using them. However, space and staffing constraints mean that appointments are required. Access is subject to preservation requirements and must also conform to the restrictions of the Data Protection Act and any other appropriate legislation.</eag:accessConditions>
+                              <eag:useConditions href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website for information on using our holdings.</eag:useConditions>
+                           </eag:access>
+                           <eag:timetable>
+                              <eag:opening languageOfElement="eng" href="http://www.bradford.ac.uk/library/special-collections/opening-hours-and-contact-details/">See website for information on opening hours.</eag:opening>
+                              <eag:closing languageOfElement="eng">Closed on public holidays.</eag:closing>
+                           </eag:timetable> 
+                           <eag:accessibility languageOfElement="eng" question="yes">The Reading Room is accessible by lifts and level floors. However the layout of Floor 02 pre-dates modern standards and can be difficult for very large or long wheelchairs. We can book a back-up room with level access if necessary.</eag:accessibility>
+                          <eag:repositoryRole>Main Office</repositoryRole>
+                          <eag:biogHist>
+                              <eag:p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</eag:p>
+                              <eag:p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</eag:p>
+                              <eag:p>Since establishing the service, we have acquired other exciting resources, such
                                  as the Commonweal Archives and the Jacquetta Hawkes Archive, and enriched those
-                                 already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</p>
-                           </biogHist>
-                           <holdings>
-                              <descriptiveNote>
-                                 <p languageOfElement="eng">Special Collections at the University of Bradford holds over 100 collections of rare books and archives on the history of the University, Bradford, Yorkshire, history, politics, literature, archaeology and much more, our best-known being the Archive of J.B. Priestley. Our collections are open to everyone and include manuscripts, letters, photographs, artworks, newspapers, maps, pamphlets, objects, pipes (Priestley's) and digital files.</p>
-                              </descriptiveNote>
-                           </holdings>
-                           <services>
-                              <searchroom question="yes">
-                                 <photographAllowance question="yes (conditions apply)">We encourage visitors to use their own devices to take images for personal research use.  This is at the discretion of the staff member on duty and subject to copyright and care.</photographAllowance>
-                                 <advancedOrders languageOfElement="eng" question="yes"
-                                    href="https://www.bradford.ac.uk/library/special-collections/visiting/">Available. Send us details of the
-                                    materials you’d like to consult. We can have them out ready for you, so you
-                                    can begin your research at once.</advancedOrders>
-                              </searchroom>
-                              <internetAccess question="yes"
-                                 href="http://www.bradford.ac.uk/library/special-collections/services/visiting/">If you wish to use wi-fi, register with one of our networks for quick access on the day.  
-                              </internetAccess>
-                              <technicalServices>
-                                 <reproductionServices question="yes"><descriptiveNote><p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography.  We need a declaration form and payment before we can go ahead with copying.  Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</p></descriptiveNote></reproductionServices>
-                              </technicalServices>
-                              <recreationalServices>
-                                 <exhibition question="yes"
-                                    href="https://www.bradford.ac.uk/library/special-collections/exhibition"
-                                    localType="onlineexhibition">
-                                    Special Collections Online Exhibitions
-                                 </exhibition>
-                                 <exhibition question="yes"
-                                    href="https://archiveshub.jisc.ac.uk/features/paxcat/"
-                                    localType="archiveshubfeature">The PaxCat Project: bringing peace archives to life
-                                 </exhibition>
-                              </recreationalServices>
-                           </services>
-                        </description>
-                        <image localType="logo" href="https://archiveshub.jisc.ac.uk/images/contrlogos/bradford.gif"/>
-                     </repository>
+                                 already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</eag:p>
+                           </eag:biogHist>
+                           <eag:holdings>
+                              <eag:descriptiveNote>
+                                 <eag:p languageOfElement="eng">Special Collections at the University of Bradford holds over 100 collections of rare books and archives on the history of the University, Bradford, Yorkshire, history, politics, literature, archaeology and much more, our best-known being the Archive of J.B. Priestley. Our collections are open to everyone and include manuscripts, letters, photographs, artworks, newspapers, maps, pamphlets, objects, pipes (Priestley's) and digital files.</eag:p>
+                              </eag:descriptiveNote>
+                           </eag:holdings>
+                           <eag:services>
+                              <eag:searchroom question="yes">
+                                 <eag:photographAllowance question="yes (conditions apply)">We encourage visitors to use their own devices to take images for personal research use.  This is at the discretion of the staff member on duty and subject to copyright and care.</eag:photographAllowance>
+                                 <eag:advancedOrders languageOfElement="eng" question="yes"
+                                    href="https://www.bradford.ac.uk/library/special-collections/visiting/">Available. Send us details of the materials you’d like to consult. We can have them out ready for you, so you can begin your research at once.</eag:advancedOrders>
+                              </eag:searchroom>
+                              <eag:internetAccess question="yes"
+                                 href="http://www.bradford.ac.uk/library/special-collections/services/visiting/">If you wish to use wi-fi, register with one of our networks for quick access on the day.</eag:internetAccess>
+                              <eag:technicalServices>
+                                 <eag:reproductionServices question="yes">
+                                    <eag:descriptiveNote>
+                                       <eag:p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography.  We need a declaration form and payment before we can go ahead with copying.  Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</eag:p>
+                                    </eag:descriptiveNote>
+                                 </eag:reproductionServices>
+                              </eag:technicalServices>
+                              <eag:recreationalServices>
+                                 <eag:exhibition question="yes" href="https://www.bradford.ac.uk/library/special-collections/exhibition" localType="onlineexhibition">Special Collections Online Exhibitions</eag:exhibition>
+                                 <eag:exhibition question="yes" href="https://archiveshub.jisc.ac.uk/features/paxcat/" localType="archiveshubfeature">The PaxCat Project: bringing peace archives to life</eag:exhibition>
+                              </eag:recreationalServices>
+                           </eag:services>
+                        </eag:description>
+                        <eag:image localType="logo" href="https://archiveshub.jisc.ac.uk/images/contrlogos/bradford.gif"/>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
