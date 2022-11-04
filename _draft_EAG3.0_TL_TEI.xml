@@ -3745,7 +3745,7 @@
                </div>
                <div type="summary">
                   <p>An optional child element of <gi>description</gi> used to bundle together one
-                     or more <gi>legalStatus</gi> element.</p>
+                     or more <gi>legalStatus</gi> elements.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..n), legalStatus (1..n)</p>
