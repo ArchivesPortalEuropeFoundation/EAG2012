@@ -6755,7 +6755,7 @@
                               <eag:p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</eag:p>
                               <eag:p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</eag:p>
                               <eag:p>Since establishing the service, we have acquired other exciting resources, such
-                                 as the Commonweal Archives and the Jacquetta Hawkes Archive, and enriched those
+                                 as the Commonwealth Archives and the Jacquetta Hawkes Archive, and enriched those
                                  already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</eag:p>
                            </eag:biogHist>
                            <eag:holdings>
@@ -6839,15 +6839,14 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryId">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>repositoryId</gi>
                </head>
                <div type="fullName">
-                  <p>Repository identifier</p>
+                  <p>Repository Identifier</p>
                </div>
                <div type="summary">
-                  <p>Element meant to gather the <att>countryCode</att> and <att>repositoryCode</att> of the archival institution.</p>
+                  <p>Element meant to gather the <att>countryCode</att> and <att>repositoryCode</att> of the archival institution to provide a unique and ideally persistent identifier for the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>[empty]</p>
@@ -6861,7 +6860,7 @@
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
                         <label>countryCode</label>
-                        <item>Mandatory</item>
+                        <item>Required</item>
                         <label>conventionDeclarationReference</label>
                         <item>Optional</item>
                         <label>id</label>
@@ -6871,7 +6870,7 @@
                         <label>maintenanceEventReference</label>
                         <item>Optional</item>
                         <label>repositoryCode</label>
-                        <item>Mandatory</item>
+                        <item>Required</item>
                         <label>scriptOfElement</label>
                         <item>Optional</item>
                         <label>sourceReference</label>
@@ -6890,22 +6889,24 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Provide a unique numeric or alphanumeric code identifying the institution with archival holdings. Ideally, this identifier is compliant with the standard <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511:2011</ref>, 
-                     which can be specified using the attribute <att>repositoryEncoding</att> within <gi>control</gi>.Thus, the identifier would most likely be made up of two components: a two-letter country code (according to the standard 
-                     <ref target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref>) and a numeric or alpha-numeric institution's identifier separated by a hyphen with a maximum length of 11 characters in total.</p>
-                  <p>In addition to being compliant with ISO 15511:2011, an institution's identifier may be an officially registered ISIL code, effectively resulting in global uniqueness of the identifier as a whole.</p>
-                  <p>Identifiers complying with national, regional or local standards, rules or guidelines can be given here as well, in case no identifier compliant with ISO 15511 exists. It would then be recommended to use the attribute 
-                     <att>repositoryEncoding</att> within <gi>control</gi> with the value "otherRepositoryEncoding". Alternatively, seeing that <gi>repositoryId</gi> is only optional, you can also use the parallel element <gi>otherRepositoryCode</gi>
-                     where there are no specific requirements regarding the format of its content.</p>
+                  <p>Provide a unique numeric or alphanumeric code identifying the repository using the required <att>repositoryCode</att> attribute. Ideally, this identifier is compliant with the standard <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511:2011</ref>, which can be specified using the attribute <att>repositoryEncoding</att> within <gi>control</gi>. As such, the identifier would be made up of two components: a two-letter country code (according to the standard <ref target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref>) or a three-to-four letter code for another type of registring organisation, plus a numeric or alpha-numeric institution's identifier separated by a hyphen. The maximum length of both parts combined would be up to 16 characters.</p>
+                  <p>The country code according to ISO 3166-1 will have to be provided in all cases using the mandatory <att>countryCode</att> attribute.</p>
+                  <p>In addition to being compliant with ISO 15511:2011, an institution's identifier may be an officially registered ISIL code, effectively resulting in global uniqueness of the identifier as a whole. Whether or not a repository identifier is registered by an authorisation agency, can be indicated by using the <att>status</att> attribute with the possible values "authorized" respectively "alternative".</p>
+                  <p>Identifiers complying with national, regional or local standards, rules or guidelines can be given here as well, in case no identifier compliant with ISO 15511 exists. It would then be recommended to use the attribute <att>repositoryEncoding</att> within <gi>control</gi> with the value "otherRepositoryEncoding". Alternatively, seeing that <gi>repositoryId</gi> is only optional, you can also use the parallel element <gi>otherRepositoryCode</gi> where there are no specific requirements regarding the format of its content.</p>
                </div>
                <div type="availability">
                   <p>Optional, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <identity>
-                        <repositoryId countryCode="DE" repositoryCode="DE-1958"/> 
-                     </identity>
+                     <eag:identity>
+                        <eag:repositoryId countryCode="DE" repositoryCode="DE-1958" status="authorized"/> 
+                     </eag:identity>
+                  </egXML>
+                  <egXML>
+                     <eag:identity xmlns="http://www.tei-c.org/ns/Examples">
+                        <eag:repositoryId countryCode="GB" repositoryCode="ah532"/>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
@@ -6960,15 +6961,14 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryType">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>repositoryType</gi>
                </head>
                <div type="fullName">
-                  <p>Type of institution</p>
+                  <p>Repository Type</p>
                </div>
                <div type="summary">
-                  <p>Describes the type of archival institution.</p>
+                  <p>Describes the type of repository using a predefined list.</p>
                </div>
                <div type="mayContain">
                   <p>[empty]</p>
@@ -6985,29 +6985,25 @@
                         <item>Optional</item>
                         <label>target</label>
                         <item>Optional</item>
+                        <label>value</label>
+                        <item>Required (values limited to: nationalArchives, regionalArchives, localArchives, specialisedGovernmentArchives, specialisedNongovernmentalArchives, personalAndFamilyArchives, businessArchives, religiousInstitutionsArchives, universityArchives, nonUniversityEducationArchives, internationalArchives, communityArchives)</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Describes the type of archival institution with a predefined list in the attribute <att>value</att>; available terms are:</p>
+                  <p>Describes the type of repository with a predefined list in the attribute <att>value</att>; available terms are:</p>
                   <p>"nationalArchives", i.e. archival institutions that hold public records of government institutions on the national level</p>
-                  <p>"regionalArchives, i.e. archival institutions that hold public records of government institutions on an administrative level that is between the national and the local levels; depending on a country's administrative system
-                     this type might not be relevant for all countries; or an institution could fall into this category in one country, but rather would fit into the category of "Local archives" in another country</p>
+                  <p>"regionalArchives, i.e. archival institutions that hold public records of government institutions on an administrative level that is between the national and the local levels; depending on a country's administrative system this type might not be relevant for all countries; or an institution could fall into this category in one country, but rather would fit into the category of "localArchives" in another country</p>
                   <p>"localArchives", e.g. county or local authority archives and municipal archives, i.e. archival institutions that hold public records of government institutions on a local level</p>
-                  <p>"specialisedGovernmentArchives", i.e. archival institutions that hold records of institutions that are subdivisions of governmental bodies, that are funded by government, or related to government in some other administrative 
-                     or organisational form; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
-                  <p>"specialisedNongovernmentalArchives", i.e. archival institutions that hold records of institutions that are independent from government, e.g. archives of other cultural (heritage) institutions, archives of political parties, 
-                     of popular/labour movements, associations, agencies and foundations, archives of the media, archives of research institutions, etc.; depending on how such archives are managed and depending on the organisations they function
-                     as an archive for, other types could apply to institutions in this category as well, such as "communityArchives" in case the archive is managed privately or by volunteers or "businessArchives", e.g. for the public archives of 
-                     a broadcasting company; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
+                  <p>"specialisedGovernmentArchives", i.e. archival institutions that hold records of institutions that are subdivisions of governmental bodies, that are funded by government, or related to government in some other administrative or organisational form; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
+                  <p>"specialisedNongovernmentalArchives", i.e. archival institutions that hold records of institutions that are independent from government, e.g. archives of other cultural (heritage) institutions, archives of political parties, of popular/labour movements, associations, agencies and foundations, archives of the media, archives of research institutions, etc.; depending on how such archives are managed and depending on the organisations they function as an archive for, other types could apply to institutions in this category as well, such as "communityArchives" in case the archive is managed privately or by volunteers or "businessArchives", e.g. for the public archives of a broadcasting company; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
                   <p>"personalAndFamilyArchives", i.e. archives of (noble) families or (prominent) persons that are kept by non-governmental organisations or privately</p>
-                  <p>"businessArchives, i.e. archives of businesses that are mainly kept for the internal purpose of the organisation, but might also be accessible to the public</p>
-                  <p>"religiousInstitutionArchives", i.e. archives of religious institutions, organisations, associations, including churches, mosques, synagogues and other types of temples</p>
+                  <p>"businessArchives", i.e. archives of businesses that are mainly kept for the internal purpose of the organisation, but might also be accessible to the public</p>
+                  <p>"religiousInstitutionsArchives", i.e. archives of religious institutions, organisations, associations, including churches, mosques, synagogues and other types of temples</p>
                   <p>"universityArchives", i.a. archives of universities (and other institutions of higher education depending on the national context)</p>
                   <p>"nonUniversityEducationArchives", i.e. archives of other institutions of the educational sector that do not classify as universities, e.g. schools</p>
                   <p>"internationalArchives", i.e.archives of international organisations, e.g. EU organisations, UN organisations, International Red Cross, Amnesty International, Doctors without Frontiers, etc.</p>
-                  <p>"communityArchives", i.e. archives that are (often) run by volunteers (groups), that hold materials relating to less represented/marginalised groups of people whether that’s by nationality, heritage, religion, gender, 
-                     sexual orientation, age, etc.</p>
+                  <p>"communityArchives", i.e. archives that are (often) run by volunteers (groups), that hold materials relating to less represented/marginalised groups of people whether that’s by nationality, heritage, religion, gender, sexual orientation, age, etc.</p>
                   <p>Use the element <gi>otherRepositoryType</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
                   <p>Do not confuse with the element <gi>repositoryRole</gi> that decsribes the role of a repository within the organisational structure of an archival institution.</p>
                </div>
@@ -7016,9 +7012,19 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <identity>
-                        <repositoryType value="nationalArchives"/>
-                     </identity>
+                     <eag:identity>
+                        <eag:repositoryType value="nationalArchives"/>
+                     </eag:identity>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:repositoryType value="universityArchives"/>
+                     </eag:identity>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:repositoryType value="businessArchives"/>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
@@ -7923,7 +7929,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-targetEntity">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>targetEntity</gi>
                </head>
@@ -7931,8 +7936,7 @@
                   <p>Target Entity</p>
                </div>
                <div type="summary">
-                  <p>A required child element of <gi>relation</gi> used to identify the entity that
-                     is being targeted by the relation.</p>
+                  <p>A required child element of <gi>relation</gi> used to identify the entity that is being targeted by the relation.</p>
                </div>
                <div type="mayContain">
                   <p>part (1..n)</p>
@@ -7960,8 +7964,7 @@
                         <label>target</label>
                         <item>Optional</item>
                         <label>targetType</label>
-                        <item>Required (values limited to: agent, corporateBody, family, function,
-                           person, resource)</item>
+                        <item>Required (values limited to: agent, corporateBody, family, function, person, resource)</item>
                         <label>valueURI</label>
                         <item>Optional</item>
                         <label>vocabularySource</label>
@@ -7972,17 +7975,12 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>targetEntity</gi> is used within <gi>relation</gi> to identify an entity
-                     that is related to the subject of the EAG instance.</p>
-                  <p><gi>targetEntity</gi> must include at least one <gi>part</gi> element, encoding
-                     the name or term for the related entity.</p>
+                  <p><gi>targetEntity</gi> is used within <gi>relation</gi> to identify an entity that is related to the subject of the EAG instance.</p>
+                  <p><gi>targetEntity</gi> must include at least one <gi>part</gi> element, encoding the name or term for the related entity.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
-                     <item>Use the required <att>targetType</att>, to identity the type of entity
-                        related to in <gi>targetEntity</gi>, using one of the following values:
-                        "agent", "corporateBody", "family", "function", "person", or
-                        "resource".</item>
+                     <item>Use the required <att>targetType</att> attribute to identify the type of entity related to the archival institution being described, using one of the following values: "agent", "corporateBody", "family", "function", "person", or "resource".</item>
                   </list>
                </div>
                <div type="availability">
@@ -7990,19 +7988,16 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <relation>
-                        <targetEntity targetType="resource" languageOfElement="eng"
-                           valueURI="https://www.filmothek.bundesarchiv.de/">
-                           <part>Filmothek - Digital Film Portal</part>
-                        </targetEntity>
-                        <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
-                           creator of (RiC-R027i)</relationType>
-                     </relation>
+                     <eag:relation>
+                        <eag:targetEntity targetType="resource" languageOfElement="eng" valueURI="https://www.filmothek.bundesarchiv.de/">
+                           <eag:part>Filmothek - Digital Film Portal</eag:part>
+                        </eag:targetEntity>
+                        <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is creator of (RiC-R027i)</eag:relationType>
+                     </eag:relation>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-targetRole">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>targetRole</gi>
                </head>
@@ -8010,8 +8005,7 @@
                   <p>Target Role</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>relation</gi> used to specify the role of a
-                     related entity towards the repository entity being described.</p>
+                  <p>An optional child element of <gi>relation</gi> used to specify the role of a related entity towards the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -8052,29 +8046,21 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>targetRole</gi> is used with <gi>relation</gi> to specify the role of a
-                     related entity towards the repository entity being described.</p>
-                  <p>The <gi>targetRole</gi> element contains a textual description of the relation.
-                     It is recommended that the terms in <gi>targetRole</gi> be taken from
-                     authorized vocabularies.</p>
+                  <p><gi>targetRole</gi> is used with <gi>relation</gi> to specify the role of a related entity towards the repository being described.</p>
+                  <p>The <gi>targetRole</gi> element contains a textual description of the relation. It is recommended that the terms in <gi>targetRole</gi> be taken from authorized vocabularies.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <relations>
-                       <relation> targetType="corporateBody" languageOfElement="spa"
-                          valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/46286?nm">
-                             <part>Consejo de Indias</part>
-                          <relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
-                             creator of (RiC-R027i)</relationType>
-                          <targetRole>languageOfElement="eng">The "Consejo de Indias" is a creators of the documentation held in the General Archive of the Indies.</targetRole>
-                          <descriptiveNote>languageOfElement="spa"> El Archivo General de Indias fundamentalmente custodia los fondos producidos por las instituciones creadas por la Administración española 
-                           para el gobierno y administración de los territorios ultramarinos españoles. Estas instituciones son: Consejo de Indias y Secretarías de Despacho, 
-                           Casa de la Contratación y Consulados de Sevilla y Cádiz</descriptiveNote>
-                       </relation>
-                    </relations>
+                    <eag:relation>
+                      <eag:targetEntity targetType="corporateBody" languageOfElement="spa" valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/46286?nm">
+                        <eag:part>Consejo de Indias</eag:part>
+                      </eag:targetEntity>
+                      <eag:relationType>Custodianship</relationType>
+                      <eag:targetRole languageOfElement="eng">The "Consejo de Indias" transfers its records to the Archivo General de Indias for preservation and access.</eag:targetRole>
+                    </eag:relation>
                   </egXML>
                </div>
             </div>
@@ -8456,7 +8442,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-useDates">
-               <!-- Kerstin (review) -->
                <head>
                   <gi>useDates</gi>
                </head>
@@ -8464,8 +8449,7 @@
                   <p>Dates of Use</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>nameEntry</gi> and <gi>nameEntrySet</gi> that
-                     provides the dates when the name or names were used for or by the repository or repositories being described.</p>
+                  <p>An optional child element of <gi>nameEntry</gi> and <gi>nameEntrySet</gi> that provides the dates when the name or names were used for or by the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>date or dateRange or dateSet (1..1)</p>
@@ -8496,57 +8480,53 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Within <gi>nameEntry</gi>, <gi>useDates</gi> provides the dates during which
-                     the name was used for or by the repository. For parallel names (e.g., official
-                     forms of the name in different languages and/or scripts), <gi>useDates</gi> may
-                     occur in <gi>nameEntrySet</gi> rather than in the individual <gi>nameEntry</gi>
-                     elements contained in <gi>nameEntrySet</gi>.</p>
-                  <p><gi>useDates</gi> must include one of <gi>date</gi> when it is single date, <gi>dateRange</gi> when it is a tipe span, or
-                     <gi>dateSet</gi> when it is a combination of both.</p>
+                  <p>Within <gi>nameEntry</gi>, <gi>useDates</gi> provides the dates during which the name was used for or by the repository. For parallel names (e.g., official forms of the name in different languages and/or scripts), <gi>useDates</gi> may occur in <gi>nameEntrySet</gi> rather than in the individual <gi>nameEntry</gi> elements contained in <gi>nameEntrySet</gi>.</p>
+                  <p><gi>useDates</gi> must include one of <gi>date</gi> (when it is a single date), <gi>dateRange</gi> (when it is a time span), or
+                     <gi>dateSet</gi> (when it is a combination of both).</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <nameEntrySet>
-                        <nameEntry languageOfElement="ger" preferredForm="false">
-                           <part>Reichsarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1919">1919</fromDate>
-                                 <toDate standardDate="1945">1945</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                        <nameEntry languageOfElement="ger" preferredForm="false">
-                           <part>Reichsfilmarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1935">1935</fromDate>
-                                 <toDate standardDate="1945">1945</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                        <nameEntry languageOfElement="ger" preferredForm="false">
-                           <part>Deutsches Zentralarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1946">1946</fromDate>
-                                 <toDate standardDate="1973">1973</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                        <nameEntry languageOfElement="ger" status="alternative">
-                           <part>Zentrales Staatsarchiv</part>
-                           <useDates>
-                              <dateRange>
-                                 <fromDate standardDate="1973">1973</fromDate>
-                                 <toDate standardDate="1990">1990</toDate>
-                              </dateRange>
-                           </useDates>
-                        </nameEntry>
-                     </nameEntrySet>
+                     <eag:nameEntrySet>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsarchiv</part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1919">1919</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsfilmarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1935">1935</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Deutsches Zentralarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1946">1946</eag:fromDate>
+                                 <eag:toDate standardDate="1973">1973</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" status="alternative" preferredForm="false">
+                           <eag:part>Zentrales Staatsarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1973">1973</eag:fromDate>
+                                 <eag:toDate standardDate="1990">1990</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
                   </egXML>
                </div>
             </div>
