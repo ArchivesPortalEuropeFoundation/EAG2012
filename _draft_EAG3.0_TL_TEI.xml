@@ -9087,18 +9087,18 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:list listType="unordered">
-                        <eac-cpf:head>List of ministers of May Memorial Unitarian Universalist
-                           Church</eac-cpf:head>
-                        <eac-cpf:item>John Storer, Minister 1839-1844</eac-cpf:item>
-                        <eac-cpf:item>Samuel Joseph May, Minister 1845-1868</eac-cpf:item>
-                        <eac-cpf:item>Samuel R. Calthrop, Minister 1868-1911</eac-cpf:item>
-                        <eac-cpf:item>John H. Applebee, Minister 1911-1929</eac-cpf:item>
-                        <eac-cpf:item>Waldemar W. Argow, Minister 1930-1941</eac-cpf:item>
-                        <eac-cpf:item>Robert E. Romig, Minister 1941-1946</eac-cpf:item>
-                        <eac-cpf:item>Glenn O. Canfield, Minister 1946-1952</eac-cpf:item>
-                        <eac-cpf:item>John Fuller, Minister, 1961-1973</eac-cpf:item>
-                     </eac-cpf:list>
+                     <eag:list listType="unordered">
+                        <eag:head>List of ministers of May Memorial Unitarian Universalist
+                           Church</eag:head>
+                        <eag:item>John Storer, Minister 1839-1844</eag:item>
+                        <eag:item>Samuel Joseph May, Minister 1845-1868</eag:item>
+                        <eag:item>Samuel R. Calthrop, Minister 1868-1911</eag:item>
+                        <eag:item>John H. Applebee, Minister 1911-1929</eag:item>
+                        <eag:item>Waldemar W. Argow, Minister 1930-1941</eag:item>
+                        <eag:item>Robert E. Romig, Minister 1941-1946</eag:item>
+                        <eag:item>Glenn O. Canfield, Minister 1946-1952</eagf:item>
+                        <eag:item>John Fuller, Minister, 1961-1973</eag:item>
+                     </eag:list>
                   </egXML>
                </div>
             </div>
@@ -9137,10 +9137,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:nameEntry status="authorized">
-                        <eac-cpf:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO">Arendt, Hannah</eac-cpf:part>
-                        <eac-cpf:part localType="https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath" localTypeDeclarationReference="GNDO">1906-1975</eac-cpf:part>						
-                     </eac-cpf:nameEntry>
+                     <eag:nameEntry status="authorized">
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO">Arendt, Hannah</eag:part>
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath" localTypeDeclarationReference="GNDO">1906-1975</eag:part>						
+                     </eag:nameEntry>
                   </egXML>
                </div>
             </div>
@@ -9159,7 +9159,7 @@
                <div type="summary">
                   <p>Use <att>localTypeDeclarationReference</att> to provide a direct link to a
                         <gi>localTypeDeclaration</gi> element within <gi>control</gi> from another
-                     element using <att>localType</att> within the EAC-CPF instance.
+                     element using <att>localType</att> within the EAG instance.
                   </p>
                </div>
                <div type="description">
@@ -9172,10 +9172,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:nameEntry status="authorized">
-                        <eac-cpf:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO">Arendt, Hannah</eac-cpf:part>
-                        <eac-cpf:part localType="https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath" localTypeDeclarationReference="GNDO">1906-1975</eac-cpf:part>						
-                     </eac-cpf:nameEntry>
+                     <eag:nameEntry status="authorized">
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO">Arendt, Hannah</eag:part>
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath" localTypeDeclarationReference="GNDO">1906-1975</eag:part>						
+                     </eag:nameEntry>
                   </egXML>
                </div>
             </div>
@@ -9229,15 +9229,15 @@
                   <list type="simple">
                      <item>cancelled: marks an instance as not current (obsolete or rejected), but
                         retained for reference</item>
-                     <item>created: the initial creation of the EAC-CPF instance</item>
+                     <item>created: the initial creation of the EAG instance</item>
                      <item>deleted: indication that the instance has been deleted from the
                         system</item>
                      <item>derived: indicates that the instance was derived from another descriptive
                         system</item>
-                     <item>revised: any type of general modification to the EAC-CPF instance</item>
+                     <item>revised: any type of general modification to the EAG instance</item>
                      <item>unknown: when the type of event is not known</item>
                      <item>updated: when an instance has been brought up to date with significant
-                        changes to the materials being described or to the version of EAC-CPF
+                        changes to the materials being described or to the version of EAG
                         used</item>
                   </list>
                </div>
@@ -9246,21 +9246,21 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:maintenanceHistory>
-                        <eac-cpf:maintenanceEvent maintenanceEventType="derived">
-                           <eac-cpf:agent agentType="machine">XSLT ead2cpf.xsl/Saxon B9</eac-cpf:agent>
-                           <eac-cpf:eventDateTime standardDateTime="2009-08-30T09:37:17.029-04:00"/>
-                           <eac-cpf:eventDescription>Derived from EAD instance.</eac-cpf:eventDescription>
-                        </eac-cpf:maintenanceEvent>
-                        <eac-cpf:maintenanceEvent maintenanceEventType="revised">
-                           <eac-cpf:agent agentType="unknown"/>
-                           <eac-cpf:eventDateTime standardDateTime="2021-11-27"/>
-                        </eac-cpf:maintenanceEvent>
-                        <eac-cpf:maintenanceEvent maintenanceEventType="updated">
-                           <eac-cpf:agent agentType="human">K. Bredenberg</eac-cpf:agent>
-                           <eac-cpf:eventDateTime>December 2021</eac-cpf:eventDateTime>
-                        </eac-cpf:maintenanceEvent>
-                     </eac-cpf:maintenanceHistory>
+                     <eag:maintenanceHistory>
+                        <eag:maintenanceEvent maintenanceEventType="derived">
+                           <eag:agent agentType="machine">XSLT ead2cpf.xsl/Saxon B9</eag:agent>
+                           <eag:eventDateTime standardDateTime="2009-08-30T09:37:17.029-04:00"/>
+                           <eag:eventDescription>Derived from EAD instance.</eag:eventDescription>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="revised">
+                           <eag:agent agentType="unknown"/>
+                           <eag:eventDateTime standardDateTime="2021-11-27"/>
+                        </eag:maintenanceEvent>
+                        <eag:maintenanceEvent maintenanceEventType="updated">
+                           <eag:agent agentType="human">K. Bredenberg</eag:agent>
+                           <eag:eventDateTime>December 2021</eag:eventDateTime>
+                        </eag:maintenanceEvent>
+                     </eag:maintenanceHistory>
                   </egXML>
                </div>
             </div>
@@ -9277,10 +9277,10 @@
                   <p>Maintenance Status</p>
                </div>
                <div type="summary">
-                  <p>The current drafting status of the EAC-CPF instance.</p>
+                  <p>The current drafting status of the EAg instance.</p>
                </div>
                <div type="description">
-                  <p>The maintenance status must occur on <gi>control</gi>. As an EAC-CPF instance
+                  <p>The maintenance status must occur on <gi>control</gi>. As an EAG instance
                      is modified or other events happen to it (as recorded in the
                         <gi>maintenanceHistory</gi> element), the maintenance status should also be
                      updated to reflect the current drafting status.</p>
@@ -9304,8 +9304,8 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:control countryEncoding="iso3166-1" dateEncoding="iso8601" languageEncoding="iso639-2b" maintenanceStatus="new"
-                        publicationStatus="published" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eac-cpf:control>
+                     <eag:control countryEncoding="iso3166-1" dateEncoding="iso8601" languageEncoding="iso639-2b" maintenanceStatus="new"
+                        publicationStatus="published" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eag:control>
                   </egXML>
                </div>
             </div>
@@ -9336,10 +9336,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:dateRange>
-                        <eac-cpf:fromDate notBefore="1971" notAfter="1975">around 1973</eac-cpf:fromDate>
-                        <eac-cpf:toDate standardDate="1992">1992</eac-cpf:toDate>
-                     </eac-cpf:dateRange>
+                     <eag:dateRange>
+                        <eag:fromDate notBefore="1971" notAfter="1975">around 1973</eag:fromDate>
+                        <eag:toDate standardDate="1992">1992</eag:toDate>
+                     </eag:dateRange>
                   </egXML>
                </div>
             </div>
@@ -9370,10 +9370,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:dateRange>
-                        <eac-cpf:fromDate notBefore="1971" notAfter="1975">around 1973</eac-cpf:fromDate>
-                        <eac-cpf:toDate standardDate="1992">1992</eac-cpf:toDate>
-                     </eac-cpf:dateRange>
+                     <eag:dateRange>
+                        <eag:fromDate notBefore="1971" notAfter="1975">around 1973</eag:fromDate>
+                        <eac-cpf:toDate standardDate="1992">1992</eag:toDate>
+                     </eag:dateRange>
                   </egXML>
                </div>
             </div>
@@ -9394,7 +9394,7 @@
                </div>
                <div type="description">
                   <p>Attribute that specifies whether or not a <gi>nameEntry</gi> provides the
-                     preferred form of the name of the EAC-CPF entity for display purposes in a
+                     preferred form of the name of the EAG entity for display purposes in a
                      given context. Use the value "true" if the name entry is preferred for any display purposed.</p>
                   <p>This optional attribute is only available in <gi>nameEntry</gi>.</p>
                </div>
@@ -9403,17 +9403,17 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:nameEntrySet languageOfElement="fre">
-                        <eac-cpf:nameEntry conventionDeclarationReference="cd1" preferredForm="true">
-                           <eac-cpf:part>Provence-Alpes-Côte d'Azur</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry conventionDeclarationReference="cd2">
-                           <eac-cpf:part>Région Sud Provence-Alpes-Côte d'Azur</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry conventionDeclarationReference="cd3">
-                           <eac-cpf:part>Provence-Alpes-Côte-d'Azur</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                     </eac-cpf:nameEntrySet>
+                     <eag:nameEntrySet languageOfElement="fre">
+                        <eag:nameEntry conventionDeclarationReference="cd1" preferredForm="true">
+                           <eag:part>Provence-Alpes-Côte d'Azur</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry conventionDeclarationReference="cd2">
+                           <eag:part>Région Sud Provence-Alpes-Côte d'Azur</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry conventionDeclarationReference="cd3">
+                           <eag:part>Provence-Alpes-Côte-d'Azur</eag:part>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
                   </egXML>
                </div>
             </div>
