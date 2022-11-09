@@ -634,7 +634,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agencyCode">
-               <!-- Reviewed. Need decision re authorized/authorised. -->
+               <!-- Jane Reviewed. -->
                <head>
                   <gi>agencyCode</gi>
                </head>
@@ -741,7 +741,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agencyName">
-               <!-- Review done - see Q re authorised name -->
+               <!-- Jane Reviewed -->
                <head>
                   <gi>agencyName</gi>
                </head>
@@ -827,7 +827,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-agent">
-               <!-- Jane (review) -->
+               <!-- Jane reviewed -->
                <head>
                   <gi>agent</gi>
                </head>
@@ -1314,7 +1314,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-citedRange">
-               <!-- Jane (review) DONE -->
+               <!-- Jane Reviewed -->
                <head>
                   <gi>citedRange</gi>
                </head>
@@ -1633,7 +1633,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-control">
-               <!-- Jane (review) -->
+               <!-- Jane Reviewed -->
                <head>
                   <gi>control</gi>
                </head>
@@ -1822,7 +1822,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-conventionDeclaration">
-               <!-- Jane (review) -->
+               <!-- Jane Reviewed -->
                <head>
                   <gi>conventionDeclaration</gi>
                </head>
@@ -1950,7 +1950,7 @@
                   <p>Date</p>
                </div>
                <div type="summary">
-                  <p>A single date of an event in the history of the institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to, e.g., a name entry, a place, a mandate, another archival institution, a resource, or a function.</p>
+                  <p>A single date of an event in the history of the institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to e.g., a name entry, a place, a mandate, another archival institution, a resource, or a function.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -2013,7 +2013,7 @@
                   <p>Dates of existence for the institution being described are encoded with the
                         <gi>existDates</gi> element, while the dates of use of a particular name of
                      an institution are encoded in <gi>useDates</gi>. Dates for the scope of the holdings that an institution maintains are encoded with the <gi>holdings</gi> element.
-                  <p>Note that the date and time of a maintenance event in the history of the EAG instance are given in the <gi>eventDateTime</gi> element instead.</p>
+                  <p>Note that the date and time of a maintenance event in the history of the EAG instance are given in the <gi>eventDateTime</gi> element.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
