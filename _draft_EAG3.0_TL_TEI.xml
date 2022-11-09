@@ -9430,11 +9430,11 @@
                   <p>Publication Status</p>
                </div>
                <div type="summary">
-                  <p>The current publication status of the EAC-CPF instance.</p>
+                  <p>The current publication status of the EAG instance.</p>
                </div>
                <div type="description">
-                  <p>The publication status may occur on <gi>control</gi> to indicate the current publication status of the EAC-CPF instance, whether in process, approved or final. As an EAC-CPF instance is modified or other events happen to it (as recorded in the <gi>maintenanceHistory</gi> element), the publication status should also be updated. </p>
-                     <p>A newly created EAC-CPF instance will usually start with a publication status of "inProcess". This partial and preliminary status will be applicable as long as the author or the creating agency is working on the document. Depending on the context, the document might first reach a pre-publication level, awaiting approval e.g. by a higher level manager or an authorizing agency. Once such approval has been given, the status "approved" could be assigned for internal purposes while the EAC-CPF instance is not publicly available yet. When the EAC-CPF instance has been published on the institution’s own website or via the authorizing agency, the status "published" can be assigned.
+                  <p>The publication status may occur on <gi>control</gi> to indicate the current publication status of the EAG instance, whether in process, approved or final. As an EAG instance is modified or other events happen to it (as recorded in the <gi>maintenanceHistory</gi> element), the publication status should also be updated. </p>
+                     <p>A newly created EAG instance will usually start with a publication status of "inProcess". This partial and preliminary status will be applicable as long as the author or the creating agency is working on the document. Depending on the context, the document might first reach a pre-publication level, awaiting approval e.g. by a higher level manager or an authorizing agency. Once such approval has been given, the status "approved" could be assigned for internal purposes while the EAG instance is not publicly available yet. When the EAG instance has been published on the institution’s own website or via the authorizing agency, the status "published" can be assigned.
                   </p>
                </div>
                <div type="values">
@@ -9442,8 +9442,8 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:control countryEncoding="iso3166-1" dateEncoding="iso8601" languageEncoding="iso639-2b" maintenanceStatus="new"
-                        publicationStatus="published" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eac-cpf:control>
+                     <eag:control countryEncoding="iso3166-1" dateEncoding="iso8601" languageEncoding="iso639-2b" maintenanceStatus="new"
+                        publicationStatus="published" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eag:control>
                   </egXML>
                </div>
             </div>
@@ -9539,7 +9539,7 @@
                <div type="description">
                   <p>The authoritative source or rules for values supplied in <gi>agencyCode</gi>.
                      If the value "otherRepositoryEncoding" is selected an alternate code list
-                     should be specified in <gi>conventionDeclaration</gi>. OPtionally available only in
+                     should be specified in <gi>conventionDeclaration</gi>. Optionally available only in
                      <gi>control</gi>.</p>
                </div>
                <div type="values">
@@ -9547,9 +9547,9 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:control countryEncoding="iso3166-1" dateEncoding="iso8601"
+                     <eag:control countryEncoding="iso3166-1" dateEncoding="iso8601"
                         languageEncoding="iso639-2b" repositoryEncoding="iso15511"
-                        scriptEncoding="iso15924"> [...] </eac-cpf:control>
+                        scriptEncoding="iso15924"> [...] </eag:control>
                   </egXML>
                </div>
             </div>
@@ -9566,7 +9566,7 @@
                   <p>Script Code</p>
                </div>
                <div type="summary">
-                  <p>The code for the writing system, or script, used in the EAC-CPF instance or in
+                  <p>The code for the writing system, or script, used in the EAG instance or in
                      which the CPF entity being described was creative or productive.</p>
                   </div>
                <div type="description">
@@ -9579,19 +9579,19 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:languagesUsed>
-                        <eac-cpf:languageUsed>
-                           <eac-cpf:language languageCode="eng">English</eac-cpf:language>
-                           <eac-cpf:writingSystem scriptCode="Latn">Latin</eac-cpf:writingSystem>
-                        </eac-cpf:languageUsed>
-                        <eac-cpf:languageUsed>
-                           <eac-cpf:language languageCode="spa">Spanish</eac-cpf:language>
-                           <eac-cpf:writingSystem scriptCode="Latn">Latin</eac-cpf:writingSystem>
-                        </eac-cpf:languageUsed>
-                        <eac-cpf:descriptiveNote>
-                           <eac-cpf:p>Published works in English and Spanish.</eac-cpf:p>
-                        </eac-cpf:descriptiveNote>
-                     </eac-cpf:languagesUsed>
+                     <eag:languagesUsed>
+                        <eag:languageUsed>
+                           <eag:language languageCode="eng">English</eag:language>
+                           <eag:writingSystem scriptCode="Latn">Latin</eag:writingSystem>
+                        </eag:languageUsed>
+                        <eag:languageUsed>
+                           <eag:language languageCode="spa">Spanish</eag:language>
+                           <eag:writingSystem scriptCode="Latn">Latin</eag:writingSystem>
+                        </eag:languageUsed>
+                        <eag:descriptiveNote>
+                           <eag:p>Published works in English and Spanish.</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:languagesUsed>
                   </egXML>
                </div>
             </div>
@@ -9622,9 +9622,9 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:control countryEncoding="iso3166-1" dateEncoding="iso8601"
+                     <eag:control countryEncoding="iso3166-1" dateEncoding="iso8601"
                         languageEncoding="iso639-2b" repositoryEncoding="iso15511"
-                        scriptEncoding="iso15924"> [...] </eac-cpf:control>
+                        scriptEncoding="iso15924"> [...] </eag:control>
                   </egXML>
                </div>
             </div>
