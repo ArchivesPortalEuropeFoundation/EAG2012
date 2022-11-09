@@ -1942,7 +1942,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-date">
-               <!-- Jane (review) -->
+               <!-- Jane reviewed -->
                <head>
                   <gi>date</gi>
                </head>
@@ -1950,7 +1950,7 @@
                   <p>Date</p>
                </div>
                <div type="summary">
-                  <p>The single date of an event in the history of the institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to, e.g., a name entry, a place, a mandate, another archival institution, a resource, or a function.</p>
+                  <p>A single date of an event in the history of the institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to, e.g., a name entry, a place, a mandate, another archival institution, a resource, or a function.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -2001,7 +2001,7 @@
                </div>
                <div type="description">
                   <p>An element for expressing the single date of an event in the history of the
-                     institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to,
+                     institution with archival holdings being described, of the holdings this institution maintains, or in their relationship to
                      e.g., a name entry, a place, a mandate, another archival institution, a resource, or a function.</p>
                   <p>The content of the element is intended to be a human-readable natural language
                      date with a machine-readable date provided as the value of the
@@ -2034,7 +2034,7 @@
                   <p>Within <gi>function</gi>, <gi>holdings</gi>, <gi>legalStatus</gi>, <gi>mandate</gi>, 
                         <gi>otherRepositoryType</gi>, <gi>place</gi>, <gi>relation</gi>: one of <gi>date</gi>, 
                         <gi>dateRange</gi>, or <gi>dateSet</gi> optional, not repeatable</p>
-                  <p>Within <gi>chronItem</gi>, <gi>existDates</gi> and <gi>useDates</gi>: one of
+                  <p>Within <gi>chronItem</gi>, <gi>existDates</gi>, <gi>useDates</gi>: one of
                         <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> required, not
                      repeatable</p>
                   <p>Within <gi>dateSet</gi>: at least two of <gi>date</gi> and/or
@@ -2069,7 +2069,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-dateRange">
-               <!-- Jane (review) -->
+               <!-- Jane Reviewed -->
                <head>
                   <gi>dateRange</gi>
                </head>
