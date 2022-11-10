@@ -8,21 +8,21 @@
       <fileDesc>
          <titleStmt>
             <title xml:lang="eng" type="main">Encoded Archival Guide (EAG) <lb/> Tag Library</title>
-            <title xml:lang="eng" type="additional">draft Version EAG 3.0</title>
+            <title xml:lang="eng" type="additional">EAG 3.0 (draft)</title>
             <respStmt>
                <resp>Prepared and maintained by the </resp>
                <name>Archives Portal Europe Foundation's Working Group on Standards</name>
             </respStmt>
          </titleStmt>
          <editionStmt>
-            <edition>2022 Edition</edition>
+            <edition>2023 Edition</edition>
          </editionStmt>
          <publicationStmt>
             <publisher>Archives Portal Europe Foundation, The Hague, Netherlands</publisher>
             <address>
                <addrLine>standards@archivesportaleurope.net</addrLine>
             </address>
-            <date when="2022"/>
+            <date when="2023"/>
             <availability>
                <licence>This work is licensed under a Creative Commons Attribution 4.0 International
                   License (CC BY 4.0). See <ref target="http://creativecommons.org/licenses/by/4.0/">
@@ -42,179 +42,93 @@
          <titlePage>
             <docTitle>
                <titlePart type="main">Encoded Archival Guide (EAG) <lb/> Tag Library</titlePart>
-               <titlePart type="additional">draft Version EAG 3.0</titlePart>
+               <titlePart type="additional">EAG 3.0 (draft)</titlePart>
             </docTitle>
-            <docEdition>2022 Edition</docEdition>
+            <docEdition>2023 Edition</docEdition>
             <byline>Prepared and maintained by the</byline>
             <docAuthor>Archives Portal Europe Foundation's Working Group on Standards</docAuthor>
             <docImprint>
-               <docDate>[Date of the document]</docDate>
+               <docDate>November 2022</docDate>
             </docImprint>
          </titlePage>
          <div>
             <div xml:id="preface">
                <head>Related Standards</head>
-               <p>Encoded Archival Guide (EAG), same as the related standards maintained by the Society of American Archivists’ Technical Subcommittee on Encoded Archival Standards (TS-EAS), is an XML schema based on an established model developed by the International Council on Archives (ICA).</p> 
-               <p>EAG is based on the International Standard for Describing Institutions with Archival Holdings (ISDIAH), while Encoded Archival Description (EAD) is based on the General International Standard Archival Description (ISAD(G)) and Encoded Archival Context for Corporate Bodies, Persons, 
-                  and Families (EAC-CPF) on the International Standard Archival Authority Record for Corporate Bodies, Persons and Families (ISAAR-CPF). The current revision to EAG is being undertaken by Archives Portal Europe Foundation's Working Group on Standards (WGoS) following the recent 
-                  revision of EAC-CPF as well as requirements resulting from the use of EAG, and are not necessarily tied to ongoing development of standards by the ICA, though keeping close connections to the ICA Experts Group on Archival Description as a related standards body.</p> 
-               <p>For this reason, the upcoming release of EAG 3.0 will continue to be based on ISDIAH rather than the draft versions of Records in Contexts (RiC). We anticipate that future versions of EAG, along with future versions of the standards maintained by TS-EAS, will take the RiC Conceptual Model into account once it is finalized and approved.</p>
+               <p>Encoded Archival Guide (EAG), same as the related standards maintained by the <ref target="https://www2.archivists.org/groups/technical-subcommittee-on-encoded-archival-standards-ts-eas">Technical Subcommittee on Encoded Archival Standards (TS-EAS)</ref> at the Society of American Archivists (SAA), is an XML schema based on an established model developed by the International Council on Archives (ICA).</p> 
+               <p>EAG is based on the International Standard for Describing Institutions with Archival Holdings (<ref target="https://www.ica.org/en/isdiah-international-standard-describing-institutions-archival-holdings">ISDIAH</ref>), while Encoded Archival Description (<ref target="https://www.loc.gov/ead/">EAD</ref>) is based on the General International Standard Archival Description (<ref target="https://www.ica.org/en/isadg-general-international-standard-archival-description-second-edition">ISAD(G)</ref>) and Encoded Archival Context for Corporate Bodies, Persons, and Families (<ref target="https://eac.staatsbibliothek-berlin.de/">EAC-CPF</ref>) on the International Standard Archival Authority Record for Corporate Bodies, Persons and Families (<ref target="https://www.ica.org/en/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd">ISAAR-CPF</ref>). This revision to EAG was undertaken by the Archives Portal Europe Foundation's Working Group on Standards (WGoS) following the recent revision of EAC-CPF as well as requirements resulting from the use of EAG, and are not necessarily tied to ongoing developments of standards by the ICA, namely Records in Contexts (RiC), though the WGoS has been keeping close connections to the ICA Experts Group on Archival Description (EGAD) as a related standards body.</p> 
+               <p>For this reason, this current release of EAG 3.0 will continue to be based on ISDIAH rather than the draft versions of RiC that were available during the revision process. We anticipate that future versions of EAG, along with future versions of the standards maintained by TS-EAS, will take the <ref target="https://www.ica.org/en/records-in-contexts-conceptual-model">RiC Conceptual Model<ref> and/or the <ref target="https://www.ica.org/standards/RiC/ontology">RiC Ontology</ref> into account once they are finalized and approved.</p>
                <list type="gloss">
                   <label>International Standard for Describing Institutions with Archival Holdings (ISDIAH)</label>
-                  <item>ISDIAH is a descriptive standard for descriptions of entities (mainly corporate bodies, but potentially also persons and families) associated with the maintenance of archives. ISDIAH is maintained by the International Council on Archives.</item>
+                  <item>ISDIAH is a descriptive standard for descriptions of entities (mainly corporate bodies, but potentially also persons and families) associated with the maintenance of archives. At the time of writing, ISDIAH is maintained by the International Council on Archives.</item>
                   <label>Encoded Archival Description (EAD)</label>
-                  <item><ref target="https://www.loc.gov/ead/">Encoded Archival Description (EAD)</ref> is an XML standard for encoding archival finding aids, maintained by the Technical Subcommittee for Encoded Archival Standards of the Society of American Archivists, in partnership with the Library of Congress.</item>
+                  <item>EAD is an XML standard for encoding archival finding aids, maintained by the Technical Subcommittee for Encoded Archival Standards of the Society of American Archivists, in partnership with the Library of Congress.</item>
                   <label>Encoded Archival Context - Corporate Bodies, Persons, and Families (EAC-CPF)</label>
-                  <item><ref target="https://eac.staatsbibliothek-berlin.de/">Encoded Archival Context - Corporate Bodies, Persons, and Families (EAC-CPF)</ref> is an XML standard for encoding authority records for entities associated with the creation, use, and maintenance of archives, maintained by TS-EAS, in partnership with the Staatsbibliothek zu Berlin.</item>
+                  <item>EAC-CPF is an XML standard for encoding authority records for entities associated with the creation, use, and maintenance of archives, maintained by TS-EAS, in partnership with the Staatsbibliothek zu Berlin.</item>
                   <label>Encoding Standards</label>
                   <item>The international community of cultural heritage organizations is working on a broad set of diverse standards to meet the challenges of the digital age. Established standards concerning digitization and metadata are maintained by the <ref target="https://www.loc.gov/librarians/standards">Library of Congress</ref>.</item>
-                  <label>Records in Context Conceptual Model</label>
+                  <label>Records in Contexts Conceptual Model</label>
                   <item>RiC-CM is a high-level conceptual model that focuses on intellectually identifying and describing records, the people that created and use(d) them, and the activities pursued by the people that the records both facilitate and document. RiC-CM is maintained by the International Council on Archives.</item>
+                  <label>Records in Contexts Ontology</label>
+                  <item>RiC-O is a formal representation of RiC-CM in the form of an OWL ontology. It provides a generic vocabulary and formal rules for creating RDF datasets that describe any kind of archival record resource in a consistent way. It can support publishing RDF datasets as Linked Data, querying them using SPARQL, and making inferences using the logic of the ontology.</item>
                </list>   
             </div>
             <div xml:id="release">
                <head>Release and Revision Notes</head>
-               <p>This is the draft release of the Tag Library for EAG 3.0. The current release
-                  includes changes and updates in the schema undertaken by the Archives Portal
-                  Europe Foundation's Working Group on Standards reflecting comments received by the
-                  international community of professionals, aligning EAG with the other Encoded
-                  Archival Standards, <ref target="https://www.loc.gov/ead/">Encoded Archival
-                  Description (EAD)</ref> and <ref target="https://eac.staatsbibliothek-berlin.de/">
-                  Encoded Archival Context - Corporate Bodies, Persons, and Families (EAC-CPF)</ref> 
-                  as maintained by the Technical Subcommittee on Encoded Archival Standards (TS-EAS) at the 
-                  <ref target="https://www2.archivists.org/groups/technical-subcommittee-on-encoded-archival-standards-ts-eas?page=1">
-                  Society of American Archivists (SAA)</ref>, and reviewing EAG from the perspective 
-                  of aggregators such as Archives Portal Europe and the connected national aggregators 
-                  across Europe.
-               </p>
-               <p>The EAG Tag Library is a living document. As such, it will continue to be
-                  developed as users suggest areas in need of clarification or expansion. The
-                  Archives Portal Europe's Working Group on Standards (APEF WGoS) still encourages
-                  implementers to provide any queries, comments, and suggestions regarding the tag
-                  library and its content. In addition, the contribution of examples is highly
-                  encouraged. Questions, comments or examples may be directed to the WGoS (<ref
-                  target="mailto:standards@archivesportaleurope.net">standards[at]archivesportaleurope.net</ref>). The
-                  underlying encoding of the Tag Library is based on TEI P5 and is designed to
-                  facilitate incorporating documentation into the schema to provide guidance in XML
-                  editors. While the initial release of the Tag Library is in English, the
-                  underlying encoding is designed to facilitate providing the Tag Library in
-                  additional languages at later dates.</p>
-               <!-- Describing the revision process and some major aspects -->
-               <!-- 
-               <p>The latest version of the EAC-CPF schema and tag library was adopted in 2010 and
-                  updated in late 2018. This version is called <ref
-                     target="https://eac.staatsbibliothek-berlin.de/schemata-and-tag-library/"
-                     >EAC-CPF 2010 edition 2018</ref>.</p>
-               <p>The process for a major revision started in 2017, following the 2015 merger of the
-                  Technical Subcommittees on EAD and EAC-CPF into the Technical Subcommittee on
-                  Encoded Archival Standards (TS-EAS). This major revision aims to modernise the
-                  schema in terms of: <list type="simple">
-                     <item>simplifying where possible,</item>
-                     <item>alignment with EAD where useful,</item>
-                     <item>implementing features and solutions upon users’ request,</item>
-                     <item>clearing up unused components.</item>
-                  </list>
-               </p>
-               <p>All elements and attributes in EAC-CPF 2010 were evaluated. Bugs and slight
-                  changes were made in a minor update of the Schema in 2018. The present version,
-                  EAC-CPF 2.0, is the result of a major overhaul of the standard and a
-                  reconciliation with EAD.</p>
-               <p>Following <ref
-                     target="https://www.ica.org/en/isaar-cpf-international-standard-archival-authority-record-corporate-bodies-persons-and-families-2nd"
-                     >ISAAR(CPF)</ref>, the established structure of control area, identity area,
-                  description area, and relations is still available, as is the idea of encoding
-                  multiple identities in one EAC-CPF instance.</p>
-               <p>Working in parallel with the ICA Experts Group on Archival Description (ICA EGAD),
-                  who is working on a 2nd draft of <ref
-                     target="https://www.ica.org/en/egad-ric-conceptual-model">Records in
-                     Contexts</ref> (RiC) which is being designed as the next comprehensive
-                  description standard for archives, EAC-CPF 2.0 tries to include the ideas of RiC
-                  where feasible.</p>
-               <p>Widely discussed was the question of spelling since the related standard, EAD,
-                  uses lower-case for element and attribute names. For easier reading and teaching
-                  it was agreed to keep the camel case spelling for element and attribute names and
-                  also for fixed values.</p> -->
+               <p>This is the draft release of the Tag Library for EAG 3.0. This current version includes changes and updates in the schema undertaken by the WGoS reflecting comments received by the international community of professionals, aligning EAG with the other Encoded Archival Standards, EAD and EAC-CPF as maintained by the TS-EAS, and reviewing EAG from the perspective of aggregators such as Archives Portal Europe and the connected national aggregators across Europe.</p>
+               <p>The EAG Tag Library is a living document. As such, it will continue to be developed as users suggest areas in need of clarification or expansion. The WGoS still encourages implementers to provide any queries, comments, and suggestions regarding the Tag Library and its content. In addition, the contribution of examples is highly encouraged. Questions, comments or examples may be directed to the WGoS via email (<ref target="mailto:standards@archivesportaleurope.net">standards[at]archivesportaleurope.net</ref>).</p>
+               <p>The underlying encoding of the Tag Library is based on TEI P5 and is designed to facilitate incorporating documentation into the schema to provide guidance in XML editors. While the initial release of the Tag Library is in English, the underlying encoding is designed to facilitate providing the Tag Library in additional languages at later dates.</p>
+               <p>The latest version of the EAG schema and Tag Library was adopted in 2012 during the APEx (Archives Portal Europe network of Excellence) project and saw minor updates during the years. This version was called <ref target="https://www.archivesportaleurope.net/tools/for-content-providers/standards/eag2012/">EAG2012</ref>.</p>
+               <p>The process for a major revision started at the end of 2019 and was set out to follow the major revision of EAC-CPF, which had been started by the TS-EAS two years before that. The aim of this major revision has been to modernise the EAG schema in terms of:</p> 
+               <list type="simple">
+                  <item>- simplifying where possible,</item>
+                  <item>- alignment with EAC-CPF, and to certain extent also with EAD, where useful,</item>
+                  <item>- implementing features and solutions upon users’ request, with the specific user group of aggregators in mind</item>
+                  <item>- clearing up unused components.</item>
+               </list>
+               <p>All elements and attributes in EAG2012 were evaluated in the process and so the present version, EAG 3.0, is the result of a major overhaul of the standard and a reconciliation with EAC-CPF 2.0 and EAD3. In more detail, the main changes compared to the previous version include:</p>
+               <list type="gloss">
+                  <label>Overall structure:</label>
+                  <item>The overall structure of EAG 3.0 is now closer to the one of EAC-CPF 2.0, so that users of both standards will be able to draw comparisons and create relations more easily. This means that the root element <gi>eag</gi> now includes a mandatory <gi>control</gi> element and then allows for a choice between either a single <gi>repository</gi> or a grouping <gi>repositories</gi> element, which in itself can contain two or more <gi>repository</gi> elements. Each <gi>repository</gi> element includes the mandatory sub-element <gi>identity</gi> and <gi>description</gi>. Furthermore, <gi>repository</gi> and <gi>repositories</gi> alike include the optional sub-elements <gi>image</gi> and <gi>relations</gi>.</item>
+                  <label>camelCase spelling:</label>
+                  <item>EAG2012 included a mix of elements and attributes with and without camelCase spelling, i.e. the use of capital characters at the start of the second or third word when the element or attribute name results from a combination of several words. While elements and attributes that were introduced new in EAG2012 already followed the camelCase spelling, elements and attributes that had been inherited from EAG 0.2 did not. In EAG 3.0, all elements, attributes and attribute values use camelCase spelling, where applicable.</item>
+                  <label>Adoption of attribute groups:</label>
+                  <item>Following EAC-CPF 2.0, EAG 3.0 includes various attribute groups that are made available as optional extensions to a wide range of elements. All elements will have the attributes <att>audience</att> and <att>id</att> and all elements, but the root element <gi>eag</gi> include the attribute <att>target</att> to enable internal referencing from one element to another. All elements that can contain text, either within themselves or via their sub-elements, come with the attributes <att>languageOfElement</att> and <att>scriptOfElement</att> to support multilingual descriptions. Furthermore, the new attributes <att>conventionDeclarationReference</att>, <att>maintenanceEventReference</att> and <att>sourceReference</att> are available with all elements outside of <gi>control</gi> that can contain text. These elements can be used to refer back to the relevant sub-elements of <gi>control</gi> in order to specify the source of an element's content, the rules and conventions that have been applied when creating its content, and who provided its content when. Similarly, each <att>localType</att> attribute is now accompanied with an attribute <att>localTypeDeclarationReference</att> to provide more information about the value of <att>localType</att>.</item>
+                  <label>External referencing:</label>
+                  <item>EAG 3.0 allows for various ways of external referencing depending on the context. For elements, whose content is likely to come from a local, national, or international vocabulary or ontology, EAG 3.0 has enabled the attributes <att>valueURI</att>, <att>vocabularySource</att> and <att>vocabularySourceURI</att> to point to the origin of these terms. For more general referencing of external digital resources, the attributes <att>href</att>, <att>linkTitle</att> and <att>linkRole</att> (new) can now be used with more elements, especially in the <gi>description</gi> section, than in EAG2012. For referencing digital - or analog - resources in longer descriptive texts, e.g. in the element <gi>biogHist</gi>, the element <gi>reference</gi> is available and can be applied with or without the <att>href</att> attribute.</item>
+                  <label>Alignment of the <gi>control</gi> element:</label>
+                  <item>The elemen <gi>control</gi> in EAG 3.0 has been aligned with the same element as used in EAC-CPF 2.0, and as expected to be used in the next version of EAD. Among other things, the elements <gi>maintenanceStatus</gi> and <gi>publicationStatus</gi> have been turned into attributes of <gi>control</gi>, same as the elements <gi>agentType</gi> and <gi>eventType</gi> have been transformed into attributes of <gi>agent</gi> and <gi>maintenanceEvent</gi> respectively. Furthemore, the optional attributes <att>countryEncoding</att>, <att>dateEncoding</att>, <att>languageEncoding</att>, <att>repositoryEncoding</att>, and <att>scriptEncoding</att> as well as <gi>detailLevel</gi> have been added to <gi>control></gi>. The restrictions regarding the content of the element <gi>recordId</gi> have been lifted and it can now contain any type of record identifier, but it has to have content, and within <gi>maintenanceAgency</gi>, one has to provide either an <gi>agencyCode</gi> or an <gi>agencyName</gi> and does not have to give both anymore. The structure of <gi>conventionDeclaration</gi>, <gi>localTypeDeclaration</gi>, and <gi>rightsDeclaration</gi> has been aligned and all three now also use <gi>reference</gi> instead of the separate, but similar <gi>citation</gi> along with the element <gi>shortCode</gi> (instead of <gi>abbreviation</gi>). Same as the other declaration elements, <gi>languageDeclaration</gi> is now a direct sub-element of <gi>control</gi>, while the plural version <gi>languageDeclarations</gi> has been removed completely. Last, the element <gi>representation</gi> has been introduced to allow for linking to other representation formats (e.g. an HTML page or a PDF document) based on the information in the EAG XML file.</item>
+                  <label>Alignment with EAC-CPF in <gi>identity</gi>:</label>
+                  <item>EAG 3.0 has adopted the element <gi>nameEntry</gi> and <gi>nameEntrySet</gi> from EAC-CPF to capture the various name forms of a repository. The former elements <gi>autform</gi>, <gi>parform</gi>, and <gi>nonpreform</gi> have been removed and the status of a name form as authorized or alternative can now be indicated via the <att>status</att> attribute, while a preferred form of name can be labeled as such with the <att>preferredForm</att> attribute. With this, any form of name can include <gi>useDates</gi> now. Furthermore, a new element <gi>otherRepositoryTypes</gi> has been added, similar to the element <gi>otherEntityTypes</gi> in EAC-CPF 2.0. It can be used to provide alternative, translated, or more specific terms for the repository type than the ones predefined in <gi>repositoryType</gi>.</item>
+                  <label>Alignment with EAC-CPF in <gi>description</gi>:</label>
+                  <item>Within the <gi>description</gi> section, various former elements have been replaced by equivalents inherited from EAC-CPF 2.0, where suitable, which has also allowed to streamline certain parts of the description. There now is one required <gi>places</gi> element, which can include one or more <gi>place</gi> elements holding location as well as contact information within its sub-elements <gi>address</gi>, <gi>contact</gi>, <gi>geographicCoordinates</gi>, <gi>placeName</gi>, and <gi>placeRole</gi>. The former elements <gi>geogarea</gi>, <gi>location</gi>, <gi>telephone</gi>, <gi>fax</gi>, <gi>email</gi>, <gi>webpage</gi>, and <gi>directions</gi> have been removed. Furthermore, <gi>repositorhist</gi> has been replaced by <gi>biogHist</gi> and instead of <gi>adminhierarchy</gi> the element <gi>structureOrGenealogy</gi> has been added. For the information about a repository's founding - and potential closure - the elements <gi>existDates</gi> and <gi>mandates</gi> have been borrowed from EAC-CPF, replacing <gi>repositorfound</gi> and <gi>repositorsup</gi>. Additionally, the elements <gi>functions</gi> and <gi>legalStatuses</gi> are now available in this context. </item>
+                  <label>Changes and extenstions to EAG-specific elements:</label>
+                  <item>The sub-elements of <gi>access</gi> have been renamed <gi>accessConditions</gi> and <gi>useConditions</gi> in order to be more precise, while the element <gi>accessibility</gi>, though still being considered important, has been made optional. All sub-elements of <gi>buildingInfo</gi> can now be repeated and the element <gi>repositoryRole</gi> does not prescribe any specific values anymore, but can be used with any term suitable. The sub-element <gi>actingMaintenanceForGroup</gi> of <gi>holdings</gi> has been removed completely. Instead, an option to include subject headings similar to EAD's controlled access terms has been introduced for <gi>holdings<gi>, so that it would still be possible to indicate that a repository has taken over the responsibilities of another by using the new sub-elements <gi>corpName<gi> and/or <gi>placeName</gi>. Furthermore, the sub-element <gi>extent</gi> of <gi>holdings</gi> can now be used with the attribute <att>coverage</att> to indicate whether a specific amount and unit of measurement applies to all holdings or only to a part. In this context, the available values for the <att>unit</att> attribute of the element <gi>num</gi> have been extended by values referring to the size of digital holdings. All <gi>services</gi> sub-elements have now been set up in the same way, including the <att>question</att> to simply indicated the general availability of a specific service as well as allowing for a textual description of the service and/or the inclusion of a link to the service itself or to an existing webpage describing the service in more detail; some selected services also include an option to contact details, e.g. for the <gi>library</gi> or the <gi>searchroom</gi> of a repository. Last, the elements <gi>multilingualServices</gi>, e.g. to indicate the availability of a website in different languages or the ability of the searchroom staff to support users in a variety of languages, and <gi>socialMedia</gi> to link to a repository's social media accounts have been introduced as new additions.</item>
+                     <label>Alignment with EAC-CPF in <gi>relations</gi>:</label>
+                     <item>The <gi>relations</gi> element and its sub-elements have been restructured significantly in EAC-CPF 2.0 and EAG 3.0 follows this new approach. The main change here comes from using only a general <gi>relation</gi> element with a required sub-element <gi>targetEntity</gi> to name the related entity, which in turn comes with a mandatory <att>targetType</att> attribute with the values "agent", "corporateBody", "family", "function", "person", or "resource", instead of using the specifically named element <gi>resourceRelation</gi> and <gi>eagRelation</gi> as in EAG2012.In addition, <gi>relation</gi> includes the optional and repeatable sub-elements <gi>relationType</gi> and <gi>targetRole</gi> for a more precise description of the relationship between the repository described and the related entity.</item>
+               </list>
             </div>
             <div xml:id="conventions">
                <head>Tag Library Conventions</head>
-               <p>The EAG Elements section of the Tag Library contains descriptions of 120 
-                  elements, arranged alphabetically by element name.</p>
-               <p>Entries in the Tag Library that have been updated in the latest revision will be
-                  marked with "(revised in [revision number])". Updates that predate the most recent
-                  revision will not be marked in the text. This only applies to changes and updates resulting 
-                  from minor revisions. With the publication of a major revision, the complete Tag Library 
-                  is considered new and updated.
-               </p>
+               <p>The EAG Elements section of the Tag Library contains descriptions of 121 elements, arranged alphabetically by element name.</p>
                <list type="gloss">
-                  <label>Tag Name: </label>
-                  <item>Short, mnemonic form of the element name that is used in the
-                     machine-readable encoded document. The tag name is the first word at the top of
-                     the page. Tag names appear between angle brackets, e.g., <gi>nameEntry</gi>,
-                     except in the listings under "May occur within" and "May contain," and are
-                     always in camel case (camelCase).</item>
+                  <label>Tag Name:</label>
+                  <item>Short, mnemonic form of the element name that is used in the machine-readable encoded document. The tag name is the first word at the top of the page. Tag names appear between angle brackets, e.g., <gi>nameEntry</gi>, except in the listings under "May occur within" and "May contain," and are always in camel case (camelCase).</item>
                   <label>Element Name:</label>
-                  <item>Expanded version of the tag name that more fully describes the element's
-                     meaning. The full name of the element is usually a word or phrase that
-                     identifies the element's purpose. In the Tag Library, the element name follows
-                     the tag name on the page defining that element and appears with initial capital
-                     letters, e.g., <gi>nameEntry</gi> Name Entry.</item>
+                  <item>Expanded version of the tag name that more fully describes the element's meaning. The full name of the element is usually a word or phrase that identifies the element's purpose. In the Tag Library, the element name follows the tag name on the page defining that element and appears with initial capital letters, e.g., for <gi>nameEntry</gi> it says "Name Entry".</item>
                   <label>Summary:</label>
-                  <item>A brief statement that provides a concise definition of the element,
-                     suitable for quick reference.</item>
+                  <item>A brief statement that provides a concise definition of the element, suitable for quick reference.</item>
                   <label>May Contain:</label>
-                  <item>Identifies what child nodes (text or elements) may occur within the element
-                     being defined. Elements are listed in alphabetical order by tag name. Elements
-                     may be empty (e.g., an element which allows no child text or element nodes), or
-                     they may contain text (listed as [text]), other elements, or a mixture of text
-                     and other elements. <lb/>Text content cannot include characters that would be
-                     interpreted by a parser as action codes. For example, a left angle bracket has
-                     to be represented as the character entity reference &amp;lt; so that it is not
-                     misinterpreted as the start of an element name. <lb/>The technical availability
-                     of child elements is listed in brackets beside each element, e.g. place (0..1).
-                     The first character represents the minimum occurrences of the child element and
-                     the final character represents the maximum occurrences of the child element,
-                     with 'n' representing unlimited occurrences.</item>
+                  <item>Identifies what child nodes (text or elements) may occur within the element being defined. Child elements are listed in alphabetical order by tag name. Elements may be empty (e.g., an element which allows no child text or element nodes), or they may contain text (listed as [text]), other elements, or a mixture of text and other elements. <lb/>Text content cannot include characters that would be interpreted by a parser as action codes. For example, a left angle bracket has to be represented as the character entity reference &amp;lt; so that it is not misinterpreted as the start of an element name. <lb/>The technical availability of child elements is listed in brackets beside each element, e.g. place (0..1). The first character represents the minimum occurrences of the child element and the final character represents the maximum occurrences of the child element, with "n" representing unlimited occurrences.</item>
                   <label>May Occur Within:</label>
-                  <item>Identifies all of the parent elements within which the described element may
-                     appear, listed in alphabetical order by tag name. This conveys information about 
-                     where and how often an element is available throughout the schema. The definitions 
-                     for parent elements may provide additional information about an element's usage.</item>
+                  <item>Identifies all of the parent elements within which the described element may appear, listed in alphabetical order by tag name. This conveys information about where and how often an element is available throughout the schema. The definitions for parent elements may provide additional information about an element's usage.</item>
                   <label>Attributes:</label>
-                  <item>Identifies all attributes that can be associated with an element. Attributes
-                     are represented in camelCase letters in XML coding. The Tag Library uses the
-                     convention of preceding an attribute name with an @ symbol (e.g.,
-                        <att>localType</att>), following XPath syntax. See the EAG Attributes
-                     section of the Tag Library for definitions and additional information.</item>
+                  <item>Identifies all attributes that can be associated with an element. Attributes are represented in camelCase letters in XML coding. The Tag Library uses the convention of preceding an attribute name with an @ symbol (e.g., <att>localType</att>), following XPath syntax. See the EAG Attributes section of the Tag Library for definitions and additional information.</item>
                   <label>Description and Usage:</label>
-                  <item>This section begins with one or more paragraphs that provide a more thorough
-                     description of the element than that found in the Summary, which may be
-                     followed by guidance on use. The terms "parent" and "child" are used to
-                     indicate hierarchical relationships between elements. Standard terminology is
-                     also used to suggest the kind of element being discussed. "Wrapper element"
-                     indicates an element that cannot contain text directly; a second, nested
-                     element must be opened first. When the schema enforces a specific sequence of
-                     child elements, that sequence is indicated. <lb/>If useful, context-specific
-                     guidance for the usage of an element's attributes is given in an "Attribute
-                     usage" section. A "See also" section may be provided to indicate additional
-                     elements that are similar, easily confused, or otherwise related to the element
-                     being described.</item>
+                  <item>This section begins with one or more paragraphs that provide a more thorough description of the element than that found in the Summary, which may be followed by guidance on use. The terms "parent" and "child" (or "sub-element") are used to indicate hierarchical relationships between elements. Standard terminology is also used to suggest the kind of element being discussed. "Wrapper element" indicates an element that cannot contain text directly; a second, nested element must be opened first. When the schema enforces a specific sequence of child elements, that sequence is indicated. <lb/>If useful, context-specific guidance for the usage of an element's attributes is given in an "Attribute usage" section. A "See also" section may be provided to indicate additional elements that are similar, easily confused, or otherwise related to the element being described.</item>
                   <label>Availability:</label>
-                  <item>Indicates, within the context of its parent(s), whether the element is
-                     required or optional, and whether or not it is repeatable. </item>
+                  <item>Indicates, within the context of its parent(s), whether the element is required or optional, and whether or not it is repeatable. </item>
                   <label>Examples:</label>
-                  <item>Element and attribute descriptions include a tagged example to indicate how
-                  attributes and elements can be used together. Many of the examples are taken
-                  from real institution descriptions; others have been specially constructed for the Tag
-                  Library. The examples illustrate any required sequences of elements, as in the
-                  case of children within <gi>control</gi>, or required subelements such as
-                  <gi>part</gi> in <gi>nameEntry</gi>. In other cases, the examples simply
-                  show what is possible. Some examples have ellipses, either between or within
-                  elements, indicating that other elements or text have been omitted. Some
-                  elements have multiple examples: one may show very dense markup with numerous
-                  attributes while another may illustrate a minimalist approach to the markup.
-                  Either approach is valid in EAC-CPF, and it is up to the instance creator to
-                  determine the optimal level of markup based on their specific purposes,
-                  functional requirements, resources, or consortial guidelines.</item>
+                  <item>Element and attribute descriptions include one or more tagged example(s) to indicate how attributes and elements can be used together. Many of the examples are taken from real institution descriptions; others have been specially constructed for the Tag Library. The examples illustrate any required sequences of elements, as in the case of children within <gi>control</gi>, or required sub-elements such as <gi>part</gi> in <gi>nameEntry</gi>. In other cases, the examples simply show what is possible. Some examples have ellipses, either between or within elements, indicating that other elements or text have been omitted. Some elements have multiple examples: one may show very dense markup with numerous attributes while another may illustrate a minimalist approach to the markup. Either approach is valid in EAG, and it is up to the instance creator to determine the optimal level of markup based on their specific purposes, functional requirements, resources, or consortial guidelines.</item>
                </list>
             </div>
          </div>
