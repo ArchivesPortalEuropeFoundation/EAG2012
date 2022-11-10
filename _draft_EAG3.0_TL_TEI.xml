@@ -291,7 +291,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-access">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library;
                     needs review/confirmation and completion for various parts -->
                <head>
@@ -342,7 +342,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessConditions">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>accessConditions</gi>
@@ -389,7 +389,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessibility">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>accessibility</gi>
@@ -952,7 +952,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-building">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>building</gi>
@@ -1004,7 +1004,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-buildingInfo">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>buildingInfo</gi>
@@ -1344,7 +1344,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-closing">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>closing</gi>
@@ -1808,7 +1808,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-corpName">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>corpName</gi>
@@ -2067,12 +2067,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-dateSet">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>dateSet</gi>
                </head>
@@ -2087,8 +2081,7 @@
                   <p>date or dateRange (2..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>chronItem, existDates, function, legalStatus, localDescription, mandate,
-                     occupation, otherEntityType, place, relation, useDates</p>
+                  <p>chronItem, existDates, function, holdings, legalStatus, mandate, otherRepositoryType, place, relation, useDates</p>
                </div>
                <div type="attributes">
                   <p>
@@ -2124,19 +2117,32 @@
                      <gi>dateRange</gi>.</p>
                </div>
                <div type="availability">
-                  <p>Within <gi>function</gi>, <gi>legalStatus</gi>, <gi>localDescription</gi>,
-                        <gi>mandate</gi>, <gi>occupation</gi>, <gi>otherEntityType</gi>,
-                        <gi>place</gi>, <gi>relation</gi>: one of <gi>date</gi>, <gi>dateRange</gi>,
+                  <p>Within <gi>function</gi>, <gi>legalStatus</gi>, <gi>mandate</gi>, <gi>otherRepositoryType</gi>,
+                     <gi>place</gi>, <gi>relation</gi>, <gi>holdings</gi>: one of <gi>date</gi>, <gi>dateRange</gi>,
                      or <gi>dateSet</gi> optional, not repeatable</p>
                   <p>Within <gi>chronItem</gi>, <gi>existDates</gi>, <gi>useDates</gi>: one of
-                        <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> required, not
+                     <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> required, not
                      repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:holdings>
+                        <eag:dateSet>
+                           <eag:date standardDate="1848">1848</eag:date>
+                           <eag:date standardDate="1849">1849</eag:date>
+                           <eag:dateRange>
+                              <eag:fromDate standardDate="1945">1945</eag:fromDate>
+                              <eag:toDate standardDate="1949">1949</eag:toDate>
+                           </eag:dateRange>
+                           <eag:dateRange>
+                              <eag:fromDate standardDate="1949">1949</eag:fromDate>
+                              <eag:toDate>bis heute</eag:toDate>
+                           </eag:dateRange>
+                        </eag:dateSet>
+                     </eag:holdings>
                   </egXML>
                </div>
+            </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-description">
                <!-- Manonmani (edit), Ana (review) -->
@@ -2681,7 +2687,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-extent">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>extent</gi>
@@ -2730,7 +2736,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-famName">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>famName</gi>
@@ -3034,7 +3040,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-genreForm">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>genreForm</gi>
@@ -3203,7 +3209,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-holdings">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>holdings</gi>
@@ -3281,12 +3287,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-identity">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>identity</gi>
                </head>
@@ -3294,15 +3294,13 @@
                   <p>Identity</p>
                </div>
                <div type="summary">
-                  <p>A required child element of <gi>cpfDescription</gi> used to encode the name or
-                     names related to the identity being described within the EAC-CPF instance.</p>
+                  <p>A required child element of <gi>repository</gi> used to encode the name or names related to the repository being described within the EAG instance and other information that helps to identify the institution.</p>
                </div>
                <div type="mayContain">
-                  <p>descriptiveNote (0..1), entityType (1..1), identityId (0..n), nameEntry or
-                     nameEntrySet (1..n), otherEntityTypes (0..n)</p>
+                  <p>descriptiveNote (0..1), nameEntry or nameEntrySet (1..n), otherRepositoryId (0..n), otherRepositoryTypes (0..1), repositoryId (0..1), repositoryType (0..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>cpfDescription</p>
+                  <p>repository</p>
                </div>
                <div type="attributes">
                   <p>
@@ -3336,37 +3334,22 @@
                </div>
                <div type="description">
                   <p><gi>identity</gi> is a wrapper element used to group the elements necessary to
-                     encode the name or names related to the identity of the CPF entity within the
-                        <gi>cpfDescription</gi> element.</p>
-                  <p>The required child element <gi>entityType</gi> specifies the type of entity
-                     (i.e., corporate body, family, or person). The optional
-                        <gi>otherEntityTypes</gi> element can be used to encode other entity types
-                     used in the local context. An optional <gi>identityId</gi> is available for any
-                     identifiers associated with the CPF entity.</p>
-                  <p>One or more <gi>nameEntry</gi> elements and/or one or more
-                        <gi>nameEntrySet</gi> elements must be included. All names by which the
-                     identity being described within one <gi>cpfDescription</gi> element is known
-                     are provided within <gi>identity</gi>. Each of the names, whether authorized or
-                     alternatives, should be recorded in a separate <gi>nameEntry</gi> element.</p>
-                  <p><gi>identity</gi> may accommodate two or more parallel names in different
-                     languages or scripts. In countries where there is more than one official
-                     language, such as Canada or Switzerland, names of CPF entities are frequently
-                     provided in more than one language. Within <gi>identity</gi>, a
-                        <gi>nameEntrySet</gi> element should be used to group two or more
-                        <gi>nameEntry</gi> elements that represent parallel forms of the name of the
-                     CPF entity being described.</p>
-                  <p>Within <gi>identity</gi>, a <gi>descriptiveNote</gi> element may be used to
-                     record other information in a textual form that assists in the identification
-                     of the CPF entity.</p>
-                  <p>In case of multiple identities of the same entity in one EAC-CPF instance, a
-                     separate <gi>identity</gi> element is contained in each of the
-                        <gi>cpfDescription</gi> elements of the EAC-CPF instance.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
+                     encode the name or names related to the repository being described within the
+                     <gi>repository</gi> element.</p>
+                  <p>One or more <gi>nameEntry</gi> elements and/or one or more <gi>nameEntrySet</gi> elements must be included. 
+                     All names by which the repository being described within one <gi>repository</gi> element is known are provided within <gi>identity</gi>. Each of the names, whether authorized or alternatives, should be recorded in a separate <gi>nameEntry</gi> element.</p>
+                  <p><gi>identity</gi> may accommodate two or more parallel names in different languages or scripts. In countries where there is more than one official language, such as Canada or Switzerland, names of repositories are frequently provided in more than one language. Within <gi>identity</gi>, a <gi>nameEntrySet</gi> element should be used to group two or more <gi>nameEntry</gi> elements that represent parallel forms of the name of the repository being described.</p>
+                  <p>An optional <gi>repositoryId</gi> is available for the main authorized identifier associated with the repository. Any number of additional and alternative identifiers may be given in the optional and repeatable element <gi>otherRepositoryId</gi>.</p>
+                  <p>An optional <gi>repositoryType</gi> provides a predefined list to select the type(s) of repository from. Additionally, the optional <gi>otherRepositoriyTypes</gi> element can be used to encode other repository types not included in this list as well as translations or specifications of those repository types.</p>
+                  <p>Within <gi>identity</gi>, a <gi>descriptiveNote</gi> element may be used to record other information in a textual form that assists in the identification of the repository.</p>
+                  <p>In case multiple repositories are described within the same EAG instance, a separate <gi>identity</gi> element is contained in each of the <gi>repository</gi> elements of the EAG instance.</p>
+                  <p>The prescribed order of all child elements is:</p>
                   <list type="simple">
-                     <item><gi>entityType</gi></item>
                      <item><gi>nameEntry</gi> and/or <gi>nameEntrySet</gi></item>
-                     <item><gi>otherEntityTypes</gi></item>
-                     <item><gi>identityId</gi></item>
+                     <item><gi>repositoryId</gi></item>
+                     <item><gi>otherRepositoryId</gi></item>
+                     <item><gi>repositoryType</gi></item>
+                     <item><gi>otherRepositoryTypes</gi></item>
                      <item><gi>descriptiveNote</gi></item>
                   </list>
                </div>
@@ -3375,12 +3358,42 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="spa" status="authorized">
+                           <eag:part>Archivo General de Indias</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntrySet>
+                           <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                              <eag:part>Archivo General de las Indias</eag:part>
+                              <eag:useDates>
+                                 <eag:date>No data</eag:date>                                                   
+                              </eag:useDates>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                              <eag:part>Archivo de las Indias</eag:part>
+                              <eag:useDates>
+                                 <eag:date>No data</eag:date>   
+                              </eag:useDates>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="spa" preferredForm="false">
+                              <eag:part>Archivo de Indias</eag:part>
+                              <eag:useDates>
+                                 <eag:date>No data</eag:date>                           
+                              </eag:useDates>
+                           </eag:nameEntry>
+                        </eag:nameEntrySet>
+                        <eag:repositoryId countryCode="ES" repositoryCode="ES-41091-AGI"/>
+                        <eag:otherRepositoryId>41091.AGI</eag:otherRepositoryId>
+                        <eag:repositoryType value="nationalArchives"/>
+                        <eag:otherRepositoryTypes>
+                           <eag:otherRepositoryType languageOfElement="spa">Archivos Nacionales</eag:otherRepositoryType>
+                        </eag:otherRepositoryTypes>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-image">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; added after publication of the EAG 2012 Tag Library, i.e. no more detailed 
                     description yet; needs completion for various parts -->
                <head>
@@ -3765,7 +3778,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-lengthOfShelves">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>lengthOfShelves</gi>
@@ -4568,7 +4581,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-name">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>name</gi>
@@ -4607,12 +4620,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-nameEntry">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>nameEntry</gi>
                </head>
@@ -4620,7 +4627,7 @@
                   <p>Name Entry</p>
                </div>
                <div type="summary">
-                  <p>An element containing a name entry for a corporate body, person, or family.</p>
+                  <p>An element containing a name entry for the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>part (1..n), useDates (0..n)</p>
@@ -4628,55 +4635,52 @@
                <div type="mayOccurWithin">
                   <p>identity, nameEntrySet</p>
                </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>conventionDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>localType</label>
-                        <item>Optional</item>
-                        <label>localTypeDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>preferredForm</label>
-                        <item>Optional (values limited to: false, true)</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
-                        <item>Optional</item>
-                        <label>status</label>
-                        <item>Optional (values limited to: alternative, authorized)</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                        <label>valueURI</label>
-                        <item>Optional</item>
-                        <label>vocabularySource</label>
-                        <item>Optional</item>
-                        <label>vocabularySourceURI</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
+                  <div type="attributes">
+                     <p>
+                        <list type="gloss">
+                           <label>audience</label>
+                           <item>Optional (values limited to: external, internal)</item>
+                           <label>conventionDeclarationReference</label>
+                           <item>Optional</item>
+                           <label>id</label>
+                           <item>Optional</item>
+                           <label>languageOfElement</label>
+                           <item>Optional</item>
+                           <label>localType</label>
+                           <item>Optional</item>
+                           <label>localTypeDeclarationReference</label>
+                           <item>Optional</item>
+                           <label>maintenanceEventReference</label>
+                           <item>Optional</item>
+                           <label>preferredForm</label>
+                           <item>Optional (values limited to: false, true)</item>
+                           <label>scriptOfElement</label>
+                           <item>Optional</item>
+                           <label>sourceReference</label>
+                           <item>Optional</item>
+                           <label>status</label>
+                           <item>Optional (values limited to: alternative, authorized)</item>
+                           <label>target</label>
+                           <item>Optional</item>
+                           <label>valueURI</label>
+                           <item>Optional</item>
+                           <label>vocabularySource</label>
+                           <item>Optional</item>
+                           <label>vocabularySourceURI</label>
+                           <item>Optional</item>
+                        </list>
+                     </p>
+                  </div>
                </div>
                <div type="description">
                   <p>Within <gi>identity</gi>, the element <gi>nameEntry</gi> is used to record a
-                     name by which the corporate body, person, or family described in the EAC-CPF
-                     instance is known.</p>
+                     name by which the repository described in the EAG instance is known.</p>
                   <p>When <gi>nameEntry</gi> occurs within <gi>nameEntrySet</gi> it is used to
                      record two or more forms of a name, for example official and non-official forms of the
                      name in different languages and/or scripts.</p>
                   <p>Each form of the name is recorded in a separate <gi>nameEntry</gi> element.</p>
-                  <p>Each <gi>nameEntry</gi> must contain at least one <gi>part</gi> element. Within
-                        <gi>nameEntry</gi> each of the component parts of a name may be recorded in
-                     a separate <gi>part</gi> element.</p>
-                  <p>The <gi>nameEntry</gi> element may also contain a <gi>useDates</gi> element to
-                     indicate the dates the name was used.</p>
+                  <p>Each <gi>nameEntry</gi> must contain at least one <gi>part</gi> element. Within <gi>nameEntry</gi> each of the component parts of a name may be recorded in a separate <gi>part</gi> element.</p>
+                  <p>The <gi>nameEntry</gi> element may also contain a <gi>useDates</gi> element to indicate the dates the name was used.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
                   <list type="simple">
                      <item><gi>part</gi></item>
@@ -4685,68 +4689,48 @@
                </div>
                <div type="attributeusage">
                   <list type="simple">
-                     <item>The <att>status</att> attribute may be used to indicate whether the
-                           <gi>nameEntry</gi> is an authorized or alternative form of the
-                        name.</item>
-                     <item>The <att>scriptOfElement</att> and <att>languageOfElement</att>
-                        attributes can be used to specify the script and language of each name
-                        recorded in <gi>nameEntry</gi>.</item>
+                     <item>The <att>status</att> attribute may be used to indicate whether the <gi>nameEntry</gi> is an authorized or alternative form of the name.</item>
+                     <item>The <att>scriptOfElement</att> and <att>languageOfElement</att> attributes can be used to specify the script and language of each name recorded in several <gi>nameEntry</gi> elements, especially when used in parallel to each other.</item>
                   </list>
                </div>
                <div type="availability">
                   <p>Within <gi>identity</gi>: one of <gi>nameEntry</gi> or <gi>nameEntrySet</gi>
                      required, repeatable</p>
-                  <p>Within <gi>nameEntrySet</gi>: two or more <gi>nameEntry</gi> required,
+                  <p>Within <gi>nameEntrySet</gi>: two or more <gi>nameEntry</gi>-s required,
                      repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eac-cpf:conventionDeclaration audience="external" id="cd1"
-                        localType="transliteration">
-                        <eac-cpf:abbreviation>DIN 32708:2014</eac-cpf:abbreviation>
-                        <eac-cpf:citation href="https://www.iso.org/standard/9029.html">Information
-                           and documentation - Romanization of Japanese</eac-cpf:citation>
-                        <eac-cpf:descriptiveNote id="dn1">
-                           <p id="p1" languageOfElement="de">Angewendet werden nur die eigentlichen
-                              Umschriftvorgaben, nicht aber die Regeln zur Wortbildungin der
-                              lateinischen Umschrift. Diese erfolgt analog der Praxis von
-                              NACSIS.</p>
-                        </eac-cpf:descriptiveNote>
-                     </eac-cpf:conventionDeclaration> [...] <eac-cpf:nameEntrySet
-                        localType="parallel">
-                        <eac-cpf:nameEntry languageOfElement="de" scriptOfElement="Latn"
-                           preferredForm="true" status="authorized" localType="native">
-                           <eac-cpf:part localType="surname">Arendt</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">Hannah</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry languageOfElement="ja" scriptOfElement="Jpan"
-                           preferredForm="false" status="authorized"
-                           conventionDeclarationReference="#cd1">
-                           <eac-cpf:part localType="surname">?????</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">??</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry languageOfElement="en" scriptOfElement="Latn"
-                           preferredForm="false" status="authorized">
-                           <eac-cpf:part localType="surname">Arendt</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">Hannah</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:useDates>
-                           <eac-cpf:dateRange>
-                              <eac-cpf:fromDate standardDate="1906">1906</eac-cpf:fromDate>
-                              <eac-cpf:toDate standardDate="1975">1975</eac-cpf:toDate>
-                           </eac-cpf:dateRange>
-                        </eac-cpf:useDates>
-                     </eac-cpf:nameEntrySet>
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="fre" status="authorized">
+                           <eag:part>Institut d'histoire de l'Aluminium</eag:part>
+                        </eag:nameEntry>
+                      </eag:identity>
+                  </egXML>  
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="ger" status="authorized">
+                          <eag:part>Bundesarchiv</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntrySet>
+                           <eag:nameEntry languageOfElement="eng" status="alternative">
+                              <eag:part>The Federal Archives</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="fre" status="alternative">
+                              <eag:part>Les Archives fédérales</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="spa" status="alternative">
+                              <eag:part>Archivo federal</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="pol" status="alternative">
+                              <eag:part>Archiwum Federalne</eag:part>
+                           </eag:nameEntry>
+                        </eag:nameEntrySet>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-nameEntrySet">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>nameEntrySet</gi>
                </head>
@@ -4754,7 +4738,7 @@
                   <p>Name Entry Set</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>identity</gi> used as a wrapper element for
+                  <p>A child element of <gi>identity</gi> used as a wrapper element for
                      two or more <gi>nameEntry</gi> elements representing different forms of the
                      same name (e.g., official and non-official forms of the name in different languages and/or
                      scripts).</p>
@@ -4793,7 +4777,7 @@
                </div>
                <div type="description">
                   <p>A wrapper element used to group two or more <gi>nameEntry</gi> elements
-                     representing parallel or other forms of the name for the same CPF entity which are used
+                     representing parallel or other forms of the name for the same repository which are used
                      at the same time (e.g., official and non-official forms of the name in different languages
                      and/or scripts).</p>
                   <p>The <gi>nameEntrySet</gi> element may contain a <gi>useDates</gi> element to
@@ -4810,12 +4794,65 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:identity>
+                       <eag:nameEntrySet>
+                        <eag:nameEntry languageOfElement="eng" status="alternative">
+                           <eag:part>The Federal Archives</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="fre" status="alternative">
+                           <eag:part>Les Archives fédérales</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="spa" status="alternative">
+                           <eag:part>Archivo federal</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="pol" status="alternative">
+                           <eag:part>Archiwum Federalne</eag:part>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
+                     <eag:nameEntrySet>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1919">1919</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsfilmarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1935">1935</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Deutsches Zentralarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1946">1946</eag:fromDate>
+                                 <eag:toDate standardDate="1973">1973</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" status="alternative">
+                           <eag:part>Zentrales Staatsarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1973">1973</eag:fromDate>
+                                 <eag:toDate standardDate="1990">1990</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
+                    </eag:identity>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-num">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>num</gi>
@@ -4920,7 +4957,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-opening">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>opening</gi>
@@ -5117,13 +5154,11 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherRepositoryId">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>otherRepositoryId</gi>
                </head>
                <div type="fullName">
-                  <p>Other repository identifier</p>
+                  <p>Other Repository Identifier</p>
                </div>
                <div type="summary">
                   <p>Any other identifier used by the institution being described.</p>
@@ -5139,6 +5174,26 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -5146,103 +5201,175 @@
                   <p>Any other identifier used by the institution being described, not necessarily compliant with <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511</ref> as recommended 
                      in <gi>repositoryId</gi> and its attribute <att>repositoryCode</att>.</p>
                </div>
+               <div type="attributeusage">
+                  <list type="simple">
+                     <item>Use the attributes <att>vocabularySoure</att> and/or <att>vocabularySoureURI</att> to indicate the code list or original system from where the alternative identifier is taken. Use the attribute <att>valueURI</att> to point to the specific identifier in an alternative code list.</item>
+                  </list>
+               </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
                         <eag:identity>
-                           <eag:repositoryId countryCode="ES" repositoryCode="ES-8019-ACA6"/>
-                           <eag:otherRepositoryId>ES.08019.ACA</eag:otherRepositoryId>
+                           <eag:nameEntry status="authorized" languageOfElement="eng">
+                              <eag:part>University of Bradford Special Collections</eag:part>
+                           </eag:nameEntry>
+                           <eag:repositoryId countryCode="GB" repositoryCode="GB-ah532"/>
+                           <eag:otherRepositoryId vocabularySource="archon">532</eag:otherRepositoryId>
+                           <eag:otherRepositoryId vocabularySource="hubdata">bradford</eag:otherRepositoryId>
+                           <eag:repositoryType value="universityArchives"/>
                         </eag:identity>
-                        <eag:description>
-                           [...]
-                        </eag:description>
-                     </eag:repository>
                   </egXML>
                </div>
             </div>
-            <div type="elementDocumentation" xml:id="elem-otherRepositoryType">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
-               <head>
-                  <gi>otherRepositoryType</gi>
-               </head>
-               <div type="fullName">
-                  <p>Other Repository Type</p>
-               </div>
-               <div type="summary">
-                  <p></p>
-               </div>
-               <div type="mayContain">
-                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>otherRepositoryTypes</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p></p>
-               </div>
-               <div type="availability">
-                  <p>Required, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+         <div type="elementDocumentation" xml:id="elem-otherRepositoryType">
+            <head>
+               <gi>otherRepositoryType</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Type</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
-               <head>
-                  <gi>otherRepositoryTypes</gi>
-               </head>
-               <div type="fullName">
-                  <p>Other Repository Types</p>
-               </div>
-               <div type="summary">
-                  <p></p>
-               </div>
-               <div type="mayContain">
-                  <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>identity</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p></p>
-               </div>
-               <div type="availability">
-                  <p>Optional, not repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <div type="summary">
+               <p>A required child element of <gi>otherRepositoryTypes</gi> used to encode alternative repository types such as translations or specifications of respeectively additions to the predefined values used in <gi>repositoryType</gi>.</p>
             </div>
+            <div type="mayContain">
+               <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>otherRepositoryTypes</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                     <label>valueURI</label>
+                     <item>Optional</item>
+                     <label>vocabularySource</label>
+                     <item>Optional</item>
+                     <label>vocabularySourceURI</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>The types of institutions with archival holdings might be defined by a regional or national archives association. If existing, enter terms in accordance with such conventions. Terms may be drawn from controlled vocabularies or may be natural language terms.</p>
+                  <p><gi>otherRepositoryType</gi> must include at least one <gi>term</gi> element, where the type of repository is encoded. <gi>term</gi> can be repeated within <gi>otherRepositoryType</gi> to include translations of the same term. Use the <att>languageOfElement</att> attribute to identify the language used in each <gi>term</gi>.</p>
+                  <p>Associated date(s) (<gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi>) and place(s) (<gi>placeName</gi>) may be included to further constrain the term's meaning. A <gi>descriptiveNote</gi> element may be included if a fuller textual explanation is needed.</p>
+                  <p>Multiple <gi>otherRepositoryType</gi> elements may be grouped within an <gi>otherRepositoryTypes</gi> element.</p>
+               <p>The prescribed order of all child elements is:</p>
+               <list type="simple">
+                  <item><gi>term</gi></item>
+                  <item><gi>date</gi> or <gi>dateSet</gi> or <gi>dateRange</gi></item>
+                  <item><gi>placeName</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Required, repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                           <eag:term vocabularySource="Censo-Guía">Archivos Generales y Centrales</eag:term>
+                           <eag:descriptiveNote>
+                              <eag:p languageOfElement="eng">In Spain, the category of National Archives is called General and Central Archives.</eag:p>
+                           </eag:descriptiveNote>
+                        </eag:otherRepositoryType>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
+            <head>
+               <gi>otherRepositoryTypes</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Types</p>
+            </div>
+            <div type="summary">
+               <p>An optional child element of <gi>identity</gi> used to bundle together one or more <gi>otherRepositoryType</gi> elements.</p>
+            </div>
+            <div type="mayContain">
+               <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>identity</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>Use the element <gi>otherRepositoryTypes</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
+               <p><gi>otherRepositoryTypes</gi> requires at least one <gi>otherRepositoryType</gi> element to be present and includes the optional, not repeatable <gi>descriptiveNote</gi> element for further explanatory text if necessary.</p>
+               <p>The prescribed order of all child elements (both required and optional) is:</p>
+               <list type="simple">
+                  <item><gi>otherRepositoryType</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Optional, not repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                        </eag:otherRepositoryType>
+                        <eag:descriptiveNote>
+                           <eag:p languageOfElement="eng">Translation of the term "National Archives" into Spanish</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
+               </egXML>
+            </div>
+         </div>
             <div type="elementDocumentation" xml:id="elem-otherServices">
                <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
@@ -5428,7 +5555,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-persName">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>persName</gi>
@@ -6167,12 +6294,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-relation">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>relation</gi>
                </head>
@@ -6181,12 +6302,10 @@
                </div>
                <div type="summary">
                   <p>A required child element of <gi>relations</gi> for describing a relationship
-                     between the entity described in the EAC-CPF instance and a related entity.</p>
+                     between the institution with archival holdings described in the EAG instance and a related entity.</p>
                </div>
                <div type="mayContain">
-                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), objectXMLWrap
-                     (0..1), place (0..n), relationType (0..n), targetEntity (1..1), targetRole
-                     (0..n)</p>
+                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), objectXMLWrap (0..1), place (0..n), relationType (0..n), targetEntity (1..1), targetRole (0..n)</p>
                </div>
                <div type="mayOccurWithin">
                   <p>relations</p>
@@ -6214,22 +6333,14 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>relation</gi> records descriptive information about a relationship between
-                     the entity being described and a related entity, such as: a corporate body,
-                     person, or family; a function; or an archival, bibliographic, or other
-                     resource.</p>
                   <p>Use the required child element <gi>targetEntity</gi> to provide a textual
                      identification of the related entity, such as a name or a title. Use the
                      optional child element <gi>relationType</gi> to specify the type of relation.
                      Use the optional child element <gi>targetRole</gi> to specify the role of the
                      related entity. It is recommended that the terms used in <gi>relationType</gi>,
-                        <gi>targetEntity</gi>, and <gi>targetRole</gi> be taken from an authorized
+                     <gi>targetEntity</gi>, and <gi>targetRole</gi> be taken from an authorized
                      vocabulary.</p>
-                  <p>Use <gi>objectXMLWrap</gi> to embed XML documenting the related entity from any
-                     namespace. Use <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> for
-                     specifying the time period of the relationship and <gi>place</gi> for relevant
-                     location information. <gi>descriptiveNote</gi> may be included for more
-                     detailed specifications or explanations of the relationship.</p>
+                  <p>Use <gi>objectXMLWrap</gi> to embed XML from any namespace documenting the related entity . Use <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi> for specifying the time period of the relationship and <gi>place</gi> for relevant location information. <gi>descriptiveNote</gi> may be included for more detailed specifications or explanations of the relationship.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
                   <list type="simple">
                      <item><gi>targetEntity</gi></item>
@@ -6245,17 +6356,35 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:relation>
+                        <eag:targetEntity targetType="person" valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/141923?nm">
+                          <eag:part>Herrera, Juan de (1533-1597)</eag:part> 
+                          <eag:part localType="lastname">Herrera</eag:part> 
+                          <eag:part localType="firstname_title">Juan de</eag:part> 
+                          <eag:part localType="dates">(1533-1597)</eag:part> 
+                          <eag:part localType="display">Juan de Herrera</eag:part> 
+                       </eag:targetEntity> 
+                       <eag:dateRange>
+                          <eag:fromDate>1583</eag:fromDate>
+                          <eag:toDate>1646</eag:toDate>
+                       </eag:dateRange>
+                       <eag:place>
+                           <eag:address languageOfElement="spa">
+                              <eag:addressLine addressLineType="stree">Avenida de la Constitución s/n</eag:addressLine>
+                           </eag:address>
+                           <eag:geographicCoordinates coordinateSystem="WGS84">37.384353, 5.992893</eag:geographicCoordinates>
+                           <eag:placeName languageOfElement="spa">Casa Lonja de Sevilla</eag:placeName>
+                       </eag:place>
+                       <eag:relationType>wasDesignedBy</eag:relationType>
+                       <eag:targetRole languageOfElement="spa">Arquitecto</eag:targetRole> 
+                       <eag:descriptiveNote languageOfElement="spa">
+                          <eag:p>Juan de Herrera fue uno de los arquitectos más representativo del reinado de Felipe II en España. Su obra más conocida fue el Monasterio de el Escorial (Madrid, España). Es el arquitecto de uno de los edificios que forman el Archivo General de Indias, conocido como el edificio de "La Lonja", ya que fue sede de la antigua "Lonja de Mercaderes" de Sevilla.</eag:p>
+                       </eag:descriptiveNote>
+                     </eag:relation> 
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-relations">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>relations</gi>
                </head>
@@ -6263,24 +6392,19 @@
                   <p>Relations</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>cpfDescription</gi> that groups one or more
-                        <gi>relation</gi> elements, which identify external entities and
-                     characterize the nature of their relationships to the entity being
-                     described.</p>
+                  <p>An optional child element of <gi>repository</gi> or <gi>repositories</gi> that groups one or more <gi>relation</gi> elements, which identify external entities and characterize the nature of their relationships to the archival institution being described.</p>
                </div>
                <div type="mayContain">
                   <p>descriptiveNote (0..1), relation (1..n)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>cpfDescription</p>
+                  <p>repository,repositories</p>
                </div>
                <div type="attributes">
                   <p>
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                        <label>base</label>
-                        <item>Optional</item>
                         <label>conventionDeclarationReference</label>
                         <item>Optional</item>
                         <label>id</label>
@@ -6299,9 +6423,8 @@
                   </p>
                </div>
                <div type="description">
-                  <p>A wrapper element that groups together one or more <gi>relation</gi> elements,
-                     each of which encodes a specific relationship.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
+                  <p>A wrapper element that groups together one or more <gi>relation</gi> elements, each of which encodes a specific relationship.</p>
+                  <p>The prescribed order of all child elements is:</p>
                   <list type="simple">
                      <item><gi>relation</gi></item>
                      <item><gi>descriptiveNote</gi></item>
@@ -6312,17 +6435,28 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:relations>
+                        <eag:relation>
+                           <eag:targetEntity targetType="resource" languageOfElement="eng"
+                              valueURI="http://www.bundesarchiv.de/zwangsarbeit/">
+                              <eag:part>Portal "Forced Labour in the National Socialist State"</eag:part>
+                           </eag:targetEntity>
+                           <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                              creator of (RiC-R027i)</eag:relationType>
+                        </eag:relation>
+                        <eag:relation>
+                           <eag:targetEntity targetType="resource" languageOfElement="ger"
+                              valueURI="http://www.ersterweltkrieg.bundesarchiv.de/">
+                              <eag:part>100 Jahre Erster Weltkrieg - Portal</eag:part>
+                           </eag:targetEntity>
+                           <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                              creator of (RiC-R027i)</eag:relationType>
+                       </eag:relation>
+                     </eag:relations>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-relationType">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>relationType</gi>
                </head>
@@ -6331,8 +6465,8 @@
                </div>
                <div type="summary">
                   <p>A child element of <gi>relation</gi> used to specify the type of relation that
-                     the entity being described within the EAC-CPF instance has to the
-                        <gi>targetEntity</gi>.</p>
+                     the archival institution being described within the EAG instance has to the
+                     <gi>targetEntity</gi>.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -6374,29 +6508,28 @@
                </div>
                <div type="description">
                   <p>Use <gi>relationType</gi> within <gi>relation</gi> to specify the type of
-                     relation that the entity being described has to the <gi>targetEntity</gi>.</p>
+                     relation that the archival institution being described has to the <gi>targetEntity</gi>.</p>
                   <p>The <gi>relationType</gi> element contains a textual description of the
                      relation. It is recommended that values used in <gi>relationType</gi> be taken
-                     from an authorized vocabulary.
-                     <!--Examples of relations between the entity being described and a
-                     corporate body, person or family include "identity", "hierarchical", "temporal",
-                     "family" or "associative". Relations between the entity being described and a
-                     resource could be "creatorOf", "subjectOf" or "other". Relations between the
-                     entity being described and a function could be "controls", "owns" or
-                     "performs".--></p>
+                     from an authorized vocabulary.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:relation>
+                        <eag:targetEntity targetType="resource" languageOfElement="eng"
+                           valueURI="https://invenio.bundesarchiv.de">
+                           <eag:part>invenio - Research application of the Federal Archives</eag:part>
+                        </eag:targetEntity>
+                        <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is
+                           creator of (RiC-R027i)</eag:relationType>
+                     </eag:relation>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositories">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repositories</gi>
                </head>
@@ -6404,7 +6537,7 @@
                   <p>Repositories</p>
                </div>
                <div type="summary">
-                  <p>Wrapper for the different repositories of the institution.</p>
+                  <p>Wrapper element used when several repositories of the same institution are described within one EAG instance.</p>
                </div>
                <div type="mayContain">
                   <p>image (0..n), relations (0..1), repository (2..n)</p>
@@ -6417,46 +6550,113 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Within an EAG instance, either a single <gi>repository</gi> element or the <gi>repositories</gi> element - combining two or more <gi>repository</gi> elements - has to be present. Depending on the administrative structure of an institution with archival holdings, the one or the other option might be more appropriate to describe the institution. Use <gi>repositories</gi> e.g. in case an institution has several locations, which hold different types of material or result from several formerly independent institutions.</p>
+                  <p><gi>repositories</gi> requires at least two <gi>repository</gi> elements. If the institution only consists of one repository, use the single <gi>repository</gi> element instead.</p>
+                  <p>Use the optional <gi>relations</gi> element to provide information about relationships to other entities that refer to all <gi>repository</gi>-s of the institution. Use the optional <gi>image</gi> element to e.g. provide a link to a logo or to images of the archival institution etc.</p>
+                  <p>The prescribed order of all child elements is:</p>
+                  <list type="simple">
+                     <item><gi>repository</gi></item>
+                     <item><gi>relations</gi></item>
+                     <item><gi>image</gi></item>
+                  </list>
                </div>
                <div type="availability">
-                  <p>Optional, not repeatable</p>
+                  <p>Within <gi>eag</gi>: one of <gi>repository</gi> or <gi>repositories</gi> required, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:eag>
-                        <eag:control>
-                           [...]
-                        </eag:control>
-                        <eag:repositories>
-                           <eag:repository>
-                              <eag:identity>
-                                 [...]
-                              </eag:identity>
-                              <eag:description>
-                                 [...]
-                              </eag:description>
-                           </eag:repository>
-                           <eag:repository>
-                              <eag:identity>
-                                 [...]
-                              </eag:identity>
-                              <eag:description>
-                                 [...]
-                              </eag:description>
-                           </eag:repository>
-                        </eag:repositories>
-                     </eag:eag>
+                       <eag:repositories>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry languageOfElement="spa" status="authorized">
+                                     <eag:part>Archivo General de Indias</eag:part>
+                                 </eag:nameEntry>
+                                 <eag:repositoryId countryCode="ES" repositoryCode="ES-41091-AGI"/>                
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <eag:addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n // Calle Santo Tomás, nº 5</eag:addressLine>
+                                         </eag:address>
+                                      </eag:place>                  
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Visite nuestro sitio web para obtener más información sobre los horarios de apertura.</eag:opening>
+                                 </eag:timetable>
+                            </eag:description>
+                         </eag:repository>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry>
+                                     <eag:part>Sede La Cilla del Cabildo</eag:part>
+                                     <eag:part>Sede para los visitantes</eag:part>
+                                 </eag:nameEntry>
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Santo Tomás, 5</eag:addressLine>
+                                         </eag:address>
+                                     </eag:place>
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa">Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas</eag:opening>
+                                 </eag:timetable>
+                                 <eag:repositoryRole>Branch</eag:repositoryRole>
+                             </eag:description>
+                         </eag:repository>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry>
+                                     <eag:part>Sede La Lonja</eag:part>
+                                     <eag:part>Sede para los visitantes</eag:part>
+                                 </eag:nameEntry>
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <eag:addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n</eag:addressLine>
+                                         </eag:address>
+                                     </eag:place>
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa">El horario de apertura de visitas al edificio es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas</eag:opening>
+                                 </eag:timetable>
+                                 <eag:repositoryRole>Branch</eag:repositoryRole>
+                             </eag:description>
+                         </eag:repository>
+                     </eag:repositories>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repository">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repository</gi>
                </head>
@@ -6464,7 +6664,7 @@
                   <p>Repository</p>
                </div>
                <div type="summary">
-                  <p>Information on one archival repository.</p>
+                  <p>Information identifying and describing one archival repository.</p>
                </div>
                <div type="mayContain">
                   <p>description (1..1), identity (1..1), image (0..n), relations (0..1)</p>
@@ -6477,11 +6677,34 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Information on one archival repository. A <gi>repository</gi>> can represent an archival institution as a whole as well as only one part of an archival institution depending on its administrative structure.</p>
+                  <p>Within an EAG instance, either a single <gi>repository</gi> element - representing an archival institution as a whole - or the <gi>repositories</gi> element - combining two or more <gi>repository</gi> elements describing parts of the archival institution - has to be present. Depending on the administrative structure of an institution with archival holdings, the one or the other option might be more appropriate to describe the institution.</p>
+                  <p>The required child elements <gi>identity</gi> and <gi>description</gi> encode the name or names related to the repository and descriptive the information about it. The optional <gi>image</gi> element can be used to  include the logo or other imagery representation of the repository. The relation with other entities can be represented in the <gi>relations</gi> element.</p>
+                  <p>Use <gi>repositories</gi> instead of a single <gi>repository</gi> element in case an institution has several locations, which hold different types of material or result from several formerly independent institutions.</p>
+                  <p>The prescribed order of all child elements is:</p>
+                     <list type="simple">
+                        <item><gi>identity</gi></item>
+                        <item><gi>description</gi></item>
+                        <item><gi>relations</gi></item>
+                        <item><gi>image</gi></item>
+                     </list>
                </div>
                <div type="availability">
                   <p>Within <gi>eag</gi>: one of <gi>repository</gi> or <gi>repositories</gi> required, not repeatable</p>
@@ -6489,28 +6712,85 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:eag>
-                        <eag:control>
-                           [...]
-                        </eag:control>
-                        <eag:repository>
-                           <eag:identity>
-                              [...]
-                           </eag:identity>
-                           <eag:description>
-                              [...]
-                           </eag:description>
-                           <eag:relations>
-                              [...]
-                           </eag:relations>
-                           <eag:image href="[link]"/>
-                        </eag:repository>
-                     </eag:eag>
+                     <eag:repository>
+                        <eag:identity>
+                           <eag:nameEntry status="authorized" languageOfElement="eng">
+                              <eag:part>University of Bradford Special Collections</eag:part>
+                           </eag:nameEntry>
+                           <eag:repositoryId countryCode="GB" repositoryCode="GB-ah532"/>
+                           <eag:otherRepositoryId vocabularySource="archon">532</eag:otherRepositoryId>
+                           <eag:otherRepositoryId vocabularySource="hubdata">bradford</eag:otherRepositoryId>
+                           <eag:repositoryType value="universityArchives"/>
+                        </eag:identity>                        
+                        <eag:description>
+                           <eag:places>
+                              <eag:place localType="visitors">
+                                 <eag:address>
+                                    <eag:addressLine addressLineType="street">J.B. Priestly Library</eag:addressLine>
+                                    <eag:addressLine addressLineType="municipality">Bradford</eag:addressLine>
+                                    <eag:addressLine addressLineType="county">Yorkshire</eag:addressLine>
+                                    <eag:addressLine addressLineType="postalCode">BD7 1DP</eag:addressLine>
+                                    <eag:addressLine addressLineType="country">England, UK</eag:addressLine>
+                                 </eag:address>                                 
+                                 <eag:contact>
+                                    <eag:contactLine contactLineType="email" href="mailto:special-collections@bradford.ac.uk">Send us an email</eag:contactLine>
+                                    <eag:contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</eag:contactLine>
+                                    <eag:contactLine contactLineType="homepage" href="http://www.bradford.ac.uk/library/special-collections/">Visit our website</eag:contactLine>
+                                    <eag:contactLine contactLineType="directions"
+                                       href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</eag:contactLine>
+                                 </eag:contact>                                 
+                                 <eag:geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</eag:geographicCoordinates>                                                 </eag:place>
+                           </eag:places> 
+                           <eag:access languageOfElement="eng" question="yes (conditions apply)">
+                              <eag:accessConditions>Special Collections are open to, and intended for, anyone who might benefit from using them. However, space and staffing constraints mean that appointments are required. Access is subject to preservation requirements and must also conform to the restrictions of the Data Protection Act and any other appropriate legislation.</eag:accessConditions>
+                              <eag:useConditions href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website for information on using our holdings.</eag:useConditions>
+                           </eag:access>
+                           <eag:timetable>
+                              <eag:opening languageOfElement="eng" href="http://www.bradford.ac.uk/library/special-collections/opening-hours-and-contact-details/">See website for information on opening hours.</eag:opening>
+                              <eag:closing languageOfElement="eng">Closed on public holidays.</eag:closing>
+                           </eag:timetable> 
+                           <eag:accessibility languageOfElement="eng" question="yes">The Reading Room is accessible by lifts and level floors. However the layout of Floor 02 pre-dates modern standards and can be difficult for very large or long wheelchairs. We can book a back-up room with level access if necessary.</eag:accessibility>
+                          <eag:repositoryRole>Main Office</repositoryRole>
+                          <eag:biogHist>
+                              <eag:p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</eag:p>
+                              <eag:p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</eag:p>
+                              <eag:p>Since establishing the service, we have acquired other exciting resources, such
+                                 as the Commonwealth Archives and the Jacquetta Hawkes Archive, and enriched those
+                                 already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</eag:p>
+                           </eag:biogHist>
+                           <eag:holdings>
+                              <eag:descriptiveNote>
+                                 <eag:p languageOfElement="eng">Special Collections at the University of Bradford holds over 100 collections of rare books and archives on the history of the University, Bradford, Yorkshire, history, politics, literature, archaeology and much more, our best-known being the Archive of J.B. Priestley. Our collections are open to everyone and include manuscripts, letters, photographs, artworks, newspapers, maps, pamphlets, objects, pipes (Priestley's) and digital files.</eag:p>
+                              </eag:descriptiveNote>
+                           </eag:holdings>
+                           <eag:services>
+                              <eag:searchroom question="yes">
+                                 <eag:photographAllowance question="yes (conditions apply)">We encourage visitors to use their own devices to take images for personal research use.  This is at the discretion of the staff member on duty and subject to copyright and care.</eag:photographAllowance>
+                                 <eag:advancedOrders languageOfElement="eng" question="yes"
+                                    href="https://www.bradford.ac.uk/library/special-collections/visiting/">Available. Send us details of the materials you’d like to consult. We can have them out ready for you, so you can begin your research at once.</eag:advancedOrders>
+                              </eag:searchroom>
+                              <eag:internetAccess question="yes"
+                                 href="http://www.bradford.ac.uk/library/special-collections/services/visiting/">If you wish to use wi-fi, register with one of our networks for quick access on the day.</eag:internetAccess>
+                              <eag:technicalServices>
+                                 <eag:reproductionServices question="yes">
+                                    <eag:descriptiveNote>
+                                       <eag:p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography.  We need a declaration form and payment before we can go ahead with copying.  Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</eag:p>
+                                    </eag:descriptiveNote>
+                                 </eag:reproductionServices>
+                              </eag:technicalServices>
+                              <eag:recreationalServices>
+                                 <eag:exhibition question="yes" href="https://www.bradford.ac.uk/library/special-collections/exhibition" localType="onlineexhibition">Special Collections Online Exhibitions</eag:exhibition>
+                                 <eag:exhibition question="yes" href="https://archiveshub.jisc.ac.uk/features/paxcat/" localType="archiveshubfeature">The PaxCat Project: bringing peace archives to life</eag:exhibition>
+                              </eag:recreationalServices>
+                           </eag:services>
+                        </eag:description>
+                        <eag:image localType="logo" href="https://archiveshub.jisc.ac.uk/images/contrlogos/bradford.gif"/>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryArea">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repositoryArea</gi>
@@ -6559,16 +6839,14 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryId">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repositoryId</gi>
                </head>
                <div type="fullName">
-                  <p>Repository identifier</p>
+                  <p>Repository Identifier</p>
                </div>
                <div type="summary">
-                  <p>Element meant to gather the <att>countryCode</att> and <att>repositoryCode</att> of the archival institution.</p>
+                  <p>Element meant to gather the <att>countryCode</att> and <att>repositoryCode</att> of the archival institution to provide a unique and ideally persistent identifier for the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>[empty]</p>
@@ -6581,36 +6859,59 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>countryCode</label>
+                        <item>Required</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>repositoryCode</label>
+                        <item>Required</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>status</label>
+                        <item>Optional (values limited to: alternative, authorized)</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Provide a unique numeric or alphanumeric code identifying the institution with archival holdings. Ideally, this identifier is compliant with the standard <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511:2011</ref>, 
-                     which can be specified using the attribute <att>repositoryEncoding</att> within <gi>control</gi>.Thus, the identifier would most likely be made up of two components: a two-letter country code (according to the standard 
-                     <ref target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref>) and a numeric or alpha-numeric institution's identifier separated by a hyphen with a maximum length of 11 characters in total.</p>
-                  <p>In addition to being compliant with ISO 15511:2011, an institution's identifier may be an officially registered ISIL code, effectively resulting in global uniqueness of the identifier as a whole.</p>
-                  <p>Identifiers complying with national, regional or local standards, rules or guidelines can be given here as well, in case no identifier compliant with ISO 15511 exists. It would then be recommended to use the attribute 
-                     <att>repositoryEncoding</att> within <gi>control</gi> with the value "otherRepositoryEncoding". Alternatively, seeing that <gi>repositoryId</gi> is only optional, you can also use the parallel element <gi>otherRepositoryCode</gi>
-                     where there are no specific requirements regarding the format of its content.</p>
+                  <p>Provide a unique numeric or alphanumeric code identifying the repository using the required <att>repositoryCode</att> attribute. Ideally, this identifier is compliant with the standard <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511:2011</ref>, which can be specified using the attribute <att>repositoryEncoding</att> within <gi>control</gi>. As such, the identifier would be made up of two components: a two-letter country code (according to the standard <ref target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref>) or a three-to-four letter code for another type of registring organisation, plus a numeric or alpha-numeric institution's identifier separated by a hyphen. The maximum length of both parts combined would be up to 16 characters.</p>
+                  <p>The country code according to ISO 3166-1 will have to be provided in all cases using the mandatory <att>countryCode</att> attribute.</p>
+                  <p>In addition to being compliant with ISO 15511:2011, an institution's identifier may be an officially registered ISIL code, effectively resulting in global uniqueness of the identifier as a whole. Whether or not a repository identifier is registered by an authorisation agency, can be indicated by using the <att>status</att> attribute with the possible values "authorized" respectively "alternative".</p>
+                  <p>Identifiers complying with national, regional or local standards, rules or guidelines can be given here as well, in case no identifier compliant with ISO 15511 exists. It would then be recommended to use the attribute <att>repositoryEncoding</att> within <gi>control</gi> with the value "otherRepositoryEncoding". Alternatively, seeing that <gi>repositoryId</gi> is only optional, you can also use the parallel element <gi>otherRepositoryCode</gi> where there are no specific requirements regarding the format of its content.</p>
                </div>
                <div type="availability">
                   <p>Optional, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
-                           <eag:repositoryId countryCode="ES" repositoryCode="ES-8019-ACA6"/>
-                        </eag:identity>
-                        <eag:description>
-                           [...]
-                        </eag:description>
-                     </eag:repository>
+                     <eag:identity>
+                        <eag:repositoryId countryCode="DE" repositoryCode="DE-1958" status="authorized"/> 
+                     </eag:identity>
+                  </egXML>
+                  <egXML>
+                     <eag:identity xmlns="http://www.tei-c.org/ns/Examples">
+                        <eag:repositoryId countryCode="GB" repositoryCode="ah532"/>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryRole">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repositoryRole</gi>
@@ -6660,16 +6961,14 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryType">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repositoryType</gi>
                </head>
                <div type="fullName">
-                  <p>Type of institution</p>
+                  <p>Repository Type</p>
                </div>
                <div type="summary">
-                  <p>Describes the type of archival institution.</p>
+                  <p>Describes the type of repository using a predefined list.</p>
                </div>
                <div type="mayContain">
                   <p>[empty]</p>
@@ -6682,29 +6981,29 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>value</label>
+                        <item>Required (values limited to: nationalArchives, regionalArchives, localArchives, specialisedGovernmentArchives, specialisedNongovernmentalArchives, personalAndFamilyArchives, businessArchives, religiousInstitutionsArchives, universityArchives, nonUniversityEducationArchives, internationalArchives, communityArchives)</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Describes the type of archival institution with a predefined list in the attribute <att>value</att>; available terms are:</p>
+                  <p>Describes the type of repository with a predefined list in the attribute <att>value</att>; available terms are:</p>
                   <p>"nationalArchives", i.e. archival institutions that hold public records of government institutions on the national level</p>
-                  <p>"regionalArchives, i.e. archival institutions that hold public records of government institutions on an administrative level that is between the national and the local levels; depending on a country's administrative system
-                     this type might not be relevant for all countries; or an institution could fall into this category in one country, but rather would fit into the category of "Local archives" in another country</p>
+                  <p>"regionalArchives, i.e. archival institutions that hold public records of government institutions on an administrative level that is between the national and the local levels; depending on a country's administrative system this type might not be relevant for all countries; or an institution could fall into this category in one country, but rather would fit into the category of "localArchives" in another country</p>
                   <p>"localArchives", e.g. county or local authority archives and municipal archives, i.e. archival institutions that hold public records of government institutions on a local level</p>
-                  <p>"specialisedGovernmentArchives", i.e. archival institutions that hold records of institutions that are subdivisions of governmental bodies, that are funded by government, or related to government in some other administrative 
-                     or organisational form; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
-                  <p>"specialisedNongovernmentalArchives", i.e. archival institutions that hold records of institutions that are independent from government, e.g. archives of other cultural (heritage) institutions, archives of political parties, 
-                     of popular/labour movements, associations, agencies and foundations, archives of the media, archives of research institutions, etc.; depending on how such archives are managed and depending on the organisations they function
-                     as an archive for, other types could apply to institutions in this category as well, such as "communityArchives" in case the archive is managed privately or by volunteers or "businessArchives", e.g. for the public archives of 
-                     a broadcasting company; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
+                  <p>"specialisedGovernmentArchives", i.e. archival institutions that hold records of institutions that are subdivisions of governmental bodies, that are funded by government, or related to government in some other administrative or organisational form; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
+                  <p>"specialisedNongovernmentalArchives", i.e. archival institutions that hold records of institutions that are independent from government, e.g. archives of other cultural (heritage) institutions, archives of political parties, of popular/labour movements, associations, agencies and foundations, archives of the media, archives of research institutions, etc.; depending on how such archives are managed and depending on the organisations they function as an archive for, other types could apply to institutions in this category as well, such as "communityArchives" in case the archive is managed privately or by volunteers or "businessArchives", e.g. for the public archives of a broadcasting company; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
                   <p>"personalAndFamilyArchives", i.e. archives of (noble) families or (prominent) persons that are kept by non-governmental organisations or privately</p>
-                  <p>"businessArchives, i.e. archives of businesses that are mainly kept for the internal purpose of the organisation, but might also be accessible to the public</p>
-                  <p>"religiousInstitutionArchives", i.e. archives of religious institutions, organisations, associations, including churches, mosques, synagogues and other types of temples</p>
+                  <p>"businessArchives", i.e. archives of businesses that are mainly kept for the internal purpose of the organisation, but might also be accessible to the public</p>
+                  <p>"religiousInstitutionsArchives", i.e. archives of religious institutions, organisations, associations, including churches, mosques, synagogues and other types of temples</p>
                   <p>"universityArchives", i.a. archives of universities (and other institutions of higher education depending on the national context)</p>
                   <p>"nonUniversityEducationArchives", i.e. archives of other institutions of the educational sector that do not classify as universities, e.g. schools</p>
                   <p>"internationalArchives", i.e.archives of international organisations, e.g. EU organisations, UN organisations, International Red Cross, Amnesty International, Doctors without Frontiers, etc.</p>
-                  <p>"communityArchives", i.e. archives that are (often) run by volunteers (groups), that hold materials relating to less represented/marginalised groups of people whether that’s by nationality, heritage, religion, gender, 
-                     sexual orientation, age, etc.</p>
+                  <p>"communityArchives", i.e. archives that are (often) run by volunteers (groups), that hold materials relating to less represented/marginalised groups of people whether that’s by nationality, heritage, religion, gender, sexual orientation, age, etc.</p>
                   <p>Use the element <gi>otherRepositoryType</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
                   <p>Do not confuse with the element <gi>repositoryRole</gi> that decsribes the role of a repository within the organisational structure of an archival institution.</p>
                </div>
@@ -6713,17 +7012,19 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
-                           <eag:nameEntry>
-                              <eag:part>[...]</eag:part>
-                           </eag:nameEntry>
-                           <eag:repositoryType value="nationalArchives"/>
-                        </eag:identity>
-                        <eag:description>
-                           [...]
-                        </eag:description>
-                     </eag:repository>
+                     <eag:identity>
+                        <eag:repositoryType value="nationalArchives"/>
+                     </eag:identity>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:repositoryType value="universityArchives"/>
+                     </eag:identity>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:repositoryType value="businessArchives"/>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
@@ -7253,7 +7554,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-socialMedia">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
                     needs completion for various parts -->
                <head>
@@ -7589,7 +7890,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-subject">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- Adapted from EAD3 -->
                <head>
                   <gi>subject</gi>
@@ -7628,12 +7929,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-targetEntity">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>targetEntity</gi>
                </head>
@@ -7641,8 +7936,7 @@
                   <p>Target Entity</p>
                </div>
                <div type="summary">
-                  <p>A required child element of <gi>relation</gi> used to identify the entity that
-                     is being targeted by the relation.</p>
+                  <p>A required child element of <gi>relation</gi> used to identify the entity that is being targeted by the relation.</p>
                </div>
                <div type="mayContain">
                   <p>part (1..n)</p>
@@ -7670,8 +7964,7 @@
                         <label>target</label>
                         <item>Optional</item>
                         <label>targetType</label>
-                        <item>Required (values limited to: agent, corporateBody, family, function,
-                           person, resource)</item>
+                        <item>Required (values limited to: agent, corporateBody, family, function, person, resource)</item>
                         <label>valueURI</label>
                         <item>Optional</item>
                         <label>vocabularySource</label>
@@ -7682,17 +7975,12 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>targetEntity</gi> is used within <gi>relation</gi> to identify an entity
-                     that is related to the subject of the EAC-CPF instance.</p>
-                  <p><gi>targetEntity</gi> must include at least one <gi>part</gi> element, encoding
-                     the name or term for the related entity.</p>
+                  <p><gi>targetEntity</gi> is used within <gi>relation</gi> to identify an entity that is related to the subject of the EAG instance.</p>
+                  <p><gi>targetEntity</gi> must include at least one <gi>part</gi> element, encoding the name or term for the related entity.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
-                     <item>Use the required <att>targetType</att>, to identity the type of entity
-                        related to in <gi>targetEntity</gi>, using one of the following values:
-                        "agent", "corporateBody", "family", "function", "person", or
-                        "resource".</item>
+                     <item>Use the required <att>targetType</att> attribute to identify the type of entity related to the archival institution being described, using one of the following values: "agent", "corporateBody", "family", "function", "person", or "resource".</item>
                   </list>
                </div>
                <div type="availability">
@@ -7700,17 +7988,16 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:relation>
+                        <eag:targetEntity targetType="resource" languageOfElement="eng" valueURI="https://www.filmothek.bundesarchiv.de/">
+                           <eag:part>Filmothek - Digital Film Portal</eag:part>
+                        </eag:targetEntity>
+                        <eag:relationType valueURI="https://www.ica.org/standards/RiC/ontology#isCreatorOf">is creator of (RiC-R027i)</eag:relationType>
+                     </eag:relation>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-targetRole">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>targetRole</gi>
                </head>
@@ -7718,8 +8005,7 @@
                   <p>Target Role</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>relation</gi> used to specify the role of a
-                     related entity towards the CPF entity being described.</p>
+                  <p>An optional child element of <gi>relation</gi> used to specify the role of a related entity towards the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -7760,18 +8046,21 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>targetRole</gi> is used with <gi>relation</gi> to specify the role of a
-                     related entity towards the CPF entity being described.</p>
-                  <p>The <gi>targetRole</gi> element contains a textual description of the relation.
-                     It is recommended that the terms in <gi>targetRole</gi> be taken from
-                     authorized vocabularies.</p>
+                  <p><gi>targetRole</gi> is used with <gi>relation</gi> to specify the role of a related entity towards the repository being described.</p>
+                  <p>The <gi>targetRole</gi> element contains a textual description of the relation. It is recommended that the terms in <gi>targetRole</gi> be taken from authorized vocabularies.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                    <eag:relation>
+                      <eag:targetEntity targetType="corporateBody" languageOfElement="spa" valueURI="http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/46286?nm">
+                        <eag:part>Consejo de Indias</eag:part>
+                      </eag:targetEntity>
+                      <eag:relationType>Custodianship</relationType>
+                      <eag:targetRole languageOfElement="eng">The "Consejo de Indias" transfers its records to the Archivo General de Indias for preservation and access.</eag:targetRole>
+                    </eag:relation>
                   </egXML>
                </div>
             </div>
@@ -7903,7 +8192,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-timetable">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>timetable</gi>
@@ -8104,7 +8393,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-useConditions">
-               <!-- Jane (edit), Kerstin (review) -->
+               <!-- Jane (edit), Manonmani (review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>useConditions</gi>
@@ -8153,12 +8442,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-useDates">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>useDates</gi>
                </head>
@@ -8166,9 +8449,7 @@
                   <p>Dates of Use</p>
                </div>
                <div type="summary">
-                  <p>An optional child element of <gi>nameEntry</gi> and <gi>nameEntrySet</gi> that
-                     provides the dates when the name or names were used for or by the CPF entity
-                     being described.</p>
+                  <p>An optional child element of <gi>nameEntry</gi> and <gi>nameEntrySet</gi> that provides the dates when the name or names were used for or by the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>date or dateRange or dateSet (1..1)</p>
@@ -8199,20 +8480,53 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Within <gi>nameEntry</gi>, <gi>useDates</gi> provides the dates during which
-                     the name was used for or by the CPF entity. For parallel names (e.g., official
-                     forms of the name in different languages and/or scripts), <gi>useDates</gi> may
-                     occur in <gi>nameEntrySet</gi> rather than in the individual <gi>nameEntry</gi>
-                     elements contained in <gi>nameEntrySet</gi>.</p>
-                  <p><gi>useDates</gi> must include one of <gi>date</gi>, <gi>dateRange</gi>, or
-                        <gi>dateSet</gi>.</p>
+                  <p>Within <gi>nameEntry</gi>, <gi>useDates</gi> provides the dates during which the name was used for or by the repository. For parallel names (e.g., official forms of the name in different languages and/or scripts), <gi>useDates</gi> may occur in <gi>nameEntrySet</gi> rather than in the individual <gi>nameEntry</gi> elements contained in <gi>nameEntrySet</gi>.</p>
+                  <p><gi>useDates</gi> must include one of <gi>date</gi> (when it is a single date), <gi>dateRange</gi> (when it is a time span), or
+                     <gi>dateSet</gi> (when it is a combination of both).</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:nameEntrySet>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsarchiv</part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1919">1919</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Reichsfilmarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1935">1935</eag:fromDate>
+                                 <eag:toDate standardDate="1945">1945</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" preferredForm="false">
+                           <eag:part>Deutsches Zentralarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1946">1946</eag:fromDate>
+                                 <eag:toDate standardDate="1973">1973</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                        <eag:nameEntry languageOfElement="ger" status="alternative" preferredForm="false">
+                           <eag:part>Zentrales Staatsarchiv</eag:part>
+                           <eag:useDates>
+                              <eag:dateRange>
+                                 <eag:fromDate standardDate="1973">1973</eag:fromDate>
+                                 <eag:toDate standardDate="1990">1990</eag:toDate>
+                              </eag:dateRange>
+                           </eag:useDates>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
                   </egXML>
                </div>
             </div>
@@ -8274,7 +8588,6 @@
                   </egXML>
                </div>
             </div>
-         </div>
          <div type="attributes">
             <!-- Codruta (edit), Kerstin (review) -->
             <div type="attributeDocumentation" xml:id="attr-addressLineType">
