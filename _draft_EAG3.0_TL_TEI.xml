@@ -9655,9 +9655,9 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:nameEntry status="alternative">
-                        <eac-cpf:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO" scriptOfElement="Hans">阿伦特, 汉娜</eac-cpf:part>
-                    </eac-cpf:nameEntry>
+                     <eag:nameEntry status="alternative">
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO" scriptOfElement="Hans">阿伦特, 汉娜</eag:part>
+                    </eag:nameEntry>
                   </egXML>
                </div>
             </div>
@@ -9676,7 +9676,7 @@
                <div type="summary">
                   <p>Use <att>sourceReference</att> to provide a direct link to a <gi>source</gi>
                      element within <gi>sources</gi> in <gi>control</gi> from an element within the
-                     EAC-CPF instance that uses the source. 
+                     EAG instance that uses the source. 
                   </p>
                </div>
                <div type="description">
@@ -9718,10 +9718,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:dateRange>
-                        <eac-cpf:fromDate standardDate="1609-07-04">4 juillet 1609</eac-cpf:fromDate>
-                        <eac-cpf:toDate standardDate="1640-07-07">7 juillet 1640</eac-cpf:toDate>
-                     </eac-cpf:dateRange>
+                     <eag:dateRange>
+                        <eag:fromDate standardDate="1609-07-04">4 juillet 1609</eag:fromDate>
+                        <eag:toDate standardDate="1640-07-07">7 juillet 1640</eag:toDate>
+                     </eag:dateRange>
                   </egXML>
                </div>
             </div>
@@ -9754,10 +9754,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:maintenanceEvent maintenanceEventType="revised">
-                        <eac-cpf:agent agentType="unknown"/>
-                        <eac-cpf:eventDateTime standardDateTime="2021-11-27"/>
-                     </eac-cpf:maintenanceEvent>
+                     <eag:maintenanceEvent maintenanceEventType="revised">
+                        <eag:agent agentType="unknown"/>
+                        <eag:eventDateTime standardDateTime="2021-11-27"/>
+                     </eag:maintenanceEvent>
                   </egXML>
                </div>
             </div>
@@ -9791,20 +9791,20 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eac-cpf:nameEntry languageOfElement="de" preferredForm="true" status="authorized"
+                     <eag:nameEntry languageOfElement="de" preferredForm="true" status="authorized"
                         localType="native">
-                        <eac-cpf:part localType="surname">Arendt</eac-cpf:part>
-                        <eac-cpf:part localType="firstname">Hannah</eac-cpf:part>
-                     </eac-cpf:nameEntry>
+                        <eag:part localType="surname">Arendt</eag:part>
+                        <eag:part localType="firstname">Hannah</eag:part>
+                     </eag:nameEntry>
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:dateRange>
-                        <eac-cpf:fromDate standardDate="2016-09">September 2016</eac-cpf:fromDate>
-                        <eac-cpf:toDate status="ongoing"/>
-                     </eac-cpf:dateRange>
+                     <eag:dateRange>
+                        <eag:fromDate standardDate="2016-09">September 2016</eag:fromDate>
+                        <eag:toDate status="ongoing"/>
+                     </eag:dateRange>
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eac-cpf:date status="unknown"/>
+                     <eag:date status="unknown"/>
                   </egXML>
                </div>
             </div>
@@ -9838,25 +9838,25 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:biogHist>
-                        <eac-cpf:p>Robert Carlton Brown (1886-1959) was a writer, editor, publisher, and
+                     <eag:biogHist>
+                        <eag:p>Robert Carlton Brown (1886-1959) was a writer, editor, publisher, and
                            traveler. From 1908 to 1917, he wrote poetry and prose for numerous
                            magazines and newspapers in New York City, publishing two pulp novels,
-                              <eac-cpf:span style="font-style:italic">What Happened to Mary</eac-cpf:span>
-                           and <eac-cpf:span style="font-style:italic">The Remarkable Adventures of
-                              Christopher Poe</eac-cpf:span> (1913), and one volume of poetry, <eac-cpf:span
-                              style="font-style:italic">My Marjonary</eac-cpf:span> (1916).</eac-cpf:p>
-                        <eac-cpf:p>During 1918, he traveled extensively in Mexico and Central America,
+                              <eag:span style="font-style:italic">What Happened to Mary</eag:span>
+                           and <eag:span style="font-style:italic">The Remarkable Adventures of
+                              Christopher Poe</eag:span> (1913), and one volume of poetry, <eag:span
+                              style="font-style:italic">My Marjonary</eag:span> (1916).</eag:p>
+                        <eag:p>During 1918, he traveled extensively in Mexico and Central America,
                            writing for the U.S. Committee of Public Information in Santiago de
                            Chile. In 1919, he moved with his wife, Rose Brown, to Rio de Janeiro,
-                           where they founded <eac-cpf:span style="font-style:italic">Brazilian
-                              American</eac-cpf:span>, a weekly magazine that ran until 1929. With
+                           where they founded <eag:span style="font-style:italic">Brazilian
+                              American</eag:span>, a weekly magazine that ran until 1929. With
                            Brown's mother, Cora, the Browns also established magazines in Mexico
-                           City and London: <eac-cpf:span style="font-style:italic">Mexican
-                              American</eac-cpf:span> (1924-1929) and <eac-cpf:span
-                              style="font-style:italic">British American</eac-cpf:span>
-                           (1926-1929).</eac-cpf:p>
-                     </eac-cpf:biogHist>
+                           City and London: <eag:span style="font-style:italic">Mexican
+                              American</eag:span> (1924-1929) and <eag:span
+                              style="font-style:italic">British American</eag:span>
+                           (1926-1929).</eag:p>
+                     </eag:biogHist>
                   </egXML>
                </div>
             </div>
@@ -9884,18 +9884,18 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:occupations>
-                        <eac-cpf:occupation>
-                           <eac-cpf:term>Assistant examiner - level III</eac-cpf:term>
-                           <eac-cpf:placeName target="#place1">Bern</eac-cpf:placeName>
-                        </eac-cpf:occupation>
-                     </eac-cpf:occupations>
-                     <eac-cpf:places>
-                        <eac-cpf:place id="place1">
-                           <eac-cpf:placeName>Bern</eac-cpf:placeName>
-                           <eac-cpf:placeRole>Place of work</eac-cpf:placeRole>
-                        </eac-cpf:place>
-                     </eac-cpf:places>
+                     <eag:occupations>
+                        <eag:occupation>
+                           <eag:term>Assistant examiner - level III</eag:term>
+                           <eag:placeName target="#place1">Bern</eag:placeName>
+                        </eag:occupation>
+                     </eag:occupations>
+                     <eag:places>
+                        <eag:place id="place1">
+                           <eag:placeName>Bern</eag:placeName>
+                           <eag:placeRole>Place of work</eag:placeRole>
+                        </eag:place>
+                     </eag:places>
                   </egXML>
                </div>
             </div>
@@ -9924,16 +9924,16 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:targetEntity targetType="resource">
-                        <eac-cpf:part>Mémorial du colonel Gustafsson. - 1829</eac-cpf:part>
-                     </eac-cpf:targetEntity>
+                     <eag:targetEntity targetType="resource">
+                        <eag:part>Mémorial du colonel Gustafsson. - 1829</eag:part>
+                     </eag:targetEntity>
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eac-cpf:targetEntity targetType="person" valueURI="https://d-nb.info/gnd/120636123" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">
-                        <eac-cpf:part>Sophie</eac-cpf:part>
-                        <eac-cpf:part>Baden, Großherzogin</eac-cpf:part>
-                        <eac-cpf:part>1801-1865</eac-cpf:part>
-                     </eac-cpf:targetEntity>
+                     <eag:targetEntity targetType="person" valueURI="https://d-nb.info/gnd/120636123" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">
+                        <eag:part>Sophie</eag:part>
+                        <eag:part>Baden, Großherzogin</eag:part>
+                        <eag:part>1801-1865</eag:part>
+                     </eag:targetEntity>
                   </egXML>
                </div>
             </div>
@@ -9962,7 +9962,7 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:citedRange unit="page">1</eac-cpf:citedRange>
+                     <eag:citedRange unit="page">1</eag:citedRange>
                   </egXML>
                </div>
             </div>
@@ -9979,18 +9979,18 @@
                   <p>Value</p>
                </div>
                <div type="summary">
-                  <p>Defines the tupe of entity described in the EAC-CPF instance.</p>
+                  <p>Defines the type of entity described in the EAG instance.</p>
                </div>
                <div type="description">
                   <p>Required attribute within the <gi>entityType</gi> element that defines the type
-                     of entity described in the EAC-CPF instance. </p>
+                     of entity described in the EAG instance. </p>
                </div>
                <div type="values">
                   <p>corporateBody, family, person</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:entityType value="person"/>
+                     <eag:entityType value="person"/>
                   </egXML>
                </div>
             </div>
@@ -10018,10 +10018,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:place>
-                        <eac-cpf:placeName valueURI="https://d-nb.info/gnd/4076982-3" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Salzburg</eac-cpf:placeName>
-                        <eac-cpf:placeRole valueURI="https://d-nb.info/standards/elementset/gnd#characteristicPlace" vocabularySource="GNDO" vocabularySourceURI="https://d-nb.info/standards/elementset/gnd#">Charakteristischer Ort</eac-cpf:placeRole>
-                     </eac-cpf:place>
+                     <eag:place>
+                        <eag:placeName valueURI="https://d-nb.info/gnd/4076982-3" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Salzburg</eag:placeName>
+                        <eag:placeRole valueURI="https://d-nb.info/standards/elementset/gnd#characteristicPlace" vocabularySource="GNDO" vocabularySourceURI="https://d-nb.info/standards/elementset/gnd#">Charakteristischer Ort</eag:placeRole>
+                     </eag:place>
                   </egXML>
                </div>
             </div>
