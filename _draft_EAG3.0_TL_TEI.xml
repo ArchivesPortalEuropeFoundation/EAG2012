@@ -10048,9 +10048,9 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:occupation>
-                        <eac-cpf:term valueURI="https://d-nb.info/gnd/4053311-6" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Schriftstellerin</eac-cpf:term>
-                     </eac-cpf:occupation>
+                     <eag:occupation>
+                        <eag:term valueURI="https://d-nb.info/gnd/4053311-6" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Schriftstellerin</eag:term>
+                     </eag:occupation>
                   </egXML>
                </div>
             </div>
@@ -10079,10 +10079,10 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eac-cpf:place>
-                        <eac-cpf:placeName valueURI="https://d-nb.info/gnd/4005728-8" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Berlin</eac-cpf:placeName>		
-                        <eac-cpf:placeRole valueURI="https://d-nb.info/standards/elementset/gnd#placeOfBusiness" vocabularySource="GNDO" vocabularySourceURI="https://d-nb.info/standards/elementset/gnd#">Sitz</eac-cpf:placeRole>
-                     </eac-cpf:place>
+                     <eag:place>
+                        <eag:placeName valueURI="https://d-nb.info/gnd/4005728-8" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Berlin</eag:placeName>		
+                        <eag:placeRole valueURI="https://d-nb.info/standards/elementset/gnd#placeOfBusiness" vocabularySource="GNDO" vocabularySourceURI="https://d-nb.info/standards/elementset/gnd#">Sitz</eag:placeRole>
+                     </eag:place>
                   </egXML>
                </div>
             </div>
