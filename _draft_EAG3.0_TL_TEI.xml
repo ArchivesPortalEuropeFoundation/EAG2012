@@ -9018,7 +9018,7 @@
                <div type="description">
                   <p>A URI that characterizes the nature of the remote resource to which a linking
                      element refers. Optionally available in <gi>contactLine</gi>, <gi>reference</gi>,
-                     <gi>representation</gi>, <gi>setComponent</gi>, and <gi>source</gi>.</p>
+                     <gi>representation</gi>, and <gi>source</gi>.</p>
                </div>
                <div type="datatype">
                   <p>anyURI</p>
@@ -9572,7 +9572,7 @@
                <div type="description">
                   <p>Content of the attribute should be a code taken from ISO 15924, or another controlled list, as
                      specified in the <att>scriptEncoding</att> attribute in <gi>control</gi>.
-                     Optionally available in <gi>languageDeclaration</gi> and <gi>writingSystem</gi>.</p>
+                     Optionally available in <gi>languageDeclaration</gi>.</p>
                </div>
                <div type="datatype">
                   <p>NMTOKEN</p>
@@ -9688,7 +9688,21 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <!-- Contains examples of XML from the schema.  Tags in egXML must be prefixed with the proper namespace (e.g. <ead:unittitle> -->
+                     <relation sourceReference="source1"
+                     maintenanceEventReference="me2">
+                        <targetEntity targetType="corporateBody"
+                        valueURI="https://snaccooperative.org/
+                        ark:/99166/w63z1x39"
+                        vocabularySourceURI="https://
+                        snaccooperative.org">
+                           <part>Princeton University</part>
+                        </targetEntity>
+                        <relationType valueURI="https://
+                        www.wikidata.org/wiki/Property:P69"
+                        vocabularySourceURI="https://
+                        www.wikidata.org/">educated
+                        at</relationType>
+                   </relation>
                   </egXML>
                </div>
             </div>
@@ -9877,7 +9891,7 @@
                </div>
                <div type="description">
                      <p>Used to create internal links within an
-                     XML instance. Optionally available in all elements except <gi>eac</gi>.</p>
+                     XML instance. Optionally available in all elements except <gi>eag</gi>.</p>
                </div>
                <div type="datatype">
                   <p>IDREFS</p>
@@ -9912,12 +9926,11 @@
                   <p>Target Type</p>
                </div>
                <div type="summary">
-                  <p>Identifies the type of entity that is relate to the CPF entity being described.</p>
+                  <p>Identifies the type of entity that is relate to the repository being described.</p>
                </div>
                <div type="description">
                   <p>Required attribute within <gi>targetEntity</gi> which identifies the type of
-                     entity that is related to the CPF entity being described. Use the value "agent"
-                     only for migration from EAC-CPF 2010 to EAC 2.0.</p>
+                     entity that is related to the repository being described.</p>
                </div>
                <div type="values">
                   <p>agent, corporateBody, family, function, person, resource</p>
