@@ -8276,13 +8276,7 @@
             </div>
          </div>
          <div type="attributes">
-            <!-- Codruta (edit), Kerstin (review) -->
             <div type="attributeDocumentation" xml:id="attr-addressLineType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>addressLineType</att>
                </head>
@@ -8290,16 +8284,13 @@
                   <p>Address Line Type</p>
                </div>
                <div type="summary">
-                  <p>Used to specify the type of address line encoded in <gi>addressLine</gi>. </p>
+                  <p>Used to specify the type of address line encoded in <gi>addressLine</gi>.</p>
                </div>
                <div type="description">
-                  <p>Use one of the set values to specify the type of address line encoded in
-                        <gi>addressLine</gi>. Use the attribute <att>localType</att> in order to
-                     encode a local type of address line.</p>
+                  <p>Required attribute of <gi>addressLine</gi>. Use one of the set values to specify the type of address line encoded. Use the attribute <att>localType</att> in order to encode a local type of address line.</p>
                </div>
                <div type="values">
-                  <p>county, country, district, municipality, postBox, postalCode, region,
-                     street</p>
+                  <p>county, country, district, municipality, postalCode, postBox, region, street</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
@@ -8315,11 +8306,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-agentType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>agentType</att>
                </head>
@@ -8353,11 +8339,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-audience">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>audience</att>
                </head>
@@ -8378,7 +8359,7 @@
                      software in restricting access to particular information by explicitly
                      identifying data that is potentially sensitive or may otherwise have a limited
                      audience. Special software capability may be needed, however, to prevent the
-                     display or export of an element marked "internal" when a whole finding aid is
+                     display or export of an element marked "internal" when a whole institution description is
                      displayed in a networked environment.</p>
                </div>
                <div type="values">
@@ -8391,11 +8372,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-base">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>base</att>
                </head>
@@ -8407,9 +8383,7 @@
                </div>
                <div type="description">
                   <p>Using the optional attribute <att>base</att> allows any relative URIs provided on attributes of a specific element, or its descendants, to be resolved using the URI provided in that element's or its parent element's <att>base</att>.</p>
-                  <p>Available on <gi>control</gi>, <gi>description</gi>,
-                     <gi>eag</gi>, <gi>identity</gi>, <gi>relations</gi>, <gi>repository</gi>, <gi>repositories</gi>,
-                      and <gi>sources</gi>.</p>
+                  <p>Available on <gi>control</gi>, <gi>description</gi>, <gi>eag</gi>, <gi>identity</gi>, <gi>relations</gi>, <gi>repository</gi>, <gi>repositories</gi>, and <gi>sources</gi>.</p>
                </div>
                <div type="datatype">
                   <p>anyURI</p>
@@ -8433,11 +8407,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-calendar">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>calendar</att>
                </head>
@@ -8468,11 +8437,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-certainty">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>certainty</att>
                </head>
@@ -8484,7 +8448,7 @@
                </div>
                <div type="description">
                   <p>
-                     The optional attribute <att>certainty</att> provides level of confidence for the information given in <gi>date</gi>,
+                     The optional attribute <att>certainty</att> provides a level of confidence for the information given in <gi>date</gi>,
                      <gi>fromDate</gi>, or <gi>toDate</gi>, e.g., approximate or circa.
                   </p>
                </div>
@@ -8498,11 +8462,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-contactLineType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>contactLineType</att>
                </head>
@@ -8513,9 +8472,7 @@
                   <p>Used to specify the type of contact line encoded in <gi>contactLine</gi>.</p>
                </div>
                <div type="description">
-                  <p>Use one of the set values to specify the type of contact line encoded in
-                        <gi>contactLine</gi>. Use the attribute <att>localType</att> in order to
-                     encode a local type of contact line.</p>
+                  <p>Required attribute in <gi>contactLine</gi>. Use one of the set values to specify the type of contact line encoded. Use the attribute <att>localType</att> in order to encode a local type of contact line.</p>
                </div>
                <div type="values">
                   <p>directions, email, fax, homepage, mobileNumber, phoneNumber</p>
@@ -8523,19 +8480,14 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:contact>
-                        <eag:contactLine contactLineType="phoneNumber">08-402 60 00</eac-cpf:contactLine>
-                        <eag:contactLine languageOfElement="se" contactLineType="homepage">https://www.kungahuset.se/2.1c3432a100d8991c5b80001816.html</eac-cpf:contactLine>
-                        <eag:contactLine languageOfElement="en" contactLineType="homepage">https://www.kungahuset.se/royalcourt.4.367010ad11497db6cba800054503.html</eac-cpf:contactLine>
+                        <eag:contactLine contactLineType="phoneNumber">08-402 60 00</eag:contactLine>
+                        <eag:contactLine languageOfElement="se" contactLineType="homepage">https://www.kungahuset.se/2.1c3432a100d8991c5b80001816.html</eag:contactLine>
+                        <eag:contactLine languageOfElement="en" contactLineType="homepage">https://www.kungahuset.se/royalcourt.4.367010ad11497db6cba800054503.html</eag:contactLine>
                      </eag:contact>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-conventionDeclarationReference">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>conventionDeclarationReference</att>
                </head>
@@ -8549,10 +8501,10 @@
                </div>
                <div type="description">
                   <p>
-                     The attribute can be used to link to a convention or rule that prescribes a method for converting one script into another script (transliteration). It also can be used to link to a national, international or other rule that governs the construction of an EAC-CPF name.
+                     The attribute can be used to link to a convention or rule applied in the creation of the content of a specific element, such as a convention or rule that prescribes a method for converting one script into another script (transliteration), or a national, international or other rule that governs the construction of an EAG name.
                   </p>
                   <p>
-                     This optional attribute is available in all elements in the identity area (except <gi>entityType</gi>), in the description area and in relations. 
+                     This optional attribute is available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository<gi> element. 
                   </p>
                </div>
                <div type="datatype">
@@ -8575,11 +8527,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-coordinateSystem">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>coordinateSystem</att>
                </head>
@@ -8607,11 +8554,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-countryCode">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>countryCode</att>
                </head>
@@ -8626,7 +8568,7 @@
                      taken from ISO 3166-1 Codes for the Representation of Names of Countries and
                      their Subdivisions, column A2, or another controlled list, as specified in the
                         <att>countryEncoding</att> attribute in <gi>control</gi>. Available in
-                        <gi>maintenanceAgency</gi> and <gi>placeName</gi>.</p>
+                        <gi>maintenanceAgency</gi>, <gi>placeName</gi>, and <gi>repositoryId</gi>.</p>
                </div>
                <div type="dataType">
                   <p>NMTOKEN</p>
@@ -8648,11 +8590,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-countryEncoding">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>countryEncoding</att>
                </head>
@@ -8664,7 +8601,7 @@
                </div>
                <div type="description">
                   <p>The authoritative source or rules for values supplied in <att>countryCode</att>
-                     in <gi>maintenanceAgency</gi> and <gi>placeName</gi>. If the value
+                     in <gi>maintenanceAgency</gi>, <gi>placeName</gi>, and <gi>repositoryId</gi>. If the value
                      "otherCountryEncoding" is selected an alternate code list should be specified
                      in <gi>conventionDeclaration</gi>. This optional attribute is available only in <gi>control</gi>.</p>
                </div>
@@ -8680,8 +8617,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-coverage">
-               <!-- Adopted from EAD3 and copied from current EAD3 Tag Library;
-                    needs review and adapation towards EAG -->
                <head>
                   <att>coverage</att>
                </head>
@@ -8689,7 +8624,7 @@
                   <p>Coverage</p>
                </div>
                <div type="summary">
-                  <p>Clarifies whether a statement of extent relates to the entire holdings of an institution.</p>
+                  <p>Clarifies whether a statement of extent relates to the entire holdings of an institution or only a part of them.</p>
                </div>
                <div type="description">
                   <p>Optional attribute that specifies whether the extent information given for the <gi>holdings</gi> of the institution being described applies to their holdings as a "whole" or only in "part". Allows to e.g. have two parallel <gi>extent</gi> statements giving
@@ -8700,7 +8635,14 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng" valid="true">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:holdings>
+                        <eag:extent coverage="part">
+                           <eag:num unit="linearmetre">339,000</eag:num>
+                        </eag:extent>
+                        <eag:extent coverage="part">
+                           <eag:num unit="petabyte">1.5</eag:num>
+                        </eag:extent>
+                     </eag:holdings>
                   </egXML>
                </div>
             </div>
