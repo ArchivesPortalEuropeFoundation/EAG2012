@@ -45,6 +45,7 @@
             <xs:element name="relations" type="relations" minOccurs="0"/>
             <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="base" type="xs:anyURI"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -56,6 +57,7 @@
             <xs:element name="relations" type="relations" minOccurs="0"/>
             <xs:element name="image" type="image" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="base" type="xs:anyURI"/>
         <xs:attributeGroup ref="common"/>
     </xs:complexType>
     
@@ -117,6 +119,7 @@
                 <xs:element name="rightsDeclaration" type="rightsDeclaration"/>
             </xs:choice>
         </xs:sequence>
+        <xs:attribute name="base" type="xs:anyURI"/>
         <xs:attributeGroup ref="common"/>
         <xs:attribute name="countryEncoding">
             <xs:simpleType>
@@ -748,6 +751,7 @@
                 <xs:element name="structureOrGenealogy" type="structureOrGenealogy"/>
             </xs:choice>
         </xs:sequence>
+        <xs:attribute name="base" type="xs:anyURI"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -799,13 +803,13 @@
         <xs:attribute name="addressLineType" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="county"/>
                     <xs:enumeration value="country"/>
+                    <xs:enumeration value="county"/>
                     <xs:enumeration value="district"/>
-                    <xs:enumeration value="region"/>
-                    <xs:enumeration value="postBox"/>
-                    <xs:enumeration value="postalCode"/>
                     <xs:enumeration value="municipality"/>
+                    <xs:enumeration value="postalCode"/>
+                    <xs:enumeration value="postBox"/>
+                    <xs:enumeration value="region"/>
                     <xs:enumeration value="street"/>
                 </xs:restriction>
             </xs:simpleType>
@@ -1550,6 +1554,7 @@
             <xs:element name="relation" type="relation" maxOccurs="unbounded"/>
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
+        <xs:attribute name="base" type="xs:anyURI"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
