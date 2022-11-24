@@ -8647,11 +8647,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-dateEncoding">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>dateEncoding</att>
                </head>
@@ -8660,14 +8655,12 @@
                </div>
                <div type="summary">
                   <p>The authoritative source or rules for values provided in
-                        <att>standardDate</att>.</p>
+                     <att>standardDate</att>, <att>standardDateTime</att>, <att>notBefore</att>, and <att>notAfter</att>.</p>
                </div>
                <div type="description">
                   <p>The authoritative source or rules for values provided in
-                     <att>standardDate</att> in <gi>date</gi>, <gi>fromDate</gi> and
-                     <gi>toDate</gi>. If the value "otherDateEncoding" is selected an alternate
-                     code list should be specified in <gi>conventionDeclaration</gi>. This optional attribute is available only
-                     in <gi>control</gi>.</p>
+                     <att>standardDate</att> and related attributes in <gi>date</gi>, <gi>fromDate</gi> and <gi>toDate</gi> as well as <att>standardDateTime</att> in <gi>eventDateTime</att>. If the value "otherDateEncoding" is selected an alternate
+                     code list should be specified in <gi>conventionDeclaration</gi>. This optional attribute is available only in <gi>control</gi>.</p>
                </div>
                <div type="values">
                   <p>iso8601, otherDateEncoding</p>
@@ -8681,11 +8674,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-detailLevel">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>detailLevel</att>
                </head>
@@ -8697,8 +8685,7 @@
                </div>
                <div type="description">
                   <p>An optional attribute within <gi>control</gi>, used to provide information
-                     about the level of detail in accordance with relevent description guidelines and/or rules of the entity's description, from a fixed set of
-                     values. </p>
+                     about the level of detail in accordance with relevent description guidelines and/or rules of the entity's description, from a fixed set of values. </p>
                </div>
                <div type="values">
                   <p>basic, extended, minimal</p>
@@ -8712,11 +8699,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-era">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>era</att>
                </head>
@@ -8746,11 +8728,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-href">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>href</att>
                </head>
@@ -8762,9 +8739,7 @@
                </div>
                <div type="description">
                   <p>The optional <att>href</att> attribute takes the form of a Uniform
-                     Resource Identifier (URI). Available in <gi>contactLine</gi>,
-                     <gi>reference</gi>, <gi>representation</gi>, <gi>setComponent</gi> and
-                     <gi>source</gi>.</p>
+                     Resource Identifier (URI). Available in <gi>access</gi>, <gi>accessConditions</gi>, <gi>accessibility</gi>, <gi>advancedOrders</gi>, <gi>building</gi>, <gi>closing</gi>, <gi>contactLine</gi>, <gi>exhibition</gi>, <gi>image</gi>, <gi>internetAccess</gi>, <gi>multilingualServices</gi>, <gi>opening</gi>, <gi>otherServices</gi>, <gi>photographAllowance</gi>, <gi>readersTicket</gi>, <gi>reference</gi>, <gi>refreshment</gi>, <gi>representation</gi>, <gi>researchServices</gi>, <gi>socialMedia</gi>, <gi>source</gi>, <gi>toursSessions</gi>, <gi>useConditions</gi>, and <gi>workPlaces</gi>.</p>
                </div>
                <div type="datatype">
                   <p>anyURI</p>
@@ -8772,17 +8747,12 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:conventionDeclaration id="cd1">
-                        <eag:reference href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033553530/" >Décret n° 2016-1689 du 8 décembre 2016 fixant le nom, la composition et le chef-lieu des circonscriptions administratives régionales - Légifrance</eac-cpf:reference>
+                        <eag:reference href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033553530/">Décret n° 2016-1689 du 8 décembre 2016 fixant le nom, la composition et le chef-lieu des circonscriptions administratives régionales - Légifrance</eag:reference>
                      </eag:conventionDeclaration>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-id">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>id</att>
                </head>
@@ -8795,10 +8765,9 @@
                <div type="description">
                   <p>An identifier that must be unique within the current document and is used to
                      name the element so that it can be referred to, or referenced from, somewhere
-                     else. This facilitates building links between the element and other
-                     resources.</p>
+                     else. This facilitates building links between the element and other elements of the current document as well as other resources. Available optionally in all elements of EAG.</p>
                   <p>
-                     Use <att>target</att>, <att>conventionDeclarationReference</att>, <att>localTypeDeclarationReference</att>, <att>maintenanceEventReference</att>, or <att>sourceReference</att> to link to an <att>id</att> attribute within the EAC-CPF instance.
+                     Use <att>target</att>, <att>conventionDeclarationReference</att>, <att>localTypeDeclarationReference</att>, <att>maintenanceEventReference</att>, or <att>sourceReference</att> to link to an <att>id</att> attribute of another element within the EAG instance.
                   </p>
                </div>
                <div type="datatype">
@@ -8822,11 +8791,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-identityType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>identityType</att>
                </head>
@@ -8834,31 +8798,21 @@
                   <p>Identity Type</p>
                </div>
                <div type="summary">
-                  <p>Indicates whether the identity is given or acquired. May be useful for
-                     processing when multiple identities are described in the same instance.</p>
+                  <p>Indicates whether the identity is given or acquired.</p>
                </div>
                <div type="description">
-                  <p>The <att>identityType</att> may occur on <gi>identity</gi>. Though optional, it
-                     is recommended that it be used when multiple identities are described in the
-                     same EAG instance using <gi>multipleIdentities</gi>. It will enable
-                     processors to distinguish between the description of a person and one or more
-                     personae.</p>
+                  <p>The optional <att>identityType</att> may occur on <gi>identity</gi>.</p>
                </div>
                <div type="values">
                   <p>acquired, given</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:identity identityType="acquired" localType="pseudonym" localTypeDeclarationReference="LT001"> [...] </eag:identity>
+                     <eag:identity identityType="given" localType="mandated" localTypeDeclarationReference="LT001"> [...] </eag:identity>
                   </egXML>
                </div>
             </div> 
             <div type="attributeDocumentation" xml:id="attr-languageCode">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>languageCode</att>
                </head>
@@ -8866,22 +8820,22 @@
                   <p>Language Code</p>
                </div>
                <div type="summary">
-                  <p>The code for the language used in the EAG instance or in the creative work
-                     of the CPF entity being described.
+                  <p>The code for the language(s) used in the EAG instance.
                   </p>
                </div>
                <div type="description">
-                  <p>Content of the attribute should be a code
-                     taken from ISO 639-1, ISO 639-2b, ISO 639-3, or another controlled list, as
-                     specified in the <att>languageEncoding</att> attribute in <gi>control</gi>.
-                     Required in <gi>languageDeclaration</gi> and optionally available in
-                        <gi>language</gi>.</p>
+                  <p>Content of the attribute should be a code taken from ietf-bcp-47, ISO 639-1, ISO 639-2b, ISO 639-3, or another controlled list, as specified in the <att>languageEncoding</att> attribute in <gi>control</gi>. Required in <gi>languageDeclaration</gi>.</p>
+               </div>
+               <div type="datatype">
+                  <p>NMTOKEN</p>
+               </div>
+               <div type="examples">
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
+                     <eag:languageDeclaration languageCode="ger" scriptCode="Latn"/>
+                  </egXML>
+               </div>
+            </div>
             <div type="attributeDocumentation" xml:id="attr-languageEncoding">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>languageEncoding</att>
                </head>
@@ -8890,14 +8844,10 @@
                </div>
                <div type="summary">
                   <p>Specifies which standard list of codes is used to identify the language of the
-                     EAG instance and languages represented in the creative work of the CPF
-                     entity being described.</p>
+                     EAG instance.</p>
                </div>
                <div type="description">
-                  <p>The codes themselves are specified in <att>languageCode</att> in <gi>language</gi> and <att>languageOfElement</att>
-                     in all non-empty elements. Available in <gi>control</gi>. If the value
-                     "otherLanguageEncoding" is selected an alternate code list should be specified
-                     in <gi>conventionDeclaration</gi>. This optional attribute is available only in <gi>control</gi>.</p>
+                  <p>The codes themselves are specified in <att>languageCode</att> in <gi>languageDeclaration</gi> and <att>languageOfElement</att> in all non-empty elements. Available in <gi>control</gi>. If the value "otherLanguageEncoding" is selected an alternate code list should be specified in <gi>conventionDeclaration</gi>. This optional attribute is available only in <gi>control</gi>.</p>
                </div>
                <div type="values">
                   <p>ietf-bcp-47, iso639-1, iso639-2b, iso639-3, otherLanguageEncoding</p>
@@ -8911,11 +8861,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-languageOfElement">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>languageOfElement</att>
                </head>
@@ -8926,11 +8871,7 @@
                   <p>Indicates the language of the content of an element.</p>
                </div>
                <div type="description">
-                  <p>Content of the attribute should be a code taken from ietf-bcp-47, ISO 639-1, ISO 639-2b, ISO 639-3, or another
-                     controlled list, as specified in the <att>languageEncoding</att> attribute in
-                        <gi>control</gi>. May be used consistently in a multi-lingual entity
-                     description to specify which elements are written in which language. Optionally available
-                     on all non-empty elements.</p>
+                  <p>Content of the attribute should be a code taken from ietf-bcp-47, ISO 639-1, ISO 639-2b, ISO 639-3, or another controlled list, as specified in the <att>languageEncoding</att> attribute in <gi>control</gi>. May be used consistently in a multi-lingual repository description to specify which elements are written in which language. Optionally available on all non-empty elements.</p>
                </div>
                <div type="datatype">
                   <p>NMTOKEN</p>
@@ -8942,11 +8883,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-linkRole">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>linkRole</att>
                </head>
@@ -8955,28 +8891,26 @@
                </div>
                <div type="summary">
                   <p>A URI that characterizes the nature of the remote resource to which a linking
-                     element refers. </p>
+                     element refers.</p>
                </div>
                <div type="description">
                   <p>A URI that characterizes the nature of the remote resource to which a linking
-                     element refers. Optionally available in <gi>contactLine</gi>, <gi>reference</gi>,
-                     <gi>representation</gi>, and <gi>source</gi>.</p>
+                     element refers. Optionally available in <gi>access</gi>, <gi>accessConditions</gi>, <gi>accessibility</gi>, <gi>advancedOrders</gi>, <gi>building</gi>, <gi>closing</gi>, <gi>contactLine</gi>, <gi>exhibition</gi>, <gi>image</gi>, <gi>internetAccess</gi>, <gi>multilingualServices</gi>, <gi>opening</gi>, <gi>otherServices</gi>, <gi>photographAllowance</gi>, <gi>readersTicket</gi>, <gi>reference</gi>, <gi>refreshment</gi>, <gi>representation</gi>, <gi>researchServices</gi>, <gi>socialMedia</gi>, <gi>source</gi>, <gi>toursSessions</gi>, <gi>useConditions</gi>, and <gi>workPlaces</gi>.</p>
                </div>
                <div type="datatype">
                   <p>anyURI</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <!-- Contains examples of XML from the schema.  Tags in egXML must be prefixed with the proper namespace (e.g. <ead:unittitle> -->
+                     <eag:contact>
+                        <eag:contactLine contactLineType="homepage" href="http://www.bundesarchiv.de" linkRole="website" linkTitle="Visit our homepage">http://www.bundesarchiv.de</eag:contactLine>
+                        <eag:contactLine contactLineType="homepage" href="http://www.bundesarchiv.de/service/kontakt/index.html.de" linkRole="contactForm" linkTitle="Contact us" languageOfElement="ger">Zum Kontaktformular des Bundesarchivs</eag:contactLine>
+                        <eag:contactLine contactLineType="directions" href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_koblenz_2011-03.pdf" linkRole="document/pdf" linkTitle="How to find us" languageOfElement="ger"> Buslinien 2 und 12 (Richtung Karthause) bis Bundesarchiv (von Haltestelle Hauptbahnhof West am Hauptbahnhof-Nebenausgang an der Simmerner Straße).</eag:contactLine>
+                     </eag:contact>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-linkTitle">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>linkTitle</att>
                </head>
@@ -8989,27 +8923,22 @@
                <div type="description">
                   <p>Information that serves as a viewable caption which explains to users the part
                      that a resource plays in a link. May be useful for meeting accessibility
-                     requirements when rendering content in a web browser. Optionally available next to <att>href</att> in
-                        <gi>contactLine</gi>, <gi>reference</gi>, <gi>representation</gi>,
-                        <gi>setComponent</gi>, and <gi>source</gi>.</p>
+                     requirements when rendering content in a web browser. Optionally available next to <att>href</att> in Available in <gi>access</gi>, <gi>accessConditions</gi>, <gi>accessibility</gi>, <gi>advancedOrders</gi>, <gi>building</gi>, <gi>closing</gi>, <gi>contactLine</gi>, <gi>exhibition</gi>, <gi>image</gi>, <gi>internetAccess</gi>, <gi>multilingualServices</gi>, <gi>opening</gi>, <gi>otherServices</gi>, <gi>photographAllowance</gi>, <gi>readersTicket</gi>, <gi>reference</gi>, <gi>refreshment</gi>, <gi>representation</gi>, <gi>researchServices</gi>, <gi>socialMedia</gi>, <gi>source</gi>, <gi>toursSessions</gi>, <gi>useConditions</gi>, and <gi>workPlaces</gi>.</p>
                </div>
                <div type="datatype">
                   <p>token</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:setComponent href="http://nla.gov.au/anbd.aut-an35995526" linkTitle="Hill, Dorothy, 1907-1997 - Full record view - Libraries Australia Search">
-                        <eag:componentEntry>Libraries Australia record.</eag:componentEntry>
-                     </eag:setComponent>
+                     <eag:contact>
+                        <eag:contactLine contactLineType="homepage" href="http://www.bundesarchiv.de" linkRole="website" linkTitle="Visit our homepage">http://www.bundesarchiv.de</eag:contactLine>
+                        <eag:contactLine contactLineType="homepage" href="http://www.bundesarchiv.de/service/kontakt/index.html.de" linkRole="contactForm" linkTitle="Contact us" languageOfElement="ger">Zum Kontaktformular des Bundesarchivs</eag:contactLine>
+                        <eag:contactLine contactLineType="directions" href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_koblenz_2011-03.pdf" linkRole="document/pdf" linkTitle="How to find us" languageOfElement="ger">Buslinien 2 und 12 (Richtung Karthause) bis Bundesarchiv (von Haltestelle Hauptbahnhof West am Hauptbahnhof-Nebenausgang an der Simmerner Straße).</eag:contactLine>
+                     </eag:contact>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-listType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>listType</att>
                </head>
@@ -9029,7 +8958,7 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:list listType="unordered">
+                     <eag:list listType="ordered">
                         <eag:head>List of ministers of May Memorial Unitarian Universalist
                            Church</eag:head>
                         <eag:item>John Storer, Minister 1839-1844</eag:item>
@@ -9045,11 +8974,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-localType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>localType</att>
                </head>
@@ -9067,12 +8991,8 @@
                      to facilitate exchange of data, it is recommended that the value be either the
                      URI or the preferred label for a term defined in a formal vocabulary (e.g.,
                      SKOS), which is identified by an absolute URI, and is resolvable to a web
-                     resource that describes the semantic scope and use of the value. Local
-                     conventions or controlled vocabularies used in <att>localType</att> may be
-                     declared in <gi>localTypeDeclaration</gi> within <gi>control</gi>.
-                        <att>localTypeDeclarationReference</att> should always be used alongside
-                        <att>localType</att> to provide a direct link to the
-                        <gi>localTypeDeclaration</gi>.</p>
+                     resource that describes the semantic scope and use of the value.</p>
+                  <p>Local conventions or controlled vocabularies used in <att>localType</att> may be declared in <gi>localTypeDeclaration</gi> within <gi>control</gi>.<att>localTypeDeclarationReference</att> should always be used alongside <att>localType</att> to provide a direct link to the <gi>localTypeDeclaration</gi>.</p>
                </div>
                <div type="datatype">
                   <p>token</p>
@@ -9080,18 +9000,13 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:nameEntry status="authorized">
-                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO">Arendt, Hannah</eag:part>
-                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath" localTypeDeclarationReference="GNDO">1906-1975</eag:part>						
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody" localTypeDeclarationReference="GNDO">Bundesarchiv</eag:part>
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#abbreviatedNameForTheCorporateBody" localTypeDeclarationReference="GNDO">BArch</eag:part>						
                      </eag:nameEntry>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-localTypeDeclarationReference">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>localTypeDeclarationReference</att>
                </head>
@@ -9115,18 +9030,13 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:nameEntry status="authorized">
-                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO">Arendt, Hannah</eag:part>
-                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath" localTypeDeclarationReference="GNDO">1906-1975</eag:part>						
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody" localTypeDeclarationReference="GNDO">Bundesarchiv</eag:part>
+                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#abbreviatedNameForTheCorporateBody" localTypeDeclarationReference="GNDO">BArch</eag:part>						
                      </eag:nameEntry>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-maintenanceEventReference">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>maintenanceEventReference</att>
                </head>
@@ -9135,28 +9045,26 @@
                </div>
                <div type="summary">
                   <p>Use <att>maintenanceEventReference</att> to provide a direct link to a
-                        <gi>maintenanceEvent</gi> element within <gi>maintenanceHistory</gi></p>
+                        <gi>maintenanceEvent</gi> element within <gi>maintenanceHistory</gi>.</p>
                </div>
                <div type="description">
-                  <p>The attribute can be used to link to a maintenance event in order to verify any assertion added to the entity’s description.</p> 
-                     <p>The attribute is optionally available in all elements in the identity area (except <gi>entityType</gi>), in the description area, and in the relations. 
-                  </p>
+                  <p>The attribute can be used to link to a maintenance event in order to verify any assertion added to the repository’s description.</p> 
+                     <p>The attribute is optionally available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository<gi> element.</p>
                </div>
                <div type="datatype">
                   <p>IDREFS</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <!-- Contains examples of XML from the schema.  Tags in egXML must be prefixed with the proper namespace (e.g. <ead:unittitle> -->
+                     <eag:relation sourceReference="source1" maintenanceEventReference="me2">
+                        <eag:targetEntity targetType="corporateBody" valueURI="https://snaccooperative.org/ark:/99166/w63z1x39" vocabularySourceURI="https://snaccooperative.org">
+                           <eag:part>Princeton University</eag:part>
+                        </eag:targetEntity>
+                     </eag:relation>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-maintenanceEventType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>maintenanceEventType</att>
                </head>
@@ -9179,7 +9087,7 @@
                      <item>revised: any type of general modification to the EAG instance</item>
                      <item>unknown: when the type of event is not known</item>
                      <item>updated: when an instance has been brought up to date with significant
-                        changes to the materials being described or to the version of EAG
+                        changes to the repository's description or to the version of EAG
                         used</item>
                   </list>
                </div>
@@ -9190,28 +9098,23 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:maintenanceHistory>
                         <eag:maintenanceEvent maintenanceEventType="derived">
-                           <eag:agent agentType="machine">XSLT ead2cpf.xsl/Saxon B9</eag:agent>
-                           <eag:eventDateTime standardDateTime="2009-08-30T09:37:17.029-04:00"/>
-                           <eag:eventDescription>Derived from EAD instance.</eag:eventDescription>
+                           <eag:agent agentType="machine">XSLT eag2012_eag3.xsl/Saxon B9</eag:agent>
+                           <eag:eventDateTime standardDateTime="2022-08-30T09:37:17.029-04:00"/>
+                           <eag:eventDescription>Derived from EAG 2012 instance.</eag:eventDescription>
                         </eag:maintenanceEvent>
                         <eag:maintenanceEvent maintenanceEventType="revised">
                            <eag:agent agentType="unknown"/>
-                           <eag:eventDateTime standardDateTime="2021-11-27"/>
+                           <eag:eventDateTime standardDateTime="2022-11-27"/>
                         </eag:maintenanceEvent>
                         <eag:maintenanceEvent maintenanceEventType="updated">
-                           <eag:agent agentType="human">K. Bredenberg</eag:agent>
-                           <eag:eventDateTime>December 2021</eag:eventDateTime>
+                           <eag:agent agentType="human">J. Smith</eag:agent>
+                           <eag:eventDateTime>December 2022</eag:eventDateTime>
                         </eag:maintenanceEvent>
                      </eag:maintenanceHistory>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-maintenanceStatus">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>maintenanceStatus</att>
                </head>
@@ -9219,7 +9122,7 @@
                   <p>Maintenance Status</p>
                </div>
                <div type="summary">
-                  <p>The current drafting status of the EAg instance.</p>
+                  <p>The current drafting status of the EAG instance.</p>
                </div>
                <div type="description">
                   <p>The maintenance status must occur on <gi>control</gi>. As an EAG instance
@@ -9228,17 +9131,17 @@
                      updated to reflect the current drafting status.</p>
                   <p>On first creation the status would be "new", which on revision can be changed
                      to "revised". Because it is important to be clear about what has happened to
-                     records, particularly when sharing and making links between them, a number of
-                     status values are available for records that are no longer current. A record
+                     EAG instances, particularly when sharing and making links between them, a number of
+                     status values are available for instances that are no longer current. An instance
                      that is simply deleted from a system can be given the status "deleted", but in
-                     cases where a record is marked as not current (obsolete or rejected) but kept
-                     for reference then it should be given the status "cancelled". If a record is
+                     cases where an instance is marked as not current (obsolete or rejected) but kept
+                     for reference then it should be given the status "cancelled". If an instance is
                      deleted because it has become superseded by two or more records then its status
                      should be given as "deletedSplit", while if it has simply been replaced by a
-                     new record then "deletedReplaced" is the appropriate status value. If a record
-                     is deleted because it has been merged with another record, its status should be
+                     new instance then "deletedReplaced" is the appropriate status value. If an instance
+                     is deleted because it has been merged with another instance, its status should be
                      given as "deletedMerged". A "derived" status value is available to indicate
-                     that the record was derived from another descriptive system.</p>
+                     that the instance was derived from another descriptive system.</p>
                </div>
                <div type="values">
                   <p>cancelled, deleted, deletedMerged, deletedReplaced, deletedSplit, derived, new,
@@ -9252,11 +9155,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-notAfter">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>notAfter</att>
                </head>
@@ -9286,11 +9184,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-notBefore">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>notBefore</att>
                </head>
@@ -9604,11 +9497,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-sourceReference">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>sourceReference</att>
                </head>
@@ -9623,27 +9511,18 @@
                </div>
                <div type="description">
                   <p>The attribute can be used to reference any detailed information about the described entity with a source.</p>
-                  <p>The attribute is optionally available in all elements in the identity area (except <gi>entityType</gi>), in the description area, and in the relations.</p>
+                  <p>The attribute is optionally available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository<gi> element.</p>
                </div>
                <div type="datatype">
                   <p>IDREFS</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <relation sourceReference="source1"
-                     maintenanceEventReference="me2">
-                        <targetEntity targetType="corporateBody"
-                        valueURI="https://snaccooperative.org/
-                        ark:/99166/w63z1x39"
-                        vocabularySourceURI="https://
-                        snaccooperative.org">
-                           <part>Princeton University</part>
-                        </targetEntity>
-                        <relationType valueURI="https://
-                        www.wikidata.org/wiki/Property:P69"
-                        vocabularySourceURI="https://
-                        www.wikidata.org/">educated
-                        at</relationType>
+                     <eag:relation sourceReference="source1" maintenanceEventReference="me2">
+                        <eag:targetEntity targetType="corporateBody" valueURI="https://snaccooperative.org/ark:/99166/w63z1x39" vocabularySourceURI="https://snaccooperative.org">
+                           <eag:part>Princeton University</eag:part>
+                        </eag:targetEntity>
+                     </eag:relation>
                    </relation>
                   </egXML>
                </div>
