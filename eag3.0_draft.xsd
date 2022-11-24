@@ -140,10 +140,10 @@
         <xs:attribute name="languageEncoding">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
+                    <xs:enumeration value="ietf-bcp-47"/>
                     <xs:enumeration value="iso639-1"/>
                     <xs:enumeration value="iso639-2b"/>
                     <xs:enumeration value="iso639-3"/>
-                    <xs:enumeration value="ietf-bcp-47"/>
                     <xs:enumeration value="otherLanguageEncoding"/>
                 </xs:restriction>
             </xs:simpleType>
@@ -167,32 +167,32 @@
         <xs:attribute name="detailLevel">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="minimal"/>
                     <xs:enumeration value="basic"/>
                     <xs:enumeration value="extended"/>
+                    <xs:enumeration value="minimal"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
         <xs:attribute name="maintenanceStatus" use="required">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="revised"/>
+                    <xs:enumeration value="cancelled"/>
                     <xs:enumeration value="deleted"/>
-                    <xs:enumeration value="new"/>
-                    <xs:enumeration value="deletedSplit"/>
                     <xs:enumeration value="deletedMerged"/>
                     <xs:enumeration value="deletedReplaced"/>
-                    <xs:enumeration value="cancelled"/>
+                    <xs:enumeration value="deletedSplit"/>
                     <xs:enumeration value="derived"/>
-                </xs:restriction>
+                    <xs:enumeration value="new"/>
+                    <xs:enumeration value="revised"/>
+                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
         <xs:attribute name="publicationStatus">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="approved"/>
-                    <xs:enumeration value="published"/>
                     <xs:enumeration value="inProcess"/>
+                    <xs:enumeration value="published"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -563,8 +563,8 @@
         <xs:attribute name="identityType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
-                    <xs:enumeration value="given"/>
                     <xs:enumeration value="acquired"/>
+                    <xs:enumeration value="given"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
