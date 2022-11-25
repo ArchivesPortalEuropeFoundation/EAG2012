@@ -9150,7 +9150,7 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:control countryEncoding="iso3166-1" dateEncoding="iso8601" languageEncoding="iso639-2b" maintenanceStatus="new"
-                        publicationStatus="published" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eag:control>
+                        publicationStatus="inProcess" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eag:control>
                   </egXML>
                </div>
             </div>
@@ -9213,11 +9213,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-preferredForm">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>preferredForm</att>
                </head>
@@ -9225,7 +9220,7 @@
                   <p>Preferred Form</p>
                </div>
                <div type="summary">
-                  <p>Attribute that specifies whether or not a name provides the preferred form of the entity's name for display purposes</p>
+                  <p>Attribute that specifies whether or not a name provides the preferred form of the repository's name for display purposes.</p>
                </div>
                <div type="description">
                   <p>Attribute that specifies whether or not a <gi>nameEntry</gi> provides the
@@ -9239,13 +9234,13 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:nameEntrySet languageOfElement="fre">
-                        <eag:nameEntry conventionDeclarationReference="cd1" preferredForm="true">
+                        <eag:nameEntry preferredForm="true">
                            <eag:part>Provence-Alpes-Côte d'Azur</eag:part>
                         </eag:nameEntry>
-                        <eag:nameEntry conventionDeclarationReference="cd2">
+                        <eag:nameEntry preferredForm="false">
                            <eag:part>Région Sud Provence-Alpes-Côte d'Azur</eag:part>
                         </eag:nameEntry>
-                        <eag:nameEntry conventionDeclarationReference="cd3">
+                        <eag:nameEntry preferredForm="false">
                            <eag:part>Provence-Alpes-Côte-d'Azur</eag:part>
                         </eag:nameEntry>
                      </eag:nameEntrySet>
@@ -9253,11 +9248,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-publicationStatus">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>publicationStatus</att>
                </head>
@@ -9268,7 +9258,7 @@
                   <p>The current publication status of the EAG instance.</p>
                </div>
                <div type="description">
-                  <p>The publication status may occur on <gi>control</gi> to indicate the current publication status of the EAG instance, whether in process, approved or final. As an EAG instance is modified or other events happen to it (as recorded in the <gi>maintenanceHistory</gi> element), the publication status should also be updated. </p>
+                  <p>The publication status may occur on <gi>control</gi> to indicate the current publication status of the EAG instance, whether in process, approved or published. As an EAG instance is modified or other events happen to it (as recorded in the <gi>maintenanceHistory</gi> element), the publication status should also be updated. </p>
                      <p>A newly created EAG instance will usually start with a publication status of "inProcess". This partial and preliminary status will be applicable as long as the author or the creating agency is working on the document. Depending on the context, the document might first reach a pre-publication level, awaiting approval e.g. by a higher level manager or an authorizing agency. Once such approval has been given, the status "approved" could be assigned for internal purposes while the EAG instance is not publicly available yet. When the EAG instance has been published on the institution’s own website or via the authorizing agency, the status "published" can be assigned.
                   </p>
                </div>
@@ -9278,14 +9268,11 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:control countryEncoding="iso3166-1" dateEncoding="iso8601" languageEncoding="iso639-2b" maintenanceStatus="new"
-                        publicationStatus="published" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eag:control>
+                        publicationStatus="inProcess" repositoryEncoding="iso15511" scriptEncoding="iso15924"> [...] </eag:control>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-question">
-               <!-- EAG-specific; copied/adapted from current EAG 2012 Tag Library;
-                    needs review and maybe another encoding example, e.g. with a mix of several services, 
-                    some of which are available, while others are not or only with conditions -->
                <head>
                   <att>question</att>
                </head>
@@ -9297,10 +9284,7 @@
                </div>
                <div type="description">
                   <p>A required attribute with all services and facilities an institution with archival holdings might offer to its users.</p>
-                  <p>When <gi>access</gi>, <gi>accessConditions</gi>, <gi>accessibility</gi>, <gi>advancedOrders</gi>, <gi>exhibition</gi>, <gi>internetAccess</gi>, <gi>library</gi>, <gi>multilingualServices</gi>, 
-                     <gi>otherServices</gi>, <gi>photographAllowance</gi>, <gi>readersTicket</gi>, <gi>refreshment</gi>, <gi>researchServices</gi>, <gi>searchroom</gi>, <gi>toursSessions</gi>, <gi>useConditions</gi>, 
-                     or <gi>workPlaces</gi> are used, the attribute provides an option to generally indicate the existence or availability of these services and facilities with the values "yes", "yes (conditions apply)", 
-                     or "no", but to leave the elements themselves empty and to e.g. make use of the optional linking attributes to link to existing websites for more information.</p>
+                  <p>When <gi>access</gi>, <gi>accessibility</gi>, <gi>advancedOrders</gi>, <gi>exhibition</gi>, <gi>internetAccess</gi>, <gi>library</gi>, <gi>multilingualServices</gi>, <gi>otherServices</gi>, <gi>photographAllowance</gi>, <gi>readersTicket</gi>, <gi>reproductionServices</gi>, <gi>restorationLaboratory</gi>,<gi>refreshment</gi>, <gi>researchServices</gi>, <gi>searchroom</gi>, <gi>toursSessions</gi>, or <gi>workPlaces</gi> are used, the attribute provides an option to generally indicate the existence or availability of these services and facilities with the values "yes", "yes (conditions apply)", or "no", but to leave the elements themselves empty and to e.g. make use of the optional linking attributes to link to existing websites for more information.</p>
                </div>
                <div type="values">
                   <p>no, yes, yes (conditions apply)</p>
@@ -9311,7 +9295,7 @@
                         <eag:identity> [...] </eag:identity>
                         <eag:description>
                            [...] 
-                           <eag:access question="yes"/>
+                           <eag:access question="yes (conditions apply)"/>
                            [...] 
                            <eag:accessibility question="yes"/>
                            [...] 
@@ -9321,8 +9305,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-repositoryCode">
-               <!-- EAG-specific; copied/adapted from current EAG 2012 Tag Library;
-                    needs review/confirmation -->
                <head>
                   <att>repositoryCode</att>
                </head>
@@ -9333,10 +9315,8 @@
                   <p>A unique code for the institution being described.</p>
                </div>
                <div type="description">
-                  <p>A unique code in <gi>repositoryId</gi> identifying the insitution being described. Ideally, the code used here is the institution's registered ISIL code. The Danish Agency for Culture acts as <ref target="http://biblstandard.dk/isil/">international Registration Authority</ref> to maintain the standard and its registry, 
-                     with many countries having national ISIL agencies in addition. When ISIL codes are issued by national agencies, they always start with the two-letter country code according to <ref target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref> followed by a hyphen-minus and by the identifier assigned by that country's ISIL agency.</p>
-                  <p>In case an institution does not have a registered ISIL code or cannot register for one easily, the code given in <att>repositoryCode</att> needs to at least comply generally with the structure set out in the International Standard Identifier for Libraries and Related Organisations (ISIL), <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511</ref>. 
-                     This means, that the code needs to be alphanumeric, with a maximum of 16 characters, only including a-z, A-Z, 0-9, solidus, hyphen-minus or colon as valid symbols.</p>
+                  <p>A unique code required in <gi>repositoryId</gi> identifying the insitution being described. Ideally, the code used here is the institution's registered ISIL code. The Danish Agency for Culture acts as <ref target="http://biblstandard.dk/isil/">international Registration Authority</ref> to maintain the standard and its registry, with many countries having national ISIL agencies in addition. When ISIL codes are issued by national agencies, they always start with the two-letter country code according to <ref target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref> followed by a hyphen-minus and by the identifier assigned by that country's ISIL agency.</p>
+                  <p>In case an institution does not have a registered ISIL code or cannot register for one easily, it is recommended that the code given in <att>repositoryCode</att> at least complies generally with the structure set out in the International Standard Identifier for Libraries and Related Organisations (ISIL), <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511</ref>. This means, that the code needs to be alphanumeric, with a maximum of 16 characters, only including a-z, A-Z, 0-9, solidus, hyphen-minus or colon as valid symbols.</p>
                   <p>Other unique codes for the institution with archival holdings can be used in <att>repositoryCode</att> in general, but only when having specified another controlled list in the <att>repositoryEncoding</att> attribute in <gi>control</gi>.</p>
                </div>
                <div type="datatype">
@@ -9357,11 +9337,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-repositoryEncoding">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>repositoryEncoding</att>
                </head>
@@ -9369,13 +9344,10 @@
                   <p>Repository Encoding</p>
                </div>
                <div type="summary">
-                  <p>The authoritative source or rules for values supplied in <gi>agencyCode</gi>.</p>
+                  <p>The authoritative source or rules for values supplied in <gi>agencyCode</gi> and <att>repositoryCode</att>.</p>
                </div>
                <div type="description">
-                  <p>The authoritative source or rules for values supplied in <gi>agencyCode</gi>.
-                     If the value "otherRepositoryEncoding" is selected an alternate code list
-                     should be specified in <gi>conventionDeclaration</gi>. Optionally available only in
-                     <gi>control</gi>.</p>
+                  <p>The authoritative source or rules for values supplied in <gi>agencyCode</gi> and <att>repositoryCode</att>. If the value "otherRepositoryEncoding" is selected an alternate code list should be specified in <gi>conventionDeclaration</gi>. Optionally available only in <gi>control</gi>.</p>
                </div>
                <div type="values">
                   <p>iso15511, otherRepositoryEncoding</p>
@@ -9389,11 +9361,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-scriptCode">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>scriptCode</att>
                </head>
@@ -9401,41 +9368,21 @@
                   <p>Script Code</p>
                </div>
                <div type="summary">
-                  <p>The code for the writing system, or script, used in the EAG instance or in
-                     which the CPF entity being described was creative or productive.</p>
+                  <p>The code for the writing system, or script, used in the EAG instance.</p>
                   </div>
                <div type="description">
-                  <p>Content of the attribute should be a code taken from ISO 15924, or another controlled list, as
-                     specified in the <att>scriptEncoding</att> attribute in <gi>control</gi>.
-                     Optionally available in <gi>languageDeclaration</gi>.</p>
+                  <p>Content of the attribute should be a code taken from ISO 15924, or another controlled list, as specified in the <att>scriptEncoding</att> attribute in <gi>control</gi>. Optionally available in <gi>languageDeclaration</gi>.</p>
                </div>
                <div type="datatype">
                   <p>NMTOKEN</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:languagesUsed>
-                        <eag:languageUsed>
-                           <eag:language languageCode="eng">English</eag:language>
-                           <eag:writingSystem scriptCode="Latn">Latin</eag:writingSystem>
-                        </eag:languageUsed>
-                        <eag:languageUsed>
-                           <eag:language languageCode="spa">Spanish</eag:language>
-                           <eag:writingSystem scriptCode="Latn">Latin</eag:writingSystem>
-                        </eag:languageUsed>
-                        <eag:descriptiveNote>
-                           <eag:p>Published works in English and Spanish.</eag:p>
-                        </eag:descriptiveNote>
-                     </eag:languagesUsed>
+                     <eag:languageDeclaration languageCode="spa" scriptCode="Latn"/>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-scriptEncoding">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>scriptEncoding</att>
                </head>
@@ -9443,14 +9390,10 @@
                   <p>Script Encoding</p>
                </div>
                <div type="summary">
-                  <p>The authoritative source or rules for values supplied in
-                        <att>scriptOfElement</att> and <att>scriptCode</att>.</p>
+                  <p>The authoritative source or rules for values supplied in <att>scriptOfElement</att> and <att>scriptCode</att>.</p>
                </div>
                <div type="description">
-                  <p>The authoritative source or rules for values supplied in
-                     <att>scriptOfElement</att> and <att>scriptCode</att>. If the value
-                     "otherScriptEncoding" is selected, an alternate code list should be specified
-                     in <gi>conventionDeclaration</gi>. Optionally available only in <gi>control</gi>.</p>
+                  <p>The authoritative source or rules for values supplied in <att>scriptOfElement</att> and <att>scriptCode</att>. If the value "otherScriptEncoding" is selected, an alternate code list should be specified in <gi>conventionDeclaration</gi>. Optionally available only in <gi>control</gi>.</p>
                </div>
                <div type="values">
                   <p>iso15924, otherScriptEncoding</p>
@@ -9464,11 +9407,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-scriptOfElement">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>scriptOfElement</att>
                </head>
@@ -9476,23 +9414,24 @@
                   <p>Script of Element</p>
                </div>
                <div type="summary">
-                  <p>Indicates the writing script of the content of an element (e.g., Cyrillic,
-                     Katakana).</p>
+                  <p>Indicates the writing script of the content of an element (e.g., Cyrillic, Katakana).</p>
                </div>
                <div type="description">
-                     <p>Content should be taken from ISO 15924, or another controlled list, as specified in the
-                        <att>scriptEncoding</att> attribute in <gi>control</gi>. May be used
-                     consistently in a multi-lingual finding aid to specify which elements are
-                     written in which script. Optionally available on all non-empty elements.</p>
+                     <p>Content should be taken from ISO 15924, or another controlled list, as specified in the <att>scriptEncoding</att> attribute in <gi>control</gi>. May be used consistently in a multi-lingual finding aid to specify which elements are written in which script. Optionally available on all non-empty elements.</p>
                </div>
                <div type="datatype">
                   <p>NMTOKEN</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:nameEntry status="alternative">
-                        <eag:part localType="https://d-nb.info/standards/elementset/gnd#personalName" localTypeDeclarationReference="GNDO" scriptOfElement="Hans">阿伦特, 汉娜</eag:part>
-                    </eag:nameEntry>
+                     <eag:nameEntrySet>
+                        <eag:nameEntry status="authorized" languageOfElement="eng">
+                           <eag:part>Government Records Service</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntry status="authorized" languageOfElement="chi" scriptOfElement="Hans">
+                           <eag:part>政府档案处</eag:part>
+                        </eag:nameEntry>
+                     </eag:nameEntrySet>
                   </egXML>
                </div>
             </div>
@@ -9504,9 +9443,7 @@
                   <p>Source Reference</p>
                </div>
                <div type="summary">
-                  <p>Use <att>sourceReference</att> to provide a direct link to a <gi>source</gi>
-                     element within <gi>sources</gi> in <gi>control</gi> from an element within the
-                     EAG instance that uses the source. 
+                  <p>Use <att>sourceReference</att> to provide a direct link to a <gi>source</gi> element within <gi>sources</gi> in <gi>control</gi> from an element within the EAG instance that uses the source. 
                   </p>
                </div>
                <div type="description">
@@ -9528,11 +9465,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-standardDate">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>standardDate</att>
                </head>
@@ -9540,10 +9472,10 @@
                   <p>Standard Date</p>
                </div>
                <div type="summary">
-                  <p>The standardized form of date.</p>
+                  <p>The standardized form of a date.</p>
                </div>
                <div type="description">
-                  <p>The standardized form of date expressed in <gi>date</gi>, <gi>fromDate</gi>,
+                  <p>The standardized form of a date expressed in <gi>date</gi>, <gi>fromDate</gi>,
                      and <gi>toDate</gi>. It is recommended that <att>standardDate</att> values
                      follow ISO 8601, for example, 2011-07-22, 1963, or 1912-11, or another standard
                      date format as specified in <att>dateEncoding</att>.</p>
@@ -9561,11 +9493,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-standardDateTime">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>standardDateTime</att>
                </head>
@@ -9584,7 +9511,7 @@
                <div type="datatype">
                   <p>Constrained to the following patterns: YYYY-MM-DD, YYYY-MM, YYYY, or
                      YYYY-MM-DDThh:mm:ss [with optional timezone offset from UTC in the form of
-                     [+|-][hh:mm], or "Z" to indicate the dateTime is UTC. No timezone implies the
+                     [+|-][hh:mm], or "Z" to indicate the dateTime is UTC. Similarly, no timezone implies the
                      dateTime is UTC.]</p>
                </div>
                <div type="examples">
@@ -9597,11 +9524,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-status">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>status</att>
                </head>
@@ -9609,27 +9531,21 @@
                   <p>Status</p>
                </div>
                <div type="summary">
-                  <p>Attribute that provides controlled terminology detailing the status of
+                  <p>Attribute that provides controlled terminology detailing the status of certain 
                      elements.</p> 
                </div>
                <div type="description">
-                  <p><att>status</att> provides controlled terminology detailing the status of specific
-                     elements. The terms available for <att>status</att> are defined in closed lists that vary by
-                     element. Optionally available only in <gi>agencyCode</gi>, <gi>fromDate</gi>,
-                        <gi>nameEntry</gi>, <gi>otherAgencyCode</gi>, and <gi>toDate</gi>. </p>
+                  <p><att>status</att> provides controlled terminology detailing the status of specific elements. The terms available for <att>status</att> are defined in closed lists that vary by element. Optionally available only in <gi>agencyCode</gi>, <gi>date</gi>, <gi>fromDate</gi>, <gi>nameEntry</gi>, <gi>otherAgencyCode</gi>, <gi>repositoryId</gi>, and <gi>toDate</gi>. </p>
                </div>
                <div type="values">
-                  <p>Values in <gi>agencyCode</gi>, <gi>nameEntry</gi>, <gi>otherAgencyCode</gi>:
-                     alternative, authorized</p>
+                  <p>Values in <gi>agencyCode</gi>, <gi>nameEntry</gi>, <gi>otherAgencyCode</gi>, <gi>repositoryId</gi>: alternative, authorized</p>
                   <p>Values in <gi>date</gi>, <gi>fromDate</gi>: unknown</p>
-                  <p>Values in <gi>toDate</gi>: unknown, ongoing</p>
+                  <p>Values in <gi>toDate</gi>: ongoing, unknown</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:nameEntry languageOfElement="de" preferredForm="true" status="authorized"
-                        localType="native">
-                        <eag:part localType="surname">Arendt</eag:part>
-                        <eag:part localType="firstname">Hannah</eag:part>
+                     <eag:nameEntry status="authorized" preferredForm="true">
+                        <eag:part>Provence-Alpes-Côte d'Azur</eag:part>
                      </eag:nameEntry>
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
@@ -9644,11 +9560,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-style">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>style</att>
                </head>
@@ -9660,13 +9571,7 @@
                      value conforms to W3C CSS.</p>
                </div>
                <div type="description">
-                  <p>The <att>style</att> attribute may occur on <gi>span</gi> and <gi>list</gi>. In
-                     a limited number of contexts that accommodate discursive description,
-                        <gi>span</gi> with <att>style</att> may be used to identify an arbitrary
-                     string that is intended to be rendered in a specific style. <att>style</att>
-                     may be used within <gi>list</gi> to specify the style of a list. It is highly
-                     recommended that the value of <att>style</att> be expressed as a W3C CSS style
-                     to facilitate interoperability.</p>
+                  <p>The <att>style</att> attribute may only occur on <gi>span</gi>. In a limited number of contexts that accommodate discursive description, <gi>span</gi> with <att>style</att> may be used to identify an arbitrary string that is intended to be rendered in a specific style. It is highly recommended that the value of <att>style</att> be expressed as a W3C CSS style to facilitate interoperability.</p>
                </div>
                <div type="datatype">
                   <p>normalizedString</p>
@@ -9674,33 +9579,17 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:biogHist>
-                        <eag:p>Robert Carlton Brown (1886-1959) was a writer, editor, publisher, and
-                           traveler. From 1908 to 1917, he wrote poetry and prose for numerous
-                           magazines and newspapers in New York City, publishing two pulp novels,
-                              <eag:span style="font-style:italic">What Happened to Mary</eag:span>
-                           and <eag:span style="font-style:italic">The Remarkable Adventures of
-                              Christopher Poe</eag:span> (1913), and one volume of poetry, <eag:span
-                              style="font-style:italic">My Marjonary</eag:span> (1916).</eag:p>
-                        <eag:p>During 1918, he traveled extensively in Mexico and Central America,
-                           writing for the U.S. Committee of Public Information in Santiago de
-                           Chile. In 1919, he moved with his wife, Rose Brown, to Rio de Janeiro,
-                           where they founded <eag:span style="font-style:italic">Brazilian
-                              American</eag:span>, a weekly magazine that ran until 1929. With
-                           Brown's mother, Cora, the Browns also established magazines in Mexico
-                           City and London: <eag:span style="font-style:italic">Mexican
-                              American</eag:span> (1924-1929) and <eag:span
-                              style="font-style:italic">British American</eag:span>
-                           (1926-1929).</eag:p>
+                        <eag:p languageOfElement="eng">1978: The Federal Archives are given the task of
+                        acting as a central film archive for all German film productions as a result
+                        of <eag:span style="font-style:italic">an administration agreement covering the Association of Cinema Library
+                           Facilities</eag:span>.</eag:p>
+                        <eag:p languageOfElement="eng">1988: With the passing of the <eag:span style="font-style:italic">Law on the Preservation and Use of Federal Archival Documents (Bundesarchivgesetz)</eag:span> on the 6th of January 1988, general access to the Federal Archives and the responsibilities of the Federal Archives are for the first time placed on a sound legal footing.</eag:p>
+                        <eag:p languageOfElement="eng">1989: With the passing of the <eag:span style="font-style:italic">Law on the Central Archiving of Documents Concerning Legislation Governing the After-effects of War</eag:span>, the Federal Archives set up a central Lastenausgleichsarchiv (archives on equalization of burdens) in Bayreuth.</eag:p>
                      </eag:biogHist>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-target">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>target</att>
                </head>
@@ -9711,35 +9600,33 @@
                   <p>A pointer to the ID of another element. </p>
                </div>
                <div type="description">
-                     <p>Used to create internal links within an
-                     XML instance. Optionally available in all elements except <gi>eag</gi>.</p>
+                     <p>Used to create internal links within an XML instance. Optionally available in all elements except <gi>eag</gi>.</p>
                </div>
                <div type="datatype">
                   <p>IDREFS</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:occupations>
-                        <eag:occupation>
-                           <eag:term>Assistant examiner - level III</eag:term>
+                     <eag:functions>
+                        <eag:function>
+                           <eag:term>Preservation</eag:term>
                            <eag:placeName target="#place1">Bern</eag:placeName>
-                        </eag:occupation>
-                     </eag:occupations>
+                        </eag:function>
+                     </eag:functions>
                      <eag:places>
                         <eag:place id="place1">
                            <eag:placeName>Bern</eag:placeName>
-                           <eag:placeRole>Place of work</eag:placeRole>
+                           <eag:address>
+                              <eag:addressLine addressLineType="street">Archivstrasse 24</eag:addressLine>
+                              <eag:addressLine addressLineType="postalCode">3005</eag:addressLine>
+                              <eag:addressLine addressLineType="municipality">Bern</eag:addressLine>
+                           </eag:address>
                         </eag:place>
                      </eag:places>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-targetType">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>targetType</att>
                </head>
@@ -9747,11 +9634,10 @@
                   <p>Target Type</p>
                </div>
                <div type="summary">
-                  <p>Identifies the type of entity that is relate to the repository being described.</p>
+                  <p>Identifies the type of entity that is related to the repository being described.</p>
                </div>
                <div type="description">
-                  <p>Required attribute within <gi>targetEntity</gi> which identifies the type of
-                     entity that is related to the repository being described.</p>
+                  <p>Required attribute within <gi>targetEntity</gi> which identifies the type of entity that is related to the repository being described.</p>
                </div>
                <div type="values">
                   <p>agent, corporateBody, family, function, person, resource</p>
@@ -9772,11 +9658,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-unit">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>unit</att>
                </head>
@@ -9784,28 +9665,32 @@
                   <p>Unit</p>
                </div>
                <div type="summary">
-                  <p>Defines the format or unit that is specified in <gi>citedRange</gi>.</p>
+                  <p>Defines the format or unit that is specified in <gi>citedRange</gi> and <gi>num</gi>.</p>
                </div>
                <div type="description">
-                  <p>Use <att>unit</att> to document the format or unit that is specified in
-                        <gi>citedRange</gi>, for example page number ("pageNumber") or volume number
-                     ("volumeNumber").</p>
+                  <p>Use <att>unit</att> optionally to document the format or unit that is specified in <gi>citedRange</gi>, for example page number ("pageNumber") or volume number ("volumeNumber").</p>
+                  <p>Using <att>unit</att> within <gi>num</gi> is required and comes with a predefined list of values, which can be applied depending on the context. E.g. use "linearmetre" when used within <gi>lengthOfShelves</gi> or <gi>extent</gi>, "squaremetre" or "cubicmetre" when used within <gi>repositoryArea</gi>, "megabyte", "gigabyte", "terabyte", "petabyte", or "exabyte" when used within <gi>extent</gi> for digital holdings, and "site" when used within <gi>workPlaces</gi>, <gi>computerPlaces</gi>, or <gi>microfilmPlaces</gi>.</p>
                </div>
                <div type="datatype">
                   <p>token</p>
+               </div>
+               <div type="values">
+                  <p>Values in <gi>num</gi>: cubicmetre, exabyte, gigabyte, linearmetre, megabyte, petabyte, site, squaremetre, terabyte</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:citedRange unit="page">1</eag:citedRange>
                   </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
+                     <eag:holdings>
+                        <eag:extent>
+                           <eag:num unit="petabyte">1.5</eag:num>
+                        </eag:extent>
+                     </eag:holdings>
+                  </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-value">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>value</att>
                </head>
@@ -9813,27 +9698,21 @@
                   <p>Value</p>
                </div>
                <div type="summary">
-                  <p>Defines the type of entity described in the EAG instance.</p>
+                  <p>Defines the type of repository described in the EAG instance.</p>
                </div>
                <div type="description">
-                  <p>Required attribute within the <gi>entityType</gi> element that defines the type
-                     of entity described in the EAG instance. </p>
+                  <p>Required attribute within the <gi>repositoryType</gi> element that defines the type of repository described in the EAG instance.</p>
                </div>
                <div type="values">
-                  <p>corporateBody, family, person</p>
+                  <p>businessArchives, communityArchives, internationalArchives, localArchives, nationalArchives, nonUniversityEducationArchives, personalAndFamilyArchives, regionalArchives, religiousInstitutionsArchives, specialisedGovernmentArchives, specialisedNongovernmentalArchives, universityArchives</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:entityType value="person"/>
+                     <eag:repositoryType value="religiousInstitutionsArchives"/>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-valueURI">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>valueURI</att>
                </head>
@@ -9844,8 +9723,7 @@
                   <p>An attribute for including a URI identifying the resource to be used as the element's value.</p>
                </div>
                <div type="description">
-                  <p>Use the optional <att>valueURI</att> attribute to provide the URI identifying the authority resource to be used as the element's content. Available in all elements that can contain any type of entity. 
-                  </p>
+                  <p>Use the optional <att>valueURI</att> attribute to provide the URI identifying the authority resource to be used as the element's content. Available in all elements that can contain any type of entity.</p>
                </div>
                <div type="datatype">
                   <p>anyURI</p>
@@ -9860,11 +9738,6 @@
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-vocabularySource">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>vocabularySource</att>
                </head>
@@ -9882,18 +9755,14 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:occupation>
-                        <eag:term valueURI="https://d-nb.info/gnd/4053311-6" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Schriftstellerin</eag:term>
-                     </eag:occupation>
+                     <eag:place>
+                        <eag:placeName valueURI="https://d-nb.info/gnd/4076982-3" vocabularySource="GND" vocabularySourceURI="https://d-nb.info/gnd/">Salzburg</eag:placeName>
+                        <eag:placeRole valueURI="https://d-nb.info/standards/elementset/gnd#characteristicPlace" vocabularySource="GNDO" vocabularySourceURI="https://d-nb.info/standards/elementset/gnd#">Charakteristischer Ort</eag:placeRole>
+                     </eag:place>
                   </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-vocabularySourceURI">
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <att>vocabularySourceURI</att>
                </head>
@@ -9901,11 +9770,10 @@
                   <p>Vocabulary Source URI</p>
                </div>
                <div type="summary">
-                  <p>An optional attribute for including a URI identifying the vocabulary source for
-                     the element's value.</p>
+                  <p>An optional attribute for including a URI identifying the vocabulary source for the element's value.</p>
                </div>
                <div type="description">
-                  <p>Use the optional attribute to provide the URI of the authority or vocabulary source given in @vocabularySource. Available in all elements that can contain any type of entity.
+                  <p>Use the optional attribute to provide the URI of the authority or vocabulary source given in <att>vocabularySource<att>. Available in all elements that can contain any type of entity.
                   </p>
                </div>
                <div type="datatype">
