@@ -2049,8 +2049,8 @@
                            <eag:date standardDate="1848">1848</eag:date>
                            <eag:date standardDate="1849">1849</eag:date>
                            <eag:dateRange>
-                              <fromDate standardDate="1945">1945</eag:fromDate>
-                              <toDate standardDate="1949">1949</eag:toDate>
+                              <eag:fromDate standardDate="1945">1945</eag:fromDate>
+                              <eag:toDate standardDate="1949">1949</eag:toDate>
                            </eag:dateRange>
                            <eag:dateRange>
                               <eag:fromDate standardDate="1949">1949</eag:fromDate>
@@ -2166,15 +2166,22 @@
                         </eag:dateRange>
                      </eag:existDates>
                   </egXML>
-                  <!-- emailed Kerstin - think this should just be one dateRange -->
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:holdings>
+                        <eag:dateRange>
+                           <eag:fromDate standardDate="1710">1710</eag:fromDate>
+                           <eag:toDate standardDate="1890">1890</eag:toDate>
+                        </eag:dateRange>
+                     </eag:holdings>  
+                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:holdings>
                         <eag:dateSet>
                            <eag:date standardDate="1848">1848</eag:date>
                            <eag:date standardDate="1849">1849</eag:date>
                            <eag:dateRange>
-                              <fromDate standardDate="1945">1945</eag:fromDate>
-                              <toDate standardDate="1949">1949</eag:toDate>
+                              <eag:fromDate standardDate="1945">1945</eag:fromDate>
+                              <eag:toDate standardDate="1949">1949</eag:toDate>
                            </eag:dateRange>
                            <eag:dateRange>
                               <eag:fromDate standardDate="1949">1949</eag:fromDate>
@@ -2595,7 +2602,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eventDateTime">
-               <!-- Jane (review) -->
+               <!-- Jane reviewing - queried text re providing one or the other -->
                <head>
                   <gi>eventDateTime</gi>
                </head>
@@ -2637,7 +2644,7 @@
                      modification to an EAG instance.</p>
                   <p>The date and time may be captured in natural language in the element. It is
                      highly recommended to provide at least a human-readable date in
-                        <gi>eventDateTime</gi> directly or a machine-processable date in
+                        <gi>eventDateTime</gi> or a machine-processable date in
                         <att>standardDateTime</att>, in case it is not possible to provide both.</p>
                </div>
                <div type="attributeusage">
