@@ -2952,7 +2952,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-fromDate">
-               <!-- Jane (review) -->
+               <!-- Jane Reviewed -->
                <head>
                   <gi>fromDate</gi>
                </head>
@@ -3010,8 +3010,8 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Use <gi>fromDate</gi> to record the beginning date in a range of dates.
-                        <gi>fromDate</gi> may contain actual, approximate or unknown dates. The
+                  <p>Use <gi>fromDate</gi> to record the beginning date in a range of dates, whether 
+                     it be known, approximate or unknown. The
                      content of the element is intended to be a human-readable, natural language
                      expression of the date. If, however, indexing or other machine processing of
                      dates is desired, the <att>standardDate</att> should be used to record the date
@@ -8362,7 +8362,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-toDate">
-               <!-- Jane (review) -->
+               <!-- Jane Reviewed -->
                <head>
                   <gi>toDate</gi>
                </head>
@@ -8419,7 +8419,7 @@
                      </list>f </p>
                </div>
                <div type="description">
-                  <p>Use <gi>toDate</gi> to record the end date in a range of dates, whether they be
+                  <p>Use <gi>toDate</gi> to record the end date in a range of dates, whether it be
                      known, approximate or unknown. The content of the element is intended to be a
                      human-readable, natural language expression of the date. If, however, indexing
                      or other machine processing of dates is desired, the <att>standardDate</att>
@@ -8479,7 +8479,7 @@
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:dateRange>
-                        <eag:toDate standardDate="1933%" certainty="uncertain-approximate">around 1933</eag:fromDate>
+                        <eag:toDate standardDate="1933" certainty="uncertain-approximate">around 1933</eag:fromDate>
                      </eag:dateRange>
                   </egXML>
                </div>
