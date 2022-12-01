@@ -2602,7 +2602,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eventDateTime">
-               <!-- Jane reviewing - queried text re providing one or the other -->
+               <!-- Jane reviewed -->
                <head>
                   <gi>eventDateTime</gi>
                </head>
@@ -2642,10 +2642,9 @@
                      is for recording the date and time that a maintenance event occurred. Examples
                      of maintenance events include the creation, update, revision, or other
                      modification to an EAG instance.</p>
-                  <p>The date and time may be captured in natural language in the element. It is
-                     highly recommended to provide at least a human-readable date in
-                        <gi>eventDateTime</gi> or a machine-processable date in
-                        <att>standardDateTime</att>, in case it is not possible to provide both.</p>
+                  <p>The date and time may be captured in natural language in the element. At minimum, provide 
+                     either a human-readable date in  <gi>eventDateTime</gi> or a machine-processable date in 
+                     <att>standardDateTime</att>. It is recommended to provide both.</p>
                </div>
                <div type="attributeusage">
                   <list type="simple">
@@ -2676,7 +2675,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eventDescription">
-               <!-- Jane (review) -->
+               <!-- Jane reviewing -->
                <head>
                   <gi>eventDescription</gi>
                </head>
