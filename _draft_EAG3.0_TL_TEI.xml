@@ -1340,13 +1340,13 @@
                         <item>Optional</item>
                         <label>languageOfElement</label>
                         <item>Optional</item>
+                        <label>otherUnit</label>
+                        <item>Optional</item>
                         <label>scriptOfElement</label>
                         <item>Optional</item>
                         <label>target</label>
                         <item>Optional</item>
                         <label>unit</label>
-                        <item>Optional</item>
-                        <label>otherUnit</label>
                         <item>Optional</item>
                      </list>
                   </p>
