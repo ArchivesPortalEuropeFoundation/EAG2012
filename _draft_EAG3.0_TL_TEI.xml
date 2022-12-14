@@ -1346,6 +1346,8 @@
                         <item>Optional</item>
                         <label>unit</label>
                         <item>Optional</item>
+                        <label>otherUnit</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -1357,9 +1359,8 @@
                </div>
                <div type="attributeusage">
                   <list type="simple">
-                     <item>Use the optional <att>unit</att> attribute to specify the format that the
-                           <gi>citedRange</gi> refers to, for example, page number or volume
-                        number.</item>
+                     <item>Use the optional <att>unit</att> attribute with the value "otherUnit" and the parallel <att>otherUnit</att> to specify the format that the
+                           <gi>citedRange</gi> refers to, for example, page number or volume number.</item>
                   </list>
                </div>
                <div type="availability">
@@ -1370,7 +1371,7 @@
                      <eag:sources>
                         <eag:source>
                            <eag:reference>History of the University of Bologna</eag:reference>
-                           <eag:citedRange unit="page">22-34</eag:citedRange>
+                           <eag:citedRange unit="otherUnit" otherUnit="page">22-34</eag:citedRange>
                         </eag:source>
                         <eag:source>
                            <eag:reference href="http://arquivo.igreja-lusitana.org/">Website of the Arquivo Histórico da Igreja Lusitana</eag:reference>
@@ -7657,7 +7658,7 @@
                      <eag:sources>
                         <eag:source>
                            <eag:reference>History of the University of Bologna</eag:reference>
-                           <eag:citedRange unit="page">22-34</eag:citedRange>
+                           <eag:citedRange unit="otherUnit" otherUnit="page">22-34</eag:citedRange>
                         </eag:source>
                         <eag:source>
                            <eag:reference href="http://arquivo.igreja-lusitana.org/">Website of the Arquivo Histórico da Igreja Lusitana</eag:reference>
@@ -7740,7 +7741,7 @@
                      <eag:sources>
                         <eag:source>
                            <eag:reference>History of the University of Bologna</eag:reference>
-                           <eag:citedRange unit="page">22-34</eag:citedRange>
+                           <eag:citedRange unit="otherUnit" otherUnit="page">22-34</eag:citedRange>
                         </eag:source>
                         <eag:source>
                            <eag:reference href="http://arquivo.igreja-lusitana.org/">Website of the Arquivo Histórico da Igreja Lusitana</eag:reference>
