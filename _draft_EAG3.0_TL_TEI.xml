@@ -318,11 +318,11 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema.  
                           Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                     <abstract languageOfElement="fre">L'Institut d'histoire de l'aluminium est
+                     <abstract eag:languageOfElement="fre">L'Institut d'histoire de l'aluminium est
                         fondé en 1996 dans le but de sauvegarder et valoriser les archives
                         documentant l'histoire de l'aluminum en France. L'association a constitué un
                         important fonds documentaire constitué d'archives, d'une bibliothèque et
-                        d'une iconothèque</abstract>
+                        d'une iconothèque</eag:abstract>
                   </egXML>
                </div>
             </div>
@@ -551,7 +551,7 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:address localType="visitors address">
-                        <addressLine addressLineType="country" languageOfElement="ger"
+                        <eag:addressLine addressLineType="country" languageOfElement="ger"
                            >Deutschland</eag:addressLine>
                         <eag:addressLine addressLineType="region" languageOfElement="ger"
                            >Rheinland-Pfalz</eag:addressLine>
@@ -639,12 +639,12 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <address>
-                        <addressLine addressLineType="street" languageOfElement="fre">92-98 boulevard Victor Hugo</addressLine>
-                        <addressLine addressLineType="municipality" languageOfElement="fre">Clichy</addressLine>
-                        <addressLine addressLineType="postalCode" languageOfElement="fre">92110</addressLine>
-                        <addressLine addressLineType="country" languageOfElement="fre">FRANCE</addressLine>
-                     </address>
+                     <eag:address>
+                        <eag:addressLine addressLineType="street" languageOfElement="fre">92-98 boulevard Victor Hugo</eag:addressLine>
+                        <eag:addressLine addressLineType="municipality" languageOfElement="fre">Clichy</eag:addressLine>
+                        <eag:addressLine addressLineType="postalCode" languageOfElement="fre">92110</eag:addressLine>
+                        <eag:addressLine addressLineType="country" languageOfElement="fre">FRANCE</eag:addressLine>
+                     </eag:address>
                     </egXML>
                </div>
             </div>
@@ -1009,13 +1009,13 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <biogHist>
+                     <eag:biogHist>
                         <p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</p>
                         <p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</p>
                         <p>Since establishing the service, we have acquired other exciting resources, such
                            as the Commonweal Archives and the Jacquetta Hawkes Archive, and enriched those
                            already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</p>
-                     </biogHist>
+                     </eag:biogHist>
                   </egXML>
                </div>
             </div>
