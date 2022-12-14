@@ -2920,7 +2920,14 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                    <eag:functions>
+<eag:function>
+<term>Industrial or Scientific Research</term>
+</eag:function>
+<eag:function>
+<term>Analytical Services</term>
+</eag:function>
+</eag:functions>
                   </egXML>
                </div>
             </div>
