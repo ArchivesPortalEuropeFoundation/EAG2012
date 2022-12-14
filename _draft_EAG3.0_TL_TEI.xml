@@ -294,11 +294,12 @@
                <head>
                   <gi>access</gi>
                </head>
-               <div type="fullName">
+                <div type="fullName">
                   <p>Conditions for access and use</p>
                </div>
                <div type="summary">
-                  <p>Conditions, requirements and procedures for access and use of the archival holdings.</p>
+                  <p>Conditions, requirements and procedures for access and use of the archival
+                     holdings.</p>
                </div>
                <div type="mayContain">
                   <p>accessConditions (0..n), useConditions (0..n)</p>
@@ -309,16 +310,47 @@
                <div type="attributes">
                   <p>
                      <list type="gloss">
+                        <label>audience</label>
+                        <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
                         <label>question</label>
                         <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Element to capture nformation on conditions and requirements for access and use like access policies, terms of use, fees etc. A general statement on whether or not an institution with archival holdings 
-                     is accessible is mandatory and can be added using the attribute <att>question</att> with values "yes" or "no" or "yes (conditions apply"). Additionally, <gi>access</gi> supports a link to existing websites with more details.</p>
-                  <p>Use the subelements <gi>accessConditions</gi> and <gi>useConditions</gi> to include more specific URLs e.g. to documents containing terms of use, any registration forms that need to be filled beforehand, etc.</p>
+                  <p>Includes a mandatory <att>question</att> with
+                     values "yes" or "no" or "yes (conditions apply)" to confirm access, which may
+                     be physical or virtual access. If all or a substantial part of the collection is
+                     publicly accessible use "yes". If there are significant conditions relating to
+                     access use "yes (conditions apply)". If the collections are temporarily
+                     unavailable use "no". </p>
+                     <p>You can also add a link to a page with information about access,
+                     such as information available on the institution's own website.</p>
+                    <p>Do not include text in the access tag. Use the subelements <gi>accessConditions</gi> and
+                     <gi>useConditions</gi> to include more specific information about access conditions and use.</p>
+                                   
                </div>
+               <!-- can hav "attributeusage" here -->
                <div type="availability">
                   <p>Required, repeatable</p>
                </div>
@@ -328,10 +360,13 @@
                         <identity>[...]</identity>
                         <description>
                            <access question="yes">
-                              <accessConditions languageOfElement="eng">To prepare for your personal use of the reference service, or should you require written information, 
-                                 you may send an informal written reference [...].</accessConditions>
-                              <useConditions href="http://www.bundesarchiv.de/benutzung/voraussetzungen/ allgemeinehinweise/index.html.en"
-                              languageOfElement="eng">General information on access and use</useConditions>
+                              <accessConditions languageOfElement="eng">Special Collections are open
+                                 to, and intended for, anyone who might benefit from using them.
+                                 However, space and staffing constraints mean that appointments are
+                                 required. </accessConditions>
+                             <useConditions 
+                                href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website 
+                                for information on conditions of use.</useConditions>
                            </access>
                         </description>
                      </repository>
@@ -343,10 +378,10 @@
                   <gi>accessConditions</gi>
                </head>
                <div type="fullName">
-                  <p>Conditions of access</p>
+                  <p>Access Conditions</p>
                </div>
                <div type="summary">
-                  <p>Information on conditions of access relating to the archival holdings, could also include information like "by appointment with the archivist only".</p>
+                  <p>Information on access conditions or restrictions relating to the archival holdings. An optional child element of <gi>access</gi>.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -359,26 +394,74 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                     </list>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                 </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Information on conditions and requirements for access and use. May refer to
+                     access policies, fees etc. Can include information like "by appointment" or "readers ticket required". Can
+                     also include a link to a website with more detailed information about access. May be used to
+                     indicate that there are no restrictions on access.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
+                     <repository>
+                        <identity>[...]</identity>
+                        <description>
+                           <access question="yes">
+                              <accessConditions languageOfElement="eng">Special Collections are open
+                                 to, and intended for, anyone who might benefit from using them.
+                                 However, space and staffing constraints mean that appointments are
+                                 required. </accessConditions>
+                            </access>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <repository>
+                        <identity>
                            [...]
-                        </eag:identity>
-                        <eag:description>
-                           <eag:access question="yes">
-                              <eag:accessConditions>No hay restricciones de acceso</eag:accessConditions>
-                           </eag:access>
-                        </eag:description>
+                        </identity>
+                        <description>
+                           <access question="yes">
+                              <accessConditions>No hay restricciones de acceso</accessConditions>
+                           </access>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eidentity>
+                           [...]
+                        </eidentity>
+                        <description>
+                           <access question="yes (with conditions">
+                              <accessConditions>By appointment only</accessConditions>
+                           </access>
+                        </description>
                      </eag:repository>
                   </egXML>
                </div>
@@ -391,40 +474,77 @@
                   <p>Accessibility</p>
                </div>
                <div type="summary">
-                  <p>Details about services for users with disabilities.</p>
+                  <p>Information on physical access to the reading room and other public areas and
+                     accessibility services provided for users.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>description</p>
+                  <p>access</p>
                </div>
                <div type="attributes">
                   <p>
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Use this element to provide information about any details regarding enhanced accessibility for users with disabilities such as building features, specialised equipment or tools, parking or lifts, etc.</p>
+                  <p>Use this element to provide information for people with physical or mental disabilities.
+                     For example parking, building features, e.g. lifts, specialised equipment, and
+                     useful tools or support, e.g. screen readers, and staff with sign language.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
+                     <repository>
+                        <identity>
                            [...]
-                        </eag:identity>
-                        <eag:description>
-                           <eag:accessibility question="yes">
+                        </identity>
+                        <description>
+                           <accessibility question="yes">
                              There are dedicated parking areas available for persons with disabilities. Access to the building is at ground level and there are lifts to the upper floors of the reading room.
-                           </eag:accessibility>
-                        </eag:description>
-                     </eag:repository>
+                           </accessibility>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <repository>
+                        <identity>
+                           [...]
+                        </identity>
+                        <description>
+                           <accessibility question="yes">
+                              The reading room is wheelchair-friendly. For help with reading
+                              old documents We provide magnifying glasses and we also have staff familiar with sign
+                              language.
+                            </accessibility>
+                        </description>
+                     </repository>
                   </egXML>
                </div>
             </div>
@@ -965,14 +1085,35 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
-               </div>
+                  <p>The history of the repository building and important features. Might include
+                     the date of opening, environmental storage conditions, architectural features,
+                     design of the reading room, etc.</p>
+                </div>
                <div type="availability">
-                  <p>Required, repeatable</p>
+                  <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -992,6 +1133,23 @@
                         </eag:description>
                      </eag:repository>
                   </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:buildingInfo>
+                              <eag:building languageOfElement="eng">The Federal Archives in Koblenz were founded
+                                 in 1952. The building in vicinity of the then capital Bonn first was only
+                                 meant as an interim solution. When the construction works for the current
+                                 building started in 1982, it became a permanent one: it is functional and
+                                 with optimised conditions for storing the archival material and for
+                                 working.</eag:building>
+                           </eag:buildingInfo>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-buildingInfo">
@@ -1005,7 +1163,7 @@
                   <p>Information about the repository building and its features</p>
                </div>
                <div type="mayContain">
-                  <p>building (1..n), lengthOfShelves (0..n), repositoryArea (0..n)</p>
+                  <p>building (0..n), lengthOfShelves (0..n), repositoryArea (0..n)</p>
                </div>
                <div type="mayOccurWithin">
                   <p>description</p>
@@ -1015,11 +1173,26 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Use the subelements of <gi>buildingInfo</gi> to provide general characteristics of the building (<gi>building</gi>), area (<gi>repositoryArea</gi>) and capacity of storage (<gi>lengthOfShelvesd</gi>) of the repository.</p>
+                  <p>Use the subelements of <gi>buildingInfo</gi> to provide general characteristics
+                     of the building. Use <gi>building</gi> to provide some historical or other information about the repository building, <gi>repositoryArea</gi> to state the area of the repository and <gi>lengthOfShelves</gi> to specify the capacity of storage.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -1050,6 +1223,7 @@
                   </egXML>
                </div>
             </div>
+
             <div type="elementDocumentation" xml:id="elem-chronItem">
                <!-- Manonmani (edit), Ana (review) -->
                <!-- Adapt text from EAC-CPF to EAG where necessary; 
@@ -1340,7 +1514,7 @@
                   <p>Dates of closure</p>
                </div>
                <div type="summary">
-                  <p>Dates and times of closure of the repository.</p>
+                  <p>Dates and times when the reading room of the repository is closed.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -1353,16 +1527,55 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Provide information on closing dates, such as public holidays. It may be
+                     useful to link to your website for more specific information, such as a short
+                     closure for refurbishment or for stock taking.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:timetable>
+                              <eag:closing>The Archives are closed on public holidays and over the
+                                 Christmas and New Year period. We also close for one week’s
+                                 stocktaking in early September. Occasionally, the Archives Reading
+                                 Room is closed for visits and seminars. Please refer to our website
+                                 for more information. 
+                       </eag:closing>
+                           </eag:timetable>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
                         <eag:identity>
@@ -1802,7 +2015,8 @@
                   <p>Corporate Name</p>
                </div>
                <div type="summary">
-                  <p>An element for identifying the name of an organization or group of people.</p>
+                  <p>An element for providing the name of an organization or group of people that
+                     acts as an entity.</p>
                </div>
                <div type="mayContain">
                   <p>part</p>
@@ -1815,19 +2029,91 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <item>localType</item>
+                        <label>Optional</label>
+                        <item>localTypeDeclarationReference</item>
+                        <label>Optional</label>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Provide the full name of the organization or body. Dates can be included to help identify the
+                     organization, particularly if it has changed its name over time.</p>
+                  <p>Can include any group that acts as an entity, for example, a government
+                     department, museum, congress, music group or exhibition.</p>
+                   <p>If the name is taken from a source such as VIAF or Wikidata then the attribute
+                     <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
+                  <p>Adding organization names to holdings information can highlight particular areas of strength
+                     of the institution's holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:corpName>
+                           <eag:part localType="name" languageOfElement="eng">International Court of Justice</eag:part>
+                       </eag:corpName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:corpName>
+                           <eag:part languageOfElement="spa">Banco Internacional de
+                           Reconstruccion y Fomento</eag:part>
+                        </eag:corpName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:corpName vocabularySource="VIAF" vocabularySourceURI="http://viaf.org/"
+                           valueURI="http://viaf.org/viaf/141370001" languageOfElement="ger">
+                           <eag:part>Berliner Philharmoniker</eag:part>
+                        </eag:corpName>
+                     </eag:holdings>
+                      </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -2692,16 +2978,60 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>coverage</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Provide extent information that enables end users to get a sense of the size of
+                     your collections. The required subelement <gi>num</gi> should be used to provide
+                     information about coverage. Physical coverage should be given in 
+                     linear, square or cubic metres; digital coverage in megabytes, 
+                     gigabytes, terabytes, petabytes or exabytes.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:holdings>
+                              <eag:extent>
+                                 <eag:num unit="cubicmetre">800</eag:num>
+                              </eag:extent>
+                              <eag:extent>
+                                 <eag:num unit="gigabyte">5,000</eag:num>
+                              </eag:extent>
+                              <eag:descriptiveNote>
+                                 <p languageOfElement="eng">Special Collections at the University of
+                                    Bradford holds over 100 collections of rare books and archives
+                                    on the history of the University, Bradford, Yorkshire, history, politics, literature,
+                                    archaeology and much more. Our collections include manuscripts, letters, photographs, artworks, 
+                                    newspapers, maps, pamphlets, objects, pipes (J.B.Priestley's) and digital files.</p>
+                              </eag:descriptiveNote>                    
+                           </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
                         <eag:identity>
@@ -2710,7 +3040,7 @@
                         <eag:description>
                            <eag:holdings>
                               <eag:extent>
-                                 <eag:num unit="linearmetre">300.000</eag:num>
+                                 <eag:num unit="linearmetre">300,000</eag:num>
                               </eag:extent>
                            </eag:holdings>
                         </eag:description>
@@ -2726,7 +3056,7 @@
                   <p xml:lang="eng">Family Name</p>
                </div>
                <div type="summary">
-                  <p>An element for identifying the name of a group of people with blood relations, or persons who form a household.</p>
+                  <p>An element for providing a family name.</p>
                </div>
                <div type="mayContain">
                   <p>part</p>
@@ -2739,19 +3069,91 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <item>localType</item>
+                        <label>Optional</label>
+                        <item>localTypeDeclarationReference</item>
+                        <label>Optional</label>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>The name of a group that is recognised as a family. May be related by birth,
+                     marriage or adoption. Estate papers or business papers may typically relate to a family.</p>
+                  <p>Adding family names to holdings information can highlight particular areas of strength
+                     of the institution's holdings, e.g. the institution holds a major family
+                     archive.</p>
+                  <p>The attribute <att>localType</att> can be used to structure the name.</p>
+                  <p>If the family name is taken from a source such as VIAF or Wikidata then the attribute
+                     <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <eag:repository>
+                       <eag:identity>
+                          [...]
+                       </eag:identity>
+                       <eag:description>
+                     <eag:holdings>
+                        <eag:famName vocabuarySource="VIAF" vocabularySourceURI="http://viaf.org" 
+                           valueURI="http://viaf.org/viaf/309813092">
+                           <eag:part>Rothschild family</eag:part>
+                          </eag:famName>
+                     </eag:holdings>
+                       </eag:description>
+                    </eag:repository>
+                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:famName>
+                           <eag:part localType="name">Cavendish-Bentinck</eag:part>
+                           <eag:part localType="epithet">family</eag:part>
+                           <eag:part localType="title">Dukes of Portland</eag:part>
+                        </eag:famName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:famName>
+                           <eag:part>Hanau-Lichtenberg family</eag:part>
+                         </eag:famName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -3025,7 +3427,7 @@
                   <gi>genreForm</gi>
                </head>
                <div type="fullName">
-                  <p xml:lang="eng">Genre/Physical Characteristic</p>
+                  <p xml:lang="eng">Genre or form</p>
                </div>
                <div type="summary">
                   <p>An element for encoding a genre or form of material.</p>
@@ -3041,19 +3443,94 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>The type of material being described. Genre refers to style or function rather than subject,
+                     such as correspondence or contracts. Form is a physical characteristic, such as microfilm. Correspondence as a                      genre could be in the form of letterbooks for example. 
+                     A diary could be considered a genre, but it also has a typical form, as a bound
+                     volume (though a diary could be in the form of loose pages for example). </p>
+                     <p>Typical entries in this element might be diaries, letters, photographs, or something more specific such as 
+                     letters of administration, aerial photographs or architectural dawings. </p>
+                     <p>If the entry is taken from a source such as the Thesaurus for Graphic Materials
+                     then the attribute <att>vocabularySource</att> can be used to identify this, and
+                     <att>vocabularySourceURI</att> can provide the URI.</p>
+                  <p>Adding genre or form to holdings can highlight areas of strength or specialism
+                     of the repository, for example, an academic archive might have significant
+                     holdings of theses or a regional repository might have census maps.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="eng">
+                           <eag:part>Political posters</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="eng" vocabularySource="tgm">
+                           <eag:part>Manuscripts, Typescripts, Photographs</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Lettres</eag:part>
+                        </eag:genreForm>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Photographies aériennes</eag:part>
+                        </eag:genreForm>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Cartes postales</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -3195,10 +3672,10 @@
                   <p>Archival and other holdings</p>
                </div>
                <div type="summary">
-                  <p>Archival and other holdings of the institution.</p>
+                  <p>Archival and other related holdings of the institution.</p>
                </div>
                <div type="mayContain">
-                  <p>corpName (0..n), date or dateRange or dateSet (0...1), descriptiveNote (0..1), extent (0..n), 
+                  <p>corpName (0..n), date or dateRange or dateSet (0..1), descriptiveNote (0..1), extent (0..n), 
                   famName (0..n), genreForm (0..n), name (0..n), persName (0..n), placeName (0..n), subject (0..n)</p>
                </div>
                <div type="mayOccurWithin">
@@ -3209,11 +3686,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>The element <gi>holdings</gi> allows giving a concise overview of one's holdings, including date and extent information as well as narrative text using <gi>descriptiveNote</gi>.</p>
+                  <p>The element <gi>holdings</gi> should be used to give a concise overview of
+                     holdings. It is particularly useful to add extent information. May also include
+                     dates of the collections. </p>
+                  <p>Related holdings may describe a reference library, for example.</p>
+                  <p>Personal, corporate and family names can be added as well as subjects in order
+                     to provide structured information for significant people, organisations or subjects
+                     represented in the archive</p>
+                 <p>Narrative text can be included in <gi>descriptiveNote</gi>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -3235,28 +3733,54 @@
                                  </eag:dateRange>
                                  <eag:dateRange>
                                     <eag:fromDate standardDate="1949">1949</eag:fromDate>
-                                    <eag:toDate>till today</eag:toDate>
+                                    <eag:toDate>present</eag:toDate>
                                  </eag:dateRange>
                               </eag:dateSet>
                               <eag:extent>
                                  <eag:num unit="linearmetre">300.000</eag:num>
                               </eag:extent>
-                              <eag:descriptiveNote>
-                                 <eag:p>The Federal Archives have the legal responsibility of permanently preserving the federal archival documents and making them
-                                    available for use. This includes documents (files, papers, cartographic records, pictures, posters, films, sound recordings and 
-                                    machine-readable data) arising from the central institutions of the Holy Roman Empire (1495-1806), the German Confederation (1815-1866),
-                                    the German Reich (1867/71-1945), the occupation zones (1945-1949), the German Democratic Republic (1949-1990) and the Federal
-                                    Republic of Germany (since 1949). The Federal Archives decide whether these documents are assigned a lasting value for research into, or
-                                    understanding of, German history, the ensuring of the legitimate interests of citizens or the provision of information for legislation,
-                                    administration and jurisdiction.</eag:p>
-                                 <eag:p>The Foundation Archives of Parties and Mass Organisations of the GDR in the Federal Archives keeps the archives of the central leadership
-                                    organs of the parties, unions and mass organisations of the GDR. It also looks after the Federal Archives Library, the core of which is
-                                    formed by the library of the former Institute for Marxism-Leninism and other GDR service and organisation libraries.</eag:p>
-                                 <eag:p>The Federal Archives also collect personal papers of important personages, documents of parties, associations and societies of
-                                    cross-regional importance, as well as published sources. Non-state records are acquired for the Federal Archives through an active acquisition and
-                                    transfer policy. Defined collection profiles determine which personal papers and collections or papers of associations and parties, can
-                                    meaningfully supplement the state archives.</eag:p>
+                              <eag:descriptiveNote languageOfElement="eng">
+                                 <eag:p>The Federal Archives have the legal responsibility of permanently preserving the federal archival documents and making them available for use. This includes documents (files, papers, cartographic records, pictures, posters, films, sound recordings and  machine-readable data) arising from the central institutions of the Holy Roman Empire (1495-1806), the German Confederation (1815-1866), the German Reich (1867/71-1945), the occupation zones (1945-1949), the German Democratic Republic (1949-1990) and the Federal Republic of Germany (since 1949). The Federal Archives decide whether these documents are assigned a lasting value for research into, or understanding of, German history, the ensuring of the legitimate interests of citizens or the provision of information for legislation, administration and jurisdiction.</eag:p>
+                                 <eag:p>The Foundation Archives of Parties and Mass Organisations of the GDR in the Federal Archives keeps the archives of the central leadership organs of the parties, unions and mass organisations of the GDR. It also looks after the Federal Archives Library, the core of which is formed by the library of the former Institute for Marxism-Leninism and other GDR service and organisation libraries.</eag:p>
+                                 <eag:p>The Federal Archives also collect personal papers of important personages, documents of parties, associations and societies of cross-regional importance, as well as published sources. Non-state records are acquired for the Federal Archives through an active acquisition and transfer policy. Defined collection profiles determine which personal papers and collections or papers of associations and parties, can meaningfully supplement the state archives.</eag:p>
                               </eag:descriptiveNote>
+                           </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:holdings>
+                              <eag:extent>
+                                 <eag:num unit="cubicmetre">250</eag:num>
+                              </eag:extent>
+                              <eag:persName><eag:part localType="surname">Britten</eag:part><eag:part localType="forenames">
+                                 Edward Benjamin</eag:part><eag:part localType="title">Baron Britten</eag:part><eag:part
+                                    localType="dates"> 1913-1976</eag:part><eag:part localType="epithet">English composer,
+                                       conductor and pianist</eag:part></eag:persName>
+                              <eag:persName><eag:part localType="surname">Pears</eag:part><eag:part localType="forenames">Sir
+                                 Peter Neville Luard </eag:part><eag:part localType="dates">1910-1986</eag:part><eag:part
+                                    localType="epithet">English tenor</eag:part>
+                              </eag:persName>
+                              <eag:subject><eag:part>Music</eag:part></eag:subject>
+                              <eag:subject><eag:part>Composition</eag:part></eag:subject>
+                             <eag:descriptiveNote>
+                                 <p>The archive at the Red House is probably the richest composer’s archive in the world and is
+                                    open to anyone to visit. It is a rich source of information on a wide variety of topics.</p>
+                                 <p>Benjamin Britten’s and Peter Pears’ papers are of course at the
+                                    heart of the collection and the archive holds manuscript scores
+                                    of almost all Britten’s works, both published and unpublished and including his earliest 
+                                    juvenilia.  It contains working papers, letters, costume designs, set designs and set models, 
+                                    photographs, financial documentation and an extensive collection of programmes.</p>
+                                 <p>The correspondence makes up nearly 20,000 files and covers
+                                     professional issues, personal friendships, anti-war and
+                                     anti-colonial activism and a wide range of other topics.</p>
+                              </eag:descriptiveNote>
+                              
                            </eag:holdings>
                         </eag:description>
                      </eag:repository>
@@ -3377,7 +3901,7 @@
                   <p>Image</p>
                </div>
                <div type="summary">
-                  <p>Logo or other imagery representation of the institution.</p>
+                  <p>Logo or other image that represents the institution.</p>
                </div>
                <div type="mayContain">
                   <p>[empty]</p>
@@ -3390,19 +3914,44 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                         <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Element for including an image that will display as part of the EAG document.
+                     Typically a logo for the institution being described, but could be e.g. a photograph
+                  showing the repository building or a small number of images illustrating the holdings of
+                  the repository.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                     <eag:image localType="logo"
+                        href="https://archiveshub.jisc.ac.uk/mediaImages/eag/93.jpg"/>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -3759,7 +4308,8 @@
                   <p>Length of Shelves</p>
                </div>
                <div type="summary">
-                  <p>Information about the length of shelves at the repository building.</p>
+                  <p>Information about the storage capacity of the repository, expressed as length of
+                     shelves.</p>
                </div>
                <div type="mayContain">
                   <p>num</p>
@@ -3772,11 +4322,26 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Information about the length of shelves at the repository building including the respective unit of measurement in the accompanying attribute <att>unit</att>.</p>
+                  <p>Information about the total length of shelves in the storage areas of the repository, in order to
+                     give a sense of the size of the collections, including the respective unit of measurement in the subelement <gi>num</gi> and the accompanying attribute <att>unit</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -4573,19 +5138,87 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <item>localType</item>
+                        <label>Optional</label>
+                        <item>localTypeDeclarationReference</item>
+                        <label>Optional</label>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>An element that can be used where a name cannot be classified as
+                     <gi>persname</gi>, <gi>corpname</gi> or <gi>famname</gi>. Aim to uniquely
+                     identify the entity, adding dates or additional information if useful.</p>
+                  <p>Adding names to holdings information can highlight particular areas of strength
+                     of the institution's holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                      <eag:repository>
+                         <eag:identity>
+                            [...]
+                         </eag:identity>
+                         <eag:description>
+                        <eag:holdings>
+                           <eag:Name>
+                              <eag:part>John Carpenter</eag:part>
+                           </eag:Name>
+                        </eag:holdings>
+                         </eag:description>
+                      </eag:repository>
+                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:Name>
+                           <eag:part>Nehru, Jawaharlal</eag:part>
+                        </eag:Name>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                          <eag:repository>
+                           <eag:identity>
+                                [...]
+                          </eag:identity>
+                     <eag:description>
+                      <eag:holdings>
+                         <eag:Name vocabularySource="wikidata"
+                            vocabularySourceURI="https://en.wikipedia.org/" 
+                            valueURI="https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_Asiatique">
+                           <eag:part>Société Asiatique</eag:part>
+                        </eag:Name>
+                     </eag:holdings>
+                     </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -4829,7 +5462,7 @@
                   <p>Number or amount</p>
                </div>
                <div type="summary">
-                  <p>Concrete number or amount including the respective unit of measurement.</p>
+                  <p>A specific number or amount including the respective unit of measurement.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -4842,11 +5475,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>otherUnit</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>unit</label>
+                        <item>Required (values limited to: cubicmetre, exabyte, gigabyte, linearmetre, megabyte, otherUnit, petabyte, site, squaremetre, terabyte)</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Allows to provide a concrete number or amount including the respective unit of measurement in the accompanying attribute <att>unit</att>.</p>
+                  <p>A specific number or amount. Must include the respective unit of measurement in the accompanying attribute <att>unit</att>.</p>
+                  <p>It is a required element if the elements are used where it can occur. For
+                     example, if you use <gi>extent</gi> or <gi>lengthOfShelves</gi> then  you need
+                     to provide a numerical amount.</p>
                </div>
                <div type="availability">
                   <p>Required, not repeatable</p>
@@ -4863,6 +5517,24 @@
                                  <eag:num unit="squaremetre">6,665</eag:num>
                               </eag:repositoryArea>
                            </eag:buildingInfo>
+                        </eag:descripion>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:descripion>
+                           <eag:workPlaces question="yes">
+                              <eag:num unit="site">70</eag:num>
+                              <eag:computerPlaces>
+                                 <eag:num unit="site">70</eag:num>
+                              </eag:computerPlaces>
+                              <eag:microfilmPlaces>
+                                 <eag:num unit="site">20</eag:num>
+                              </eag:microfilmPlaces>
+                           </eag:workPlaces>
                         </eag:descripion>
                      </eag:repository>
                   </egXML>
@@ -4932,7 +5604,7 @@
                   <p>Opening times</p>
                </div>
                <div type="summary">
-                  <p>Opening times of the repository.</p>
+                  <p>Opening times of the repository reading room.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -4945,16 +5617,51 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Provide opening times for your reading room. It is preferable to provide full
+                     days and times in the 24 hour clock, e.g. Monday-Wednesday 09.00-17.00. You may
+                  link to your own page with opening times or with more detailed information. It is better
+                  to link to your own page if that is more likely to be kept up-to-date.</p>
                </div>
                <div type="availability">
                   <p>Required, repeatable</p>
                </div>
                <div type="examples">
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:timetable>
+                              <eag:opening>Monday-Thursday 09.00-18.00, Friday 09.00-14.00</eag:opening>
+                           </eag:timetable>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
                         <eag:identity>
@@ -5528,7 +6235,7 @@
                   <p xml:lang="eng">Personal Name</p>
                </div>
                <div type="summary">
-                  <p>An element for identifying a personal name.</p>
+                  <p>An element for providing a personal name.</p>
                </div>
                <div type="mayContain">
                   <p>part</p>
@@ -5541,19 +6248,96 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
-                     </list>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <item>localType</item>
+                        <label>Optional</label>
+                        <item>localTypeDeclarationReference</item>
+                        <label>Optional</label>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
+                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Provide a personal name, preferably the full name with life dates. Epithets and
+                  titles can also be included to help to uniquely identify the person. Adding
+                  personal names to holdings information can highlight particular areas of strength
+                  of the institution's holdings.</p>
+                  <p>The attribute <att>localType</att> can be used to structure the name.</p>
+                  <p>If the name is taken from a source such as VIAF or Wikidata then the attribute
+                     <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                    <eag:holdings>
+                       <eag:persName  vocabularySource="VIAF" 
+                          vocabularySourceURI="http://viaf.org/" valueURI="http://viaf.org/viaf/54172695">
+                        <eag:part localType="surname">Nightingale</eag:part>
+                         <eag:part localType="forename">Florence</eag:part>
+                         <eag:part localType="dates">1820-1910</eag:part>
+                        <eag:part localType="epithet">English social reformer, nurse and statistician</eag:part>
+                     </eag:persName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                   </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:persName>
+                           <eag:part localType="surname">Nobel</eag:part>
+                           <eag:part localType="forename">Alfred Bernhard</eag:part>
+                           <eag:part localType="dates">1833-1896</eag:part>
+                           <eag:part localType="epithet">Swedish chemist, engineer, inventor and
+                              philanthropist</eag:part>
+                        </eag:persName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:persName>
+                           <eag:part>Edward Grieg, 1843-1907</eag:part>
+                        </eag:persName>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -6761,7 +7545,7 @@
                   <p>Repository Area</p>
                </div>
                <div type="summary">
-                  <p>Information about the dimensions of the repository area within the building.</p>
+                  <p>Information about the size of the repository area within the building.</p>
                </div>
                <div type="mayContain">
                   <p>num</p>
@@ -6774,11 +7558,26 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>This element is normally used to give the size of the storage areas, which helps
+                     researchers to get a sense of the volume of the holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -6798,7 +7597,21 @@
                         </eag:description>
                      </eag:repository>
                   </egXML>
-               </div>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:buildingInfo>
+                              <eag:repositoryArea>
+                                 <eag:num unit="cubicmetre">550</eag:num>
+                              </eag:repositoryArea>
+                           </eag:buildingInfo>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                 </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryId">
                <head>
@@ -6893,19 +7706,58 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                         <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                         <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p>Use <gi>repositoryRole</gi> to define the role of a repository, especially when describing several repositories that form one institution. Possible roles 
-                     are "headquarters", "branch", "department", or "interim archive", etc.</p>
-                  <p>Do not confuse with <gi>repositoryType</gi> that comes with a predefined list of terms or its sibling <gi>otherRepositoryType</gi>, which both are meant to 
+                  <p><gi>repositoryRole</gi> can be used to describe the managerial or
+                     administrative role of repository, especially when describing several
+                     repositories that are part of one institution. Possible roles  are "headquarters",
+                     "branch", "department", "district office" or "sub-office". You could also use something like "interim
+                     archive" for a temporary location.</p>
+                  <p>Do not confuse with <gi>repositoryType</gi>, which comes with a predefined list
+                     of terms, or its sibling <gi>otherRepositoryType</gi>. These tags are used to 
                      capture types of archival institutions as defined by their mandate, the context they operate in and the type of organisation(s) that they function as an archive for.</p>
+                  <p>If you take your values from a source, you can record it using the vocabulary attributes
+                     <att>valueURI</att>, <att>vocabularySource</att> and
+                     <att>vocabularySourceURI</att></p>. 
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           <eag:nameEntry>
+                              <eag:part>West Yorkshire Archive Service: Calderdale</eag:part>
+                           </eag:nameEntry>
+                        </eag:identity>
+                        <eag:description>
+                           <eag:repositoryRole>District Office</eag:repositoryRole>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
                         <eag:identity>
@@ -7521,7 +8373,7 @@
                   <p>Social Media</p>
                </div>
                <div type="summary">
-                  <p></p>
+                  <p>Information about social media used by the repository or institution.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -7534,19 +8386,61 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <label>Optional</label>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Add information about accounts on social media. It is recommended to provide
+                     the URL using the <att>href</att> attribute.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
+               <!-- may want to assess examples - decide on best practice for encoding this info -->
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                     <eag:description>
+                        <eag:socialMedia href="https://twitter.com/franceArchives">Twitter</eag:socialMedia>
+                     </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:socialMedia href="https://www.facebook.com/cardiffuni">Find us on Facebook</eag:socialMedia>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -7854,7 +8748,7 @@
                   <p xml:lang="eng">Subject</p>
                </div>
                <div type="summary">
-                  <p>An element for encoding topics represented in the materials being described.</p>
+                  <p>An element for topics represented in the materials being described.</p>
                </div>
                <div type="mayContain">
                   <p>part</p>
@@ -7867,19 +8761,91 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
-               </div>
+                  <p>Adding subjects to holdings information can highlight particular areas of strength
+                     of the institution's holdings.</p>
+                   <p>If the subject is taken from a thesaurus such as Unesco or Library of Congress
+                     Subject Headings then <att>vocabularySource</att> can be used to specify this,
+                     and the <att>vocabularySourceURI</att> can give the URI of the source being
+                      used.</p>
+                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:subject>
+                           <eag:part languageOfElement="eng" vocabularySource="Unesco"
+                              vocabularySourceURI="http://vocabularies.unesco.org/">Industrial Design</eag:part>
+                        </eag:subject>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:subject>
+                           <eag:part languageOfElement="fre" vocabularySource="Unesco"
+                              vocabularySourceURI="http://vocabularies.unesco.org/">Maintien de la
+                              paix</eag:part>
+                        </eag:subject>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:subject>
+                           <eag:part languageOfElement="eng" vocabularySource="LCSH"
+                              vocabularySourceURI="https://authorities.loc.gov/">Agriculture --
+                              History -- 19th century</eag:part>
+                        </eag:subject>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -8167,11 +9133,28 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>question</label>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Contains <gi>opening</gi> and <gi>closing</gi> tags for providing opening hours
+                  and dates of closure. Information on opening hours is required. Note that this
+                  elemen cannot contain text.</p>
                </div>
                <div type="availability">
                   <p>Required, repeatable</p>
@@ -8183,7 +9166,20 @@
                            [...]
                         </eag:identity>
                         <eag:description>
-                           <eag:timetable>
+                           <eag:timetable languageOfElement="eng">
+                              <eag:opening>The reading room is open Monday to Friday 10.00-17.00.</eag:opening>
+                              <eag:closing>Closed over the Christmas period and on Bank Holidays</eag:closing>
+                           </eag:timetable>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:timetable languageOfElement="spa">
                               <eag:opening>Consulta en sala: de lunes a viernes de 8.30 a 14.30 horas. Información y asuntos generales: de lunes a viernes de 8.30 a 14:30 horas</eag:opening>
                               <eag:closing>Fiestas locales (San Ildefonso y Corpus Christi, variables anualmente), fiestas nacionales, fiestas de la comunidad autónoma (31 de mayo), 
                                  24 de diciembre y 31 de diciembre.</eag:closing>
@@ -8353,7 +9349,8 @@
                   <p>Conditions of use</p>
                </div>
                <div type="summary">
-                  <p>Can incorporate information (and links) to terms of use, archival law or fee structure etc.</p>
+                  <p>Information about use of the materials. May incorporate information (and links)
+                     to terms of use, archival law, fee structure, etc.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -8366,11 +9363,34 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Information about terms of use for the materials, such as restrictions on printing or
+                     downloading content, information on copyright and data protection, and prohibited use. For example, copies can
+                     be made for non-commercial purposes only, or copyright exists in these
+                     materials and they cannot be copied without special permission.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -8383,9 +9403,26 @@
                         </eag:identity>
                         <eag:description>
                            <eag:access question="yes">
-                              <eag:useCondition href="http://www.mecd.gob.es/cultura-mecd/dms/mecd/cultura-mecd/areas-cultura/archivos/mc/archivos/aca/servicios/consulta-en-sala/NORMAS_ACCESO_SALA.pdf">
-                                 Normas para el acceso y consulta de documentos en los archivos estatales
-                              </eag:useCondition>
+                              <eag:useConditions  languageOfElement="eng" href="https://archives.bodleian.ox.ac.uk/terms">
+                                 Terms of Use for Bodleian Archives and Manuscripts
+                              </eag:useConditions>
+                           </eag:access>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:access question="yes">
+                  <useConditions languageOfElement="ger"
+                     href="https://www.bundesarchiv.de/DE/Navigation/Benutzen/Hinweise-zur-Benutzung/hinweise-zur-benutzung.html"
+                     >Allgemeines zur Benutzung</useConditions>
+                  <useConditions languageOfElement="eng"
+                     href="https://www.bundesarchiv.de/DE/Navigation/Benutzen/Hinweise-zur-Benutzung/hinweise-zur-benutzung.html"
+                     >General information on access and use</useConditions>
                            </eag:access>
                         </eag:description>
                      </eag:repository>
