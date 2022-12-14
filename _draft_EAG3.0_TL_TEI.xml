@@ -1646,7 +1646,7 @@
                      composition of the EAG instance.</p>
                </div>
                <div type="mayContain">
-                  <p>conventionDeclaration (0..n), languageDeclaration (0..n), localControl (0..n),
+                  <p>conventionDeclaration (0..n), languageDeclaration (0..n), 
                      localTypeDeclaration (0..n), maintenanceAgency (1..1), maintenanceHistory
                      (1..1), otherRecordId (0..n), recordId (1..1), rightsDeclaration (0..n),
                      representation (0..n), sources (0..1)</p>
@@ -1703,9 +1703,7 @@
                         <att>maintenanceStatus</att> and the creation, maintenance, and disposition
                      of the instance in <gi>maintenanceHistory</gi>.</p>
                   <p>There are optional elements available to declare languages, rules, conventions
-                     and sources used in the EAG instance. Other control elements considered
-                     necessary but not otherwise included may be given in the <gi>localControl</gi>
-                     element. Similarly, local types for certain elements used throughout the
+                     and sources used in the EAG instance. Local types for certain elements used throughout the
                      EAG instance are recommended to be defined in the
                         <gi>localTypeDeclaration</gi> element</p>
                   <p>The available child elements (both required and optional), in their prescribed
@@ -1729,9 +1727,6 @@
                            <item><gi>languageDeclaration</gi> - Optional. Contains coded and natural
                               language information about the language or languages of the EAG
                               instance.</item>
-                           <item><gi>localControl</gi> - Optional. Contains any administrative
-                              metadata necessary due to local practice that are not represented by
-                              the other elements in <gi>control</gi>.</item>
                            <item><gi>localTypeDeclaration</gi> - Optional. Contains information
                               about local conventions used in the <att>localType</att>
                               attribute.</item>
@@ -1956,7 +1951,7 @@
                   <p>[text]</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>chronItem, dateSet, existDates, function, holdings, legalStatus, localControl,
+                  <p>chronItem, dateSet, existDates, function, holdings, legalStatus, 
                      mandate, otherRepositoryType, place, relation, useDates</p>
                </div>
                <div type="attributes">
@@ -2039,8 +2034,6 @@
                      repeatable</p>
                   <p>Within <gi>dateSet</gi>: at least two of <gi>date</gi> and/or
                         <gi>dateRange</gi> required, repeatable</p>
-                  <p>Within <gi>localControl</gi>: one of <gi>date</gi> or <gi>dateRange</gi>
-                     optional, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -2086,7 +2079,7 @@
                   <p>fromDate (0..1), toDate (0..1)</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>chronItem, dateSet, existDates, function, holdings, legalStatus, localControl,
+                  <p>chronItem, dateSet, existDates, function, holdings, legalStatus, 
                      mandate, otherRepositoryType, place, relation, useDates</p>
                </div>
                <div type="attributes">
@@ -2154,8 +2147,6 @@
                      repeatable</p>
                   <p>Within <gi>dateSet</gi>: at least two of <gi>date</gi> and/or
                         <gi>dateRange</gi> required, repeatable</p>
-                  <p>Within <gi>localControl</gi>: one of <gi>date</gi> or <gi>dateRange</gi>
-                     optional, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -4161,77 +4152,6 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
-            </div>
-            <div type="elementDocumentation" xml:id="elem-localControl">
-               <head>
-                  <gi>localControl</gi>
-               </head>
-               <div type="fullName">
-                  <p>Local Control</p>
-               </div>
-               <div type="summary">
-                  <p>An optional child element of <gi>control</gi>, used to specify any control
-                     information necessary to accommodate local practice.</p>
-               </div>
-               <div type="mayContain">
-                  <p>date or dateRange (0..1), term (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>control</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>localType</label>
-                        <item>Optional</item>
-                        <label>localTypeDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                        <label>valueURI</label>
-                        <item>Optional</item>
-                        <label>vocabularySource</label>
-                        <item>Optional</item>
-                        <label>vocabularySourceURI</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p>An element used to record and define any control information necessary to
-                     accommodate local practice, in addition to the elements otherwise made
-                     available within <gi>control</gi>.</p>
-                  <p>The value of the entry must be given in a child <gi>term</gi> element and an
-                     associated date or range of dates can be given as either <gi>date</gi> or
-                        <gi>dateRange</gi>.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
-                  <list type="simple">
-                     <item><gi>term</gi></item>
-                     <item><gi>date</gi> or <gi>dateRange</gi></item>
-                  </list>
-               </div>
-               <div type="attributeusage">
-                  <list type="simple">
-                     <item>Use <att>localType</att> if local practice requires recording the type of
-                        entry.</item>
-                  </list>
-               </div>
-               <div type="availability">
-                  <p>Optional, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Text from the EAC-CPF 2.0 Tag Library: "No example has been provided for localControl. If you have any examples or use cases, please send them to TS-EAS." The EAG 2012 Tag Library only includes an example regarding the detail level of the description, which has now been moved into @detailLevel with <control>. The EAD revision currently tends to removing <localControl> altogether, which also was discussed during the EAC-CPF revision, hence we might want to keep it without example in EAG 3.0 as well and might want to consider removing it, if it indeed gets removed from the other EAS. -->
                   </egXML>
                </div>
             </div>
@@ -8253,7 +8173,7 @@
                   <p>[text]</p>
                </div>
                <div type="mayOccurWithin">
-                  <p>function, legalStatus, localControl, mandate, otherRepositoryType</p>
+                  <p>function, legalStatus, mandate, otherRepositoryType</p>
                </div>
                <div type="attributes">
                   <p>
@@ -8279,7 +8199,7 @@
                </div>
                <div type="description">
                   <p><gi>term</gi> is a required child element of <gi>function</gi>,
-                        <gi>legalStatus</gi>, <gi>localControl</gi>, <gi>mandate</gi>, and <gi>otherRepositoryType</gi>, used to
+                        <gi>legalStatus</gi>, <gi>mandate</gi>, and <gi>otherRepositoryType</gi>, used to
                      specify a descriptive term in accordance with authorized vocabularies or local
                      rules.</p>
                   <p><gi>term</gi> can be repeated within its parent element to include translations
