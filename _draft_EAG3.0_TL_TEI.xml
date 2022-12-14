@@ -9525,6 +9525,35 @@
                   </egXML>
                </div>
             </div>
+            <div type="attributeDocumentation" xml:id="attr-otherUnit">
+               <head>
+                  <att>otherUnit</att>
+               </head>
+               <div type="fullName">
+                  <p>Other Unit</p>
+               </div>
+               <div type="summary">
+                  <p>Allows the inclusion of other formats or units specified in <gi>citedRange</gi> and <gi>num</gi>.</p>
+               </div>
+               <div type="description">
+                  <p>Use <att>otherUnit</att> when using the parallel <att>unit</att> with the value "otherUnit" within <gi>citedRange</gi> or <gi>num</gi>. You can then include any unit of measurement that would be applicable to the respective context as the value of <att>otherUnit</att>.</p>
+               </div>
+               <div type="datatype">
+                  <p>token</p>
+               </div>
+               <div type="examples">
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
+                     <eag:citedRange unit="otherUnit" otherUnit="page">1</eag:citedRange>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
+                     <eag:holdings>
+                        <eag:extent>
+                           <eag:num unit="otherUnit" otherUnit="documents">1.5 million</eag:num>
+                        </eag:extent>
+                     </eag:holdings>
+                  </egXML>
+               </div>
+            </div>
             <div type="attributeDocumentation" xml:id="attr-preferredForm">
                <head>
                   <att>preferredForm</att>
@@ -9981,18 +10010,18 @@
                   <p>Defines the format or unit that is specified in <gi>citedRange</gi> and <gi>num</gi>.</p>
                </div>
                <div type="description">
-                  <p>Use <att>unit</att> optionally to document the format or unit that is specified in <gi>citedRange</gi>, for example page number ("pageNumber") or volume number ("volumeNumber").</p>
-                  <p>Using <att>unit</att> within <gi>num</gi> is required and comes with a predefined list of values, which can be applied depending on the context. E.g. use "linearmetre" when used within <gi>lengthOfShelves</gi> or <gi>extent</gi>, "squaremetre" or "cubicmetre" when used within <gi>repositoryArea</gi>, "megabyte", "gigabyte", "terabyte", "petabyte", or "exabyte" when used within <gi>extent</gi> for digital holdings, and "site" when used within <gi>workPlaces</gi>, <gi>computerPlaces</gi>, or <gi>microfilmPlaces</gi>.</p>
+                  <p>Use <att>unit</att> optionally with the value "otherUnit" and the parallel <att>otherUnit</att> to document the format or unit that is specified in <gi>citedRange</gi>, for example page number ("pageNumber") or volume number ("volumeNumber").</p>
+                  <p>Using <att>unit</att> within <gi>num</gi> is required. Select a value from the predefined list, which can be applied depending on the context. E.g. use "linearmetre" when used within <gi>lengthOfShelves</gi> or <gi>extent</gi>, "squaremetre" or "cubicmetre" when used within <gi>repositoryArea</gi>, "megabyte", "gigabyte", "terabyte", "petabyte", or "exabyte" when used within <gi>extent</gi> for digital holdings, and "site" when used within <gi>workPlaces</gi>, <gi>computerPlaces</gi>, or <gi>microfilmPlaces</gi>.</p>
                </div>
                <div type="datatype">
                   <p>token</p>
                </div>
                <div type="values">
-                  <p>Values in <gi>num</gi>: cubicmetre, exabyte, gigabyte, linearmetre, megabyte, petabyte, site, squaremetre, terabyte</p>
+                  <p>cubicmetre, exabyte, gigabyte, linearmetre, megabyte, otherUnit, petabyte, site, squaremetre, terabyte</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:citedRange unit="page">1</eag:citedRange>
+                     <eag:citedRange unit="otherUnit" otherUnit="page">1</eag:citedRange>
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:holdings>
