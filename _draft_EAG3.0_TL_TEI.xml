@@ -5563,10 +5563,7 @@
                      both physical and electronic.(ISDIAH, chapter 5.2.1)</p>
                </div>
                <div type="mayContain">
-                  <p>address (1..n), contact (1..n), date or dateRange or dateSet (0..1),
-                     descriptiveNote (0..1), geographicCoordinates (1..n), placeName (1..n),
-                     placeRole (1..n)</p>
-                  <p>address or contact or geographicCoordinates or placeName or
+                    <p>address or contact or geographicCoordinates or placeName or
                      placeRole (1..n), date or dateRange or dateSet (0..1),
                      descriptiveNote (0..1)</p>
                </div>
