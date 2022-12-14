@@ -8823,7 +8823,7 @@
                   </egXML>
                </div>
             </div>
-               <div type="elementDocumentation" xml:id="elem-timetable">
+            <div type="elementDocumentation" xml:id="elem-timetable">
                <head>
                   <gi>timetable</gi>
                </head>
