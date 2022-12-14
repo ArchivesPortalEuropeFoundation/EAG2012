@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.10
-    Date: 20220309
+    Version: 0.1.13
+    Date: 20221214
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 
@@ -112,7 +112,6 @@
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element name="conventionDeclaration" type="conventionDeclaration"/>
                 <xs:element name="languageDeclaration" type="languageDeclaration"/>
-                <xs:element name="localControl" type="localControl"/>
                 <xs:element name="localTypeDeclaration" type="localTypeDeclaration"/>
                 <xs:element name="otherRecordId" type="otherRecordId" />
                 <xs:element name="representation" type="representation"/>
@@ -381,7 +380,23 @@
     
     <xs:complexType name="citedRange" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="unit" type="xs:token"/>
+        <xs:attribute name="unit">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="cubicmetre"/>
+              <xs:enumeration value="exabyte"/>
+              <xs:enumeration value="gigabyte"/>
+              <xs:enumeration value="linearmetre"/>
+              <xs:enumeration value="megabyte"/>
+              <xs:enumeration value="otherUnit"/>
+              <xs:enumeration value="petabyte"/>
+              <xs:enumeration value="site"/>
+              <xs:enumeration value="squaremetre"/>
+              <xs:enumeration value="terabyte"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="otherUnit" type="xs:NMTOKEN"/>
     </xs:complexType>
     
     <xs:complexType name="objectXMLWrap">
@@ -426,90 +441,6 @@
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="vocabulary"/>
-    </xs:complexType>
-    
-    <xs:complexType name="localControl">
-        <xs:sequence>
-            <xs:element name="term" type="term" maxOccurs="unbounded"/>
-            <xs:choice minOccurs="0">
-                <xs:element name="date" type="date"/>
-                <xs:element name="dateRange" type="dateRange"/>
-            </xs:choice>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="vocabulary"/>
-    </xs:complexType>
-    
-    <xs:complexType name="term" mixed="true">
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-    
-    <xs:complexType name="date" mixed="true">
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="m.dateSingle"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attribute name="status">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="unknown"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-    </xs:complexType>
-    
-    <xs:attributeGroup name="m.dateSingle">
-        <xs:attribute name="calendar" type="xs:NMTOKEN"/>
-        <xs:attribute name="certainty" type="xs:NMTOKEN"/>
-        <xs:attribute name="era" type="xs:NMTOKEN"/>
-        <xs:attribute name="notAfter" type="xs:token"/>
-        <xs:attribute name="notBefore" type="xs:token"/>
-        <xs:attribute name="standardDate" type="xs:token"/>
-    </xs:attributeGroup>
-    
-    <xs:complexType name="dateRange">
-        <xs:choice>
-            <xs:sequence>
-                <xs:element type="fromDate" name="fromDate"/>
-                <xs:element type="toDate" name="toDate" minOccurs="0"/>
-            </xs:sequence>
-            <xs:element type="toDate" name="toDate"/>
-        </xs:choice>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="references"/>
-    </xs:complexType>
-    
-    <xs:complexType name="fromDate" mixed="true">
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="m.dateSingle"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attribute name="status">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="unknown"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-    </xs:complexType>
-    
-    <xs:complexType name="toDate" mixed="true">
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="m.dateSingle"/>
-        <xs:attributeGroup ref="references"/>
-        <xs:attribute name="status">
-            <xs:simpleType>
-                <xs:restriction base="xs:token">
-                    <xs:enumeration value="ongoing"/>
-                    <xs:enumeration value="unknown"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
     </xs:complexType>
     
     <xs:complexType name="otherRecordId">
@@ -618,6 +549,96 @@
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
        
+    <xs:group name="m.dates">
+        <xs:choice>
+            <xs:element name="date" type="date"/>
+            <xs:element name="dateRange" type="dateRange"/>
+            <xs:element name="dateSet" type="dateSet"/>
+        </xs:choice>
+    </xs:group>
+
+    <xs:complexType name="dateSet">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="date" type="date"/>
+                <xs:element name="dateRange" type="dateRange"/>
+            </xs:choice>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="date" type="date"/>
+                <xs:element name="dateRange" type="dateRange"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+
+    <xs:complexType name="date" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="m.dateSingle"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attribute name="status">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="unknown"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:attributeGroup name="m.dateSingle">
+        <xs:attribute name="calendar" type="xs:NMTOKEN"/>
+        <xs:attribute name="certainty" type="xs:NMTOKEN"/>
+        <xs:attribute name="era" type="xs:NMTOKEN"/>
+        <xs:attribute name="notAfter" type="xs:token"/>
+        <xs:attribute name="notBefore" type="xs:token"/>
+        <xs:attribute name="standardDate" type="xs:token"/>
+    </xs:attributeGroup>
+    
+    <xs:complexType name="dateRange">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element type="fromDate" name="fromDate"/>
+                <xs:element type="toDate" name="toDate" minOccurs="0"/>
+            </xs:sequence>
+            <xs:element type="toDate" name="toDate"/>
+        </xs:choice>
+        <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attributeGroup ref="references"/>
+    </xs:complexType>
+    
+    <xs:complexType name="fromDate" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="m.dateSingle"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attribute name="status">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="unknown"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="toDate" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="m.dateSingle"/>
+        <xs:attributeGroup ref="references"/>
+        <xs:attribute name="status">
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="ongoing"/>
+                    <xs:enumeration value="unknown"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
     <xs:complexType name="nameEntrySet">
         <xs:sequence>
             <xs:element name="nameEntry" type="nameEntry"/>
@@ -704,31 +725,6 @@
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
-    </xs:complexType>
-
-    <xs:group name="m.dates">
-        <xs:choice>
-            <xs:element name="date" type="date"/>
-            <xs:element name="dateRange" type="dateRange"/>
-            <xs:element name="dateSet" type="dateSet"/>
-        </xs:choice>
-    </xs:group>
-
-    <xs:complexType name="dateSet">
-        <xs:sequence>
-            <xs:choice>
-                <xs:element name="date" type="date"/>
-                <xs:element name="dateRange" type="dateRange"/>
-            </xs:choice>
-            <xs:choice maxOccurs="unbounded">
-                <xs:element name="date" type="date"/>
-                <xs:element name="dateRange" type="dateRange"/>
-            </xs:choice>
-        </xs:sequence>
-        <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
-        <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:complexType name="description">
@@ -944,6 +940,11 @@
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
+    </xs:complexType>
+    
+    <xs:complexType name="term" mixed="true">
+        <xs:attributeGroup ref="common"/>
+        <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
     <xs:complexType name="legalStatuses">
@@ -1162,6 +1163,7 @@
                     <xs:enumeration value="gigabyte"/>
                     <xs:enumeration value="linearmetre"/>
                     <xs:enumeration value="megabyte"/>
+                    <xs:enumeration value="otherUnit"/>
                     <xs:enumeration value="petabyte"/>
                     <xs:enumeration value="site"/>
                     <xs:enumeration value="squaremetre"/>
@@ -1169,6 +1171,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attribute name="otherUnit" type="xs:NMTOKEN"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
