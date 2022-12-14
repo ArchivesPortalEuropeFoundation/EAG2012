@@ -291,7 +291,6 @@
                </div>
             </div>
              <div type="elementDocumentation" xml:id="elem-access">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>access</gi>
                </head>
@@ -335,8 +334,7 @@
                         <item>Optional</item>
                         <label>target</label>
                         <item>Optional</item>
-                        <label>question</label>
-                    </list>
+                     </list>
                   </p>
                </div>
                <div type="description">
@@ -376,7 +374,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessConditions">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>accessConditions</gi>
                </head>
@@ -470,7 +467,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessibility">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>accessibility</gi>
                </head>
@@ -1069,7 +1065,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-building">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>building</gi>
                </head>
@@ -1158,7 +1153,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-buildingInfo">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>buildingInfo</gi>
                </head>
@@ -1169,7 +1163,7 @@
                   <p>Information about the repository building and its features</p>
                </div>
                <div type="mayContain">
-                  <p>building (1..n), lengthOfShelves (0..n), repositoryArea (0..n)</p>
+                  <p>building (0..n), lengthOfShelves (0..n), repositoryArea (0..n)</p>
                </div>
                <div type="mayOccurWithin">
                   <p>description</p>
@@ -1198,9 +1192,7 @@
                </div>
                <div type="description">
                   <p>Use the subelements of <gi>buildingInfo</gi> to provide general characteristics
-                     of the building. <gi>building</gi> is a mandatory subelement, and you can also use
-                     <gi>repositoryArea</gi> to state the area of the repository and capacity of
-                     storage using <gi>lengthOfShelves</gi>.</p>
+                     of the building. Use <gi>building</gi> to provide some historical or other information about the repository building, <gi>repositoryArea</gi> to state the area of the repository and <gi>lengthOfShelves</gi> to specify the capacity of storage.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -1515,7 +1507,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-closing">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>closing</gi>
                </head>
@@ -2017,7 +2008,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-corpName">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>corpName</gi>
                </head>
@@ -2962,7 +2952,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-extent">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>extent</gi>
                </head>
@@ -3004,9 +2993,9 @@
                </div>
                <div type="description">
                   <p>Provide extent information that enables end users to get a sense of the size of
-                     your collections. The <att>num</att> attribute should be used to provide
+                     your collections. The required subelement <gi>num</gi> should be used to provide
                      information about coverage. Physical coverage should be given in 
-                     linear, square or cubic metres. and digital coverage in megabytes, 
+                     linear, square or cubic metres; digital coverage in megabytes, 
                      gigabytes, terabytes, petabytes or exabytes.</p>
                </div>
                <div type="availability">
@@ -3020,9 +3009,12 @@
                         </eag:identity>
                         <eag:description>
                            <eag:holdings>
-                              <eag:extent><eag:num unit="cubicmetre">800</eag:num>
+                              <eag:extent>
+                                 <eag:num unit="cubicmetre">800</eag:num>
                               </eag:extent>
-                              <eag:extent><eag:num unit="gigabyte">5,000</eag:num></eag:extent>
+                              <eag:extent>
+                                 <eag:num unit="gigabyte">5,000</eag:num>
+                              </eag:extent>
                               <eag:descriptiveNote>
                                  <p languageOfElement="eng">Special Collections at the University of
                                     Bradford holds over 100 collections of rare books and archives
@@ -3051,7 +3043,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-famName">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>famName</gi>
                </head>
@@ -3426,7 +3417,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-genreForm">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>genreForm</gi>
                </head>
@@ -3524,7 +3514,13 @@
                         <eag:description>
                      <eag:holdings>
                         <eag:genreForm languageOfElement="fre">
-                           <eag:part>Lettres, Photographies aériennes, Cartes postales</eag:part>
+                           <eag:part>Lettres</eag:part>
+                        </eag:genreForm>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Photographies aériennes</eag:part>
+                        </eag:genreForm>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Cartes postales</eag:part>
                         </eag:genreForm>
                      </eag:holdings>
                         </eag:description>
@@ -3663,7 +3659,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-holdings">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>holdings</gi>
                </head>
@@ -3674,7 +3669,7 @@
                   <p>Archival and other related holdings of the institution.</p>
                </div>
                <div type="mayContain">
-                  <p>corpName (0..n), date or dateRange or dateSet (0...1), descriptiveNote (0..1), extent (0..n), 
+                  <p>corpName (0..n), date or dateRange or dateSet (0..1), descriptiveNote (0..1), extent (0..n), 
                   famName (0..n), genreForm (0..n), name (0..n), persName (0..n), placeName (0..n), subject (0..n)</p>
                </div>
                <div type="mayOccurWithin">
@@ -3886,7 +3881,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-image">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>image</gi>
                </head>
@@ -4294,7 +4288,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-lengthOfShelves">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>lengthOfShelves</gi>
                </head>
@@ -4335,8 +4328,7 @@
                </div>
                <div type="description">
                   <p>Information about the total length of shelves in the storage areas of the repository, in order to
-                     give a sense of the size of the collections, including the respective unit of measurement in the accompanying
-                     attribute <att>unit</att>.</p>
+                     give a sense of the size of the collections, including the respective unit of measurement in the subelement <gi>num</gi> and the accompanying attribute <att>unit</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -5113,7 +5105,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-name">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>name</gi>
                </head>
@@ -5427,7 +5418,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-num">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>num</gi>
                </head>
@@ -5456,6 +5446,8 @@
                         <item>Optional</item>
                         <label>maintenanceEventReference</label>
                         <item>Optional</item>
+                        <label>otherUnit</label>
+                        <item>Optional</item>
                         <label>scriptOfElement</label>
                         <item>Optional</item>
                         <label>sourceReference</label>
@@ -5463,8 +5455,7 @@
                         <label>target</label>
                         <item>Optional</item>
                         <label>unit</label>
-                         <item>Required (values limited to: squaremetre, linearmetre, cubicmetre,
-                            megabyte, gigabyte, terabyte, petabyte, exabyte, site, book, title)</item>
+                        <item>Required (values limited to: cubicmetre, exabyte, gigabyte, linearmetre, megabyte, otherUnit, petabyte, site, squaremetre, terabyte)</item>
                      </list>
                   </p>
                </div>
@@ -5569,7 +5560,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-opening">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>opening</gi>
                </head>
@@ -6111,7 +6101,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-persName">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>persName</gi>
                </head>
@@ -7269,7 +7258,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryArea">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>repositoryArea</gi>
                </head>
@@ -7397,7 +7385,6 @@
                </div>
             </div>
            <div type="elementDocumentation" xml:id="elem-repositoryRole">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>repositoryRole</gi>
                </head>
@@ -8078,7 +8065,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-socialMedia">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>socialMedia</gi>
                </head>
@@ -8454,7 +8440,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-subject">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>subject</gi>
                </head>
@@ -8839,7 +8824,6 @@
                </div>
             </div>
                <div type="elementDocumentation" xml:id="elem-timetable">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>timetable</gi>
                </head>
@@ -9069,7 +9053,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-useConditions">
-               <!-- Manonmani (review) -->
                <head>
                   <gi>useConditions</gi>
                </head>
