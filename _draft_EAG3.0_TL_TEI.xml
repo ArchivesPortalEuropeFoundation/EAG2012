@@ -291,9 +291,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-access">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library;
-                    needs review/confirmation and completion for various parts -->
                <head>
                   <gi>access</gi>
                </head>
@@ -342,8 +339,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessConditions">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>accessConditions</gi>
                </head>
@@ -389,8 +384,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-accessibility">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>accessibility</gi>
                </head>
@@ -952,8 +945,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-building">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>building</gi>
                </head>
@@ -1004,8 +995,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-buildingInfo">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>buildingInfo</gi>
                </head>
@@ -1344,8 +1333,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-closing">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>closing</gi>
                </head>
@@ -1808,8 +1795,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-corpName">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- Adapted from EAD3 -->
                <head>
                   <gi>corpName</gi>
                </head>
@@ -2687,8 +2672,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-extent">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>extent</gi>
                </head>
@@ -2736,8 +2719,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-famName">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- Adapted from EAD3 -->
                <head>
                   <gi>famName</gi>
                </head>
@@ -3040,8 +3021,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-genreForm">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- Adapted from EAD3 -->
                <head>
                   <gi>genreForm</gi>
                </head>
@@ -3209,8 +3188,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-holdings">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>holdings</gi>
                </head>
@@ -3393,9 +3370,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-image">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; added after publication of the EAG 2012 Tag Library, i.e. no more detailed 
-                    description yet; needs completion for various parts -->
                <head>
                   <gi>image</gi>
                </head>
@@ -3778,8 +3752,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-lengthOfShelves">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>lengthOfShelves</gi>
                </head>
@@ -4581,8 +4553,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-name">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- Adapted from EAD3 -->
                <head>
                   <gi>name</gi>
                </head>
@@ -4852,8 +4822,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-num">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>num</gi>
                </head>
@@ -4957,8 +4925,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-opening">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>opening</gi>
                </head>
@@ -5555,8 +5521,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-persName">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- Adapted from EAD3 -->
                <head>
                   <gi>persName</gi>
                </head>
@@ -6790,8 +6754,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryArea">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repositoryArea</gi>
                </head>
@@ -6911,8 +6873,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-repositoryRole">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>repositoryRole</gi>
                </head>
@@ -7554,9 +7514,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-socialMedia">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
                <head>
                   <gi>socialMedia</gi>
                </head>
@@ -7890,8 +7847,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-subject">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- Adapted from EAD3 -->
                <head>
                   <gi>subject</gi>
                </head>
@@ -8192,8 +8147,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-timetable">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>timetable</gi>
                </head>
@@ -8393,8 +8346,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-useConditions">
-               <!-- Jane (edit), Manonmani (review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>useConditions</gi>
                </head>
