@@ -318,7 +318,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema.  
                           Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                     <abstract eag:languageOfElement="fre">L'Institut d'histoire de l'aluminium est
+                     <eag:abstract languageOfElement="fre">L'Institut d'histoire de l'aluminium est
                         fondé en 1996 dans le but de sauvegarder et valoriser les archives
                         documentant l'histoire de l'aluminum en France. L'association a constitué un
                         important fonds documentaire constitué d'archives, d'une bibliothèque et
@@ -1216,6 +1216,58 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <eag:biogHist>
+                    <eag:chronList>
+                        <eag:chronItem>
+                            <eag:date>1919</eag:date>
+                            <event languageOfElement="ger">Das Reichsarchiv wird als zentrales Archiv
+                            nach der im Versailler Vertrag geforderten Auflösung zahlreicher
+                            militärischer Behörden eingerichtet. Das Reichsarchiv übernimmt Unterlagen
+                            aller obersten Reichsbehörden seit 1867/71 und in einer Außenstelle in
+                            Frankfurt a.M. seit dem Jahr 1924 auch Archivgut des Deutschen Bundes und
+                            des Reichskammergerichts. Im Laufe der Zeit wird es um Schriftgut
+                            nichtstaatlicher Herkunft, fotografische und filmische Dokumente ergänzt.
+                            Das Reichsarchivgebäude befand sich auf dem Brauhausberg in Potsdam.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1935</eag:date>
+                            <event languageOfElement="ger">Das Reichspropagandaministerium errichtet beim
+                            Reichsarchiv in Potsdam ein Reichsfilmarchiv.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1936</eag:date>
+                            <event languageOfElement="ger">Das Heeresarchiv Potsdam wird als selbständige
+                            Einrichtung aus dem Reichsarchiv ausgegliedert.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1944/1945</eag:date>
+                            <event languageOfElement="ger">Der wertvollere Teil der zivilen Bestände
+                            des Reichsarchivs wird kriegsbedingt ausgelagert. Bei einem Luftangriff im
+                            April 1945 werden die noch nicht ausgelagerten Bestände des Heeresarchivs
+                            weitestgehend vernichtet.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1946</eag:date>
+                            <event languageOfElement="ger">In der DDR wird mit Sitz in der Orangerie des
+                            Schlosses Sanssouci in Potsdam das Deutsche Zentralarchiv, seit 1973
+                            "Zentrales Staatsarchiv" der DDR, eingerichtet.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1952</eag:date>
+                            <event languageOfElement="ger">Die Bundesregierung errichtet auf Beschluss von
+                            1950 das Bundesarchiv in Koblenz als Obere Bundesbehörde im Geschäftsbereich
+                            des Bundesministeriums des Innern. Es wird zunächst im Gebäude des
+                            ehemaligen preußischen Regierungspräsidenten unmittelbar am Rheinufer
+                            untergebracht.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1954</eag:date>
+                            <event languageOfElement="ger">Die ehemalige Außenstelle des Reichsarchivs in
+                            Frankfurt a.M., in der die Überlieferungen des Deutschen Bundes und der Nationalversammlung von 1848/49 und der "Untrennbare Bestand" des Reichskammergerichts verwahrt werden, wird in das Bundesarchiv
+                            eingegliedert.</eag:event>
+                        </eag:chronItem>
+                     </eag:chronList>
+                       </eag:biogHist>
                   </egXML>
                </div>
             </div>
@@ -1280,6 +1332,20 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <eag:chronItem>
+                            <eag:date>2007</eag:date>
+                            <eag:chronItemSet>
+                                <event languageOfElement="ger">Im Rahmen des Retrokonversionsprogramms zur
+                                Digitalisierung von Findbüchern und Findkarteien wird die 1.000.000ste
+                                Titelaufnahme digitalisiert.</eag:event>
+                                <event languageOfElement="ger">In Berlin-Lichterfelde beginnen die Baumaßnahmen für
+                                        die Errichtung des Ernst-Posner-Baus mit Magazinen und Eingangsbereich für
+                                        das Berliner Bundesarchiv sowie die Sanierung der früheren Kasernengebäude
+                                        für ein Nutzungszentrum und die Dienstzimmer.</eag:event>
+                                        <event languageOfElement="ger">Das Digitale Bildarchiv des Bundesarchivs wird im
+                                            Bundeskanzleramt freigeschaltet.</eag:event>
+                            </eag:chronItemSet>
+                        </eag:chronItem>
                   </egXML>
                </div>
             </div>
@@ -1341,6 +1407,38 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <eag:chronList>
+                        <eag:chronItem>
+                            <eag:date>1919</eag:date>
+                            <eag:event languageOfElement="eng">The Reich Archives are set up as a central
+                                archive after the stipulations of the Treaty of Versailles required the
+                                dissolution of many military authorities. The Reich Archives take over
+                                responsibility for the documents of all supreme state authorities from
+                                1867/71 onwards, and from 1924 onwards also the archives of the German
+                                Confederation and the Imperial Chamber Court (Reichskammergericht), held in
+                                branch archives in Frankfurt am Main. In the course of time, the archives
+                                are supplemented by non-state records as well as photographic and film
+                                documents. The Reich Archives building was located on the Brauhausberg in
+                                Potsdam.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1935</eag:date>
+                            <eag:event languageOfElement="eng">The Reich Ministry of Propaganda sets up a
+                                Reich Film Archive at the Reich Archives in Potsdam.</eag:event>
+                        </eag:chronItem>
+                        <eag:chronItem>
+                            <eag:date>1936</eag:date>
+                            <eag:event languageOfElement="eng">The Potsdam Army Archive is hived off from the
+                                Reich Archives as an independent institution.</eag:event>
+                        </eag:chronItem>
+                       <eag:chronItem>
+                           <eag:date>1944/1945</eag:date>
+                           <eag:event languageOfElement="eng">The more valuable civil holdings of the
+                               Reich Archives are moved to external locations due to the war. The holdings
+                               which had not been removed were largely destroyed in an air attack in April
+                               1945.</eag:event>
+                       </eag:chronItem> 
+                    </eag:chronList>
                   </egXML>
                </div>
             </div>
@@ -1572,18 +1670,18 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <contact>
-                        <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
-                        <contactLine contactLineType="fax">+34 954219485</contactLine>
-                        <contactLine contactLineType="email" href="agi1@cultura.gob.es">
-                           >agi1@cultura.gob.es</contactLine>
-                        <contactLine contactLineType="email" href="agi2@cultura.gob.es">
-                           >Contacte con el Archivo General de Indias</contactLine>                            
-                        <contactLine contactLineType="homepage" languageOfElement="spa"
+                     <eag:contact>
+                        <eag:contactLine contactLineType="phoneNumber">+34 954500528</eag:contactLine>
+                        <eag:contactLine contactLineType="fax">+34 954219485</eag:contactLine>
+                        <eag:contactLine contactLineType="email" href="agi1@cultura.gob.es">
+                           >agi1@cultura.gob.es</eag:contactLine>
+                        <eag:contactLine contactLineType="email" href="agi2@cultura.gob.es">
+                           >Contacte con el Archivo General de Indias</eag:contactLine>                            
+                        <eag:contactLine contactLineType="homepage" languageOfElement="spa"
                            href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
                            > Página web del Archivo General de Indias
-                        </contactLine>
-                     </contact>
+                        </eag:contactLine>
+                     </eag:contact>
                   </egXML>
                </div>
             </div>
@@ -1668,13 +1766,13 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <contact>
-                        <contactLine contactLineType="email">mailto:special-collections@bradford.ac.uk</contactLine>
-                        <contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</contactLine>
-                        <contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</contactLine>
-                        <contactLine contactLineType="directions"
+                     <eag:contact>
+                        <eag:contactLine contactLineType="email">mailto:special-collections@bradford.ac.uk</eag:contactLine>
+                        <eag:contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</eag:contactLine>
+                        <eag:contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</eag:contactLine>
+                        <eag:contactLine contactLineType="directions"
                            href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</contactLine>
-                     </contact>
+                     </eag:contact>
                   </egXML>
                </div>
             </div>
@@ -2486,6 +2584,20 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <eag:chronItem>
+                            <eag:date>2007</eag:date>
+                            <eag:chronItemSet>
+                                <event languageOfElement="ger">Im Rahmen des Retrokonversionsprogramms zur
+                                Digitalisierung von Findbüchern und Findkarteien wird die 1.000.000ste
+                                Titelaufnahme digitalisiert.</eag:event>
+                                    <event languageOfElement="ger">In Berlin-Lichterfelde beginnen die Baumaßnahmen für
+                                        die Errichtung des Ernst-Posner-Baus mit Magazinen und Eingangsbereich für
+                                        das Berliner Bundesarchiv sowie die Sanierung der früheren Kasernengebäude
+                                        für ein Nutzungszentrum und die Dienstzimmer.</eag:event>
+                                        <event languageOfElement="ger">Das Digitale Bildarchiv des Bundesarchivs wird im
+                                            Bundeskanzleramt freigeschaltet.</eag:event>
+                            </eag:chronItemSet>
+                        </eag:chronItem>
                   </egXML>
                </div>
             </div>
@@ -2727,11 +2839,11 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <existDates>
-                        <dateRange>
-                           <fromDate standardDate="1785-10-14">1785-10-14</fromDate>
-                        </dateRange>
-                     </existDates>
+                     <eag:existDates>
+                        <eag:dateRange>
+                           <eag:fromDate standardDate="1785-10-14">1785-10-14</eag:fromDate>
+                        </eag:dateRange>
+                     </eag:existDates>
                   </egXML>
                </div>
             </div>
@@ -2922,10 +3034,10 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <eag:functions>
 <eag:function>
-<term>Industrial or Scientific Research</term>
+<eag:term>Industrial or Scientific Research</eag:term>
 </eag:function>
 <eag:function>
-<term>Analytical Services</term>
+<eag:term>Analytical Services</eag:term>
 </eag:function>
 </eag:functions>
                   </egXML>
@@ -3018,6 +3130,14 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                 <eag:functions>
+<eag:function>
+<eag:term>Industrial or Scientific Research</eag:term>
+</eag:function>
+<eag:function>
+<eag:term>Analytical Services</eag:term>
+</eag:function>
+</eag:functions>
                   </egXML>
                </div>
             </div>
@@ -3186,7 +3306,7 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</geographicCoordinates>
+                     <eag:geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</eag:geographicCoordinates>
                   </egXML>
                </div>
             </div>
@@ -3240,6 +3360,27 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                 <eag:structureOrGenealogy>
+            <eag:head languageOfElement="fre">Gouvernance de l'Institut d'histoire de l'aluminium</eag:head>
+            <p languageOfElement="fre">Le conseil d’administration élit en son sein un bureau de
+               dirigeants bénévoles composé du président, du secrétaire et du trésorier. Le
+               président, actuellement Pierre Meynard, cumule les qualités de président du bureau,
+               du conseil d’administration et de l’association. Il assure la gestion quotidienne de
+               l’association. Il agit au nom et pour le compte du bureau, du conseil
+               d’administration et de l’association.</p>
+            <p languageOfElement="fre">Un conseil scientifique, dont les membres sont nommés par le
+               président de l’association, définit les orientations de l’activité de l’association
+               et en évalue les résultats. Il est composé de chercheurs en sciences sociales et de
+               spécialistes du patrimoine.</p>
+            <p languageOfElement="fre">L’équipe permanente, qui prépare et met en œuvre les
+               programmes d’activité de l’association, se compose de neuf personnes représentant 7,2
+               équivalent temps plein : un secrétaire général (0,5 ETP), un chargé de coordination
+               scientifique (0,7 ETP), une assistante de gestion (0,6 ETP), trois archivistes (2 ,9
+               ETP), une iconographe (0,4 ETP), une chargée de patrimoine (1 ETP). Il faut ajouter à
+               cela de nombreux adhérents et bénévoles, pour la plupart experts de l’aluminium. Ils
+               s’investissent à différents niveaux que ce soit la recherche de partenaires ou encore
+               la participation à la recherche (colloques, thèse, etc.).</p>
+         </eag:structureOrGenealogy>
                   </egXML>
                </div>
             </div>
@@ -3586,6 +3727,16 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <eag:structureOrGenealogy>
+            <eag:head languageOfElement="fre">Organigramme des Archives nationales</eag:head>
+            <eag:list>
+               <eag:item languageOfElement="fre">Direction</eag:item>
+               <eag:item languageOfElement="fre">Direction administrative et scientifique</eag:item>
+               <eag:item languageOfElement="fre">Direction des publics</eag:item>
+               <eag:item languageOfElement="fre">Direction des fonds</eag:item>
+               <eag:item languageOfElement="fre">Direction du numérique et de la conservation</eag:item>
+            </eag:list>
+         </eag:structureOrGenealogy>
                   </egXML>
                </div>
             </div>
@@ -3741,6 +3892,11 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                    <eag:legalStatuses>
+                      <eag:legalStatus>
+                        <eag:term languageOfElement="fre">Service à compétence nationale</eag:term>
+                      </eag:legalStatus>
+                   </eag:legalStatuses>
                   </egXML>
                </div>
             </div>
@@ -3804,6 +3960,16 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <eag:legalStatuses>
+            <eag:legalStatus>
+               <eag:term languageOfElement="fre">Service du Ministère de la Culture</eag:term>
+               <eag:dateRange><eag:fromDate>1958</eag:fromDate><eag:toDate>2013</eag:toDate></eag:dateRange>
+            </eag:legalStatus>
+            <eag:legalStatus>
+               <eag:term languageOfElement="fre">Service à compétence nationale</eag:term>
+               <eag:dateRange><eag:fromDate>2013</eag:fromDate></eag:dateRange>
+            </eag:legalStatus>
+         </eag:legalStatuses>
                   </egXML>
                </div>
             </div>
