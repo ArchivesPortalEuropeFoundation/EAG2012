@@ -4158,6 +4158,16 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <structureOrGenealogy>
+            <head languageOfElement="fre">Organigramme des Archives nationales</head>
+            <eag:list>
+               <eag:item languageOfElement="fre">Direction</eag:item>
+               <eag:item languageOfElement="fre">Direction administrative et scientifique</eag:item>
+               <eag:item languageOfElement="fre">Direction des publics</eag:item>
+               <eag:item languageOfElement="fre">Direction des fonds</eag:item>
+               <eag:item languageOfElement="fre">Direction du numérique et de la conservation</eag:item>
+            </eag:list>
+         </structureOrGenealogy>
                   </egXML>
                </div>
             </div>
@@ -4601,16 +4611,16 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <mandates>
-                        <mandate>
-                           <term/>
-                           <descriptiveNote languageOfElement="ger">
+                     <eag:mandates>
+                        <eag:mandate>
+                           <eag:term/>
+                           <eag:descriptiveNote languageOfElement="ger">
                               <p>Die Bundesregierung errichtet auf Beschluss von 1950 das Bundesarchiv
                                  Obere Bundesbehörde im Geschäftsbereich des Bundesministeriums des
                                  Innern.</p>
-                           </descriptiveNote>
-                        </mandate>
-                     </mandates>
+                           </eag:descriptiveNote>
+                        </eag:mandate>
+                     </eag:mandates>
                   </egXML>
                </div>
             </div>
@@ -4672,15 +4682,15 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <mandates>
-                        <mandate>
-                           <term languageOfElement="spa">Ordenanzas para el Archivo General de Indias.</term>
-                           <date>1785-10-14 00:00:00.0</date>
-                           <descriptiveNote>
+                     <eag:mandates>
+                        <eag:mandate>
+                           <eag:term languageOfElement="spa">Ordenanzas para el Archivo General de Indias.</eag:term>
+                           <eag:date>1785-10-14 00:00:00.0</eag:date>
+                           <eag:descriptiveNote>
                               <p languageOfElement="spa">Madrid, 10 de enero de 1790.</p>
-                           </descriptiveNote>
-                        </mandate>
-                     </mandates>
+                           </eag:descriptiveNote>
+                        </eag:mandate>
+                     </eag:mandates>
                   </egXML>
                </div>
             </div>
