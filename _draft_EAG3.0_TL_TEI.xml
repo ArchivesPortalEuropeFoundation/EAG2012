@@ -5823,24 +5823,24 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <place localType="visitors">
-                        <address>
-                           <addressLine addressLineType="street">J.B. Priestly Library</addressLine>
-                           <addressLine addressLineType="municipality">Bradford</addressLine>
-                           <addressLine addressLineType="county">Yorkshire</addressLine>
-                           <addressLine addressLineType="postalCode">BD7 1DP</addressLine>
-                           <addressLine addressLineType="country">England, UK</addressLine>
-                        </address>
+                     <eag:place localType="visitors">
+                        <eag:address>
+                           <eag:addressLine addressLineType="street">J.B. Priestly Library</eag:addressLine>
+                           <eag:addressLine addressLineType="municipality">Bradford</eag:addressLine>
+                           <eag:addressLine addressLineType="county">Yorkshire</eag:addressLine>
+                           <eag:addressLine addressLineType="postalCode">BD7 1DP</eag:addressLine>
+                           <eag:addressLine addressLineType="country">England, UK</eag:addressLine>
+                        </eag:address>
                         
-                        <contact>
-                           <contactLine contactLineType="email">mailto:special-collections@bradford.ac.uk</contactLine>
-                           <contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</contactLine>
-                           <contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</contactLine>
-                           <contactLine contactLineType="directions"
+                        <eag:contact>
+                           <eag:contactLine contactLineType="email">mailto:special-collections@bradford.ac.uk</eag:contactLine>
+                           <eag:contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</eag:contactLine>
+                           <eag:contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</eag:contactLine>
+                           <eag:contactLine contactLineType="directions"
                               href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</contactLine>
-                        </contact>
-                        <geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</geographicCoordinates>
-                     </place>
+                        </eag:contact>
+                        <eag:geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</eag:geographicCoordinates>
+                     </eag:place>
                   </egXML>
                </div>
             </div>
@@ -5925,6 +5925,19 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                  <eag:place>
+               <eag:placeName>Hôtel de Soubise</eag:placeName>
+               <eag:placeRole>Museum</eag:placeRole>
+               <eag:address>
+                  <eag:addressLine addressLineType="street" languageOfElement="fre">60 rue des Francs-Bourgeois</eag:addressLine>
+                  <eag:addressLine addressLineType="municipality" languageOfElement="fre"
+                     >Paris</eag:addressLine>
+                  <eag:addressLine addressLineType="postalCode" languageOfElement="fre"
+                     >75003</eag:addressLine>
+                  <eag:addressLine addressLineType="country" languageOfElement="fre"
+                     >FRANCE</eag:addressLine>
+               </eag:address>
+            </eag:place>
                   </egXML>
                </div>
             </div>
@@ -6055,43 +6068,44 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <place> <place>
-                        <address localType="postal address">
-                           <addressLine addressLineType="country" languageOfElement="spa"
-                              >España</addressLine>
-                           <addressLine addressLineType="region" languageOfElement="spa"
-                              >Comunidad Autónoma de Andalucía</addressLine>
-                           <addressLine addressLineType="county" languageOfElement="spa"
-                              >Sevilla</addressLine>
-                           <addressLine addressLineType="postalCode" languageOfElement="spa"
-                              >41071</addressLine>
-                           <addressLine addressLineType="municipality" languageOfElement="spa"
-                              >Sevilla</addressLine>
-                           <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
-                        </address>
-                        <address localType="visitors address">
-                           <addressLine addressLineType="country" languageOfElement="spa"
-                              >España</addressLine>
-                           <addressLine addressLineType="postalCode" languageOfElement="spa"
-                              >41071</addressLine>
-                           <addressLine addressLineType="municipality" languageOfElement="spa"
-                              >Sevilla</addressLine>
-                           <addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</addressLine>
-                        </address>
-                        <contact>
-                           <contactLine contactLineType="phoneNumber">+34 954500528</contactLine>
-                           <contactLine contactLineType="fax">+34 954219485</contactLine>
-                           <contactLine contactLineType="email" href="agi1@cultura.gob.es">
-                              >agi1@cultura.gob.es</contactLine>
-                           <contactLine contactLineType="email" href="agi2@cultura.gob.es">
-                              >Contacte con el Archivo General de Indias</contactLine>                            
-                           <contactLine contactLineType="homepage" languageOfElement="spa"
+                     <eag:places> 
+                        <eag:place>
+                        <eag:address localType="postal address">
+                           <eag:addressLine addressLineType="country" languageOfElement="spa"
+                              >España</eag:addressLine>
+                           <eag:addressLine addressLineType="region" languageOfElement="spa"
+                              >Comunidad Autónoma de Andalucía</eag:addressLine>
+                           <eag:addressLine addressLineType="county" languageOfElement="spa"
+                              >Sevilla</eag:addressLine>
+                           <eag:addressLine addressLineType="postalCode" languageOfElement="spa"
+                              >41071</eag:addressLine>
+                           <eag:addressLine addressLineType="municipality" languageOfElement="spa"
+                              >Sevilla</eag:addressLine>
+                           <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</eag:addressLine>
+                        </eag:address>
+                        <eag:address localType="visitors address">
+                           <eag:addressLine addressLineType="country" languageOfElement="spa"
+                              >España</eag:addressLine>
+                           <eag:addressLine addressLineType="postalCode" languageOfElement="spa"
+                              >41071</eag:addressLine>
+                           <eag:addressLine addressLineType="municipality" languageOfElement="spa"
+                              >Sevilla</eag:addressLine>
+                           <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n //Calle Santo Tomás, nº 5</eag:addressLine>
+                        </eag:address>
+                        <eag:contact>
+                           <eag:contactLine contactLineType="phoneNumber">+34 954500528</eag:contactLine>
+                           <eag:contactLine contactLineType="fax">+34 954219485</eag:contactLine>
+                           <eag:contactLine contactLineType="email" href="agi1@cultura.gob.es">
+                              >agi1@cultura.gob.es</eag:contactLine>
+                           <eag:contactLine contactLineType="email" href="agi2@cultura.gob.es">
+                              >Contacte con el Archivo General de Indias</eag:contactLine>                            
+                           <eag:contactLine contactLineType="homepage" languageOfElement="spa"
                               href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html"
                               > Página web del Archivo General de Indias
-                           </contactLine>            
-                        </contact>                     
-                     </place>                  
-                     </place>
+                           </eag:contactLine>            
+                        </eag:contact>                     
+                     </eag:place>                  
+                     </eag:places>
                   </egXML>
                </div>
             </div>
@@ -7888,14 +7902,14 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <structureOrGenealogy>
+                     <eag:structureOrGenealogy>
                         <p languageOfElement="spa">Dirección</p> 
                         <p languageOfElement="spa">Subdirección</p>
                         <p languageOfElement="spa">Departamento de Referencias</p>
                         <p languageOfElement="spa">Departamento de Coordinación y Normalización</p>
                         <p languageOfElement="spa">Departamento de Conservación</p>
                         <p languageOfElement="spa">Servicio de Sistemas Informáticos</p>
-                     </structureOrGenealogy>
+                     </eag:structureOrGenealogy>
                   </egXML>
                </div>
             </div>
