@@ -5904,7 +5904,7 @@
                <p>Other Repository Type</p>
             </div>
             <div type="summary">
-               <p>A required child element of <gi>otherRepositoryTypes</gi> used to encode alternative repository types such as translations or specifications of respeectively additions to the predefined values used in <gi>repositoryType</gi>.</p>
+               <p>A required child element of <gi>otherRepositoryTypes</gi> used to encode alternative repository types such as translations or specifications of respectively additions to the predefined values used in <gi>repositoryType</gi>.</p>
             </div>
             <div type="mayContain">
                <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
