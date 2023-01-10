@@ -6110,9 +6110,9 @@
                         <item>Optional (values limited to: external, internal)</item>
                         <label>conventionDeclarationReference</label>
                         <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
                         <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
                         <item>Optional</item>
                         <label>languageOfElement</label>
                         <item>Optional</item>
