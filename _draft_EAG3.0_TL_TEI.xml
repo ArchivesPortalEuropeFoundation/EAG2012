@@ -3526,12 +3526,12 @@
                         <item>Optional (values limited to: external, internal)</item>
                         <label>conventionDeclarationReference</label>
                         <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
                         <label>id</label>
                         <item>Optional</item>
                         <label>identityType</label>
                         <item>Optional (values limited to: acquired, given)</item>
-                        <label>href</label>
-                        <item>Optional</item>
                         <label>linkRole</label>
                         <item>Optional</item>
                         <label>linkTitle</label>
