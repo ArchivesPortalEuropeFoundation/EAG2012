@@ -348,7 +348,6 @@
                      such as information available on the institution's own website.</p>
                     <p>Do not include text in the access tag. Use the subelements <gi>accessConditions</gi> and
                      <gi>useConditions</gi> to include more specific information about access conditions and use.</p>
-                                   
                </div>
                <!-- can hav "attributeusage" here -->
                <div type="availability">
@@ -3780,7 +3779,6 @@
                                      professional issues, personal friendships, anti-war and
                                      anti-colonial activism and a wide range of other topics.</p>
                               </eag:descriptiveNote>
-                              
                            </eag:holdings>
                         </eag:description>
                      </eag:repository>
