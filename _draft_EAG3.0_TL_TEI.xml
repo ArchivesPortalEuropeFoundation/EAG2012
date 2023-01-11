@@ -354,15 +354,16 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Element to capture nformation on conditions and requirements for access and use
-                     like access policies, terms of use, fees etc. A general statement on whether or
-                     not an institution with archival holdings is accessible is mandatory and can be
-                     added using the attribute <att>question</att> with values "yes" or "no" or "yes
-                     (conditions apply"). Additionally, <gi>access</gi> supports a link to existing
-                     websites with more details.</p>
-                  <p>Use the subelements <gi>accessConditions</gi> and <gi>useConditions</gi> to
-                     include more specific URLs e.g. to documents containing terms of use, any
-                     registration forms that need to be filled beforehand, etc.</p>
+                  <p>Includes a mandatory <att>question</att> with
+                     values "yes" or "no" or "yes (conditions apply)" to confirm access, which may
+                     be physical or virtual access. If all or a substantial part of the collection is
+                     publicly accessible use "yes". If there are significant conditions relating to
+                     access use "yes (conditions apply)". If the collections are temporarily
+                     unavailable use "no". </p>
+                     <p>You can also add a link to a page with information about access,
+                     such as information available on the institution's own website.</p>
+                    <p>Do not include text in the access tag. Use the subelements <gi>accessConditions</gi> and
+                     <gi>useConditions</gi> to include more specific information about access conditions and use.</p>
                </div>
                <div type="availability">
                   <p>Required, repeatable</p>
@@ -373,14 +374,13 @@
                         <identity>[...]</identity>
                         <description>
                            <access question="yes">
-                              <accessConditions languageOfElement="eng">To prepare for your personal
-                                 use of the reference service, or should you require written
-                                 information, you may send an informal written reference
-                                 [...].</accessConditions>
-                              <useConditions
-                                 href="http://www.bundesarchiv.de/benutzung/voraussetzungen/ allgemeinehinweise/index.html.en"
-                                 languageOfElement="eng">General information on access and
-                                 use</useConditions>
+                              <accessConditions languageOfElement="eng">Special Collections are open
+                                 to, and intended for, anyone who might benefit from using them.
+                                 However, space and staffing constraints mean that appointments are
+                                 required. </accessConditions>
+                             <useConditions 
+                                href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website 
+                                for information on conditions of use.</useConditions>
                            </access>
                         </description>
                      </repository>
@@ -397,8 +397,7 @@
                   <p>Conditions of access</p>
                </div>
                <div type="summary">
-                  <p>Information on conditions of access relating to the archival holdings, could
-                     also include information like "by appointment with the archivist only".</p>
+                  <p>Information on access conditions or restrictions relating to the archival holdings. An optional child element of <gi>access</gi>.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -415,21 +414,50 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Information on conditions and requirements for access and use. May refer to
+                     access policies, fees etc. Can include information like "by appointment" or "readers ticket required". Can
+                     also include a link to a website with more detailed information about access. May be used to
+                     indicate that there are no restrictions on access.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <repository>
+                        <identity>[...]</identity>
+                        <description>
+                           <access question="yes">
+                              <accessConditions languageOfElement="eng">Special Collections are open
+                                 to, and intended for, anyone who might benefit from using them.
+                                 However, space and staffing constraints mean that appointments are
+                                 required. </accessConditions>
+                            </access>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <repository>
+                        <identity>
+                           [...]
+                        </identity>
+                        <description>
+                           <access question="yes">
+                              <accessConditions>No hay restricciones de acceso</accessConditions>
+                           </access>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
-                        <eag:identity> [...] </eag:identity>
-                        <eag:description>
-                           <eag:access question="yes">
-                              <eag:accessConditions>No hay restricciones de
-                                 acceso</eag:accessConditions>
-                           </eag:access>
-                        </eag:description>
+                        <eidentity>
+                           [...]
+                        </eidentity>
+                        <description>
+                           <access question="yes (with conditions">
+                              <accessConditions>By appointment only</accessConditions>
+                           </access>
+                        </description>
                      </eag:repository>
                   </egXML>
                </div>
@@ -461,24 +489,39 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Use this element to provide information about any details regarding enhanced
-                     accessibility for users with disabilities such as building features,
-                     specialised equipment or tools, parking or lifts, etc.</p>
+                  <p>Use this element to provide information for people with physical or mental disabilities.
+                     For example parking, building features, e.g. lifts, specialised equipment, and
+                     useful tools or support, e.g. screen readers, and staff with sign language.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity> [...] </eag:identity>
-                        <eag:description>
-                           <eag:accessibility question="yes"> There are dedicated parking areas
-                              available for persons with disabilities. Access to the building is at
-                              ground level and there are lifts to the upper floors of the reading
-                              room. </eag:accessibility>
-                        </eag:description>
-                     </eag:repository>
+                     <repository>
+                        <identity>
+                           [...]
+                        </identity>
+                        <description>
+                           <accessibility question="yes">
+                             There are dedicated parking areas available for persons with disabilities. Access to the building is at ground level and there are lifts to the upper floors of the reading room.
+                           </accessibility>
+                        </description>
+                     </repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <repository>
+                        <identity>
+                           [...]
+                        </identity>
+                        <description>
+                           <accessibility question="yes">
+                              The reading room is wheelchair-friendly. For help with reading
+                              old documents We provide magnifying glasses and we also have staff familiar with sign
+                              language.
+                            </accessibility>
+                        </description>
+                     </repository>
                   </egXML>
                </div>
             </div>
@@ -1042,8 +1085,10 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
-               </div>
+                  <p>The history of the repository building and important features. Might include
+                     the date of opening, environmental storage conditions, architectural features,
+                     design of the reading room, etc.</p>
+                </div>
                <div type="availability">
                   <p>Required, repeatable</p>
                </div>
@@ -1100,8 +1145,7 @@
                </div>
                <div type="description">
                   <p>Use the subelements of <gi>buildingInfo</gi> to provide general characteristics
-                     of the building (<gi>building</gi>), area (<gi>repositoryArea</gi>) and
-                     capacity of storage (<gi>lengthOfShelvesd</gi>) of the repository.</p>
+                     of the building. Use <gi>building</gi> to provide some historical or other information about the repository building, <gi>repositoryArea</gi> to state the area of the repository and <gi>lengthOfShelves</gi> to specify the capacity of storage.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -1525,7 +1569,9 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Provide information on closing dates, such as public holidays. It may be
+                     useful to link to your website for more specific information, such as a short
+                     closure for refurbishment or for stock taking.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -1533,13 +1579,29 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
-                        <eag:identity> [...] </eag:identity>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
                         <eag:description>
                            <eag:timetable>
-                              <eag:closing>Fiestas locales (San Ildefonso y Corpus Christi,
-                                 variables anualmente), fiestas nacionales, fiestas de la comunidad
-                                 autónoma (31 de mayo), 24 de diciembre y 31 de
-                                 diciembre.</eag:closing>
+                              <eag:closing>The Archives are closed on public holidays and over the
+                                 Christmas and New Year period. We also close for one week’s
+                                 stocktaking in early September. Occasionally, the Archives Reading
+                                 Room is closed for visits and seminars. Please refer to our website
+                                 for more information. 
+                       </eag:closing>
+                           </eag:timetable>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:timetable>
+                              <eag:closing>Fiestas locales (San Ildefonso y Corpus Christi, variables anualmente), fiestas nacionales, fiestas de la comunidad autónoma (31 de mayo), 24 de diciembre y 31 de diciembre.</eag:closing>
                            </eag:timetable>
                         </eag:description>
                      </eag:repository>
@@ -2006,7 +2068,15 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Provide the full name of the organization or body. Dates can be included to help identify the
+                     organization, particularly if it has changed its name over time.</p>
+                  <p>Can include any group that acts as an entity, for example, a government
+                     department, museum, congress, music group or exhibition.</p>
+                   <p>If the name is taken from a source such as VIAF or Wikidata then the attribute
+                     <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
+                  <p>Adding organization names to holdings information can highlight particular areas of strength
+                     of the institution's holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -2862,7 +2932,11 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Provide extent information that enables end users to get a sense of the size of
+                     your collections. The required subelement <gi>num</gi> should be used to provide
+                     information about coverage. Physical coverage should be given in 
+                     linear, square or cubic metres; digital coverage in megabytes, 
+                     gigabytes, terabytes, petabytes or exabytes.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -2892,8 +2966,7 @@
                   <p xml:lang="eng">Family Name</p>
                </div>
                <div type="summary">
-                  <p>An element for identifying the name of a group of people with blood relations,
-                     or persons who form a household.</p>
+                  <p>An element for providing a family name.</p>
                </div>
                <div type="mayContain">
                   <p>part</p>
@@ -2910,7 +2983,15 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>The name of a group that is recognised as a family. May be related by birth,
+                     marriage or adoption. Estate papers or business papers may typically relate to a family.</p>
+                  <p>Adding family names to holdings information can highlight particular areas of strength
+                     of the institution's holdings, e.g. the institution holds a major family
+                     archive.</p>
+                  <p>The attribute <att>localType</att> can be used to structure the name.</p>
+                  <p>If the family name is taken from a source such as VIAF or Wikidata then the attribute
+                     <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -3217,15 +3298,70 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>The type of material being described. Genre refers to style or function rather than subject,
+                     such as correspondence or contracts. Form is a physical characteristic, such as microfilm. Correspondence as a                      genre could be in the form of letterbooks for example. 
+                     A diary could be considered a genre, but it also has a typical form, as a bound
+                     volume (though a diary could be in the form of loose pages for example). </p>
+                     <p>Typical entries in this element might be diaries, letters, photographs, or something more specific such as 
+                     letters of administration, aerial photographs or architectural dawings. </p>
+                     <p>If the entry is taken from a source such as the Thesaurus for Graphic Materials
+                     then the attribute <att>vocabularySource</att> can be used to identify this, and
+                     <att>vocabularySourceURI</att> can provide the URI.</p>
+                  <p>Adding genre or form to holdings can highlight areas of strength or specialism
+                     of the repository, for example, an academic archive might have significant
+                     holdings of theses or a regional repository might have census maps.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="eng">
+                           <eag:part>Political posters</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="eng" vocabularySource="tgm">
+                           <eag:part>Manuscripts, Typescripts, Photographs</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Lettres</eag:part>
+                        </eag:genreForm>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Photographies aériennes</eag:part>
+                        </eag:genreForm>
+                        <eag:genreForm languageOfElement="fre">
+                           <eag:part>Cartes postales</eag:part>
+                        </eag:genreForm>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -3381,9 +3517,8 @@
                   <p>Archival and other holdings of the institution.</p>
                </div>
                <div type="mayContain">
-                  <p>corpName (0..n), date or dateRange or dateSet (0...1), descriptiveNote (0..1),
-                     extent (0..n), famName (0..n), genreForm (0..n), name (0..n), persName (0..n),
-                     placeName (0..n), subject (0..n)</p>
+                  <p>corpName (0..n), date or dateRange or dateSet (0..1), descriptiveNote (0..1), extent (0..n), 
+                  famName (0..n), genreForm (0..n), name (0..n), persName (0..n), placeName (0..n), subject (0..n)</p>
                </div>
                <div type="mayOccurWithin">
                   <p>description</p>
@@ -3397,9 +3532,14 @@
                   </p>
                </div>
                <div type="description">
-                  <p>The element <gi>holdings</gi> allows giving a concise overview of one's
-                     holdings, including date and extent information as well as narrative text using
-                        <gi>descriptiveNote</gi>.</p>
+                  <p>The element <gi>holdings</gi> should be used to give a concise overview of
+                     holdings. It is particularly useful to add extent information. May also include
+                     dates of the collections. </p>
+                  <p>Related holdings may describe a reference library, for example.</p>
+                  <p>Personal, corporate and family names can be added as well as subjects in order
+                     to provide structured information for significant people, organisations or subjects
+                     represented in the archive</p>
+                 <p>Narrative text can be included in <gi>descriptiveNote</gi>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -3407,7 +3547,9 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
-                        <eag:identity> [...] </eag:identity>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
                         <eag:description>
                            <eag:holdings>
                               <eag:dateSet>
@@ -3419,47 +3561,58 @@
                                  </eag:dateRange>
                                  <eag:dateRange>
                                     <eag:fromDate standardDate="1949">1949</eag:fromDate>
-                                    <eag:toDate>till today</eag:toDate>
+                                    <eag:toDate>present</eag:toDate>
                                  </eag:dateRange>
                               </eag:dateSet>
                               <eag:extent>
                                  <eag:num unit="linearmetre">300.000</eag:num>
                               </eag:extent>
-                              <eag:descriptiveNote>
-                                 <eag:p>The Federal Archives have the legal responsibility of
-                                    permanently preserving the federal archival documents and making
-                                    them available for use. This includes documents (files, papers,
-                                    cartographic records, pictures, posters, films, sound recordings
-                                    and machine-readable data) arising from the central institutions
-                                    of the Holy Roman Empire (1495-1806), the German Confederation
-                                    (1815-1866), the German Reich (1867/71-1945), the occupation
-                                    zones (1945-1949), the German Democratic Republic (1949-1990)
-                                    and the Federal Republic of Germany (since 1949). The Federal
-                                    Archives decide whether these documents are assigned a lasting
-                                    value for research into, or understanding of, German history,
-                                    the ensuring of the legitimate interests of citizens or the
-                                    provision of information for legislation, administration and
-                                    jurisdiction.</eag:p>
-                                 <eag:p>The Foundation Archives of Parties and Mass Organisations of
-                                    the GDR in the Federal Archives keeps the archives of the
-                                    central leadership organs of the parties, unions and mass
-                                    organisations of the GDR. It also looks after the Federal
-                                    Archives Library, the core of which is formed by the library of
-                                    the former Institute for Marxism-Leninism and other GDR service
-                                    and organisation libraries.</eag:p>
-                                 <eag:p>The Federal Archives also collect personal papers of
-                                    important personages, documents of parties, associations and
-                                    societies of cross-regional importance, as well as published
-                                    sources. Non-state records are acquired for the Federal Archives
-                                    through an active acquisition and transfer policy. Defined
-                                    collection profiles determine which personal papers and
-                                    collections or papers of associations and parties, can
-                                    meaningfully supplement the state archives.</eag:p>
+                              <eag:descriptiveNote languageOfElement="eng">
+                                 <eag:p>The Federal Archives have the legal responsibility of permanently preserving the federal archival documents and making them available for use. This includes documents (files, papers, cartographic records, pictures, posters, films, sound recordings and  machine-readable data) arising from the central institutions of the Holy Roman Empire (1495-1806), the German Confederation (1815-1866), the German Reich (1867/71-1945), the occupation zones (1945-1949), the German Democratic Republic (1949-1990) and the Federal Republic of Germany (since 1949). The Federal Archives decide whether these documents are assigned a lasting value for research into, or understanding of, German history, the ensuring of the legitimate interests of citizens or the provision of information for legislation, administration and jurisdiction.</eag:p>
+                                 <eag:p>The Foundation Archives of Parties and Mass Organisations of the GDR in the Federal Archives keeps the archives of the central leadership organs of the parties, unions and mass organisations of the GDR. It also looks after the Federal Archives Library, the core of which is formed by the library of the former Institute for Marxism-Leninism and other GDR service and organisation libraries.</eag:p>
+                                 <eag:p>The Federal Archives also collect personal papers of important personages, documents of parties, associations and societies of cross-regional importance, as well as published sources. Non-state records are acquired for the Federal Archives through an active acquisition and transfer policy. Defined collection profiles determine which personal papers and collections or papers of associations and parties, can meaningfully supplement the state archives.</eag:p>
                               </eag:descriptiveNote>
                            </eag:holdings>
                         </eag:description>
                      </eag:repository>
                   </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:holdings>
+                              <eag:extent>
+                                 <eag:num unit="cubicmetre">250</eag:num>
+                              </eag:extent>
+                              <eag:persName><eag:part localType="surname">Britten</eag:part><eag:part localType="forenames">
+                                 Edward Benjamin</eag:part><eag:part localType="title">Baron Britten</eag:part><eag:part
+                                    localType="dates"> 1913-1976</eag:part><eag:part localType="epithet">English composer,
+                                       conductor and pianist</eag:part></eag:persName>
+                              <eag:persName><eag:part localType="surname">Pears</eag:part><eag:part localType="forenames">Sir
+                                 Peter Neville Luard </eag:part><eag:part localType="dates">1910-1986</eag:part><eag:part
+                                    localType="epithet">English tenor</eag:part>
+                              </eag:persName>
+                              <eag:subject><eag:part>Music</eag:part></eag:subject>
+                              <eag:subject><eag:part>Composition</eag:part></eag:subject>
+                             <eag:descriptiveNote>
+                                 <p>The archive at the Red House is probably the richest composer’s archive in the world and is
+                                    open to anyone to visit. It is a rich source of information on a wide variety of topics.</p>
+                                 <p>Benjamin Britten’s and Peter Pears’ papers are of course at the
+                                    heart of the collection and the archive holds manuscript scores
+                                    of almost all Britten’s works, both published and unpublished and including his earliest 
+                                    juvenilia.  It contains working papers, letters, costume designs, set designs and set models, 
+                                    photographs, financial documentation and an extensive collection of programmes.</p>
+                                 <p>The correspondence makes up nearly 20,000 files and covers
+                                     professional issues, personal friendships, anti-war and
+                                     anti-colonial activism and a wide range of other topics.</p>
+                              </eag:descriptiveNote>
+                           </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+               </div>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-identity">
@@ -3589,15 +3742,20 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Element for including an image that will display as part of the EAG document.
+                     Typically a logo for the institution being described, but could be e.g. a photograph
+                  showing the repository building or a small number of images illustrating the holdings of
+                  the repository.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                     <eag:image localType="logo"
+                        href="https://archiveshub.jisc.ac.uk/mediaImages/eag/93.jpg"/>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -3981,9 +4139,8 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Information about the length of shelves at the repository building including
-                     the respective unit of measurement in the accompanying attribute
-                        <att>unit</att>.</p>
+                  <p>Information about the total length of shelves in the storage areas of the repository, in order to
+                     give a sense of the size of the collections, including the respective unit of measurement in the subelement <gi>num</gi> and the accompanying attribute <att>unit</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -4789,7 +4946,11 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>An element that can be used where a name cannot be classified as
+                     <gi>persname</gi>, <gi>corpname</gi> or <gi>famname</gi>. Aim to uniquely
+                     identify the entity, adding dates or additional information if useful.</p>
+                  <p>Adding names to holdings information can highlight particular areas of strength
+                     of the institution's holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -4988,9 +5149,9 @@
                </div>
                <div type="description">
                   <p>A wrapper element used to group two or more <gi>nameEntry</gi> elements
-                     representing parallel or other forms of the name for the same CPF entity which
-                     are used at the same time (e.g., official and non-official forms of the name in
-                     different languages and/or scripts).</p>
+                     representing parallel or other forms of the name for the same repository which are used
+                     at the same time (e.g., official and non-official forms of the name in different languages
+                     and/or scripts).</p>
                   <p>The <gi>nameEntrySet</gi> element may contain a <gi>useDates</gi> element to
                      indicate the dates the set of name forms was used.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
@@ -5037,8 +5198,10 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Allows to provide a concrete number or amount including the respective unit of
-                     measurement in the accompanying attribute <att>unit</att>.</p>
+                  <p>A specific number or amount. Must include the respective unit of measurement in the accompanying attribute <att>unit</att>.</p>
+                  <p>It is a required element if the elements are used where it can occur. For
+                     example, if you use <gi>extent</gi> or <gi>lengthOfShelves</gi> then  you need
+                     to provide a numerical amount.</p>
                </div>
                <div type="availability">
                   <p>Required, not repeatable</p>
@@ -5142,7 +5305,10 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Provide opening times for your reading room. It is preferable to provide full
+                     days and times in the 24 hour clock, e.g. Monday-Wednesday 09.00-17.00. You may
+                  link to your own page with opening times or with more detailed information. It is better
+                  to link to your own page if that is more likely to be kept up-to-date.</p>
                </div>
                <div type="availability">
                   <p>Required, repeatable</p>
@@ -5150,12 +5316,25 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
-                        <eag:identity> [...] </eag:identity>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
                         <eag:description>
                            <eag:timetable>
-                              <eag:opening>Consulta en sala: de lunes a viernes de 8.30 a 14.30
-                                 horas. Información y asuntos generales: de lunes a viernes de 8.30
-                                 a 14:30 horas</eag:opening>
+                              <eag:opening>Monday-Thursday 09.00-18.00, Friday 09.00-14.00</eag:opening>
+                           </eag:timetable>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:timetable>
+                              <eag:opening>Consulta en sala: de lunes a viernes de 8.30 a 14.30 horas. Información y asuntos
+                                 generales: de lunes a viernes de 8.30 a 14:30 horas</eag:opening>
                            </eag:timetable>
                         </eag:description>
                      </eag:repository>
@@ -5349,97 +5528,165 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
                         <eag:identity>
-                           <eag:repositoryId countryCode="ES" repositoryCode="ES-8019-ACA6"/>
-                           <eag:otherRepositoryId>ES.08019.ACA</eag:otherRepositoryId>
+                           <eag:nameEntry status="authorized" languageOfElement="eng">
+                              <eag:part>University of Bradford Special Collections</eag:part>
+                           </eag:nameEntry>
+                           <eag:repositoryId countryCode="GB" repositoryCode="GB-ah532"/>
+                           <eag:otherRepositoryId vocabularySource="archon">532</eag:otherRepositoryId>
+                           <eag:otherRepositoryId vocabularySource="hubdata">bradford</eag:otherRepositoryId>
+                           <eag:repositoryType value="universityArchives"/>
                         </eag:identity>
-                        <eag:description> [...] </eag:description>
-                     </eag:repository>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherRepositoryType">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
-               <head>
-                  <gi>otherRepositoryType</gi>
-               </head>
-               <div type="fullName">
-                  <p>Other Repository Type</p>
-               </div>
-               <div type="summary">
-                  <p/>
-               </div>
-               <div type="mayContain">
-                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n),
-                     term (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>otherRepositoryTypes</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p/>
-               </div>
-               <div type="availability">
-                  <p>Required, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <head>
+               <gi>otherRepositoryType</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Type</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
-               <head>
-                  <gi>otherRepositoryTypes</gi>
-               </head>
-               <div type="fullName">
-                  <p>Other Repository Types</p>
-               </div>
-               <div type="summary">
-                  <p/>
-               </div>
-               <div type="mayContain">
-                  <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>identity</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p/>
-               </div>
-               <div type="availability">
-                  <p>Optional, not repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <div type="summary">
+               <p>A required child element of <gi>otherRepositoryTypes</gi> used to encode alternative repository types such as translations or specifications of respectively additions to the predefined values used in <gi>repositoryType</gi>.</p>
             </div>
+            <div type="mayContain">
+               <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>otherRepositoryTypes</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                     <label>valueURI</label>
+                     <item>Optional</item>
+                     <label>vocabularySource</label>
+                     <item>Optional</item>
+                     <label>vocabularySourceURI</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>The types of institutions with archival holdings might be defined by a regional or national archives association. If existing, enter terms in accordance with such conventions. Terms may be drawn from controlled vocabularies or may be natural language terms.</p>
+                  <p><gi>otherRepositoryType</gi> must include at least one <gi>term</gi> element, where the type of repository is encoded. <gi>term</gi> can be repeated within <gi>otherRepositoryType</gi> to include translations of the same term. Use the <att>languageOfElement</att> attribute to identify the language used in each <gi>term</gi>.</p>
+                  <p>Associated date(s) (<gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi>) and place(s) (<gi>placeName</gi>) may be included to further constrain the term's meaning. A <gi>descriptiveNote</gi> element may be included if a fuller textual explanation is needed.</p>
+                  <p>Multiple <gi>otherRepositoryType</gi> elements may be grouped within an <gi>otherRepositoryTypes</gi> element.</p>
+               <p>The prescribed order of all child elements is:</p>
+               <list type="simple">
+                  <item><gi>term</gi></item>
+                  <item><gi>date</gi> or <gi>dateSet</gi> or <gi>dateRange</gi></item>
+                  <item><gi>placeName</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Required, repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                           <eag:term vocabularySource="Censo-Guía">Archivos Generales y Centrales</eag:term>
+                           <eag:descriptiveNote>
+                              <eag:p languageOfElement="eng">In Spain, the category of National Archives is called General and Central Archives.</eag:p>
+                           </eag:descriptiveNote>
+                        </eag:otherRepositoryType>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
+            <head>
+               <gi>otherRepositoryTypes</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Types</p>
+            </div>
+            <div type="summary">
+               <p>An optional child element of <gi>identity</gi> used to bundle together one or more <gi>otherRepositoryType</gi> elements.</p>
+            </div>
+            <div type="mayContain">
+               <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>identity</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>Use the element <gi>otherRepositoryTypes</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
+               <p><gi>otherRepositoryTypes</gi> requires at least one <gi>otherRepositoryType</gi> element to be present and includes the optional, not repeatable <gi>descriptiveNote</gi> element for further explanatory text if necessary.</p>
+               <p>The prescribed order of all child elements (both required and optional) is:</p>
+               <list type="simple">
+                  <item><gi>otherRepositoryType</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Optional, not repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                        </eag:otherRepositoryType>
+                        <eag:descriptiveNote>
+                           <eag:p languageOfElement="eng">Translation of the term "National Archives" into Spanish</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
+               </egXML>
+            </div>
+         </div>
             <div type="elementDocumentation" xml:id="elem-otherServices">
                <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
@@ -5643,7 +5890,14 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Provide a personal name, preferably the full name with life dates. Epithets and
+                  titles can also be included to help to uniquely identify the person. Adding
+                  personal names to holdings information can highlight particular areas of strength
+                  of the institution's holdings.</p>
+                  <p>The attribute <att>localType</att> can be used to structure the name.</p>
+                  <p>If the name is taken from a source such as VIAF or Wikidata then the attribute
+                     <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -6661,26 +6915,97 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Within an EAG instance, either a single <gi>repository</gi> element or the <gi>repositories</gi> element - combining two or more <gi>repository</gi> elements - has to be present. Depending on the administrative structure of an institution with archival holdings, the one or the other option might be more appropriate to describe the institution. Use <gi>repositories</gi> e.g. in case an institution has several locations, which hold different types of material or result from several formerly independent institutions.</p>
+                  <p><gi>repositories</gi> requires at least two <gi>repository</gi> elements. If the institution only consists of one repository, use the single <gi>repository</gi> element instead.</p>
+                  <p>Use the optional <gi>relations</gi> element to provide information about relationships to other entities that refer to all <gi>repository</gi>-s of the institution. Use the optional <gi>image</gi> element to e.g. provide a link to a logo or to images of the archival institution etc.</p>
+                  <p>The prescribed order of all child elements is:</p>
+                  <list type="simple">
+                     <item><gi>repository</gi></item>
+                     <item><gi>relations</gi></item>
+                     <item><gi>image</gi></item>
+                  </list>
                </div>
                <div type="availability">
-                  <p>Optional, not repeatable</p>
+                  <p>Within <gi>eag</gi>: one of <gi>repository</gi> or <gi>repositories</gi> required, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:eag>
-                        <eag:control> [...] </eag:control>
-                        <eag:repositories>
-                           <eag:repository>
-                              <eag:identity> [...] </eag:identity>
-                              <eag:description> [...] </eag:description>
-                           </eag:repository>
-                           <eag:repository>
-                              <eag:identity> [...] </eag:identity>
-                              <eag:description> [...] </eag:description>
-                           </eag:repository>
-                        </eag:repositories>
-                     </eag:eag>
+                       <eag:repositories>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry languageOfElement="spa" status="authorized">
+                                     <eag:part>Archivo General de Indias</eag:part>
+                                 </eag:nameEntry>
+                                 <eag:repositoryId countryCode="ES" repositoryCode="ES-41091-AGI"/>                
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <eag:addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n // Calle Santo Tomás, nº 5</eag:addressLine>
+                                         </eag:address>
+                                      </eag:place>                  
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa" href="http://www.culturaydeporte.gob.es/cultura/areas/archivos/mc/archivos/agi/portada.html">Visite nuestro sitio web para obtener más información sobre los horarios de apertura.</eag:opening>
+                                 </eag:timetable>
+                            </eag:description>
+                         </eag:repository>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry>
+                                     <eag:part>Sede La Cilla del Cabildo</eag:part>
+                                     <eag:part>Sede para los visitantes</eag:part>
+                                 </eag:nameEntry>
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Santo Tomás, 5</eag:addressLine>
+                                         </eag:address>
+                                     </eag:place>
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa">Horario del 16 de septiembre al 15 de junio: de lunes a viernes de 8.00 a 15.00 horas. Horario del 16 de junio al 15 de septiembre: de lunes a viernes de 8.00 a 14.30 horas</eag:opening>
+                                 </eag:timetable>
+                                 <eag:repositoryRole>Branch</eag:repositoryRole>
+                             </eag:description>
+                         </eag:repository>
+                         <eag:repository>
+                             <eag:identity>
+                                 <eag:nameEntry>
+                                     <eag:part>Sede La Lonja</eag:part>
+                                     <eag:part>Sede para los visitantes</eag:part>
+                                 </eag:nameEntry>
+                             </eag:identity>
+                             <eag:description>
+                                 <eag:places>
+                                     <eag:place>
+                                         <eag:address localType="visitors address">
+                                             <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
+                                             <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
+                                             <eag:addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="street" languageOfElement="spa">Avenida de la Constitución s/n</eag:addressLine>
+                                         </eag:address>
+                                     </eag:place>
+                                 </eag:places>
+                                 <eag:access question="yes"/>
+                                 <eag:timetable>
+                                     <eag:opening languageOfElement="spa">El horario de apertura de visitas al edificio es de lunes a sábado de 9:30 a 17:00 y domingos y festivos de 10:00 a 14:00 horas</eag:opening>
+                                 </eag:timetable>
+                                 <eag:repositoryRole>Branch</eag:repositoryRole>
+                             </eag:description>
+                         </eag:repository>
+                     </eag:repositories>
                   </egXML>
                </div>
             </div>
@@ -6711,26 +7036,97 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Information on one archival repository. A <gi>repository</gi>> can represent an
-                     archival institution as a whole as well as only one part of an archival
-                     institution depending on its administrative structure.</p>
+                  <p>Within an EAG instance, either a single <gi>repository</gi> element - representing an archival institution as a whole - or the <gi>repositories</gi> element - combining two or more <gi>repository</gi> elements describing parts of the archival institution - has to be present. Depending on the administrative structure of an institution with archival holdings, the one or the other option might be more appropriate to describe the institution.</p>
+                  <p>The required child elements <gi>identity</gi> and <gi>description</gi> encode the name or names related to the repository and descriptive the information about it. The optional <gi>image</gi> element can be used to  include the logo or other imagery representation of the repository. The relation with other entities can be represented in the <gi>relations</gi> element.</p>
+                  <p>Use <gi>repositories</gi> instead of a single <gi>repository</gi> element in case an institution has several locations, which hold different types of material or result from several formerly independent institutions.</p>
+                  <p>The prescribed order of all child elements is:</p>
+                     <list type="simple">
+                        <item><gi>identity</gi></item>
+                        <item><gi>description</gi></item>
+                        <item><gi>relations</gi></item>
+                        <item><gi>image</gi></item>
+                     </list>
                </div>
                <div type="availability">
-                  <p>Within <gi>eag</gi>: one of <gi>repository</gi> or <gi>repositories</gi>
-                     required, not repeatable</p>
+                  <p>Within <gi>eag</gi>: one of <gi>repository</gi> or <gi>repositories</gi> required, not repeatable</p>
                   <p>Within <gi>repositories</gi>: required, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:eag>
-                        <eag:control> [...] </eag:control>
-                        <eag:repository>
-                           <eag:identity> [...] </eag:identity>
-                           <eag:description> [...] </eag:description>
-                           <eag:relations> [...] </eag:relations>
-                           <eag:image href="[link]"/>
-                        </eag:repository>
-                     </eag:eag>
+                     <eag:repository>
+                        <eag:identity>
+                           <eag:nameEntry status="authorized" languageOfElement="eng">
+                              <eag:part>University of Bradford Special Collections</eag:part>
+                           </eag:nameEntry>
+                           <eag:repositoryId countryCode="GB" repositoryCode="GB-ah532"/>
+                           <eag:otherRepositoryId vocabularySource="archon">532</eag:otherRepositoryId>
+                           <eag:otherRepositoryId vocabularySource="hubdata">bradford</eag:otherRepositoryId>
+                           <eag:repositoryType value="universityArchives"/>
+                        </eag:identity>                        
+                        <eag:description>
+                           <eag:places>
+                              <eag:place localType="visitors">
+                                 <eag:address>
+                                    <eag:addressLine addressLineType="street">J.B. Priestly Library</eag:addressLine>
+                                    <eag:addressLine addressLineType="municipality">Bradford</eag:addressLine>
+                                    <eag:addressLine addressLineType="county">Yorkshire</eag:addressLine>
+                                    <eag:addressLine addressLineType="postalCode">BD7 1DP</eag:addressLine>
+                                    <eag:addressLine addressLineType="country">England, UK</eag:addressLine>
+                                 </eag:address>                                 
+                                 <eag:contact>
+                                    <eag:contactLine contactLineType="email" href="mailto:special-collections@bradford.ac.uk">Send us an email</eag:contactLine>
+                                    <eag:contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</eag:contactLine>
+                                    <eag:contactLine contactLineType="homepage" href="http://www.bradford.ac.uk/library/special-collections/">Visit our website</eag:contactLine>
+                                    <eag:contactLine contactLineType="directions"
+                                       href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</eag:contactLine>
+                                 </eag:contact>                                 
+                                 <eag:geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</eag:geographicCoordinates>                                                 </eag:place>
+                           </eag:places> 
+                           <eag:access languageOfElement="eng" question="yes (conditions apply)">
+                              <eag:accessConditions>Special Collections are open to, and intended for, anyone who might benefit from using them. However, space and staffing constraints mean that appointments are required. Access is subject to preservation requirements and must also conform to the restrictions of the Data Protection Act and any other appropriate legislation.</eag:accessConditions>
+                              <eag:useConditions href="https://www.bradford.ac.uk/library/special-collections/services/publishing/">See website for information on using our holdings.</eag:useConditions>
+                           </eag:access>
+                           <eag:timetable>
+                              <eag:opening languageOfElement="eng" href="http://www.bradford.ac.uk/library/special-collections/opening-hours-and-contact-details/">See website for information on opening hours.</eag:opening>
+                              <eag:closing languageOfElement="eng">Closed on public holidays.</eag:closing>
+                           </eag:timetable> 
+                           <eag:accessibility languageOfElement="eng" question="yes">The Reading Room is accessible by lifts and level floors. However the layout of Floor 02 pre-dates modern standards and can be difficult for very large or long wheelchairs. We can book a back-up room with level access if necessary.</eag:accessibility>
+                          <eag:repositoryRole>Main Office</repositoryRole>
+                          <eag:biogHist>
+                              <eag:p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</eag:p>
+                              <eag:p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</eag:p>
+                              <eag:p>Since establishing the service, we have acquired other exciting resources, such
+                                 as the Commonwealth Archives and the Jacquetta Hawkes Archive, and enriched those
+                                 already here, particularly the J. B. Priestley Archive. We are very grateful for the help we have received from colleagues and volunteers over the past years.</eag:p>
+                           </eag:biogHist>
+                           <eag:holdings>
+                              <eag:descriptiveNote>
+                                 <eag:p languageOfElement="eng">Special Collections at the University of Bradford holds over 100 collections of rare books and archives on the history of the University, Bradford, Yorkshire, history, politics, literature, archaeology and much more, our best-known being the Archive of J.B. Priestley. Our collections are open to everyone and include manuscripts, letters, photographs, artworks, newspapers, maps, pamphlets, objects, pipes (Priestley's) and digital files.</eag:p>
+                              </eag:descriptiveNote>
+                           </eag:holdings>
+                           <eag:services>
+                              <eag:searchroom question="yes">
+                                 <eag:photographAllowance question="yes (conditions apply)">We encourage visitors to use their own devices to take images for personal research use.  This is at the discretion of the staff member on duty and subject to copyright and care.</eag:photographAllowance>
+                                 <eag:advancedOrders languageOfElement="eng" question="yes"
+                                    href="https://www.bradford.ac.uk/library/special-collections/visiting/">Available. Send us details of the materials you’d like to consult. We can have them out ready for you, so you can begin your research at once.</eag:advancedOrders>
+                              </eag:searchroom>
+                              <eag:internetAccess question="yes"
+                                 href="http://www.bradford.ac.uk/library/special-collections/services/visiting/">If you wish to use wi-fi, register with one of our networks for quick access on the day.</eag:internetAccess>
+                              <eag:technicalServices>
+                                 <eag:reproductionServices question="yes">
+                                    <eag:descriptiveNote>
+                                       <eag:p>Special Collections offers photocopying and digitisation services for enquirers who for practical or legal reasons cannot take advantage of personal digital photography.  We need a declaration form and payment before we can go ahead with copying.  Remote enquirers should contact us to obtain a quotation for likely costs before completing their declaration.</eag:p>
+                                    </eag:descriptiveNote>
+                                 </eag:reproductionServices>
+                              </eag:technicalServices>
+                              <eag:recreationalServices>
+                                 <eag:exhibition question="yes" href="https://www.bradford.ac.uk/library/special-collections/exhibition" localType="onlineexhibition">Special Collections Online Exhibitions</eag:exhibition>
+                                 <eag:exhibition question="yes" href="https://archiveshub.jisc.ac.uk/features/paxcat/" localType="archiveshubfeature">The PaxCat Project: bringing peace archives to life</eag:exhibition>
+                              </eag:recreationalServices>
+                           </eag:services>
+                        </eag:description>
+                        <eag:image localType="logo" href="https://archiveshub.jisc.ac.uk/images/contrlogos/bradford.gif"/>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -6744,8 +7140,7 @@
                   <p>Repository Area</p>
                </div>
                <div type="summary">
-                  <p>Information about the dimensions of the repository area within the
-                     building.</p>
+                  <p>Information about the size of the repository area within the building.</p>
                </div>
                <div type="mayContain">
                   <p>num</p>
@@ -6762,7 +7157,8 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>This element is normally used to give the size of the storage areas, which helps
+                     researchers to get a sense of the volume of the holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -6792,8 +7188,7 @@
                   <p>Repository identifier</p>
                </div>
                <div type="summary">
-                  <p>Element meant to gather the <att>countryCode</att> and
-                        <att>repositoryCode</att> of the archival institution.</p>
+                  <p>Element meant to gather the <att>countryCode</att> and <att>repositoryCode</att> of the archival institution to provide a unique and ideally persistent identifier for the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>[empty]</p>
@@ -6810,39 +7205,24 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Provide a unique numeric or alphanumeric code identifying the institution with
-                     archival holdings. Ideally, this identifier is compliant with the standard <ref
-                        target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO
-                        15511:2011</ref>, which can be specified using the attribute
-                        <att>repositoryEncoding</att> within <gi>control</gi>.Thus, the identifier
-                     would most likely be made up of two components: a two-letter country code
-                     (according to the standard <ref
-                        target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref>) and a
-                     numeric or alpha-numeric institution's identifier separated by a hyphen with a
-                     maximum length of 11 characters in total.</p>
-                  <p>In addition to being compliant with ISO 15511:2011, an institution's identifier
-                     may be an officially registered ISIL code, effectively resulting in global
-                     uniqueness of the identifier as a whole.</p>
-                  <p>Identifiers complying with national, regional or local standards, rules or
-                     guidelines can be given here as well, in case no identifier compliant with ISO
-                     15511 exists. It would then be recommended to use the attribute
-                        <att>repositoryEncoding</att> within <gi>control</gi> with the value
-                     "otherRepositoryEncoding". Alternatively, seeing that <gi>repositoryId</gi> is
-                     only optional, you can also use the parallel element
-                        <gi>otherRepositoryCode</gi> where there are no specific requirements
-                     regarding the format of its content.</p>
+                  <p>Provide a unique numeric or alphanumeric code identifying the repository using the required <att>repositoryCode</att> attribute. Ideally, this identifier is compliant with the standard <ref target="http://www.iso.org/iso/catalogue_detail?csnumber=57332">ISO 15511:2011</ref>, which can be specified using the attribute <att>repositoryEncoding</att> within <gi>control</gi>. As such, the identifier would be made up of two components: a two-letter country code (according to the standard <ref target="http://www.iso.org/iso/country_codes.htm">ISO 3166-1</ref>) or a three-to-four letter code for another type of registring organisation, plus a numeric or alpha-numeric institution's identifier separated by a hyphen. The maximum length of both parts combined would be up to 16 characters.</p>
+                  <p>The country code according to ISO 3166-1 will have to be provided in all cases using the mandatory <att>countryCode</att> attribute.</p>
+                  <p>In addition to being compliant with ISO 15511:2011, an institution's identifier may be an officially registered ISIL code, effectively resulting in global uniqueness of the identifier as a whole. Whether or not a repository identifier is registered by an authorisation agency, can be indicated by using the <att>status</att> attribute with the possible values "authorized" respectively "alternative".</p>
+                  <p>Identifiers complying with national, regional or local standards, rules or guidelines can be given here as well, in case no identifier compliant with ISO 15511 exists. It would then be recommended to use the attribute <att>repositoryEncoding</att> within <gi>control</gi> with the value "otherRepositoryEncoding". Alternatively, seeing that <gi>repositoryId</gi> is only optional, you can also use the parallel element <gi>otherRepositoryCode</gi> where there are no specific requirements regarding the format of its content.</p>
                </div>
                <div type="availability">
                   <p>Optional, not repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
-                           <eag:repositoryId countryCode="ES" repositoryCode="ES-8019-ACA6"/>
-                        </eag:identity>
-                        <eag:description> [...] </eag:description>
-                     </eag:repository>
+                     <eag:identity>
+                        <eag:repositoryId countryCode="DE" repositoryCode="DE-1958" status="authorized"/> 
+                     </eag:identity>
+                  </egXML>
+                  <egXML>
+                     <eag:identity xmlns="http://www.tei-c.org/ns/Examples">
+                        <eag:repositoryId countryCode="GB" repositoryCode="ah532"/>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
@@ -6873,14 +7253,17 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Use <gi>repositoryRole</gi> to define the role of a repository, especially when
-                     describing several repositories that form one institution. Possible roles are
-                     "headquarters", "branch", "department", or "interim archive", etc.</p>
-                  <p>Do not confuse with <gi>repositoryType</gi> that comes with a predefined list
-                     of terms or its sibling <gi>otherRepositoryType</gi>, which both are meant to
-                     capture types of archival institutions as defined by their mandate, the context
-                     they operate in and the type of organisation(s) that they function as an
-                     archive for.</p>
+                  <p><gi>repositoryRole</gi> can be used to describe the managerial or
+                     administrative role of repository, especially when describing several
+                     repositories that are part of one institution. Possible roles  are "headquarters",
+                     "branch", "department", "district office" or "sub-office". You could also use something like "interim
+                     archive" for a temporary location.</p>
+                  <p>Do not confuse with <gi>repositoryType</gi>, which comes with a predefined list
+                     of terms, or its sibling <gi>otherRepositoryType</gi>. These tags are used to 
+                     capture types of archival institutions as defined by their mandate, the context they operate in and the type of organisation(s) that they function as an archive for.</p>
+                  <p>If you take your values from a source, you can record it using the vocabulary attributes
+                     <att>valueURI</att>, <att>vocabularySource</att> and
+                     <att>vocabularySourceURI</att></p>. 
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -6926,76 +7309,41 @@
                      </list>
                   </p>
                </div>
-               <div type="description">
-                  <p>Describes the type of archival institution with a predefined list in the
-                     attribute <att>value</att>; available terms are:</p>
-                  <p>"nationalArchives", i.e. archival institutions that hold public records of
-                     government institutions on the national level</p>
-                  <p>"regionalArchives, i.e. archival institutions that hold public records of
-                     government institutions on an administrative level that is between the national
-                     and the local levels; depending on a country's administrative system this type
-                     might not be relevant for all countries; or an institution could fall into this
-                     category in one country, but rather would fit into the category of "Local
-                     archives" in another country</p>
-                  <p>"localArchives", e.g. county or local authority archives and municipal
-                     archives, i.e. archival institutions that hold public records of government
-                     institutions on a local level</p>
-                  <p>"specialisedGovernmentArchives", i.e. archival institutions that hold records
-                     of institutions that are subdivisions of governmental bodies, that are funded
-                     by government, or related to government in some other administrative or
-                     organisational form; use the controlled access terms available with
-                        <gi>holdings</gi> to indicate an institution's subject specialism</p>
-                  <p>"specialisedNongovernmentalArchives", i.e. archival institutions that hold
-                     records of institutions that are independent from government, e.g. archives of
-                     other cultural (heritage) institutions, archives of political parties, of
-                     popular/labour movements, associations, agencies and foundations, archives of
-                     the media, archives of research institutions, etc.; depending on how such
-                     archives are managed and depending on the organisations they function as an
-                     archive for, other types could apply to institutions in this category as well,
-                     such as "communityArchives" in case the archive is managed privately or by
-                     volunteers or "businessArchives", e.g. for the public archives of a
-                     broadcasting company; use the controlled access terms available with
-                        <gi>holdings</gi> to indicate an institution's subject specialism</p>
-                  <p>"personalAndFamilyArchives", i.e. archives of (noble) families or (prominent)
-                     persons that are kept by non-governmental organisations or privately</p>
-                  <p>"businessArchives, i.e. archives of businesses that are mainly kept for the
-                     internal purpose of the organisation, but might also be accessible to the
-                     public</p>
-                  <p>"religiousInstitutionArchives", i.e. archives of religious institutions,
-                     organisations, associations, including churches, mosques, synagogues and other
-                     types of temples</p>
-                  <p>"universityArchives", i.a. archives of universities (and other institutions of
-                     higher education depending on the national context)</p>
-                  <p>"nonUniversityEducationArchives", i.e. archives of other institutions of the
-                     educational sector that do not classify as universities, e.g. schools</p>
-                  <p>"internationalArchives", i.e.archives of international organisations, e.g. EU
-                     organisations, UN organisations, International Red Cross, Amnesty
-                     International, Doctors without Frontiers, etc.</p>
-                  <p>"communityArchives", i.e. archives that are (often) run by volunteers (groups),
-                     that hold materials relating to less represented/marginalised groups of people
-                     whether that’s by nationality, heritage, religion, gender, sexual orientation,
-                     age, etc.</p>
-                  <p>Use the element <gi>otherRepositoryType</gi> to provide more specific terms to
-                     the ones predefined for <gi>repositoryType</gi> or to provide translations of
-                     or equivalents to the predefined terms in your country's context.</p>
-                  <p>Do not confuse with the element <gi>repositoryRole</gi> that decsribes the role
-                     of a repository within the organisational structure of an archival
-                     institution.</p>
+                <div type="description">
+                  <p>Describes the type of repository with a predefined list in the attribute <att>value</att>; available terms are:</p>
+                  <p>"nationalArchives", i.e. archival institutions that hold public records of government institutions on the national level</p>
+                  <p>"regionalArchives, i.e. archival institutions that hold public records of government institutions on an administrative level that is between the national and the local levels; depending on a country's administrative system this type might not be relevant for all countries; or an institution could fall into this category in one country, but rather would fit into the category of "localArchives" in another country</p>
+                  <p>"localArchives", e.g. county or local authority archives and municipal archives, i.e. archival institutions that hold public records of government institutions on a local level</p>
+                  <p>"specialisedGovernmentArchives", i.e. archival institutions that hold records of institutions that are subdivisions of governmental bodies, that are funded by government, or related to government in some other administrative or organisational form; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
+                  <p>"specialisedNongovernmentalArchives", i.e. archival institutions that hold records of institutions that are independent from government, e.g. archives of other cultural (heritage) institutions, archives of political parties, of popular/labour movements, associations, agencies and foundations, archives of the media, archives of research institutions, etc.; depending on how such archives are managed and depending on the organisations they function as an archive for, other types could apply to institutions in this category as well, such as "communityArchives" in case the archive is managed privately or by volunteers or "businessArchives", e.g. for the public archives of a broadcasting company; use the controlled access terms available with <gi>holdings</gi> to indicate an institution's subject specialism</p>
+                  <p>"personalAndFamilyArchives", i.e. archives of (noble) families or (prominent) persons that are kept by non-governmental organisations or privately</p>
+                  <p>"businessArchives", i.e. archives of businesses that are mainly kept for the internal purpose of the organisation, but might also be accessible to the public</p>
+                  <p>"religiousInstitutionsArchives", i.e. archives of religious institutions, organisations, associations, including churches, mosques, synagogues and other types of temples</p>
+                  <p>"universityArchives", i.a. archives of universities (and other institutions of higher education depending on the national context)</p>
+                  <p>"nonUniversityEducationArchives", i.e. archives of other institutions of the educational sector that do not classify as universities, e.g. schools</p>
+                  <p>"internationalArchives", i.e.archives of international organisations, e.g. EU organisations, UN organisations, International Red Cross, Amnesty International, Doctors without Frontiers, etc.</p>
+                  <p>"communityArchives", i.e. archives that are (often) run by volunteers (groups), that hold materials relating to less represented/marginalised groups of people whether that’s by nationality, heritage, religion, gender, sexual orientation, age, etc.</p>
+                  <p>Use the element <gi>otherRepositoryType</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
+                  <p>Do not confuse with the element <gi>repositoryRole</gi> that decsribes the role of a repository within the organisational structure of an archival institution.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:repository>
-                        <eag:identity>
-                           <eag:nameEntry>
-                              <eag:part>[...]</eag:part>
-                           </eag:nameEntry>
-                           <eag:repositoryType value="nationalArchives"/>
-                        </eag:identity>
-                        <eag:description> [...] </eag:description>
-                     </eag:repository>
+                     <eag:identity>
+                        <eag:repositoryType value="nationalArchives"/>
+                     </eag:identity>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:repositoryType value="universityArchives"/>
+                     </eag:identity>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:repositoryType value="businessArchives"/>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
@@ -7563,7 +7911,7 @@
                   <p>Social Media</p>
                </div>
                <div type="summary">
-                  <p/>
+                  <p>Information about social media used by the repository or institution.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -7580,15 +7928,32 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Add information about accounts on social media. It is recommended to provide
+                     the URL using the <att>href</att> attribute.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                     <eag:description>
+                        <eag:socialMedia href="https://twitter.com/franceArchives">Twitter</eag:socialMedia>
+                     </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:socialMedia href="https://www.facebook.com/cardiffuni">Find us on Facebook</eag:socialMedia>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -7895,8 +8260,7 @@
                   <p xml:lang="eng">Subject</p>
                </div>
                <div type="summary">
-                  <p>An element for encoding topics represented in the materials being
-                     described.</p>
+                  <p>An element for topics represented in the materials being described.</p>
                </div>
                <div type="mayContain">
                   <p>part</p>
@@ -7913,8 +8277,13 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
-               </div>
+                  <p>Adding subjects to holdings information can highlight particular areas of strength
+                     of the institution's holdings.</p>
+                   <p>If the subject is taken from a thesaurus such as Unesco or Library of Congress
+                     Subject Headings then <att>vocabularySource</att> can be used to specify this,
+                     and the <att>vocabularySourceURI</att> can give the URI of the source being
+                      used.</p>
+                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
@@ -8236,7 +8605,9 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Contains <gi>opening</gi> and <gi>closing</gi> tags for providing opening hours
+                  and dates of closure. Information on opening hours is required. Note that this
+                  elemen cannot contain text.</p>
                </div>
                <div type="availability">
                   <p>Required, repeatable</p>
@@ -8244,16 +8615,27 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
-                        <eag:identity> [...] </eag:identity>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
                         <eag:description>
-                           <eag:timetable>
-                              <eag:opening>Consulta en sala: de lunes a viernes de 8.30 a 14.30
-                                 horas. Información y asuntos generales: de lunes a viernes de 8.30
-                                 a 14:30 horas</eag:opening>
-                              <eag:closing>Fiestas locales (San Ildefonso y Corpus Christi,
-                                 variables anualmente), fiestas nacionales, fiestas de la comunidad
-                                 autónoma (31 de mayo), 24 de diciembre y 31 de
-                                 diciembre.</eag:closing>
+                           <eag:timetable languageOfElement="eng">
+                              <eag:opening>The reading room is open Monday to Friday 10.00-17.00.</eag:opening>
+                              <eag:closing>Closed over the Christmas period and on Bank Holidays</eag:closing>
+                           </eag:timetable>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:timetable languageOfElement="spa">
+                              <eag:opening>Consulta en sala: de lunes a viernes de 8.30 a 14.30 horas. Información y asuntos generales: de lunes a viernes de 8.30 a 14:30 horas</eag:opening>
+                              <eag:closing>Fiestas locales (San Ildefonso y Corpus Christi, variables anualmente), fiestas nacionales, fiestas de la comunidad autónoma (31 de mayo), 
+                                 24 de diciembre y 31 de diciembre.</eag:closing>
                            </eag:timetable>
                         </eag:description>
                      </eag:repository>
@@ -8422,8 +8804,8 @@
                   <p>Conditions of use</p>
                </div>
                <div type="summary">
-                  <p>Can incorporate information (and links) to terms of use, archival law or fee
-                     structure etc.</p>
+                  <p>Information about use of the materials. May incorporate information (and links)
+                     to terms of use, archival law, fee structure, etc.</p>
                </div>
                <div type="mayContain">
                   <p>[text]</p>
@@ -8440,7 +8822,10 @@
                   </p>
                </div>
                <div type="description">
-                  <p/>
+                  <p>Information about terms of use for the materials, such as restrictions on printing or
+                     downloading content, information on copyright and data protection, and prohibited use. For example, copies can
+                     be made for non-commercial purposes only, or copyright exists in these
+                     materials and they cannot be copied without special permission.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -8448,13 +8833,31 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <eag:repository>
-                        <eag:identity> [...] </eag:identity>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
                         <eag:description>
                            <eag:access question="yes">
-                              <eag:useCondition
-                                 href="http://www.mecd.gob.es/cultura-mecd/dms/mecd/cultura-mecd/areas-cultura/archivos/mc/archivos/aca/servicios/consulta-en-sala/NORMAS_ACCESO_SALA.pdf"
-                                 > Normas para el acceso y consulta de documentos en los archivos
-                                 estatales </eag:useCondition>
+                              <eag:useConditions  languageOfElement="eng" href="https://archives.bodleian.ox.ac.uk/terms">
+                                 Terms of Use for Bodleian Archives and Manuscripts
+                              </eag:useConditions>
+                           </eag:access>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:access question="yes">
+                  <useConditions languageOfElement="ger"
+                     href="https://www.bundesarchiv.de/DE/Navigation/Benutzen/Hinweise-zur-Benutzung/hinweise-zur-benutzung.html"
+                     >Allgemeines zur Benutzung</useConditions>
+                  <useConditions languageOfElement="eng"
+                     href="https://www.bundesarchiv.de/DE/Navigation/Benutzen/Hinweise-zur-Benutzung/hinweise-zur-benutzung.html"
+                     >General information on access and use</useConditions>
                            </eag:access>
                         </eag:description>
                      </eag:repository>
