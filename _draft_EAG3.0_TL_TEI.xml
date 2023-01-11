@@ -258,7 +258,6 @@
       <body>
          <div type="elements">
             <div type="elementDocumentation" xml:id="elem-abstract">
-               <!-- Ana (review) -->
                <head>
                   <gi>abstract</gi>
                </head>
@@ -484,7 +483,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-address">
-               <!-- Ana (review) -->
                <head>
                   <gi>address</gi>
                </head>
@@ -575,7 +573,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-addressLine">
-               <!-- Ana (review) -->
                <head>
                   <gi>addressLine</gi>
                </head>
@@ -942,7 +939,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-biogHist">
-               <!-- Ana (review) -->
                <head>
                   <gi>biogHist</gi>
                </head>
@@ -1142,7 +1138,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-chronItem">
-               <!-- Ana (review) -->
                <head>
                   <gi>chronItem</gi>
                </head>
@@ -1272,7 +1267,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-chronItemSet">
-               <!-- Ana (review) -->
                <head>
                   <gi>chronItemSet</gi>
                </head>
@@ -1350,7 +1344,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-chronList">
-               <!-- Ana (review) -->
                <head>
                   <gi>chronList</gi>
                </head>
@@ -1606,7 +1599,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-contact">
-               <!-- Ana (review) -->
                <head>
                   <gi>contact</gi>
                </head>
@@ -1686,7 +1678,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-contactLine">
-               <!-- Ana (review) -->
                <head>
                   <gi>contactLine</gi>
                </head>
@@ -2321,8 +2312,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-description">
-               <!-- Ana (review) -->
-               <head>
+              <head>
                   <gi>description</gi>
                </head>
                <div type="fullName">
@@ -2517,7 +2507,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-event">
-               <!-- Ana (review) -->
                <head>
                   <gi>event</gi>
                </head>
@@ -2766,7 +2755,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-existDates">
-               <!-- Ana (review) -->
                <head>
                   <gi>existDates</gi>
                </head>
@@ -3033,18 +3021,17 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <eag:functions>
-<eag:function>
-<eag:term>Industrial or Scientific Research</eag:term>
-</eag:function>
-<eag:function>
-<eag:term>Analytical Services</eag:term>
-</eag:function>
-</eag:functions>
+                      <eag:function>
+                        <eag:term>Industrial or Scientific Research</eag:term>
+                      </eag:function>
+                      <eag:function>
+                        <eag:term>Analytical Services</eag:term>
+                      </eag:function>
+                    </eag:functions>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-function">
-               <!-- Ana (review) -->
                <head>
                   <gi>function</gi>
                </head>
@@ -3130,19 +3117,18 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                 <eag:functions>
-<eag:function>
-<eag:term>Industrial or Scientific Research</eag:term>
-</eag:function>
-<eag:function>
-<eag:term>Analytical Services</eag:term>
-</eag:function>
-</eag:functions>
+                   <eag:functions>
+                     <eag:function>
+                       <eag:term>Industrial or Scientific Research</eag:term>
+                     </eag:function>
+                     <eag:function>
+                       <eag:term>Analytical Services</eag:term>
+                     </eag:function>
+                   </eag:functions>
                   </egXML>
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-functions">
-               <!-- Ana (review) -->
                <head>
                   <gi>functions</gi>
                </head>
@@ -3244,7 +3230,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-geographicCoordinates">
-               <!-- Ana (review) -->
                <head>
                   <gi>geographicCoordinates</gi>
                </head>
@@ -3311,7 +3296,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-head">
-               <!-- Ana (review) -->
                <head>
                   <gi>head</gi>
                </head>
@@ -3668,7 +3652,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-item">
-               <!-- Ana (review) -->
                <head>
                   <gi>item</gi>
                </head>
@@ -3812,7 +3795,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-legalStatus">
-               <!-- Ana (review) -->
                <head>
                   <gi>legalStatus</gi>
                </head>
@@ -3901,7 +3883,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-legalStatuses">
-               <!-- Ana (review) -->
                <head>
                   <gi>legalStatuses</gi>
                </head>
@@ -4079,7 +4060,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-list">
-               <!-- Ana (review) -->
                <head>
                   <gi>list</gi>
                </head>
@@ -4534,7 +4514,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-mandate">
-               <!-- Ana (review) -->
                <head>
                   <gi>mandate</gi>
                </head>
@@ -4625,7 +4604,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-mandates">
-               <!-- Ana (review) -->
                <head>
                   <gi>mandates</gi>
                </head>
@@ -5571,7 +5549,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-part">
-               <!-- Ana (review) -->
                <head>
                   <gi>part</gi>
                </head>
@@ -5727,7 +5704,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-place">
-               <!-- Ana (review) -->
                <head>
                   <gi>place</gi>
                </head>
@@ -5845,7 +5821,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-placeName">
-               <!-- Ana (review) -->
                <head>
                   <gi>placeName</gi>
                </head>
@@ -5942,7 +5917,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-placeRole">
-               <!-- Ana (review) -->
                <head>
                   <gi>placeRole</gi>
                </head>
@@ -6009,7 +5983,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-places">
-               <!-- Ana (review) -->
                <head>
                   <gi>places</gi>
                </head>
@@ -7839,7 +7812,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-structureOrGenealogy">
-               <!-- Ana (review) -->
                <head>
                   <gi>structureOrGenealogy</gi>
                </head>
