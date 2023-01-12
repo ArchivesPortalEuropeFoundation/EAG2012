@@ -746,8 +746,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-advancedOrders">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>advancedOrders</gi>
                </head>
@@ -768,6 +766,33 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+			<label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>                
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -1732,8 +1757,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-computerPlaces">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>computerPlaces</gi>
                </head>
@@ -1754,6 +1777,20 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>               
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+			<label>scriptOfElement</label>
+                        <item>Optional</item> 
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -2972,8 +3009,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-exhibition">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>exhibition</gi>
                </head>
@@ -2994,6 +3029,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>                        
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes)</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>                        
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -3011,6 +3072,19 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <!-- Contains examples of XML from the schema.  
                           Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                      <eag:repository>
+                        <eag:description>
+                         <eag:services>
+                          <eag:recreationalServices>
+                           <eag:exhibition question="yes">
+                              <eag:exhibition question="yes" languageOfElement="fre"
+                              href="https://www.arch.be/index.php?l=fr&m=actualites&r=agenda&e=georges-hobe-a-t-il-modernise-namur" linkTitle="Plus d'informations">
+                              Georges Hobé a-t-il modernisé Namur ? Projets, chantiers et réalisations en photographies.
+                              Archives de l'État à Namur – Boulevard Cauchy 41, 5000 Namur. Du 24/08/2022 au 19/11/2022.
+                           </eag:recreationalServices>
+                         </eag:services>
+                       </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -4103,8 +4177,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-internetAccess">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>internetAccess</gi>
                </head>
@@ -4125,6 +4197,34 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>identityType</label>
+                        <item>Optional (values limited to: acquired, given)</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>                       
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -4517,8 +4617,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-library">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>library</gi>
                </head>
@@ -4540,6 +4638,22 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -5186,8 +5300,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-microfilmPlaces">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>microfilmPlaces</gi>
                </head>
@@ -5208,6 +5320,20 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -5236,9 +5362,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-multilingualServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
                <head>
                   <gi>multilingualServices</gi>
                </head>
@@ -5259,6 +5382,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+			<label>localType</label>
+			<item>Optional</item>    
+			<label>localTypeDeclarationReference</label>
+			<item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -5270,8 +5419,21 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                           <eag:services>
+                              <eag:multilingualServices question="yes" languageOfElement="eng" localType="staff">
+                                 The services provided by our reading room staff are predominantely in English. Please let us know in advance, if you would prefer support with your research in French, German, or Spanish instead, so that we can arrange for someone speaking these languages to be available on the day of your visit.
+                              </eag:multilingualServices>
+		              <eag:multilingualServices question="yes" languageOfElement="eng" localType="exhibition">
+                                 When visiting us on-site, make sure to allow for some time to explore our standing exhibition. Next to English, the information available about the exhibition can be provided in Chinese, French, German, Italian, Russian, and Spanish. The exhibition itself has been created with English, French, and German labels and information boards.
+                              </eag:multilingualServices>
+                           </eag:services>
+                        </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -6519,8 +6681,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-photographAllowance">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>photographAllowance</gi>
                </head>
@@ -6542,6 +6702,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>                      
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -6946,8 +7132,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-readersTicket">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>readersTicket</gi>
                </head>
@@ -6968,6 +7152,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -7070,8 +7280,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-recreationalServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>recreationalServices</gi>
                </head>
@@ -7093,6 +7301,22 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>                      
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Optional (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -7220,8 +7444,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-refreshment">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>refreshment</gi>
                </head>
@@ -7243,6 +7465,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -8145,8 +8393,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-reproductionServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>reproductionServices</gi>
                </head>
@@ -8167,6 +8413,24 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -8214,8 +8478,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-researchServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>researchServices</gi>
                </head>
@@ -8237,6 +8499,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+			<label>href</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -8263,8 +8551,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-restorationLaboratory">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>restorationLaboratory</gi>
                </head>
@@ -8286,6 +8572,26 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+			<label>question</label>
+			<item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -8302,7 +8608,13 @@
                         <eag:description>
                            <eag:services>
                               <eag:technicalServices>
-                                 <eag:restorationLaboratory question="yes"/>
+                                 <eag:restorationLaboratory> 
+                                    <eag:contact>
+                                       <eag:contactLine contactLineType="phoneNumber">+32 2 513 76 80</eag:contactLine>
+                                       <eag:contactLine contactLineType="email" href="archives.generales@arch.be">Archives générales du Royaume</eag:contactLine>
+                                    </eag:contact>
+                                    <eag:descriptiveNote>Créé en 1859, l’atelier de restauration a durant de longues années été l’un des fleurons des Archives générales du Royaume. Il ferme ses portes dans les années 1980 avant de reprendre ses activités en décembre 2008, suite à l’acquisition de matériel performant permettant notamment le nettoyage de documents, la mise à plat de ceux-ci, le remplissage de lacunes ou encore l’humidification.</eag:descriptiveNote>
+                                 </eag:restorationLaboratory>    
                               </eag:technicalServices>
                            </eag:services>
                         </eag:description>
@@ -8385,8 +8697,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-searchroom">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>searchroom</gi>
                </head>
@@ -8410,6 +8720,22 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>                     
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -8458,8 +8784,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-services">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>services</gi>
                </head>
@@ -8481,6 +8805,20 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>                     
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -9237,8 +9575,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-technicalServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>technicalServices</gi>
                </head>
@@ -9259,6 +9595,20 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>                     
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -9551,8 +9901,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-toursSessions">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>toursSessions</gi>
                </head>
@@ -9573,6 +9921,32 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>
+						      <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -9778,8 +10152,6 @@
                </div> 
             </div>
             <div type="elementDocumentation" xml:id="elem-workPlaces">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>workPlaces</gi>
                </head>
@@ -9800,6 +10172,28 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>href</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>linkRole</label>
+                        <item>Optional</item>
+                        <label>linkTitle</label>
+                        <item>Optional</item>                      
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
