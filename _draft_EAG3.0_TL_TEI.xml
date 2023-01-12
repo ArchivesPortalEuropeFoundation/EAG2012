@@ -586,8 +586,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-advancedOrders">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>advancedOrders</gi>
                </head>
@@ -1418,8 +1416,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-computerPlaces">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>computerPlaces</gi>
                </head>
@@ -2598,8 +2594,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-exhibition">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>exhibition</gi>
                </head>
@@ -3502,8 +3496,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-internetAccess">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>internetAccess</gi>
                </head>
@@ -3924,8 +3916,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-library">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>library</gi>
                </head>
@@ -4602,8 +4592,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-microfilmPlaces">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>microfilmPlaces</gi>
                </head>
@@ -4668,9 +4656,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-multilingualServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; newly added, i.e. no information in current EAG 20212 Tag Library; 
-                    needs completion for various parts -->
                <head>
                   <gi>multilingualServices</gi>
                </head>
@@ -5424,8 +5409,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>otherServices</gi>
                </head>
@@ -5673,8 +5656,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-photographAllowance">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>photographAllowance</gi>
                </head>
@@ -6086,8 +6067,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-readersTicket">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>readersTicket</gi>
                </head>
@@ -6230,8 +6209,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-recreationalServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>recreationalServices</gi>
                </head>
@@ -6392,8 +6369,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-refreshment">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>refreshment</gi>
                </head>
@@ -7106,8 +7081,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-reproductionServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>reproductionServices</gi>
                </head>
@@ -7184,8 +7157,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-researchServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>researchServices</gi>
                </head>
@@ -7259,8 +7230,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-restorationLaboratory">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>restorationLaboratory</gi>
                </head>
@@ -7406,8 +7375,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-searchroom">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>searchroom</gi>
                </head>
@@ -7488,8 +7455,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-services">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>services</gi>
                </head>
@@ -8174,8 +8139,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-technicalServices">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>technicalServices</gi>
                </head>
@@ -8466,8 +8429,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-toursSessions">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>toursSessions</gi>
                </head>
@@ -8655,8 +8616,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-workPlaces">
-               <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
-               <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
                   <gi>workPlaces</gi>
                </head>
