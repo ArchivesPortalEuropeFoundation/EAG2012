@@ -3613,7 +3613,6 @@
                      </eag:repository>
                   </egXML>
                </div>
-               </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-identity">
                <!-- Ana (edit), Codruta (review) -->
@@ -7309,7 +7308,7 @@
                      </list>
                   </p>
                </div>
-                <div type="description">
+               <div type="description">
                   <p>Describes the type of repository with a predefined list in the attribute <att>value</att>; available terms are:</p>
                   <p>"nationalArchives", i.e. archival institutions that hold public records of government institutions on the national level</p>
                   <p>"regionalArchives, i.e. archival institutions that hold public records of government institutions on an administrative level that is between the national and the local levels; depending on a country's administrative system this type might not be relevant for all countries; or an institution could fall into this category in one country, but rather would fit into the category of "localArchives" in another country</p>
