@@ -4919,8 +4919,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-name">
-               <!-- Jane (edit), Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
                <head>
                   <gi>name</gi>
                </head>
@@ -5026,12 +5024,6 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-nameEntry">
-               <!-- Ana (edit), Codruta (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                <head>
                   <gi>nameEntry</gi>
                </head>
@@ -5039,7 +5031,7 @@
                   <p>Name Entry</p>
                </div>
                <div type="summary">
-                  <p>An element containing a name entry for a corporate body, person, or family.</p>
+                  <p>An element containing a name entry for the repository being described.</p>
                </div>
                <div type="mayContain">
                   <p>part (1..n), useDates (0..n)</p>
@@ -5047,43 +5039,43 @@
                <div type="mayOccurWithin">
                   <p>identity, nameEntrySet</p>
                </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>conventionDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>localType</label>
-                        <item>Optional</item>
-                        <label>localTypeDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>preferredForm</label>
-                        <item>Optional (values limited to: false, true)</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
-                        <item>Optional</item>
-                        <label>status</label>
-                        <item>Optional (values limited to: alternative, authorized)</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                        <label>valueURI</label>
-                        <item>Optional</item>
-                        <label>vocabularySource</label>
-                        <item>Optional</item>
-                        <label>vocabularySourceURI</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
-               </div>
-            <div type="description">
+                  <div type="attributes">
+                     <p>
+                        <list type="gloss">
+                           <label>audience</label>
+                           <item>Optional (values limited to: external, internal)</item>
+                           <label>conventionDeclarationReference</label>
+                           <item>Optional</item>
+                           <label>id</label>
+                           <item>Optional</item>
+                           <label>languageOfElement</label>
+                           <item>Optional</item>
+                           <label>localType</label>
+                           <item>Optional</item>
+                           <label>localTypeDeclarationReference</label>
+                           <item>Optional</item>
+                           <label>maintenanceEventReference</label>
+                           <item>Optional</item>
+                           <label>preferredForm</label>
+                           <item>Optional (values limited to: false, true)</item>
+                           <label>scriptOfElement</label>
+                           <item>Optional</item>
+                           <label>sourceReference</label>
+                           <item>Optional</item>
+                           <label>status</label>
+                           <item>Optional (values limited to: alternative, authorized)</item>
+                           <label>target</label>
+                           <item>Optional</item>
+                           <label>valueURI</label>
+                           <item>Optional</item>
+                           <label>vocabularySource</label>
+                           <item>Optional</item>
+                           <label>vocabularySourceURI</label>
+                           <item>Optional</item>
+                        </list>
+                     </p>
+                  </div>
+               <div type="description">
                   <p>Within <gi>identity</gi>, the element <gi>nameEntry</gi> is used to record a
                      name by which the repository described in the EAG instance is known.</p>
                   <p>When <gi>nameEntry</gi> occurs within <gi>nameEntrySet</gi> it is used to
