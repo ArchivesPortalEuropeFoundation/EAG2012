@@ -5894,7 +5894,154 @@
                   </egXML>
                </div>
             </div>
-            <div type="elementDocumentation" xml:id="elem-otherServices">
+            <div type="elementDocumentation" xml:id="elem-otherRepositoryType">
+            <head>
+               <gi>otherRepositoryType</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Type</p>
+            </div>
+            <div type="summary">
+               <p>A required child element of <gi>otherRepositoryTypes</gi> used to encode alternative repository types such as translations or specifications of respectively additions to the predefined values used in <gi>repositoryType</gi>.</p>
+            </div>
+            <div type="mayContain">
+               <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n), term (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>otherRepositoryTypes</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                     <label>valueURI</label>
+                     <item>Optional</item>
+                     <label>vocabularySource</label>
+                     <item>Optional</item>
+                     <label>vocabularySourceURI</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>The types of institutions with archival holdings might be defined by a regional or national archives association. If existing, enter terms in accordance with such conventions. Terms may be drawn from controlled vocabularies or may be natural language terms.</p>
+                  <p><gi>otherRepositoryType</gi> must include at least one <gi>term</gi> element, where the type of repository is encoded. <gi>term</gi> can be repeated within <gi>otherRepositoryType</gi> to include translations of the same term. Use the <att>languageOfElement</att> attribute to identify the language used in each <gi>term</gi>.</p>
+                  <p>Associated date(s) (<gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi>) and place(s) (<gi>placeName</gi>) may be included to further constrain the term's meaning. A <gi>descriptiveNote</gi> element may be included if a fuller textual explanation is needed.</p>
+                  <p>Multiple <gi>otherRepositoryType</gi> elements may be grouped within an <gi>otherRepositoryTypes</gi> element.</p>
+               <p>The prescribed order of all child elements is:</p>
+               <list type="simple">
+                  <item><gi>term</gi></item>
+                  <item><gi>date</gi> or <gi>dateSet</gi> or <gi>dateRange</gi></item>
+                  <item><gi>placeName</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Required, repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                           <eag:term vocabularySource="Censo-Guía">Archivos Generales y Centrales</eag:term>
+                           <eag:descriptiveNote>
+                              <eag:p languageOfElement="eng">In Spain, the category of National Archives is called General and Central Archives.</eag:p>
+                           </eag:descriptiveNote>
+                        </eag:otherRepositoryType>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-otherRepositoryTypes">
+            <head>
+               <gi>otherRepositoryTypes</gi>
+            </head>
+            <div type="fullName">
+               <p>Other Repository Types</p>
+            </div>
+            <div type="summary">
+               <p>An optional child element of <gi>identity</gi> used to bundle together one or more <gi>otherRepositoryType</gi> elements.</p>
+            </div>
+            <div type="mayContain">
+               <p>descriptiveNote (0..1), otherRepositoryType (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>identity</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>Use the element <gi>otherRepositoryTypes</gi> to provide more specific terms to the ones predefined for <gi>repositoryType</gi> or to provide translations of or equivalents to the predefined terms in your country's context.</p>
+               <p><gi>otherRepositoryTypes</gi> requires at least one <gi>otherRepositoryType</gi> element to be present and includes the optional, not repeatable <gi>descriptiveNote</gi> element for further explanatory text if necessary.</p>
+               <p>The prescribed order of all child elements (both required and optional) is:</p>
+               <list type="simple">
+                  <item><gi>otherRepositoryType</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Optional, not repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:identity>
+                     <eag:repositoryType value="nationalArchives"/>
+                     <eag:otherRepositoryTypes>
+                        <eag:otherRepositoryType>
+                           <eag:term languageOfElement="spa">Archivos Nacionales</eag:term>
+                        </eag:otherRepositoryType>
+                        <eag:descriptiveNote>
+                           <eag:p languageOfElement="eng">Translation of the term "National Archives" into Spanish</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:otherRepositoryTypes>
+                  </eag:identity>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-otherServices">
                <!-- Johan and Raphaëlle (one doing edit, the other one doing review) -->
                <!-- EAG-specific; copied existing information from current EAG 20212 Tag Library; needs review/confirmation and completion for various parts -->
                <head>
