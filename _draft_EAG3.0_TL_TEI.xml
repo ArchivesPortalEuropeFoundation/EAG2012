@@ -1444,9 +1444,7 @@
                         <item>Optional</item>               
                         <label>maintenanceEventReference</label>
                         <item>Optional</item>
-			<label>question</label>
-                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
-                        <label>scriptOfElement</label>
+			<label>scriptOfElement</label>
                         <item>Optional</item> 
                         <label>sourceReference</label>
                         <item>Optional</item>
@@ -1456,7 +1454,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p>Number of work places in the reading room that have been fitted with computers or provide options to connect one's own device.</p>
+                  <p>Number of work places in the reading room that have been fitted with computers or provide options to connect one's own device. This is to be understood as a sub-amount of the reading room's total <gi>workPlaces</gi>. Use the element <gi>num</gi> with the attribute <att>unit</att> an the value "site" to provide an exact number.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -3956,7 +3954,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Use this element to describe library services, if available as part of a repository's service offer. The attribute <att>question</att> provides a general indication regarding the availability of a library at the premises of the repository, while the sub-element <gi>contact</gi> can be used to include a telephone number or email address specific to the library service or the link to the library's own website. The optional element <gi>descriptiveNote</gi> is available to provide any more descriptive information about the library, e.g. about the extent and type of the library's holdings.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -4630,7 +4628,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p><p>Number of work places in the reading room that have been fitted with a device to read documents digitised as microfilm/microfiche. This is to be understood as a sub-amount of the reading room's total <gi>workPlaces</gi>. Use the element <gi>num</gi> with the attribute <att>unit</att> an the value "site" to provide an exact number.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -4663,10 +4661,10 @@
                   <p>Multilingual Services</p>
                </div>
                <div type="summary">
-                  <p><label>An element containing all the languages used in an institution</p>
+                  <p>An element to describe services offered by the repository in several languages</p>
                </div>
                <div type="mayContain">
-                  <p>[text], languageOfElement</p>
+                  <p>[text]</p>
                </div>
                <div type="mayOccurWithin">
                   <p>services</p>
@@ -4687,7 +4685,11 @@
                         <label>linkRole</label>
                         <item>Optional</item>
                         <label>linkTitle</label>
-                        <item>Optional</item>                      
+                        <item>Optional</item>
+			<label>localType</label>
+			<item>Optional</item>    
+			<label>localTypeDeclarationReference</label>
+			<item>Optional</item>
                         <label>maintenanceEventReference</label>
                         <item>Optional</item>
                         <label>question</label>
@@ -4702,33 +4704,28 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Use this element to describe any services offered by the repository in more than one language. This could be information on multilingual staff in the reading room and the languages that are covered by the staff members, a multilingual website for the repository's holdings,  exhibitions (on-site or online) with information provided in several languages, or maybe a translation and/or transcription service for documents. Use the linking attributes <att>href</att>, <att>linkTitle</att>, and <att>linkRole</att> to point to any online resources in this regard.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                   <eag:repository>
+                     <eag:repository>
                         <eag:identity>
                            [...]
                         </eag:identity>
                         <eag:description>
                            <eag:services>
-                              <eag:multilingualServices question="yes">
-                                 <eag:languageOfElement="fr"</eag:languageOfElement>
-                                 <eag:languageOfElement="nl"</eag:languageOfElement>
-                                 <eag:languageOfElement="de"</eag:languageOfElement>
-                                 <eag:languageOfElement="en"</eag:languageOfElement>
+                              <eag:multilingualServices question="yes" languageOfElement="eng" localType="staff">
+                                 The services provided by our reading room staff are predominantely in English. Please let us know in advance, if you would prefer support with your research in French, German, or Spanish instead, so that we can arrange for someone speaking these languages to be available on the day of your visit.
+                              </eag:multilingualServices>
+		              <eag:multilingualServices question="yes" languageOfElement="eng" localType="exhibition">
+                                 When visiting us on-site, make sure to allow for some time to explore our standing exhibition. Next to English, the information available about the exhibition can be provided in Chinese, French, German, Italian, Russian, and Spanish. The exhibition itself has been created with English, French, and German labels and information boards.
                               </eag:multilingualServices>
                            </eag:services>
                         </eag:description>
                      </eag:repository>
-                  </egXML>
-               </div>
-            </div>
                   </egXML>
                </div>
             </div>
@@ -5706,7 +5703,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Use this element to state whether it is allowed for users to take photographs of documents in the reading room with their own devices and to specify any potential restrictions in this regard, such as only taken photos without flash or only taking photographs of selected collections or periods of time.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -7207,7 +7204,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Optional element to list any additional support offered by the repository itself or by research consultants and agencies connected to the repository. Use this element to e.g. point to any specific services for family historians, for school teachers and their students, for researchers requiring translation and/or transcription services, etc. Provide links to webpages about these services and potentially involved costs using the attributes <att>href</att>, <att>linkTitle</att>, and <att>linkRole</att>, if available.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -7262,6 +7259,8 @@
                         <item>Optional</item>
                         <label>maintenanceEventReference</label>
                         <item>Optional</item>
+			<label>question</label>
+			<item>Required (values limited to: no, yes, yes (conditions apply))</item>
                         <label>scriptOfElement</label>
                         <item>Optional</item>
                         <label>sourceReference</label>
@@ -7272,10 +7271,10 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>Option element to describe the work of and services provided by a restoration laboratory if available at the repository. Provide information about what types of records are taken care of, if any specific devices are used in the process, whether the restoration laboratory can also be used by other repositories against a fee, etc. Use the sub-element <gi>contact</gi> to provide a direct phone number, email address and/or website for the restoration laboratory.</p>
                </div>
                <div type="availability">
-                  <p></p>
+                  <p>Optional, repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -7416,7 +7415,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+		  <p>Use the sub-element <gi>contact</gi> to provide a phone number, email address and/or website specific to the reading room and the sub-element <gi>descriptiveNote</gi> for any more general descriptive text. Provide the number of workplaces available in the reading room via the element <gi>workPlaces</gi> and its sub-elements <gi>computerPlaces</gi> and <gi>microfilmPlaces</gi> as applicable. Point to any information essential to users with regard to asking for advanced orders of documents in preparation for their visit to the respository in <gi>advancedOrders</gi> or with regard to users being required to have signed up for a readers ticket in <gi>readersTicket</gi>. Note any rules with regard to taking photographs of records in <gi>photographAllowance</gi> and describe any additional services available to researchers at the repository in <gi>researchServives</gi>.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -7494,7 +7493,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p></p>
+                  <p>This element allows for a detailed description of the services offered by the repository from describing the institution's reading room and its facilities (<gi>searchroom</gi>) and any library services available (<gi>library</gi>) via services regarding the reproduction of documents for users and the preservation of documents (<gi>technicalServices</gi>) to services offered in multiple languages (<gi>multilingualServices</gi>), the availability of <gi>internetAccess</gi> throughout the repository's premises and recreational services such as the provision of a restaurant or caféteria on-site, exhibitions, tours, etc. (<gi>recreationalServices</gi>).</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -8663,7 +8662,7 @@
                </div>
                <div type="description">
                   <p>Use subelements <gi>computerPlaces</gi> and <gi>microfilmPlaces</gi> to specify how many of the work places in total have been fitted with computers, options to connect
-                     one's own devices, or to read document digitised as microfilm/microfiche.</p>
+                     one's own devices, or to read documents digitised as microfilm/microfiche.</p>
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
