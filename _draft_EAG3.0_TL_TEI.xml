@@ -536,7 +536,9 @@
                         <item>Optional</item>
                         <label>maintenanceEventReference</label>
                         <item>Optional</item>
-                        <label>scriptOfElement</label>
+                        <label>question</label>
+                        <item>Required (values limited to: no, yes, yes (conditions apply))</item>
+			<label>scriptOfElement</label>
                         <item>Optional</item>
                         <label>sourceReference</label>
                         <item>Optional</item>
