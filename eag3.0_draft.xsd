@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.13
-    Date: 20221214
+    Version: 0.1.14
+    Date: 20230112
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 
@@ -114,7 +114,6 @@
                 <xs:element name="languageDeclaration" type="languageDeclaration"/>
                 <xs:element name="localTypeDeclaration" type="localTypeDeclaration"/>
                 <xs:element name="otherRecordId" type="otherRecordId" />
-                <xs:element name="representation" type="representation"/>
                 <xs:element name="rightsDeclaration" type="rightsDeclaration"/>
             </xs:choice>
         </xs:sequence>
@@ -452,13 +451,6 @@
                 <xs:attributeGroup ref="vocabulary"/>
             </xs:extension>
         </xs:simpleContent>
-    </xs:complexType>
-
-    <xs:complexType name="representation" mixed="true">
-        <xs:attributeGroup ref="common"/>
-        <xs:attributeGroup ref="link"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
-        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
     <xs:complexType name="rightsDeclaration">
