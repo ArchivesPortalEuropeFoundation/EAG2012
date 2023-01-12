@@ -4941,6 +4941,30 @@
                      <list type="gloss">
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
+                        <label>conventionDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>id</label>
+                        <item>Optional</item>
+                        <label>languageOfElement</label>
+                        <item>Optional</item>
+                        <label>localType</label>
+                        <item>Optional</item>
+                        <label>localTypeDeclarationReference</label>
+                        <item>Optional</item>
+                        <label>maintenanceEventReference</label>
+                        <item>Optional</item>
+                        <label>scriptOfElement</label>
+                        <item>Optional</item>
+                        <label>sourceReference</label>
+                        <item>Optional</item>
+                        <label>target</label>
+                        <item>Optional</item>
+                        <label>valueURI</label>
+                        <item>Optional</item>
+                        <label>vocabularySource</label>
+                        <item>Optional</item>
+                        <label>vocabularySourceURI</label>
+                        <item>Optional</item>
                      </list>
                   </p>
                </div>
@@ -4955,9 +4979,49 @@
                   <p>Optional, repeatable</p>
                </div>
                <div type="examples">
+                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                      <eag:repository>
+                         <eag:identity>
+                            [...]
+                         </eag:identity>
+                         <eag:description>
+                        <eag:holdings>
+                           <eag:Name>
+                              <eag:part>John Carpenter</eag:part>
+                           </eag:Name>
+                        </eag:holdings>
+                         </eag:description>
+                      </eag:repository>
+                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
+                     <eag:repository>
+                        <eag:identity>
+                           [...]
+                        </eag:identity>
+                        <eag:description>
+                     <eag:holdings>
+                        <eag:Name>
+                           <eag:part>Nehru, Jawaharlal</eag:part>
+                        </eag:Name>
+                     </eag:holdings>
+                        </eag:description>
+                     </eag:repository>
+                  </egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                          <eag:repository>
+                           <eag:identity>
+                                [...]
+                          </eag:identity>
+                     <eag:description>
+                      <eag:holdings>
+                         <eag:Name vocabularySource="wikidata"
+                            vocabularySourceURI="https://en.wikipedia.org/" 
+                            valueURI="https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_Asiatique">
+                           <eag:part>Société Asiatique</eag:part>
+                        </eag:Name>
+                     </eag:holdings>
+                     </eag:description>
+                     </eag:repository>
                   </egXML>
                </div>
             </div>
@@ -5019,19 +5083,15 @@
                      </list>
                   </p>
                </div>
-               <div type="description">
+            <div type="description">
                   <p>Within <gi>identity</gi>, the element <gi>nameEntry</gi> is used to record a
-                     name by which the corporate body, person, or family described in the EAC-CPF
-                     instance is known.</p>
+                     name by which the repository described in the EAG instance is known.</p>
                   <p>When <gi>nameEntry</gi> occurs within <gi>nameEntrySet</gi> it is used to
-                     record two or more forms of a name, for example official and non-official forms
-                     of the name in different languages and/or scripts.</p>
+                     record two or more forms of a name, for example official and non-official forms of the
+                     name in different languages and/or scripts.</p>
                   <p>Each form of the name is recorded in a separate <gi>nameEntry</gi> element.</p>
-                  <p>Each <gi>nameEntry</gi> must contain at least one <gi>part</gi> element. Within
-                        <gi>nameEntry</gi> each of the component parts of a name may be recorded in
-                     a separate <gi>part</gi> element.</p>
-                  <p>The <gi>nameEntry</gi> element may also contain a <gi>useDates</gi> element to
-                     indicate the dates the name was used.</p>
+                  <p>Each <gi>nameEntry</gi> must contain at least one <gi>part</gi> element. Within <gi>nameEntry</gi> each of the component parts of a name may be recorded in a separate <gi>part</gi> element.</p>
+                  <p>The <gi>nameEntry</gi> element may also contain a <gi>useDates</gi> element to indicate the dates the name was used.</p>
                   <p>The prescribed order of all child elements (both required and optional) is:</p>
                   <list type="simple">
                      <item><gi>part</gi></item>
@@ -5040,58 +5100,44 @@
                </div>
                <div type="attributeusage">
                   <list type="simple">
-                     <item>The <att>status</att> attribute may be used to indicate whether the
-                           <gi>nameEntry</gi> is an authorized or alternative form of the
-                        name.</item>
-                     <item>The <att>scriptOfElement</att> and <att>languageOfElement</att>
-                        attributes can be used to specify the script and language of each name
-                        recorded in <gi>nameEntry</gi>.</item>
+                     <item>The <att>status</att> attribute may be used to indicate whether the <gi>nameEntry</gi> is an authorized or alternative form of the name.</item>
+                     <item>The <att>scriptOfElement</att> and <att>languageOfElement</att> attributes can be used to specify the script and language of each name recorded in several <gi>nameEntry</gi> elements, especially when used in parallel to each other.</item>
                   </list>
                </div>
                <div type="availability">
                   <p>Within <gi>identity</gi>: one of <gi>nameEntry</gi> or <gi>nameEntrySet</gi>
                      required, repeatable</p>
-                  <p>Within <gi>nameEntrySet</gi>: two or more <gi>nameEntry</gi> required,
+                  <p>Within <gi>nameEntrySet</gi>: two or more <gi>nameEntry</gi>-s required,
                      repeatable</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eac-cpf:conventionDeclaration audience="external" id="cd1"
-                        localType="transliteration">
-                        <eac-cpf:abbreviation>DIN 32708:2014</eac-cpf:abbreviation>
-                        <eac-cpf:citation href="https://www.iso.org/standard/9029.html">Information
-                           and documentation - Romanization of Japanese</eac-cpf:citation>
-                        <eac-cpf:descriptiveNote id="dn1">
-                           <p id="p1" languageOfElement="de">Angewendet werden nur die eigentlichen
-                              Umschriftvorgaben, nicht aber die Regeln zur Wortbildungin der
-                              lateinischen Umschrift. Diese erfolgt analog der Praxis von
-                              NACSIS.</p>
-                        </eac-cpf:descriptiveNote>
-                     </eac-cpf:conventionDeclaration> [...] <eac-cpf:nameEntrySet
-                        localType="parallel">
-                        <eac-cpf:nameEntry languageOfElement="de" scriptOfElement="Latn"
-                           preferredForm="true" status="authorized" localType="native">
-                           <eac-cpf:part localType="surname">Arendt</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">Hannah</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry languageOfElement="ja" scriptOfElement="Jpan"
-                           preferredForm="false" status="authorized"
-                           conventionDeclarationReference="#cd1">
-                           <eac-cpf:part localType="surname">?????</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">??</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:nameEntry languageOfElement="en" scriptOfElement="Latn"
-                           preferredForm="false" status="authorized">
-                           <eac-cpf:part localType="surname">Arendt</eac-cpf:part>
-                           <eac-cpf:part localType="firstname">Hannah</eac-cpf:part>
-                        </eac-cpf:nameEntry>
-                        <eac-cpf:useDates>
-                           <eac-cpf:dateRange>
-                              <eac-cpf:fromDate standardDate="1906">1906</eac-cpf:fromDate>
-                              <eac-cpf:toDate standardDate="1975">1975</eac-cpf:toDate>
-                           </eac-cpf:dateRange>
-                        </eac-cpf:useDates>
-                     </eac-cpf:nameEntrySet>
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="fre" status="authorized">
+                           <eag:part>Institut d'histoire de l'Aluminium</eag:part>
+                        </eag:nameEntry>
+                      </eag:identity>
+                  </egXML>  
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
+                        <eag:nameEntry languageOfElement="ger" status="authorized">
+                          <eag:part>Bundesarchiv</eag:part>
+                        </eag:nameEntry>
+                        <eag:nameEntrySet>
+                           <eag:nameEntry languageOfElement="eng" status="alternative">
+                              <eag:part>The Federal Archives</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="fre" status="alternative">
+                              <eag:part>Les Archives fédérales</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="spa" status="alternative">
+                              <eag:part>Archivo federal</eag:part>
+                           </eag:nameEntry>
+                           <eag:nameEntry languageOfElement="pol" status="alternative">
+                              <eag:part>Archiwum Federalne</eag:part>
+                           </eag:nameEntry>
+                        </eag:nameEntrySet>
+                     </eag:identity>
                   </egXML>
                </div>
             </div>
@@ -9215,7 +9261,7 @@
                      The attribute can be used to link to a convention or rule applied in the creation of the content of a specific element, such as a convention or rule that prescribes a method for converting one script into another script (transliteration), or a national, international or other rule that governs the construction of an EAG name.
                   </p>
                   <p>
-                     This optional attribute is available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository</gi> element. 
+                     This optional attribute is available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository</gi> element.
                   </p>
                </div>
                <div type="datatype">
@@ -10200,7 +10246,7 @@
                            <eag:part>Princeton University</eag:part>
                         </eag:targetEntity>
                      </eag:relation>
-                 </egXML>
+                  </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-standardDate">
