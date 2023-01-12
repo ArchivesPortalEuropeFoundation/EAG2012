@@ -25,8 +25,8 @@
             <date when="2022"/>
             <availability>
                <licence>This work is licensed under a Creative Commons Attribution 4.0 International
-                  License (CC BY 4.0). See <ref target="http://creativecommons.org/licenses/by/4.0/"
-                     > http://creativecommons.org/licenses/by/4.0/</ref>. Some rights reserved. No
+                  License (CC BY 4.0). See <ref target="http://creativecommons.org/licenses/by/4.0/"> 
+                  http://creativecommons.org/licenses/by/4.0/</ref>. Some rights reserved. No
                   part of this publication may be reproduced, stored in a retrieval system or
                   transmitted in any form or by any means, electronic, mechanical or photocopying,
                   recording, or otherwise without attribution.</licence>
@@ -1259,7 +1259,7 @@
                     <eag:chronList>
                         <eag:chronItem>
                             <eag:date>1919</eag:date>
-                            <event languageOfElement="ger">Das Reichsarchiv wird als zentrales Archiv
+                            <eag:event languageOfElement="ger">Das Reichsarchiv wird als zentrales Archiv
                             nach der im Versailler Vertrag geforderten Auflösung zahlreicher
                             militärischer Behörden eingerichtet. Das Reichsarchiv übernimmt Unterlagen
                             aller obersten Reichsbehörden seit 1867/71 und in einer Außenstelle in
@@ -1270,30 +1270,30 @@
                         </eag:chronItem>
                         <eag:chronItem>
                             <eag:date>1935</eag:date>
-                            <event languageOfElement="ger">Das Reichspropagandaministerium errichtet beim
+                            <eag:event languageOfElement="ger">Das Reichspropagandaministerium errichtet beim
                             Reichsarchiv in Potsdam ein Reichsfilmarchiv.</eag:event>
                         </eag:chronItem>
                         <eag:chronItem>
                             <eag:date>1936</eag:date>
-                            <event languageOfElement="ger">Das Heeresarchiv Potsdam wird als selbständige
+                            <eag:event languageOfElement="ger">Das Heeresarchiv Potsdam wird als selbständige
                             Einrichtung aus dem Reichsarchiv ausgegliedert.</eag:event>
                         </eag:chronItem>
                         <eag:chronItem>
                             <eag:date>1944/1945</eag:date>
-                            <event languageOfElement="ger">Der wertvollere Teil der zivilen Bestände
+                            <eag:event languageOfElement="ger">Der wertvollere Teil der zivilen Bestände
                             des Reichsarchivs wird kriegsbedingt ausgelagert. Bei einem Luftangriff im
                             April 1945 werden die noch nicht ausgelagerten Bestände des Heeresarchivs
                             weitestgehend vernichtet.</eag:event>
                         </eag:chronItem>
                         <eag:chronItem>
                             <eag:date>1946</eag:date>
-                            <event languageOfElement="ger">In der DDR wird mit Sitz in der Orangerie des
+                            <eag:event languageOfElement="ger">In der DDR wird mit Sitz in der Orangerie des
                             Schlosses Sanssouci in Potsdam das Deutsche Zentralarchiv, seit 1973
                             "Zentrales Staatsarchiv" der DDR, eingerichtet.</eag:event>
                         </eag:chronItem>
                         <eag:chronItem>
                             <eag:date>1952</eag:date>
-                            <event languageOfElement="ger">Die Bundesregierung errichtet auf Beschluss von
+                            <eag:event languageOfElement="ger">Die Bundesregierung errichtet auf Beschluss von
                             1950 das Bundesarchiv in Koblenz als Obere Bundesbehörde im Geschäftsbereich
                             des Bundesministeriums des Innern. Es wird zunächst im Gebäude des
                             ehemaligen preußischen Regierungspräsidenten unmittelbar am Rheinufer
@@ -1301,7 +1301,7 @@
                         </eag:chronItem>
                         <eag:chronItem>
                             <eag:date>1954</eag:date>
-                            <event languageOfElement="ger">Die ehemalige Außenstelle des Reichsarchivs in
+                            <eag:event languageOfElement="ger">Die ehemalige Außenstelle des Reichsarchivs in
                             Frankfurt a.M., in der die Überlieferungen des Deutschen Bundes und der Nationalversammlung von 1848/49 und der "Untrennbare Bestand" des Reichskammergerichts verwahrt werden, wird in das Bundesarchiv
                             eingegliedert.</eag:event>
                         </eag:chronItem>
@@ -1373,14 +1373,14 @@
                   <eag:chronItem>
                             <eag:date>2007</eag:date>
                             <eag:chronItemSet>
-                                <event languageOfElement="ger">Im Rahmen des Retrokonversionsprogramms zur
+                                <eag:event languageOfElement="ger">Im Rahmen des Retrokonversionsprogramms zur
                                 Digitalisierung von Findbüchern und Findkarteien wird die 1.000.000ste
                                 Titelaufnahme digitalisiert.</eag:event>
-                                <event languageOfElement="ger">In Berlin-Lichterfelde beginnen die Baumaßnahmen für
+                                <eag:event languageOfElement="ger">In Berlin-Lichterfelde beginnen die Baumaßnahmen für
                                         die Errichtung des Ernst-Posner-Baus mit Magazinen und Eingangsbereich für
                                         das Berliner Bundesarchiv sowie die Sanierung der früheren Kasernengebäude
                                         für ein Nutzungszentrum und die Dienstzimmer.</eag:event>
-                                        <event languageOfElement="ger">Das Digitale Bildarchiv des Bundesarchivs wird im
+                                        <eag:event languageOfElement="ger">Das Digitale Bildarchiv des Bundesarchivs wird im
                                             Bundeskanzleramt freigeschaltet.</eag:event>
                             </eag:chronItemSet>
                         </eag:chronItem>
@@ -1824,7 +1824,7 @@
                         <eag:contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</eag:contactLine>
                         <eag:contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</eag:contactLine>
                         <eag:contactLine contactLineType="directions"
-                           href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</contactLine>
+                           href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</eag:contactLine>
                      </eag:contact>
                   </egXML>
                </div>
@@ -2646,14 +2646,14 @@
                   <eag:chronItem>
                             <eag:date>2007</eag:date>
                             <eag:chronItemSet>
-                                <event languageOfElement="ger">Im Rahmen des Retrokonversionsprogramms zur
+                                <eag:event languageOfElement="ger">Im Rahmen des Retrokonversionsprogramms zur
                                 Digitalisierung von Findbüchern und Findkarteien wird die 1.000.000ste
                                 Titelaufnahme digitalisiert.</eag:event>
-                                    <event languageOfElement="ger">In Berlin-Lichterfelde beginnen die Baumaßnahmen für
+                                    <eag:event languageOfElement="ger">In Berlin-Lichterfelde beginnen die Baumaßnahmen für
                                         die Errichtung des Ernst-Posner-Baus mit Magazinen und Eingangsbereich für
                                         das Berliner Bundesarchiv sowie die Sanierung der früheren Kasernengebäude
                                         für ein Nutzungszentrum und die Dienstzimmer.</eag:event>
-                                        <event languageOfElement="ger">Das Digitale Bildarchiv des Bundesarchivs wird im
+                                        <eag:event languageOfElement="ger">Das Digitale Bildarchiv des Bundesarchivs wird im
                                             Bundeskanzleramt freigeschaltet.</eag:event>
                             </eag:chronItemSet>
                         </eag:chronItem>
@@ -6066,7 +6066,7 @@
                            <eag:contactLine contactLineType="phoneNumber">+44 (0) 1274 235256</eag:contactLine>
                            <eag:contactLine contactLineType="homepage">http://www.bradford.ac.uk/library/special-collections/</eag:contactLine>
                            <eag:contactLine contactLineType="directions"
-                              href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</contactLine>
+                              href="https://www.bradford.ac.uk/library/special-collections/visiting/">The Special Collections Reading Room is located in Room 02.3 (Basement Floor) of the J.B. Priestley Library on city campus.</eag:contactLine>
                         </eag:contact>
                         <eag:geographicCoordinates coordinateSystem="WGS84">53.791242, -1.766231</eag:geographicCoordinates>
                      </eag:place>
@@ -6231,7 +6231,7 @@
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:placeRole>Visitor's address</placeRole>
+                     <eag:placeRole>Visitor's address</eag:placeRole>
                   </egXML>
                </div>
             </div>
@@ -6967,7 +6967,7 @@
                                          <eag:address localType="visitors address">
                                              <eag:addressLine addressLineType="country" languageOfElement="spa">España</eag:addressLine>
                                              <eag:addressLine addressLineType="postalCode" languageOfElement="spa">41071</eag:addressLine>
-                                             <addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
+                                             <eag:addressLine addressLineType="municipality" languageOfElement="spa">Sevilla</eag:addressLine>
                                              <eag:addressLine addressLineType="street" languageOfElement="spa">Santo Tomás, 5</eag:addressLine>
                                          </eag:address>
                                      </eag:place>
@@ -7090,7 +7090,7 @@
                               <eag:closing languageOfElement="eng">Closed on public holidays.</eag:closing>
                            </eag:timetable> 
                            <eag:accessibility languageOfElement="eng" question="yes">The Reading Room is accessible by lifts and level floors. However the layout of Floor 02 pre-dates modern standards and can be difficult for very large or long wheelchairs. We can book a back-up room with level access if necessary.</eag:accessibility>
-                          <eag:repositoryRole>Main Office</repositoryRole>
+                          <eag:repositoryRole>Main Office</eag:repositoryRole>
                           <eag:biogHist>
                               <eag:p languageOfElement="eng">The present staffed Special Collections service was created when the University Library received access funding from the Research Support Libraries Programme in 2000.Initially we concentrated on mapping the collections, and establishing policies and procedures for preservation, disaster control and collection development.</eag:p>
                               <eag:p languageOfElement="eng">Over the last few years, the focus of our work has shifted towards marketing, outreach and fundraising, especially encouraging virtual engagement with the collections. Our achievements were recently recognised by the Archive Accreditation Scheme: we are the first English university to receive this prestigious award.</eag:p>
@@ -7218,8 +7218,8 @@
                         <eag:repositoryId countryCode="DE" repositoryCode="DE-1958" status="authorized"/> 
                      </eag:identity>
                   </egXML>
-                  <egXML>
-                     <eag:identity xmlns="http://www.tei-c.org/ns/Examples">
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <eag:identity>
                         <eag:repositoryId countryCode="GB" repositoryCode="ah532"/>
                      </eag:identity>
                   </egXML>
@@ -7262,7 +7262,7 @@
                      capture types of archival institutions as defined by their mandate, the context they operate in and the type of organisation(s) that they function as an archive for.</p>
                   <p>If you take your values from a source, you can record it using the vocabulary attributes
                      <att>valueURI</att>, <att>vocabularySource</att> and
-                     <att>vocabularySourceURI</att></p>. 
+                     <att>vocabularySourceURI</att>.</p> 
                </div>
                <div type="availability">
                   <p>Optional, repeatable</p>
@@ -9215,7 +9215,7 @@
                      The attribute can be used to link to a convention or rule applied in the creation of the content of a specific element, such as a convention or rule that prescribes a method for converting one script into another script (transliteration), or a national, international or other rule that governs the construction of an EAG name.
                   </p>
                   <p>
-                     This optional attribute is available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository<gi> element. 
+                     This optional attribute is available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository</gi> element. 
                   </p>
                </div>
                <div type="datatype">
@@ -9287,7 +9287,7 @@
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:maintenanceAgency countryCode="IE">
-                        <eag:agencyCode>IE-NAI</eag:agencycode>
+                        <eag:agencyCode>IE-NAI</eag:agencyCode>
                         <eag:agencyName>National Archives of Ireland</eag:agencyName>
                      </eag:maintenanceAgency>
                   </egXML>
@@ -9370,7 +9370,7 @@
                </div>
                <div type="description">
                   <p>The authoritative source or rules for values provided in
-                     <att>standardDate</att> and related attributes in <gi>date</gi>, <gi>fromDate</gi> and <gi>toDate</gi> as well as <att>standardDateTime</att> in <gi>eventDateTime</att>. If the value "otherDateEncoding" is selected an alternate
+                     <att>standardDate</att> and related attributes in <gi>date</gi>, <gi>fromDate</gi> and <gi>toDate</gi> as well as <att>standardDateTime</att> in <gi>eventDateTime</gi>. If the value "otherDateEncoding" is selected an alternate
                      code list should be specified in <gi>conventionDeclaration</gi>. This optional attribute is available only in <gi>control</gi>.</p>
                </div>
                <div type="values">
@@ -9678,7 +9678,7 @@
                         <eag:item>John H. Applebee, Minister 1911-1929</eag:item>
                         <eag:item>Waldemar W. Argow, Minister 1930-1941</eag:item>
                         <eag:item>Robert E. Romig, Minister 1941-1946</eag:item>
-                        <eag:item>Glenn O. Canfield, Minister 1946-1952</eagf:item>
+                        <eag:item>Glenn O. Canfield, Minister 1946-1952</eag:item>
                         <eag:item>John Fuller, Minister, 1961-1973</eag:item>
                      </eag:list>
                   </egXML>
@@ -9760,7 +9760,7 @@
                </div>
                <div type="description">
                   <p>The attribute can be used to link to a maintenance event in order to verify any assertion added to the repository’s description.</p> 
-                     <p>The attribute is optionally available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository<gi> element.</p>
+                     <p>The attribute is optionally available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository</gi> element.</p>
                </div>
                <div type="datatype">
                   <p>IDREFS</p>
@@ -9918,7 +9918,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:dateRange>
                         <eag:fromDate notBefore="1971" notAfter="1975">around 1973</eag:fromDate>
-                        <eac-cpf:toDate standardDate="1992">1992</eag:toDate>
+                        <eag:toDate standardDate="1992">1992</eag:toDate>
                      </eag:dateRange>
                   </egXML>
                </div>
@@ -10188,7 +10188,7 @@
                </div>
                <div type="description">
                   <p>The attribute can be used to reference any detailed information about the described entity with a source.</p>
-                  <p>The attribute is optionally available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository<gi> element.</p>
+                  <p>The attribute is optionally available in all elements in the identity area (except <gi>repositoryType</gi>), in the description area, in relations (except for <gi>objectXMLWrap</gi>), and in the overarching <gi>repository</gi> element.</p>
                </div>
                <div type="datatype">
                   <p>IDREFS</p>
@@ -10200,8 +10200,7 @@
                            <eag:part>Princeton University</eag:part>
                         </eag:targetEntity>
                      </eag:relation>
-                   </relation>
-                  </egXML>
+                 </egXML>
                </div>
             </div>
             <div type="attributeDocumentation" xml:id="attr-standardDate">
@@ -10513,7 +10512,7 @@
                   <p>An optional attribute for including a URI identifying the vocabulary source for the element's value.</p>
                </div>
                <div type="description">
-                  <p>Use the optional attribute to provide the URI of the authority or vocabulary source given in <att>vocabularySource<att>. Available in all elements that can contain any type of entity.
+                  <p>Use the optional attribute to provide the URI of the authority or vocabulary source given in <att>vocabularySource</att>. Available in all elements that can contain any type of entity.
                   </p>
                </div>
                <div type="datatype">
