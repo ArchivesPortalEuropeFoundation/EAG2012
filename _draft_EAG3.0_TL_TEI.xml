@@ -1650,7 +1650,7 @@
                   <p>conventionDeclaration (0..n), languageDeclaration (0..n), 
                      localTypeDeclaration (0..n), maintenanceAgency (1..1), maintenanceHistory
                      (1..1), otherRecordId (0..n), recordId (1..1), rightsDeclaration (0..n),
-                     representation (0..n), sources (0..1)</p>
+                     sources (0..1)</p>
                </div>
                <div type="mayOccurWithin">
                   <p>eag</p>
@@ -1706,7 +1706,7 @@
                   <p>There are optional elements available to declare languages, rules, conventions
                      and sources used in the EAG instance. Local types for certain elements used throughout the
                      EAG instance are recommended to be defined in the
-                        <gi>localTypeDeclaration</gi> element</p>
+                        <gi>localTypeDeclaration</gi> element</p>.
                   <p>The available child elements (both required and optional), in their prescribed
                      order, are:</p>
                   <list type="simple">
@@ -1734,8 +1734,6 @@
                            <item><gi>otherRecordId</gi> - Optional. An element that allows the
                               recording of additional identifiers that may be associated with the
                               EAG instance.</item>
-                           <item><gi>representation</gi> - Optional. Used for recording a link to a
-                              transformed and deliverable version of the EAG instance.</item>
                            <item><gi>rightsDeclaration</gi> - Optional. Contains information about
                               the usage rights of the EAG instance.</item>
                         </list></item>
@@ -6999,95 +6997,6 @@
                            [...]
                         </eag:description>
                      </eag:repository>
-                  </egXML>
-               </div>
-            </div>
-            <div type="elementDocumentation" xml:id="elem-representation">
-               <!-- Jane (review) -->
-               <head>
-                  <gi>representation</gi>
-               </head>
-               <div type="fullName">
-                  <p>Representation</p>
-               </div>
-               <div type="summary">
-                  <p>An optional child element of <gi>control</gi> for recording a link to a
-                     deliverable version of the EAG instance or to the XML version of the
-                     EAG instance itself.</p>
-               </div>
-               <div type="mayContain">
-                  <p>[text]</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>control</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>href</label>
-                        <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>linkRole</label>
-                        <item>Optional</item>
-                        <label>linkTitle</label>
-                        <item>Optional</item>
-                        <label>localType</label>
-                        <item>Optional</item>
-                        <label>localTypeDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p>Use <gi>representation</gi> to record a link to a deliverable version of an
-                     EAG instance, for example an HTML or PDF version, or to the XML version of
-                     the EAG instance itself.</p>
-               </div>
-               <div type="attributeusage">
-                  <list type="simple">
-                     <item>Use <att>href</att> to specify a link to a deliverable version of the
-                        EAG instance.</item>
-                     <item>Use <att>localType</att> to differentiate between multiple
-                           <gi>representation</gi> elements.</item>
-                  </list>
-               </div>
-               <div type="seealso">
-                  <list type="simple">
-                     <item>Use <gi>otherRecordId</gi> to provide any local identifier for the
-                        EAG instance that does not link to a deliverable version.</item>
-                  </list>
-               </div>
-               <div type="availability">
-                  <p>Optional, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <eag:control maintenanceStatus="derived">
-                        <eag:recordId>APE-000000000003</eag:recordId>
-                        <eag:maintenanceAgency>
-                           <eag:agencyName>Archives Portal Europe</eag:agencyName>
-                        </eag:maintenanceAgency>
-                        <eag:maintenanceHistory>
-                           <eag:maintenanceEvent maintenanceEventType="derived">
-                              <eag:agent agentType="machine"/>
-                              <eag:eventDateTime>October 2022</eag:eventDateTime>
-                           </eag:maintenanceEvent>
-                        </eag:maintenanceHistory>
-                        <eag:representation localType="Censo-Guía" localTypeDescriptionReference="lTD2" href="http://censoarchivos.mcu.es/CensoGuia/archivodetail.htm?id=10"/>
-                        <eag:representation localType="Archives Portal Europe" localTypeDescriptionReference="lTD2" href="https://www.archivesportaleurope.net/advanced-search/search-in-institutions/results-(institutions)/?repositoryCode=ES-41091-AGI10"/>
-                        <eag:localTypeDescription id="lTD2">
-                           <eag:reference>Archives Portal Europe List of Aggregators</eag:reference>
-                        </eag:localTypeDescription>
-                     </eag:control>
                   </egXML>
                </div>
             </div>
