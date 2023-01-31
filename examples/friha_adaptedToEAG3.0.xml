@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eag xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/ 
+   https://raw.githubusercontent.com/ArchivesPortalEuropeFoundation/EAG2012/MajorRevision_EAG3.0/eag3.0_draft.xsd">
+   <control maintenanceStatus="revised">
+      <recordId>FRIHA</recordId>
+      <maintenanceAgency>
+         <agencyCode>FRSIAF</agencyCode>
+         <agencyName languageOfElement="fre">Service interministériel des Archives de
+            France</agencyName>
+      </maintenanceAgency>
+      <maintenanceHistory>
+         <maintenanceEvent maintenanceEventType="created">
+            <agent agentType="human">Service interministériel des Archives de France</agent>
+            <eventDateTime standardDateTime="2021-08-20T13:54:32"
+               >20.08.2021">20.08.2021</eventDateTime>
+         </maintenanceEvent>
+         <!-- Changed <agent xml:lang="fre">Service interministériel des Archives de France</agent>
+                <agentType>human</agentType> changed <agent agentType="human">
+                <eventDateTime standardDateTime="2021-08-20T13:54:32">20.08.2021</eventDateTime>
+                <eventType>created</eventType> is changed as an attribute -->
+         <maintenanceEvent maintenanceEventType="revised">
+            <agent agentType="human">Manonmani Restif</agent>
+            <eventDateTime standardDateTime="2022-03-09">2022-03-09</eventDateTime>
+         </maintenanceEvent>
+      </maintenanceHistory>
+      <otherRecordId localType="yes">FRIHA</otherRecordId>
+      <!-- Moved "otherRecordId" as an optional element to only appear after the mandatory ones -->
+      <!-- Removed "languageDeclarations"
+             Added "languageCode" and "scriptCode" directly to "languageDeclaration"
+             Removed "language" and "script"
+             <languageDeclarations> -->
+      <languageDeclaration languageCode="fre" scriptCode="Latn">
+         <!-- <language languageCode="fre"/>
+                <script scriptCode="Latn"/> -->
+      </languageDeclaration>
+      <conventionDeclaration>
+         <!-- 
+                Changed "abbreviation" to "shortcode" and "citation" to "reference" 
+                Changed order of these two elements
+            -->
+         <reference>EAG (Encoded Archival Guide) 2012</reference>
+         <shortCode>EAG</shortCode>
+      </conventionDeclaration>
+      <conventionDeclaration>
+         <reference>International Standard for Describing Institutions with Archival
+            Holdings</reference>
+         <shortCode>ISDIAH</shortCode>
+      </conventionDeclaration>
+      <!-- Removed the following "conventionDeclaration" elements and used the "...Encoding" attributes
+             with "control" instead; these elements are currently created automatically by the APE tools
+        <conventionDeclaration>
+            <abbreviation>ISO 8601</abbreviation>
+            <citation>Data elements and interchange formats – Information interchange –
+                Representation of dates and times</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 3166-1</abbreviation>
+            <citation>Codes for the representation of names of countries and their subdivisions –
+                Part 1: Country codes</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 639-2b</abbreviation>
+            <citation>Codes for the representation of names of languages — Part 2: Alpha-3
+                code</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 15924</abbreviation>
+            <citation>Codes for the representation of names of scripts</citation>
+        </conventionDeclaration>
+        <conventionDeclaration>
+            <abbreviation>ISO 15511</abbreviation>
+            <citation>International Standard Identifier for Libraries and Related
+                Organisations</citation>
+        </conventionDeclaration> -->
+      <!-- Removed "localControl" and used the new attribute "detailLevel" with "control" instead
+        <localControl localType="detailLevel">
+            <term lastDateTimeVerified="2019-01-04T11:24:13"
+                vocabularySource="http://www.archivesportaleurope.eu/vocabularies/EAG/"
+                scriptCode="Latn">extended</term>
+        </localControl>
+        -->
+   </control>
+   <!-- repositories" and "repository" elevated and used instead of "archguide"
+            <repositories>
+                <repository> -->
+   <repository>
+      <identity>
+         <nameEntry status="authorized" languageOfElement="fre">
+            <part>Institut d'histoire de l'Aluminium</part>
+         </nameEntry>
+         <repositoryId countryCode="FR" repositoryCode="FR-00000028900"/>
+         <otherRepositoryId>FRIHA</otherRepositoryId>
+         <repositoryType value="businessArchives"/>
+         <!-- 
+                    Changed "autform" to "nameEntry" with "status" being "authorized" 
+                     Updated "xml:lang" to "languageOfElement"; note: with EAG allowing for attributes from any other namespace, following the 
+                     according change in EAC-CPF and EAD, the XML namespace attribute could theoretically be kept without running into validation 
+                     errors; it seems, however, more suitable to apply the dedicated attribute "languageOfElement" 
+                -->
+      </identity>
+      <!-- Renamed "desc" to "description" -->
+      <description>
+         <!-- Moved all location and contact information up as the new "places" / "place" element is expected first. -->
+         <!-- Removed
+                <geogarea>Europe</geogarea> -->
+         <!-- Added "places" as a wrapper -->
+         <places>
+            <!-- 
+                        Changed "location" to "place"
+                        Removed "latitude" and "longitude" attributes and added information into the new element "geographicCoordinates"
+                        Added the "coordinateSystem" information to "geographicCoordinates"
+                        Changed the sub-elements of "location" to "address / addressLine" along with the appropriate "addressLineType"-s
+                        Created two "addressLine" elements out of "municipalityPostalcode"
+                        Used the more specific "postalBox", which is now available for "addressLineType" in the case of the postal address
+                        given here (instead of using "street")
+                        Included telephone, fax, email, webpage, and directions information into "place" via the new "contact / contactLine"
+                    -->
+            <place>
+               <placeRole>Visitor's address</placeRole>
+               <address>
+                  <addressLine addressLineType="street" languageOfElement="fre">92-98 boulevard Victor Hugo</addressLine>
+                  <addressLine addressLineType="municipality" languageOfElement="fre">Clichy</addressLine>
+                  <addressLine addressLineType="postalCode" languageOfElement="fre">92110</addressLine>
+                  <addressLine addressLineType="country" languageOfElement="fre">FRANCE</addressLine>
+               </address>
+               <contact>
+                  <contactLine contactLineType="email">mailto:histalu@histalu.org</contactLine>
+                  <contactLine contactLineType="phoneNumber">+33 (0)1 41 05 40 61</contactLine>
+                  <contactLine contactLineType="homepage">http://www.histalu.org</contactLine>
+                  <contactLine contactLineType="directions" href="http://www.histalu.org">Comment
+                     venir à l'Institut pour l’histoire de l’aluminium (bureaux de Clichy) ? • En
+                     RER C. L'immeuble est situé à 10 minutes à pied de la gare de Saint-Ouen (en
+                     direction de Montigny Beauchamp ou de Pontoise, depuis Paris). Fréquence d'un
+                     train tous les quarts d'heure environ. • En métro. L'immeuble est situé à 15
+                     minutes à pied des arrêts Porte de Clichy et Porte de Saint-Ouen du métro ligne
+                     13 et à 10 min à pied de l’arrêt Saint-Ouen du métro 14. • En bus. De
+                     nombreuses lignes de bus passent à proximité de l’immeuble :  n° 66, ligne
+                     Opéra - Mairie de Saint Ouen : arrêt Général Leclerc - Victor Hugo  n° 74,
+                     ligne Hôtel de Ville - Clichy-Berges de Seine : arrêt Général Leclerc-Victor
+                     Hugo  n° 138, ligne Saint-Ouen RER Gare d'Ermont-Eaubonne RER : arrêt Victor
+                     Hugo-Sanzillon  n° 173, ligne Porte de Clichy - La Courneuve-8 mai 1945 :
+                     arrêt Général Leclerc-Victor Hugo</contactLine>
+               </contact>
+               <geographicCoordinates coordinateSystem="WGS84">48.901405,
+                  2.317372</geographicCoordinates>
+            </place>
+         </places>
+         <!--  <location localType="visitors address">
+                        <country xml:lang="fre">France</country>
+                        <municipalityPostalcode xml:lang="fre">92110 Clichy</municipalityPostalcode>
+                        <street xml:lang="fre">92-98 boulevard Victor Hugo</street>
+                    </location>
+                    <telephone>+33 (0)1 41 05 40 61</telephone>
+                    <fax>+33 (0)1 41 0 5 97 60</fax>
+                    <email href="histalu@histalu.org" xml:lang="fre">Lien vers le courriel</email>
+                    <webpage href="http://www.histalu.org" xml:lang="fre">Lien vers le site
+                        internet</webpage>
+                    <directions xml:lang="fre">Comment venir à l'Institut pour l’histoire de
+                        l’aluminium (bureaux de Clichy) ? &#xD; &#xD; • En RER C&#xD; L'immeuble est
+                        situé à 10 minutes à pied de la gare de Saint-Ouen (en direction de Montigny
+                        Beauchamp ou de Pontoise, depuis Paris).&#xD; Fréquence d'un train tous les
+                        quarts d'heure environ. &#xD; &#xD; • En métro&#xD; L'immeuble est situé à
+                        15 minutes à pied des arrêts Porte de Clichy et Porte de Saint-Ouen du métro
+                        ligne 13 et à 10 min à pied de l’arrêt Saint-Ouen du métro 14. &#xD; &#xD; •
+                        En bus&#xD; De nombreuses lignes de bus passent à proximité de l’immeuble
+                        :&#xD; &#xD;  n° 66, ligne Opéra - Mairie de Saint Ouen : arrêt Général
+                        Leclerc - Victor Hugo&#xD; &#xD;  n° 74, ligne Hôtel de Ville -
+                        Clichy-Berges de Seine : arrêt Général Leclerc-Victor Hugo&#xD; &#xD;  n°
+                        138, ligne Saint-Ouen RER - Gare d'Ermont-Eaubonne RER : arrêt Victor
+                        Hugo-Sanzillon&#xD; &#xD;  n° 173, ligne Porte de Clichy - La Courneuve-8
+                        mai 1945 : arrêt Général Leclerc-Victor Hugo<citation href=""/>
+                    </directions> -->
+         <!-- Moved "access" and "timetable" up to follow new sequence. -->
+         <access question="yes">
+            <!-- Renamed "restaccess" to "accessConditions" -->
+            <accessConditions languageOfElement="fre">Tout lecteur souhaitant consulter les
+               ressources accessibles à l’Institut pour l’histoire de l’aluminium soumet en premier
+               lieu une demande de recherche écrite, par courrier ou par courriel (cf. 5.2.3
+               Personnes à contacter). Le lecteur est ensuite accueilli sur rendez-vous, dans la
+               salle de lecture de l’Institut pour l’histoire de l’aluminium. Il remplit alors une
+               fiche d’inscription où il s’engage à respecter les documents qu’il consulte et à
+               déposer un exemplaire de son travail de recherches à l’Institut pour l’Histoire de
+               l’Aluminium, en version papier et électronique. Le lecteur doit ensuite remplir un
+               bulletin de communication afin de pouvoir consulter les documents d’archives qu’il
+               souhaite. </accessConditions>
+            <accessConditions>Concernant les conditions de communication des archives, la règle
+               appliquée à l’Institut pour l’histoire de l’aluminium est celle des archives
+               publiques, telle qu’indiquée dans le Code du patrimoine, articles L213-1 à
+               L213-8.</accessConditions>
+            <accessConditions>Le lecteur peut emprunter les ouvrages de la bibliothèque et les
+               travaux universitaires (sous réserve qu’un exemplaire soit toujours disponible pour
+               consultation en salle de lecture). Il doit pour cela remplir une fiche de prêt,
+               disponible auprès du secrétariat de l’Institut pour l’histoire de l’aluminium. Les
+               retours de documents doivent être signalés au secrétariat pour notification de la
+               fiche de prêt.</accessConditions>
+            <!-- Added "useConditions" -->
+            <useConditions languageOfElement="fre"
+               href="http://www.histalu.org/centre-de-ressources/conditions-de-consultation/">Voir
+               les conditions d'accès et de réutilisation sur le site internet</useConditions>
+         </access>
+         <timetable>
+            <!-- updated xml:lang to languageOfElement -->
+            <opening languageOfElement="fre"
+               href="http://www.histalu.org/centre-de-ressources/fonds-darchives/archives-de-liha/"
+               >La salle de lecture, située dans les bureaux de Clichy, est ouverte sur rendez-vous
+               uniquement du lundi au vendredi de 09h30 à 17h30 (interruption entre 12h30 et 13h30).
+               Les communications de documents cessent à 17h.</opening>
+            <closing languageOfElement="fre">Une fermeture annuelle est prévue entre Noël et le
+               Nouvel An et pendant le mois d’août.</closing>
+         </timetable>
+         <!-- Removed "repositorfound" and encoded the relevant information with "mandates / mandate" and "existDates" instead. In this example, 
+                     "rule" contained rather a description than simply the name of a piece of legislation, which is why the information has been moved 
+                     to "descriptiveNote" rather than "term". -->
+         <mandates>
+            <mandate>
+               <term/>
+               <descriptiveNote languageOfElement="fre">
+                  <p>Aujourd’hui, l’Institut pour l’histoire de l’aluminium est un organisme
+                     d’intérêt général tant dans le domaine de la gestion des archives et des
+                     collections, de la recherche en sciences humaines et sociales, de la
+                     muséographie que de la communication historique. L’association a pour volonté
+                     d’être la passerelle entre les professionnels de l’industrie de l’aluminium et
+                     le monde de la recherche. Elle s’adresse ainsi à un public de plus en plus
+                     large que ce soient des étudiants (du master au doctorat) de diverses
+                     disciplines (sciences humaines et sociales, sciences de la gestion, de
+                     l’économie, etc.), des musées, des entreprises du secteur aluminium, des
+                     particuliers, des journalistes, des galeries d’art, etc., français et
+                     étrangers.</p>
+               </descriptiveNote>
+            </mandate>
+         </mandates>
+         <!-- Moved <accessibility down to appear with other optional elements, after the change of the element not being required anymore -->
+         <accessibility question="no"/>
+         <!-- Added start date. Please check use of @localType -->
+         <existDates>
+            <date standardDate="1986-01-01" localType="start date">1986-</date>
+         </existDates>
+         <!-- Changed "repositorhist" to "biogHist" and removed "descriptiveNote" as wrapper around "p" elements-->
+         <biogHist>
+            <abstract languageOfElement="fre" >L'Institut d'histoire de l'aluminium est fondé en 1996
+               dans le but de sauvegarder et valoriser les archives documentant l'histoire de
+               l'aluminum en France. L'association a constitué un important fonds documentaire
+               constitué d'archives, d'une bibliothèque et d'une iconothèque</abstract>
+            <p languageOfElement="fre">Les années 1980 sont marquées par de nombreuses
+               fusions-acquisitions et la disparition de plusieurs grands groupes historiques de
+               production d’aluminium. La mise en péril de leurs mobiliers, et plus encore, de leurs
+               archives préoccupent les individus travaillant dans le secteur qui souhaiteraient que
+               ce patrimoine soit sauvegardé et valorisé. C’est dans ce but qu’est fondé, à
+               l’occasion du centenaire du procédé de production de l’aluminium Hall-Héroult, en
+               1986, l’Institut pour l’histoire de l’aluminium, alors principalement soutenu par les
+               producteurs français d’aluminium. Progressivement, cette structure est amenée à
+               apporter soutien et méthodologie à des projets en Europe et dans le monde et devient
+               un véritable centre de ressources sur le « métal léger » grâce aux nombreux dons de
+               particuliers et de sociétés. Ces ressources sont progressivement mises en ligne pour
+               être rendues toujours plus accessibles : en 2002, le premier site internet est créé.
+               À compter de 2006, les inventaires des collections documentaires de l’Institut sont
+               uniformisés et mis en ligne – sous forme de notices descriptives – et dès 2007,
+               l’Institut pour l’histoire de l’aluminium se préoccupe de rendre accessibles les
+               sources attachées à ces notices. Ainsi sont successivement développées et mises en
+               ligne, en 2009 et 2014, une iconothèque et une bibliothèque numériques consacrées au
+               matériau aluminium.</p>
+            <p languageOfElement="fre">L’association se professionnalise peu à peu avec la
+               multiplication de ses missions et développe, au fil des projets, une expertise
+               reconnue dans le domaine patrimonial. Afin d’accompagner les entreprises dans la
+               valorisation de leur « capital-mémoire », l’association créé en 2016 une filiale :
+               Revelis. Cette agence d’ingénierie historique est composée de trois pôles : Archives,
+               Études et recherches et Communication.</p>
+         </biogHist>
+         <!-- Adapted spelling from "buildinginfo" to "buildingInfo" -->
+         <buildingInfo>
+            <!-- Moved content of "descriptiveNote" into "building" directly -->
+            <building languageOfElement="fre">Les principaux locaux de l’association sont situés à
+               Clichy : c’est là que se trouvent son centre de ressources et sa salle de lecture.
+               Des bureaux à Marseille permettent d’assurer le traitement de fonds
+               d’archives.</building>
+         </buildingInfo>
+         <!-- Changed "adminhierarchy" to "structureOrGenealogy" and "adminunit" to simple "p" elements -->
+         <structureOrGenealogy>
+            <p languageOfElement="fre">Le conseil d’administration élit en son sein un bureau de
+               dirigeants bénévoles composé du président, du secrétaire et du trésorier. Le
+               président, actuellement Pierre Meynard, cumule les qualités de président du bureau,
+               du conseil d’administration et de l’association. Il assure la gestion quotidienne de
+               l’association. Il agit au nom et pour le compte du bureau, du conseil
+               d’administration et de l’association.</p>
+            <p languageOfElement="fre">Un conseil scientifique, dont les membres sont nommés par le
+               président de l’association, définit les orientations de l’activité de l’association
+               et en évalue les résultats. Il est composé de chercheurs en sciences sociales et de
+               spécialistes du patrimoine.</p>
+            <p languageOfElement="fre">L’équipe permanente, qui prépare et met en œuvre les
+               programmes d’activité de l’association, se compose de neuf personnes représentant 7,2
+               équivalent temps plein : un secrétaire général (0,5 ETP), un chargé de coordination
+               scientifique (0,7 ETP), une assistante de gestion (0,6 ETP), trois archivistes (2 ,9
+               ETP), une iconographe (0,4 ETP), une chargée de patrimoine (1 ETP). Il faut ajouter à
+               cela de nombreux adhérents et bénévoles, pour la plupart experts de l’aluminium. Ils
+               s’investissent à différents niveaux que ce soit la recherche de partenaires ou encore
+               la participation à la recherche (colloques, thèse, etc.).</p>
+         </structureOrGenealogy>
+         <holdings>
+            <!-- Added <dateSet> and <extent> -->
+            <dateSet>
+               <date standardDate="1890">1890</date>
+               <date standardDate="1967">1967</date>
+               <dateRange>
+                  <fromDate standardDate="1858">1858</fromDate>
+                  <toDate>bis heute</toDate>
+               </dateRange>
+            </dateSet>
+            <extent>
+               <num unit="linearmetre">200</num>
+            </extent>
+            <corpName>
+               <part>Service photographique de L'Aluminium Français</part>
+            </corpName>
+            <subject>
+               <part>industrie métallurgique</part>
+            </subject>
+            <descriptiveNote>
+               <p languageOfElement="fre">Les fonds d’archives de l’IHA représentent un ensemble
+                  d’environ 200 mètres linéaires dont la moitié environ a fait l’objet d’un
+                  traitement détaillé. Ils sont constitués : de documents d’archives émanant de
+                  sièges sociaux, usines ou filiales d’entreprises d’aluminium, qui ont été
+                  sauvegardés par d’anciens professionnels de ces entreprises ou par des bénévoles
+                  de l’Institut pour l’histoire de l’aluminium, à la suite de réorganisations ou de
+                  fermetures de sites (Ex : fonds Alumaf, fonds Tréfimétaux) ; de documents
+                  d’archives retraçant l’activité professionnelle, voire également
+                  extraprofessionnelle (associative, etc.), d’un individu (qu’il ait exercé à
+                  l’intérieur d’une entreprise d’aluminium et dans d’autres entités) et qui sont
+                  transférés à l’Institut pour l’histoire de l’aluminium selon un ensemble cohérent
+                  (Ex : fonds Jean-Albert Grégoire, fonds Henri Morsel).</p>
+               <p languageOfElement="fre">L’IHA conserve enfin deux importantes collections
+                  photographiques, dont il assure la gestion et la valorisation. La première a été
+                  constituée par le service photographique de L'Aluminium Français, comptoir de
+                  ventes et organisme de développement des applications de l'aluminium fondé en
+                  1911. Elle se compose d’environ 23 000 tirages papiers, en noir et blanc ou en
+                  couleur couvrant la période 1890-1967. Une mission d'évaluation de ce fonds a été
+                  confiée en 1991 à l'Institut pour l’histoire de l’aluminium : elle aboutit au don
+                  de la collection à l'Institut en 1994. La seconde collection a été constituée par
+                  l’Institut pour l’histoire de l’aluminium. Elle comprend des documents
+                  iconographiques relatifs à Pechiney et est régulièrement enrichie par des dons de
+                  particuliers, des documents issus de fonds d’archives dont le traitement a été
+                  confié à l’IHA, et par quelques achats.</p>
+               <p languageOfElement="fre">Par ailleurs, en accord avec Rio Tinto France (RTF), l’IHA
+                  met sa salle de lecture et ses outils de recherche à la disposition des chercheurs
+                  souhaitant consulter les archives historiques du groupe en France.</p>
+               <p languageOfElement="fre">Le Centre de ressources : le Centre de ressources
+                  constitué par l’Institut pour l’histoire de l’aluminium réunit plus de 20 000
+                  documents – le plus ancien remontant à 1858 – relatifs à l’histoire de
+                  l’aluminium, ses industries, ses hommes, ses procédés et ses applications. On y
+                  trouve des ouvrages, des travaux universitaires, des collections de revues et
+                  périodiques, des collections d’articles, des documents imprimés - rapports
+                  annuels, brochures de présentation, catalogues de produits, documentation
+                  technico-commerciale, publicités, des études et témoignages écrits ou oraux
+                  recueillis par l’Institut pour l’histoire de l’aluminium auprès d’anciens de la
+                  profession. Actuellement, l’IHA de l’aluminium est la seule institution en France
+                  et une des rares dans le monde proposant une telle richesse documentaire sur
+                  l’aluminium et sur son histoire. Les collections d’objets.</p>
+               <p languageOfElement="fre">L’Institut pour l’histoire de l’aluminium s’est
+                  quelquefois trouvé donataire ou dépositaire de pièces patrimoniales – souvent
+                  menacées ou en déshérence – qui étaient pour la plupart associées à des fonds
+                  d’archives ou documentaires. Ainsi en une trentaine d’années, l’IHA a réuni, sans
+                  politique d’acquisition, un ensemble composé d’environ 700 objets. En 2009,
+                  l’Institut pour l’histoire de l’aluminium devient propriétaire de la collection
+                  automobile de l’ingénieur Jean-Albert Grégoire. Cette collection, constituée par
+                  l’ingénieur lui-même, est composée de onze véhicules et de trois châssis. Elle est
+                  aujourd’hui déposée à la Cité de l’automobile – Musée national / Collection
+                  Schlumpf de Mulhouse, où elle est présentée au public au sein de l’exposition
+                  permanente. L'IHA est le partenaire de Jean Plateau (1923-2019) qui a rassemblé,
+                  depuis 1986, une vaste collection d'objets significatifs de l'évolution des usages
+                  de l'aluminium. Comptant près de 20 000 pièces datant du XIXe au XXIe siècles, la
+                  Collection Jean Plateau-IHA est régulièrement exploitée dans le cadre
+                  d'expositions en France et dans le monde. Elle permet ainsi au public de se
+                  familiariser avec les produits qui, de l'orfèvrerie aux jouets, des arts ménagers
+                  au design, témoignent de la multiplicité des usages du métal léger et de
+                  l'importance qu'il a prise dans le monde contemporain.</p>
+               <p languageOfElement="fre">Gestion des archives courantes et intermédiaires et
+                  politique de collecte :</p>
+               <p languageOfElement="fre">L’Institut pour l’histoire de l’aluminium est un centre de
+                  conservation et de gestion d'archives définitives. Il peut recevoir, sous forme de
+                  don, de dépôt, ou de legs, des fonds d’archives privées, familiales ou
+                  d’entreprises. Par ailleurs, lors des missions de traitement qui lui sont
+                  confiées, l’Institut pour l’histoire de l’aluminium privilégie le dépôt des
+                  archives historiques dans des services d’archives publiques, telles les archives
+                  départementales, afin d’en assurer une conservation pérenne.</p>
+            </descriptiveNote>
+         </holdings>
+         <services>
+            <!-- Added attribute "question" to "searchroom" -->
+            <searchroom question="yes">
+               <!-- added attributes question and href to researchServices. Kerstin : is it possible to add 2 links ? -->
+               <researchServices question="yes"
+                  href="https://www.culturalu.org/biblio_numerique/fr/index.php"
+                  linkTitle="lien vers la Bibliothèque de l'aluminium">Il est recommandé au lecteur
+                  d’effectuer au préalable de sa visite, une recherche sur la Bibliothèque de
+                  l’aluminium (https://www.culturalu.org/biblio_numerique/fr/index.php) et sur
+                  l’Iconothèque de l’aluminium (https://www.culturalu.org/fr/accueil.php) afin de
+                  repérer plus facilement les dcuments qu’il souhaite consulter. L’Institut pour
+                  l’histoire de l’aluminium pourra toutefois mettre à disposition du lecteur, lors
+                  de sa venue, un poste de travail afin d’effectuer cette
+                  recherche.</researchServices>
+               <!-- Kerstin : there is a list of elements in the tag below. How to encode it ? -->
+               <researchServices question="yes">Le lecteur a accès librement à un certain nombre de
+                  ressources en salle de lecture : inventaires des archives de l’Institut pour
+                  l’histoire de l’aluminium ; inventaires des archives historiques de Rio Tinto
+                  Paris ; recensement d’archives d’usines ou de filiales de Rio Tinto en France ;
+                  ouvrages de la bibliothèque. Les autres ressources (travaux universitaires,
+                  documentation professionnelle, études et témoignages, biographies, articles,
+                  presse interne, iconographie) sont accessibles sur demande formulée auprès du
+                  président de salle.Lors de sa première visite, le chercheur rencontre le
+                  coordinateur scientifique de l’IHA afin de préciser son projet de recherches, d’en
+                  évaluer la pertinence et les éventuels problèmes soulevés (peut-on répondre à la
+                  demande ? la demande soulève-t-elle un problème particulier ?).</researchServices>
+               <researchServices question="yes"> Un état des fonds, en cours d’enrichissement,
+                  permet d’avoir une vue d’ensemble des archives de l’IHA. Celles-ci ont fait
+                  l’objet au minimum d’un pré-inventaire, permettant d’assurer la traçabilité du don
+                  ou du dépôt, et pour certains fonds, d’un véritable inventaire, plus ou moins
+                  détaillé. Ces inventaires sont établis sous Excel. Une extraction de ce fichier,
+                  convertie en .pdf, est fournie au chercheur lors de sa demande de recherche. Une
+                  partie de ces inventaires sera bientôt disponible sur le catalogue du site du
+                  Service interministériel des Archives de France (https://francearchives.fr/fr/)
+                  afin de donner une plus grande visibilité aux fonds conservés par l’Institut pour
+                  l’histoire de l’aluminium. </researchServices>
+            </searchroom>
+            <library question="yes"/>
+            <internetAccess question="yes"> </internetAccess>
+            <!-- Changed name from to "techservices" to "technicalServices" -->
+            <technicalServices>
+               <!-- Changed name from to "reproductionser" to "reproductionServices" -->
+               <reproductionServices question="yes">
+                  <descriptiveNote>
+                     <p languageOfElement="fre">L’Institut pour l’histoire de l’aluminium recommande
+                        vivement aux chercheurs de ne pas faire de photocopies mais de prendre des
+                        photographies numériques.La photocopie, facilité accordée aux lecteurs mais
+                        élément de dégradation des papiers, reste toujours subordonnée au bon
+                        fonctionnement de l’Institut pour l’histoire de l’aluminium et à la bonne
+                        conservation matérielle des documents. C’est pourquoi le responsable de la
+                        salle de lecture est tenu de refuser toute demande de photocopies pour les
+                        documents suivants : ouvrages reliés anciens (livres de la bibliothèque,
+                        registres), documents de grand format (journaux, plans, affiches), papiers
+                        fragiles (pelures, calques) ou en mauvais état (moisis, brûlés). Dans ce
+                        cas, l’usage de la photographie numérique est vivement encouragé.Les
+                        demandes de reproduction (photographie) de documents doivent être faites
+                        auprès du président de salle. En cas d’autorisation, le lecteur est invité à
+                        remettre en don, à l’Institut pour l’histoire de l’aluminium, un exemplaire
+                        de l’image numérique. Les reproductions sont toutes destinées à un usage
+                        strictement privé. Pour tout autre usage (publication, etc.), une demande
+                        spécifique doit être formulée par le lecteur.</p>
+                  </descriptiveNote>
+               </reproductionServices>
+            </technicalServices>
+            <!-- Moved content from descriptiveNote and p directly in otherServices -->
+            <recreationalServices>
+               <otherServices question="yes"> Publications : L’Institut pour l’histoire de
+                  l’aluminium publie et édite les Cahiers d’histoire d’aluminium, revue semestrielle
+                  consacrée à l’histoire, à la culture et au patrimoine de l’aluminium. Il a aussi
+                  soutenu ou supervisé la publication de nombreux ouvrages (travaux universitaires,
+                  monographies, ouvrages grand public) dont le dernier en date est La belle époque
+                  de l’industrie française. Témoignages d’ingénieurs de l’aluminium de Pechiney et
+                  Ugine (années 1950-1980). Les ouvrages de l'IHA sont disponibles directement
+                  auprès de l’éditeur, qui est le seul habilité à vendre un ouvrage. Il est
+                  toutefois possible d'adresser une demande à l’IHA qui peut jouer un rôle
+                  d’intermédiaire. </otherServices>
+            </recreationalServices>
+         </services>
+      </description>
+   </repository>
+</eag>
