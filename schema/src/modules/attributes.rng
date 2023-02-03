@@ -10,12 +10,12 @@
         <optional>
             <attribute name="addressLineType">
                 <choice>
-                    <value>county</value>
                     <value>country</value>
+                    <value>county</value>
                     <value>district</value>
                     <value>municipality</value>
-                    <value>postBox</value>
                     <value>postalCode</value>
+                    <value>postBox</value>
                     <value>region</value>
                     <value>street</value>
                 </choice>
@@ -71,13 +71,21 @@
         </optional>
     </define>
     
+    <!-- <define name="attribute.countryCode">
+        <optional>
+            <attribute name="countryCode">
+                <data type="NMTOKEN"/>    
+            </attribute>
+        </optional>
+    </define> -->
+    
     <define name="attribute.detailLevel.optional">
         <optional>
             <attribute name="detailLevel">
                 <choice>
-                    <value>minimal</value>
                     <value>basic</value>
                     <value>extended</value>
+                    <value>minimal</value>
                 </choice>
             </attribute>
         </optional>
@@ -95,8 +103,8 @@
         <optional>
             <attribute name="identityType">
                 <choice>
-                    <value>given</value>
                     <value>acquired</value>
+                    <value>given</value>
                 </choice>
             </attribute>
         </optional>
@@ -116,20 +124,41 @@
     
     <define name="attribute.maintenanceStatus">
         <attribute name="maintenanceStatus">
-            <data type="token"/>
+            <choice>
+                <value>cancelled</value>
+                <value>deleted</value>
+                <value>deletedMerged</value>
+                <value>deletedReplaced</value>
+                <value>deletedSplit</value>
+                <value>derived</value>
+                <value>new</value>
+                <value>revised</value>
+            </choice>
         </attribute>  
     </define>
     
     <define name="attribute.maintenanceEventType">
         <attribute name="maintenanceEventType">
-            <data type="token"/>
+            <choice>
+                <value>cancelled</value>
+                <value>created</value>
+                <value>deleted</value>
+                <value>derived</value>
+                <value>revised</value>
+                <value>unknown</value>
+                <value>updated</value>
+            </choice>
         </attribute>
     </define>
     
     <define name="attribute.publicationStatus.optional">
         <optional>
             <attribute name="publicationStatus">
-                <data type="token"/>
+                <choice>
+                    <value>approved</value>
+                    <value>inProcess</value>
+                    <value>published</value>
+                </choice>    
             </attribute>
         </optional>
     </define>
@@ -154,8 +183,8 @@
         <optional>
             <attribute name="status">
                 <choice>
-                    <value>authorized</value>
                     <value>alternative</value>
+                    <value>authorized</value>
                 </choice>
             </attribute>
         </optional>
@@ -203,9 +232,9 @@
             <choice>
                 <value>agent</value>
                 <value>corporateBody</value>
-                <value>person</value>
                 <value>family</value>
                 <value>function</value>
+                <value>person</value>
                 <value>resource</value>
             </choice>
         </attribute>
@@ -214,12 +243,23 @@
     <define name="attribute.unit.optional">
         <optional>
             <attribute name="unit">
-                <data type="token"/>
+                <choice>
+                    <value>cubicmetre</value>
+                    <value>exabyte</value>
+                    <value>gigabyte</value>
+                    <value>linearmetre</value>
+                    <value>megabyte</value>
+                    <value>otherUnit</value>
+                    <value>petabyte</value>
+                    <value>site</value>
+                    <value>squaremetre</value>
+                    <value>terabyte</value>
+                <choice>
             </attribute>
         </optional>
     </define>
 
-    <define a:exclude-from="eac" name="attribute.xpointer.optional">
+    <define a:exclude-from="eag" name="attribute.xpointer.optional">
         <optional>
             <attribute name="xpointer">
                 <data type="normalizedString"/>
@@ -246,10 +286,10 @@
         <optional>
             <attribute name="languageEncoding">
                 <choice>
+                    <value>ietf-bcp-47</value>
                     <value>iso639-1</value>
                     <value>iso639-2</value>
                     <value>iso639-3</value>
-                    <value>ietf-bcp-47</value>
                     <value>otherLanguageEncoding</value>
                 </choice>
             </attribute>
@@ -303,10 +343,14 @@
         </optional>
     </define>
     <define name="attribute-group.assertion-reference.optional" combine="interleave">
-        <ref name="attribute.conventionDeclarationReference.optional"/>
+        <optional>
+            <attribute name="conventionDeclarationReference">
+                <data type="IDREFS"/>
+            </attribute>  
+        </optional>
     </define>
     
-    <define name="attribute-group.eac-document-node">
+    <define name="attribute-group.eag-document-node">
         <ref name="attribute.audience.optional"/>
         <ref name="attribute.base.optional"/>
         <ref name="attribute.id.optional"/>
@@ -376,38 +420,37 @@
         </optional>  
     </define>
       
-    <define name="attribute.conventionDeclarationReference.optional">
-        <optional>
-            <attribute name="conventionDeclarationReference">
-                <data type="IDREFS"/>
-            </attribute>
-        </optional>
-    </define>
-    
     <define name="attribute.languageCode">
         <attribute name="languageCode">
             <data type="NMTOKEN"/>
         </attribute>
     </define>
     
-    <define name="attribute.scriptCode">
-        <attribute name="scriptCode">
-            <data type="NMTOKEN"/>
-        </attribute>
+    <define name="attribute.scriptCode.optional">
+        <optional>
+            <attribute name="scriptCode">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
     </define>
     
-    <define name="attribute-group.language-and-script-code" combine="interleave">
+    <define name="attribute-group.language-and-script-code" combine="interleave" a:exclude-from="eag">
         <ref name="attribute.languageCode"/>
     </define>  
     
-    <define name="attribute-group.language-and-script-code" combine="interleave">
+    <define name="attribute-group.language-and-script-code" combine="interleave" a:exclude-from="eag">
         <optional>
             <ref name="attribute.scriptCode"/>
         </optional>
-    </define>
- 
+    </define>        
+            
     <define name="attribute-group.linked-data.optional">
         <interleave>
+            <optional>
+                <attribute name="valueURI">
+                    <data type="anyURI"/>
+                </attribute>  
+            </optional>
             <optional>
                 <attribute name="vocabularySource">
                     <data type="token"/>
@@ -417,11 +460,6 @@
                 <attribute name="vocabularySourceURI">
                     <data type="anyURI"/>
                 </attribute>
-            </optional>
-            <optional>
-                <attribute name="valueURI">
-                    <data type="anyURI"/>
-                </attribute>  
             </optional>
         </interleave>
     </define>
@@ -451,13 +489,13 @@
         <optional>
             <attribute name="listType">
                 <choice>
-                    <value a:exclude-from="eac">deflist</value>
+                    <value a:exclude-from="eac eag">deflist</value>
                     <value>ordered</value>
                     <value>unordered</value>
                 </choice>
             </attribute>
         </optional>
-        <optional a:exclude-from="eac">
+        <optional a:exclude-from="eac eag">
             <attribute name="mark">
                 <choice>
                     <value>circle</value> 
@@ -468,7 +506,7 @@
                 </choice>
             </attribute>  
         </optional>
-        <optional a:exclude-from="eac">
+        <optional a:exclude-from="eac eag">
             <attribute name="numeration">
                 <choice>
                     <value>decimal</value>
@@ -488,7 +526,7 @@
         </optional>
     </define>
     
-    <define name="attribute.listStyle.optional" a:exclude-from="eac ead">
+    <define name="attribute.listStyle.optional" a:exclude-from="eac ead eag">
         <optional>
             <attribute name="listStyle">
                 <choice>
