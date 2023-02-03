@@ -249,7 +249,7 @@
     
     <xs:complexType name="otherAgencyCode" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="vocabulary"/>
         <xs:attribute name="status">
@@ -446,7 +446,7 @@
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attributeGroup ref="common"/>
-                <xs:attribute name="localType" type="xs:anyURI"/>
+                <xs:attribute name="localType" type="xs:token"/>
                 <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
                 <xs:attributeGroup ref="vocabulary"/>
             </xs:extension>
@@ -460,7 +460,7 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="vocabulary"/>
     </xs:complexType>
@@ -491,7 +491,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -502,7 +502,7 @@
             <xs:element name="useDates" type="useDates" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attribute name="preferredForm" type="xs:boolean"/>
         <xs:attributeGroup ref="references"/>
@@ -526,7 +526,7 @@
                     </xs:restriction>
                 </xs:simpleType>
                 <xs:attributeGroup ref="common"/>
-                <xs:attribute name="localType" type="xs:anyURI"/>
+                <xs:attribute name="localType" type="xs:token"/>
                 <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
                <xs:attributeGroup ref="references"/>
             </xs:restriction>
@@ -561,14 +561,14 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
 
     <xs:complexType name="date" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="references"/>
@@ -599,7 +599,7 @@
             <xs:element type="toDate" name="toDate"/>
         </xs:choice>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -638,7 +638,7 @@
             <xs:element name="useDates" type="useDates" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -704,7 +704,7 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -758,7 +758,7 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -776,7 +776,7 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -787,7 +787,7 @@
             <xs:element name="addressLine" type="addressLine" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -808,7 +808,7 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -818,7 +818,7 @@
             <xs:element type="contactLine" name="contactLine" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -838,7 +838,7 @@
             </xs:simpleType>
         </xs:attribute>
         <xs:attributeGroup ref="link"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -920,7 +920,7 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -933,7 +933,7 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -948,7 +948,7 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -961,7 +961,7 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -976,7 +976,7 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -989,7 +989,7 @@
             <xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1013,7 +1013,7 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1032,7 +1032,7 @@
             <xs:element type="span" name="span"/>
         </xs:choice>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1042,7 +1042,7 @@
             <xs:element name="chronItem" type="chronItem" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1060,7 +1060,7 @@
             <xs:element name="reference" type="reference" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1071,7 +1071,7 @@
             <xs:element type="span" name="span"/>
         </xs:choice>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1106,7 +1106,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1117,7 +1117,7 @@
             <xs:element type="span" name="span"/>
         </xs:choice>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1182,7 +1182,7 @@
             <xs:element type="descriptiveNote" name="descriptiveNote" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1231,7 +1231,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1242,7 +1242,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1253,7 +1253,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1264,7 +1264,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1275,7 +1275,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1286,7 +1286,7 @@
             <xs:element name="part" type="part" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1318,7 +1318,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1337,7 +1337,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1359,7 +1359,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1368,7 +1368,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1377,7 +1377,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1386,7 +1386,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1412,7 +1412,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1421,7 +1421,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1430,7 +1430,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1439,7 +1439,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1492,7 +1492,7 @@
         <xs:attributeGroup ref="question"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
@@ -1504,7 +1504,7 @@
         <xs:attributeGroup ref="question"/>
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
 
@@ -1512,7 +1512,7 @@
         <xs:attributeGroup ref="common"/>
         <xs:attributeGroup ref="link"/>
         <xs:attributeGroup ref="references"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
     </xs:complexType>
     
@@ -1525,7 +1525,7 @@
             </xs:choice>
         </xs:sequence>
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1533,7 +1533,7 @@
     <xs:complexType name="image">
         <xs:attributeGroup ref="common.empty"/>
         <xs:attributeGroup ref="link"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
@@ -1591,7 +1591,7 @@
     
     <xs:complexType name="relationType" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
@@ -1599,7 +1599,7 @@
     
     <xs:complexType name="targetRole" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="localType" type="xs:anyURI"/>
+        <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="references"/>
         <xs:attributeGroup ref="vocabulary"/>
