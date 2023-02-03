@@ -793,7 +793,7 @@
     </xs:complexType>
     
     <xs:complexType name="addressLine" mixed="true">
-        <xs:attribute name="addressLineType" use="required">
+        <xs:attribute name="addressLineType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="country"/>
@@ -825,7 +825,7 @@
     
     <xs:complexType name="contactLine" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="contactLineType" use="required">
+        <xs:attribute name="contactLineType">
             <xs:simpleType>
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="directions"/>
