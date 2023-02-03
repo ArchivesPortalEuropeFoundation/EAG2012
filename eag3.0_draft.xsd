@@ -6,8 +6,8 @@
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 
-<xs:schema xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
-    targetNamespace="http://www.archivesportaleurope.net/Portal/profiles/eag3.0/"
+<xs:schema xmlns="https://www.archivesportaleurope.net/schemas/eag/"
+    targetNamespace="https://www.archivesportaleurope.net/schemas/eag/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2007/08/xml.xsd"/>
