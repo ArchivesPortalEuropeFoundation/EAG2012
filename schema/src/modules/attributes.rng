@@ -23,6 +23,16 @@
         </optional>
     </define>
     
+    <define name="attribute.agentType">
+        <attribute name="agentType">
+            <choice>
+                <value>human</value>
+                <value>machine</value>
+                <value>unknown</value>
+            </choice>
+        </attribute>
+    </define>
+    
     <define name="attribute.audience.optional">
         <optional>
             <attribute name="audience">
@@ -71,14 +81,25 @@
         </optional>
     </define>
     
-    <!-- <define name="attribute.countryCode">
+    <define name="attribute.countryCode">
         <optional>
             <attribute name="countryCode">
                 <data type="NMTOKEN"/>    
             </attribute>
         </optional>
-    </define> -->
+    </define>
     
+    <define name="attribute.coverage.optional">
+        <optional>
+            <attribute name="coverage">
+                <choice>
+                    <value>part</value>
+                    <value>whole</value>
+                </choice>
+            </attribute>
+        </optional>
+    </define>
+            
     <define name="attribute.detailLevel.optional">
         <optional>
             <attribute name="detailLevel">
@@ -151,6 +172,14 @@
         </attribute>
     </define>
     
+    <define name="attribute.otherUnit.optional">
+        <optional>
+            <attribute name="otherUnit">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
+    </define>
+    
     <define name="attribute.publicationStatus.optional">
         <optional>
             <attribute name="publicationStatus">
@@ -171,6 +200,26 @@
         </optional>  
     </define>
     
+    <define name="attribute.question">
+        <optional>
+            <attribute name="question">
+                <choice>
+                    <value>no</value>
+                    <value>yes</value>
+                    <value>yes (conditions apply)</value>
+                </choice>
+            </attribute>
+        </optional>
+    </define>
+    
+    <define name="attribute.repositoryCode">
+        <optional>
+            <attribute name="repositoryCode">
+                <data type="NMTOKEN"/>    
+            </attribute>
+        </optional>
+    </define>
+            
     <define name="attribute.standardDateTime.optional">
         <optional>
             <attribute name="standardDateTime">
@@ -254,11 +303,49 @@
                     <value>site</value>
                     <value>squaremetre</value>
                     <value>terabyte</value>
-                <choice>
+                </choice>
             </attribute>
         </optional>
     </define>
+            
+    <define name="attribute.unit">
+        <optional>
+            <attribute name="unit">
+                <choice>
+                    <value>cubicmetre</value>
+                    <value>exabyte</value>
+                    <value>gigabyte</value>
+                    <value>linearmetre</value>
+                    <value>megabyte</value>
+                    <value>otherUnit</value>
+                    <value>petabyte</value>
+                    <value>site</value>
+                    <value>squaremetre</value>
+                    <value>terabyte</value>
+                </choice>
+            </attribute>
+        </optional>
+    </define>        
 
+    <define name="attribute.value">
+        <attribute name="value">
+            <choice>
+                <value>businessArchives</value>
+                <value>communityArchives</value>
+                <value>internationalArchives</value>
+                <value>localArchives</value>
+                <value>nationalArchives</value>
+                <value>nonUniversityEducationArchives</value>
+                <value>personalAndFamilyArchives</value>
+                <value>regionalArchives</value>
+                <value>religiousInstitutionsArchives</value>
+                <value>specialisedGovernmentArchives</value>
+                <value>specialisedNongovernmentalArchives</value>
+                <value>universityArchives</value>
+            </choice>
+        </attribute>
+    </define>
+    
     <define a:exclude-from="eag" name="attribute.xpointer.optional">
         <optional>
             <attribute name="xpointer">
@@ -406,9 +493,9 @@
         </optional>
     </define>
  
-    <define name="attribute-group.lang-and-script-and-conventionDeclarationReference.optional" combine="interleave">
+    <define name="attribute-group.lang-and-script-and-assertion-reference.optional" combine="interleave">
         <ref name="attribute-group.lang-and-script.optional"/>
-        <ref name="attribute.conventionDeclarationReference.optional"/>
+        <ref name="attribute-group.assertion-reference.optional"/>
     </define>
     
     <define name="attribute-group.localType.optional">
@@ -437,10 +524,9 @@
     <define name="attribute-group.language-and-script-code" combine="interleave" a:exclude-from="eag">
         <ref name="attribute.languageCode"/>
     </define>  
-    
     <define name="attribute-group.language-and-script-code" combine="interleave" a:exclude-from="eag">
         <optional>
-            <ref name="attribute.scriptCode"/>
+            <ref name="attribute.scriptCode.optional"/>
         </optional>
     </define>        
             
