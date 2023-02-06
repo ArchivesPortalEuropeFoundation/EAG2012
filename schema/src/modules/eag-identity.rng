@@ -71,7 +71,7 @@
     </define>
      
     <define name="element.repositoryType">
-        <element name="entityType">
+        <element name="repositoryType">
             <ref name="attribute-group.global.optional"/>
             <ref name="attribute.value"/>
             <empty/>
