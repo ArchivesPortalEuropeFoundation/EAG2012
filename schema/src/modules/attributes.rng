@@ -81,7 +81,7 @@
         </optional>
     </define>
     
-    <define name="attribute.countryCode">
+    <define name="attribute.countryCode" a:exclude-from="eac ead">
         <optional>
             <attribute name="countryCode">
                 <data type="NMTOKEN"/>    
@@ -89,7 +89,7 @@
         </optional>
     </define>
     
-    <define name="attribute.coverage.optional">
+    <define name="attribute.coverage.optional" a:exclude-from="eac">
         <optional>
             <attribute name="coverage">
                 <choice>
@@ -120,7 +120,7 @@
         </optional>
     </define>
     
-    <define name="attribute.identityType.optional">
+    <define name="attribute.identityType.optional" a:exclude-from="ead">
         <optional>
             <attribute name="identityType">
                 <choice>
@@ -172,7 +172,7 @@
         </attribute>
     </define>
     
-    <define name="attribute.otherUnit.optional">
+    <define name="attribute.otherUnit.optional" a:exclude-from="eac ead">
         <optional>
             <attribute name="otherUnit">
                 <data type="NMTOKEN"/>
@@ -200,7 +200,7 @@
         </optional>  
     </define>
     
-    <define name="attribute.question">
+    <define name="attribute.question" a:exclude-from="eac ead">
         <optional>
             <attribute name="question">
                 <choice>
@@ -212,7 +212,7 @@
         </optional>
     </define>
     
-    <define name="attribute.repositoryCode">
+    <define name="attribute.repositoryCode" a:exclude-from="eac ead">
         <optional>
             <attribute name="repositoryCode">
                 <data type="NMTOKEN"/>    
@@ -316,7 +316,7 @@
         </optional>
     </define>        
 
-    <define name="attribute.value">
+    <define name="attribute.value" a:exclude-from="eac ead">
         <attribute name="value">
             <choice>
                 <value>businessArchives</value>
