@@ -1094,6 +1094,7 @@
         </xs:attribute>
         <xs:attribute name="localType" type="xs:token"/>
         <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
+        <xs:attribute name="style" type="xs:normalizedString"/>
         <xs:attributeGroup ref="references"/>
     </xs:complexType>
     
