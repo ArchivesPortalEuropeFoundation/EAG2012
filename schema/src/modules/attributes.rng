@@ -292,18 +292,7 @@
     <define name="attribute.unit.optional">
         <optional>
             <attribute name="unit">
-                <choice>
-                    <value>cubicmetre</value>
-                    <value>exabyte</value>
-                    <value>gigabyte</value>
-                    <value>linearmetre</value>
-                    <value>megabyte</value>
-                    <value>otherUnit</value>
-                    <value>petabyte</value>
-                    <value>site</value>
-                    <value>squaremetre</value>
-                    <value>terabyte</value>
-                </choice>
+                <data type="token"/>
             </attribute>
         </optional>
     </define>
