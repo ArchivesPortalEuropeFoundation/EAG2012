@@ -36,9 +36,9 @@
             <optional>
                 <ref name="element.relations"/>
             </optional>
-            <optional>
+            <zeroOrMore>
                 <ref name="element.image"/>
-            </optional>
+            </zeroOrMore>
         </element>
     </define>
     <define name="element.repositories">
@@ -51,9 +51,9 @@
             <optional>
                 <ref name="element.relations"/>
             </optional>
-            <optional>
+            <zeroOrMore>
                 <ref name="element.image"/>
-            </optional>
+            </zeroOrMore>
         </element>
     </define>
 </grammar>
