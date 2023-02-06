@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Draft EAG 3.0 Schema
-    Version: 0.1.14
-    Date: 20230112
+    Version: 0.1.15
+    Date: 20230206
     Editor: Archives Portal Europe Foundation, Working Group on Standards
 -->
 
@@ -379,23 +379,7 @@
     
     <xs:complexType name="citedRange" mixed="true">
         <xs:attributeGroup ref="common"/>
-        <xs:attribute name="unit">
-          <xs:simpleType>
-            <xs:restriction base="xs:token">
-              <xs:enumeration value="cubicmetre"/>
-              <xs:enumeration value="exabyte"/>
-              <xs:enumeration value="gigabyte"/>
-              <xs:enumeration value="linearmetre"/>
-              <xs:enumeration value="megabyte"/>
-              <xs:enumeration value="otherUnit"/>
-              <xs:enumeration value="petabyte"/>
-              <xs:enumeration value="site"/>
-              <xs:enumeration value="squaremetre"/>
-              <xs:enumeration value="terabyte"/>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="otherUnit" type="xs:NMTOKEN"/>
+        <xs:attribute name="unit" type="xs:token"/>
     </xs:complexType>
     
     <xs:complexType name="objectXMLWrap">
