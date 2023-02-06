@@ -588,6 +588,8 @@
     
     <xs:complexType name="fromDate" mixed="true">
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:token"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="status">
@@ -601,6 +603,8 @@
     
     <xs:complexType name="toDate" mixed="true">
         <xs:attributeGroup ref="common"/>
+        <xs:attribute name="localType" type="xs:token"/>
+        <xs:attribute name="localTypeDeclarationReference" type="xs:IDREFS"/>
         <xs:attributeGroup ref="m.dateSingle"/>
         <xs:attributeGroup ref="references"/>
         <xs:attribute name="status">
