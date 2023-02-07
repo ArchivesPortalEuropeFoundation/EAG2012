@@ -687,7 +687,7 @@
                   <p>
                      <list type="gloss">
                         <label>addressLineType</label>
-                        <item>Required (values limited to: county, country, district, municipality,
+                        <item>Optional (values limited to: county, country, district, municipality,
                            postBox, postalCode, region, street)</item>
                         <label>audience</label>
                         <item>Optional (values limited to: external, internal)</item>
@@ -3560,6 +3560,10 @@
                      <label>id</label>
                      <item>Optional</item>
                      <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
                      <item>Optional</item>
                      <label>maintenanceEventReference</label>
                      <item>Optional</item>
@@ -9025,10 +9029,6 @@
                      <item>Optional</item>
                      <label>languageOfElement</label>
                      <item>Optional</item>
-                     <label>localType</label>
-                     <item>Optional</item>
-                     <label>localTypeDeclarationReference</label>
-                     <item>Optional</item>
                      <label>scriptOfElement</label>
                      <item>Optional</item>
                      <label>target</label>
@@ -10238,6 +10238,10 @@
                      <item>Optional</item>
                      <label>languageOfElement</label>
                      <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
                      <label>maintenanceEventReference</label>
                      <item>Optional</item>
                      <label>notAfter</label>
@@ -10640,7 +10644,7 @@
                   <p>Used to specify the type of address line encoded in <gi>addressLine</gi>.</p>
                </div>
                <div type="description">
-                  <p>Required attribute of <gi>addressLine</gi>. Use one of the set values to
+                  <p>Optional attribute of <gi>addressLine</gi>. Use one of the set values to
                      specify the type of address line encoded. Use the attribute
                         <att>localType</att> in order to encode a local type of address line.</p>
                </div>
@@ -10833,7 +10837,7 @@
                   <p>Used to specify the type of contact line encoded in <gi>contactLine</gi>.</p>
                </div>
                <div type="description">
-                  <p>Required attribute in <gi>contactLine</gi>. Use one of the set values to
+                  <p>Optional attribute in <gi>contactLine</gi>. Use one of the set values to
                      specify the type of contact line encoded. Use the attribute
                         <att>localType</att> in order to encode a local type of contact line.</p>
                </div>
@@ -11691,22 +11695,17 @@
                   <p>Other Unit</p>
                </div>
                <div type="summary">
-                  <p>Allows the inclusion of other formats or units specified in <gi>citedRange</gi>
-                     and <gi>num</gi>.</p>
+                  <p>Allows the inclusion of other formats or units specified in <gi>num</gi>.</p>
                </div>
                <div type="description">
                   <p>Use <att>otherUnit</att> when using the parallel <att>unit</att> with the value
-                     "otherUnit" within <gi>citedRange</gi> or <gi>num</gi>. You can then include
-                     any unit of measurement that would be applicable to the respective context as
-                     the value of <att>otherUnit</att>.</p>
+                     "otherUnit" within <gi>num</gi>. You can then include any unit of measurement that 
+                     would be applicable to the respective context as the value of <att>otherUnit</att>.</p>
                </div>
                <div type="datatype">
                   <p>token</p>
                </div>
                <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:citedRange unit="otherUnit" otherUnit="page">1</eag:citedRange>
-                  </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:holdings>
                         <eag:extent>
@@ -12261,8 +12260,7 @@
                         <gi>num</gi>.</p>
                </div>
                <div type="description">
-                  <p>Use <att>unit</att> optionally with the value "otherUnit" and the parallel
-                        <att>otherUnit</att> to document the format or unit that is specified in
+                  <p>Use <att>unit</att> optionally with any value to document the format or unit that is specified in
                         <gi>citedRange</gi>, for example page number ("pageNumber") or volume number
                      ("volumeNumber").</p>
                   <p>Using <att>unit</att> within <gi>num</gi> is required. Select a value from the
@@ -12278,12 +12276,12 @@
                   <p>token</p>
                </div>
                <div type="values">
-                  <p>cubicmetre, exabyte, gigabyte, linearmetre, megabyte, otherUnit, petabyte,
+                  <p>Within <gi>num</gi>: cubicmetre, exabyte, gigabyte, linearmetre, megabyte, otherUnit, petabyte,
                      site, squaremetre, terabyte</p>
                </div>
                <div type="examples">
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
-                     <eag:citedRange unit="otherUnit" otherUnit="page">1</eag:citedRange>
+                     <eag:citedRange unit="pageNumber">1</eag:citedRange>
                   </egXML>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="eng">
                      <eag:holdings>
