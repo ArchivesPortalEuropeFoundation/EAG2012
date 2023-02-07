@@ -11,7 +11,7 @@
     <xsl:output method="xml" encoding="UTF-8" indent="true"/>
     <xsl:mode on-no-match="deep-copy"/>
     
-    <xsl:param name='schema' select="'ead'"/>
+    <xsl:param name='schema' select="'eag'"/>
     <xsl:param name='preambles' select="document('../../src/release-info/intro.xml')/preambles" as="node()"/>
     <xsl:variable name="intro-comment" as="node()">
         <xsl:evaluate xpath="concat($schema, '/comment()')" as="node()" context-item="$preambles"/>
