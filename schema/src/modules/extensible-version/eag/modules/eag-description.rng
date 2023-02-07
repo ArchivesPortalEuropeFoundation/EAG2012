@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+    <define name="element.access">
+        <element name="access">
+            <ref name="attribute-group.services-no-localType"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="element.accessConditions"/>
+                    <ref name="element.useConditions"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.accessConditions">
+        <element name="accessConditions">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.links.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.accessibility">
+        <element name="accessibility">
+            <ref name="attribute-group.services-no-localType"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.advancedOrders">
+        <element name="advancedOrders">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.building">
+        <element name="building">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.links.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.buildingInfo">
+        <element name="buildingInfo">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="element.building"/>
+                    <ref name="element.lengthOfShelves"/>
+                    <ref name="element.repositoryArea"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.closing">
+        <element name="closing">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.links.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.computerPlaces">
+        <element name="computerPlaces">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="element.num"/>
+        </element>
+    </define>
+    
+    <define name="element.description">
+        <element name="description">
+            <ref name="attribute-group.global-plus-base-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="element.places"/>
+            <ref name="element.access"/>
+            <ref name="element.timetable"/>
+            <optional>
+                <ref name="element.functions"/>
+            </optional>
+            <optional>
+                <ref name="element.legalStatuses"/>
+            </optional>
+            <optional>
+                <ref name="element.mandates"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="element.accessibility"/>
+                    <ref name="element.biogHist"/>
+                    <ref name="element.buildingInfo"/>
+                    <ref name="element.existDates"/>
+                    <ref name="element.holdings"/>
+                    <ref name="element.repositoryRole"/>
+                    <ref name="element.services"/>
+                    <ref name="element.socialMedia"/>
+                    <ref name="element.structureOrGenealogy"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.exhibition">
+        <element name="exhibition">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.extent">
+        <element name="extent">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute.coverage.optional"/>
+            <ref name="element.num"/>
+        </element>
+    </define>
+    
+    <define name="element.holdings">
+        <element name="holdings">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <optional>
+                <ref name="model.all-dates.choice"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="element.extent"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <choice>
+                    <ref name="element.corpName.optional"/>
+                    <ref name="element.famName.optional"/>
+                    <ref name="element.genreForm.optional"/>
+                    <ref name="element.name.optional"/>
+                    <ref name="element.persName.optional"/>
+                    <ref name="element.placeName"/>
+                    <ref name="element.subject.optional"/>
+                </choice>
+            </zeroOrMore>
+            <ref name="element.descriptiveNote.optional"/>
+        </element>
+    </define>
+    
+    <define name="element.internetAccess">
+        <element name="internetAccess">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.lengthOfShelves">
+        <element name="lengthOfShelves">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="element.num"/>
+        </element>
+    </define>
+    
+    <define name="element.library">
+        <element name="library">
+            <ref name="model.services-contact-group"/>
+        </element>
+    </define>
+    
+    <define name="element.microfilmPlaces">
+        <element name="microfilmPlaces">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="element.num"/>
+        </element>
+    </define>
+    
+    <define name="element.multilingualServices">
+        <element name="multilingualServices">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.num">
+        <element name="num">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute.unit"/>
+            <ref name="attribute.otherUnit.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.opening">
+        <element name="opening">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.links.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.otherServices">
+        <element name="otherServices">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.photographAllowance">
+        <element name="photographAllowance">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.readersTicket">
+        <element name="readersTicket">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.recreationalServices">
+        <element name="recreationalServices">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="element.exhibition"/>
+                    <ref name="element.otherServices"/>
+                    <ref name="element.refreshment"/>
+                    <ref name="element.toursSessions"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.refreshment">
+        <element name="refreshment">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.repositoryArea">
+        <element name="repositoryArea">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="element.num"/>
+        </element>
+    </define>
+    
+    <define name="element.repositoryRole">
+        <element name="repositoryRole">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.linked-data.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.reproductionServices">
+        <element name="reproductionServices">
+            <ref name="attribute-group.localType.optional"/>
+            <ref name="model.services-contact-group"/>
+        </element>
+    </define>
+    
+    <define name="element.researchServices">
+        <element name="researchServices">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.restorationLaboratory">
+        <element name="restorationLaboratory">
+            <ref name="attribute-group.localType.optional"/>
+            <ref name="model.services-contact-group"/>
+        </element>
+    </define>
+    
+    <define name="element.searchroom">
+        <element name="searchroom">
+            <ref name="model.services-contact-group"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="element.advancedOrders"/>
+                    <ref name="element.photographAllowance"/>
+                    <ref name="element.readersTicket"/>
+                    <ref name="element.researchServices"/>
+                    <ref name="element.workPlaces"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.services">
+        <element name="services">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <zeroOrMore>
+                <choice>
+                  <ref name="element.internetAccess"/>
+                  <ref name="element.library"/>
+                  <ref name="element.multilingualServices"/>
+                  <ref name="element.recreationalServices"/>
+                  <ref name="element.searchroom"/>
+                  <ref name="element.technicalServices"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.socialMedia">
+        <element name="socialMedia">
+            <ref name="attribute-group.global-plus-lang-and-script-and-localType-pair.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.links.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.technicalServices">
+        <element name="technicalServices">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <zeroOrMore>
+                <choice>
+                   <ref name="element.reproductionServices"/>
+                   <ref name="element.restorationLaboratory"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.timetable">
+        <element name="timetable">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <oneOrMore>
+                <ref name="element.opening"/>
+            </oneOrMore>
+            <zeroOrMore>
+                <ref name="element.closing"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.toursSessions">
+        <element name="toursSessions">
+            <ref name="model.services-group"/>
+        </element>
+    </define>
+    
+    <define name="element.useConditions">
+        <element name="useConditions">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.links.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.workPlaces">
+        <element name="workPlaces">
+            <ref name="attribute-group.services-no-localType"/>
+            <ref name="element.num"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="element.computerPlaces"/>
+                    <ref name="element.microfilmPlaces"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+</grammar>

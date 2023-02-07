@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+    <define name="element.identity">
+        <element name="identity">
+            <ref name="attribute-group.global-plus-lang-and-script-and-localType-pair.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute.base.optional"/>
+            <ref name="attribute.identityType.optional"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="element.nameEntry"/>
+                    <ref name="element.nameEntrySet"/>
+                </choice>
+            </oneOrMore>
+            <optional>
+                <ref name="element.repositoryId"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="element.otherRepositoryId"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <ref name="element.repositoryType"/>
+            </zeroOrMore>
+            <optional>
+                <ref name="element.otherRepositoryTypes"/>
+            </optional>
+            <ref name="element.descriptiveNote.optional"/>
+        </element>
+    </define>
+    
+    <define name="element.otherRepositoryId">
+        <element name="otherRepositoryId">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.linked-data.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <text/>
+        </element>
+    </define>
+    
+    <define name="element.otherRepositoryType">
+        <element name="otherRepositoryType">
+            <ref name="model.single-element-group"/>
+        </element>
+    </define>
+    
+    <define name="element.otherRepositoryTypes">
+        <element name="otherRepositoryTypes">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <oneOrMore>
+                <ref name="element.otherRepositoryType"/>
+            </oneOrMore>
+            <ref name="element.descriptiveNote.optional"/>
+        </element>
+    </define>
+    
+    <define name="element.repositoryId">
+        <element name="repositoryId">
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
+            <ref name="attribute-group.linked-data.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute.countryCode"/>
+            <ref name="attribute.repositoryCode"/>
+            <ref name="attribute.status.authorized-or-alternative.optional"/>
+            <text/>
+        </element>
+    </define>
+     
+    <define name="element.repositoryType">
+        <element name="repositoryType">
+            <ref name="attribute-group.global.optional"/>
+            <ref name="attribute.value"/>
+            <empty/>
+        </element>
+    </define>
+    
+</grammar>

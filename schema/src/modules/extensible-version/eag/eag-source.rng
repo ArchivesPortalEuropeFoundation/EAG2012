@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    ns="https://www.archivesportaleurope.net/schemas/eag/">
+
+    <include href="modules/attributes.rng"/>
+    <include href="modules/datatypes.rng"/>
+    <include href="modules/control.rng"/>
+
+    <include href="modules/eag-identity.rng"/>
+    <include href="modules/eag-description.rng"/>
+    <include href="modules/relations.rng/"/>
+    
+    <include href="modules/models-and-shared-elements.rng/"/>
+
+    <start>
+        <ref name="element.eag"/>
+    </start>
+    
+    <define name="element.eag">
+        <element xml:id="eag" name="eag">
+            <ref name="attribute-group.eag-document-node"/>
+            <ref name="element.control"/>
+            <choice>
+                <ref name="element.repository"/>
+                <ref name="element.repositories"/>
+            </choice>
+        </element>
+    </define>
+    
+    <define name="element.repository">
+        <element name="repository">
+            <ref name="attribute-group.global-plus-base-lang-and-script.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="element.identity"/>
+            <ref name="element.description"/>
+            <optional>
+                <ref name="element.relations"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="element.image"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.repositories">
+        <element name="repositories">
+            <ref name="attribute-group.global-plus-base.optional"/>
+            <ref name="element.repository"/>
+            <oneOrMore>
+                <ref name="element.repository"/>
+            </oneOrMore>
+            <optional>
+                <ref name="element.relations"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="element.image"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="element.image">
+        <element name="image">
+            <ref name="attribute-group.global.optional"/>
+            <ref name="attribute-group.assertion-reference.optional"/>
+            <ref name="attribute-group.localType.optional"/>
+            <ref name="attribute-group.links.optional"/>
+            <empty/>
+        </element>
+    </define>
+    
+</grammar>
