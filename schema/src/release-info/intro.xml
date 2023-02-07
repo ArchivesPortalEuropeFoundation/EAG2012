@@ -57,4 +57,32 @@
     
  -->
   </ead>
+  <eag>
+ <!--
+   
+    *****************************************************************
+    *                                                               *                
+    *                            EAG 3.0                            *
+    *                                                               *       
+    *****************************************************************
+    
+    EDITORS: Archives Portal Europe Foundation, Working Group on Standards (APEF WGoS)
+  
+    PUBLISHER: Archives Portal Europe Foundation
+  
+    PURPOSE: The EAG Schema is a communication standard for the description of institutions 
+    with archival holdings. It is based on the International Council of Archives' International Standard 
+    for Describing Institutions with Archival Holdings (ISDIAH). For additional documentation on the 
+    use of the standard, see the EAG Tag Library
+    (https://www.archivesportaleurope.net/tools/for-content-providers/standards/eag3.0/).
+   
+  *****************************************************************
+ 
+  This schema has been generated automatically. 
+   
+  Comments, questions, and suggestions may be addressed to: 
+  standards@archivesportaleurope.net
+  
+-->
+  </eag>
 </preambles>
