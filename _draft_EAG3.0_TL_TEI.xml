@@ -6169,7 +6169,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-recordId">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>recordId</gi>
                </head>
@@ -6287,7 +6287,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-reference">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>reference</gi>
                </head>
@@ -6333,7 +6333,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p>An element used for referencing external resources that have been used to
+                  <p>An element used for referencing external resources used to
                      compile the EAG instance, that provide additional context to the EAG
                      instance, or that identify rules or conventions that have been applied.</p>
                   <p><gi>reference</gi> is a required child element of
