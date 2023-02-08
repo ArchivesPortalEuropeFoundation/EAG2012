@@ -2335,7 +2335,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-descriptiveNote">
-               <!-- Jane Reviewing -->
+               <!-- Jane done -->
                <head>
                   <gi>descriptiveNote</gi>
                </head>
@@ -2434,7 +2434,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eag">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>eag</gi>
                </head>
@@ -2665,7 +2665,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-eventDescription">
-               <!-- Jane reviewing -->
+               <!-- Jane done -->
                <head>
                   <gi>eventDescription</gi>
                </head>
@@ -3731,7 +3731,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-languageDeclaration">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>languageDeclaration</gi>
                </head>
@@ -5513,7 +5513,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-p">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>p</gi>
                </head>
@@ -8188,7 +8188,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-toDate">
-               <!-- Jane Reviewed -->
+               <!-- Jane done -->
                <head>
                   <gi>toDate</gi>
                </head>
