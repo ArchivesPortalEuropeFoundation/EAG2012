@@ -5028,7 +5028,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-objectXMLWrap">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>objectXMLWrap</gi>
                </head>
@@ -5162,7 +5162,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherAgencyCode">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>otherAgencyCode</gi>
                </head>
@@ -5220,7 +5220,7 @@
                   <list type="simple">
                      <item>Use <att>localType</att> to specify the type of code being
                         provided.</item>
-                     <item>Use <att>status</att> to encode whether the <gi>otherAgencyCode</gi> is
+                     <item>Use <att>status</att> to state whether the <gi>otherAgencyCode</gi> is
                         an authorized or alternative code.</item>
                   </list>
                </div>
@@ -5252,7 +5252,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-otherRecordId">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>otherRecordId</gi>
                </head>
@@ -5296,7 +5296,7 @@
                   </p>
                </div>
                <div type="description">
-                  <p><gi>otherRecordId</gi> can be used to record an identifier that is an
+                  <p><gi>otherRecordId</gi> can be used to record any identifiers that are an
                      alternative to the mandatory identifier provided in <gi>recordId</gi>. These
                      might include the identifiers of merged EAG instances representing the same
                      institution with archival holdings or those of records that are no longer current but had some part in
