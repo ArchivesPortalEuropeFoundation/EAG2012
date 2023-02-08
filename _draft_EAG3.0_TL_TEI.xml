@@ -7159,7 +7159,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-rightsDeclaration">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>rightsDeclaration</gi>
                </head>
@@ -7392,7 +7392,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-shortCode">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>shortCode</gi>
                </head>
@@ -7495,7 +7495,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-source">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>source</gi>
                </head>
@@ -7590,7 +7590,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-sources">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>sources</gi>
                </head>
@@ -7673,7 +7673,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-span">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>span</gi>
                </head>
@@ -8068,7 +8068,7 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-term">
-               <!-- Jane (review) -->
+               <!-- Jane done -->
                <head>
                   <gi>term</gi>
                </head>
