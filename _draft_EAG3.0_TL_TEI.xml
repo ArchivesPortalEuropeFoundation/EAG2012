@@ -2253,8 +2253,8 @@
                      <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
                   </egXML>
                </div>
-            </div>
-            <div type="elementDocumentation" xml:id="elem-description">
+         </div>
+         <div type="elementDocumentation" xml:id="elem-description">
             <head>
                <gi>description</gi>
             </head>
@@ -2704,17 +2704,31 @@
                         <gi>place</gi> element associated with it.</p>
                </div>
                <div type="availability">
-                  <p>Within <gi>chronItem</gi>: One of <gi>chronItemSet</gi> or <gi>event</gi>
-                     required, not repeatable.</p>
-                  <p>Within <gi>chronItemSet</gi>: required, repeatable.</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+               <p>Within <gi>chronItem</gi>: One of <gi>chronItemSet</gi> or <gi>event</gi>
+                  required, not repeatable.</p>
+               <p>Within <gi>chronItemSet</gi>: required, repeatable.</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-eventDateTime">
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:chronItem>
+                     <eag:date>2007</eag:date>
+                     <eag:chronItemSet>
+                        <eag:event languageOfElement="ger">Im Rahmen des Retrokonversionsprogramms
+                           zur Digitalisierung von Findbüchern und Findkarteien wird die
+                           1.000.000ste Titelaufnahme digitalisiert.</eag:event>
+                        <eag:event languageOfElement="ger">In Berlin-Lichterfelde beginnen die
+                           Baumaßnahmen für die Errichtung des Ernst-Posner-Baus mit Magazinen und
+                           Eingangsbereich für das Berliner Bundesarchiv sowie die Sanierung der
+                           früheren Kasernengebäude für ein Nutzungszentrum und die
+                           Dienstzimmer.</eag:event>
+                        <eag:event languageOfElement="ger">Das Digitale Bildarchiv des Bundesarchivs
+                           wird im Bundeskanzleramt freigeschaltet.</eag:event>
+                     </eag:chronItemSet>
+                  </eag:chronItem>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-eventDateTime">
                <!-- Jane reviewed -->
                <head>
                   <gi>eventDateTime</gi>
@@ -3026,45 +3040,111 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-famName">
-               <!-- Jane (edit), Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
-               <head>
-                  <gi>famName</gi>
-               </head>
-               <div type="fullName">
-                  <p xml:lang="eng">Family Name</p>
-               </div>
-               <div type="summary">
-                  <p>An element for identifying the name of a group of people with blood relations, or persons who form a household.</p>
-               </div>
-               <div type="mayContain">
-                  <p>part</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>holdings</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p></p>
-               </div>
-               <div type="availability">
-                  <p>Optional, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <head>
+               <gi>famName</gi>
+            </head>
+            <div type="fullName">
+               <p xml:lang="eng">Family Name</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-fromDate">
+            <div type="summary">
+               <p>An element for providing a family name.</p>
+            </div>
+            <div type="mayContain">
+               <p>part</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>holdings</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                     <label>valueURI</label>
+                     <item>Optional</item>
+                     <label>vocabularySource</label>
+                     <item>Optional</item>
+                     <label>vocabularySourceURI</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>The name of a group that is recognised as a family. May be related by birth,
+                  marriage or adoption. Estate papers or business papers may typically relate to a
+                  family.</p>
+               <p>Adding family names to holdings information can highlight particular areas of
+                  strength of the institution's holdings, e.g. the institution holds a major family
+                  archive.</p>
+               <p>The attribute <att>localType</att> can be used to structure the name.</p>
+               <p>If the family name is taken from a source such as VIAF or Wikidata then the
+                  attribute <att>valueURI</att> can be used to provide the permalink, along with
+                     <att>vocabularySource</att> and <att>vocabularySourceURI</att>.</p>
+            </div>
+            <div type="availability">
+               <p>Optional, repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:repository>
+                     <eag:identity> [...] </eag:identity>
+                     <eag:description>
+                        <eag:holdings>
+                           <eag:famName vocabuarySource="VIAF" vocabularySourceURI="http://viaf.org"
+                              valueURI="http://viaf.org/viaf/309813092">
+                              <eag:part>Rothschild family</eag:part>
+                           </eag:famName>
+                        </eag:holdings>
+                     </eag:description>
+                  </eag:repository>
+               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:repository>
+                     <eag:identity> [...] </eag:identity>
+                     <eag:description>
+                        <eag:holdings>
+                           <eag:famName>
+                              <eag:part localType="name">Cavendish-Bentinck</eag:part>
+                              <eag:part localType="epithet">family</eag:part>
+                              <eag:part localType="title">Dukes of Portland</eag:part>
+                           </eag:famName>
+                        </eag:holdings>
+                     </eag:description>
+                  </eag:repository>
+               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:repository>
+                     <eag:identity> [...] </eag:identity>
+                     <eag:description>
+                        <eag:holdings>
+                           <eag:famName>
+                              <eag:part>Hanau-Lichtenberg family</eag:part>
+                           </eag:famName>
+                        </eag:holdings>
+                     </eag:description>
+                  </eag:repository>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-fromDate">
                <!-- Jane Reviewed -->
                <head>
                   <gi>fromDate</gi>
@@ -3354,45 +3434,119 @@
             </div>
          </div>
          <div type="elementDocumentation" xml:id="elem-genreForm">
-               <!-- Jane (edit), Kerstin (review) -->
-               <!-- Adapted from EAD3 -->
-               <head>
-                  <gi>genreForm</gi>
-               </head>
-               <div type="fullName">
-                  <p xml:lang="eng">Genre/Physical Characteristic</p>
-               </div>
-               <div type="summary">
-                  <p>An element for encoding a genre or form of material.</p>
-               </div>
-               <div type="mayContain">
-                  <p>part</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>holdings</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p></p>
-               </div>
-               <div type="availability">
-                  <p>Optional, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema.  
-                          Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <head>
+               <gi>genreForm</gi>
+            </head>
+            <div type="fullName">
+               <p xml:lang="eng">Genre or form</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-geographicCoordinates">
+            <div type="summary">
+               <p>An element for encoding a genre or form of material.</p>
+            </div>
+            <div type="mayContain">
+               <p>part</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>holdings</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                     <label>valueURI</label>
+                     <item>Optional</item>
+                     <label>vocabularySource</label>
+                     <item>Optional</item>
+                     <label>vocabularySourceURI</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>The type of material being described. Genre refers to style or function rather
+                  than subject, such as correspondence or contracts. Form is a physical
+                  characteristic, such as microfilm. Correspondence as a genre could be in the form
+                  of letterbooks for example. A diary could be considered a genre, but it also has a
+                  typical form, as a bound volume (though a diary could be in the form of loose
+                  pages for example). </p>
+               <p>Typical entries in this element might be diaries, letters, photographs, or
+                  something more specific such as letters of administration, aerial photographs or
+                  architectural dawings. </p>
+               <p>If the entry is taken from a source such as the Thesaurus for Graphic Materials
+                  then the attribute <att>vocabularySource</att> can be used to identify this, and
+                     <att>vocabularySourceURI</att> can provide the URI.</p>
+               <p>Adding genre or form to holdings can highlight areas of strength or specialism of
+                  the repository, for example, an academic archive might have significant holdings
+                  of theses or a regional repository might have census maps.</p>
+            </div>
+            <div type="availability">
+               <p>Optional, repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:repository>
+                     <eag:identity> [...] </eag:identity>
+                     <eag:description>
+                        <eag:holdings>
+                           <eag:genreForm languageOfElement="eng">
+                              <eag:part>Political posters</eag:part>
+                           </eag:genreForm>
+                        </eag:holdings>
+                     </eag:description>
+                  </eag:repository>
+               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:repository>
+                     <eag:identity> [...] </eag:identity>
+                     <eag:description>
+                        <eag:holdings>
+                           <eag:genreForm languageOfElement="eng" vocabularySource="tgm">
+                              <eag:part>Manuscripts, Typescripts, Photographs</eag:part>
+                           </eag:genreForm>
+                        </eag:holdings>
+                     </eag:description>
+                  </eag:repository>
+               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:repository>
+                     <eag:identity> [...] </eag:identity>
+                     <eag:description>
+                        <eag:holdings>
+                           <eag:genreForm languageOfElement="fre">
+                              <eag:part>Lettres</eag:part>
+                           </eag:genreForm>
+                           <eag:genreForm languageOfElement="fre">
+                              <eag:part>Photographies aériennes</eag:part>
+                           </eag:genreForm>
+                           <eag:genreForm languageOfElement="fre">
+                              <eag:part>Cartes postales</eag:part>
+                           </eag:genreForm>
+                        </eag:holdings>
+                     </eag:description>
+                  </eag:repository>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-geographicCoordinates">
                <!-- Manonmani (edit), Ana (review) -->
                <!-- Adapt text from EAC-CPF to EAG where necessary; 
                  Check and update child and parent elements;
