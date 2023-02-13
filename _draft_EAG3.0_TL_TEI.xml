@@ -2255,86 +2255,209 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-description">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
-               <head>
-                  <gi>description</gi>
-               </head>
-               <div type="fullName">
-                  <p>Description</p>
-               </div>
-               <div type="summary">
-                  <p>An optional child element of <gi>cpfDescription</gi>, <gi>description</gi> is a
-                     wrapper element for all of the content elements comprising descriptive
-                     information about the CPF entity.</p>
-               </div>
-               <div type="mayContain">
-                  <p>biogHist (0..n), existDates (0..n), functions (0..1), generalContext (0..n),
-                     languagesUsed (0..1), legalStatuses (0..1), localDescriptions (0..1), mandates
-                     (0..1), occupations (0..1), places (0..1), structureOrGenealogy (0..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>cpfDescription</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>base</label>
-                        <item>Optional</item>
-                        <label>conventionDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
-                        <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p>The child elements that constitute <gi>description</gi> together permit
-                     descriptive information to be encoded in either structured or unstructured
-                     fashions, or in a combined approach. <gi>description</gi> accommodates the
-                     encoding of all the data elements that comprise the Description Area of ISAAR
-                     (CPF) including historical, biographical, and genealogical information; legal
-                     status and mandates; functions, occupations, and activities, and the dates and
-                     places that further constrain those elements.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
-                  <list type="simple">
-                     <item><gi>functions</gi></item>
-                     <item><gi>languagesUsed</gi></item>
-                     <item><gi>legalStatuses</gi></item>
-                     <item><gi>localDescriptions</gi></item>
-                     <item><gi>mandates</gi></item>
-                     <item><gi>occupations</gi></item>
-                     <item><gi>places</gi></item>
-                     <item> Any of <gi>biogHist</gi>, <gi>existDates</gi>, <gi>generalContext</gi>,
-                        and <gi>structureOrGenealogy</gi></item>
-                  </list>
-               </div>
-               <div type="availability">
-                  <p>Optional, not repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <head>
+               <gi>description</gi>
+            </head>
+            <div type="fullName">
+               <p>Description</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-descriptiveNote">
+            <div type="summary">
+               <p><gi>description</gi> is a wrapper element for all of the content elements
+                  comprising descriptive information, used to provide practical and historical
+                  information, as well as a short description of the holdings</p>
+            </div>
+            <div type="mayContain">
+               <p>access (1..n), accessibility (0..n), biogHist (0..n), buildingInfo (0..n),
+                  existDates (0..n), functions (0..1), holdings (0..n), legalStatuses (0..1),
+                  mandates (0..1), places (1..1), repositoryRole (0..n), services (0..n),
+                  socialMedia (0..n), structureOrGenealogy (0..n), timetable (1..n)</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>The child elements that constitute <gi>description</gi> together permit
+                  descriptive information to be encoded in either structured or unstructured
+                  fashions, or in a combined approach. <gi>description</gi> accommodates the
+                  encoding of all the data elements that comprise the Description Area of ISDIAH
+                  including access information ; historical information; legal status and mandates;
+                  functions and the dates that further constrain those elements.</p>
+               <p>The prescribed order of all child elements (both required and optional) is:</p>
+               <list type="simple">
+                  <item><gi>places</gi></item>
+                  <item><gi>access</gi></item>
+                  <item><gi>timetable</gi></item>
+                  <item><gi>functions</gi></item>
+                  <item><gi>legalStatuses</gi></item>
+                  <item><gi>mandates</gi></item>
+                  <item> Any of <gi>accessibility</gi>,<gi>biogHist</gi>, <gi>buildingInfo</gi>,
+                        <gi>existDates</gi>, <gi>holdings</gi>, <gi>repositoryRole</gi>,
+                        <gi>services</gi>, <gi>socialMedia</gi>, and
+                     <gi>structureOrGenealogy</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Required, not repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:description>
+                     <eag:places>
+                        <eag:place>
+                           <eag:address localType="visitors address">
+                              <eag:addressLine addressLineType="country" languageOfElement="ger">Deutschland</eag:addressLine>
+                              <eag:addressLine addressLineType="region" languageOfElement="ger">Bayern</eag:addressLine>
+                              <eag:addressLine addressLineType="postalCode" languageOfElement="ger">95445</eag:addressLine>
+                              <eag:addressLine addressLineType="municipality" languageOfElement="ger">Bayreuth</eag:addressLine>
+                              <eag:addressLine addressLineType="street" languageOfElement="ger">Dr.-Franz-Straße 1</eag:addressLine>
+                           </eag:address>
+                           <eag:geographicCoordinates coordinateSystem="WGS84">49.946242, 11.563902</eag:geographicCoordinates>
+                           <eag:contact>
+                              <eag:contactLine contactLineType="phoneNumber">+49 921 4601 0</eag:contactLine>
+                              <eag:contactLine contactLineType="fax">+49 921 4601 111</eag:contactLine>
+                              <eag:contactLine contactLineType="email" href="laa@bundesarchiv.de">Kontaktieren Sie unsere Bayreuther Dienststelle per
+                                 Mail</eag:contactLine>
+                              <contactLine contactLineType="directions"
+                                 href="http://www.bundesarchiv.de/imperia/md/content/stab/wegbeschreibung_barch_bayreuth_2011-03.pdf">Linie 302, 303 oder 305 vom Hauptbahnhof bis ZOH, mit 306 bis 
+                                 Haltestelle „Kulmbacher Straße“.</contactLine>
+                           </eag:contact>
+                        </eag:place>
+                     </eag:places>
+                     <eag:access question="yes"/>
+                     <eag:timetable>
+                        <eag:opening languageOfElement="ger">Mo. - Do.: 08:00 Uhr - 17:00 Uhr, Fr.: 08:00
+                           Uhr - 15:00 Uhr</eag:opening>
+                        <eag:opening languageOfElement="eng">Monday - Thursday: 8am - 5pm, Friday 8am -
+                           3pm</eag:opening>
+                        <eag:closing languageOfElement="ger">an Wochenenden und nationalen
+                           Feiertagen</eag:closing>
+                        <closing languageOfElement="eng">at weekends and national holidays</closing>
+                     </eag:timetable>
+                     <eag:repositoryRole>Branch</eag:repositoryRole>
+                     <eag:accessibility languageOfElement="ger" question="yes">ebenerdiger Zugang</eag:accessibility>
+                     <eag:accessibility languageOfElement="eng" question="yes">groundfloor level access</eag:accessibility>
+                     <eag:holdings>
+                        <eag:dateSet>
+                           <eag:dateRange>
+                              <eag:fromDate>1867/71</eag:fromDate>
+                              <eag:toDate standardDate="1945">1945</eag:toDate>
+                           </eag:dateRange>
+                           <eag:dateRange>
+                              <eag:fromDate standardDate="1949">1949</eag:fromDate>
+                              <eag:toDate standardDate="1990">1990</eag:toDate>
+                           </eag:dateRange>
+                        </eag:dateSet>
+                        <eag:extent>
+                           <eag:num unit="linearmetre">46.000</eag:num>
+                        </eag:extent>
+                        <eag:descriptiveNote>
+                           <eag:p languageOfElement="ger">Als umfangreichsten Bestand verwahrt das
+                              Lastenausgleichsarchiv die Akten der Ausgleichsverwaltung (mehr als
+                              30.000 lfm): Sie dokumentieren die Schäden der Vertriebenen und
+                              Flüchtlinge aus den ehemaligen Ostgebieten des Deutschen Reiches sowie
+                              den deutschen Siedlungsgebieten in Ost- und Südosteuropa nach dem
+                              Zweiten Weltkrieg. Vollständig überliefert sind die Feststellungsakten
+                              der Ausgleichsämter zu Schäden an landwirtschaftlichem, Grund- und
+                              Betriebsvermögen.</eag:p>
+                           <eag:p languageOfElement="ger">Einzigartig ist darüber hinaus die in den 1950er
+                              Jahren entstandene Ost-Dokumentation (ca. 145 lfm). In rund 30.000
+                              Berichten werden die Erlebnisse der Menschen in den letzten Monaten des
+                              Zweiten Weltkrieges sowie die Wirtschafts- und Lebensverhältnisse in den
+                              ehemaligen Ostgebieten lebendig. Erhalten sind: Fragebogen- und
+                              Erlebnisberichte zur Dokumentation der Vertreibung der Deutschen aus
+                              Ostmittel- und Südosteuropa, Unterlagen zur Flucht über die Ostsee,
+                              Berichte über Verwaltung, Wirtschaft und zum Zeitgeschehen 1919-1945 in
+                              den Gebieten östlich von Oder und Neiße, Berichte über das Leben der
+                              deutschen Volksgruppen in der Tschechoslowakei (1918-1945). Hinzu kommen
+                              mehr als 15.000 sog. Gemeindeseelenlisten, mit denen die Bevölkerung der
+                              ehemaligen Gemeinden östlich von Oder und Neiße rekonstruiert wurde.</eag:p>
+                           <eag:p languageOfElement="ger">Weitere Bestände umfassen die
+                              Heimatauskunftstellen, das Hauptamt für Soforthilfe/Bundesausgleichsamt
+                              mit seinen Maßnahmen zur Linderung der unmittelbaren Not nach dem
+                              Zweiten Weltkrieg und zur Entschädigung und Integration der Flüchtlinge
+                              und Vertriebenen, sowie die Unterlagen des Kirchlichen Suchdiensts, der
+                              von 1945 bis 2015 für die Ermittlung und Betreuung deutscher ziviler
+                              Vermisster und Spätaussiedler im Rahmen der Vertreibungen infolge des
+                              Zweiten Weltkriegs zuständig war.</eag:p>
+                        </eag:descriptiveNote>
+                     </eag:holdings>
+                     <eag:services>
+                        <eag:internetAccess question="yes" languageOfElement="ger">Zugang mit eigenem Telekom-Account</eag:internetAccess>
+                        <eag:internetAccess question="yes" languageOfElement="eng">Telekom Hot-Spot: access with your own Telekom account only</eag:internetAccess>
+                        <eag:library question="yes">
+                           <eag:contact>
+                              <eag:contactLine contactLineType="homepage" href="http://www.bibliothek.bundesarchiv.de/">Katalog der Bibliothek
+                                 des Bundesarchivs</eag:contactLine>
+                           </eag:contact>
+                        </eag:library>
+                        <eag:searchroom question="yes">
+                           <eag:workPlaces question="yes">
+                              <eag:num unit="site">28</eag:num>
+                           </eag:workPlaces>
+                           <eag:contact>
+                              <eag:contactLine contactLineType="homepage"
+                                 href="http://www.bundesarchiv.de/DE/Navigation/Finden/Recherchesysteme/recherchesysteme.html">Recherche im Archivgut</eag:contactLine>
+                           </eag:contact>
+                           <eag:photographAllowance question="yes (conditions apply)"/>
+                           <eag:readersTicket question="yes" languageOfElement="ger"
+                              href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag.html">Benutzungsantrag (PDF)</eag:readersTicket>
+                           <eag:readersTicket question="yes" languageOfElement="ger"
+                              href="https://www.bundesarchiv.de/DE/Content/Downloads/Rechtliches/benutzungsantrag-bild.pdf">Antrag auf Bildbenutzung beim Bundesarchiv (PDF)</eag:readersTicket>
+                           <eag:advancedOrders question="yes" languageOfElement="ger"
+                              href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html">Bitte nutzen Sie unsere Rechercheangebote zur Vorbereitung auf Ihren Besuch bei uns. Gerne helfen Ihnen unsere Mitarbeiter bei einer Vorabbestellung der für Ihren Forschungszweck interessanten Unterlagen.</eag:advancedOrders>
+                           <eag:advancedOrders question="yes" languageOfElement="eng"
+                              href="https://www.bundesarchiv.de/DE/Navigation/Finden/finden.html">Please use our online research tools in order to prepare your visit.
+                              Our staff members will be pleased to be of help in ordering records, that would be of interest for you, in advance.</eag:advancedOrders>
+                           <eag:researchServices question="yes" languageOfElement="ger">Kleinere Nachforschungen werden in der Regel von den Mitarbeitern des Bundesarchivs übernommen, können aber unter Umständen gebührenpflichtig
+                              sein. Eine umfangreiche und zeitaufwändige Suche durch das Archivpersonal ist in aller Regel nicht möglich.</eag:researchServices>
+                           <eag:researchServices question="yes" languageOfElement="ger">Sollten Sie Ihre Nachforschungen nicht selbst vor Ort durchführen können,
+                              besteht die Möglichkeit, dass Sie eine Privatfirma mit den erforderlichen Arbeiten beauftragen. Falls Sie einen Recherchedienst
+                              beauftragen, sind Sie zur Abgabe eines eigenen Benutzungsantrages dennoch verpflichtet. Es wird empfohlen, den ausgefüllten und
+                              unterschriebenen Vordruck "Benutzungsantrag" dem Recherchedienst zu übersenden, der diesen bei Beginn der Benutzung dem Bundesarchiv
+                              aushändigt - zusammen mit dem Benutzungsantrag des Recherchedienstes. Mit der Antragstellung auf dem Vordruck "Benutzungsantrag" verpflichten
+                              Sie sich zur Einhaltung der Bestimmungen des Bundesarchivgesetzes sowie der Benutzungsverordnung und der Kostenverordnung. Listen und
+                              Übersichten von privaten überregionalen Recherchediensten, aber auch von Firmen, die bevorzugt an den Dienstorten Berlin und Freiburg
+                              Nachforschungen übernehmen, finden Sie auf der Webseite des Bundesarchivs unter Benutzung – Recherchedienste. Etwaige anfallende
+                              Kosten sind abhängig vom Anbieter des jeweiligen Recherchedienstes.</eag:researchServices>
+                           <eag:researchServices question="yes" languageOfElement="eng">Basically, research and usage are conducted in Federal Archives offices by the user
+                              on the premises. Minor investigations are generally carried out by Federal Archives employees, but may be subject to a fee under certain
+                              conditions. A comprehensive and time-consuming search by the Archives personnel is in general not possible.</eag:researchServices>
+                           <eag:researchServices question="yes" languageOfElement="eng">If you are unable to conduct your own investigations on the premises, it is
+                              possible to engage a private company to carry out the necessary work. If you engage a research agency, you are still required to submit a
+                              "Benutzungsantrag" [application form for readers]. It is recommended that the research agency be sent the filled out and signed pre-printed
+                              application form, who must hand this over, together with the agency’s own application form, to the Federal Archives at the commencement of
+                              research. By submitting the pre-printed application form, you undertake to comply with the regulations of the Federal Archives Act, the usage
+                              regulations and the Costs Directive.</eag:researchServices>
+                        </eag:searchroom>
+                        <eag:technicalServices>
+                           <eag:restorationLaboratory question="no"/>
+                           <eag:reproductionServices question="no"/>
+                        </eag:technicalServices>
+                     </eag:services>
+                  </eag:description>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-descriptiveNote">
                <!-- Jane done -->
                <head>
                   <gi>descriptiveNote</gi>
@@ -3065,169 +3188,172 @@
                </div>
             </div>
             <div type="elementDocumentation" xml:id="elem-function">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
-               <head>
-                  <gi>function</gi>
-               </head>
-               <div type="fullName">
-                  <p>Function</p>
-               </div>
-               <div type="summary">
-                  <p>A required child element of <gi>functions</gi> that provides information about
-                     a function, activity, role, or purpose performed by the CPF entity being
-                     described.</p>
-               </div>
-               <div type="mayContain">
-                  <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n),
-                     term (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>functions</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>conventionDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>localType</label>
-                        <item>Optional</item>
-                        <label>localTypeDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
-                        <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                        <label>valueURI</label>
-                        <item>Optional</item>
-                        <label>vocabularySource</label>
-                        <item>Optional</item>
-                        <label>vocabularySourceURI</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p>A <gi>function</gi> element is a wrapper element used to encode an index term,
-                     using the required child element <gi>term</gi>. Terms are used to identify the
-                     functions, processes, activities, tasks, or transactions performed by the CPF
-                     entity. They may be drawn from controlled vocabularies or may be natural
-                     language terms.</p>
-                  <p><gi>function</gi> must include at least one <gi>term</gi> element.
-                        <gi>term</gi> can be repeated within <gi>function</gi> to include
-                     translations of the same function. Use the <att>languageOfElement</att>
-                     attribute to identify the language used in each <gi>term</gi>.</p>
-                  <p>Associated date(s) (<gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi>) and
-                     place(s) (<gi>placeName</gi>) may be included to further constrain the term's
-                     meaning. A <gi>descriptiveNote</gi> may be included if a fuller textual
-                     explanation is needed.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
-                  <list type="simple">
-                     <item><gi>term</gi></item>
-                     <item>One of <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi></item>
-                     <item><gi>placeName</gi></item>
-                     <item><gi>descriptiveNote</gi></item>
-                  </list>
-               </div>
-               <div type="seealso">
-                  <list type="simple">
-                     <item>Use <gi>relation</gi> with <gi>targetEntity</gi> having the
-                           <att>targetType</att> "function" when describing the relationship between
-                        the function and the CPF entity being described in more detail.</item>
-                  </list>
-               </div>
-               <div type="availability">
-                  <p>Required, repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <head>
+               <gi>function</gi>
+            </head>
+            <div type="fullName">
+               <p>Function</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-functions">
-               <!-- Manonmani (edit), Ana (review) -->
-               <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
-               <head>
-                  <gi>functions</gi>
-               </head>
-               <div type="fullName">
-                  <p>Functions</p>
-               </div>
-               <div type="summary">
-                  <p>An optional child element of <gi>description</gi> used for grouping together
-                     one or more <gi>function</gi> elements.</p>
-               </div>
-               <div type="mayContain">
-                  <p>descriptiveNote (0..1), function (1..n)</p>
-               </div>
-               <div type="mayOccurWithin">
-                  <p>description</p>
-               </div>
-               <div type="attributes">
-                  <p>
-                     <list type="gloss">
-                        <label>audience</label>
-                        <item>Optional (values limited to: external, internal)</item>
-                        <label>conventionDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>id</label>
-                        <item>Optional</item>
-                        <label>languageOfElement</label>
-                        <item>Optional</item>
-                        <label>localType</label>
-                        <item>Optional</item>
-                        <label>localTypeDeclarationReference</label>
-                        <item>Optional</item>
-                        <label>maintenanceEventReference</label>
-                        <item>Optional</item>
-                        <label>scriptOfElement</label>
-                        <item>Optional</item>
-                        <label>sourceReference</label>
-                        <item>Optional</item>
-                        <label>target</label>
-                        <item>Optional</item>
-                     </list>
-                  </p>
-               </div>
-               <div type="description">
-                  <p>Use the optional <gi>functions</gi> element to group together one or more
-                     occurrences of <gi>function</gi>. <gi>functions</gi> must include at least one
-                        <gi>function</gi> element.</p>
-                  <p>The prescribed order of all child elements (both required and optional) is:</p>
-                  <list type="simple">
-                     <item><gi>function</gi></item>
-                     <item><gi>descriptiveNote</gi></item>
-                  </list>
-               </div>
-               <div type="availability">
-                  <p>Optional, not repeatable</p>
-               </div>
-               <div type="examples">
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <!-- Contains examples of XML from the schema. Tags in egXML must be prefixed with the proper namespace (e.g. <eag:abstract>). -->
-                  </egXML>
-               </div>
+            <div type="summary">
+               <p>A required child element of <gi>functions</gi> that provides information about a
+                  function held by the archivival institution being described.</p>
             </div>
-            <div type="elementDocumentation" xml:id="elem-genreForm">
+            <div type="mayContain">
+               <p>date or dateRange or dateSet (0..1), descriptiveNote (0..1), placeName (0..n),
+                  term (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>functions</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                     <label>valueURI</label>
+                     <item>Optional</item>
+                     <label>vocabularySource</label>
+                     <item>Optional</item>
+                     <label>vocabularySourceURI</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>A <gi>function</gi> element is a wrapper element used to encode an index term,
+                  using the required child element <gi>term</gi>. Terms are used to identify the
+                  functions, processes, activities, tasks, or transactions performed by the archival
+                  instutions. They may be drawn from controlled vocabularies or may be natural
+                  language terms.</p>
+               <p><gi>function</gi> must include at least one <gi>term</gi> element. <gi>term</gi>
+                  can be repeated within <gi>function</gi> to include translations of the same
+                  function. Use the <att>languageOfElement</att> attribute to identify the language
+                  used in each <gi>term</gi>.</p>
+               <p>Associated date(s) (<gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi>) and
+                  place(s) (<gi>placeName</gi>) may be included to further constrain the term's
+                  meaning. A <gi>descriptiveNote</gi> may be included if a fuller textual
+                  explanation is needed.</p>
+               <p>The prescribed order of all child elements (both required and optional) is:</p>
+               <list type="simple">
+                  <item><gi>term</gi></item>
+                  <item>One of <gi>date</gi>, <gi>dateRange</gi>, or <gi>dateSet</gi></item>
+                  <item><gi>placeName</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="seealso">
+               <list type="simple">
+                  <item>Use <gi>relation</gi> with <gi>targetEntity</gi> having the
+                        <att>targetType</att> "function" when describing the relationship between
+                     the function and the archival institution being described in more
+                     detail.</item>
+               </list>
+               <!-- Seealso should be checked. Is it relevant for EAG ? -->
+            </div>
+            <div type="availability">
+               <p>Required, repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:functions>
+                     <eag:function>
+                        <eag:term>Industrial or Scientific Research</eag:term>
+                     </eag:function>
+                     <eag:function>
+                        <eag:term>Analytical Services</eag:term>
+                     </eag:function>
+                  </eag:functions>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-functions">
+            <head>
+               <gi>functions</gi>
+            </head>
+            <div type="fullName">
+               <p>Functions</p>
+            </div>
+            <div type="summary">
+               <p>An optional child element of <gi>description</gi> used for grouping together one
+                  or more <gi>function</gi> elements.</p>
+            </div>
+            <div type="mayContain">
+               <p>descriptiveNote (0..1), function (1..n)</p>
+            </div>
+            <div type="mayOccurWithin">
+               <p>description</p>
+            </div>
+            <div type="attributes">
+               <p>
+                  <list type="gloss">
+                     <label>audience</label>
+                     <item>Optional (values limited to: external, internal)</item>
+                     <label>conventionDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>id</label>
+                     <item>Optional</item>
+                     <label>languageOfElement</label>
+                     <item>Optional</item>
+                     <label>localType</label>
+                     <item>Optional</item>
+                     <label>localTypeDeclarationReference</label>
+                     <item>Optional</item>
+                     <label>maintenanceEventReference</label>
+                     <item>Optional</item>
+                     <label>scriptOfElement</label>
+                     <item>Optional</item>
+                     <label>sourceReference</label>
+                     <item>Optional</item>
+                     <label>target</label>
+                     <item>Optional</item>
+                  </list>
+               </p>
+            </div>
+            <div type="description">
+               <p>Use the optional <gi>functions</gi> element to group together one or more
+                  occurrences of <gi>function</gi>. <gi>functions</gi> must include at least one
+                     <gi>function</gi> element.</p>
+               <p>The prescribed order of all child elements (both required and optional) is:</p>
+               <list type="simple">
+                  <item><gi>function</gi></item>
+                  <item><gi>descriptiveNote</gi></item>
+               </list>
+            </div>
+            <div type="availability">
+               <p>Optional, not repeatable</p>
+            </div>
+            <div type="examples">
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <eag:functions>
+                     <eag:function>
+                        <eag:term>Industrial or Scientific Research</eag:term>
+                     </eag:function>
+                     <eag:function>
+                        <eag:term>Analytical Services</eag:term>
+                     </eag:function>
+                  </eag:functions>
+               </egXML>
+            </div>
+         </div>
+         <div type="elementDocumentation" xml:id="elem-genreForm">
                <!-- Jane (edit), Kerstin (review) -->
                <!-- Adapted from EAD3 -->
                <head>
