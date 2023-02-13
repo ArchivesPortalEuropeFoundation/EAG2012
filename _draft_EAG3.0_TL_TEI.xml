@@ -2963,7 +2963,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-descriptiveNote">
-                    <!-- Jane done -->
                     <head>
                         <gi>descriptiveNote</gi>
                     </head>
@@ -3083,7 +3082,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-eag">
-                    <!-- Jane done -->
                     <head>
                         <gi>eag</gi>
                     </head>
@@ -3239,7 +3237,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-eventDateTime">
-                    <!-- Jane reviewed -->
                     <head>
                         <gi>eventDateTime</gi>
                     </head>
@@ -3318,7 +3315,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-eventDescription">
-                    <!-- Jane done -->
                     <head>
                         <gi>eventDescription</gi>
                     </head>
@@ -3756,7 +3752,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-fromDate">
-                    <!-- Jane Reviewed -->
                     <head>
                         <gi>fromDate</gi>
                     </head>
@@ -3962,7 +3957,6 @@
                                 relationship between the function and the archival institution being
                                 described in more detail.</item>
                         </list>
-                        <!-- Seealso should be checked. Is it relevant for EAG ? -->
                     </div>
                     <div type="availability">
                         <p>Required, repeatable</p>
@@ -4830,12 +4824,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-languageDeclaration">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>languageDeclaration</gi>
                     </head>
@@ -5308,12 +5296,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-localTypeDeclaration">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>localTypeDeclaration</gi>
                     </head>
@@ -5381,12 +5363,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-maintenanceAgency">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>maintenanceAgency</gi>
                     </head>
@@ -5463,12 +5439,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-maintenanceEvent">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>maintenanceEvent</gi>
                     </head>
@@ -5542,12 +5512,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-maintenanceHistory">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>maintenanceHistory</gi>
                     </head>
@@ -6363,12 +6327,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-objectXMLWrap">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>objectXMLWrap</gi>
                     </head>
@@ -6501,12 +6459,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-otherAgencyCode">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>otherAgencyCode</gi>
                     </head>
@@ -6580,12 +6532,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-otherRecordId">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>otherRecordId</gi>
                     </head>
@@ -6981,12 +6927,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-p">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>p</gi>
                     </head>
@@ -7838,12 +7778,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-recordId">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>recordId</gi>
                     </head>
@@ -7977,12 +7911,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-reference">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>reference</gi>
                     </head>
@@ -9466,12 +9394,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-rightsDeclaration">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>rightsDeclaration</gi>
                     </head>
@@ -9775,12 +9697,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-shortCode">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>shortCode</gi>
                     </head>
@@ -9889,7 +9805,6 @@
                     <div type="availability">
                         <p>Optional, repeatable</p>
                     </div>
-                    <!-- may want to assess examples - decide on best practice for encoding this info -->
                     <div type="examples">
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <eag:repository>
@@ -9912,12 +9827,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-source">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>source</gi>
                     </head>
@@ -9994,12 +9903,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-sources">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>sources</gi>
                     </head>
@@ -10063,12 +9966,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-span">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>span</gi>
                     </head>
@@ -10557,12 +10454,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-term">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>term</gi>
                     </head>
@@ -10701,12 +10592,6 @@
                     </div>
                 </div>
                 <div type="elementDocumentation" xml:id="elem-toDate">
-                    <!-- Kerstin (edit), Jane (review) -->
-                    <!-- Adapt text from EAC-CPF to EAG where necessary; 
-                 Check and update child and parent elements;
-                 Check and update attributes;
-                 Encoding examples to be added at the end
-               -->
                     <head>
                         <gi>toDate</gi>
                     </head>
