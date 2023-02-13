@@ -2426,8 +2426,8 @@
                         date is uncertain.</item>
                      <item>Use <att>standardDate</att> to provide a machine-processable form of the
                         date. Such dates, same as the ones in <att>notAfter</att> and <att>notBefore</att>, should be compliant with ISO 8601.</item>
-                     <item>Use <att>status</att> with the value "unknown" to indicate where a date
-                        is unknown.</item>
+                     <item>Use <att>status</att> with the value "unknown" to indicate where a
+                        date is unknown.</item>
                   </list>
                </div>
                <div type="availability">
@@ -2631,7 +2631,6 @@
                      </eag:holdings>
                   </egXML>
                </div>
-            </div>
          </div>
          <div type="elementDocumentation" xml:id="elem-description">
             <head>
