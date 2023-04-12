@@ -13440,19 +13440,19 @@
                 </div>
             </div>
         </body>
-      <back>
-         <!-- 
+        <back>
+            <!-- 
             One div for each element same element available as for div in front
             in the div:
                @type is always appendix
                @xml:id is a short name of the appendix
          -->
-         <!--
+            <!--
             <div type="appendix" xml:id="appendix1">
                 <head>Title</head>
                 <p>Contents of the appendix; this can also include lists</p>
             </div>
          -->
-      </back>
-   </text>
+        </back>
+    </text>
 </TEI>
