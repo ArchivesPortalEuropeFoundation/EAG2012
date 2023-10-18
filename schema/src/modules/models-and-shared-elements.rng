@@ -24,7 +24,7 @@
     
     <define name="element.addressLine">
         <element name="addressLine">
-            <ref name="attribute-group.global-plus-lang-and-script-and-localType-pair.optional"/>
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
             <ref name="attribute-group.assertion-reference.optional"/>
             <ref name="attribute.addressLineType.optional"/> 
             <text/>
@@ -103,7 +103,7 @@
     
     <define name="element.contactLine">
         <element name="contactLine">
-            <ref name="attribute-group.global-plus-lang-and-script-and-localType-pair.optional"/>
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
             <ref name="attribute-group.assertion-reference.optional"/>
             <ref name="attribute-group.links.optional"/>
             <ref name="attribute.contactLineType.optional"/> 
@@ -271,7 +271,7 @@
     
     <define name="element.list">
         <element name="list">
-            <ref name="attribute-group.global-plus-lang-and-script-and-localType-pair.optional"/>
+            <ref name="attribute-group.global-plus-lang-and-script.optional"/>
             <ref name="attribute-group.assertion-reference.optional"/>
             <ref name="attribute.style.optional"/>      
             <ref name="element.head.optional"/>
