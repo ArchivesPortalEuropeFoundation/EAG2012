@@ -9,26 +9,31 @@
     <define name="attribute.addressLineType.optional">
         <optional>
             <attribute name="addressLineType">
-                <choice>
-                    <value>country</value>
-                    <value>county</value>
-                    <value>district</value>
-                    <value>municipality</value>
-                    <value>postalCode</value>
-                    <value>postBox</value>
-                    <value>region</value>
-                    <value>street</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
     </define>
-    
-    <define name="attribute.agentType">
-        <attribute name="agentType">
+
+    <define name="attribute.addressTypeLineEncoding">
+        <attribute name="addressTypeLineEncoding" a:defaultValue="EASList">
             <choice>
-                <value>human</value>
-                <value>machine</value>
-                <value>unknown</value>
+                <value>EASList</value>
+                <value>otherAddressTypeLineEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+    
+    <define name="attribute.agentType.optional">
+        <attribute name="agentType">
+            <data type="NMTOKEN"/>
+        </attribute>
+    </define>
+
+    <define name="attribute.agentTypeEncoding">
+        <attribute name="agentTypeEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherAgentTypeEncoding</value>
             </choice>
         </attribute>
     </define>
@@ -36,12 +41,18 @@
     <define name="attribute.audience.optional">
         <optional>
             <attribute name="audience">
-                <choice>
-                    <value>external</value>
-                    <value>internal</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>  
         </optional>
+    </define>
+
+    <define name="attribute.audienceEncoding">
+        <attribute name="audienceEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherAudienceEncoding</value>
+            </choice>
+        </attribute>
     </define>
     
     <define name="attribute.base.optional">
@@ -55,16 +66,18 @@
     <define name="attribute.contactLineType.optional">
         <optional>
             <attribute name="contactLineType">
-                <choice>
-                    <value>directions</value>
-                    <value>email</value>
-                    <value>fax</value>
-                    <value>homepage</value>
-                    <value>mobileNumber</value>
-                    <value>phoneNumber</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
+    </define>
+
+    <define name="attribute.contactTypeEncoding">
+        <attribute name="contactTypeLineEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherContactTypeLineEncoding</value>
+            </choice>
+        </attribute>
     </define>
     
     <define name="attribute.coordinateSystem">
@@ -88,28 +101,75 @@
             </attribute>
         </optional>
     </define>
+
+    <define name="attribute.countryEncoding">
+        <attribute name="countryEncoding" a:defaultValue="iso3166-1">
+            <choice>
+                <value>iso3166-1</value>
+                <value>otherCountryEncoding</value>
+            </choice>
+        </attribute>
+    </define>
     
     <define name="attribute.coverage.optional" a:exclude-from="eac">
         <optional>
             <attribute name="coverage">
-                <choice>
-                    <value>part</value>
-                    <value>whole</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
     </define>
-            
+
+    <define name="attribute.coverageEncoding" a:exclude-from="eac">
+        <attribute name="coverageEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherCoverageEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
+    <define name="attribute.daoTypeEncoding" a:exclude-from="eac eag">
+        <attribute name="daoTypeEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherDaoTypeEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
     <define name="attribute.detailLevel.optional">
         <optional>
             <attribute name="detailLevel">
-                <choice>
-                    <value>basic</value>
-                    <value>extended</value>
-                    <value>minimal</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
+    </define>
+
+    <define name="attribute.detailLevelEncoding">
+        <attribute name="detailLevelEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherDetailLevelEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
+    <define name="attribute.dscTypeEncoding" a:exclude-from="eac eag">
+        <attribute name="dscTypeEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherDscTypeEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+    
+    <define name="attribute.dateEncoding">
+        <attribute name="dateEncoding" a:defaultValue="iso8601">
+            <choice>
+                <value>iso8601</value>
+                <value>otherDateEncoding</value>
+            </choice>
+        </attribute>
     </define>
   
     <define name="attribute.id.optional">
@@ -123,14 +183,47 @@
     <define name="attribute.identityType.optional" a:exclude-from="ead">
         <optional>
             <attribute name="identityType">
-                <choice>
-                    <value>acquired</value>
-                    <value>given</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
     </define>
+
+    <define name="attribute.identityTypeEncoding">
+        <attribute name="identityTypeEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherIdentityTypeEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
+    <define name="attribute.languageCode">
+        <attribute name="languageCode">
+            <data type="NMTOKEN"/>
+        </attribute>
+    </define>
+
+    <define name="attribute.languageEncoding">
+        <attribute name="languageEncoding" a:defaultValue="iso639-2">
+            <choice>
+                <value>iso639-1</value>
+                <value>iso639-2</value>
+                <value>iso639-3</value>
+                <value>ietf-bcp-47</value>
+                <value>otherLanguageEncoding</value>
+            </choice>
+        </attribute>
+    </define>
     
+    <define name="attribute.levelEncoding" a:exclude-from="eac eag" >
+        <attribute name="levelEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherLevelEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
     <define name="attribute.localType">
         <attribute name="localType">
             <data type="token"/>
@@ -143,53 +236,60 @@
         </attribute>
     </define>
     
-    <define name="attribute.maintenanceStatus">
+    <define name="attribute.maintenanceStatus.optional">
         <attribute name="maintenanceStatus">
-            <choice>
-                <value>cancelled</value>
-                <value>deleted</value>
-                <value>deletedMerged</value>
-                <value>deletedReplaced</value>
-                <value>deletedSplit</value>
-                <value>derived</value>
-                <value>new</value>
-                <value>revised</value>
-            </choice>
+            <data type="NMTOKEN"/>
         </attribute>  
     </define>
-    
-    <define name="attribute.maintenanceEventType">
-        <attribute name="maintenanceEventType">
+
+    <define name="attribute.maintenanceStatusEncoding">
+        <attribute name="maintenanceStatusEncoding" a:defaultValue="EASList">
             <choice>
-                <value>cancelled</value>
-                <value>created</value>
-                <value>deleted</value>
-                <value>derived</value>
-                <value>revised</value>
-                <value>unknown</value>
-                <value>updated</value>
+                <value>EASList</value>
+                <value>otherMaintenanceStatusEncoding</value>
             </choice>
         </attribute>
     </define>
     
-    <define name="attribute.otherUnit.optional" a:exclude-from="eac ead">
-        <optional>
-            <attribute name="otherUnit">
-                <data type="NMTOKEN"/>
-            </attribute>
-        </optional>
+    <define name="attribute.maintenanceEventType.optional">
+        <attribute name="maintenanceEventType">
+            <data type="NMTOKEN"/>
+        </attribute>
     </define>
-    
+
+    <define name="attribute.maintenanceEventTypeEncoding">
+        <attribute name="maintenanceEventTypeEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherMaintenanceEventTypeEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
+    <define name="attribute.physDescStructuredTypeEncoding" a:exclude-from="eac eag">
+        <attribute name="physDescStructuredTypeEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherPhysDescStructuredTypeEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
     <define name="attribute.publicationStatus.optional">
         <optional>
             <attribute name="publicationStatus">
-                <choice>
-                    <value>approved</value>
-                    <value>inProcess</value>
-                    <value>published</value>
-                </choice>    
+                <data type="NMTOKEN"/>   
             </attribute>
         </optional>
+    </define>
+
+    <define name="attribute.publicationStatusEncoding">
+        <attribute name="publicationStatusEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherPublicationStatusEncoding</value>
+            </choice>
+        </attribute>
     </define>
     
     <define name="attribute.preferredForm.optional">
@@ -203,13 +303,18 @@
     <define name="attribute.question" a:exclude-from="eac ead">
         <optional>
             <attribute name="question">
-                <choice>
-                    <value>no</value>
-                    <value>yes</value>
-                    <value>yes (conditions apply)</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
+    </define>
+
+    <define name="attribute.questionEncoding">
+        <attribute name="questionEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherQuestionEncoding</value>
+            </choice>
+        </attribute>
     </define>
     
     <define name="attribute.repositoryCode" a:exclude-from="eac ead">
@@ -219,7 +324,31 @@
             </attribute>
         </optional>
     </define>
-            
+
+    <define name="attribute.repositoryEncoding">
+        <attribute name="repositoryEncoding" a:defaultValue="iso15511">
+            <choice>
+                <value>iso15511</value>
+                <value>otherRepositoryEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
+    <define name="attribute.scriptCode">
+        <attribute name="scriptCode">
+            <data type="NMTOKEN"/>
+        </attribute>
+    </define>
+
+    <define name="attribute.scriptEncoding">
+        <attribute name="scriptEncoding" a:defaultValue="iso15924">
+            <choice>
+                <value>iso15924</value>
+                <value>otherScriptEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
     <define name="attribute.standardDateTime.optional">
         <optional>
             <attribute name="standardDateTime">
@@ -228,36 +357,21 @@
         </optional>
     </define>
     
-    <define name="attribute.status.authorized-or-alternative.optional">
+    <define name="attribute.status.optional">
         <optional>
             <attribute name="status">
-                <choice>
-                    <value>alternative</value>
-                    <value>authorized</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
     </define>
-    
-    <define name="attribute.status.ongoing-or-unknown.optional">
-        <optional>
-            <attribute name="status">
-                <choice>
-                    <value>ongoing</value>
-                    <value>unknown</value>
-                </choice>
-            </attribute>
-        </optional>
-    </define>
-    
-    <define name="attribute.status.unknown.optional">
-        <optional>
-            <attribute name="status">
-                <choice>
-                    <value>unknown</value>
-                </choice>
-            </attribute>
-        </optional>
+
+    <define name="attribute.statusEncoding">
+        <attribute name="statusEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherStatusEncoding</value>
+            </choice>
+        </attribute>
     </define>
     
     <define name="attribute.style.optional">
@@ -276,15 +390,17 @@
         </optional>
     </define>
     
-    <define name="attribute.targetType">
+    <define name="attribute.targetType.optional">
         <attribute name="targetType">
+            <data type="NMTOKEN"/>
+        </attribute>
+    </define>
+
+    <define name="attribute.targetTypeEncoding">
+        <attribute name="targetTypeEncoding" a:defaultValue="EASList">
             <choice>
-                <value>agent</value>
-                <value>corporateBody</value>
-                <value>family</value>
-                <value>function</value>
-                <value>person</value>
-                <value>resource</value>
+                <value>EASList</value>
+                <value>otherTargetTypeEncoding</value>
             </choice>
         </attribute>
     </define>
@@ -300,21 +416,28 @@
     <define name="attribute.unit">
         <optional>
             <attribute name="unit">
-                <choice>
-                    <value>cubicmetre</value>
-                    <value>exabyte</value>
-                    <value>gigabyte</value>
-                    <value>linearmetre</value>
-                    <value>megabyte</value>
-                    <value>otherUnit</value>
-                    <value>petabyte</value>
-                    <value>site</value>
-                    <value>squaremetre</value>
-                    <value>terabyte</value>
-                </choice>
+                <data type="NMTOKEN"/>
             </attribute>
         </optional>
-    </define>        
+    </define>   
+
+    <define name="attribute.unitEncoding" a:exclude-from="eac ead">
+        <attribute name="unitEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherUnitEncoding</value>
+            </choice>
+        </attribute>
+    </define>
+
+    <define name="attribute.unitDateTypeEncoding" a:exclude-from="eac eag">
+        <attribute name="unitDateTypeEncoding" a:defaultValue="EASList">
+            <choice>
+                <value>EASList</value>
+                <value>otherUnitDateTypeEncoding</value>
+            </choice>
+        </attribute>
+    </define>
 
     <define name="attribute.value" a:exclude-from="eac ead">
         <attribute name="value">
@@ -360,47 +483,76 @@
     
     <define name="attribute-group.control-encodings.optional">
         <optional>
-            <attribute name="languageEncoding">
-                <choice>
-                    <value>ietf-bcp-47</value>
-                    <value>iso639-1</value>
-                    <value>iso639-2</value>
-                    <value>iso639-3</value>
-                    <value>otherLanguageEncoding</value>
-                </choice>
-            </attribute>
+            <ref name="attribute.addressTypeLineEncoding"/>
         </optional>
         <optional>
-            <attribute name="scriptEncoding">
-                <choice>
-                    <value>iso15924</value>
-                    <value>otherScriptEncoding</value>
-                </choice>
-            </attribute>
+            <ref name="attribute.agentTypeEncoding"/>
         </optional>
         <optional>
-            <attribute name="dateEncoding">
-                <choice>
-                    <value>iso8601</value>
-                    <value>otherDateEncoding</value>
-                </choice>
-            </attribute>
+            <ref name="attribute.audienceEncoding"/>
         </optional>
         <optional>
-            <attribute name="countryEncoding">
-                <choice>
-                    <value>iso3166-1</value>
-                    <value>otherCountryEncoding</value>
-                </choice>
-            </attribute>
+            <ref name="attribute.contactTypeEncoding"/>
         </optional>
         <optional>
-            <attribute name="repositoryEncoding">
-                <choice>
-                    <value>iso15511</value>
-                    <value>otherRepositoryEncoding</value>
-                </choice>
-            </attribute>
+            <ref name="attribute.countryEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.coverageEncoding" a:exclude-from="eac"/>
+        </optional>
+        <optional>
+            <ref name="attribute.daoTypeEncoding" a:exclude-from="eac eag"/>
+        </optional>
+        <optional>
+            <ref name="attribute.detailLevelEncoding"/>
+        </optional>
+        <optional a:exclude-from="eac eag">
+            <ref name="attribute.dscTypeEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.dateEncoding"/>
+        </optional>
+        <optional a:exclude-from="ead">
+            <ref name="attribute.identityTypeEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.languageEncoding"/>
+        </optional>
+        <optional>        
+            <ref name="attribute.levelEncoding" a:exclude-from="eac eag"/>
+        </optional>
+        <optional>
+            <ref name="attribute.maintenanceEventTypeEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.maintenanceStatusEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.physDescStructuredTypeEncoding" a:exclude-from="eac eag"/>
+        </optional>
+        <optional>
+            <ref name="attribute.publicationStatusEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.questionEncoding" a:exclude-from="eac ead"/>
+        </optional>
+        <optional>
+            <ref name="attribute.repositoryEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.scriptEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.statusEncoding"/>
+        </optional>
+        <optional>
+            <ref name="attribute.targetTypeEncoding"/>
+        </optional>
+        <optional a:exclude-from="eac">
+            <ref name="attribute.unitEncoding"/>
+        </optional>
+        <optional a:exclude-from="eac eag">
+            <ref name="attribute.unitDateTypeEncoding"/>
         </optional>
     </define>
 
@@ -559,81 +711,6 @@
         </interleave>
     </define>
     
-    <define name="attribute-group.lists.optional">
-        <ref name="attribute.style.optional"/>
-        <optional>
-            <attribute name="listType">
-                <choice>
-                    <value a:exclude-from="eac eag">deflist</value>
-                    <value>ordered</value>
-                    <value>unordered</value>
-                </choice>
-            </attribute>
-        </optional>
-        <optional a:exclude-from="eac eag">
-            <attribute name="mark">
-                <choice>
-                    <value>circle</value> 
-                    <value>disc</value>
-                    <value>inherit</value>
-                    <value>none</value>
-                    <value>square</value>
-                </choice>
-            </attribute>  
-        </optional>
-        <optional a:exclude-from="eac eag">
-            <attribute name="numeration">
-                <choice>
-                    <value>decimal</value>
-                    <value>decimal-leading-zero</value>
-                    <value>lower-roman</value>
-                    <value>upper-roman</value>
-                    <value>lower-greek</value>
-                    <value>lower-latin</value>
-                    <value>upper-latin</value>
-                    <value>armenian</value>
-                    <value>georgian</value>
-                    <value>lower-alpha</value>
-                    <value>upper-alpha</value>
-                    <value>inherit</value>
-                </choice>
-            </attribute>
-        </optional>
-    </define>
-    
-    <define name="attribute.listStyle.optional" a:exclude-from="eac ead eag">
-        <optional>
-            <attribute name="listStyle">
-                <choice>
-                    <value a:documentation="Default value. The marker is a filled circle">disc</value>
-                    <value a:documentation="The marker is traditional Armenian numbering">armenian</value>
-                    <value a:documentation="The marker is a circle">circle</value>
-                    <value a:documentation="The marker is plain ideographic numbers">cjk-ideographic</value>
-                    <value a:documentation="The marker is a number">decimal</value>
-                    <value a:documentation="The marker is a number with leading zeros (01, 02, 03, etc.)">decimal-leading-zero</value>
-                    <value a:documentation="The marker is traditional Georgian numbering">georgian</value>
-                    <value a:documentation="The marker is traditional Hebrew numbering">hebrew</value>
-                    <value a:documentation="The marker is traditional Hiragana numbering">hiragana</value>
-                    <value a:documentation="The marker is traditional Hiragana iroha numbering">hiragana-iroha</value>
-                    <value a:documentation="The marker is traditional Katakana numbering">katakana</value>
-                    <value a:documentation="The marker is traditional Katakana iroha numbering">katakana-iroha</value>
-                    <value a:documentation="The marker is lower-alpha (a, b, c, d, e, etc.)">lower-alpha</value>
-                    <value a:documentation="The marker is lower-greek">lower-greek</value>
-                    <value a:documentation="The marker is lower-latin (a, b, c, d, e, etc.)">lower-latin</value>
-                    <value a:documentation="The marker is lower-roman (i, ii, iii, iv, v, etc.)">lower-roman</value>
-                    <value a:documentation="No marker is shown">none</value>
-                    <value a:documentation="The marker is a square">square</value>
-                    <value a:documentation="The marker is upper-alpha (A, B, C, D, E, etc.) ">upper-alpha</value>
-                    <value a:documentation="The marker is upper-greek">upper-greek</value>
-                    <value a:documentation="The marker is upper-latin (A, B, C, D, E, etc.)">upper-latin</value>
-                    <value a:documentation="The marker is upper-roman (I, II, III, IV, V, etc.)">upper-roman</value>
-                    <value a:documentation="Sets this property to its default value.">initial</value>
-                    <value a:documentation="Inherits this property from its parent element.">inherit</value>
-                </choice>
-            </attribute>
-        </optional>
-    </define>
-  
     <define name="attribute-group.relation-children.optional">
         <ref name="attribute-group.global-plus-lang-and-script.optional"/>
         <ref name="attribute-group.linked-data.optional"/>
