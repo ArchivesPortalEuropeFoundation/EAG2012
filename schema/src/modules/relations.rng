@@ -37,7 +37,7 @@
     
     <define name="element.targetEntity">
         <element name="targetEntity">
-            <ref name="attribute.targetType"/>
+            <ref name="attribute.targetType.optional"/>
             <ref name="attribute-group.relation-children.optional"/>
             <oneOrMore>
                 <ref name="element.part"/>
